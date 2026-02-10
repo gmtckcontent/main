@@ -3,19 +3,70 @@
 // ===========================
 const navbar = document.getElementById("navbar");
 const heroSection = document.querySelector(".hero");
+const subpageHeroSection = document.querySelector(".subpage-hero");
+const hqIntroSection = document.querySelector(".hq-intro-section");
 let lastScroll = 0;
+
+// Determine which hero section exists (check hq-intro-section if no subpage-hero)
+const activeHeroSection = heroSection || subpageHeroSection || hqIntroSection;
 
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
-  const heroHeight = heroSection
-    ? heroSection.offsetHeight
-    : window.innerHeight;
-
-  // Check if navbar is over hero section
-  if (currentScroll < heroHeight - 80) {
+  
+  // Check if we're on interviews page - always show background
+  const isInterviewsPage = window.location.pathname.includes('team-tck-interviews.html') || 
+                           window.location.href.includes('team-tck-interviews.html');
+  
+  // If on interviews page, always show scrolled state (with background)
+  if (isInterviewsPage) {
+    navbar.classList.remove("over-hero");
+    navbar.classList.add("scrolled");
+    lastScroll = currentScroll;
+    return;
+  }
+  
+  // If at top of page (scroll position 0), always show over-hero state (no background)
+  if (currentScroll === 0) {
     navbar.classList.add("over-hero");
     navbar.classList.remove("scrolled");
+    lastScroll = currentScroll;
+    return;
+  }
+  
+  // For subpage, always show scrolled state after initial hero section
+  if (subpageHeroSection && !heroSection) {
+    const heroHeight = subpageHeroSection.offsetHeight;
+    if (currentScroll < heroHeight - 80) {
+      navbar.classList.add("over-hero");
+      navbar.classList.remove("scrolled");
+    } else {
+      navbar.classList.remove("over-hero");
+      navbar.classList.add("scrolled");
+    }
+  } else if (hqIntroSection && !heroSection && !subpageHeroSection) {
+    // For team-tck-hq.html with hq-intro-section and banner
+    const banner = document.querySelector(".hq-intro-banner");
+    const bannerHeight = banner ? banner.offsetHeight : 0;
+    const threshold = Math.max(bannerHeight - 80, 0);
+    if (currentScroll < threshold) {
+      navbar.classList.add("over-hero");
+      navbar.classList.remove("scrolled");
+    } else {
+      navbar.classList.remove("over-hero");
+      navbar.classList.add("scrolled");
+    }
+  } else if (heroSection) {
+    // Original logic for main page with .hero section
+    const heroHeight = heroSection.offsetHeight;
+    if (currentScroll < heroHeight - 80) {
+      navbar.classList.add("over-hero");
+      navbar.classList.remove("scrolled");
+    } else {
+      navbar.classList.remove("over-hero");
+      navbar.classList.add("scrolled");
+    }
   } else {
+    // No hero section found, always show scrolled state
     navbar.classList.remove("over-hero");
     navbar.classList.add("scrolled");
   }
@@ -26,14 +77,59 @@ window.addEventListener("scroll", () => {
 // Check initial state on load and DOMContentLoaded
 function setInitialNavbarState() {
   const currentScroll = window.pageYOffset;
-  const heroHeight = heroSection
-    ? heroSection.offsetHeight
-    : window.innerHeight;
-
-  if (currentScroll < heroHeight - 80) {
+  
+  // Check if we're on interviews page - always show background
+  const isInterviewsPage = window.location.pathname.includes('team-tck-interviews.html') || 
+                           window.location.href.includes('team-tck-interviews.html');
+  
+  // If on interviews page, always show scrolled state (with background)
+  if (isInterviewsPage) {
+    navbar.classList.remove("over-hero");
+    navbar.classList.add("scrolled");
+    return;
+  }
+  
+  // If at top of page (scroll position 0), always show over-hero state (no background)
+  if (currentScroll === 0) {
     navbar.classList.add("over-hero");
     navbar.classList.remove("scrolled");
+    return;
+  }
+  
+  // For subpage, check subpage-hero
+  if (subpageHeroSection && !heroSection) {
+    const heroHeight = subpageHeroSection.offsetHeight;
+    if (currentScroll < heroHeight - 80) {
+      navbar.classList.add("over-hero");
+      navbar.classList.remove("scrolled");
+    } else {
+      navbar.classList.remove("over-hero");
+      navbar.classList.add("scrolled");
+    }
+  } else if (hqIntroSection && !heroSection && !subpageHeroSection) {
+    // For team-tck-hq.html with hq-intro-section and banner
+    const banner = document.querySelector(".hq-intro-banner");
+    const bannerHeight = banner ? banner.offsetHeight : 0;
+    const threshold = bannerHeight - 80;
+    if (currentScroll < threshold) {
+      navbar.classList.add("over-hero");
+      navbar.classList.remove("scrolled");
+    } else {
+      navbar.classList.remove("over-hero");
+      navbar.classList.add("scrolled");
+    }
+  } else if (heroSection) {
+    // Original logic for main page
+    const heroHeight = heroSection.offsetHeight;
+    if (currentScroll < heroHeight - 80) {
+      navbar.classList.add("over-hero");
+      navbar.classList.remove("scrolled");
+    } else {
+      navbar.classList.remove("over-hero");
+      navbar.classList.add("scrolled");
+    }
   } else {
+    // No hero section, always scrolled
     navbar.classList.remove("over-hero");
     navbar.classList.add("scrolled");
   }
@@ -46,7 +142,18 @@ if (document.readyState === "loading") {
   setInitialNavbarState();
 }
 
-window.addEventListener("load", setInitialNavbarState);
+window.addEventListener("load", () => {
+  setInitialNavbarState();
+  // Also check after images load (for banner image)
+  const bannerImage = document.querySelector(".hq-intro-banner-image");
+  if (bannerImage) {
+    if (bannerImage.complete) {
+      setInitialNavbarState();
+    } else {
+      bannerImage.addEventListener("load", setInitialNavbarState, { once: true });
+    }
+  }
+});
 
 // ===========================
 // Mobile Menu Toggle
@@ -86,8 +193,15 @@ navMenu.querySelectorAll("a").forEach((link) => {
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
+    // Don't prevent default for hash links on subpages (handled by subpage scripts)
+    const href = this.getAttribute("href");
+    if (href && href.startsWith("#") && document.querySelector(".hq-sidebar-link")) {
+      // This is a subpage with sidebar navigation, let subpage handle it
+      return;
+    }
+    
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
+    const target = document.querySelector(href);
 
     if (target) {
       const offsetTop = target.offsetTop - 80;
@@ -96,6 +210,14 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         behavior: "smooth",
       });
     }
+  });
+});
+
+// Handle navigation to team-tck-hq.html - scroll to hero section
+document.querySelectorAll('a[href*="team-tck-hq.html"]').forEach((link) => {
+  link.addEventListener("click", function (e) {
+    // Store that we're navigating from index.html
+    sessionStorage.setItem("fromNavigation", "true");
   });
 });
 

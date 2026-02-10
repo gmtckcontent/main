@@ -1,0 +1,30 @@
+# Apache Rewrite Rules for Clean URLs
+# This allows URLs like /team-tck-hq instead of /team-tck-hq.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Remove .html extension
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+  # Redirect .html to clean URL
+  RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+  RewriteRule ^ /%1 [NC,L,R=301]
+</IfModule>
+
+# Fallback for SPA routing (if using hash routing)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # If file doesn't exist, redirect to index.html (for SPA)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^team-tck-hq$ index.html#team-tck-hq [R=301,L]
+  RewriteRule ^team-tck-interviews$ index.html#team-tck-interviews [R=301,L]
+</IfModule>
+
+

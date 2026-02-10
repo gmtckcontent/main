@@ -33,8 +33,14 @@ class LanguageToggle {
     // 모든 다국어 요소 업데이트
     const elements = document.querySelectorAll("[data-kr][data-en]");
     elements.forEach((element) => {
-      const text = lang === "kr" ? element.dataset.kr : element.dataset.en;
-      element.textContent = text;
+      // hq-nav-link는 약어 사용
+      if (element.classList.contains("hq-nav-link") && element.dataset.abbrKr) {
+        const text = lang === "kr" ? element.dataset.abbrKr : element.dataset.abbrEn;
+        element.textContent = text;
+      } else {
+        const text = lang === "kr" ? element.dataset.kr : element.dataset.en;
+        element.textContent = text;
+      }
     });
 
     // 섹션 타이틀 업데이트
@@ -54,6 +60,9 @@ class LanguageToggle {
 
     // 스토리 섹션 업데이트
     this.updateStories(lang);
+
+    // HQ 페이지 업데이트
+    this.updateHQPage(lang);
 
     // 언어 변경 이벤트 발송
     document.dispatchEvent(
@@ -94,6 +103,56 @@ class LanguageToggle {
     carouselDescriptions.forEach((desc) => {
       if (desc.dataset.kr && desc.dataset.en) {
         desc.textContent = lang === "kr" ? desc.dataset.kr : desc.dataset.en;
+      }
+    });
+  }
+
+  updateHQPage(lang) {
+    // Update HQ navigation links (use abbreviation for nav links)
+    const navLinks = document.querySelectorAll(".hq-nav-link");
+    navLinks.forEach((link) => {
+      if (link.dataset.abbrKr && link.dataset.abbrEn) {
+        link.textContent = lang === "kr" ? link.dataset.abbrKr : link.dataset.abbrEn;
+      } else if (link.dataset.kr && link.dataset.en) {
+        link.textContent = lang === "kr" ? link.dataset.kr : link.dataset.en;
+      }
+    });
+
+    // Update HQ main title
+    const mainTitle = document.getElementById("hqMainTitle");
+    if (mainTitle && mainTitle.dataset.kr && mainTitle.dataset.en) {
+      mainTitle.textContent = lang === "kr" ? mainTitle.dataset.kr : mainTitle.dataset.en;
+    }
+
+    // Update sidebar links
+    const sidebarLinks = document.querySelectorAll(".hq-sidebar-link");
+    sidebarLinks.forEach((link) => {
+      if (link.dataset.abbrKr && link.dataset.abbrEn) {
+        link.textContent = lang === "kr" ? link.dataset.abbrKr : link.dataset.abbrEn;
+      } else if (link.dataset.kr && link.dataset.en) {
+        link.textContent = lang === "kr" ? link.dataset.kr : link.dataset.en;
+      }
+    });
+
+    // Update content sections
+    const contentTitles = document.querySelectorAll(".hq-content-title");
+    contentTitles.forEach((title) => {
+      if (title.dataset.kr && title.dataset.en) {
+        title.textContent = lang === "kr" ? title.dataset.kr : title.dataset.en;
+      }
+    });
+
+    const contentDescriptions = document.querySelectorAll(".hq-content-description");
+    contentDescriptions.forEach((desc) => {
+      if (desc.dataset.kr && desc.dataset.en) {
+        desc.textContent = lang === "kr" ? desc.dataset.kr : desc.dataset.en;
+      }
+    });
+
+    const interviewLinks = document.querySelectorAll(".hq-interview-link span");
+    interviewLinks.forEach((link) => {
+      if (link.dataset.kr && link.dataset.en) {
+        link.textContent = lang === "kr" ? link.dataset.kr : link.dataset.en;
       }
     });
   }

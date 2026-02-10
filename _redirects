@@ -1,0 +1,11 @@
+# Netlify Redirects for Clean URLs
+# This allows URLs like /team-tck-hq instead of /team-tck-hq.html
+
+# SPA routing - redirect clean URLs to index.html with hash
+/team-tck-hq /index.html#team-tck-hq 200
+/team-tck-interviews /index.html#team-tck-interviews 200
+
+# Remove .html extension
+/*.html /:splat 301
+
+

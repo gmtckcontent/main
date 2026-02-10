@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="./" />
+    <title>Team TCK | 담당 인터뷰</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="overflow-x: hidden;" class="team-tck-page">
+    <script>
+      // Disable browser scroll restoration
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      // Disable scroll snap on Team TCK page
+      document.documentElement.classList.add('team-tck-page');
+      // Force scroll to top immediately
+      window.scrollTo(0, 0);
+    </script>
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="nav-content">
+          <a href="index.html" class="logo">
+            <img src="./images/logo/GMTCK.png" alt="GMTCK" class="logo-img" />
+          </a>
+          <ul class="nav-menu" id="navMenu">
+            <li>
+              <a href="index.html#about" data-kr="회사소개" data-en="About"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://search-careers.gm.com/en/locations/korea/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-kr="채용"
+                data-en="Career"
+                >Career</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://news.gm.com/home.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-kr="뉴스"
+                data-en="News"
+                >News</a
+              >
+            </li>
+            <li class="nav-dropdown">
+              <a
+                href="team-tck-hq.html"
+                class="nav-dropdown-trigger"
+                data-kr="Team TCK"
+                data-en="Team TCK"
+                >Team TCK</a
+              >
+              <ul class="nav-dropdown-menu" aria-label="Team TCK submenu">
+                <li>
+                  <a
+                    href="team-tck-hq.html"
+                    data-kr="본부소개"
+                    data-en="HQ Introduction"
+                    >HQ Introduction</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="team-tck-interviews.html"
+                    class="active"
+                    data-kr="담당 인터뷰"
+                    data-en="Role Interviews"
+                    >Role Interviews</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="nav-buttons">
+            <button
+              class="language-toggle"
+              id="languageToggle"
+              aria-label="Language Toggle"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="language-label" id="languageLabel">EN</span>
+            </button>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="subpage-section hq-intro-section">
+      <div class="container">
+        <!-- Interview Navigation Bar -->
+        <nav class="hq-nav-bar">
+          <ul class="hq-nav-list">
+            <li>
+              <a href="#all" class="hq-nav-link active" data-hq="all" data-kr="All" data-en="All">
+                All
+              </a>
+            </li>
+            <li>
+              <a href="#avd-svi" class="hq-nav-link" data-hq="avd-svi" data-kr="AVD & SVI" data-en="AVD & SVI">
+                AVD & SVI
+              </a>
+            </li>
+            <li>
+              <a href="#beca" class="hq-nav-link" data-hq="beca" data-kr="Body, Exterior, Chassis and After sales Engineering" data-en="Body, Exterior, Chassis and After sales Engineering" data-abbr-kr="BECA" data-abbr-en="BECA">
+                BECA
+              </a>
+            </li>
+            <li>
+              <a href="#engineering-excellence" class="hq-nav-link" data-hq="engineering-excellence" data-kr="Engineering Excellence" data-en="Engineering Excellence" data-abbr-kr="EE" data-abbr-en="EE">
+                EE
+              </a>
+            </li>
+            <li>
+              <a href="#itpe" class="hq-nav-link" data-hq="itpe" data-kr="Interior, Thermal Propulsion Integration & Energy Conversion System Engineering" data-en="Interior, Thermal Propulsion Integration & Energy Conversion System Engineering" data-abbr-kr="ITPE" data-abbr-en="ITPE">
+                ITPE
+              </a>
+            </li>
+            <li>
+              <a href="#pipg" class="hq-nav-link" data-hq="pipg" data-kr="Performance Integration & Proving Ground" data-en="Performance Integration & Proving Ground" data-abbr-kr="PIPG" data-abbr-en="PIPG">
+                PIPG
+              </a>
+            </li>
+            <li>
+              <a href="#ss" class="hq-nav-link" data-hq="ss" data-kr="Software & Services" data-en="Software & Services" data-abbr-kr="S&S" data-abbr-en="S&S">
+                S&S
+              </a>
+            </li>
+            <li>
+              <a href="#ve" class="hq-nav-link" data-hq="ve" data-kr="Virtual Engineering" data-en="Virtual Engineering" data-abbr-kr="VE" data-abbr-en="VE">
+                VE
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Interview Title - 본부명 표시 -->
+        <div class="hq-title-wrapper">
+          <h1 class="hq-main-title" id="hqMainTitle" data-kr="All" data-en="All" style="display: block;">
+              All
+          </h1>
+        </div>
+
+        <div class="hq-layout" id="hqLayout">
+          <!-- Left Sidebar Navigation -->
+          <aside class="hq-sidebar" id="hqSidebar">
+            <nav class="hq-sidebar-nav">
+              <ul class="hq-sidebar-list" id="hqSidebarList">
+                <!-- 전체보기일 때는 사이드바 숨김 -->
+              </ul>
+            </nav>
+          </aside>
+
+          <!-- Main Content Area -->
+          <main class="hq-main-content">
+            <!-- 전체보기 -->
+            <div class="hq-content-section active" id="all">
+              <div class="interview-grid" id="allInterviewGrid">
+                <!-- 인터뷰 항목들은 JavaScript로 동적으로 추가됨 -->
+              </div>
+            </div>
+
+            <!-- EE: 인증, 환경전략, 이머징 이슈 -->
+            <div class="hq-content-section" id="ee-certification">
+              <h2 class="hq-content-title" data-kr="인증, 환경전략, 이머징 이슈" data-en="Certification, Environmental Strategy, Emerging Issues">
+                인증, 환경전략, 이머징 이슈
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="인증, 환경전략, 이머징 이슈 인터뷰 내용을 여기에 추가하세요." data-en="Add Certification, Environmental Strategy, Emerging Issues interview content here.">
+                  Add Certification, Environmental Strategy, Emerging Issues interview content here.
+                </p>
+              </div>
+            </div>
+
+            <!-- EE: 시스템, 제품 조사 -->
+            <div class="hq-content-section" id="ee-system-investigation">
+              <h2 class="hq-content-title" data-kr="시스템, 제품 조사" data-en="System, Product Investigation">
+                시스템, 제품 조사
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="시스템, 제품 조사 인터뷰 내용을 여기에 추가하세요." data-en="Add System, Product Investigation interview content here.">
+                  Add System, Product Investigation interview content here.
+                </p>
+              </div>
+            </div>
+
+            <!-- EE: 검증 -->
+            <div class="hq-content-section" id="ee-verification">
+              <h2 class="hq-content-title" data-kr="검증" data-en="Verification">
+                검증
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="검증 인터뷰 내용을 여기에 추가하세요." data-en="Add Verification interview content here.">
+                  Add Verification interview content here.
+                </p>
+              </div>
+            </div>
+
+            <!-- EE: 제품 우수성 -->
+            <div class="hq-content-section" id="ee-product-excellence">
+              <h2 class="hq-content-title" data-kr="제품 우수성" data-en="Product Excellence">
+                제품 우수성
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="제품 우수성 인터뷰 내용을 여기에 추가하세요." data-en="Add Product Excellence interview content here.">
+                  Add Product Excellence interview content here.
+                </p>
+              </div>
+            </div>
+
+            <!-- EE: 감성 품질, 설계 품질 엔지니어링 엑설런스 -->
+            <div class="hq-content-section" id="ee-quality">
+              <h2 class="hq-content-title" data-kr="감성 품질, 설계 품질 엔지니어링 엑설런스" data-en="Emotional Quality, Design Quality Engineering Excellence">
+                감성 품질, 설계 품질 엔지니어링 엑설런스
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="감성 품질, 설계 품질 엔지니어링 엑설런스 인터뷰 내용을 여기에 추가하세요." data-en="Add Emotional Quality, Design Quality Engineering Excellence interview content here.">
+                  Add Emotional Quality, Design Quality Engineering Excellence interview content here.
+                </p>
+              </div>
+            </div>
+
+            <!-- EE: AI Chief -->
+            <div class="hq-content-section" id="ee-ai-chief">
+              <h2 class="hq-content-title" data-kr="AI Chief" data-en="AI Chief">
+                AI Chief
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="AI Chief 인터뷰 내용을 여기에 추가하세요." data-en="Add AI Chief interview content here.">
+                  Add AI Chief interview content here.
+                </p>
+              </div>
+            </div>
+
+            <!-- VE: Safety Performance Integration - 인터뷰 목록 -->
+            <!-- VE: Safety Performance Integration -->
+            <div class="hq-content-section" id="ve-safety-performance">
+              <div class="hq-content-body">
+                <!-- 인터뷰 내용은 JavaScript로 동적으로 추가됨 -->
+              </div>
+            </div>
+
+            <!-- VE: Virtual Integration Center & ADAS -->
+            <div class="hq-content-section" id="ve-virtual-integration">
+              <div class="hq-content-body">
+                <!-- 인터뷰 내용은 JavaScript로 동적으로 추가됨 -->
+              </div>
+            </div>
+
+            <!-- VE: Virtual Engineering Solution -->
+            <div class="hq-content-section" id="ve-virtual-engineering-solution">
+              <div class="hq-content-body">
+                <!-- 인터뷰 내용은 JavaScript로 동적으로 추가됨 -->
+              </div>
+            </div>
+
+            <!-- PIPG: PSC -->
+            <div class="hq-content-section" id="pipg-psc">
+              <div class="hq-content-body">
+                <!-- 프로필 소개 -->
+                <div class="interview-profile-header">
+                  <div class="interview-profile-bg">
+                    <div class="interview-profile-image">
+                      <img src="./images/profilepic/PIPG1_tp.png" alt="Profile" class="profile-img" />
+                    </div>
+                  </div>
+                  <div class="interview-profile-content">
+                    <div class="profile-quote-top">
+                      <span class="quote-mark quote-open">"</span>
+                      <div class="quote-text">
+                        <p class="quote-line" data-kr="안녕하세요" data-en="Hello"><span class="quote-light">안녕하세요</span></p>
+                        <p class="quote-line" data-kr="PIPG본부의 Propulsion System Calibration담당" data-en="Propulsion System Calibration, PIPG HQ"><span class="quote-highlight">PIPG</span><span class="quote-light">본부의 </span><span class="quote-highlight">Propulsion System Calibration</span><span class="quote-light">담당</span></p>
+                        <p class="quote-line" data-kr="이재혁입니다" data-en="Jaehyuk Lee"><span class="quote-highlight">이재혁</span><span class="quote-light">입니다</span></p>
+                      </div>
+                      <span class="quote-mark quote-close">"</span>
+                    </div> 
+                  </div>
+                  <div class="profile-divider"></div>
+                </div>
+                
+                <!-- 인터뷰 내용 -->
+                <div class="interview-content">
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요." data-en="Please introduce your department and tell us about your current responsibilities in detail.">
+                      담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.
+                    </h3>
+                    <p class="interview-answer" data-kr="저희 담당은 엔진/트랜스미션 캘리브레이션 경험을 바탕으로 전기차 캘리브레이션, 소프트웨어, 시뮬레이션까지 업무 영역을 확장하며, AI, 가상 기술을 활용해 차량 제어 전반과 안정적인 차량 출시를 지원하고 있습니다. 저는 전기차 업무를 담당하며, 실차와 가상 환경을 통해 전기차 시스템의 안전, 성능과 품질을 사전에 검증하고 양산 전 리스크를 최소화하고 있습니다." data-en="Our department expands its work scope from engine/transmission calibration experience to EV calibration, software, and simulation, supporting overall vehicle control and stable vehicle launch using AI and virtual technologies. I am responsible for EV work, pre-verifying the safety, performance, and quality of EV systems through real vehicles and virtual environments, minimizing risks before mass production.">
+                      저희 담당은 엔진/트랜스미션 캘리브레이션 경험을 바탕으로 전기차 캘리브레이션, 소프트웨어, 시뮬레이션까지 업무 영역을 확장하며, AI, 가상 기술을 활용해 차량 제어 전반과 안정적인 차량 출시를 지원하고 있습니다. 저는 전기차 업무를 담당하며, 실차와 가상 환경을 통해 전기차 시스템의 안전, 성능과 품질을 사전에 검증하고 양산 전 리스크를 최소화하고 있습니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="하루 업무에 대해 소개해주세요." data-en="Please tell us about your daily work.">
+                      하루 업무에 대해 소개해주세요.
+                    </h3>
+                    <p class="interview-answer" data-kr="보통 전날 밤이나 아침에 북미에서 전달된 업무 메일을 확인하며 하루를 시작합니다. 현재는 시뮬레이션 장비를 활용해 검증 업무를 수행하며, 전기차 시스템이 요구 조건에 맞게 안전하게 동작하는지 검증하고 있습니다." data-en="I usually start my day by checking work emails from North America that came in the previous night or morning. Currently, I perform verification work using simulation equipment, verifying that EV systems operate safely according to requirements.">
+                      보통 전날 밤이나 아침에 북미에서 전달된 업무 메일을 확인하며 하루를 시작합니다. 현재는 시뮬레이션 장비를 활용해 검증 업무를 수행하며, 전기차 시스템이 요구 조건에 맞게 안전하게 동작하는지 검증하고 있습니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="담당하고 있는 업무를 위해 필요한 역량은 무엇이라고 생각하나요?" data-en="What competencies do you think are necessary for your work?">
+                      담당하고 있는 업무를 위해 필요한 역량은 무엇이라고 생각하나요?
+                    </h3>
+                    <p class="interview-answer" data-kr="전기차 검증 업무에는 전기차 시스템에 대한 이해와 함께, 실차와 시뮬레이션을 중심으로 한 가상 검증 환경을 유기적으로 활용하는 역량이 중요하다고 생각합니다. 실차 시험은 여전히 핵심이지만, 사전에 시뮬레이션과 같은 가상 환경에서 조건을 구성해 문제를 줄여가는 접근이 점점 필수적인 요소가 되고 있습니다. 이러한 가상 검증 결과를 바탕으로 추가 시험이 필요한지, 또는 어떤 리스크를 관리해야 하는지를 판단할 수 있는 의사결정 역량 또한 중요한 요소가 되고 있다고 느끼고 있습니다." data-en="I think understanding EV systems and the ability to organically utilize virtual verification environments centered on real vehicles and simulation is important for EV verification work. Real vehicle testing is still core, but the approach of configuring conditions in virtual environments like simulation beforehand to reduce problems is becoming increasingly essential. I also feel that decision-making capabilities to judge whether additional testing is needed or what risks need to be managed based on these virtual verification results are becoming important factors.">
+                      전기차 검증 업무에는 전기차 시스템에 대한 이해와 함께, 실차와 시뮬레이션을 중심으로 한 가상 검증 환경을 유기적으로 활용하는 역량이 중요하다고 생각합니다. 실차 시험은 여전히 핵심이지만, 사전에 시뮬레이션과 같은 가상 환경에서 조건을 구성해 문제를 줄여가는 접근이 점점 필수적인 요소가 되고 있습니다. 이러한 가상 검증 결과를 바탕으로 추가 시험이 필요한지, 또는 어떤 리스크를 관리해야 하는지를 판단할 수 있는 의사결정 역량 또한 중요한 요소가 되고 있다고 느끼고 있습니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?" data-en="What is the team culture and what are your team members like?">
+                      팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?
+                    </h3>
+                    <p class="interview-answer" data-kr="저희 팀은 서로에 대한 배려와 신뢰를 바탕으로 움직이는 팀이라고 생각합니다. 팀 특성상 실차 시험이 많아 차량 이슈를 자주 접하는데, 한 번 도움을 받으면 자연스럽게 서로 돕는 분위기가 형성되어 있고, 누가 시키지 않아도 다 같이 모여 문제를 해결합니다. 덕분에 저도 부담 없이 도움을 요청할 수 있는, 함께 일하기 편한 팀입니다." data-en="I think our team operates based on mutual consideration and trust. Due to the nature of our team, we frequently encounter vehicle issues as we conduct many real vehicle tests. Once someone receives help, a natural atmosphere of mutual assistance forms, and everyone gathers to solve problems without being asked. Thanks to this, I can request help without burden, making it a comfortable team to work with.">
+                      저희 팀은 서로에 대한 배려와 신뢰를 바탕으로 움직이는 팀이라고 생각합니다. 팀 특성상 실차 시험이 많아 차량 이슈를 자주 접하는데, 한 번 도움을 받으면 자연스럽게 서로 돕는 분위기가 형성되어 있고, 누가 시키지 않아도 다 같이 모여 문제를 해결합니다. 덕분에 저도 부담 없이 도움을 요청할 수 있는, 함께 일하기 편한 팀입니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="앞으로의 목표 또는 커리어 방향" data-en="Future goals or career direction">
+                      앞으로의 목표 또는 커리어 방향
+                    </h3>
+                    <p class="interview-answer" data-kr="검증 결과에 책임을 지고, 고객 안전을 기준으로 판단할 수 있는 검증 엔지니어가 되는 것이 제 방향입니다. 단순히 통과 여부를 확인하는 데 그치지 않고, 검증 단계에서 문제를 사전에 설명하고 줄일 수 있는 역할을 목표로 하고 있습니다. 제 시험 결과가 곧 고객의 안전과 직결된다는 인식을 바탕으로, 책임감 있게 검증 업무를 수행하고 싶습니다." data-en="My direction is to become a verification engineer who takes responsibility for verification results and can make judgments based on customer safety. I aim not just to check pass/fail, but to play a role in explaining and reducing problems in advance during the verification stage. Based on the recognition that my test results are directly connected to customer safety, I want to perform verification work responsibly.">
+                      검증 결과에 책임을 지고, 고객 안전을 기준으로 판단할 수 있는 검증 엔지니어가 되는 것이 제 방향입니다. 단순히 통과 여부를 확인하는 데 그치지 않고, 검증 단계에서 문제를 사전에 설명하고 줄일 수 있는 역할을 목표로 하고 있습니다. 제 시험 결과가 곧 고객의 안전과 직결된다는 인식을 바탕으로, 책임감 있게 검증 업무를 수행하고 싶습니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AVD & SVI: Advanced Vehicle Development -->
+            <div class="hq-content-section" id="avd-advanced-vehicle">
+              <div class="hq-content-body">
+                <!-- 프로필 소개 -->
+                <div class="interview-profile-header">
+                  <div class="interview-profile-bg">
+                    <div class="interview-profile-image">
+                      <img src="./images/profilepic/AVD1_tp.png" alt="Profile" class="profile-img" />
+                    </div>
+                  </div>
+                  <div class="interview-profile-content">
+                    <div class="profile-quote-top">
+                      <span class="quote-mark quote-open">"</span>
+                      <div class="quote-text">
+                        <p class="quote-line" data-kr="안녕하세요" data-en="Hello"><span class="quote-light">안녕하세요</span></p>
+                        <p class="quote-line" data-kr="AVD & SVI본부의 Advanced Vehicle Development담당" data-en="Advanced Vehicle Development, AVD & SVI HQ"><span class="quote-highlight">AVD & SVI</span><span class="quote-light">본부의 </span><span class="quote-highlight">Advanced Vehicle Development</span><span class="quote-light">담당</span></p>
+                        <p class="quote-line" data-kr="김성수입니다" data-en="Seongsu Kim"><span class="quote-highlight">김성수</span><span class="quote-light">입니다</span></p>
+                      </div>
+                      <span class="quote-mark quote-close">"</span>
+                    </div> 
+                  </div>
+                  <div class="profile-divider"></div>
+                </div>
+                
+                <!-- 인터뷰 내용 -->
+                <div class="interview-content">
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="AVD 담당은 어떤 일을 하는 곳인가요?" data-en="What does the AVD department do?">
+                      AVD 담당은 어떤 일을 하는 곳인가요?
+                    </h3>
+                    <p class="interview-answer" data-kr="AVD(Advanced Vehicle Development) 담당은 차량개발초기 Architecture와 Package(차체 구조·공간 설계)를 기반으로 고객이 체감하는 차량의 기본기를 설계·기획하고, 혁신적인 아이디어와 프로젝트를 발굴·주도하여 GMTCK 전사의 Innovation Hub 역할을 수행하는 조직입니다." data-en="The AVD (Advanced Vehicle Development) department designs and plans the fundamental aspects of vehicles that customers experience, based on Architecture and Package (body structure and space design) in the early stages of vehicle development, and serves as GMTCK's Innovation Hub by discovering and leading innovative ideas and projects.">
+                      AVD(Advanced Vehicle Development) 담당은 차량개발초기 Architecture와 Package(차체 구조·공간 설계)를 기반으로 고객이 체감하는 차량의 기본기를 설계·기획하고, 혁신적인 아이디어와 프로젝트를 발굴·주도하여 GMTCK 전사의 Innovation Hub 역할을 수행하는 조직입니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="AVD 담당은 고객에게 왜 중요한가요?" data-en="Why is the AVD department important to customers?">
+                      AVD 담당은 고객에게 왜 중요한가요?
+                    </h3>
+                    <p class="interview-answer" data-kr="고객이 실제로 경험하는 주행거리, 공간감, 승차감, 안전과 가격에 대한 신뢰 같은 &quot;차량의 기본기와 상품성&quot;은 모두 AVD가 설계하는 Architecture와 Package에서 출발합니다. 예를 들어, 한 번 충전(또는 주유)으로 얼마나 멀리, 얼마나 효율적으로 갈 수 있는지(Propulsion), 승객이 느껴지는 seating posture, headroom, legroom, 전체적인 spaciousness, driver visibility, 그리고 승하차 편의성까지 포함한 종합적인 실내 경험, 코너링 · 직진 안정성 · 정숙성 등 Ride Comfort와 Driving Feel의 기본 Balance, 겉으로 보이지 않는 Body Structure와 Crash Architecture가 만들어 내는 충돌 성능과 Safety에 대한 신뢰감, 같은 가격대에서 얼마나 합리적인 사양과 구성을 제공하는지, 즉 Value for Money를 얼마나 잘 충족하는지 이 모든 것들이 AVD가 세우는 Fundamental 기준과 판단에 따라 달라집니다. AVD는 차량개발초기 Vehicle Fundamentals를 설계하고, 성능·안전·공간·가격 사이의 밸런스를 조율해 고객 가치(Customer Value)와 브랜드 신뢰(Brand Trust)를 만들어 가는 팀입니다." data-en="All the &quot;fundamentals and product appeal of vehicles&quot; that customers actually experience, such as driving range, sense of space, ride comfort, trust in safety and price, start from the Architecture and Package designed by AVD. For example, how far and efficiently one can go on a single charge (or refuel) (Propulsion), the comprehensive interior experience including seating posture, headroom, legroom, overall spaciousness, driver visibility, and entry/exit convenience that passengers feel, the basic balance of Ride Comfort and Driving Feel such as cornering, straight-line stability, and quietness, the collision performance and trust in safety created by the invisible Body Structure and Crash Architecture, and how well Value for Money is met in terms of how reasonable specifications and configurations are provided at the same price point - all of these depend on the fundamental standards and judgments established by AVD. AVD is a team that designs Vehicle Fundamentals in the early stages of vehicle development and creates Customer Value and Brand Trust by coordinating the balance between performance, safety, space, and price.">
+                      고객이 실제로 경험하는 주행거리, 공간감, 승차감, 안전과 가격에 대한 신뢰 같은 "차량의 기본기와 상품성"은 모두 AVD가 설계하는 Architecture와 Package에서 출발합니다. 예를 들어, 한 번 충전(또는 주유)으로 얼마나 멀리, 얼마나 효율적으로 갈 수 있는지(Propulsion), 승객이 느껴지는 seating posture, headroom, legroom, 전체적인 spaciousness, driver visibility, 그리고 승하차 편의성까지 포함한 종합적인 실내 경험, 코너링 · 직진 안정성 · 정숙성 등 Ride Comfort와 Driving Feel의 기본 Balance, 겉으로 보이지 않는 Body Structure와 Crash Architecture가 만들어 내는 충돌 성능과 Safety에 대한 신뢰감, 같은 가격대에서 얼마나 합리적인 사양과 구성을 제공하는지, 즉 Value for Money를 얼마나 잘 충족하는지 이 모든 것들이 AVD가 세우는 Fundamental 기준과 판단에 따라 달라집니다. AVD는 차량개발초기 Vehicle Fundamentals를 설계하고, 성능·안전·공간·가격 사이의 밸런스를 조율해 고객 가치(Customer Value)와 브랜드 신뢰(Brand Trust)를 만들어 가는 팀입니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="AVD 담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?" data-en="What competencies do you think are necessary for AVD department work?">
+                      AVD 담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?
+                    </h3>
+                    <p class="interview-answer" data-kr="AVD 업무는 차량의 &quot;큰 그림(Big Picture)&quot;을 설계하고, &quot;Innovation Hub&quot;로서 여러 조직을 하나의 방향으로 연결해 고객에게 더 나은 차를 제공하는 역할을 합니다. 이를 위해 위해 AVD에서의 필요 역량은 System-Level Thinking: Architecture, package 전반을 아우르는 시야와 제약 조건 하에서 최적의 균형점을 찾는 역량, Cross-Functional Collaboration: Design, Powertrain, Electrical, Manufacturing, Safety, Interior 등과 효과적으로 소통·조율하는 긴밀한 협업 능력, Customer & Market Insight: Global Benchmarking과 데이터 분석을 통해 고객 가치와 시장 요구를 읽어내는 능력, Innovation Mindset & Learning Agility: 전동화(Electrification), SDV(Software-Defined Vehicle)와 같은 새로운 기술·아키텍처를 빠르게 이해하고, 새로운 패키징 아이디어(New Packaging Ideas)를 스스로 탐색해 시험해 보는 도전적인 태도, Innovation Leadership: 새로운 아이디어와 업무 방식을 발굴·실행해, 업무 방식을 더 Efficient & Effective 하게 만드는 추진력입니다." data-en="AVD work plays a role in designing the &quot;Big Picture&quot; of vehicles and connecting multiple organizations in one direction as an &quot;Innovation Hub&quot; to provide customers with better vehicles. For this, the necessary competencies in AVD are: System-Level Thinking: the ability to have a vision that encompasses the entire Architecture and package and find optimal balance points under constraints; Cross-Functional Collaboration: the ability to effectively communicate and coordinate with Design, Powertrain, Electrical, Manufacturing, Safety, Interior, etc.; Customer & Market Insight: the ability to read customer value and market demands through Global Benchmarking and data analysis; Innovation Mindset & Learning Agility: a challenging attitude to quickly understand new technologies and architectures such as Electrification and SDV (Software-Defined Vehicle), and to explore and test new packaging ideas on one's own; Innovation Leadership: the drive to discover and execute new ideas and work methods, making work methods more Efficient & Effective.">
+                      AVD 업무는 차량의 "큰 그림(Big Picture)"을 설계하고, "Innovation Hub"로서 여러 조직을 하나의 방향으로 연결해 고객에게 더 나은 차를 제공하는 역할을 합니다. 이를 위해 위해 AVD에서의 필요 역량은 System-Level Thinking: Architecture, package 전반을 아우르는 시야와 제약 조건 하에서 최적의 균형점을 찾는 역량, Cross-Functional Collaboration: Design, Powertrain, Electrical, Manufacturing, Safety, Interior 등과 효과적으로 소통·조율하는 긴밀한 협업 능력, Customer & Market Insight: Global Benchmarking과 데이터 분석을 통해 고객 가치와 시장 요구를 읽어내는 능력, Innovation Mindset & Learning Agility: 전동화(Electrification), SDV(Software-Defined Vehicle)와 같은 새로운 기술·아키텍처를 빠르게 이해하고, 새로운 패키징 아이디어(New Packaging Ideas)를 스스로 탐색해 시험해 보는 도전적인 태도, Innovation Leadership: 새로운 아이디어와 업무 방식을 발굴·실행해, 업무 방식을 더 Efficient & Effective 하게 만드는 추진력입니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="AVD 담당의 매력은?" data-en="What is the appeal of the AVD department?">
+                      AVD 담당의 매력은?
+                    </h3>
+                    <p class="interview-answer" data-kr="AVD 담당의 매력은 새로운 차량 개발과 전사 Innovation의 선두에서, 차량 개발의 가장 초기 단계에서 제품의 방향성과 고객 경험을 결정짓는 핵심 역할을 하면서, 다양한 조직과 협업해 폭넓은 지신과 시야를 확보 할 수 있으며, Architecture·Package를 통해 차량의 &quot;뼈대&quot;를 설계하는 독보적인 전문성을 쌓을 수 있습니다." data-en="The appeal of the AVD department is that at the forefront of new vehicle development and company-wide Innovation, while playing a key role in determining product direction and customer experience at the earliest stage of vehicle development, you can collaborate with various organizations to gain broad knowledge and perspective, and build unique expertise in designing the &quot;skeleton&quot; of vehicles through Architecture and Package.">
+                      AVD 담당의 매력은 새로운 차량 개발과 전사 Innovation의 선두에서, 차량 개발의 가장 초기 단계에서 제품의 방향성과 고객 경험을 결정짓는 핵심 역할을 하면서, 다양한 조직과 협업해 폭넓은 지신과 시야를 확보 할 수 있으며, Architecture·Package를 통해 차량의 "뼈대"를 설계하는 독보적인 전문성을 쌓을 수 있습니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="앞으로 AVD 담당이 지향하는 목표는 무엇인가요?" data-en="What are the goals that the AVD department aims for in the future?">
+                      앞으로 AVD 담당이 지향하는 목표는 무엇인가요?
+                    </h3>
+                    <p class="interview-answer" data-kr="AVD 담당의 지향 목표는, Customer-Value-Driven Architecture Leader: 주행거리·공간·승차감·안전·가격 경쟁력 등 고객이 체감하는 기본기를 미래 고객 요구를 반영한 차세대 Vehicle Structure를 설계하는 조직, Insight & Benchmarking-Based Decision Hub: 지속적인 글로벌 벤치마킹과 신규 아이디어 발궁르 통한 프로그램별 고객 가치 극대화, Enterprise Innovation & Front-Loading Hub: 품질·원가·개발 리드타임을 동시에 개선하고, 새로운 아이디어와 업무 방식을 확산하는 GMTCK의 Innovation Hub입니다." data-en="The goals that the AVD department aims for are: Customer-Value-Driven Architecture Leader: an organization that designs next-generation Vehicle Structure reflecting future customer demands for fundamentals that customers experience such as driving range, space, ride comfort, safety, and price competitiveness; Insight & Benchmarking-Based Decision Hub: maximizing customer value per program through continuous global benchmarking and discovery of new ideas; Enterprise Innovation & Front-Loading Hub: GMTCK's Innovation Hub that simultaneously improves quality, cost, and development lead time, and spreads new ideas and work methods.">
+                      AVD 담당의 지향 목표는, Customer-Value-Driven Architecture Leader: 주행거리·공간·승차감·안전·가격 경쟁력 등 고객이 체감하는 기본기를 미래 고객 요구를 반영한 차세대 Vehicle Structure를 설계하는 조직, Insight & Benchmarking-Based Decision Hub: 지속적인 글로벌 벤치마킹과 신규 아이디어 발궁르 통한 프로그램별 고객 가치 극대화, Enterprise Innovation & Front-Loading Hub: 품질·원가·개발 리드타임을 동시에 개선하고, 새로운 아이디어와 업무 방식을 확산하는 GMTCK의 Innovation Hub입니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AVD & SVI: Studio & Surface Integration -->
+            <div class="hq-content-section" id="avd-studio-surface">
+              <div class="hq-content-body">
+                <!-- 프로필 소개 -->
+                <div class="interview-profile-header">
+                  <div class="interview-profile-bg">
+                    <div class="interview-profile-image">
+                      <img src="./images/profilepic/SVI1_tp.png" alt="Profile" class="profile-img" />
+                    </div>
+                  </div>
+                  <div class="interview-profile-content">
+                    <div class="profile-quote-top">
+                      <span class="quote-mark quote-open">"</span>
+                      <div class="quote-text">
+                        <p class="quote-line" data-kr="안녕하세요" data-en="Hello"><span class="quote-light">안녕하세요</span></p>
+                        <p class="quote-line" data-kr="AVD & SVI본부의 Studio & Surface Integration담당" data-en="Studio & Surface Integration, AVD & SVI HQ"><span class="quote-highlight">AVD & SVI</span><span class="quote-light">본부의 </span><span class="quote-highlight">Studio & Surface Integration</span><span class="quote-light">담당</span></p>
+                        <p class="quote-line" data-kr="이정원차장입니다" data-en="Jeongwon Lee"><span class="quote-highlight">이정원차장</span><span class="quote-light">입니다</span></p>
+                      </div>
+                      <span class="quote-mark quote-close">"</span>
+                    </div> 
+                  </div>
+                  <div class="profile-divider"></div>
+                </div>
+                
+                <!-- 인터뷰 내용 -->
+                <div class="interview-content">
+                  <p class="interview-answer">인터뷰 내용이 준비 중입니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- PIPG: VPD/PID -->
+            <div class="hq-content-section" id="pipg-vpd-pid">
+              <div class="hq-content-body">
+                <!-- 프로필 소개 -->
+                <div class="interview-profile-header">
+                  <div class="interview-profile-bg">
+                    <div class="interview-profile-image">
+                      <img src="./images/profilepic/PIPG2_tp.png" alt="Profile" class="profile-img" />
+                    </div>
+                  </div>
+                  <div class="interview-profile-content">
+                    <div class="profile-quote-top">
+                      <span class="quote-mark quote-open">"</span>
+                      <span class="quote-text" data-kr="안녕하세요.<br>VPD/PID 담당<br>입니다." data-en="Hello.<br>I'm from VPD/PID.">안녕하세요.<br>VPD/PID 담당<br>입니다.</span>
+                      <span class="quote-mark quote-close">"</span>
+                    </div>
+                  </div>
+                  <div class="profile-divider"></div>
+                </div>
+                
+                <!-- 인터뷰 내용 -->
+                <div class="interview-content">
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요." data-en="Please introduce your department and tell us about your current responsibilities in detail.">
+                      담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.
+                    </h3>
+                    <p class="interview-answer" data-kr="저희 담당은 차량의 주행성이나 정숙성처럼, 고객이 실제로 체감하는 성능을 통합적으로 관리하는 역할을 하고 있습니다. 차량 동력성능 개발, 소음&진동, 가상 개발팀이 긴밀하게 협업하며 시험과 해석을 하나의 흐름으로 연결하고, 그 안에서 최적의 차량 성능을 만들어가고 있습니다. 저는 그 중에서도 소음&진동 성능 개발 엔지니어로서, 불쾌한 소음과 진동을 줄이는 역할 뿐만 아니라 차량의 모델이나 브랜드 이미지에 어울리는 엔진 사운드와 전기차 모터 사운드를 만들어가는 업무를 맡고 있습니다." data-en="Our department plays a role in comprehensively managing performance that customers actually feel, such as vehicle drivability and quietness. Vehicle powertrain performance development, noise & vibration, and virtual development teams closely collaborate to connect testing and analysis into one flow, creating optimal vehicle performance within it. Among these, I work as a noise & vibration performance development engineer, not only reducing unpleasant noise and vibration but also creating engine sounds and electric vehicle motor sounds that match the vehicle model or brand image.">
+                      저희 담당은 차량의 주행성이나 정숙성처럼, 고객이 실제로 체감하는 성능을 통합적으로 관리하는 역할을 하고 있습니다. 차량 동력성능 개발, 소음&진동, 가상 개발팀이 긴밀하게 협업하며 시험과 해석을 하나의 흐름으로 연결하고, 그 안에서 최적의 차량 성능을 만들어가고 있습니다. 저는 그 중에서도 소음&진동 성능 개발 엔지니어로서, 불쾌한 소음과 진동을 줄이는 역할 뿐만 아니라 차량의 모델이나 브랜드 이미지에 어울리는 엔진 사운드와 전기차 모터 사운드를 만들어가는 업무를 맡고 있습니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?" data-en="What competencies do you think are necessary for your work?">
+                      담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?
+                    </h3>
+                    <p class="interview-answer" data-kr="이 업무에 필요한 역량은 크게 세 가지라고 생각합니다. 첫 번째는 기본기입니다. 차체, 섀시, 추진 시스템 등 차량 전반에 대한 이해를 바탕으로 소음·진동 현상을 바라볼 수 있어야 합니다. 이런 기본기가 갖춰져 있어야 보다 안정적이면서도 현실적인 해결책을 제시할 수 있다고 생각합니다. 두 번째는 데이터를 읽고 해석하는 능력입니다. 차량 성능 개발은 해석이나 물리 시험, 다양한 가상 툴을 통해 생성되는 데이터를 기반으로 의사결정이 이루어지는 경우가 많기 때문에, 데이터 속에서 의미를 정확히 읽어내는 능력이 중요합니다. 마지막으로는 커뮤니케이션과 끈기입니다. 소음·진동 성능 개발은 설계, 시험, 품질, 생산 등 여러 부서가 유기적으로 연결돼 있어 협업이 필수적인 업무입니다. 또한 소음·진동 문제는 눈에 보이지 않고 한 번에 해결되지 않는 경우가 많아, 끝까지 원인을 파고들며 해결해 나가는 끈기 역시 중요한 역량이라고 생각합니다." data-en="I think there are three main competencies needed for this work. First is fundamentals. You need to be able to view noise and vibration phenomena based on understanding of the entire vehicle, including body, chassis, and powertrain systems. With these fundamentals in place, you can present more stable and realistic solutions. Second is the ability to read and interpret data. Vehicle performance development often makes decisions based on data generated through analysis, physical testing, and various virtual tools, so the ability to accurately read meaning from data is important. Finally, communication and persistence. Noise and vibration performance development is work that requires collaboration as multiple departments such as design, testing, quality, and production are organically connected. Also, noise and vibration problems are often invisible and not solved at once, so persistence in digging into the root cause until resolution is also an important competency.">
+                      이 업무에 필요한 역량은 크게 세 가지라고 생각합니다. 첫 번째는 기본기입니다. 차체, 섀시, 추진 시스템 등 차량 전반에 대한 이해를 바탕으로 소음·진동 현상을 바라볼 수 있어야 합니다. 이런 기본기가 갖춰져 있어야 보다 안정적이면서도 현실적인 해결책을 제시할 수 있다고 생각합니다. 두 번째는 데이터를 읽고 해석하는 능력입니다. 차량 성능 개발은 해석이나 물리 시험, 다양한 가상 툴을 통해 생성되는 데이터를 기반으로 의사결정이 이루어지는 경우가 많기 때문에, 데이터 속에서 의미를 정확히 읽어내는 능력이 중요합니다. 마지막으로는 커뮤니케이션과 끈기입니다. 소음·진동 성능 개발은 설계, 시험, 품질, 생산 등 여러 부서가 유기적으로 연결돼 있어 협업이 필수적인 업무입니다. 또한 소음·진동 문제는 눈에 보이지 않고 한 번에 해결되지 않는 경우가 많아, 끝까지 원인을 파고들며 해결해 나가는 끈기 역시 중요한 역량이라고 생각합니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?" data-en="Was there a memorable project you worked on?">
+                      진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?
+                    </h3>
+                    <p class="interview-answer" data-kr="트레일 블레이저와 트랙스 크로스오버 개발 당시, 소음진동 엔지니어로 참여했던 경험이 특히 기억에 많이 남습니다. 당시 국내외 소형 SUV 시장에서는 대부분 4기통 엔진을 사용하고 있었고, 3기통 엔진을 적용한 두 차종은 소음·진동 측면에서 태생적으로 불리한 조건을 안고 출발해야 했습니다. 그럼에도 불구하고 4기통 차량 수준의 소음·진동 성능 목표를 달성하기 위해 많은 시간과 자원, 그리고 노력이 필요했고, 관련 부서들과의 긴밀한 협업이 필수적이었습니다. 개발 초기부터 양산까지 한순간도 긴장을 늦출 수 없었던 프로젝트였습니다. 완성된 차량들이 양산 이후 국내외 시장에서 판매 성과는 물론, 품질과 상품성, 차량 가치 측면에서도 좋은 평가를 받는 모습을 보며 개인적으로 큰 보람과 자부심을 느꼈습니다. 엔지니어로서의 책임감과 성취감을 동시에 느낄 수 있었던 경험입니다." data-en="The experience of participating as a noise and vibration engineer during the development of Trailblazer and Trax Cross-over particularly stands out in my memory. At that time, most small SUVs in domestic and international markets used 4-cylinder engines, and the two models with 3-cylinder engines had to start with inherently disadvantageous conditions in terms of noise and vibration. Nevertheless, achieving 4-cylinder vehicle-level noise and vibration performance goals required a lot of time, resources, and effort, and close collaboration with related departments was essential. It was a project where we couldn't let our guard down for a moment from early development to mass production. Seeing the completed vehicles receive good evaluations in domestic and international markets after mass production, not only in sales performance but also in quality, product appeal, and vehicle value, I felt great satisfaction and pride personally. It was an experience where I could feel both a sense of responsibility and achievement as an engineer.">
+                      트레일 블레이저와 트랙스 크로스오버 개발 당시, 소음진동 엔지니어로 참여했던 경험이 특히 기억에 많이 남습니다. 당시 국내외 소형 SUV 시장에서는 대부분 4기통 엔진을 사용하고 있었고, 3기통 엔진을 적용한 두 차종은 소음·진동 측면에서 태생적으로 불리한 조건을 안고 출발해야 했습니다. 그럼에도 불구하고 4기통 차량 수준의 소음·진동 성능 목표를 달성하기 위해 많은 시간과 자원, 그리고 노력이 필요했고, 관련 부서들과의 긴밀한 협업이 필수적이었습니다. 개발 초기부터 양산까지 한순간도 긴장을 늦출 수 없었던 프로젝트였습니다. 완성된 차량들이 양산 이후 국내외 시장에서 판매 성과는 물론, 품질과 상품성, 차량 가치 측면에서도 좋은 평가를 받는 모습을 보며 개인적으로 큰 보람과 자부심을 느꼈습니다. 엔지니어로서의 책임감과 성취감을 동시에 느낄 수 있었던 경험입니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?" data-en="What is the team culture and what are your team members like?">
+                      팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?
+                    </h3>
+                    <p class="interview-answer" data-kr="저희 팀은 서로 필요한 부분은 잘 챙겨주면서도, 불필요한 간섭은 거의 없는 분위기입니다. 의견을 말하는 데 부담이 없어서 직급이나 연차에 상관없이 편하게 이야기할 수 있고, 각자의 방식을 존중해주는 팀이라고 생각합니다. 점심시간에는 함께 운동을 하기도 하고, 업무 중간중간 여유가 있을 때는 육아나 재테크, 여행처럼 다양한 주제로 수다도 많이 떠는 편입니다. 한마디로, 일할 때는 자연스럽게 몰입하고 평소에는 친구처럼 편안한 팀입니다." data-en="Our team has an atmosphere where we take good care of each other's needs while rarely interfering unnecessarily. There's no burden in expressing opinions, so we can talk comfortably regardless of rank or years of experience, and I think it's a team that respects each person's way. During lunch, we sometimes exercise together, and when we have free time during work, we often chat about various topics like parenting, investment, or travel. In short, it's a team that naturally immerses itself in work and is comfortable like friends in everyday life.">
+                      저희 팀은 서로 필요한 부분은 잘 챙겨주면서도, 불필요한 간섭은 거의 없는 분위기입니다. 의견을 말하는 데 부담이 없어서 직급이나 연차에 상관없이 편하게 이야기할 수 있고, 각자의 방식을 존중해주는 팀이라고 생각합니다. 점심시간에는 함께 운동을 하기도 하고, 업무 중간중간 여유가 있을 때는 육아나 재테크, 여행처럼 다양한 주제로 수다도 많이 떠는 편입니다. 한마디로, 일할 때는 자연스럽게 몰입하고 평소에는 친구처럼 편안한 팀입니다.
+                    </p>
+                  </div>
+                  
+                  <div class="interview-question">
+                    <h3 class="interview-q-title" data-kr="내게 GMTCK란?" data-en="What does GMTCK mean to you?">
+                      내게 GMTCK란?
+                    </h3>
+                    <p class="interview-answer" data-kr="제게 GMTCK는 첫 직장이자, 저를 꽤 그럴듯한 직장인으로 만들어준 곳입니다. 시행착오도 많았지만, 그 과정에서 일하는 법과 사람을 대하는 법을 자연스럽게 배웠습니다. MBTI로 치면 I 90% 성향의 저를, 이제는 사람들과 소통하고 의견을 나누는 데 훨씬 편한 사람으로 만들어준 곳이기도 합니다. 또 제가 좋아하는 다양한 차량을 직접 경험하고, 개발해 나가는 과정에서 새로운 도전에 재미를 느낄 수 있는, 제게는 아주 럭셔리한 놀이터 같은 공간이기도 합니다. 그래서 GMTCK는 제 삶에 큰 영향을 준, 고맙고 애정이 가는 회사입니다." data-en="To me, GMTCK is my first workplace and the place that made me into a fairly decent working professional. There were many trials and errors, but I naturally learned how to work and how to treat people through that process. It's also the place that made me, who would be I 90% in MBTI terms, much more comfortable communicating and sharing opinions with people. It's also a very luxurious playground-like space for me where I can directly experience and develop various vehicles I like, and feel excitement about new challenges in that process. So GMTCK is a company that has greatly influenced my life, one I'm grateful for and have affection for.">
+                      제게 GMTCK는 첫 직장이자, 저를 꽤 그럴듯한 직장인으로 만들어준 곳입니다. 시행착오도 많았지만, 그 과정에서 일하는 법과 사람을 대하는 법을 자연스럽게 배웠습니다. MBTI로 치면 I 90% 성향의 저를, 이제는 사람들과 소통하고 의견을 나누는 데 훨씬 편한 사람으로 만들어준 곳이기도 합니다. 또 제가 좋아하는 다양한 차량을 직접 경험하고, 개발해 나가는 과정에서 새로운 도전에 재미를 느낄 수 있는, 제게는 아주 럭셔리한 놀이터 같은 공간이기도 합니다. 그래서 GMTCK는 제 삶에 큰 영향을 준, 고맙고 애정이 가는 회사입니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a
+              href="https://www.gm-korea.co.kr/ko/home/privacy-statement.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-privacy-link"
+              data-kr="개인정보 처리방침"
+              data-en="Privacy Statement"
+            >
+              개인정보 처리방침
+            </a>
+            <p>GM Technical Center Korea</p>
+          </div>
+          <div class="footer-right">
+            <div class="footer-social">
+              <a
+                href="https://www.youtube.com/@GMTCK"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-link"
+                aria-label="YouTube"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/gmtck"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-link"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.gm.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-link"
+                aria-label="GM Global"
+              >
+                <img
+                  src="./images/global.png"
+                  alt="GM Global Website"
+                  class="footer-global-icon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 GM Technical Center Korea. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/language.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+      // Disable browser scroll restoration (redundant but safe)
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+
+      // Interview data - 이미지 파일명과 담당 정보 매핑
+      // 새로운 이미지 추가 시 여기에만 추가하면 자동으로 표시됨
+      const interviewData = {
+        // VE 본부
+        "ve1.png": { 
+          hq: "VE", 
+          role: "Safety Performance Integration", 
+          roleKr: "Safety Performance Integration", 
+          roleEn: "Safety Performance Integration",
+          name: "조영진",
+          nameKr: "조영진",
+          nameEn: "Youngjin Cho",
+          greeting: "안녕하세요\nVE본부의 Safety Performance Integration담당\n조영진입니다",
+          greetingKr: "안녕하세요\nVE본부의 Safety Performance Integration담당\n조영진입니다",
+          greetingEn: "Hello\nSafety Performance Integration, VE HQ\nYoungjin Cho"
+        },
+        "ve2.png": { 
+          hq: "VE", 
+          role: "Safety Performance Integration", 
+          roleKr: "Safety Performance Integration", 
+          roleEn: "Safety Performance Integration",
+          name: "이름2",
+          nameKr: "이름2",
+          nameEn: "Name2",
+          greeting: "안녕하세요\nVE본부의 Safety Performance Integration담당\n이름2입니다",
+          greetingKr: "안녕하세요\nVE본부의 Safety Performance Integration담당\n이름2입니다",
+          greetingEn: "Hello\nSafety Performance Integration, VE HQ\nName2"
+        },
+        "ve3.png": { 
+          hq: "VE", 
+          role: "Virtual Integration Center & ADAS", 
+          roleKr: "Virtual Integration Center & ADAS", 
+          roleEn: "Virtual Integration Center & ADAS",
+          name: "이름3",
+          nameKr: "이름3",
+          nameEn: "Name3",
+          greeting: "안녕하세요.<br>Virtual Integration Center & ADAS 담당<br>입니다.",
+          greetingKr: "안녕하세요.<br>Virtual Integration Center & ADAS 담당<br>입니다.",
+          greetingEn: "Hello.<br>I'm from Virtual Integration Center & ADAS."
+        },
+        // AVD & SVI 본부
+        "AVD1.png": { 
+          hq: "AVD & SVI", 
+          role: "Advanced Vehicle Development", 
+          roleKr: "Advanced Vehicle Development", 
+          roleEn: "Advanced Vehicle Development",
+          name: "김성수",
+          nameKr: "김성수",
+          nameEn: "Seongsu Kim",
+          greeting: "안녕하세요\nAVD & SVI본부의 Advanced Vehicle Development담당\n김성수입니다",
+          greetingKr: "안녕하세요\nAVD & SVI본부의 Advanced Vehicle Development담당\n김성수입니다",
+          greetingEn: "Hello\nAdvanced Vehicle Development, AVD & SVI HQ\nSeongsu Kim",
+          interviewId: "avd-advanced-vehicle" // 기존 인터뷰 섹션 ID
+        },
+        "SVI1.png": { 
+          hq: "AVD & SVI", 
+          role: "Studio & Surface Integration", 
+          roleKr: "Studio & Surface Integration", 
+          roleEn: "Studio & Surface Integration",
+          name: "이정원차장",
+          nameKr: "이정원차장",
+          nameEn: "Jeongwon Lee",
+          greeting: "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n이정원차장입니다",
+          greetingKr: "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n이정원차장입니다",
+          greetingEn: "Hello\nStudio & Surface Integration, AVD & SVI HQ\nJeongwon Lee",
+          interviewId: "avd-studio-surface" // 기존 인터뷰 섹션 ID
+        },
+        // PIPG 본부
+        "PIPG1.png": { 
+          hq: "PIPG", 
+          role: "PSC", 
+          roleKr: "PSC", 
+          roleEn: "PSC",
+          name: "이재혁",
+          nameKr: "이재혁",
+          nameEn: "Jaehyuk Lee",
+          greeting: "안녕하세요\nPIPG본부의 Propulsion System Calibration담당\n이재혁입니다",
+          greetingKr: "안녕하세요\nPIPG본부의 Propulsion System Calibration담당\n이재혁입니다",
+          greetingEn: "Hello\nPropulsion System Calibration, PIPG HQ\nJaehyuk Lee",
+          interviewId: "pipg-psc" // 기존 인터뷰 섹션 ID
+        },
+        "PIPG2.png": { 
+          hq: "PIPG", 
+          role: "VPD/PID", 
+          roleKr: "VPD/PID", 
+          roleEn: "VPD/PID",
+          name: "이름",
+          nameKr: "이름",
+          nameEn: "Name",
+          greeting: "안녕하세요.<br>VPD/PID 담당<br>입니다.",
+          greetingKr: "안녕하세요.<br>VPD/PID 담당<br>입니다.",
+          greetingEn: "Hello.<br>I'm from VPD/PID.",
+          interviewId: "pipg-vpd-pid" // 기존 인터뷰 섹션 ID
+        }
+      };
+
+      // 인터뷰 내용 데이터 (각 사람별 인터뷰 내용)
+      const interviewContent = {
+        "avd-advanced-vehicle": {
+          questions: [
+            {
+              q: "AVD 담당은 어떤 일을 하는 곳인가요?",
+              qKr: "AVD 담당은 어떤 일을 하는 곳인가요?",
+              qEn: "What does the AVD department do?",
+              a: "AVD(Advanced Vehicle Development) 담당은 차량개발초기 Architecture와 Package(차체 구조·공간 설계)를 기반으로 고객이 체감하는 차량의 기본기를 설계·기획하고, 혁신적인 아이디어와 프로젝트를 발굴·주도하여 GMTCK 전사의 Innovation Hub 역할을 수행하는 조직입니다.",
+              aKr: "AVD(Advanced Vehicle Development) 담당은 차량개발초기 Architecture와 Package(차체 구조·공간 설계)를 기반으로 고객이 체감하는 차량의 기본기를 설계·기획하고, 혁신적인 아이디어와 프로젝트를 발굴·주도하여 GMTCK 전사의 Innovation Hub 역할을 수행하는 조직입니다.",
+              aEn: "The AVD (Advanced Vehicle Development) department designs and plans the fundamental aspects of vehicles that customers experience, based on Architecture and Package (body structure and space design) in the early stages of vehicle development, and serves as GMTCK's Innovation Hub by discovering and leading innovative ideas and projects."
+            },
+            {
+              q: "AVD 담당은 고객에게 왜 중요한가요?",
+              qKr: "AVD 담당은 고객에게 왜 중요한가요?",
+              qEn: "Why is the AVD department important to customers?",
+              a: "고객이 실제로 경험하는 주행거리, 공간감, 승차감, 안전과 가격에 대한 신뢰 같은 \"차량의 기본기와 상품성\"은 모두 AVD가 설계하는 Architecture와 Package에서 출발합니다. 예를 들어, 한 번 충전(또는 주유)으로 얼마나 멀리, 얼마나 효율적으로 갈 수 있는지(Propulsion), 승객이 느껴지는 seating posture, headroom, legroom, 전체적인 spaciousness, driver visibility, 그리고 승하차 편의성까지 포함한 종합적인 실내 경험, 코너링 · 직진 안정성 · 정숙성 등 Ride Comfort와 Driving Feel의 기본 Balance, 겉으로 보이지 않는 Body Structure와 Crash Architecture가 만들어 내는 충돌 성능과 Safety에 대한 신뢰감, 같은 가격대에서 얼마나 합리적인 사양과 구성을 제공하는지, 즉 Value for Money를 얼마나 잘 충족하는지 이 모든 것들이 AVD가 세우는 Fundamental 기준과 판단에 따라 달라집니다. AVD는 차량개발초기 Vehicle Fundamentals를 설계하고, 성능·안전·공간·가격 사이의 밸런스를 조율해 고객 가치(Customer Value)와 브랜드 신뢰(Brand Trust)를 만들어 가는 팀입니다.",
+              aKr: "고객이 실제로 경험하는 주행거리, 공간감, 승차감, 안전과 가격에 대한 신뢰 같은 \"차량의 기본기와 상품성\"은 모두 AVD가 설계하는 Architecture와 Package에서 출발합니다. 예를 들어, 한 번 충전(또는 주유)으로 얼마나 멀리, 얼마나 효율적으로 갈 수 있는지(Propulsion), 승객이 느껴지는 seating posture, headroom, legroom, 전체적인 spaciousness, driver visibility, 그리고 승하차 편의성까지 포함한 종합적인 실내 경험, 코너링 · 직진 안정성 · 정숙성 등 Ride Comfort와 Driving Feel의 기본 Balance, 겉으로 보이지 않는 Body Structure와 Crash Architecture가 만들어 내는 충돌 성능과 Safety에 대한 신뢰감, 같은 가격대에서 얼마나 합리적인 사양과 구성을 제공하는지, 즉 Value for Money를 얼마나 잘 충족하는지 이 모든 것들이 AVD가 세우는 Fundamental 기준과 판단에 따라 달라집니다. AVD는 차량개발초기 Vehicle Fundamentals를 설계하고, 성능·안전·공간·가격 사이의 밸런스를 조율해 고객 가치(Customer Value)와 브랜드 신뢰(Brand Trust)를 만들어 가는 팀입니다.",
+              aEn: "All the \"fundamentals and product appeal of vehicles\" that customers actually experience, such as driving range, sense of space, ride comfort, trust in safety and price, start from the Architecture and Package designed by AVD. For example, how far and efficiently one can go on a single charge (or refuel) (Propulsion), the comprehensive interior experience including seating posture, headroom, legroom, overall spaciousness, driver visibility, and entry/exit convenience that passengers feel, the basic balance of Ride Comfort and Driving Feel such as cornering, straight-line stability, and quietness, the collision performance and trust in safety created by the invisible Body Structure and Crash Architecture, and how well Value for Money is met in terms of how reasonable specifications and configurations are provided at the same price point - all of these depend on the fundamental standards and judgments established by AVD. AVD is a team that designs Vehicle Fundamentals in the early stages of vehicle development and creates Customer Value and Brand Trust by coordinating the balance between performance, safety, space, and price."
+            },
+            {
+              q: "AVD 담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+              qKr: "AVD 담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+              qEn: "What competencies do you think are necessary for AVD department work?",
+              a: "AVD 업무는 차량의 \"큰 그림(Big Picture)\"을 설계하고, \"Innovation Hub\"로서 여러 조직을 하나의 방향으로 연결해 고객에게 더 나은 차를 제공하는 역할을 합니다. 이를 위해 위해 AVD에서의 필요 역량은 System-Level Thinking: Architecture, package 전반을 아우르는 시야와 제약 조건 하에서 최적의 균형점을 찾는 역량, Cross-Functional Collaboration: Design, Powertrain, Electrical, Manufacturing, Safety, Interior 등과 효과적으로 소통·조율하는 긴밀한 협업 능력, Customer & Market Insight: Global Benchmarking과 데이터 분석을 통해 고객 가치와 시장 요구를 읽어내는 능력, Innovation Mindset & Learning Agility: 전동화(Electrification), SDV(Software-Defined Vehicle)와 같은 새로운 기술·아키텍처를 빠르게 이해하고, 새로운 패키징 아이디어(New Packaging Ideas)를 스스로 탐색해 시험해 보는 도전적인 태도, Innovation Leadership: 새로운 아이디어와 업무 방식을 발굴·실행해, 업무 방식을 더 Efficient & Effective 하게 만드는 추진력입니다.",
+              aKr: "AVD 업무는 차량의 \"큰 그림(Big Picture)\"을 설계하고, \"Innovation Hub\"로서 여러 조직을 하나의 방향으로 연결해 고객에게 더 나은 차를 제공하는 역할을 합니다. 이를 위해 위해 AVD에서의 필요 역량은 System-Level Thinking: Architecture, package 전반을 아우르는 시야와 제약 조건 하에서 최적의 균형점을 찾는 역량, Cross-Functional Collaboration: Design, Powertrain, Electrical, Manufacturing, Safety, Interior 등과 효과적으로 소통·조율하는 긴밀한 협업 능력, Customer & Market Insight: Global Benchmarking과 데이터 분석을 통해 고객 가치와 시장 요구를 읽어내는 능력, Innovation Mindset & Learning Agility: 전동화(Electrification), SDV(Software-Defined Vehicle)와 같은 새로운 기술·아키텍처를 빠르게 이해하고, 새로운 패키징 아이디어(New Packaging Ideas)를 스스로 탐색해 시험해 보는 도전적인 태도, Innovation Leadership: 새로운 아이디어와 업무 방식을 발굴·실행해, 업무 방식을 더 Efficient & Effective 하게 만드는 추진력입니다.",
+              aEn: "AVD work plays a role in designing the \"Big Picture\" of vehicles and connecting multiple organizations in one direction as an \"Innovation Hub\" to provide customers with better vehicles. For this, the necessary competencies in AVD are: System-Level Thinking: the ability to have a vision that encompasses the entire Architecture and package and find optimal balance points under constraints; Cross-Functional Collaboration: the ability to effectively communicate and coordinate with Design, Powertrain, Electrical, Manufacturing, Safety, Interior, etc.; Customer & Market Insight: the ability to read customer value and market demands through Global Benchmarking and data analysis; Innovation Mindset & Learning Agility: a challenging attitude to quickly understand new technologies and architectures such as Electrification and SDV (Software-Defined Vehicle), and to explore and test new packaging ideas on one's own; Innovation Leadership: the drive to discover and execute new ideas and work methods, making work methods more Efficient & Effective."
+            },
+            {
+              q: "AVD 담당의 매력은?",
+              qKr: "AVD 담당의 매력은?",
+              qEn: "What is the appeal of the AVD department?",
+              a: "AVD 담당의 매력은 새로운 차량 개발과 전사 Innovation의 선두에서, 차량 개발의 가장 초기 단계에서 제품의 방향성과 고객 경험을 결정짓는 핵심 역할을 하면서, 다양한 조직과 협업해 폭넓은 지신과 시야를 확보 할 수 있으며, Architecture·Package를 통해 차량의 \"뼈대\"를 설계하는 독보적인 전문성을 쌓을 수 있습니다.",
+              aKr: "AVD 담당의 매력은 새로운 차량 개발과 전사 Innovation의 선두에서, 차량 개발의 가장 초기 단계에서 제품의 방향성과 고객 경험을 결정짓는 핵심 역할을 하면서, 다양한 조직과 협업해 폭넓은 지신과 시야를 확보 할 수 있으며, Architecture·Package를 통해 차량의 \"뼈대\"를 설계하는 독보적인 전문성을 쌓을 수 있습니다.",
+              aEn: "The appeal of the AVD department is that at the forefront of new vehicle development and company-wide Innovation, while playing a key role in determining product direction and customer experience at the earliest stage of vehicle development, you can collaborate with various organizations to gain broad knowledge and perspective, and build unique expertise in designing the \"skeleton\" of vehicles through Architecture and Package."
+            },
+            {
+              q: "앞으로 AVD 담당이 지향하는 목표는 무엇인가요?",
+              qKr: "앞으로 AVD 담당이 지향하는 목표는 무엇인가요?",
+              qEn: "What are the goals that the AVD department aims for in the future?",
+              a: "AVD 담당의 지향 목표는, Customer-Value-Driven Architecture Leader: 주행거리·공간·승차감·안전·가격 경쟁력 등 고객이 체감하는 기본기를 미래 고객 요구를 반영한 차세대 Vehicle Structure를 설계하는 조직, Insight & Benchmarking-Based Decision Hub: 지속적인 글로벌 벤치마킹과 신규 아이디어 발궁르 통한 프로그램별 고객 가치 극대화, Enterprise Innovation & Front-Loading Hub: 품질·원가·개발 리드타임을 동시에 개선하고, 새로운 아이디어와 업무 방식을 확산하는 GMTCK의 Innovation Hub입니다.",
+              aKr: "AVD 담당의 지향 목표는, Customer-Value-Driven Architecture Leader: 주행거리·공간·승차감·안전·가격 경쟁력 등 고객이 체감하는 기본기를 미래 고객 요구를 반영한 차세대 Vehicle Structure를 설계하는 조직, Insight & Benchmarking-Based Decision Hub: 지속적인 글로벌 벤치마킹과 신규 아이디어 발궁르 통한 프로그램별 고객 가치 극대화, Enterprise Innovation & Front-Loading Hub: 품질·원가·개발 리드타임을 동시에 개선하고, 새로운 아이디어와 업무 방식을 확산하는 GMTCK의 Innovation Hub입니다.",
+              aEn: "The goals that the AVD department aims for are: Customer-Value-Driven Architecture Leader: an organization that designs next-generation Vehicle Structure reflecting future customer demands for fundamentals that customers experience such as driving range, space, ride comfort, safety, and price competitiveness; Insight & Benchmarking-Based Decision Hub: maximizing customer value per program through continuous global benchmarking and discovery of new ideas; Enterprise Innovation & Front-Loading Hub: GMTCK's Innovation Hub that simultaneously improves quality, cost, and development lead time, and spreads new ideas and work methods."
+            }
+          ]
+        },
+        "avd-studio-surface": {
+          questions: [
+            {
+              q: "SSI 담당은 어떤 일을 하는 곳인가요?",
+              qKr: "SSI 담당은 어떤 일을 하는 곳인가요?",
+              qEn: "What does the SSI department do?",
+              a: "SSI 담당은 자동차 외관 디자인과 실제 차체 구조가 완벽하게 조화를 이루도록 만드는 팀입니다. 디자이너가 만든 멋진 스케치가 현실적인 안전 · 구조 기준을 충족하고, 생산 공장에서 문제없이 조립될 수 있도록 디자인과 엔지니어링 사이를 이어주는 조율자 역할을 합니다.",
+              aKr: "SSI 담당은 자동차 외관 디자인과 실제 차체 구조가 완벽하게 조화를 이루도록 만드는 팀입니다. 디자이너가 만든 멋진 스케치가 현실적인 안전 · 구조 기준을 충족하고, 생산 공장에서 문제없이 조립될 수 있도록 디자인과 엔지니어링 사이를 이어주는 조율자 역할을 합니다.",
+              aEn: "The SSI department is a team that creates perfect harmony between automotive exterior design and actual body structure. It plays the role of a coordinator connecting design and engineering, ensuring that the beautiful sketches created by designers meet realistic safety and structural standards and can be assembled without problems in production factories."
+            },
+            {
+              q: "SSI 담당은 고객에게 왜 중요한가요?",
+              qKr: "SSI 담당은 고객에게 왜 중요한가요?",
+              qEn: "Why is the SSI department important to customers?",
+              a: "고객이 차를 보거나 만질 때 느끼는 첫인상과 품질은 대부분 SSI의 영역과 연결됩니다. 멀리서 봤을 때 아름다운 비율, 가까이서 봤을 때 정교한 단차와 표면 품질, 문을 열고 닫을 때의 느낌, 외관 부품의 조립 정밀도 이 모든 요소들이 고객이 느끼는 차량 품질과 직결되며, SSI는 기획 단계부터 출시까지 전체 여정에서 이러한 품질을 설계하고 관리하는 팀입니다.",
+              aKr: "고객이 차를 보거나 만질 때 느끼는 첫인상과 품질은 대부분 SSI의 영역과 연결됩니다. 멀리서 봤을 때 아름다운 비율, 가까이서 봤을 때 정교한 단차와 표면 품질, 문을 열고 닫을 때의 느낌, 외관 부품의 조립 정밀도 이 모든 요소들이 고객이 느끼는 차량 품질과 직결되며, SSI는 기획 단계부터 출시까지 전체 여정에서 이러한 품질을 설계하고 관리하는 팀입니다.",
+              aEn: "The first impression and quality that customers feel when seeing or touching a car are mostly connected to SSI's domain. Beautiful proportions when viewed from afar, precise gaps and surface quality when viewed up close, the feel when opening and closing doors, and the assembly precision of exterior components - all these elements are directly linked to the vehicle quality that customers perceive. SSI is a team that designs and manages this quality throughout the entire journey from planning to launch."
+            },
+            {
+              q: "차량 개발 과정의 언제부터 SSI가 참여하나요?",
+              qKr: "차량 개발 과정의 언제부터 SSI가 참여하나요?",
+              qEn: "When does SSI participate in the vehicle development process?",
+              a: "SSI는 최초 콘셉트 기획 단계부터 참여합니다. 차급(예: 소형 SUV·중형 세단) 방향 설정, 휠베이스 · 비율 · 실내 · 트렁크 공간 배분, 초기 패키징 방향 검토 이후 차량 개발 전 과정에 걸쳐 \"처음 기획한 모습이 실제로 구현 가능한가?\"를 지속적으로 확인합니다.",
+              aKr: "SSI는 최초 콘셉트 기획 단계부터 참여합니다. 차급(예: 소형 SUV·중형 세단) 방향 설정, 휠베이스 · 비율 · 실내 · 트렁크 공간 배분, 초기 패키징 방향 검토 이후 차량 개발 전 과정에 걸쳐 \"처음 기획한 모습이 실제로 구현 가능한가?\"를 지속적으로 확인합니다.",
+              aEn: "SSI participates from the initial concept planning stage. After setting vehicle segment direction (e.g., compact SUV, mid-size sedan), wheelbase, proportions, interior and trunk space allocation, and initial packaging direction review, SSI continuously verifies throughout the entire vehicle development process whether \"the initially planned design can actually be implemented.\""
+            },
+            {
+              q: "SSI담당에서 일하시는 분들은 주로 어떤 전공 출신인가요?",
+              qKr: "SSI담당에서 일하시는 분들은 주로 어떤 전공 출신인가요?",
+              qEn: "What majors do people working in the SSI department typically come from?",
+              a: "가장 많은 비율은 기계공학, 자동차공학, 항공우주공학 등 공학 계열 전공자들입니다. 여기에 산업공학, 전기·전자, 산업디자인 전공자들도 함께 어울려 일하고 있습니다. 전공이 꼭 자동차 전공일 필요는 없지만, \"물건이 어떻게 구조를 이루고, 어떻게 만들어지는지\"를 좋아하는 분들이 잘 맞는 편입니다. 무엇보다도, 다양한 전공 배경을 가진 사람들이 각자의 강점을 살려 협업하는 문화라, 배우고 섞이려는 태도를 더 중요하게 보고 있습니다.",
+              aKr: "가장 많은 비율은 기계공학, 자동차공학, 항공우주공학 등 공학 계열 전공자들입니다. 여기에 산업공학, 전기·전자, 산업디자인 전공자들도 함께 어울려 일하고 있습니다. 전공이 꼭 자동차 전공일 필요는 없지만, \"물건이 어떻게 구조를 이루고, 어떻게 만들어지는지\"를 좋아하는 분들이 잘 맞는 편입니다. 무엇보다도, 다양한 전공 배경을 가진 사람들이 각자의 강점을 살려 협업하는 문화라, 배우고 섞이려는 태도를 더 중요하게 보고 있습니다.",
+              aEn: "The largest proportion consists of engineering majors such as mechanical engineering, automotive engineering, and aerospace engineering. Industrial engineering, electrical and electronics, and industrial design majors also work together. While the major doesn't necessarily have to be automotive, people who like \"how things are structured and how they are made\" tend to fit well. Above all, since it's a culture where people with diverse academic backgrounds collaborate by leveraging each other's strengths, we value an attitude of learning and blending more."
+            },
+            {
+              q: "AVD SVI 본부에서 일하고 싶은 사람은 어떤 준비를 하면 좋을까요?",
+              qKr: "AVD SVI 본부에서 일하고 싶은 사람은 어떤 준비를 하면 좋을까요?",
+              qEn: "What preparation would be good for someone who wants to work in the AVD SVI headquarters?",
+              a: "먼저 학교에서는 기초 역학, 재료, 설계 과목을 통해 \"구조를 이해하고 문제를 푸는 연습\"을 충분히 해 두면 도움이 됩니다. 가능하다면 CAD(3D 모델링)나 간단한 시뮬레이션 도구를 다뤄보고, 팀 프로젝트등을 통해 함께 무언가를 만들어 본 경험이 있으면 좋을 것 같습니다. 자동차 회사라고 해서 단순히 자동차만 깊게 파는 사람을 찾는 것은 아닙니다. 오히려 고객의 관점에서 사고하고, 동료들과 솔직하게 소통하며, 실패를 두려워하지 않고 계속 시도해 보려는 태도를 큰 장점으로 봅니다. 마지막으로, 완벽한 사람이기보다는 배우면서 성장하고 싶어 하는 사람, 그리고 \"이 차를 타는 사람에게 어떤 경험을 줄까?\"를 자연스럽게 떠올리는 사람이라면 SSI와 잘 어울릴 것입니다.",
+              aKr: "먼저 학교에서는 기초 역학, 재료, 설계 과목을 통해 \"구조를 이해하고 문제를 푸는 연습\"을 충분히 해 두면 도움이 됩니다. 가능하다면 CAD(3D 모델링)나 간단한 시뮬레이션 도구를 다뤄보고, 팀 프로젝트등을 통해 함께 무언가를 만들어 본 경험이 있으면 좋을 것 같습니다. 자동차 회사라고 해서 단순히 자동차만 깊게 파는 사람을 찾는 것은 아닙니다. 오히려 고객의 관점에서 사고하고, 동료들과 솔직하게 소통하며, 실패를 두려워하지 않고 계속 시도해 보려는 태도를 큰 장점으로 봅니다. 마지막으로, 완벽한 사람이기보다는 배우면서 성장하고 싶어 하는 사람, 그리고 \"이 차를 타는 사람에게 어떤 경험을 줄까?\"를 자연스럽게 떠올리는 사람이라면 SSI와 잘 어울릴 것입니다.",
+              aEn: "First, it would be helpful to sufficiently practice \"understanding structures and solving problems\" through basic mechanics, materials, and design courses in school. If possible, it would be good to have experience working with CAD (3D modeling) or simple simulation tools, and experience creating something together through team projects. We don't simply look for people who only deeply study cars just because it's an automotive company. Rather, we see great value in an attitude of thinking from the customer's perspective, communicating honestly with colleagues, and continuing to try without fearing failure. Finally, someone who wants to grow while learning rather than being perfect, and who naturally thinks \"what experience can I give to the person driving this car?\" would fit well with SSI."
+            },
+            {
+              q: "앞으로 SSI 담당이 지향하는 목표는 무엇인가요?",
+              qKr: "앞으로 SSI 담당이 지향하는 목표는 무엇인가요?",
+              qEn: "What are the goals that the SSI department aims for in the future?",
+              a: "SSI의 목표는 고객이 '처음 차량을 보는 순간부터, 오랜 기간 사용하는 전 과정'에서 일관되고 신뢰할 수 있는 외관 품질을 제공하는 것입니다. 이를 위해 SSI는 글로벌 팀과 공동 개발, 가상 개발/빠른 검증 등 최신 프로세스 적용, 신소재·신기술의 빠른 도입, 디자인·설계·생산 부서와의 긴밀한 협업을 통해 더 빠르고, 더 정교하고, 더 완성도 높은 차량 외관 품질을 목표로 하고 있습니다.",
+              aKr: "SSI의 목표는 고객이 '처음 차량을 보는 순간부터, 오랜 기간 사용하는 전 과정'에서 일관되고 신뢰할 수 있는 외관 품질을 제공하는 것입니다. 이를 위해 SSI는 글로벌 팀과 공동 개발, 가상 개발/빠른 검증 등 최신 프로세스 적용, 신소재·신기술의 빠른 도입, 디자인·설계·생산 부서와의 긴밀한 협업을 통해 더 빠르고, 더 정교하고, 더 완성도 높은 차량 외관 품질을 목표로 하고 있습니다.",
+              aEn: "SSI's goal is to provide consistent and reliable exterior quality to customers 'from the moment they first see the vehicle through the entire process of long-term use.' To achieve this, SSI aims for faster, more precise, and higher-quality vehicle exterior quality through joint development with global teams, application of latest processes such as virtual development/rapid verification, quick adoption of new materials and technologies, and close collaboration with design, engineering, and production departments."
+            }
+          ]
+        },
+        "ve-virtual-engineering-solution": {
+          questions: []
+        },
+        "ve-safety-performance": {
+          questions: [
+            {
+              q: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+              qKr: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+              qEn: "Please introduce your department and tell us about your current responsibilities in detail.",
+              a: "",
+              aKr: "",
+              aEn: ""
+            },
+            {
+              q: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+              qKr: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+              qEn: "What competencies do you think are necessary for your work?",
+              a: "",
+              aKr: "",
+              aEn: ""
+            },
+            {
+              q: "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+              qKr: "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+              qEn: "Was there any memorable project among the projects you worked on?",
+              a: "",
+              aKr: "",
+              aEn: ""
+            },
+            {
+              q: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+              qKr: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+              qEn: "What is the team culture and what are your team members like?",
+              a: "",
+              aKr: "",
+              aEn: ""
+            },
+            {
+              q: "내게 GMTCK란?",
+              qKr: "내게 GMTCK란?",
+              qEn: "What does GMTCK mean to me?",
+              a: "",
+              aKr: "",
+              aEn: ""
+            }
+          ]
+        },
+        "pipg-psc": {
+          questions: [
+            {
+              q: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+              qKr: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+              qEn: "Please introduce your department and tell us about your current responsibilities in detail.",
+              a: "저희 담당은 엔진/트랜스미션 캘리브레이션 경험을 바탕으로 전기차 캘리브레이션, 소프트웨어, 시뮬레이션까지 업무 영역을 확장하며, AI, 가상 기술을 활용해 차량 제어 전반과 안정적인 차량 출시를 지원하고 있습니다. 저는 전기차 업무를 담당하며, 실차와 가상 환경을 통해 전기차 시스템의 안전, 성능과 품질을 사전에 검증하고 양산 전 리스크를 최소화하고 있습니다.",
+              aKr: "저희 담당은 엔진/트랜스미션 캘리브레이션 경험을 바탕으로 전기차 캘리브레이션, 소프트웨어, 시뮬레이션까지 업무 영역을 확장하며, AI, 가상 기술을 활용해 차량 제어 전반과 안정적인 차량 출시를 지원하고 있습니다. 저는 전기차 업무를 담당하며, 실차와 가상 환경을 통해 전기차 시스템의 안전, 성능과 품질을 사전에 검증하고 양산 전 리스크를 최소화하고 있습니다.",
+              aEn: "Our department expands its work scope from engine/transmission calibration experience to EV calibration, software, and simulation, supporting overall vehicle control and stable vehicle launch using AI and virtual technologies. I am responsible for EV work, pre-verifying the safety, performance, and quality of EV systems through real vehicles and virtual environments, minimizing risks before mass production."
+            },
+            {
+              q: "하루 업무에 대해 소개해주세요.",
+              qKr: "하루 업무에 대해 소개해주세요.",
+              qEn: "Please tell us about your daily work.",
+              a: "보통 전날 밤이나 아침에 북미에서 전달된 업무 메일을 확인하며 하루를 시작합니다. 현재는 시뮬레이션 장비를 활용해 검증 업무를 수행하며, 전기차 시스템이 요구 조건에 맞게 안전하게 동작하는지 검증하고 있습니다.",
+              aKr: "보통 전날 밤이나 아침에 북미에서 전달된 업무 메일을 확인하며 하루를 시작합니다. 현재는 시뮬레이션 장비를 활용해 검증 업무를 수행하며, 전기차 시스템이 요구 조건에 맞게 안전하게 동작하는지 검증하고 있습니다.",
+              aEn: "I usually start my day by checking work emails from North America that came in the previous night or morning. Currently, I perform verification work using simulation equipment, verifying that EV systems operate safely according to requirements."
+            },
+            {
+              q: "담당하고 있는 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+              qKr: "담당하고 있는 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+              qEn: "What competencies do you think are necessary for your work?",
+              a: "전기차 검증 업무에는 전기차 시스템에 대한 이해와 함께, 실차와 시뮬레이션을 중심으로 한 가상 검증 환경을 유기적으로 활용하는 역량이 중요하다고 생각합니다. 실차 시험은 여전히 핵심이지만, 사전에 시뮬레이션과 같은 가상 환경에서 조건을 구성해 문제를 줄여가는 접근이 점점 필수적인 요소가 되고 있습니다. 이러한 가상 검증 결과를 바탕으로 추가 시험이 필요한지, 또는 어떤 리스크를 관리해야 하는지를 판단할 수 있는 의사결정 역량 또한 중요한 요소가 되고 있다고 느끼고 있습니다.",
+              aKr: "전기차 검증 업무에는 전기차 시스템에 대한 이해와 함께, 실차와 시뮬레이션을 중심으로 한 가상 검증 환경을 유기적으로 활용하는 역량이 중요하다고 생각합니다. 실차 시험은 여전히 핵심이지만, 사전에 시뮬레이션과 같은 가상 환경에서 조건을 구성해 문제를 줄여가는 접근이 점점 필수적인 요소가 되고 있습니다. 이러한 가상 검증 결과를 바탕으로 추가 시험이 필요한지, 또는 어떤 리스크를 관리해야 하는지를 판단할 수 있는 의사결정 역량 또한 중요한 요소가 되고 있다고 느끼고 있습니다.",
+              aEn: "I think understanding EV systems and the ability to organically utilize virtual verification environments centered on real vehicles and simulation is important for EV verification work. Real vehicle testing is still core, but the approach of configuring conditions in virtual environments like simulation beforehand to reduce problems is becoming increasingly essential. I also feel that decision-making capabilities to judge whether additional testing is needed or what risks need to be managed based on these virtual verification results are becoming important factors."
+            },
+            {
+              q: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+              qKr: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+              qEn: "What is the team culture and what are your team members like?",
+              a: "저희 팀은 서로에 대한 배려와 신뢰를 바탕으로 움직이는 팀이라고 생각합니다. 팀 특성상 실차 시험이 많아 차량 이슈를 자주 접하는데, 한 번 도움을 받으면 자연스럽게 서로 돕는 분위기가 형성되어 있고, 누가 시키지 않아도 다 같이 모여 문제를 해결합니다. 덕분에 저도 부담 없이 도움을 요청할 수 있는, 함께 일하기 편한 팀입니다.",
+              aKr: "저희 팀은 서로에 대한 배려와 신뢰를 바탕으로 움직이는 팀이라고 생각합니다. 팀 특성상 실차 시험이 많아 차량 이슈를 자주 접하는데, 한 번 도움을 받으면 자연스럽게 서로 돕는 분위기가 형성되어 있고, 누가 시키지 않아도 다 같이 모여 문제를 해결합니다. 덕분에 저도 부담 없이 도움을 요청할 수 있는, 함께 일하기 편한 팀입니다.",
+              aEn: "I think our team operates based on mutual consideration and trust. Due to the nature of our team, we frequently encounter vehicle issues as we conduct many real vehicle tests. Once someone receives help, a natural atmosphere of mutual assistance forms, and everyone gathers to solve problems without being asked. Thanks to this, I can request help without burden, making it a comfortable team to work with."
+            },
+            {
+              q: "앞으로의 목표 또는 커리어 방향",
+              qKr: "앞으로의 목표 또는 커리어 방향",
+              qEn: "Future goals or career direction",
+              a: "검증 결과에 책임을 지고, 고객 안전을 기준으로 판단할 수 있는 검증 엔지니어가 되는 것이 제 방향입니다. 단순히 통과 여부를 확인하는 데 그치지 않고, 검증 단계에서 문제를 사전에 설명하고 줄일 수 있는 역할을 목표로 하고 있습니다. 제 시험 결과가 곧 고객의 안전과 직결된다는 인식을 바탕으로, 책임감 있게 검증 업무를 수행하고 싶습니다.",
+              aKr: "검증 결과에 책임을 지고, 고객 안전을 기준으로 판단할 수 있는 검증 엔지니어가 되는 것이 제 방향입니다. 단순히 통과 여부를 확인하는 데 그치지 않고, 검증 단계에서 문제를 사전에 설명하고 줄일 수 있는 역할을 목표로 하고 있습니다. 제 시험 결과가 곧 고객의 안전과 직결된다는 인식을 바탕으로, 책임감 있게 검증 업무를 수행하고 싶습니다.",
+              aEn: "My direction is to become a verification engineer who takes responsibility for verification results and can make judgments based on customer safety. I aim not just to check pass/fail, but to play a role in explaining and reducing problems in advance during the verification stage. Based on the recognition that my test results are directly connected to customer safety, I want to perform verification work responsibly."
+            }
+          ]
+        },
+        "pipg-vpd-pid": {
+          questions: [
+            {
+              q: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+              qKr: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+              qEn: "Please introduce your department and tell us about your current responsibilities in detail.",
+              a: "저희 담당은 차량의 주행성이나 정숙성처럼, 고객이 실제로 체감하는 성능을 통합적으로 관리하는 역할을 하고 있습니다. 차량 동력성능 개발, 소음&진동, 가상 개발팀이 긴밀하게 협업하며 시험과 해석을 하나의 흐름으로 연결하고, 그 안에서 최적의 차량 성능을 만들어가고 있습니다. 저는 그 중에서도 소음&진동 성능 개발 엔지니어로서, 불쾌한 소음과 진동을 줄이는 역할 뿐만 아니라 차량의 모델이나 브랜드 이미지에 어울리는 엔진 사운드와 전기차 모터 사운드를 만들어가는 업무를 맡고 있습니다.",
+              aKr: "저희 담당은 차량의 주행성이나 정숙성처럼, 고객이 실제로 체감하는 성능을 통합적으로 관리하는 역할을 하고 있습니다. 차량 동력성능 개발, 소음&진동, 가상 개발팀이 긴밀하게 협업하며 시험과 해석을 하나의 흐름으로 연결하고, 그 안에서 최적의 차량 성능을 만들어가고 있습니다. 저는 그 중에서도 소음&진동 성능 개발 엔지니어로서, 불쾌한 소음과 진동을 줄이는 역할 뿐만 아니라 차량의 모델이나 브랜드 이미지에 어울리는 엔진 사운드와 전기차 모터 사운드를 만들어가는 업무를 맡고 있습니다.",
+              aEn: "Our department plays a role in comprehensively managing performance that customers actually feel, such as vehicle drivability and quietness. Vehicle powertrain performance development, noise & vibration, and virtual development teams closely collaborate to connect testing and analysis into one flow, creating optimal vehicle performance within it. Among these, I work as a noise & vibration performance development engineer, not only reducing unpleasant noise and vibration but also creating engine sounds and electric vehicle motor sounds that match the vehicle model or brand image."
+            },
+            {
+              q: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+              qKr: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+              qEn: "What competencies do you think are necessary for your work?",
+              a: "이 업무에 필요한 역량은 크게 세 가지라고 생각합니다. 첫 번째는 기본기입니다. 차체, 섀시, 추진 시스템 등 차량 전반에 대한 이해를 바탕으로 소음·진동 현상을 바라볼 수 있어야 합니다. 이런 기본기가 갖춰져 있어야 보다 안정적이면서도 현실적인 해결책을 제시할 수 있다고 생각합니다. 두 번째는 데이터를 읽고 해석하는 능력입니다. 차량 성능 개발은 해석이나 물리 시험, 다양한 가상 툴을 통해 생성되는 데이터를 기반으로 의사결정이 이루어지는 경우가 많기 때문에, 데이터 속에서 의미를 정확히 읽어내는 능력이 중요합니다. 마지막으로는 커뮤니케이션과 끈기입니다. 소음·진동 성능 개발은 설계, 시험, 품질, 생산 등 여러 부서가 유기적으로 연결돼 있어 협업이 필수적인 업무입니다. 또한 소음·진동 문제는 눈에 보이지 않고 한 번에 해결되지 않는 경우가 많아, 끝까지 원인을 파고들며 해결해 나가는 끈기 역시 중요한 역량이라고 생각합니다.",
+              aKr: "이 업무에 필요한 역량은 크게 세 가지라고 생각합니다. 첫 번째는 기본기입니다. 차체, 섀시, 추진 시스템 등 차량 전반에 대한 이해를 바탕으로 소음·진동 현상을 바라볼 수 있어야 합니다. 이런 기본기가 갖춰져 있어야 보다 안정적이면서도 현실적인 해결책을 제시할 수 있다고 생각합니다. 두 번째는 데이터를 읽고 해석하는 능력입니다. 차량 성능 개발은 해석이나 물리 시험, 다양한 가상 툴을 통해 생성되는 데이터를 기반으로 의사결정이 이루어지는 경우가 많기 때문에, 데이터 속에서 의미를 정확히 읽어내는 능력이 중요합니다. 마지막으로는 커뮤니케이션과 끈기입니다. 소음·진동 성능 개발은 설계, 시험, 품질, 생산 등 여러 부서가 유기적으로 연결돼 있어 협업이 필수적인 업무입니다. 또한 소음·진동 문제는 눈에 보이지 않고 한 번에 해결되지 않는 경우가 많아, 끝까지 원인을 파고들며 해결해 나가는 끈기 역시 중요한 역량이라고 생각합니다.",
+              aEn: "I think there are three main competencies needed for this work. First is fundamentals. You need to be able to view noise and vibration phenomena based on understanding of the entire vehicle, including body, chassis, and powertrain systems. With these fundamentals in place, you can present more stable and realistic solutions. Second is the ability to read and interpret data. Vehicle performance development often makes decisions based on data generated through analysis, physical testing, and various virtual tools, so the ability to accurately read meaning from data is important. Finally, communication and persistence. Noise and vibration performance development is work that requires collaboration as multiple departments such as design, testing, quality, and production are organically connected. Also, noise and vibration problems are often invisible and not solved at once, so persistence in digging into the root cause until resolution is also an important competency."
+            },
+            {
+              q: "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+              qKr: "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+              qEn: "Was there a memorable project you worked on?",
+              a: "트레일 블레이저와 트랙스 크로스오버 개발 당시, 소음진동 엔지니어로 참여했던 경험이 특히 기억에 많이 남습니다. 당시 국내외 소형 SUV 시장에서는 대부분 4기통 엔진을 사용하고 있었고, 3기통 엔진을 적용한 두 차종은 소음·진동 측면에서 태생적으로 불리한 조건을 안고 출발해야 했습니다. 그럼에도 불구하고 4기통 차량 수준의 소음·진동 성능 목표를 달성하기 위해 많은 시간과 자원, 그리고 노력이 필요했고, 관련 부서들과의 긴밀한 협업이 필수적이었습니다. 개발 초기부터 양산까지 한순간도 긴장을 늦출 수 없었던 프로젝트였습니다. 완성된 차량들이 양산 이후 국내외 시장에서 판매 성과는 물론, 품질과 상품성, 차량 가치 측면에서도 좋은 평가를 받는 모습을 보며 개인적으로 큰 보람과 자부심을 느꼈습니다. 엔지니어로서의 책임감과 성취감을 동시에 느낄 수 있었던 경험입니다.",
+              aKr: "트레일 블레이저와 트랙스 크로스오버 개발 당시, 소음진동 엔지니어로 참여했던 경험이 특히 기억에 많이 남습니다. 당시 국내외 소형 SUV 시장에서는 대부분 4기통 엔진을 사용하고 있었고, 3기통 엔진을 적용한 두 차종은 소음·진동 측면에서 태생적으로 불리한 조건을 안고 출발해야 했습니다. 그럼에도 불구하고 4기통 차량 수준의 소음·진동 성능 목표를 달성하기 위해 많은 시간과 자원, 그리고 노력이 필요했고, 관련 부서들과의 긴밀한 협업이 필수적이었습니다. 개발 초기부터 양산까지 한순간도 긴장을 늦출 수 없었던 프로젝트였습니다. 완성된 차량들이 양산 이후 국내외 시장에서 판매 성과는 물론, 품질과 상품성, 차량 가치 측면에서도 좋은 평가를 받는 모습을 보며 개인적으로 큰 보람과 자부심을 느꼈습니다. 엔지니어로서의 책임감과 성취감을 동시에 느낄 수 있었던 경험입니다.",
+              aEn: "The experience of participating as a noise and vibration engineer during the development of Trailblazer and Trax Cross-over particularly stands out in my memory. At that time, most small SUVs in domestic and international markets used 4-cylinder engines, and the two models with 3-cylinder engines had to start with inherently disadvantageous conditions in terms of noise and vibration. Nevertheless, achieving 4-cylinder vehicle-level noise and vibration performance goals required a lot of time, resources, and effort, and close collaboration with related departments was essential. It was a project where we couldn't let our guard down for a moment from early development to mass production. Seeing the completed vehicles receive good evaluations in domestic and international markets after mass production, not only in sales performance but also in quality, product appeal, and vehicle value, I felt great satisfaction and pride personally. It was an experience where I could feel both a sense of responsibility and achievement as an engineer."
+            },
+            {
+              q: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+              qKr: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+              qEn: "What is the team culture and what are your team members like?",
+              a: "저희 팀은 서로 필요한 부분은 잘 챙겨주면서도, 불필요한 간섭은 거의 없는 분위기입니다. 의견을 말하는 데 부담이 없어서 직급이나 연차에 상관없이 편하게 이야기할 수 있고, 각자의 방식을 존중해주는 팀이라고 생각합니다. 점심시간에는 함께 운동을 하기도 하고, 업무 중간중간 여유가 있을 때는 육아나 재테크, 여행처럼 다양한 주제로 수다도 많이 떠는 편입니다. 한마디로, 일할 때는 자연스럽게 몰입하고 평소에는 친구처럼 편안한 팀입니다.",
+              aKr: "저희 팀은 서로 필요한 부분은 잘 챙겨주면서도, 불필요한 간섭은 거의 없는 분위기입니다. 의견을 말하는 데 부담이 없어서 직급이나 연차에 상관없이 편하게 이야기할 수 있고, 각자의 방식을 존중해주는 팀이라고 생각합니다. 점심시간에는 함께 운동을 하기도 하고, 업무 중간중간 여유가 있을 때는 육아나 재테크, 여행처럼 다양한 주제로 수다도 많이 떠는 편입니다. 한마디로, 일할 때는 자연스럽게 몰입하고 평소에는 친구처럼 편안한 팀입니다.",
+              aEn: "Our team has an atmosphere where we take good care of each other's needs while rarely interfering unnecessarily. There's no burden in expressing opinions, so we can talk comfortably regardless of rank or years of experience, and I think it's a team that respects each person's way. During lunch, we sometimes exercise together, and when we have free time during work, we often chat about various topics like parenting, investment, or travel. In short, it's a team that naturally immerses itself in work and is comfortable like friends in everyday life."
+            },
+            {
+              q: "내게 GMTCK란?",
+              qKr: "내게 GMTCK란?",
+              qEn: "What does GMTCK mean to you?",
+              a: "제게 GMTCK는 첫 직장이자, 저를 꽤 그럴듯한 직장인으로 만들어준 곳입니다. 시행착오도 많았지만, 그 과정에서 일하는 법과 사람을 대하는 법을 자연스럽게 배웠습니다. MBTI로 치면 I 90% 성향의 저를, 이제는 사람들과 소통하고 의견을 나누는 데 훨씬 편한 사람으로 만들어준 곳이기도 합니다. 또 제가 좋아하는 다양한 차량을 직접 경험하고, 개발해 나가는 과정에서 새로운 도전에 재미를 느낄 수 있는, 제게는 아주 럭셔리한 놀이터 같은 공간이기도 합니다. 그래서 GMTCK는 제 삶에 큰 영향을 준, 고맙고 애정이 가는 회사입니다.",
+              aKr: "제게 GMTCK는 첫 직장이자, 저를 꽤 그럴듯한 직장인으로 만들어준 곳입니다. 시행착오도 많았지만, 그 과정에서 일하는 법과 사람을 대하는 법을 자연스럽게 배웠습니다. MBTI로 치면 I 90% 성향의 저를, 이제는 사람들과 소통하고 의견을 나누는 데 훨씬 편한 사람으로 만들어준 곳이기도 합니다. 또 제가 좋아하는 다양한 차량을 직접 경험하고, 개발해 나가는 과정에서 새로운 도전에 재미를 느낄 수 있는, 제게는 아주 럭셔리한 놀이터 같은 공간이기도 합니다. 그래서 GMTCK는 제 삶에 큰 영향을 준, 고맙고 애정이 가는 회사입니다.",
+              aEn: "To me, GMTCK is my first workplace and the place that made me into a fairly decent working professional. There were many trials and errors, but I naturally learned how to work and how to treat people through that process. It's also the place that made me, who would be I 90% in MBTI terms, much more comfortable communicating and sharing opinions with people. It's also a very luxurious playground-like space for me where I can directly experience and develop various vehicles I like, and feel excitement about new challenges in that process. So GMTCK is a company that has greatly influenced my life, one I'm grateful for and have affection for."
+            }
+          ]
+        }
+      };
+
+
+
+      // 인터뷰 섹션 생성 함수
+      function createInterviewSection(interviewId, imageName, data) {
+        const currentLang = localStorage.getItem("language") || "kr";
+        const imageNameWithoutExt = imageName.replace('.png', '');
+        // 기본적으로 _tp.png 버전 사용
+        const tpImageName = imageNameWithoutExt + '_tp.png';
+        
+        // VE 인터뷰인지 확인
+        const isVeInterview = interviewId.startsWith("ve-");
+        
+        // 인터뷰 내용 가져오기 (기존 인터뷰 내용이 있으면 사용, 없으면 빈 템플릿)
+        // VE 인터뷰의 경우 roleId로도 찾아봄
+        let content = interviewContent[interviewId] || { questions: [] };
+        if (isVeInterview && content.questions.length === 0) {
+          // VE 인터뷰 ID에서 roleId 추출
+          // interviewId 형식: ve-{roleId}-{index} (예: ve-ve-safety-performance-1)
+          // ve-ve-safety-performance-1 -> ve-safety-performance
+          const parts = interviewId.split('-');
+          if (parts.length >= 3) {
+            // 마지막 부분(숫자) 제거
+            const withoutIndex = parts.slice(0, -1);
+            // ve-ve-safety-performance -> ve-safety-performance (첫 번째 ve- 제거)
+            let roleId;
+            if (withoutIndex[0] === 've' && withoutIndex[1] === 've') {
+              // ve-ve-safety-performance -> ve-safety-performance
+              roleId = 've-' + withoutIndex.slice(2).join('-');
+            } else {
+              // ve-safety-performance -> ve-safety-performance
+              roleId = withoutIndex.join('-');
+            }
+            content = interviewContent[roleId] || { questions: [] };
+            console.log("VE Interview - interviewId:", interviewId, "roleId:", roleId, "questions count:", content.questions.length);
+          }
+        }
+        
+        // 프로필 이미지 경로 (tp 버전이 있으면 사용, 없으면 원본 사용)
+        let profileImagePath = `./images/profilepic/${tpImageName}`;
+        const section = document.createElement("div");
+        if (isVeInterview) {
+          section.className = "ve-interview-item";
+        } else {
+          section.className = "hq-content-section";
+          section.id = interviewId;
+        }
+        
+        // 모든 인터뷰에 배경 이미지 스타일 적용 (AVD&SVI 스타일)
+        const bgImagePath = `./images/profilepic/${imageName}`;
+        
+        // 인터뷰 질문 HTML 생성
+        const questionsHtml = content.questions && content.questions.length > 0 
+          ? content.questions.map((q, index) => {
+              const answerKr = q.aKr || q.a || "";
+              const answerEn = q.aEn || q.a || "";
+              const answer = currentLang === "kr" ? answerKr : answerEn;
+              return `
+                <div class="interview-question">
+                  <h3 class="interview-q-title" data-kr="${q.qKr || q.q}" data-en="${q.qEn || q.q}">
+                    ${currentLang === "kr" ? (q.qKr || q.q) : (q.qEn || q.q)}
+                  </h3>
+                  ${answer ? `<p class="interview-answer" data-kr="${q.aKr || q.a || ''}" data-en="${q.aEn || q.a || ''}">${answer}</p>` : ''}
+                </div>
+              `;
+            }).join("")
+          : "";
+
+        section.innerHTML = `
+          <div class="hq-content-body">
+            <!-- 프로필 소개 -->
+            <div class="interview-profile-header">
+              <div class="interview-profile-bg" style="background-image: url('./images/profilepic/${tpImageName}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <div class="interview-profile-image">
+                  <img src="${profileImagePath}" alt="Profile" class="profile-img" onerror="this.src='./images/profilepic/${imageName}'" />
+                </div>
+              </div>
+              <div class="interview-profile-content">
+                <div class="profile-quote-top">
+                  <span class="quote-mark quote-open">"</span>
+                  <div class="quote-text">
+                    ${(() => {
+                      const greetingKr = (data.greetingKr || data.greeting || '').split('\n');
+                      const greetingEn = (data.greetingEn || data.greeting || '').split('\n');
+                      const line1Kr = greetingKr[0] || '';
+                      const line2Kr = greetingKr[1] || '';
+                      const line3Kr = greetingKr[2] || '';
+                      const line1En = greetingEn[0] || '';
+                      const line2En = greetingEn[1] || '';
+                      const line3En = greetingEn[2] || '';
+                      
+                      // 본부명, 담당명, 이름 추출
+                      const hqKr = data.hqKr || data.hq || '';
+                      const nameKr = data.nameKr || data.name || '';
+                      const hqEn = data.hqEn || data.hq || '';
+                      const nameEn = data.nameEn || data.name || '';
+                      
+                      // 2번째 줄에서 본부명과 담당명 추출 (한국어)
+                      // 형식: "PIPG본부의 Propulsion System Calibration담당"
+                      let line2KrHtml = line2Kr;
+                      if (line2Kr) {
+                        // 본부명 강조 (예: PIPG)
+                        if (hqKr) {
+                          line2KrHtml = line2KrHtml.replace(new RegExp(`(${hqKr})`, 'g'), '<span class="quote-highlight">$1</span>');
+                        }
+                        // 담당명 추출: "본부의"와 "담당" 사이의 텍스트
+                        const roleMatch = line2Kr.match(/본부의\s*([^담당]+)\s*담당/);
+                        if (roleMatch && roleMatch[1]) {
+                          const roleName = roleMatch[1].trim();
+                          line2KrHtml = line2KrHtml.replace(new RegExp(`(${roleName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'g'), '<span class="quote-highlight">$1</span>');
+                        }
+                        // 나머지 부분을 연한 색으로
+                        line2KrHtml = line2KrHtml.split(/(<span class="quote-highlight">.*?<\/span>)/g).map(part => {
+                          if (part.startsWith('<span class="quote-highlight">')) {
+                            return part;
+                          }
+                          return part ? '<span class="quote-light">' + part + '</span>' : '';
+                        }).join('');
+                      } else {
+                        line2KrHtml = '<span class="quote-light">' + line2KrHtml + '</span>';
+                      }
+                      
+                      // 3번째 줄 처리: 이름 강조
+                      let line3KrHtml = line3Kr;
+                      if (nameKr && line3Kr) {
+                        line3KrHtml = line3KrHtml.replace(new RegExp(`(${nameKr})`, 'g'), '<span class="quote-highlight">$1</span>');
+                        // 나머지 부분을 연한 색으로
+                        line3KrHtml = line3KrHtml.split(/(<span class="quote-highlight">.*?<\/span>)/g).map(part => {
+                          if (part.startsWith('<span class="quote-highlight">')) {
+                            return part;
+                          }
+                          return part ? '<span class="quote-light">' + part + '</span>' : '';
+                        }).join('');
+                      } else {
+                        line3KrHtml = '<span class="quote-light">' + line3KrHtml + '</span>';
+                      }
+                      
+                      // 영어 버전 처리
+                      let line2EnHtml = line2En;
+                      if (line2En) {
+                        if (hqEn) {
+                          line2EnHtml = line2EnHtml.replace(new RegExp(`(${hqEn})`, 'gi'), '<span class="quote-highlight">$1</span>');
+                        }
+                        // 영어 형식: "Propulsion System Calibration, PIPG HQ" 또는 다른 형식
+                        const roleMatchEn = line2En.match(/([^,]+)(?:,|$)/);
+                        if (roleMatchEn && roleMatchEn[1]) {
+                          const roleNameEn = roleMatchEn[1].trim();
+                          if (roleNameEn && roleNameEn !== hqEn) {
+                            line2EnHtml = line2EnHtml.replace(new RegExp(`(${roleNameEn.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'), '<span class="quote-highlight">$1</span>');
+                          }
+                        }
+                        line2EnHtml = line2EnHtml.split(/(<span class="quote-highlight">.*?<\/span>)/g).map(part => {
+                          if (part.startsWith('<span class="quote-highlight">')) {
+                            return part;
+                          }
+                          return part ? '<span class="quote-light">' + part + '</span>' : '';
+                        }).join('');
+                      } else {
+                        line2EnHtml = '<span class="quote-light">' + line2EnHtml + '</span>';
+                      }
+                      
+                      let line3EnHtml = line3En;
+                      if (nameEn && line3En) {
+                        line3EnHtml = line3EnHtml.replace(new RegExp(`(${nameEn})`, 'g'), '<span class="quote-highlight">$1</span>');
+                        line3EnHtml = line3EnHtml.split(/(<span class="quote-highlight">.*?<\/span>)/g).map(part => {
+                          if (part.startsWith('<span class="quote-highlight">')) {
+                            return part;
+                          }
+                          return part ? '<span class="quote-light">' + part + '</span>' : '';
+                        }).join('');
+                      } else {
+                        line3EnHtml = '<span class="quote-light">' + line3EnHtml + '</span>';
+                      }
+                      
+                      const currentLine1 = currentLang === "kr" ? '<span class="quote-light">' + line1Kr + '</span>' : '<span class="quote-light">' + line1En + '</span>';
+                      const currentLine2 = currentLang === "kr" ? line2KrHtml : line2EnHtml;
+                      const currentLine3 = currentLang === "kr" ? line3KrHtml : line3EnHtml;
+                      
+                      return `
+                        <p class="quote-line" data-kr="${line1Kr}" data-en="${line1En}">${currentLine1}</p>
+                        <p class="quote-line" data-kr="${line2Kr}" data-en="${line2En}">${currentLine2}</p>
+                        <p class="quote-line" data-kr="${line3Kr}" data-en="${line3En}">${currentLine3}</p>
+                      `;
+                    })()}
+                  </div>
+                  <span class="quote-mark quote-close">"</span>
+                </div>
+              </div>
+              <div class="profile-divider"></div>
+            </div>
+            
+            <!-- 인터뷰 내용 -->
+            <div class="interview-content">
+              ${questionsHtml || '<p class="interview-answer">인터뷰 내용이 준비 중입니다.</p>'}
+            </div>
+          </div>
+        `;
+
+        return section;
+      }
+
+      // HQ Sidebar Navigation
+      document.addEventListener("DOMContentLoaded", function () {
+        // Default: stay at top
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+
+        // Scroll to hq-intro-section ONLY if coming from navigation
+        const fromNavigation = sessionStorage.getItem("fromNavigation");
+        if (fromNavigation === "true") {
+          sessionStorage.removeItem("fromNavigation");
+          // Use requestAnimationFrame to ensure DOM is ready
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              const hqSection = document.querySelector(".hq-intro-section");
+              if (hqSection) {
+                const offsetTop = Math.max(0, hqSection.offsetTop - 100);
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: "smooth"
+                });
+              }
+            });
+          });
+        }
+
+        const contentSections = document.querySelectorAll(".hq-content-section");
+        
+        // 본부별 담당자 목록 데이터
+        const hqRoles = {
+          "avd-svi": [
+            { id: "avd-advanced-vehicle", kr: "Advanced Vehicle Development Integration", en: "Advanced Vehicle Development Integration" },
+            { id: "avd-studio-surface", kr: "Studio & Surface Integration", en: "Studio & Surface Integration" }
+          ],
+          "beca": [
+            { id: "beca-body", kr: "Body", en: "Body" },
+            { id: "beca-exterior", kr: "Exterior", en: "Exterior" },
+            { id: "beca-chassis", kr: "Chassis", en: "Chassis" },
+            { id: "beca-aftersales", kr: "Aftersales", en: "Aftersales" }
+          ],
+          "engineering-excellence": [
+            { id: "ee-certification", kr: "Certification, Environmental Strategy & EI Division", en: "Certification, Environmental Strategy & EI Division" },
+            { id: "ee-system-investigation", kr: "Systems & Product Investigation Division", en: "Systems & Product Investigation Division" },
+            { id: "ee-verification", kr: "Validation Division", en: "Validation Division" },
+            { id: "ee-product-excellence", kr: "Product Excellence team", en: "Product Excellence team" },
+            { id: "ee-quality", kr: "PQDQ Engineering Excellence", en: "PQDQ Engineering Excellence" },
+            { id: "ee-ai-chief", kr: "Chief AI & New Tech. Strategy", en: "Chief AI & New Tech. Strategy" }
+          ],
+          "itpe": [
+            { id: "itpe-interior-trim", kr: "Interior Trim", en: "Interior Trim" },
+            { id: "itpe-seat-safety", kr: "Seat & Safety Restraints", en: "Seat & Safety Restraints" },
+            { id: "itpe-thermal-propulsion", kr: "Thermal & Propulsion Integration", en: "Thermal & Propulsion Integration" },
+            { id: "itpe-ecs", kr: "ECS", en: "ECS" }
+          ],
+          "pipg": [
+            { id: "pipg-psc", kr: "PSC", en: "PSC" },
+            { id: "pipg-thermal", kr: "Thermal", en: "Thermal" },
+            { id: "pipg-vpd-pid", kr: "VPD/PID", en: "VPD/PID" },
+            { id: "pipg-pgtlo", kr: "PGTLO", en: "PGTLO" }
+          ],
+          "ss": [
+            { id: "ss-cch-ppmo", kr: "CCH/PPMO", en: "CCH/PPMO" },
+            { id: "ss-maec", kr: "MAEC", en: "MAEC" },
+            { id: "ss-swqnd", kr: "SWQnD", en: "SWQnD" }
+          ],
+          "ve": [
+            { id: "ve-safety-performance", kr: "Safety Performance Integration", en: "Safety Performance Integration" },
+            { id: "ve-virtual-integration", kr: "Virtual Integration Center & ADAS", en: "Virtual Integration Center & ADAS" },
+            { id: "ve-virtual-engineering-solution", kr: "Virtual Engineering Solution", en: "Virtual Engineering Solution" }
+          ]
+        };
+        
+        // 이미지 자동 로드 함수
+        function loadInterviewImages(containerId, filterHq = null, filterRole = null) {
+          const container = document.getElementById(containerId);
+          if (!container) return;
+
+          const currentLang = localStorage.getItem("language") || "kr";
+          container.innerHTML = "";
+
+          // 이미지 파일명 패턴으로 자동 감지
+          const imagePatterns = Object.keys(interviewData);
+          
+          // 필터링된 이미지 목록
+          let filteredImages = imagePatterns;
+          if (filterHq) {
+            filteredImages = filteredImages.filter(img => interviewData[img].hq === filterHq);
+          }
+          if (filterRole) {
+            filteredImages = filteredImages.filter(img => interviewData[img].role === filterRole);
+          }
+
+          // 이미지 존재 여부 확인 후 추가
+          filteredImages.forEach((imageName) => {
+            const data = interviewData[imageName];
+            const img = new Image();
+            img.onload = function() {
+              // 이미지가 로드되면 DOM에 추가
+              const item = document.createElement("div");
+              item.className = "interview-item";
+              item.style.cursor = "pointer";
+              item.setAttribute("data-image", imageName);
+              item.innerHTML = `
+                <img src="./images/profilepic/${imageName}" alt="Interview" class="interview-image" />
+                <p class="interview-hq" data-kr="${data.hq}" data-en="${data.hq}">${data.hq}</p>
+                <p class="interview-role" data-kr="${data.roleKr}" data-en="${data.roleEn}">${currentLang === "kr" ? data.roleKr : data.roleEn}</p>
+              `;
+              container.appendChild(item);
+              
+              // 클릭 이벤트 추가
+              item.addEventListener("click", function() {
+                showPersonInterview(imageName);
+              });
+              
+              // 언어 변경 이벤트 리스너 추가
+              document.addEventListener("languageChange", function(e) {
+                const lang = e.detail.language;
+                const hqElement = item.querySelector(".interview-hq");
+                const roleElement = item.querySelector(".interview-role");
+                if (hqElement) {
+                  hqElement.textContent = data.hq;
+                }
+                if (roleElement) {
+                  roleElement.textContent = lang === "kr" ? data.roleKr : data.roleEn;
+                }
+              });
+            };
+            img.onerror = function() {
+              // 이미지가 없으면 무시
+              console.log(`Image not found: ${imageName}`);
+            };
+            img.src = `./images/profilepic/${imageName}`;
+          });
+        }
+        
+        // 사이드바 목록 업데이트 함수
+        function updateSidebar(hqId) {
+          const sidebarList = document.getElementById("hqSidebarList");
+          if (!sidebarList) return;
+          
+          const roles = hqRoles[hqId] || [];
+          const currentLang = localStorage.getItem("language") || "kr";
+          
+          sidebarList.innerHTML = roles.map((role, index) => `
+            <li class="hq-sidebar-item" data-hq="${hqId}">
+              <a href="#${role.id}" class="hq-sidebar-link ${index === 0 ? 'active' : ''}" 
+                 data-role="${role.id}" 
+                 data-kr="${role.kr}" 
+                 data-en="${role.en}">
+                ${currentLang === "kr" ? role.kr : role.en}
+              </a>
+            </li>
+          `).join("");
+          
+          // 새로 생성된 링크에 이벤트 리스너 추가
+          const newSidebarLinks = sidebarList.querySelectorAll(".hq-sidebar-link");
+          newSidebarLinks.forEach((link) => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const roleId = this.getAttribute("data-role");
+              showRole(roleId, false, true);
+              window.history.pushState(null, null, `#${roleId}`);
+            });
+          });
+          
+        }
+
+        function showSection(targetId, scrollToTop = false, scrollToSection = false) {
+          // Remove active class from all content sections
+          contentSections.forEach((s) => {
+            s.classList.remove("active");
+            s.style.display = "none";
+          });
+          
+          // Update navigation bar links
+          const navLinks = document.querySelectorAll(".hq-nav-link");
+          navLinks.forEach((l) => l.classList.remove("active"));
+          
+          // Add active class to clicked nav link
+          const navLink = document.querySelector(`.hq-nav-link[data-hq="${targetId}"]`);
+          if (navLink) {
+            navLink.classList.add("active");
+          }
+          
+          // Update main title with HQ name
+          const mainTitle = document.getElementById("hqMainTitle");
+          if (mainTitle && navLink) {
+            const titleKr = navLink.getAttribute("data-kr");
+            const titleEn = navLink.getAttribute("data-en");
+            const currentLang = localStorage.getItem("language") || "kr";
+            mainTitle.setAttribute("data-kr", titleKr);
+            mainTitle.setAttribute("data-en", titleEn);
+            mainTitle.textContent = currentLang === "kr" ? titleKr : titleEn;
+            mainTitle.style.display = "block";
+          }
+          
+          // 전체보기인 경우
+          if (targetId === "all") {
+            const allSection = document.getElementById("all");
+            if (allSection) {
+              allSection.classList.add("active");
+              allSection.style.display = "block";
+            }
+            // 전체보기 이미지 로드
+            loadInterviewImages("allInterviewGrid");
+            // 제목 숨김
+            const mainTitle = document.getElementById("hqMainTitle");
+            if (mainTitle) {
+              mainTitle.style.display = "none";
+            }
+            // 사이드바 숨김
+            const sidebar = document.getElementById("hqSidebar");
+            const layout = document.getElementById("hqLayout");
+            if (sidebar) {
+              sidebar.style.display = "none";
+            }
+            if (layout) {
+              layout.style.gridTemplateColumns = "1fr";
+            }
+            return;
+          }
+          
+          // 본부 선택 시 제목 표시
+          const mainTitleForHQ = document.getElementById("hqMainTitle");
+          if (mainTitleForHQ) {
+            mainTitleForHQ.style.display = "block";
+          }
+          
+          // 본부 선택 시 사이드바 표시
+          const sidebar = document.getElementById("hqSidebar");
+          const layout = document.getElementById("hqLayout");
+          if (sidebar) {
+            sidebar.style.display = "block";
+          }
+          if (layout) {
+            layout.style.gridTemplateColumns = "280px 1fr";
+          }
+          
+          // 본부 선택 시 사이드바 업데이트
+          updateSidebar(targetId);
+          
+          // 첫 번째 담당자 표시
+          const roles = hqRoles[targetId] || [];
+          if (roles.length > 0) {
+            showRole(roles[0].id, false, true);
+          }
+        }
+        
+        function showRole(roleId, scrollToTop = false, scrollToSection = false) {
+          // Remove active class from all sidebar links
+          const sidebarLinks = document.querySelectorAll(".hq-sidebar-link");
+          sidebarLinks.forEach((l) => l.classList.remove("active"));
+
+          // Remove active class from all content sections (기존 + 동적으로 생성된 섹션 포함)
+          contentSections.forEach((s) => {
+            s.classList.remove("active");
+            s.style.display = "none";
+          });
+          
+          // 동적으로 생성된 섹션도 숨김
+          const allSections = document.querySelectorAll(".hq-content-section");
+          const contentSectionsArray = Array.from(contentSections);
+          allSections.forEach((s) => {
+            if (!contentSectionsArray.includes(s)) {
+              s.classList.remove("active");
+              s.style.display = "none";
+            }
+          });
+          
+          // Add active class to clicked sidebar link
+          const targetLink = document.querySelector(`[data-role="${roleId}"]`);
+          if (targetLink) {
+            targetLink.classList.add("active");
+          }
+
+          // Show corresponding section (기존 섹션이나 동적으로 생성된 섹션)
+          const targetSection = document.getElementById(roleId);
+          if (targetSection) {
+            targetSection.classList.add("active");
+            targetSection.style.display = "block";
+            
+            // VE 담당 섹션인 경우 해당 담당의 모든 인터뷰를 동적으로 생성
+            if (roleId === "ve-safety-performance" || roleId === "ve-virtual-integration" || roleId === "ve-virtual-engineering-solution") {
+              const roleData = hqRoles["ve"].find(r => r.id === roleId);
+              if (roleData) {
+                const roleName = roleData.en; // 영어 역할명 사용
+                const contentBody = targetSection.querySelector(".hq-content-body");
+                if (contentBody && !contentBody.hasAttribute("data-loaded")) {
+                  // 해당 역할의 인터뷰 이미지 필터링
+                  const filteredImages = Object.keys(interviewData).filter((imageName) => {
+                    const data = interviewData[imageName];
+                    return data.hq === "VE" && data.role === roleName;
+                  });
+                  
+                  // 네비게이션 컨테이너 생성
+                  const navContainer = document.createElement("div");
+                  navContainer.className = "ve-interview-nav";
+                  navContainer.innerHTML = `
+                    <button class="ve-nav-btn ve-nav-prev" aria-label="Previous interview">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                      </svg>
+                    </button>
+                    <button class="ve-nav-btn ve-nav-next" aria-label="Next interview">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                      </svg>
+                    </button>
+                  `;
+                  contentBody.appendChild(navContainer);
+                  
+                  // 인터뷰 컨테이너 생성
+                  const interviewContainer = document.createElement("div");
+                  interviewContainer.className = "ve-interview-container";
+                  contentBody.appendChild(interviewContainer);
+                  
+                  // 각 인터뷰 섹션 생성
+                  filteredImages.forEach((imageName, index) => {
+                    const data = interviewData[imageName];
+                    const interviewId = `ve-${roleId}-${index + 1}`;
+                    
+                    // 인터뷰 섹션 생성
+                    const interviewSection = createInterviewSection(interviewId, imageName, data);
+                    interviewSection.style.display = index === 0 ? "block" : "none";
+                    interviewSection.setAttribute("data-index", index);
+                    
+                    interviewContainer.appendChild(interviewSection);
+                  });
+                  
+                  // 네비게이션 이벤트 리스너 추가
+                  const prevBtn = navContainer.querySelector(".ve-nav-prev");
+                  const nextBtn = navContainer.querySelector(".ve-nav-next");
+                  
+                  let currentIndex = 0;
+                  
+                  const updateDisplay = () => {
+                    const interviews = interviewContainer.querySelectorAll(".ve-interview-item");
+                    interviews.forEach((interview, index) => {
+                      interview.style.display = index === currentIndex ? "block" : "none";
+                    });
+                    
+                    // 버튼 활성화/비활성화
+                    prevBtn.disabled = currentIndex === 0;
+                    nextBtn.disabled = currentIndex === filteredImages.length - 1;
+                    
+                    // 스크롤을 상단으로
+                    if (targetSection) {
+                      const navContainerTop = navContainer.offsetTop;
+                      window.scrollTo({
+                        top: navContainerTop - 100,
+                        behavior: "smooth"
+                      });
+                    }
+                  };
+                  
+                  prevBtn.addEventListener("click", () => {
+                    if (currentIndex > 0) {
+                      currentIndex--;
+                      updateDisplay();
+                    }
+                  });
+                  
+                  nextBtn.addEventListener("click", () => {
+                    if (currentIndex < filteredImages.length - 1) {
+                      currentIndex++;
+                      updateDisplay();
+                    }
+                  });
+                  
+                  // 초기 상태 설정
+                  updateDisplay();
+                  
+                  // 로드 완료 표시
+                  contentBody.setAttribute("data-loaded", "true");
+                }
+              }
+              
+              // VE 담당 섹션인 경우 스크롤 처리
+              if (scrollToSection) {
+                setTimeout(() => {
+                  const offsetTop = targetSection.offsetTop - 100;
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth"
+                  });
+                }, 100);
+              }
+            }
+          }
+          
+          // Update main title - 본부명으로 업데이트
+          const mainTitle = document.getElementById("hqMainTitle");
+          if (mainTitle) {
+            // 본부명 찾기 (roleId에서 본부 추출)
+            let hqName = "";
+            let hqNameKr = "";
+            let hqNameEn = "";
+            let hqId = null;
+            
+            // roleId에서 본부 찾기 (기존 hqRoles에서)
+            for (const [hq, roles] of Object.entries(hqRoles)) {
+              if (roles.some(r => r.id === roleId)) {
+                hqId = hq;
+                break;
+              }
+            }
+            
+            // hqRoles에서 찾지 못한 경우, interviewData에서 찾기 (동적으로 생성된 인터뷰)
+            if (!hqId && roleId.startsWith("interview-")) {
+              const imageName = roleId.replace("interview-", "") + ".png";
+              const data = interviewData[imageName];
+              if (data) {
+                hqId = data.hq.toLowerCase().replace(/\s+/g, '-');
+                if (hqId === "avd-&-svi") {
+                  hqId = "avd-svi";
+                }
+              }
+            }
+            
+            if (hqId) {
+              // 본부명 찾기
+              const hqNavLink = document.querySelector(`.hq-nav-link[data-hq="${hqId}"]`);
+              if (hqNavLink) {
+                hqNameKr = hqNavLink.getAttribute("data-kr");
+                hqNameEn = hqNavLink.getAttribute("data-en");
+                const currentLang = localStorage.getItem("language") || "kr";
+                hqName = currentLang === "kr" ? hqNameKr : hqNameEn;
+              }
+            }
+            
+            if (hqName) {
+              mainTitle.setAttribute("data-kr", hqNameKr);
+              mainTitle.setAttribute("data-en", hqNameEn);
+              mainTitle.textContent = hqName;
+              mainTitle.style.display = "block";
+            }
+          }
+          
+          // Only scroll if explicitly requested (user click)
+          if (scrollToTop) {
+            setTimeout(() => {
+              window.scrollTo(0, 0);
+              document.documentElement.scrollTop = 0;
+              document.body.scrollTop = 0;
+            }, 10);
+          } else if (scrollToSection && targetSection) {
+            // Scroll to section title, accounting for header height
+            setTimeout(() => {
+              const navbar = document.getElementById("navbar");
+              const headerHeight = navbar ? navbar.offsetHeight : 100;
+              const sectionTitle = targetSection.querySelector('.hq-content-title');
+              if (sectionTitle) {
+                // Calculate scroll position to show title just below header
+                const titleRect = sectionTitle.getBoundingClientRect();
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                // Position title right below header with minimal padding (20px)
+                const scrollPosition = currentScroll + titleRect.top - headerHeight - 20;
+                
+                window.scrollTo({
+                  top: Math.max(0, scrollPosition),
+                  behavior: "smooth"
+                });
+              }
+            }, 100);
+          }
+        }
+
+        // 개인 인터뷰 섹션 생성 및 표시 함수
+        function showPersonInterview(imageName) {
+          const data = interviewData[imageName];
+          if (!data) {
+            console.log("No data found for image:", imageName);
+            return;
+          }
+
+          // 인터뷰 ID 생성 (기존 인터뷰 섹션이 있으면 그것 사용, 없으면 새로 생성)
+          let interviewId = data.interviewId;
+          if (!interviewId) {
+            // 이미지 파일명에서 확장자 제거하고 ID 생성
+            interviewId = `interview-${imageName.replace('.png', '').toLowerCase()}`;
+          }
+
+          console.log("Showing interview for:", imageName, "interviewId:", interviewId);
+
+          // 해당 본부로 이동
+          let hqId = data.hq.toLowerCase().replace(/\s+/g, '-');
+          if (hqId === "avd-&-svi") {
+            hqId = "avd-svi";
+          }
+          
+          // 본부 선택 및 사이드바 업데이트
+          showSection(hqId, false, false);
+          
+          // 기존 인터뷰 섹션이 있는지 확인 (HTML에 이미 존재하는 섹션)
+          let interviewSection = document.getElementById(interviewId);
+          
+          if (!interviewSection) {
+            // 새 인터뷰 섹션 생성
+            interviewSection = createInterviewSection(interviewId, imageName, data);
+            
+            // 메인 콘텐츠 영역에 추가
+            const mainContent = document.querySelector(".hq-main-content");
+            if (mainContent) {
+              mainContent.appendChild(interviewSection);
+            }
+            
+            // 사이드바에 해당 인터뷰 항목 추가
+            const sidebarList = document.getElementById("hqSidebarList");
+            if (sidebarList) {
+              const existingLink = sidebarList.querySelector(`[data-role="${interviewId}"]`);
+              if (!existingLink) {
+                const currentLang = localStorage.getItem("language") || "kr";
+                const roleKr = data.roleKr || data.role;
+                const roleEn = data.roleEn || data.role;
+                const nameKr = data.nameKr || data.name || "";
+                const nameEn = data.nameEn || data.name || "";
+                const displayName = currentLang === "kr" ? `${roleKr} ${nameKr}` : `${roleEn} ${nameEn}`;
+                
+                const li = document.createElement("li");
+                li.className = "hq-sidebar-item";
+                li.setAttribute("data-hq", hqId);
+                li.innerHTML = `
+                  <a href="#${interviewId}" class="hq-sidebar-link" 
+                     data-role="${interviewId}" 
+                     data-kr="${roleKr} ${nameKr}" 
+                     data-en="${roleEn} ${nameEn}">
+                    ${displayName}
+                  </a>
+                `;
+                sidebarList.appendChild(li);
+                
+                // 새로 추가된 링크에 이벤트 리스너 추가
+                const newLink = li.querySelector(".hq-sidebar-link");
+                newLink.addEventListener("click", function (e) {
+                  e.preventDefault();
+                  showRole(interviewId, false, true);
+                  window.history.pushState(null, null, `#${interviewId}`);
+                });
+              }
+            }
+          } else {
+            // 기존 섹션이 있는 경우, 사이드바에서 해당 항목 활성화
+            const sidebarLink = document.querySelector(`[data-role="${interviewId}"]`);
+            if (sidebarLink) {
+              sidebarLink.classList.add("active");
+            }
+          }
+
+          // 인터뷰 섹션 표시
+          setTimeout(() => {
+            showRole(interviewId, false, true);
+            // URL 업데이트
+            window.history.pushState(null, null, `#${interviewId}`);
+          }, 100);
+        }
+
+        
+        // Navigation bar links (본부 선택)
+        const navLinks = document.querySelectorAll(".hq-nav-link");
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("data-hq");
+            showSection(targetId, false, true);
+
+            // Update URL hash
+            if (targetId === "all") {
+              window.history.pushState(null, null, `#all`);
+            } else {
+              // Update URL hash to first role of selected HQ
+              const roles = hqRoles[targetId] || [];
+              if (roles.length > 0) {
+                window.history.pushState(null, null, `#${roles[0].id}`);
+              } else {
+                window.history.pushState(null, null, `#${targetId}`);
+              }
+            }
+          });
+        });
+
+        // Handle initial hash - scroll to section title on page load
+        if (window.location.hash) {
+          const hash = window.location.hash.substring(1);
+          // Check if hash is a role ID or HQ ID
+          const isRoleId = hash.startsWith("ee-") || hash.startsWith("avd-") || hash.startsWith("beca-") || hash.startsWith("itpe-") || hash.startsWith("pipg-") || hash.startsWith("ss-") || hash.startsWith("ve-");
+          
+          if (isRoleId) {
+            // It's a role ID, find which HQ it belongs to
+            let hqId = null;
+            for (const [hq, roles] of Object.entries(hqRoles)) {
+              if (roles.some(r => r.id === hash)) {
+                hqId = hq;
+                break;
+              }
+            }
+            if (hqId) {
+              updateSidebar(hqId);
+              showRole(hash, false, true);
+            }
+          } else {
+            // It's an HQ ID or "all"
+            showSection(hash, false, true);
+          }
+        } else {
+          // Show "all" section by default
+          showSection("all", false);
+          // 초기 로드 시 사이드바 숨김
+          setTimeout(() => {
+            const sidebar = document.getElementById("hqSidebar");
+            const layout = document.getElementById("hqLayout");
+            if (sidebar) {
+              sidebar.style.display = "none";
+            }
+            if (layout) {
+              layout.style.gridTemplateColumns = "1fr";
+            }
+          }, 10);
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener("popstate", function () {
+          const hash = window.location.hash.substring(1);
+          if (hash) {
+            const isRoleId = hash.startsWith("ee-") || hash.startsWith("avd-") || hash.startsWith("beca-") || hash.startsWith("itpe-") || hash.startsWith("pipg-") || hash.startsWith("ss-") || hash.startsWith("ve-");
+            if (isRoleId) {
+              let hqId = null;
+              for (const [hq, roles] of Object.entries(hqRoles)) {
+                if (roles.some(r => r.id === hash)) {
+                  hqId = hq;
+                  break;
+                }
+              }
+              if (hqId) {
+                updateSidebar(hqId);
+                showRole(hash, false, true);
+              }
+            } else {
+              showSection(hash, false, true);
+            }
+          } else {
+            showSection("all", false);
+          }
+        });
+      });
+
+      // Force scroll to top on window load (only if not from navigation)
+      window.addEventListener("load", function () {
+        const fromNavigation = sessionStorage.getItem("fromNavigation");
+        if (fromNavigation !== "true") {
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+        }
+      });
+    </script>
+  </body>
+</html>

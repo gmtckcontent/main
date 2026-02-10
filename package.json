@@ -1,0 +1,17 @@
+{
+  "name": "gmtck",
+  "version": "1.0.0",
+  "description": "General Motors Technical Center Korea - Official Website",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "gmtck",
+    "general-motors",
+    "website"
+  ],
+  "author": "",
+  "license": "ISC"
+}
