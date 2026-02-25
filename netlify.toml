@@ -1,0 +1,21 @@
+# Netlify Configuration
+# Force all requests to show 404 page
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/404.html"
+  status = 404
+  force = true
+
