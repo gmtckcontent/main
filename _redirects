@@ -1,9 +1,9 @@
 # ============================================
-# MAINTENANCE MODE - Site Access Blocked
+# 404 PAGE - Site Access Blocked
 # ============================================
 # 모든 접근을 차단 - 최우선 규칙
 
-/* /maintenance.html 503
+/* /404.html 404
 
 # ============================================
 # Netlify Redirects for Clean URLs
