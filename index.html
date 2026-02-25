@@ -1,97 +1,1379 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5C6D295T8N"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-5C6D295T8N");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <title>페이지를 찾을 수 없습니다 - GMTCK</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: "Roboto", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: transparent;
-            color: #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .error-container {
-            text-align: center;
-            max-width: 600px;
-            padding: 60px 40px;
-            background: transparent;
-        }
-        
-        
-        .error-subtitle {
-            font-size: 20px;
-            font-weight: 400;
-            margin-bottom: 30px;
-            color: #000000;
-            line-height: 1.6;
-        }
-        
-        .error-message {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #000000;
-            margin-bottom: 40px;
-        }
-        
-        .error-info {
-            background: transparent;
-            padding: 30px;
-            margin-top: 40px;
-        }
-        
-        .error-info p {
-            font-size: 14px;
-            color: #000000;
-            margin-bottom: 10px;
-        }
-        
-        .error-info p:last-child {
-            margin-bottom: 0;
-        }
-        
-        @media (max-width: 768px) {
-            .error-container {
-                padding: 40px 30px;
-            }
-            
-            .error-subtitle {
-                font-size: 18px;
-            }
-            
-            .error-message {
-                font-size: 15px;
-            }
-        }
-    </style>
+    <base href="./" />
+
+    <!-- SEO Meta Tags -->
+    <title>
+      GMTCK | GM 테크니컬 센터 코리아 | General Motors Technical Center Korea
+    </title>
+    <meta
+      name="description"
+      content="GMTCK (지엠테크니컬센터코리아)는 General Motors의 한국 기술 센터입니다. 전동화, 자율주행, 커넥티드 카 기술을 연구개발하는 GM의 핵심 R&D 센터입니다. 인천 송도 소재."
+    />
+    <meta
+      name="keywords"
+      content="GMTCK, GM 테크니컬 센터 코리아, 지엠테크니컬센터코리아, GM Technical Center Korea, 한국지엠, GMK, General Motors Korea, GM R&D, GM 한국, 지엠 코리아, GM 인천, GM 송도, GM 기술센터, GM 연구소"
+    />
+    <meta
+      name="author"
+      content="GMTCK - General Motors Technical Center Korea"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Korean, English" />
+    <meta name="geo.region" content="KR-28" />
+    <meta name="geo.placename" content="인천 송도" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="GMTCK | GM 테크니컬 센터 코리아 | General Motors Technical Center Korea"
+    />
+    <meta
+      property="og:description"
+      content="GMTCK (지엠테크니컬센터코리아)는 General Motors의 한국 기술 센터입니다. 전동화, 자율주행, 커넥티드 카 기술을 연구개발하는 GM의 핵심 R&D 센터입니다."
+    />
+    <meta property="og:url" content="https://www.gmtck.com" />
+    <meta property="og:site_name" content="GMTCK" />
+    <meta
+      property="og:image"
+      content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
+    />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.gmtck.com/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GMTCK | GM 테크니컬 센터 코리아" />
+    <meta
+      name="twitter:description"
+      content="GMTCK (지엠테크니컬센터코리아)는 General Motors의 한국 기술 센터입니다."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
+    />
+    <!-- Favicon for all platforms -->
+    <!-- Google Search favicon - must be in homepage header -->
+    <link rel="icon" href="/favicon.ico" />
+    <!-- Additional favicon formats for better browser support -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/scroll-layers.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TLHQBBZX");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GMTCK - General Motors Technical Center Korea",
+        "alternateName": [
+          "GM 테크니컬 센터 코리아",
+          "지엠테크니컬센터코리아",
+          "GM Technical Center Korea",
+          "한국지엠",
+          "GMK"
+        ],
+        "url": "https://www.gmtck.com",
+        "logo": "https://www.gmtck.com/images/logo/GMTCK.png",
+        "image": "https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png",
+        "description": "GMTCK는 General Motors의 한국 기술 센터로, 전동화, 자율주행, 커넥티드 카 기술을 연구개발하는 GM의 핵심 R&D 센터입니다.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "송도",
+          "addressRegion": "인천",
+          "addressCountry": "KR"
+        },
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "General Motors",
+          "url": "https://www.gm.com"
+        },
+        "knowsAbout": [
+          "자동차 엔지니어링",
+          "전동화 기술",
+          "자율주행",
+          "커넥티드 카",
+          "Automotive Engineering",
+          "Electrification",
+          "Autonomous Driving",
+          "Connected Car"
+        ],
+        "sameAs": ["https://www.gm.com"]
+      }
+    </script>
 </head>
 <body>
-    <div class="error-container">
-        <p class="error-subtitle">Page Not Found</p>
-        <div class="error-message">
-            <p>요청하신 페이지를 찾을 수 없습니다.</p>
-            <p>입력하신 주소가 정확한지 확인해 주세요.</p>
-            <br>
-            <p>The page you are looking for could not be found.</p>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TLHQBBZX"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+          <a href="#" class="logo">
+            <img src="./images/logo/GMTCK.png" alt="GMTCK" class="logo-img" />
+          </a>
+                <ul class="nav-menu" id="navMenu">
+            <li>
+              <a href="#about" data-kr="회사소개" data-en="About">About</a>
+            </li>
+            <li>
+              <a
+                href="https://search-careers.gm.com/en/locations/korea/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-kr="채용"
+                data-en="Career"
+                >Career</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://news.gm.com/home.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-kr="뉴스"
+                data-en="News"
+                >News</a
+              >
+            </li>
+            <li class="nav-dropdown">
+              <a
+                href="team-tck-hq.html"
+                class="nav-dropdown-trigger"
+                data-kr="Team TCK"
+                data-en="Team TCK"
+                >Team TCK</a
+              >
+              <ul class="nav-dropdown-menu" aria-label="Team TCK submenu">
+                <li>
+                  <a
+                    href="team-tck-hq.html"
+                    data-kr="본부소개"
+                    data-en="HQ Introduction"
+                    >HQ Introduction</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="team-tck-interviews.html"
+                    data-kr="담당 인터뷰"
+                    data-en="Role Interviews"
+                    >Role Interviews</a
+                  >
+                </li>
+              </ul>
+            </li>
+                </ul>
+          <div class="nav-buttons">
+            <button
+              class="language-toggle"
+              id="languageToggle"
+              aria-label="Language Toggle"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z"
+                  fill="currentColor"
+                />
+                    </svg>
+                    <span class="language-label" id="languageLabel">EN</span>
+                </button>
+          </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
-        <div class="error-info">
-            <p>We apologize for any inconvenience.</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Background Video -->
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        preload="auto"
+        x-webkit-airplay="allow"
+        controlslist="nodownload nofullscreen noremoteplayback"
+        disablePictureInPicture
+      >
+        <source src="./images/video/main-video_1.mp4" type="video/mp4" />
+        </video>
+      <!-- Fallback Background Image -->
+      <div class="hero-fallback-bg"></div>
+        
+        <!-- Dark Overlay -->
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <div class="hero-title-main">
+            <img
+              src="./images/logo/gm-symbol-color-dark-bg-web.png"
+              alt="GM Logo"
+              class="hero-gm-logo-inline"
+            />
+            <span class="hero-text"
+              ><span class="ev-highlight">ev</span>erybody in.</span
+            >
+                </div>
+            </h1>
         </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <span class="about-label">About GMTCK</span>
+            <p
+              class="about-description"
+              data-kr="GM Technical Center Korea (GMTCK)는 General Motors의 세계 2위 규모 제품 개발 조직이자 핵심 엔지니어링 허브로서, 차량 및 추진 시스템 개발, 디자인, 전동화, 자율주행, 디지털 혁신 등 미래 모빌리티 기술 분야의 전문성을 보유하고 있습니다. GM의 글로벌 네트워크 내 핵심 자산으로서 혁신과 미래 기술을 이끌어갑니다."
+              data-en="GM Technical Center Korea (GMTCK) is General Motors' second-largest product development organization globally and a core engineering hub with expertise in vehicle and propulsion system development, design, and advanced future mobility technologies. As a key asset within GM's global network, we drive innovation and future technologies for the company's worldwide operations."
+            >
+              GM Technical Center Korea (GMTCK)는 General Motors의 세계 2위 규모
+              제품 개발 조직이자 핵심 엔지니어링 허브로서, 차량 및 추진 시스템
+              개발, 디자인, 전동화, 자율주행, 디지털 혁신 등 미래 모빌리티 기술
+              분야의 전문성을 보유하고 있습니다. GM의 글로벌 네트워크 내 핵심
+              자산으로서 혁신과 미래 기술을 이끌어갑니다.
+            </p>
+            <ul class="about-list">
+              <li
+                data-kr="글로벌 GM 제품 개발 (Trailblazer, Encore GX, Bolt, Trax 등)"
+                data-en="Global GM product development (Trailblazer, Encore GX, Bolt, Trax, etc.)"
+              >
+                글로벌 GM 제품 개발 (Trailblazer, Encore GX, Bolt, Trax 등)
+              </li>
+              <li
+                data-kr="3,000명 이상의 엔지니어와 전문 개발 시설"
+                data-en="Over 3,000 engineers and professional development facilities"
+              >
+                3,000명 이상의 엔지니어와 전문 개발 시설
+              </li>
+              <li
+                data-kr="차세대 글로벌 차량 디자인 센터"
+                data-en="Next-generation global vehicle design center"
+              >
+                차세대 글로벌 차량 디자인 센터
+              </li>
+              <li
+                data-kr="전동화, 자율주행, 디지털 혁신 기술 개발"
+                data-en="Electrification, autonomous driving, and digital innovation"
+              >
+                전동화, 자율주행, 디지털 혁신 기술 개발
+              </li>
+            </ul>
+            </div>
+          <div class="about-image">
+            <img
+              src="./images/vehicle-corvette.png"
+              alt="GM Corvette"
+              class="about-image-img"
+              id="corvetteImage"
+            />
+                    </div>
+                </div>
+                    </div>
+    </section>
+
+    <!-- Innovation Section -->
+    <section class="technology" id="innovation">
+        <div class="container">
+            <div class="technology-content">
+                <div class="technology-text">
+            <h2 class="section-title">
+              <div class="title-line">
+                <span
+                  class="zero-text"
+                  style="color: #0078d4 !important; display: inline"
+                  >Zero</span
+                >
+                Crashes
+                </div>
+              <div class="title-line">
+                <span
+                  class="zero-text"
+                  style="color: #0078d4 !important; display: inline"
+                  >Zero</span
+                >
+                Emissions
+                    </div>
+              <div class="title-line">
+                <span
+                  class="zero-text"
+                  style="color: #0078d4 !important; display: inline"
+                  >Zero</span
+                >
+                Congestion
+                        </div>
+            </h2>
+                    </div>
+          <div class="technology-visual-wrapper">
+                <div class="technology-visual">
+                    <div class="tech-circle circle-1"></div>
+                    <div class="tech-circle circle-2"></div>
+                    <div class="tech-circle circle-3"></div>
+                </div>
+
+            <!-- Stats Overlay on Visual -->
+            <div class="technology-stats-overlay">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="110">0</h3>
+                  <p
+                    class="stat-label"
+                    data-kr="년+ GM 역사"
+                    data-en="Years+ GM History"
+                  >
+                    년+ GM 역사
+                    </p>
+                </div>
+                <div class="stat-item">
+                  <h3 class="stat-number" data-target="155000">0</h3>
+                  <p
+                    class="stat-label"
+                    data-kr="명+ GM 임직원"
+                    data-en="GM Employees+"
+                  >
+                    명+ 글로벌 엔지니어
+                  </p>
+                    </div>
+                <div class="stat-item">
+                  <h3 class="stat-number" data-target="3100">0</h3>
+                  <p
+                    class="stat-label"
+                    data-kr="명+ GMTCK 엔지니어"
+                    data-en="GMTCK Engineers+"
+                  >
+                    명+ GMTCK 엔지니어
+                    </p>
+                </div>
+              </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="services" id="capabilities">
+        <div class="container">
+        <div class="section-header"></div>
+
+        <!-- Story 1: Text Left, Image Right -->
+        <div class="story-section story-text-left">
+          <div class="story-content">
+            <div class="story-text">
+              <h3
+                class="story-title"
+                data-kr="전동화"
+                data-en="Electrification"
+              >
+                Electrification
+              </h3>
+              <p
+                class="story-description"
+                data-kr="배터리 플랫폼은 모든 사람을 전기차 시대에 참여시킬 수 있도록 도와 완전 전기화 미래를 만듭니다."
+                data-en="Our battery platform can help put everyone in an EV, bringing the world to an all-electric future."
+              >
+                Our battery platform can help put everyone in an EV, bringing
+                the world to an all-electric future.
+              </p>
+              <a
+                href="https://www.gm.com/innovation/electric-vehicles"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="story-link"
+              >
+                <span data-kr="자세히 보기" data-en="View Details"
+                  >자세히 보기</span
+                >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 18L15 12L9 6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+                </div>
+            <div class="story-image">
+              <img
+                src="./images/electrification.jpg"
+                alt="Electrification"
+                class="story-img"
+              />
+                </div>
+            </div>
+            </div>
+            
+        <!-- Story 2: Image Left, Text Right -->
+        <div class="story-section story-image-left">
+          <div class="story-content">
+            <div class="story-image">
+              <img
+                src="./images/safety.jpg"
+                alt="Vehicle Safety"
+                class="story-img"
+              />
+                </div>
+            <div class="story-text">
+              <h3
+                class="story-title"
+                data-kr="차량 안전"
+                data-en="Vehicle Safety"
+              >
+                Vehicle Safety
+              </h3>
+              <p
+                class="story-description"
+                data-kr="연구, 기술, 협력이 인간 중심의 안전 엔지니어링 접근법을 통해 종합적인 안전 관점을 제공합니다."
+                data-en="Research, technology and advocacy inform our holistic approach to engineering safety through a human lens."
+              >
+                Research, technology and advocacy inform our holistic approach
+                to engineering safety through a human lens.
+              </p>
+              <a
+                href="https://www.gm.com/innovation/vehicle-safety"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="story-link"
+              >
+                <span data-kr="자세히 보기" data-en="View Details"
+                  >자세히 보기</span
+                >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 18L15 12L9 6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+                </div>
+          </div>
+            </div>
+            
+        <!-- Story 3: Text Left, Image Right -->
+        <div class="story-section story-text-left">
+          <div class="story-content">
+            <div class="story-text">
+              <h3
+                class="story-title"
+                data-kr="자율주행"
+                data-en="Path to Autonomous"
+              >
+                Path to Autonomous
+              </h3>
+              <p
+                class="story-description"
+                data-kr="자율주행 차량을 통해 상상할 수 있는 그 이상의 교통 옵션을 추진합니다."
+                data-en="We're pushing transportation options beyond our wildest imaginations with autonomous vehicles."
+              >
+                We're pushing transportation options beyond our wildest
+                imaginations with autonomous vehicles.
+              </p>
+              <a
+                href="https://www.gm.com/innovation/autonomous-driving"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="story-link"
+              >
+                <span data-kr="자세히 보기" data-en="View Details"
+                  >자세히 보기</span
+                >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 18L15 12L9 6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+                        </div>
+            <div class="story-image">
+              <img
+                src="./images/autonomous.jpg"
+                alt="Path to Autonomous"
+                class="story-img"
+              />
+                        </div>
+                        </div>
+            </div>
+            
+        <!-- Story 4: Image Left, Text Right -->
+        <div class="story-section story-image-left">
+          <div class="story-content">
+            <div class="story-image">
+              <img
+                src="./images/social-impact.jpg"
+                alt="Social Impact"
+                class="story-img"
+              />
+                </div>
+            <div class="story-text">
+              <h3
+                class="story-title"
+                data-kr="사회적 영향"
+                data-en="Social Impact"
+              >
+                Social Impact
+              </h3>
+              <p
+                class="story-description"
+                data-kr="우리는 세계에서 가장 포용적인 기업이 되기 위해 헌신하며, 목표를 달성할 때까지 멈추지 않을 것입니다."
+                data-en="We are committed to becoming the most inclusive company in the world and we won't stop until we get there."
+              >
+                We are committed to becoming the most inclusive company in the
+                world and we won't stop until we get there.
+              </p>
+              <a
+                href="https://www.gm.com/impact/corporate-giving"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="story-link"
+              >
+                <span data-kr="자세히 보기" data-en="View Details"
+                  >자세히 보기</span
+                >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 18L15 12L9 6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Carousel Section -->
+    <section class="values-carousel" id="valuesCarousel">
+      <div class="carousel-container">
+        <button
+          class="carousel-btn carousel-btn-prev"
+          id="carouselPrev"
+          aria-label="Previous slide"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 7L9 12L14 17"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="carousel-slides" id="carouselSlides">
+          <!-- Slide 1: GMTCK Manufacturing Engineering -->
+          <div class="carousel-slide active">
+            <div class="carousel-content">
+              <div class="carousel-image-section">
+                <img
+                  src="./images/engine-line-belt-conveyor.jpg"
+                  alt="GMTCK Manufacturing Engineering"
+                  class="carousel-image"
+                />
+                </div>
+              <div class="carousel-text-section">
+                <h3 class="carousel-text-en">
+                  GMTCK Manufacturing Engineering
+                </h3>
+                <p
+                  class="carousel-description"
+                  data-kr="GMTCK 생산기술연구소는 General Motors의 아시아·태평양 지역을 대표하는 생산기술 연구 허브로써,
+                  신차 및 신공정의 선행 검증부터 양산 안정화, 디지털·친환경 제조 솔루션 개발에 이르기까지 경쟁력 있고 통합적인 엔지니어링 서비스를 제공하고 있습니다.
+                  고객에게 신뢰받는 차량 품질과 원가 경쟁력을 확보하기 위해, 글로벌 파트너들과 협업하며 지속 가능한 제조 생태계를 구축해 나가고 있습니다."
+                  data-en="GMTCK Manufacturing Engineering Research Center serves as General Motors’ representative manufacturing engineering hub for the Asia-Pacific region. It provides competitive and fully integrated engineering services, covering the early validation of new vehicles and manufacturing processes, stabilization of mass production, and the development of digital and eco-friendly manufacturing solutions. To ensure trusted vehicle quality and cost competitiveness, GMTCK collaborates closely with global partners to build a sustainable manufacturing ecosystem."
+                >
+                  GMTCK 생산기술연구소는 General Motors의 아시아·태평양 지역을
+                  대표하는 생산기술 연구 허브로써, 신차 및 신공정의 선행
+                  검증부터 양산 안정화, 디지털·친환경 제조 솔루션 개발에
+                  이르기까지 경쟁력 있고 통합적인 엔지니어링 서비스를 제공하고
+                  있습니다. 고객에게 신뢰받는 차량 품질과 원가 경쟁력을 확보하기
+                  위해, 글로벌 파트너들과 협업하며 지속 가능한 제조 생태계를
+                  구축해 나가고 있습니다.
+                </p>
+                        </div>
+                        </div>
+                        </div>
+          <!-- Slide 2: GMTCK Product Engineering -->
+          <div class="carousel-slide">
+            <div class="carousel-content">
+              <div class="carousel-image-section">
+                <img
+                  src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=800&fit=crop"
+                  alt="GMTCK Product Engineering"
+                  class="carousel-image"
+                />
+                    </div>
+              <div class="carousel-text-section">
+                <h3 class="carousel-text-en">GMTCK Product Engineering</h3>
+                <p
+                  class="carousel-description"
+                  data-kr="한국의 제품 엔지니어링 팀은 GM 글로벌 엔지니어링 센터의 핵심 거점으로서, 모든 브랜드를 아우르는 글로벌 시장용 차량을 개발 및 엔지니어링합니다. 부품 개발부터 조립 차량의 성능까지 차량 개발 전 과정을 감독하고 지원합니다. 내연기관 차량과 전기차 모두에 집중하며, 디자인·제조 엔지니어링 등 다양한 기능 조직과 협력하고 글로벌 프로젝트를 통해 각 지역 엔지니어링 팀을 기술적으로 지원합니다. 또한 버추얼 엔지니어링(Virtual Engineering)과 AI 등 최신 디지털 기술을 제품 개발 전반에 접목하여, 더 빠르고 정교한 차세대 제품 개발(Product Development)을 구현하고 있습니다."
+                  data-en="The Korea Product Engineering team is a core part of GM’s global engineering network, developing vehicles for global markets across all GM brands. We oversee and support the overall process of vehicle development – from as early as part development to the performance of assembled vehicles. Focusing on both internal combustion engine vehicles and electric vehicles, the team collaborates with cross-functional organizations such as design and manufacturing engineering, supports regional engineering teams through global programs, and drives next-generation product development by integrating Virtual Engineering, AI, and advanced digital technologies."
+                >
+                  한국의 제품 엔지니어링 팀은 GM 글로벌 엔지니어링 센터의 핵심
+                  거점으로서, 모든 브랜드를 아우르는 글로벌 시장용 차량을 개발
+                  및 엔지니어링합니다. 부품 개발부터 조립 차량의 성능까지 차량
+                  개발 전 과정을 감독하고 지원합니다. 내연기관 차량과 전기차
+                  모두에 집중하며, 디자인·제조 엔지니어링 등 다양한 기능 조직과
+                  협력하고 글로벌 프로젝트를 통해 각 지역 엔지니어링 팀을
+                  기술적으로 지원합니다. 또한 버추얼 엔지니어링(Virtual
+                  Engineering)과 AI 등 최신 디지털 기술을 제품 개발 전반에
+                  접목하여, 더 빠르고 정교한 차세대 제품 개발(Product
+                  Development)을 구현하고 있습니다.
+                </p>
+                </div>
+                </div>
+            </div>
+          <!-- Slide 3: GMTCK Design Center -->
+          <div class="carousel-slide">
+            <div class="carousel-content">
+              <div class="carousel-image-section">
+                <img
+                  src="./images/designcenter.webp"
+                  alt="GMTCK Design Center"
+                  class="carousel-image"
+                />
+              </div>
+              <div class="carousel-text-section">
+                <h3 class="carousel-text-en">GMTCK Design Center</h3>
+                <p
+                  class="carousel-description"
+                  data-kr="GMTCK 디자인 센터는 GM의 글로벌 디자인 센터 중 최고의 시설 중 하나이며, GM의 글로벌 디자인 네트워크의 일부입니다. 차량 디자이너, 디지털 디자이너, 클레이 조각가 및 디자인 비즈니스 운영자로 구성된 완전한 팀을 보유하고 있으며, 일부 최고의 글로벌 제품 디자인에 참여했습니다. GM이 Triple Zero 비전을 향해 나아감에 따라, 우리는 기술을 활용하여 디자인 방식에서 경계를 넓히고 혁신을 추진합니다."
+                  data-en="GMTCK Design Center has one of the best facilities among GM's global design centers and is part of GM's global design footprint. It houses a full team consisting of vehicle designers, digital designers, clay sculptors and design business operators who have been involved with some of our best global product designs. As GM moves towards our Triple Zero vision, we push design boundaries and drive innovation in the way we design through utilizing technology."
+                >
+                  GMTCK 디자인 센터는 GM의 글로벌 디자인 센터 중 최고의 시설 중
+                  하나이며, GM의 글로벌 디자인 네트워크의 일부입니다. 차량
+                  디자이너, 디지털 디자이너, 클레이 조각가 및 디자인 비즈니스
+                  운영자로 구성된 완전한 팀을 보유하고 있으며, 일부 최고의
+                  글로벌 제품 디자인에 참여했습니다.
+                </p>
+                </div>
+                </div>
+            </div>
+          <!-- Slide 4: The Cheongna Proving Ground -->
+          <div class="carousel-slide">
+            <div class="carousel-content">
+              <div class="carousel-image-section">
+                <img
+                  src="./images/cpg.jpg"
+                  alt="The Cheongna Proving Ground"
+                  class="carousel-image"
+                />
+                </div>
+              <div class="carousel-text-section">
+                <h3 class="carousel-text-en">The Cheongna Proving Ground</h3>
+                <p
+                  class="carousel-description"
+                  data-kr="GM의 청라 시험장은 36개의 글로벌 수준의 주행 시험 시설과 최첨단 시설을 갖춘 세계 최초의 시험 연구소를 보유하고 있으며, 신차의 주행 성능, 소음/진동, 안정성, 편의성 등 다양한 제품을 시험하고 개발합니다. 또한 Road to Virtual 전략의 중심 거점으로서, 물리 시험에서 가상 시험으로 확장되는 Physical-to-Virtual 전환을 선도하고 있습니다."
+                  data-en="GM's Cheongna Proving Ground has 36 global-class driving test reactors and the world's first test laboratory with state-of-the-art facilities to test and develop various products such as driving performance, noise/vibration, stability, and convenience of new cars. As a central hub of GM’s Road to Virtual strategy, the facility is leading the Physical-to-Virtual transition, expanding physical testing into virtual environments to enable next-generation vehicle development."
+                >
+                  GM의 청라 시험장은 36개의 글로벌 수준의 주행 시험 시설과
+                  최첨단 시설을 갖춘 세계 최초의 시험 연구소를 보유하고 있으며,
+                  신차의 주행 성능, 소음/진동, 안정성, 편의성 등 다양한 제품을
+                  시험하고 개발합니다. 또한 Road to Virtual 전략의 중심
+                  거점으로서, 물리 시험에서 가상 시험으로 확장되는
+                  Physical-to-Virtual 전환을 선도하고 있습니다.
+                </p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-btn carousel-btn-next"
+          id="carouselNext"
+          aria-label="Next slide"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 7L15 12L10 17"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="carousel-counter">
+          <span id="carouselCurrent">1</span> /
+          <span id="carouselTotal">4</span>
+        </div>
+        <button
+          class="carousel-btn carousel-btn-pause"
+          id="carouselPause"
+          aria-label="Pause/Play carousel"
+        >
+          <svg
+            class="pause-icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 4H6V20H10V4ZM18 4H14V20H18V4Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="currentColor"
+            />
+          </svg>
+          <svg
+            class="play-icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="display: none"
+          >
+            <path
+              d="M8 5V19L19 12L8 5Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        </div>
+    </section>
+
+    <!-- YouTube Video Carousel Section -->
+    <!-- 
+      사용 방법:
+      1. YouTube URL만 지정하면 자동으로 썸네일을 가져옵니다
+      2. 또는 data-youtube-id에 video ID만 지정해도 됩니다
+      3. YouTube API를 설정하면 최근 영상을 자동으로 가져올 수 있습니다
+      
+      예시:
+      - href="https://www.youtube.com/watch?v=VIDEO_ID"
+      - href="https://youtu.be/VIDEO_ID"
+      - data-youtube-id="VIDEO_ID"
+    -->
+    <section class="thumbnail-carousel" id="thumbnailCarousel">
+        <div class="container">
+        <div class="thumbnail-carousel-header">
+          <div class="thumbnail-carousel-header-content">
+            <span class="thumbnail-carousel-label">GMTCK LIFE</span>
+            <h2 class="thumbnail-carousel-title">
+              <span
+                data-kr="일상을 미래로 만드는"
+                data-en="Turning Everyday Life into the Future"
+                >일상을 미래로 만드는</span
+              >
+              <br />
+              <span class="thumbnail-carousel-subtitle"
+                >GMTCK People's Stories</span
+              >
+            </h2>
+                </div>
+                </div>
+        <div class="thumbnail-carousel-wrapper">
+          <div class="thumbnail-carousel-slides" id="thumbnailCarouselSlides">
+            <!-- Slide 1 - YouTube Video -->
+            <div class="thumbnail-slide">
+              <a
+                href="https://www.youtube.com/watch?v=16GX2FHKn18"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="thumbnail-item youtube-item"
+                data-youtube-id="16GX2FHKn18"
+              >
+                <div class="thumbnail-image">
+                  <img
+                    src="https://img.youtube.com/vi/16GX2FHKn18/maxresdefault.jpg"
+                    alt="YouTube Video Thumbnail"
+                    class="thumbnail-img"
+                  />
+                  <div class="youtube-play-button">
+                    <svg
+                      width="68"
+                      height="48"
+                      viewBox="0 0 68 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                        fill="red"
+                      />
+                      <path d="M 45,24 27,14 27,34" fill="white" />
+                    </svg>
+                </div>
+                </div>
+                <div class="thumbnail-overlay">
+                  <h4 class="thumbnail-title">YouTube 영상 제목 1</h4>
+                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
+                </div>
+              </a>
+            </div>
+            <!-- Slide 2 - YouTube Video -->
+            <div class="thumbnail-slide">
+              <a
+                href="https://www.youtube.com/watch?v=4z4GDjOYnPE"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="thumbnail-item youtube-item"
+                data-youtube-id="4z4GDjOYnPE"
+              >
+                <div class="thumbnail-image">
+                  <img
+                    src="https://img.youtube.com/vi/4z4GDjOYnPE/maxresdefault.jpg"
+                    alt="YouTube Video Thumbnail"
+                    class="thumbnail-img"
+                  />
+                  <div class="youtube-play-button">
+                    <svg
+                      width="68"
+                      height="48"
+                      viewBox="0 0 68 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                        fill="red"
+                      />
+                      <path d="M 45,24 27,14 27,34" fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="thumbnail-overlay">
+                  <h4 class="thumbnail-title">YouTube 영상 제목 2</h4>
+                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
+                </div>
+              </a>
+            </div>
+            <!-- Slide 3 - YouTube Video -->
+            <div class="thumbnail-slide active">
+              <a
+                href="https://www.youtube.com/watch?v=Cyto0nEA5XE"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="thumbnail-item youtube-item"
+                data-youtube-id="Cyto0nEA5XE"
+              >
+                <div class="thumbnail-image">
+                  <img
+                    src="https://img.youtube.com/vi/Cyto0nEA5XE/maxresdefault.jpg"
+                    alt="YouTube Video Thumbnail"
+                    class="thumbnail-img"
+                  />
+                  <div class="youtube-play-button">
+                    <svg
+                      width="68"
+                      height="48"
+                      viewBox="0 0 68 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                        fill="red"
+                      />
+                      <path d="M 45,24 27,14 27,34" fill="white" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="thumbnail-overlay">
+                  <h4 class="thumbnail-title">YouTube 영상 제목 3</h4>
+                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
+                </div>
+              </a>
+            </div>
+            <!-- Slide 3-1 - YouTube Video (기존 3번) -->
+            <div class="thumbnail-slide">
+              <a
+                href="https://www.youtube.com/watch?v=fqHVSQ79PVU"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="thumbnail-item youtube-item"
+                data-youtube-id="fqHVSQ79PVU"
+              >
+                <div class="thumbnail-image">
+                  <img
+                    src="https://img.youtube.com/vi/fqHVSQ79PVU/maxresdefault.jpg"
+                    alt="YouTube Video Thumbnail"
+                    class="thumbnail-img"
+                  />
+                  <div class="youtube-play-button">
+                    <svg
+                      width="68"
+                      height="48"
+                      viewBox="0 0 68 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                        fill="red"
+                      />
+                      <path d="M 45,24 27,14 27,34" fill="white" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="thumbnail-overlay">
+                  <h4 class="thumbnail-title">YouTube 영상 제목 4</h4>
+                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
+                </div>
+              </a>
+            </div>
+            <!-- Slide 5 - YouTube Video -->
+            <div class="thumbnail-slide">
+              <a
+                href="https://youtu.be/__wJYMGoDjY?si=W1jtXNG_5jczzUzW"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="thumbnail-item youtube-item"
+                data-youtube-id="__wJYMGoDjY"
+              >
+                <div class="thumbnail-image">
+                  <img
+                    src="https://img.youtube.com/vi/__wJYMGoDjY/maxresdefault.jpg"
+                    alt="YouTube Video Thumbnail"
+                    class="thumbnail-img"
+                  />
+                  <div class="youtube-play-button">
+                    <svg
+                      width="68"
+                      height="48"
+                      viewBox="0 0 68 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                        fill="red"
+                      />
+                      <path d="M 45,24 27,14 27,34" fill="white" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="thumbnail-overlay">
+                  <h4 class="thumbnail-title">YouTube 영상 제목 5</h4>
+                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
+                        </div>
+              </a>
+                        </div>
+            <!-- Slide 6 - YouTube Video -->
+            <div class="thumbnail-slide">
+              <a
+                href="https://youtu.be/YX8lyR9q0vY?si=Qq-jYQkqXxmS819k"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="thumbnail-item youtube-item"
+                data-youtube-id="YX8lyR9q0vY"
+              >
+                <div class="thumbnail-image">
+                  <img
+                    src="https://img.youtube.com/vi/YX8lyR9q0vY/maxresdefault.jpg"
+                    alt="YouTube Video Thumbnail"
+                    class="thumbnail-img"
+                  />
+                  <div class="youtube-play-button">
+                    <svg
+                      width="68"
+                      height="48"
+                      viewBox="0 0 68 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                        fill="red"
+                      />
+                      <path d="M 45,24 27,14 27,34" fill="white" />
+                    </svg>
+                        </div>
+                    </div>
+                <div class="thumbnail-overlay">
+                  <h4 class="thumbnail-title">YouTube 영상 제목 6</h4>
+                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
+                </div>
+              </a>
+            </div>
+            <!-- Slide 7 - YouTube Video -->
+            <div class="thumbnail-slide">
+              <a
+                href="https://youtu.be/oOwvM7SkSYk?si=FiYk4apZAu6B204-"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="thumbnail-item youtube-item"
+                data-youtube-id="oOwvM7SkSYk"
+              >
+                <div class="thumbnail-image">
+                  <img
+                    src="https://img.youtube.com/vi/oOwvM7SkSYk/maxresdefault.jpg"
+                    alt="YouTube Video Thumbnail"
+                    class="thumbnail-img"
+                  />
+                  <div class="youtube-play-button">
+                    <svg
+                      width="68"
+                      height="48"
+                      viewBox="0 0 68 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                        fill="red"
+                      />
+                      <path d="M 45,24 27,14 27,34" fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="thumbnail-overlay">
+                  <h4 class="thumbnail-title">YouTube 영상 제목 7</h4>
+                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="thumbnail-carousel-nav">
+            <button
+              class="thumbnail-nav-btn thumbnail-nav-prev"
+              id="thumbnailCarouselPrev"
+              aria-label="Previous"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15 18L9 12L15 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div class="thumbnail-carousel-counter">
+              <span id="thumbnailCarouselCurrent">3</span> /
+              <span id="thumbnailCarouselTotal">7</span>
+            </div>
+            <button
+              class="thumbnail-nav-btn thumbnail-nav-next"
+              id="thumbnailCarouselNext"
+              aria-label="Next"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+            <a
+              href="https://www.gm-korea.co.kr/ko/home/privacy-statement.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-privacy-link"
+              data-kr="개인정보 처리방침"
+              data-en="Privacy Statement"
+            >
+              개인정보 처리방침
+            </a>
+            <p>GM Technical Center Korea</p>
+                </div>
+          <div class="footer-right">
+            <div class="footer-social">
+            <a
+              href="https://www.youtube.com/@GMTCK"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social-link"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/gmtck"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social-link"
+              aria-label="LinkedIn"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.gm.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social-link"
+              aria-label="GM Global"
+            >
+              <img
+                src="./images/global.png"
+                alt="GM Global Website"
+                class="footer-global-icon"
+              />
+            </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+          <p>&copy; 2025 GM Technical Center Korea. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- YouTube Video Modal -->
+    <div class="youtube-modal" id="youtubeModal">
+      <div class="youtube-modal-overlay"></div>
+      <div class="youtube-modal-content">
+        <button
+          class="youtube-modal-close"
+          id="youtubeModalClose"
+          aria-label="Close"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <h3 class="youtube-modal-title" id="youtubeModalTitle"></h3>
+        <div class="youtube-modal-video" id="youtubeModalVideo">
+          <div
+            class="youtube-modal-thumbnail"
+            id="youtubeModalThumbnailContainer"
+          >
+            <img id="youtubeModalThumbnail" src="" alt="Video Thumbnail" />
+            <div class="youtube-play-button-large" id="youtubeModalPlayButton">
+              <svg
+                width="68"
+                height="48"
+                viewBox="0 0 68 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                  fill="red"
+                />
+                <path d="M 45,24 27,14 27,34" fill="white" />
+              </svg>
+            </div>
+          </div>
+          <iframe
+            id="youtubeModalIframe"
+            class="youtube-modal-iframe"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
     </div>
+
+    <script src="./js/language.js"></script>
+    <script src="./js/content-loader.js"></script>
+    <script src="./js/carousel.js"></script>
+    <script src="./js/thumbnail-carousel.js"></script>
+    <script src="./js/corvette-rotate.js"></script>
+    <script src="./js/youtube-modal.js"></script>
+    <!-- YouTube API (선택사항 - 자동 로드용) -->
+    <script src="./js/youtube-config.js"></script>
+    <script src="./js/youtube-api.js"></script>
+    <script src="./js/youtube-fetch-info.js"></script>
+    <script src="./js/youtube-carousel.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
