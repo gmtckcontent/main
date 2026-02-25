@@ -1,8 +1,13 @@
-User-agent: *
-Allow: /
+# ============================================
+# MAINTENANCE MODE - Search Engine Blocked
+# ============================================
+# 사이트 접근 차단 시 아래 주석을 해제하세요
 
-# Sitemap
-Sitemap: https://www.gmtck.com/sitemap.xml
+User-agent: *
+Disallow: /
+
+# Sitemap (차단 모드에서는 비활성화)
+# Sitemap: https://www.gmtck.com/sitemap.xml
 
 # Disallow admin pages from search engines
 Disallow: /admin-login.html

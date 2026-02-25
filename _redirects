@@ -1,11 +1,20 @@
+# ============================================
+# MAINTENANCE MODE - Site Access Blocked
+# ============================================
+# 모든 접근을 차단 - 최우선 규칙
+
+/* /maintenance.html 503
+
+# ============================================
 # Netlify Redirects for Clean URLs
-# This allows URLs like /team-tck-hq instead of /team-tck-hq.html
+# ============================================
+# 메인터넌스 모드에서는 아래 규칙들이 실행되지 않음 (위에서 차단됨)
 
-# SPA routing - redirect clean URLs to index.html with hash
-/team-tck-hq /index.html#team-tck-hq 200
-/team-tck-interviews /index.html#team-tck-interviews 200
-
-# Remove .html extension
-/*.html /:splat 301
+# # SPA routing - redirect clean URLs to index.html with hash
+# /team-tck-hq /index.html#team-tck-hq 200
+# /team-tck-interviews /index.html#team-tck-interviews 200
+# 
+# # Remove .html extension
+# /*.html /:splat 301
 
 

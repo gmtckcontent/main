@@ -1,30 +1,52 @@
-# Apache Rewrite Rules for Clean URLs
-# This allows URLs like /team-tck-hq instead of /team-tck-hq.html
+# ============================================
+# MAINTENANCE MODE - Site Access Blocked
+# ============================================
+# 모든 접근을 차단 - 최우선 규칙
 
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-
-  # Remove .html extension
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^([^\.]+)$ $1.html [NC,L]
-
-  # Redirect .html to clean URL
-  RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-  RewriteRule ^ /%1 [NC,L,R=301]
-</IfModule>
-
-# Fallback for SPA routing (if using hash routing)
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
   
-  # If file doesn't exist, redirect to index.html (for SPA)
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^team-tck-hq$ index.html#team-tck-hq [R=301,L]
-  RewriteRule ^team-tck-interviews$ index.html#team-tck-interviews [R=301,L]
+  # 모든 요청을 maintenance.html로 리다이렉트 (503)
+  RewriteCond %{REQUEST_URI} !^/maintenance.html$
+  RewriteCond %{REQUEST_URI} !^/maintenance\.html$
+  RewriteRule ^(.*)$ /maintenance.html [R=503,L]
 </IfModule>
+
+<IfModule mod_headers.c>
+  Header set Retry-After "3600"
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+</IfModule>
+
+# ============================================
+# Apache Rewrite Rules for Clean URLs
+# ============================================
+# 메인터넌스 모드에서는 아래 규칙들이 실행되지 않음 (위에서 차단됨)
+
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteBase /
+# 
+#   # Remove .html extension
+#   RewriteCond %{REQUEST_FILENAME} !-d
+#   RewriteCond %{REQUEST_FILENAME} !-f
+#   RewriteRule ^([^\.]+)$ $1.html [NC,L]
+# 
+#   # Redirect .html to clean URL
+#   RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+#   RewriteRule ^ /%1 [NC,L,R=301]
+# </IfModule>
+# 
+# # Fallback for SPA routing (if using hash routing)
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteBase /
+#   
+#   # If file doesn't exist, redirect to index.html (for SPA)
+#   RewriteCond %{REQUEST_FILENAME} !-f
+#   RewriteCond %{REQUEST_FILENAME} !-d
+#   RewriteRule ^team-tck-hq$ index.html#team-tck-hq [R=301,L]
+#   RewriteRule ^team-tck-interviews$ index.html#team-tck-interviews [R=301,L]
+# </IfModule>
 
 
