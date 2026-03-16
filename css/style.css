@@ -1842,8 +1842,7 @@ section#innovation .section-title .zero-text {
 }
 
 .footer-brand .footer-privacy-link {
-  font-size: 14px;
-    font-weight: 700;
+  display: none !important;
 }
 
 .footer-right {
@@ -1911,34 +1910,10 @@ section#innovation .section-title .zero-text {
 .footer-privacy-link,
 .footer-privacy-link:link,
 .footer-privacy-link:visited,
-.footer-privacy-link:active {
-  color: rgba(255, 255, 255, 0.6) !important;
-  font-size: 14px;
-  text-decoration: none !important;
-  transition: color 0.3s ease;
-  display: inline-block;
-  border: none !important;
-  outline: none !important;
-  background: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  box-shadow: none !important;
-}
-
-.footer-privacy-link:hover {
-  color: rgba(255, 255, 255, 0.9) !important;
-  text-decoration: underline !important;
-  border: none !important;
-  outline: none !important;
-  background: none !important;
-  box-shadow: none !important;
-}
-
+.footer-privacy-link:active,
+.footer-privacy-link:hover,
 .footer-privacy-link:focus {
-  color: rgba(255, 255, 255, 0.6) !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
+  display: none !important;
 }
 
 /* ===========================
