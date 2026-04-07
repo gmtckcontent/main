@@ -193,13 +193,17 @@ navMenu.querySelectorAll("a").forEach((link) => {
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
+    // team-tck-interviews.html: 해시·ScrollTrigger·랜딩 카드는 페이지 스크립트가 처리
+    if (document.body.classList.contains("interviews-page")) {
+      return;
+    }
     // Don't prevent default for hash links on subpages (handled by subpage scripts)
     const href = this.getAttribute("href");
     if (href && href.startsWith("#") && document.querySelector(".hq-sidebar-link")) {
       // This is a subpage with sidebar navigation, let subpage handle it
       return;
     }
-    
+
     e.preventDefault();
     const target = document.querySelector(href);
 
@@ -328,11 +332,97 @@ storySections.forEach((section) => {
 });
 
 // ===========================
+// Team TCK — Role interviews: smooth scroll reveal
+// ===========================
+function initInterviewsScrollReveal() {
+  if (!document.body.classList.contains("interviews-page")) {
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: "0px 0px -20px 0px",
+    }
+  );
+
+  function register(el) {
+    if (!el || el.hasAttribute("data-reveal")) {
+      return;
+    }
+    el.setAttribute("data-reveal", "");
+    el.classList.add("hq-reveal");
+    io.observe(el);
+  }
+
+  /** 상단 크롬(네비·타이틀·사이드바): 셸이 hidden일 때 IO가 안 돌거나 네비에 가려 교차가 안 잡혀 opacity 0으로 남는 문제 방지 */
+  function registerChrome(el) {
+    if (!el || el.hasAttribute("data-reveal")) {
+      return;
+    }
+    el.setAttribute("data-reveal", "");
+    el.classList.add("hq-reveal", "is-visible");
+  }
+
+  function scan(root) {
+    if (!root) {
+      return;
+    }
+    root
+      .querySelectorAll(
+        ".interview-item, .interview-profile-header, .hq-content-title, .hq-division-card, .hq-content-description, .interview-question"
+      )
+      .forEach((el, i) => {
+        if (!el.hasAttribute("data-reveal")) {
+          el.style.setProperty("--reveal-delay", `${Math.min(i * 0.04, 0.35)}s`);
+        }
+        register(el);
+      });
+  }
+
+  registerChrome(document.querySelector(".hq-division-rail"));
+  registerChrome(document.querySelector(".hq-title-wrapper"));
+  registerChrome(document.querySelector(".hq-sidebar"));
+
+  const main = document.querySelector(".hq-main-content");
+  scan(main);
+
+  const mo = new MutationObserver(() => {
+    scan(main);
+  });
+  if (main) {
+    mo.observe(main, { subtree: true, childList: true, attributes: true });
+  }
+
+  document.querySelectorAll(".hq-content-section").forEach((sec) => {
+    new MutationObserver(() => {
+      if (sec.classList.contains("active")) {
+        requestAnimationFrame(() => scan(sec));
+      }
+    }).observe(sec, { attributes: true, attributeFilter: ["class"] });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initInterviewsScrollReveal);
+} else {
+  initInterviewsScrollReveal();
+}
+
+// ===========================
 // Contact Form Handling
 // ===========================
 const contactForm = document.querySelector(".contact-form");
 
-contactForm.addEventListener("submit", (e) => {
+contactForm?.addEventListener("submit", (e) => {
   e.preventDefault();
 
   // Get form data
@@ -414,6 +504,14 @@ window.addEventListener("scroll", () => {
 // Loading Animation
 // ===========================
 window.addEventListener("load", () => {
+  // 직무소개 페이지: body opacity 토글 시 레이아웃·스크롤 위치가 흔들릴 수 있어 페이드 생략
+  if (
+    document.body.classList.contains("interviews-page") ||
+    window.location.pathname.includes("team-tck-interviews.html") ||
+    window.location.href.includes("team-tck-interviews.html")
+  ) {
+    return;
+  }
   document.body.style.opacity = "0";
   setTimeout(() => {
     document.body.style.transition = "opacity 0.5s ease";

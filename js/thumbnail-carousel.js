@@ -1,33 +1,30 @@
-// Thumbnail Carousel 기능 - 중앙 강조 방식
+// Thumbnail Carousel — 2-up desktop / 1-up mobile, reference layout
 class ThumbnailCarousel {
   constructor() {
     this.container = document.getElementById("thumbnailCarouselSlides");
+    this.wrapper = this.container
+      ? this.container.closest(".thumbnail-carousel-viewport") ||
+        this.container.closest(".thumbnail-carousel-wrapper")
+      : null;
     this.slides = document.querySelectorAll(".thumbnail-slide");
     this.prevBtn = document.getElementById("thumbnailCarouselPrev");
     this.nextBtn = document.getElementById("thumbnailCarouselNext");
-    this.currentIndex = 2; // 디폴트를 3번 슬라이드로 설정 (인덱스는 0부터 시작)
+    this.currentIndex = 0;
     this.totalSlides = this.slides.length;
     this.isTransitioning = false;
+    this.gapDesktop = 16;
 
     if (!this.container || this.slides.length === 0) {
       return;
     }
 
-    // 각 슬라이드에 원본 인덱스 저장 (초기화)
     this.slides.forEach((slide, index) => {
       slide.setAttribute("data-slide-index", index);
     });
 
-    // 카운터 업데이트
-    const totalEl = document.getElementById("thumbnailCarouselTotal");
-    if (totalEl) {
-      totalEl.textContent = this.totalSlides;
-    }
-
     this.init();
-    
-    // 화면 크기 변경 시 재계산
-    window.addEventListener('resize', () => {
+
+    window.addEventListener("resize", () => {
       this.updateSlides();
     });
   }
@@ -67,7 +64,6 @@ class ThumbnailCarousel {
 
     // 초기 슬라이드 설정
     this.updateSlides();
-    this.updateCounter();
   }
 
   isElementInViewport(el) {
@@ -86,12 +82,13 @@ class ThumbnailCarousel {
       return;
     }
 
-    if (index < 0) index = this.totalSlides - 1;
-    if (index >= this.totalSlides) index = 0;
+    const max = this.maxIndex();
+    if (index < 0 || index > max) {
+      return;
+    }
 
     this.currentIndex = index;
     this.updateSlides();
-    this.updateCounter();
   }
 
   goToNext() {
@@ -102,56 +99,76 @@ class ThumbnailCarousel {
     this.goToSlide(this.currentIndex - 1);
   }
 
+  maxIndex() {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      return Math.max(0, this.totalSlides - 1);
+    }
+    return Math.max(0, this.totalSlides - 2);
+  }
+
   updateSlides() {
     if (this.isTransitioning) return;
     this.isTransitioning = true;
 
-    // 모든 슬라이드에서 active 클래스 제거
     this.slides.forEach((slide) => {
-      slide.classList.remove('active');
+      slide.classList.remove("active");
+    });
+    if (this.slides[this.currentIndex]) {
+      this.slides[this.currentIndex].classList.add("active");
+    }
+
+    const isMobile = window.innerWidth <= 768;
+    const wrap = this.wrapper;
+    if (!wrap || !this.container) {
+      this.isTransitioning = false;
+      this.updateNavButtons();
+      return;
+    }
+
+    const w = wrap.offsetWidth;
+    const gap = isMobile ? 0 : this.gapDesktop;
+    let slideWidth;
+    if (isMobile) {
+      slideWidth = w;
+    } else {
+      slideWidth = (w - gap) / 2;
+    }
+
+    this.slides.forEach((slide) => {
+      slide.style.flex = `0 0 ${slideWidth}px`;
+      slide.style.width = `${slideWidth}px`;
+      slide.style.minWidth = `${slideWidth}px`;
     });
 
-    // 현재 슬라이드에 active 클래스 추가
-    if (this.slides[this.currentIndex]) {
-      this.slides[this.currentIndex].classList.add('active');
+    const capped = Math.min(this.currentIndex, this.maxIndex());
+    if (capped !== this.currentIndex) {
+      this.currentIndex = capped;
     }
 
-    // 모바일 여부 확인
-    const isMobile = window.innerWidth <= 768;
-    
-    // 컨테이너를 부드럽게 이동시키기 위해 translateX 사용
-    // 각 슬라이드가 33.333% 너비이므로, 현재 슬라이드를 중앙에 위치시키려면
-    // translateX = -currentIndex * 33.333% + 33.333%
-    let translateX;
-    
-    if (isMobile) {
-      // 모바일: 3등분 레이아웃 (33.333% 너비), 중앙(2번째)에 배치
-      const slideWidthPercent = 33.333;
-      // 중앙에 배치하기 위한 오프셋: (100% - 33.333%) / 2 = 33.333%
-      const centerOffset = (100 - slideWidthPercent) / 2;
-      // 각 슬라이드마다 33.333%씩 왼쪽으로 이동
-      translateX = centerOffset - this.currentIndex * slideWidthPercent;
-    } else {
-      // 데스크톱: 중앙 정렬 (33.333% 너비)
-      const slideWidthPercent = 33.333;
-      // 중앙에 배치하기 위한 오프셋: (100% - 33.333%) / 2 = 33.333%
-      const centerOffset = (100 - slideWidthPercent) / 2;
-      // 각 슬라이드마다 33.333%씩 왼쪽으로 이동
-      translateX = centerOffset - this.currentIndex * slideWidthPercent;
-    }
-    
-    this.container.style.transform = `translateX(${translateX}%)`;
-    
-    // 전환 애니메이션 완료 후 플래그 해제
+    const step = slideWidth + gap;
+    const translatePx = -this.currentIndex * step;
+    this.container.style.transform = `translateX(${translatePx}px)`;
+
+    this.updateNavButtons();
+
     setTimeout(() => {
       this.isTransitioning = false;
-    }, 600);
+    }, 450);
   }
 
-  updateCounter() {
-    const currentEl = document.getElementById("thumbnailCarouselCurrent");
-    if (currentEl) {
-      currentEl.textContent = this.currentIndex + 1;
+  updateNavButtons() {
+    const max = this.maxIndex();
+    const atStart = this.currentIndex <= 0;
+    const atEnd = this.currentIndex >= max;
+
+    if (this.prevBtn) {
+      this.prevBtn.hidden = atStart;
+      this.prevBtn.setAttribute("aria-hidden", atStart ? "true" : "false");
+    }
+    if (this.nextBtn) {
+      this.nextBtn.hidden = atEnd;
+      this.nextBtn.setAttribute("aria-hidden", atEnd ? "true" : "false");
     }
   }
 

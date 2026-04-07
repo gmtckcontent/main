@@ -157,10 +157,14 @@ class ContentLoader {
     const hero = this.content.hero || {};
 
     const mainTitle = document.querySelector(".hero-title-main");
+    const lockup = document.querySelector(".hero-gmtck-lockup");
     const subTitle = document.querySelector(".hero-title-sub");
     const description = document.querySelector(".hero-description");
 
-    if (mainTitle && hero.title_main) mainTitle.textContent = hero.title_main;
+    if (hero.title_main) {
+      if (lockup) lockup.alt = hero.title_main;
+      else if (mainTitle) mainTitle.textContent = hero.title_main;
+    }
     if (subTitle && hero.title_sub) subTitle.textContent = hero.title_sub;
     if (description && hero.description)
       description.textContent = hero.description;

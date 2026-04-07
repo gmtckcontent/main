@@ -118,10 +118,26 @@ class LanguageToggle {
       }
     });
 
+    document.querySelectorAll(".hq-landing-card-abbr").forEach((el) => {
+      if (el.dataset.abbrKr && el.dataset.abbrEn) {
+        el.textContent = lang === "kr" ? el.dataset.abbrKr : el.dataset.abbrEn;
+      } else if (el.dataset.kr && el.dataset.en) {
+        el.textContent = lang === "kr" ? el.dataset.kr : el.dataset.en;
+      }
+    });
+
     // Update HQ main title
     const mainTitle = document.getElementById("hqMainTitle");
     if (mainTitle && mainTitle.dataset.kr && mainTitle.dataset.en) {
       mainTitle.textContent = lang === "kr" ? mainTitle.dataset.kr : mainTitle.dataset.en;
+    }
+
+    const backToLanding = document.getElementById("hqBackToLanding");
+    if (backToLanding && backToLanding.dataset.ariaKr && backToLanding.dataset.ariaEn) {
+      backToLanding.setAttribute(
+        "aria-label",
+        lang === "kr" ? backToLanding.dataset.ariaKr : backToLanding.dataset.ariaEn
+      );
     }
 
     // Update sidebar links
@@ -343,7 +359,7 @@ class LanguageToggle {
   }
 }
 
-// 초기화
+// 초기화 (다른 스크립트가 비동기로 본문을 붙인 뒤 setLanguage를 다시 호출할 수 있도록 노출)
 document.addEventListener("DOMContentLoaded", () => {
-  new LanguageToggle();
+  window.gmtckLanguageToggle = new LanguageToggle();
 });

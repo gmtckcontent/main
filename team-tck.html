@@ -13,11 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="./" />
     <title>Team TCK - GMTCK</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.css?v=27" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@600;700;800&family=Overpass:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -27,12 +27,21 @@
       <div class="container">
         <div class="nav-content">
           <a href="index.html" class="logo">
-            <img src="./images/logo/GMTCK.png" alt="GMTCK" class="logo-img" />
+            <img
+              src="./images/logo/gm-symbol-white-dark-bg-web%20(1).png"
+              alt="General Motors"
+              class="logo-img logo-img--gm-symbol"
+            />
           </a>
           <ul class="nav-menu" id="navMenu">
             <li>
               <a href="index.html#about" data-kr="회사소개" data-en="About"
                 >About</a
+              >
+            </li>
+            <li>
+              <a href="core-values.html" data-kr="핵심 가치" data-en="Core Values"
+                >Core Values</a
               >
             </li>
             <li>
@@ -54,6 +63,33 @@
                 data-en="News"
                 >News</a
               >
+            </li>
+            <li class="nav-dropdown">
+              <a
+                href="team-tck.html"
+                class="nav-dropdown-trigger active"
+                data-kr="Team TCK"
+                data-en="Team TCK"
+                >Team TCK</a
+              >
+              <ul class="nav-dropdown-menu" aria-label="Team TCK submenu">
+                <li>
+                  <a
+                    href="team-tck-hq.html"
+                    data-kr="본부소개"
+                    data-en="HQ Introduction"
+                    >HQ Introduction</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="team-tck-interviews.html"
+                    data-kr="Our Story"
+                    data-en="Our Story"
+                    >Our Story</a
+                  >
+                </li>
+              </ul>
             </li>
           </ul>
           <div class="nav-buttons">
@@ -139,8 +175,8 @@
           </a>
 
           <a class="subpage-card" href="team-tck-interviews.html">
-            <div class="subpage-card-label" data-kr="담당별 인터뷰" data-en="Role Interviews">
-              Role Interviews
+            <div class="subpage-card-label" data-kr="Our Story" data-en="Our Story">
+              Our Story
             </div>
             <h2 class="subpage-card-title" data-kr="담당별 인터뷰" data-en="Interviews by Role">
               Interviews by Role

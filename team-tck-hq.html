@@ -1,83 +1,674 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>페이지를 찾을 수 없습니다 - GMTCK</title>
+    <base href="./" />
+    <title>Team TCK | 본부소개</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@600;700;800&family=Overpass:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="overflow-x: hidden;" class="team-tck-page">
     <script>
-        // 즉시 404 페이지로 리다이렉트
-        window.location.replace('/404.html');
+      // Disable browser scroll restoration
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      // Disable scroll snap on Team TCK page
+      document.documentElement.classList.add('team-tck-page');
+      // Force scroll to top immediately
+      window.scrollTo(0, 0);
     </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: "Roboto", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: transparent;
-            color: #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .error-container {
-            text-align: center;
-            max-width: 600px;
-            padding: 60px 40px;
-            background: transparent;
-        }
-        
-        .error-subtitle {
-            font-size: 20px;
-            font-weight: 400;
-            margin-bottom: 30px;
-            color: #000000;
-            line-height: 1.6;
-        }
-        
-        .error-message {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #000000;
-            margin-bottom: 40px;
-        }
-        
-        .error-info {
-            background: transparent;
-            padding: 30px;
-            margin-top: 40px;
-        }
-        
-        .error-info p {
-            font-size: 14px;
-            color: #000000;
-            margin-bottom: 10px;
-        }
-        
-        .error-info p:last-child {
-            margin-bottom: 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="error-container">
-        <p class="error-subtitle">Page Not Found</p>
-        <div class="error-message">
-            <p>요청하신 페이지를 찾을 수 없습니다.</p>
-            <p>입력하신 주소가 정확한지 확인해 주세요.</p>
-            <br>
-            <p>The page you are looking for could not be found.</p>
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="nav-content">
+          <a href="index.html" class="logo">
+            <img src="./images/logo/GMTCK.png" alt="GMTCK" class="logo-img" />
+          </a>
+          <ul class="nav-menu" id="navMenu">
+            <li>
+              <a href="index.html#about" data-kr="회사소개" data-en="About"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="core-values.html" data-kr="핵심 가치" data-en="Core Values"
+                >Core Values</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://search-careers.gm.com/en/locations/korea/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-kr="채용"
+                data-en="Career"
+                >Career</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://news.gm.com/home.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-kr="뉴스"
+                data-en="News"
+                >News</a
+              >
+            </li>
+            <li class="nav-dropdown">
+              <a
+                href="team-tck.html"
+                class="nav-dropdown-trigger active"
+                data-kr="Team TCK"
+                data-en="Team TCK"
+                >Team TCK</a
+              >
+              <ul class="nav-dropdown-menu" aria-label="Team TCK submenu">
+                <li>
+                  <a
+                    href="team-tck-hq.html"
+                    class="active"
+                    data-kr="본부소개"
+                    data-en="HQ Introduction"
+                    >HQ Introduction</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="team-tck-interviews.html"
+                    data-kr="Our Story"
+                    data-en="Our Story"
+                    >Our Story</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="nav-buttons">
+            <button
+              class="language-toggle"
+              id="languageToggle"
+              aria-label="Language Toggle"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="language-label" id="languageLabel">EN</span>
+            </button>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-        <div class="error-info">
-            <p>We apologize for any inconvenience.</p>
-        </div>
+      </div>
+    </nav>
+
+    <div class="hq-intro-banner">
+      <img src="./images/technology.png" alt="Technology" class="hq-intro-banner-image" />
     </div>
-</body>
+    
+    <section class="subpage-section hq-intro-section">
+      <div class="container">
+        <div class="hq-layout">
+          <!-- Left Sidebar Navigation -->
+          <aside class="hq-sidebar">
+            <nav class="hq-sidebar-nav">
+              <ul class="hq-sidebar-list">
+                <li>
+                  <a href="#avd-svi" class="hq-sidebar-link active" data-hq="avd-svi" data-kr="AVD & SVI" data-en="AVD & SVI">
+                    AVD & SVI
+                  </a>
+                </li>
+                <li>
+                  <a href="#beca" class="hq-sidebar-link" data-hq="beca" data-kr="BECA" data-en="BECA">
+                    BECA
+                  </a>
+                </li>
+                <li>
+                  <a href="#engineering-excellence" class="hq-sidebar-link" data-hq="engineering-excellence" data-kr="Engineering Excellence" data-en="Engineering Excellence" data-abbr-kr="EE" data-abbr-en="EE">
+                    EE
+                  </a>
+                </li>
+                <li>
+                  <a href="#itpe" class="hq-sidebar-link" data-hq="itpe" data-kr="ITPE" data-en="ITPE">
+                    ITPE
+                  </a>
+                </li>
+                <li>
+                  <a href="#pipg" class="hq-sidebar-link" data-hq="pipg" data-kr="PIPG" data-en="PIPG">
+                    PIPG
+                  </a>
+                </li>
+                <li>
+                  <a href="#ss" class="hq-sidebar-link" data-hq="ss" data-kr="S&S" data-en="S&S">
+                    S&S
+                  </a>
+                </li>
+                <li>
+                  <a href="#ve" class="hq-sidebar-link" data-hq="ve" data-kr="VE" data-en="VE">
+                    VE
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+
+          <!-- Main Content Area -->
+          <main class="hq-main-content">
+            <!-- AVD & SVI -->
+            <div class="hq-content-section active" id="avd-svi">
+              <h2 class="hq-content-title" data-kr="AVD & SVI" data-en="AVD & SVI">
+                AVD & SVI
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="AVD&SVI 본부는 한 대의 자동차가 처음 아이디어에서 실제 도로 위에 서기까지 전 과정을 함께 설계하고 이끌어 가는 팀입니다. 차의 크기와 모양, 실내와 트렁크 공간, 전기·엔진 시스템까지를 전체를 바라보며 고객들이 편안하고 안전하게 탈 수 있는 전체 그림을 먼저 그립니다. 이 과정에서 디자인팀, 설계팀, 시험팀, 공장과 긴밀히 소통하면서 &quot;보기에도 예쁘고, 타기에도 편하고, 만들기에도 무리가 없는 차&quot;가 되도록 균형을 맞춥니다. 또한 실제로 차를 찍어내기 전에 컴퓨터 속 가상 시뮬레이션을 충분히 활용해, 고객이 느낄 수 있는 불편과 위험 요소를 미리 찾아 고치는 역할을 합니다. 이렇게 차 한 대를 둘러싼 수많은 결정들을 한데 모으면서, 고객에게 합리적인 가격과 믿을 수 있는 품질을 동시에 드리기 위한 최선의 선택을 해 나가고 있습니다. 결국 AVD SVI 본부가 꿈꾸는 것은, 시간이 지나도 &quot;이 차를 선택하길 참 잘했다&quot;라는 마음이 드는 따뜻하고 신뢰할 수 있는 자동차를 고객 곁에 전해 드리는 것입니다." data-en="AVD&SVI HQ is a team that designs and leads the entire process of a vehicle from the initial idea to when it actually stands on the road. We look at the entire picture - from the size and shape of the car, interior and trunk space, to electric and engine systems - and first draw the overall picture of a vehicle that customers can ride comfortably and safely. In this process, we maintain balance by closely communicating with design teams, engineering teams, testing teams, and factories to create a car that is 'beautiful to look at, comfortable to ride, and feasible to manufacture'. We also fully utilize virtual simulations in computers before actually manufacturing the car, playing a role in finding and fixing inconveniences and risk factors that customers might feel in advance. By gathering numerous decisions surrounding a single car in this way, we are making the best choices to simultaneously provide customers with reasonable prices and reliable quality. Ultimately, what AVD SVI HQ dreams of is delivering a warm and trustworthy car to customers that makes them feel, even as time passes, 'I made a really good choice in selecting this car'.">
+                  AVD&SVI 본부는 한 대의 자동차가 처음 아이디어에서 실제 도로 위에 서기까지 전 과정을 함께 설계하고 이끌어 가는 팀입니다. 차의 크기와 모양, 실내와 트렁크 공간, 전기·엔진 시스템까지를 전체를 바라보며 고객들이 편안하고 안전하게 탈 수 있는 전체 그림을 먼저 그립니다. 이 과정에서 디자인팀, 설계팀, 시험팀, 공장과 긴밀히 소통하면서 &quot;보기에도 예쁘고, 타기에도 편하고, 만들기에도 무리가 없는 차&quot;가 되도록 균형을 맞춥니다. 또한 실제로 차를 찍어내기 전에 컴퓨터 속 가상 시뮬레이션을 충분히 활용해, 고객이 느낄 수 있는 불편과 위험 요소를 미리 찾아 고치는 역할을 합니다. 이렇게 차 한 대를 둘러싼 수많은 결정들을 한데 모으면서, 고객에게 합리적인 가격과 믿을 수 있는 품질을 동시에 드리기 위한 최선의 선택을 해 나가고 있습니다. 결국 AVD SVI 본부가 꿈꾸는 것은, 시간이 지나도 &quot;이 차를 선택하길 참 잘했다&quot;라는 마음이 드는 따뜻하고 신뢰할 수 있는 자동차를 고객 곁에 전해 드리는 것입니다.
+                </p>
+                
+                <div class="hq-subtitle-wrapper">
+                  <h3 class="hq-content-subtitle" data-kr="Division" data-en="Division">
+                    Division
+                  </h3>
+                  <a href="team-tck-interviews.html" class="hq-interview-link">
+                    <span data-kr="담당 stories" data-en="Interview">Interview</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 15L15 5M15 5H5M15 5V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="hq-division-cards">
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Advanced Vehicle Development Integration" data-en="Advanced Vehicle Development Integration">Advanced Vehicle Development Integration</h4>
+                    <p class="hq-division-card-description" data-kr="차량의 크기와 모양, 실내와 트렁크 공간, 전기·엔진 시스템까지를 전체를 바라보며 고객들이 편안하고 안전하게 탈 수 있는 전체 그림을 먼저 그립니다." data-en="We look at the entire picture - from the size and shape of the car, interior and trunk space, to electric and engine systems - and first draw the overall picture of a vehicle that customers can ride comfortably and safely.">차량의 크기와 모양, 실내와 트렁크 공간, 전기·엔진 시스템까지를 전체를 바라보며 고객들이 편안하고 안전하게 탈 수 있는 전체 그림을 먼저 그립니다.</p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Studio & Surface Integration" data-en="Studio & Surface Integration">Studio & Surface Integration</h4>
+                    <p class="hq-division-card-description" data-kr="디자인팀, 설계팀, 시험팀, 공장과 긴밀히 소통하면서 &quot;보기에도 예쁘고, 타기에도 편하고, 만들기에도 무리가 없는 차&quot;가 되도록 균형을 맞춥니다." data-en="We maintain balance by closely communicating with design teams, engineering teams, testing teams, and factories to create a car that is 'beautiful to look at, comfortable to ride, and feasible to manufacture'.">디자인팀, 설계팀, 시험팀, 공장과 긴밀히 소통하면서 &quot;보기에도 예쁘고, 타기에도 편하고, 만들기에도 무리가 없는 차&quot;가 되도록 균형을 맞춥니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BECA -->
+            <div class="hq-content-section" id="beca">
+              <h2 class="hq-content-title" data-kr="Body, Exterior, Chassis and After sales Engineering" data-en="Body, Exterior, Chassis and After sales Engineering">
+                Body, Exterior, Chassis and After sales Engineering
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="BECA 본부는 차량의 골격부터 사용 경험까지 근본적인 성능을 만드는 핵심 조직입니다. 안전한 차체 구조를 설계하고, 차량의 첫인상을 결정짓는 외장 품질을 완성하며, 주행 성능을 책임지는 샤시 기술과 차량 생애 전반을 고려한 Aftersales 설계를 아우릅니다. 차량 개발 전 과정에서 디자인, 제조, 시험 조직과 긴밀하게 협업하며 &quot;충돌에 강하고, 디자인 완성도도 뛰어나고, 주행 시 안정적이며, 유지보수까지 편한 차&quot;를 만들기 위해 균형 잡힌 결정을 내립니다. 궁극적으로 BECA본부는 고객에게 안전성, 완성도, 그리고 지속적인 신뢰를 제공하는 핵심 구조 기술을 구축하는 것을 목표로 합니다." data-en="BECA HQ is a core organization that creates fundamental performance from the vehicle's skeleton to the user experience. We design safe body structures, complete exterior quality that determines the vehicle's first impression, and encompass chassis technology responsible for driving performance and Aftersales design that considers the vehicle's entire lifecycle. Throughout the entire vehicle development process, we collaborate closely with design, manufacturing, and testing organizations to make balanced decisions to create a car that is 'strong in collisions, excellent in design completion, stable when driving, and convenient to maintain'. Ultimately, BECA HQ aims to build core structural technologies that provide customers with safety, completeness, and sustained trust.">
+                  BECA 본부는 차량의 골격부터 사용 경험까지 근본적인 성능을 만드는 핵심 조직입니다. 안전한 차체 구조를 설계하고, 차량의 첫인상을 결정짓는 외장 품질을 완성하며, 주행 성능을 책임지는 샤시 기술과 차량 생애 전반을 고려한 Aftersales 설계를 아우릅니다. 차량 개발 전 과정에서 디자인, 제조, 시험 조직과 긴밀하게 협업하며 &quot;충돌에 강하고, 디자인 완성도도 뛰어나고, 주행 시 안정적이며, 유지보수까지 편한 차&quot;를 만들기 위해 균형 잡힌 결정을 내립니다. 궁극적으로 BECA본부는 고객에게 안전성, 완성도, 그리고 지속적인 신뢰를 제공하는 핵심 구조 기술을 구축하는 것을 목표로 합니다.
+                </p>
+                
+                <div class="hq-subtitle-wrapper">
+                  <h3 class="hq-content-subtitle" data-kr="Division" data-en="Division">
+                    Division
+                  </h3>
+                  <a href="team-tck-interviews.html" class="hq-interview-link">
+                    <span data-kr="담당 stories" data-en="Interview">Interview</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 15L15 5M15 5H5M15 5V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="hq-division-cards">
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Body" data-en="Body">Body</h4>
+                    <p class="hq-division-card-description" data-kr="차체는 자동차의 근간이자 탑승자를 보호하는 공간입니다. 차량의 충돌 안전성과 구조적 강성을 최우선으로 하며, 디자인 컨셉을 실제 양산 가능한 구조로 구현하고 제조 경쟁력을 확보함으로서 글로벌 차량 개발을 선도하는 핵심 조직입니다." data-en="The body is the foundation of a vehicle and the space that protects passengers. Prioritizing collision safety and structural rigidity, we are a core organization leading global vehicle development by implementing design concepts into mass-producible structures and securing manufacturing competitiveness.">차체는 자동차의 근간이자 탑승자를 보호하는 공간입니다. 차량의 충돌 안전성과 구조적 강성을 최우선으로 하며, 디자인 컨셉을 실제 양산 가능한 구조로 구현하고 제조 경쟁력을 확보함으로서 글로벌 차량 개발을 선도하는 핵심 조직입니다.</p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Exterior" data-en="Exterior">Exterior</h4>
+                    <p class="hq-division-card-description" data-kr="외장은 차량의 첫인상을 결정짓는 심미적 요소와 기능적 완성도를 동시에 구현합니다. 디자인 가치를 극대화하는 것은 물론, 법규 준수와 주행 풍절음·오염 방지 등 가혹한 사용 환경에서도 변함없는 최적의 외장 품질을 확보하는 것을 목표로 합니다." data-en="The exterior simultaneously implements aesthetic elements that determine the vehicle's first impression and functional completeness. While maximizing design value, we aim to secure optimal exterior quality that remains unchanged even in harsh usage environments, including regulatory compliance and prevention of wind noise and contamination during driving.">외장은 차량의 첫인상을 결정짓는 심미적 요소와 기능적 완성도를 동시에 구현합니다. 디자인 가치를 극대화하는 것은 물론, 법규 준수와 주행 풍절음·오염 방지 등 가혹한 사용 환경에서도 변함없는 최적의 외장 품질을 확보하는 것을 목표로 합니다.</p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Chassis" data-en="Chassis">Chassis</h4>
+                    <p class="hq-division-card-description" data-kr="샤시는 자동차의 역동적인 움직임을 완성하는 핵심 메커니즘입니다. 노면의 충격을 제어하는 접지력과 강력한 구동력을 견디는 견고함을 바탕으로, &apos;달리고, 돌고, 서는&apos; 자동차 본연의 성능과 주행의 즐거움을 극대화합니다." data-en="The chassis is the core mechanism that completes the dynamic movement of a vehicle. Based on grip that controls road surface impacts and robustness that withstands powerful driving force, we maximize the inherent performance of a car - 'running, turning, and stopping' - and the joy of driving.">샤시는 자동차의 역동적인 움직임을 완성하는 핵심 메커니즘입니다. 노면의 충격을 제어하는 접지력과 강력한 구동력을 견디는 견고함을 바탕으로, &apos;달리고, 돌고, 서는&apos; 자동차 본연의 성능과 주행의 즐거움을 극대화합니다.</p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Aftersales" data-en="Aftersales">Aftersales</h4>
+                    <p class="hq-division-card-description" data-kr="Aftersales는 차량의 생애주기 전반에 걸친 유지보수 편의성을 책임집니다. 설계 단계부터 정비 효율성을 고려된 정비가 편한 구조를 만들고, 신속한 진단 시스템과 최적의 수리 구조를 설계해 고객의 유지비용을 줄이고 서비스 만족도를 높입니다." data-en="Aftersales is responsible for maintenance convenience throughout the vehicle's entire lifecycle. From the design stage, we create structures that are easy to maintain with maintenance efficiency in mind, and design rapid diagnostic systems and optimal repair structures to reduce customer maintenance costs and increase service satisfaction.">Aftersales는 차량의 생애주기 전반에 걸친 유지보수 편의성을 책임집니다. 설계 단계부터 정비 효율성을 고려된 정비가 편한 구조를 만들고, 신속한 진단 시스템과 최적의 수리 구조를 설계해 고객의 유지비용을 줄이고 서비스 만족도를 높입니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Engineering Excellence -->
+            <div class="hq-content-section" id="engineering-excellence">
+              <h2 class="hq-content-title" data-kr="Engineering Excellence" data-en="Engineering Excellence">
+                Engineering Excellence
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="Engineering Excellence 조직은 글로벌 차량 제품 개발 프로세스와 양산(Post Launch) 전반의 핵심 프로세스를 통합하여 조직 효율성과 시너지를 극대화하는 역할을 수행합니다. 또한 디자인스튜디오, 제조 엔지니어링, 그리고 모든 엔지니어링 조직과 긴밀히 협력하며 감성품질을 주도하고 디자인 품질 향상에 집중합니다. 아울러 강화된 DFMEA를 기반으로 한 시스템 엔지니어링 및 시스템 통합 활동, 검증·인증 프로세스 운영, 그리고 안전·품질 문제를 빠르게 찾아내고 관련 부서들과 협력하여, 고객 안전을 지키기 위한 빠르고 정확한 결정이 이뤄지도록 지원합니다. 더불어 AI 활용 확대, 몰입형 기술(immersive tech)의 고도화, 조직 전반의 효율성을 높이는 신규 기술 도입을 통해 기술 혁신을 선도하며, 제품 개발 단계에도 적극적으로 참여하여, 궁극적으로 안전성과 품질이 뛰어난 제품 제공에 기여하고 있습니다." data-en="The Engineering Excellence organization integrates core processes across global vehicle product development and post-launch production to maximize organizational efficiency and synergy. We also work closely with design studios, manufacturing engineering, and all engineering organizations to lead emotional quality and focus on improving design quality. Furthermore, we support rapid and accurate decision-making to ensure customer safety through enhanced DFMEA-based systems engineering and systems integration activities, verification and certification process operations, and quickly identifying safety and quality issues in collaboration with relevant departments. In addition, we lead technological innovation through expanded AI utilization, advancement of immersive technologies, and introduction of new technologies that enhance organizational efficiency. We actively participate in product development stages, ultimately contributing to the delivery of products with outstanding safety and quality.">
+                  Engineering Excellence 조직은 글로벌 차량 제품 개발 프로세스와 양산(Post Launch) 전반의 핵심 프로세스를 통합하여 조직 효율성과 시너지를 극대화하는 역할을 수행합니다. 또한 디자인스튜디오, 제조 엔지니어링, 그리고 모든 엔지니어링 조직과 긴밀히 협력하며 감성품질을 주도하고 디자인 품질 향상에 집중합니다. 아울러 강화된 DFMEA를 기반으로 한 시스템 엔지니어링 및 시스템 통합 활동, 검증·인증 프로세스 운영, 그리고 안전·품질 문제를 빠르게 찾아내고 관련 부서들과 협력하여, 고객 안전을 지키기 위한 빠르고 정확한 결정이 이뤄지도록 지원합니다. 더불어 AI 활용 확대, 몰입형 기술(immersive tech)의 고도화, 조직 전반의 효율성을 높이는 신규 기술 도입을 통해 기술 혁신을 선도하며, 제품 개발 단계에도 적극적으로 참여하여, 궁극적으로 안전성과 품질이 뛰어난 제품 제공에 기여하고 있습니다.
+                </p>
+                
+                <div class="hq-subtitle-wrapper">
+                  <h3 class="hq-content-subtitle" data-kr="Division" data-en="Division">
+                    Division
+                  </h3>
+                  <a href="team-tck-interviews.html" class="hq-interview-link">
+                    <span data-kr="담당 stories" data-en="Interview">Interview</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 15L15 5M15 5H5M15 5V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="hq-division-cards">
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Certification, Environmental Strategy & EI Division" data-en="Certification, Environmental Strategy & EI Division">Certification, Environmental Strategy & EI Division</h4>
+                    <p class="hq-division-card-description" data-kr="" data-en=""></p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Systems & Product Investigation Division" data-en="Systems & Product Investigation Division">Systems & Product Investigation Division</h4>
+                    <p class="hq-division-card-description" data-kr="" data-en=""></p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Validation Division" data-en="Validation Division">Validation Division</h4>
+                    <p class="hq-division-card-description" data-kr="" data-en=""></p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Product Excellence team" data-en="Product Excellence team">Product Excellence team</h4>
+                    <p class="hq-division-card-description" data-kr="" data-en=""></p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="PQDQ Engineering Excellence" data-en="PQDQ Engineering Excellence">PQDQ Engineering Excellence</h4>
+                    <p class="hq-division-card-description" data-kr="" data-en=""></p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Chief AI & New Tech. Strategy" data-en="Chief AI & New Tech. Strategy">Chief AI & New Tech. Strategy</h4>
+                    <p class="hq-division-card-description" data-kr="" data-en=""></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ITPE -->
+            <div class="hq-content-section" id="itpe">
+              <h2 class="hq-content-title" data-kr="Interior, Thermal Propulsion Integration & Energy Conversion System Engineering" data-en="Interior, Thermal Propulsion Integration & Energy Conversion System Engineering">
+                Interior, Thermal Propulsion Integration & Energy Conversion System Engineering
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="ITPE본부는 GMTCK의 Interior, Thermal Propulsion Integration & Energy Conversion System Engineering Function으로, 차량 인테리어와 열·에너지 시스템 전반을 통합 개발하는 조직입니다." data-en="ITPE HQ is GMTCK's Interior, Thermal Propulsion Integration & Energy Conversion System Engineering Function, an organization that integrally develops vehicle interiors and thermal and energy systems.">
+                  ITPE본부는 GMTCK의 Interior, Thermal Propulsion Integration & Energy Conversion System Engineering Function으로, 차량 인테리어와 열·에너지 시스템 전반을 통합 개발하는 조직입니다.
+                </p>
+                
+                <div class="hq-subtitle-wrapper">
+                  <h3 class="hq-content-subtitle" data-kr="Division" data-en="Division">
+                    Division
+                  </h3>
+                  <a href="team-tck-interviews.html" class="hq-interview-link">
+                    <span data-kr="담당 stories" data-en="Interview">Interview</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 15L15 5M15 5H5M15 5V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="hq-division-cards">
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Interior Trim" data-en="Interior Trim">Interior Trim</h4>
+                    <p class="hq-division-card-description" data-kr="IP·콘솔·도어트림·오버헤드·하드트림, 카펫등 실내 공간의 구조·디자인·품질을 책임지며, 고객이 직접 접하는 실내 경험 가치를 만드는 역할을 합니다." data-en="Responsible for the structure, design, and quality of interior spaces such as IP, console, door trim, overhead, hard trim, and carpet, playing a role in creating the interior experience value that customers directly encounter.">IP·콘솔·도어트림·오버헤드·하드트림, 카펫등 실내 공간의 구조·디자인·품질을 책임지며, 고객이 직접 접하는 <strong>실내 경험 가치</strong>를 만드는 역할을 합니다.</p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Seat & Safety Restraints" data-en="Seat & Safety Restraints">Seat & Safety Restraints</h4>
+                    <p class="hq-division-card-description" data-kr="시트 구조·편의 기능·안락성 및 에어백·벨트 시스템을 설계하여, 탑승자의 안전과 착좌 쾌적성을 동시에 확보합니다." data-en="Designs seat structure, convenience features, comfort, and airbag and belt systems, simultaneously securing passenger safety and seating comfort.">시트 구조·편의 기능·안락성 및 에어백·벨트 시스템을 설계하여, 탑승자의 <strong>안전과 착좌 쾌적성</strong>을 동시에 확보합니다.</p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Thermal & Propulsion Integration" data-en="Thermal & Propulsion Integration">Thermal & Propulsion Integration</h4>
+                    <p class="hq-division-card-description" data-kr="HVAC-Cabin, PTC & Underhood, Ind/Exh/Fuel-CAC/Aero 등 열관리·배기·연료·공력 시스템을 통합하여 에너지 효율과 주행 성능을 최적화합니다." data-en="Integrates thermal management, exhaust, fuel, and aerodynamic systems such as HVAC-Cabin, PTC & Underhood, Ind/Exh/Fuel-CAC/Aero to optimize energy efficiency and driving performance.">HVAC-Cabin, PTC & Underhood, Ind/Exh/Fuel-CAC/Aero 등 열관리·배기·연료·공력 시스템을 통합하여 <strong>에너지 효율과 주행 성능</strong>을 최적화합니다.</p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="ECS" data-en="ECS">ECS</h4>
+                    <p class="hq-division-card-description" data-kr="Electrification Electronics, Sensing & Management HW, Kinetic & Structural HW, Energy Transfer HW 등을 통해 전동화·전자·에너지 전달·구조 통합 기술을 선도하며, 미래 모빌리티 기반을 강화합니다." data-en="Leads electrification, electronics, energy transfer, and structural integration technologies through Electrification Electronics, Sensing & Management HW, Kinetic & Structural HW, Energy Transfer HW, etc., strengthening the foundation for future mobility.">Electrification Electronics, Sensing & Management HW, Kinetic & Structural HW, Energy Transfer HW 등을 통해 <strong>전동화·전자·에너지 전달·구조 통합</strong> 기술을 선도하며, 미래 모빌리티 기반을 강화합니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PIPG -->
+            <div class="hq-content-section" id="pipg">
+              <h2 class="hq-content-title" data-kr="Performance Integration & Proving Ground" data-en="Performance Integration & Proving Ground">
+                Performance Integration & Proving Ground
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="PIPG 본부는 차량 전반의 성능을 책임지는 조직입니다. 주행성, 승차감, 정숙성, 에너지 효율 및 경쟁차 비교 평가를 통해 차량을 개발하고 검증합니다. 가상 분석 개발부터 실차 주행 시험, 최종 인증과 양산 품질 검증까지 차량 성능의 일관된 기준과 프로세스를 제공합니다. 궁극적으로는 고객이 &quot;만족하고 타고 싶은&quot; 차량 성능을 제공하여 GMTCK 및 GM 글로벌 비즈니스 성과에 기여하는 것을 지향합니다." data-en="PIPG HQ is an organization responsible for overall vehicle performance. We develop and verify vehicles through driving performance, ride comfort, quietness, energy efficiency, and competitive vehicle comparison evaluation. We provide consistent standards and processes for vehicle performance from virtual analysis development to actual vehicle driving tests, final certification, and mass production quality verification. Ultimately, we aim to contribute to GMTCK and GM's global business performance by providing vehicle performance that customers are 'satisfied with and want to drive'.">
+                  PIPG 본부는 차량 전반의 성능을 책임지는 조직입니다. 주행성, 승차감, 정숙성, 에너지 효율 및 경쟁차 비교 평가를 통해 차량을 개발하고 검증합니다. 가상 분석 개발부터 실차 주행 시험, 최종 인증과 양산 품질 검증까지 차량 성능의 일관된 기준과 프로세스를 제공합니다. 궁극적으로는 고객이 &quot;만족하고 타고 싶은&quot; 차량 성능을 제공하여 GMTCK 및 GM 글로벌 비즈니스 성과에 기여하는 것을 지향합니다.
+                </p>
+                
+                <div class="hq-subtitle-wrapper">
+                  <h3 class="hq-content-subtitle" data-kr="Division" data-en="Division">
+                    Division
+                  </h3>
+                  <a href="team-tck-interviews.html" class="hq-interview-link">
+                    <span data-kr="담당 stories" data-en="Interview">Interview</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 15L15 5M15 5H5M15 5V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="hq-division-cards">
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="PSC" data-en="PSC">PSC</h4>
+                    <p class="hq-division-card-description" data-kr="엔진/트랜스미션 캘리브레이션 경험을 바탕으로 전기차 캘리브레이션, 소프트웨어, 시뮬레이션까지 업무 영역을 확장하며, AI, 가상 기술을 활용해 차량 제어 전반과 안정적인 차량 출시를 지원하고 있습니다." data-en="Expands work scope from engine/transmission calibration experience to EV calibration, software, and simulation, supporting overall vehicle control and stable vehicle launch using AI and virtual technologies.">엔진/트랜스미션 캘리브레이션 경험을 바탕으로 전기차 캘리브레이션, 소프트웨어, 시뮬레이션까지 업무 영역을 확장하며, AI, 가상 기술을 활용해 차량 제어 전반과 안정적인 차량 출시를 지원하고 있습니다.</p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="Thermal" data-en="Thermal">Thermal</h4>
+                    <p class="hq-division-card-description" data-kr="" data-en=""></p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="VPD/PID" data-en="VPD/PID">VPD/PID</h4>
+                    <p class="hq-division-card-description" data-kr="차량의 주행성이나 정숙성처럼, 고객이 실제로 체감하는 성능을 통합적으로 관리하는 역할을 하고 있습니다. 차량 동력성능 개발, 소음&진동, 가상 개발팀이 긴밀하게 협업하며 시험과 해석을 하나의 흐름으로 연결하고, 그 안에서 최적의 차량 성능을 만들어가고 있습니다." data-en="Plays a role in comprehensively managing performance that customers actually feel, such as vehicle drivability and quietness. Vehicle powertrain performance development, noise & vibration, and virtual development teams closely collaborate to connect testing and analysis into one flow, creating optimal vehicle performance within it.">차량의 주행성이나 정숙성처럼, 고객이 실제로 체감하는 성능을 통합적으로 관리하는 역할을 하고 있습니다. 차량 동력성능 개발, 소음&진동, 가상 개발팀이 긴밀하게 협업하며 시험과 해석을 하나의 흐름으로 연결하고, 그 안에서 최적의 차량 성능을 만들어가고 있습니다.</p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="PGTLO" data-en="PGTLO">PGTLO</h4>
+                    <p class="hq-division-card-description" data-kr="" data-en=""></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- S&S -->
+            <div class="hq-content-section" id="ss">
+              <h2 class="hq-content-title" data-kr="Software & Services" data-en="Software & Services">
+                Software & Services
+              </h2>
+              <div class="hq-content-body">
+                <h3 class="hq-content-subtitle" data-kr="CCH/PPMO 담당" data-en="CCH/PPMO">
+                  CCH/PPMO 담당
+                </h3>
+                <p class="hq-content-description" data-kr="CCH/PPMO 담당은 차량의 컴퓨트·커넥티비티 하드웨어와 디스플레이/인포테인먼트 시스템 전체를 리드하며, S&S 전략을 TCK 차량에 구현하는 역할을 합니다. 차량 개발 전 과정에서 주요 전장 부품 패키징·검증·이슈 관리와 프로그램 일정·리스크를 통합 관리하는 역할을 수행합니다." data-en="CCH/PPMO leads the entire compute and connectivity hardware and display/infotainment systems of vehicles, playing a role in implementing S&S strategies in TCK vehicles. Throughout the entire vehicle development process, we perform integrated management of major electronic component packaging, verification, issue management, and program schedules and risks.">
+                  CCH/PPMO 담당은 차량의 컴퓨트·커넥티비티 하드웨어와 디스플레이/인포테인먼트 시스템 전체를 리드하며, S&S 전략을 TCK 차량에 구현하는 역할을 합니다. 차량 개발 전 과정에서 주요 전장 부품 패키징·검증·이슈 관리와 프로그램 일정·리스크를 통합 관리하는 역할을 수행합니다.
+                </p>
+                
+                <h3 class="hq-content-subtitle" data-kr="MAEC 담당" data-en="MAEC">
+                  MAEC 담당
+                </h3>
+                <p class="hq-content-description" data-kr="MAEC(Mechatronics, ADAS & Embedded Controls) 담당은 제동·조향·차체·안전 제어를 담당하는 메카트로닉스·제어 전문 조직으로, 와이어 하네스·센서·액추에이터 시스템을 설계·최적화합니다. 임베디드 제어 SW와 캘리브레이션, ADAS 제어 알고리즘 개발을 통해 국내 도로 환경에 맞는 주행 성능과 안전성을 확보합니다." data-en="MAEC (Mechatronics, ADAS & Embedded Controls) is a mechatronics and control specialist organization responsible for braking, steering, body, and safety control, designing and optimizing wire harness, sensor, and actuator systems. Through embedded control SW and calibration, and ADAS control algorithm development, we secure driving performance and safety suitable for domestic road environments.">
+                  MAEC(Mechatronics, ADAS & Embedded Controls) 담당은 제동·조향·차체·안전 제어를 담당하는 메카트로닉스·제어 전문 조직으로, 와이어 하네스·센서·액추에이터 시스템을 설계·최적화합니다. 임베디드 제어 SW와 캘리브레이션, ADAS 제어 알고리즘 개발을 통해 국내 도로 환경에 맞는 주행 성능과 안전성을 확보합니다.
+                </p>
+                
+                <h3 class="hq-content-subtitle" data-kr="SWQnD 담당" data-en="SWQnD">
+                  SWQnD 담당
+                </h3>
+                <p class="hq-content-description" data-kr="SWQnD(Software Quality & Deployment) 담당은 차량 탑재 소프트웨어의 통합·품질·배포를 전담하는 조직으로, HIL/차량 시험과 로그 분석을 통해 글로벌 SW 빌드의 안정적인 동작을 보증합니다. 또한 자동화·가상 검증·데이터 기반 분석으로 SW 통합 리드타임을 단축하고, OTA 등 신규 기능을 신속·안정적으로 고객에게 전달합니다." data-en="SWQnD (Software Quality & Deployment) is an organization dedicated to integration, quality, and deployment of vehicle-mounted software, ensuring stable operation of global SW builds through HIL/vehicle testing and log analysis. We also shorten SW integration lead times through automation, virtual verification, and data-based analysis, and deliver new features such as OTA to customers quickly and stably.">
+                  SWQnD(Software Quality & Deployment) 담당은 차량 탑재 소프트웨어의 통합·품질·배포를 전담하는 조직으로, HIL/차량 시험과 로그 분석을 통해 글로벌 SW 빌드의 안정적인 동작을 보증합니다. 또한 자동화·가상 검증·데이터 기반 분석으로 SW 통합 리드타임을 단축하고, OTA 등 신규 기능을 신속·안정적으로 고객에게 전달합니다.
+                </p>
+                
+                <div class="hq-subtitle-wrapper">
+                  <h3 class="hq-content-subtitle" data-kr="Division" data-en="Division">
+                    Division
+                  </h3>
+                  <a href="team-tck-interviews.html" class="hq-interview-link">
+                    <span data-kr="담당 stories" data-en="Interview">Interview</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 15L15 5M15 5H5M15 5V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="hq-division-cards">
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="CCH/PPMO" data-en="CCH/PPMO">CCH/PPMO</h4>
+                    <p class="hq-division-card-description" data-kr="차량의 컴퓨트·커넥티비티 하드웨어와 디스플레이/인포테인먼트 시스템 전체를 리드하며, S&S 전략을 TCK 차량에 구현하는 역할을 합니다. 차량 개발 전 과정에서 주요 전장 부품 패키징·검증·이슈 관리와 프로그램 일정·리스크를 통합 관리하는 역할을 수행합니다." data-en="Leads the entire compute and connectivity hardware and display/infotainment systems of vehicles, playing a role in implementing S&S strategies in TCK vehicles. Throughout the entire vehicle development process, we perform integrated management of major electronic component packaging, verification, issue management, and program schedules and risks.">차량의 컴퓨트·커넥티비티 하드웨어와 디스플레이/인포테인먼트 시스템 전체를 리드하며, S&S 전략을 TCK 차량에 구현하는 역할을 합니다. 차량 개발 전 과정에서 주요 전장 부품 패키징·검증·이슈 관리와 프로그램 일정·리스크를 통합 관리하는 역할을 수행합니다.</p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="MAEC" data-en="MAEC">MAEC</h4>
+                    <p class="hq-division-card-description" data-kr="제동·조향·차체·안전 제어를 담당하는 메카트로닉스·제어 전문 조직으로, 와이어 하네스·센서·액추에이터 시스템을 설계·최적화합니다. 임베디드 제어 SW와 캘리브레이션, ADAS 제어 알고리즘 개발을 통해 국내 도로 환경에 맞는 주행 성능과 안전성을 확보합니다." data-en="A mechatronics and control specialist organization responsible for braking, steering, body, and safety control, designing and optimizing wire harness, sensor, and actuator systems. Through embedded control SW and calibration, and ADAS control algorithm development, we secure driving performance and safety suitable for domestic road environments.">제동·조향·차체·안전 제어를 담당하는 메카트로닉스·제어 전문 조직으로, 와이어 하네스·센서·액추에이터 시스템을 설계·최적화합니다. 임베디드 제어 SW와 캘리브레이션, ADAS 제어 알고리즘 개발을 통해 국내 도로 환경에 맞는 주행 성능과 안전성을 확보합니다.</p>
+                  </div>
+                  <div class="hq-division-card">
+                    <h4 class="hq-division-card-title" data-kr="SWQnD" data-en="SWQnD">SWQnD</h4>
+                    <p class="hq-division-card-description" data-kr="차량 탑재 소프트웨어의 통합·품질·배포를 전담하는 조직으로, HIL/차량 시험과 로그 분석을 통해 글로벌 SW 빌드의 안정적인 동작을 보증합니다. 또한 자동화·가상 검증·데이터 기반 분석으로 SW 통합 리드타임을 단축하고, OTA 등 신규 기능을 신속·안정적으로 고객에게 전달합니다." data-en="An organization dedicated to integration, quality, and deployment of vehicle-mounted software, ensuring stable operation of global SW builds through HIL/vehicle testing and log analysis. We also shorten SW integration lead times through automation, virtual verification, and data-based analysis, and deliver new features such as OTA to customers quickly and stably.">차량 탑재 소프트웨어의 통합·품질·배포를 전담하는 조직으로, HIL/차량 시험과 로그 분석을 통해 글로벌 SW 빌드의 안정적인 동작을 보증합니다. 또한 자동화·가상 검증·데이터 기반 분석으로 SW 통합 리드타임을 단축하고, OTA 등 신규 기능을 신속·안정적으로 고객에게 전달합니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- VE -->
+            <div class="hq-content-section" id="ve">
+              <h2 class="hq-content-title" data-kr="Virtual Engineering" data-en="Virtual Engineering">
+                Virtual Engineering
+              </h2>
+              <div class="hq-content-body">
+                <p class="hq-content-description" data-kr="Virtual Engineering본부는 차량을 실제로 만들기 전에 먼저 가상 환경에서 설계하고 시험함으로써, 개발을 더 빠르고 안전하게 수행하는 조직입니다. 우리는 가상 개발과 최신 시뮬레이션 기술, 그리고 인공지능 기반 최적화 역량을 바탕으로 ADAS를 포함한 차량 성능 및 안전 개발을 가속화하고 있습니다. 또한 복잡한 개발 단계를 체계적으로 최적화하여 보다 효율적인 프로세스를 구축하고, 통합적인 엔지니어링 방식을 통해 더 짧은 시간 안에 더 높은 품질의 차량을 개발하는 것을 목표로 합니다. 아울러 최적화·인공지능·자동화 기술을 적극적으로 활용해 설계부터 검증까지 전 과정을 아우를 수 있는 통합형 엔지니어를 육성하고, 디지털 기반 개발 역량을 지속적으로 강화하고 있습니다. 이러한 노력을 통해 GM이 지향하는 트리플 제로(Zero Crashes | Zero Emissions | Zero Congestion) 비전, 즉 사고와 배기가스, 교통 혼잡을 줄이는 데 기여하고 있습니다." data-en="Virtual Engineering HQ is an organization that performs development faster and more safely by first designing and testing in a virtual environment before actually building vehicles. Based on virtual development, latest simulation technologies, and AI-based optimization capabilities, we are accelerating vehicle performance and safety development including ADAS. We also aim to systematically optimize complex development stages to build more efficient processes, and develop higher quality vehicles in shorter time through integrated engineering approaches. We are also actively utilizing optimization, AI, and automation technologies to nurture integrated engineers who can cover the entire process from design to verification, and continuously strengthening digital-based development capabilities. Through these efforts, we are contributing to GM's Triple Zero vision (Zero Crashes | Zero Emissions | Zero Congestion), reducing accidents, emissions, and traffic congestion.">
+                  Virtual Engineering본부는 차량을 실제로 만들기 전에 먼저 가상 환경에서 설계하고 시험함으로써, 개발을 더 빠르고 안전하게 수행하는 조직입니다. 우리는 가상 개발과 최신 시뮬레이션 기술, 그리고 인공지능 기반 최적화 역량을 바탕으로 ADAS를 포함한 차량 성능 및 안전 개발을 가속화하고 있습니다. 또한 복잡한 개발 단계를 체계적으로 최적화하여 보다 효율적인 프로세스를 구축하고, 통합적인 엔지니어링 방식을 통해 더 짧은 시간 안에 더 높은 품질의 차량을 개발하는 것을 목표로 합니다. 아울러 최적화·인공지능·자동화 기술을 적극적으로 활용해 설계부터 검증까지 전 과정을 아우를 수 있는 통합형 엔지니어를 육성하고, 디지털 기반 개발 역량을 지속적으로 강화하고 있습니다. 이러한 노력을 통해 GM이 지향하는 트리플 제로(Zero Crashes | Zero Emissions | Zero Congestion) 비전, 즉 사고와 배기가스, 교통 혼잡을 줄이는 데 기여하고 있습니다.
+                </p>
+                <a href="team-tck-interviews.html" class="hq-interview-link">
+                  <span data-kr="담당 stories" data-en="Interview">Interview</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 15L15 5M15 5H5M15 5V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a
+              href="https://www.gm-korea.co.kr/ko/home/privacy-statement.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-privacy-link"
+              data-kr="개인정보 처리방침"
+              data-en="Privacy Statement"
+            >
+              개인정보 처리방침
+            </a>
+            <p>GM Technical Center Korea</p>
+          </div>
+          <div class="footer-right">
+            <div class="footer-social">
+              <a
+                href="https://www.youtube.com/@GMTCK"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-link"
+                aria-label="YouTube"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/gmtck"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-link"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.gm.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-link"
+                aria-label="GM Global"
+              >
+                <img
+                  src="./images/global.png"
+                  alt="GM Global Website"
+                  class="footer-global-icon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 GM Technical Center Korea. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/language.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+      // Disable browser scroll restoration (redundant but safe)
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+
+      // HQ Sidebar Navigation
+      document.addEventListener("DOMContentLoaded", function () {
+        // Default: stay at top
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+
+        // Scroll to hq-intro-section ONLY if coming from navigation
+        const fromNavigation = sessionStorage.getItem("fromNavigation");
+        if (fromNavigation === "true") {
+          sessionStorage.removeItem("fromNavigation");
+          // Use requestAnimationFrame to ensure DOM is ready
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              const hqSection = document.querySelector(".hq-intro-section");
+              if (hqSection) {
+                const offsetTop = Math.max(0, hqSection.offsetTop - 100);
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: "smooth"
+                });
+              }
+            });
+          });
+        }
+
+        const sidebarLinks = document.querySelectorAll(".hq-sidebar-link");
+        const contentSections = document.querySelectorAll(".hq-content-section");
+
+        function showSection(targetId, scrollToTop = false, scrollToSection = false) {
+          // Remove active class from all links and sections
+          sidebarLinks.forEach((l) => l.classList.remove("active"));
+          contentSections.forEach((s) => {
+            s.classList.remove("active");
+            s.style.display = "none";
+          });
+
+          // Add active class to clicked link
+          const targetLink = document.querySelector(`[data-hq="${targetId}"]`);
+          if (targetLink) {
+            targetLink.classList.add("active");
+          }
+
+          // Show corresponding section
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            targetSection.classList.add("active");
+            targetSection.style.display = "block";
+          }
+
+          // Only scroll if explicitly requested (user click)
+          if (scrollToTop) {
+            setTimeout(() => {
+              window.scrollTo(0, 0);
+              document.documentElement.scrollTop = 0;
+              document.body.scrollTop = 0;
+            }, 10);
+          } else if (scrollToSection && targetSection) {
+            // Scroll to section title, accounting for header height
+            setTimeout(() => {
+              const navbar = document.getElementById("navbar");
+              const headerHeight = navbar ? navbar.offsetHeight : 100;
+              const sectionTitle = targetSection.querySelector('.hq-content-title');
+              if (sectionTitle) {
+                // Calculate scroll position to show title just below header
+                const titleRect = sectionTitle.getBoundingClientRect();
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                // Position title right below header with minimal padding (20px)
+                const scrollPosition = currentScroll + titleRect.top - headerHeight - 20;
+                
+                window.scrollTo({
+                  top: Math.max(0, scrollPosition),
+                  behavior: "smooth"
+                });
+              }
+            }, 100);
+          }
+        }
+
+        sidebarLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("data-hq");
+            showSection(targetId, false, true);
+
+            // Update URL hash
+            window.history.pushState(null, null, `#${targetId}`);
+          });
+        });
+
+        // Handle initial hash - scroll to section title on page load
+        if (window.location.hash) {
+          const hash = window.location.hash.substring(1);
+          showSection(hash, false, true);
+        } else {
+          // Show first section by default
+          showSection("avd-svi", false);
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener("popstate", function () {
+          const hash = window.location.hash.substring(1);
+          if (hash) {
+            showSection(hash, false, true);
+          } else {
+            showSection("avd-svi", false);
+          }
+        });
+      });
+
+      // Force scroll to top on window load (only if not from navigation)
+      window.addEventListener("load", function () {
+        const fromNavigation = sessionStorage.getItem("fromNavigation");
+        if (fromNavigation !== "true") {
+          // Not from navigation, stay at top
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+        }
+      });
+    </script>
+  </body>
 </html>
+
+

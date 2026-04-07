@@ -1,0 +1,338 @@
+{
+  "beca-body": {
+    "questions": [
+      {
+        "q": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qKr": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qEn": "Please introduce your department and tell us about your current responsibilities in detail.",
+        "a": "Body 담당은 차량의 차체, 도어, 후드, 리프트게이트 등을 설계·개발하며, 안전성, 내구성, 승차감, 소음, 경량화 등 차량 성능 전반에 큰 영향을 미치는 핵심 역할을 맡고 있습니다. 프레스·차체·도장·조립 등 전 생산 공정과 긴밀히 협업하고, 차량의 외관을 담당하다 보니 초기 스타일링 콘셉트를 구현하기 위해 디자인 센터와도 매우 밀접하게 협업합니다. 저는 이 과정 속에서 바디 설계를 책임지며, 고객이 바로 보는 디자인과 눈에 보이지 않는 구조 성능을 모두 만족시키기 위한 균형 잡힌 설계를 수행하고 있습니다.",
+        "aKr": "Body 담당은 차량의 차체, 도어, 후드, 리프트게이트 등을 설계·개발하며, 안전성, 내구성, 승차감, 소음, 경량화 등 차량 성능 전반에 큰 영향을 미치는 핵심 역할을 맡고 있습니다. 프레스·차체·도장·조립 등 전 생산 공정과 긴밀히 협업하고, 차량의 외관을 담당하다 보니 초기 스타일링 콘셉트를 구현하기 위해 디자인 센터와도 매우 밀접하게 협업합니다. 저는 이 과정 속에서 바디 설계를 책임지며, 고객이 바로 보는 디자인과 눈에 보이지 않는 구조 성능을 모두 만족시키기 위한 균형 잡힌 설계를 수행하고 있습니다.",
+        "aEn": "The Body team designs and validates vehicle body structure, panels, and joints, delivering stiffness, light weight, and cabin safety together. From early development through production, we work with design, testing, and manufacturing to deliver body quality that customers feel in crash, durability, and NVH performance."
+      },
+      {
+        "q": "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        "qKr": "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        "qEn": "What competencies do you think are necessary for your work?",
+        "a": "먼저 차체와 도어 등 외관 부품이 어떻게 설계되고 생산되는지에 대한 이해가 필요합니다. 이를 바탕으로 3차원 설계 프로그램과 가상 시뮬레이션을 활용해 품질과 안전성을 사전에 검증합니다. 또 차량 개발 프로세스를 기반으로 업무를 체계적으로 추진하면서, 성능·원가·무게·제조 난이도를 균형 있게 고려해 최적의 설계를 찾는 능력이 중요합니다. 마지막으로 안전을 최우선으로 두고 여러 부서와 원활하게 협업하며, 후배들을 지원하고 이끌 수 있는 리더십과 커뮤니케이션 역량이 필요하다고 생각합니다.",
+        "aKr": "먼저 차체와 도어 등 외관 부품이 어떻게 설계되고 생산되는지에 대한 이해가 필요합니다. 이를 바탕으로 3차원 설계 프로그램과 가상 시뮬레이션을 활용해 품질과 안전성을 사전에 검증합니다. 또 차량 개발 프로세스를 기반으로 업무를 체계적으로 추진하면서, 성능·원가·무게·제조 난이도를 균형 있게 고려해 최적의 설계를 찾는 능력이 중요합니다. 마지막으로 안전을 최우선으로 두고 여러 부서와 원활하게 협업하며, 후배들을 지원하고 이끌 수 있는 리더십과 커뮤니케이션 역량이 필요하다고 생각합니다.",
+        "aEn": "Fundamentals in materials, mechanics, and analysis matter, as does judgment based on design and test data. Body work touches many interfaces, so organizing requirements and communicating across teams is essential, along with persistence to trace root causes."
+      },
+      {
+        "q": "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+        "qKr": "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+        "qEn": "Was there a memorable project you worked on?",
+        "a": "가장 기억에 남는 프로젝트는 GMTCK가 차체 아키텍처 설계부터 양산까지 리드했던 소형 SUV 개발입니다. 차체는 차량의 기본 뼈대이기 때문에 질량, 원가, 성능을 동시에 만족시키기가 쉽지 않았고, 이를 해결하기 위해 관련 부서들과 수없이 논의하며 현실적인 해법을 하나씩 찾아갔습니다. 그 결과 경쟁력 있는 차량을 성공적으로 출시할 수 있었고, 이를 통해 GMTCK가 GM 내 글로벌 허브로서 중요한 역할을 하고 있다는 것을 증명한 프로젝트였다고 생각합니다.",
+        "aKr": "가장 기억에 남는 프로젝트는 GMTCK가 차체 아키텍처 설계부터 양산까지 리드했던 소형 SUV 개발입니다. 차체는 차량의 기본 뼈대이기 때문에 질량, 원가, 성능을 동시에 만족시키기가 쉽지 않았고, 이를 해결하기 위해 관련 부서들과 수없이 논의하며 현실적인 해법을 하나씩 찾아갔습니다. 그 결과 경쟁력 있는 차량을 성공적으로 출시할 수 있었고, 이를 통해 GMTCK가 GM 내 글로벌 허브로서 중요한 역할을 하고 있다는 것을 증명한 프로젝트였다고 생각합니다.",
+        "aEn": "I remember a program where light weighting and cabin stiffness targets were both very aggressive. We iterated analysis and tests to tune materials, thickness, and joining, and aligned closely with design and manufacturing to hit the targets. The whole team was focused in the same direction."
+      },
+      {
+        "q": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qKr": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qEn": "What is the team culture and what are your team members like?",
+        "a": "제 업무는 가상 시험과 인공지능 분석을 통해 차량 설계에서 문제될 수 있는 부분을 미리 찾아 안전과 품질을 높이는 것입니다. 컴퓨터 속 가상 차량과 3차원 설계 데이터를 활용해 성능과 조립성을 확인하고, 그 결과를 바탕으로 설계 방향을 정리합니다. 또한 자동 검사 기능과 디지털 협업 시스템을 통해 관련 부서와 실시간으로 데이터를 공유하며, 필요한 설계 변경과 대책을 함께 조율합니다. 마지막으로 각종 시스템과 자료를 최신 상태로 유지하고, 인공지능이 정리해 준 보고서를 보며 앞으로 집중해야 할 과제를 정리합니다.",
+        "aKr": "제 업무는 가상 시험과 인공지능 분석을 통해 차량 설계에서 문제될 수 있는 부분을 미리 찾아 안전과 품질을 높이는 것입니다. 컴퓨터 속 가상 차량과 3차원 설계 데이터를 활용해 성능과 조립성을 확인하고, 그 결과를 바탕으로 설계 방향을 정리합니다. 또한 자동 검사 기능과 디지털 협업 시스템을 통해 관련 부서와 실시간으로 데이터를 공유하며, 필요한 설계 변경과 대책을 함께 조율합니다. 마지막으로 각종 시스템과 자료를 최신 상태로 유지하고, 인공지능이 정리해 준 보고서를 보며 앞으로 집중해야 할 과제를 정리합니다.",
+        "aEn": "We respect each other's expertise but speak up when needed. When field or test issues come up, we gather regardless of rank, share what we see, and push to resolution together. We really feel that communication matters most when it gets busy."
+      },
+      {
+        "q": "내게 GMTCK란?",
+        "qKr": "내게 GMTCK란?",
+        "qEn": "What does GMTCK mean to you?",
+        "a": "GMTCK는 글로벌로 연결되는 자동차 기술 허브이자, 배움과 성취를 동시에 이룰 수 있는 성장 플랫폼입니다. 각자가 맡은 자리에서 주도적으로 일하고, 그 결과가 실제 차량과 성과로 이어지는 것을 보면서 큰 자부심을 느끼고 있습니다. 저는 차체 엔지니어로서 바디 설계를 담당하며 여러 팀과 자유롭게 소통·협업하고, 우리가 만든 차가 전 세계 도로를 달릴 수 있도록 기반을 만들어 가고 있습니다. 또한 인공지능과 다양한 혁신 활동에도 적극 참여하며 엔지니어링 경쟁력을 높이고 있고, GMTCK는 그런 제가 계속 성장할 수 있도록 이끌어주는 든든한 원동력입니다.",
+        "aKr": "GMTCK는 글로벌로 연결되는 자동차 기술 허브이자, 배움과 성취를 동시에 이룰 수 있는 성장 플랫폼입니다. 각자가 맡은 자리에서 주도적으로 일하고, 그 결과가 실제 차량과 성과로 이어지는 것을 보면서 큰 자부심을 느끼고 있습니다. 저는 차체 엔지니어로서 바디 설계를 담당하며 여러 팀과 자유롭게 소통·협업하고, 우리가 만든 차가 전 세계 도로를 달릴 수 있도록 기반을 만들어 가고 있습니다. 또한 인공지능과 다양한 혁신 활동에도 적극 참여하며 엔지니어링 경쟁력을 높이고 있고, GMTCK는 그런 제가 계속 성장할 수 있도록 이끌어주는 든든한 원동력입니다.",
+        "aEn": "To me, GMTCK is where I take responsibility for body quality as part of global vehicle development. It's not just about handing off drawings—we're pushed to connect our work to customer safety and perceived quality. I want to keep that sense of responsibility."
+      }
+    ]
+  },
+  "beca-exterior": {
+    "questions": [
+      {
+        "q": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qKr": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qEn": "Please introduce your department and tell us about your current responsibilities in detail.",
+        "a": "자동차를 처음 마주했을 때 가장 강렬한 인상을 주는 요소는 바로 ‘외관(Exterior)’입니다. 외장은 사용자가 브랜드와 직접 만나는 첫 번째 지점이자, 브랜드의 가치를 시각적으로 표현하고 미래 방향성을 담아내는 중요한 접점입니다. 범퍼의 힘 있고 부드러운 선, 램프가 만들어내는 차량의 표정, 섬세한 마감 품질, 유리와 와이퍼의 자연스러운 조화까지, 이 모든 것이 고객이 느끼는 첫인상을 결정합니다. 이러한 외관 요소를 책임지는 **외장설계 담당**은 디자인의 의도를 실제 차량에 구현하는 것은 물론, 안전, 법규, 기능, 재조성, 원가 등 다양한 요구 사항을 균형 있게 고려해 높은 완성도의 제품을 개발하는 역할을 맡고 있습니다. 저는 외장설계 담당에서 외장 트림 영역을 담당하고 있습니다. 고객이 직접 마주하는 외관 부품은 작은 틈새나 단차, 표면 품질의 미세한 차이도 바로 고객 경험에 영향을 주기 때문에, 저희 외장설계 담당이 개발하는 모든 부품은 설계 초기부터 품질과 완성도를 엄격하게 관리하는 것이 중요합니다. 따라서 설계 초기 단계부터 디자인, 제조, 품질, 성능 등 여러 부서들과 긴밀하게 협업하며 잠재적인 문제를 미리 예측하고 해결함으로써, 고객이 신뢰할 수 있는 품질과 매력적인 외관을 동시에 갖춘 차량을 만들기 위해 노력하고 있습니다.",
+        "aKr": "자동차를 처음 마주했을 때 가장 강렬한 인상을 주는 요소는 바로 ‘외관(Exterior)’입니다. 외장은 사용자가 브랜드와 직접 만나는 첫 번째 지점이자, 브랜드의 가치를 시각적으로 표현하고 미래 방향성을 담아내는 중요한 접점입니다. 범퍼의 힘 있고 부드러운 선, 램프가 만들어내는 차량의 표정, 섬세한 마감 품질, 유리와 와이퍼의 자연스러운 조화까지, 이 모든 것이 고객이 느끼는 첫인상을 결정합니다. 이러한 외관 요소를 책임지는 **외장설계 담당**은 디자인의 의도를 실제 차량에 구현하는 것은 물론, 안전, 법규, 기능, 재조성, 원가 등 다양한 요구 사항을 균형 있게 고려해 높은 완성도의 제품을 개발하는 역할을 맡고 있습니다. 저는 외장설계 담당에서 외장 트림 영역을 담당하고 있습니다. 고객이 직접 마주하는 외관 부품은 작은 틈새나 단차, 표면 품질의 미세한 차이도 바로 고객 경험에 영향을 주기 때문에, 저희 외장설계 담당이 개발하는 모든 부품은 설계 초기부터 품질과 완성도를 엄격하게 관리하는 것이 중요합니다. 따라서 설계 초기 단계부터 디자인, 제조, 품질, 성능 등 여러 부서들과 긴밀하게 협업하며 잠재적인 문제를 미리 예측하고 해결함으로써, 고객이 신뢰할 수 있는 품질과 매력적인 외관을 동시에 갖춘 차량을 만들기 위해 노력하고 있습니다.",
+        "aEn": "Exterior owns bumpers, grilles, lamp surrounds, mirrors, and how exterior parts meet the body—gaps, flushness, and surface quality. We work with design, testing, and manufacturing to keep the design intent while meeting safety, aero, and manufacturability."
+      },
+      {
+        "q": "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        "qKr": "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        "qEn": "What competencies do you think are necessary for your work?",
+        "a": "첫째는 협업과 커뮤니케이션 역량입니다. 외장설계는 3D 모델링, 공정 이해, 제품 지식 등 기술적 기반도 중요하지만, 무엇보다 다양한 부서와의 긴밀한 협력이 핵심입니다. 초기 디자인 단계부터 양산 이후까지 디자인, 성능, 생산, 품질, 협력사와 함께 업무를 진행하기 때문에, 각 단계의 요구사항과 이슈를 명확히 이해하고 조율하는 능력이 필수적입니다. 둘째는 도전(Challenge) 정신입니다**. GM이 축적해온 기술과 노하우를 기반으로 하되, 빠르게 변화하는 시장 요구와 기술 트렌드에 맞춰 새로운 접근을 시도하는 태도가 필요합니다. 저희 담당에서는 설계 단순화와 최적화 활동(Engineering With Simplicity), 설계 가이드라인 개선 활동(Best Practice Challenge) 등 내부 혁신 프로그램을 통해 새로운 아이디어를 실제 개발에 반영하고 있습니다. 셋째는 문제 해결 능력과 판단력입니다. 외장설계는 개발 과정에서 예기치 못한 이슈가 자주 발생하는 분야입니다. 금형 수정, 검증 결과 이슈, 양산 품질 문제 등 다양한 상황에서 문제의 본질을 빠르게 파악하고 데이터 기반으로 해결책을 제시하는 역량이 중요합니다. 더불어 일정, 품질, 비용을 종합적으로 고려해 최적의 결정을 내리는 판단력 역시 프로젝트를 안정적으로 이끄는 핵심 요소입니다.",
+        "aKr": "첫째는 협업과 커뮤니케이션 역량입니다. 외장설계는 3D 모델링, 공정 이해, 제품 지식 등 기술적 기반도 중요하지만, 무엇보다 다양한 부서와의 긴밀한 협력이 핵심입니다. 초기 디자인 단계부터 양산 이후까지 디자인, 성능, 생산, 품질, 협력사와 함께 업무를 진행하기 때문에, 각 단계의 요구사항과 이슈를 명확히 이해하고 조율하는 능력이 필수적입니다. 둘째는 도전(Challenge) 정신입니다**. GM이 축적해온 기술과 노하우를 기반으로 하되, 빠르게 변화하는 시장 요구와 기술 트렌드에 맞춰 새로운 접근을 시도하는 태도가 필요합니다. 저희 담당에서는 설계 단순화와 최적화 활동(Engineering With Simplicity), 설계 가이드라인 개선 활동(Best Practice Challenge) 등 내부 혁신 프로그램을 통해 새로운 아이디어를 실제 개발에 반영하고 있습니다. 셋째는 문제 해결 능력과 판단력입니다. 외장설계는 개발 과정에서 예기치 못한 이슈가 자주 발생하는 분야입니다. 금형 수정, 검증 결과 이슈, 양산 품질 문제 등 다양한 상황에서 문제의 본질을 빠르게 파악하고 데이터 기반으로 해결책을 제시하는 역량이 중요합니다. 더불어 일정, 품질, 비용을 종합적으로 고려해 최적의 결정을 내리는 판단력 역시 프로젝트를 안정적으로 이끄는 핵심 요소입니다.",
+        "aEn": "You need balance: understanding design language while explaining engineering limits with numbers. Linking CAD, tolerance analysis, and test results matters, as does acting quickly when line issues appear."
+      },
+      {
+        "q": "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+        "qKr": "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+        "qEn": "Was there a memorable project you worked on?",
+        "a": "제가 가장 인상 깊게 참여했던 프로젝트는 “뷰익 엔비스타 엠블럼 신규 디자인 개발 ”입니다. 이 프로젝트는 GM 내에서도 기존에 시도된 적이 거의 없었던 도전적인 과제로, 기존 방식만으로는 디자이너의 의도를 충분히 구현하기 어렵고 양산 후 품질 이슈가 발생할 가능성도 있었습니다. 이를 해결하기 위해 다양한 차종을 벤치마킹하고, 협력사와 함께 양산성을 사전에 검토하며 여러 설계 방향을 비교 및 검증했습니다. 또한 시험팀과의 협업을 통해 실제 사용 환경에서도 안정적으로 기능할 수 있는지 다각도로 확인했습니다. 그 결과, 디자인 의도를 충실히 구현하면서도 고객 불만 가능성을 낮추고 비용 효율까지 확보한 설계안을 완성할 수 있었습니다. 특히 해당 디자인은 GMTCK가 이 분야에서 처음으로 글로벌 승인을 받은 사례로, 이후 본사에서도 관련 영역에서의 선도적 역할(Ambassador)을 기대한다는 긍정적인 평가를 받았습니다.",
+        "aKr": "제가 가장 인상 깊게 참여했던 프로젝트는 “뷰익 엔비스타 엠블럼 신규 디자인 개발 ”입니다. 이 프로젝트는 GM 내에서도 기존에 시도된 적이 거의 없었던 도전적인 과제로, 기존 방식만으로는 디자이너의 의도를 충분히 구현하기 어렵고 양산 후 품질 이슈가 발생할 가능성도 있었습니다. 이를 해결하기 위해 다양한 차종을 벤치마킹하고, 협력사와 함께 양산성을 사전에 검토하며 여러 설계 방향을 비교 및 검증했습니다. 또한 시험팀과의 협업을 통해 실제 사용 환경에서도 안정적으로 기능할 수 있는지 다각도로 확인했습니다. 그 결과, 디자인 의도를 충실히 구현하면서도 고객 불만 가능성을 낮추고 비용 효율까지 확보한 설계안을 완성할 수 있었습니다. 특히 해당 디자인은 GMTCK가 이 분야에서 처음으로 글로벌 승인을 받은 사례로, 이후 본사에서도 관련 영역에서의 선도적 역할(Ambassador)을 기대한다는 긍정적인 평가를 받았습니다.",
+        "aEn": "A bumper program where pedestrian protection, aero, and assembly all had to land together stands out. Global regulations and local plant realities meant a lot of cross-functional discussion; hitting the targets at the end felt very rewarding."
+      },
+      {
+        "q": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qKr": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qEn": "What is the team culture and what are your team members like?",
+        "a": "저희 외장설계 담당은 연구소 내에서도 협업과 팀워크가 가장 활발하게 이루어지는 조직입니다. 다양한 외관 부품을 개발하는 과정에서 여러 부서와 긴밀히 협업해야 하는 만큼, 내부적으로도 서로의 의견을 존중하고 적극적으로 소통하는 문화를 중요하게 생각합니다. 신입이나 타 부서에서 합류한 구성원도 빠르게 적응할 수 있도록 지식과 경험을 공유하는 분위기가 자연스럽게 자리 잡혀 있으며, 필요할 때는 서로 먼저 도움을 제안하는 문화가 형성되어 있습니다. 바쁜 일정 속에서도 함께 문제를 해결하고 책임을 나누는 협업 방식 덕분에 새로운 과제에도 유연하게 대응할 수 있고, 구성원 모두가 안정적으로 성장할 수 있는 환경이 마련되어 있습니다. 이러한 협업 문화는 매 프로젝트마다 높은 완성도와 품질을 만들어내는 중요한 기반이며, 고객에게 더 나은 제품을 제공하기 위한 저희 팀 및 담당의 핵심 경쟁력이라고 생각합니다.",
+        "aKr": "저희 외장설계 담당은 연구소 내에서도 협업과 팀워크가 가장 활발하게 이루어지는 조직입니다. 다양한 외관 부품을 개발하는 과정에서 여러 부서와 긴밀히 협업해야 하는 만큼, 내부적으로도 서로의 의견을 존중하고 적극적으로 소통하는 문화를 중요하게 생각합니다. 신입이나 타 부서에서 합류한 구성원도 빠르게 적응할 수 있도록 지식과 경험을 공유하는 분위기가 자연스럽게 자리 잡혀 있으며, 필요할 때는 서로 먼저 도움을 제안하는 문화가 형성되어 있습니다. 바쁜 일정 속에서도 함께 문제를 해결하고 책임을 나누는 협업 방식 덕분에 새로운 과제에도 유연하게 대응할 수 있고, 구성원 모두가 안정적으로 성장할 수 있는 환경이 마련되어 있습니다. 이러한 협업 문화는 매 프로젝트마다 높은 완성도와 품질을 만들어내는 중요한 기반이며, 고객에게 더 나은 제품을 제공하기 위한 저희 팀 및 담당의 핵심 경쟁력이라고 생각합니다.",
+        "aEn": "Exterior touches design, body, tooling, and plant, so people open their areas and give fast feedback. Everyone is busy, but when someone asks, we try to look together—that builds trust."
+      },
+      {
+        "q": "앞으로의 목표 또는 커리어 방향",
+        "qKr": "내게 GMTCK란?",
+        "qEn": "What does GMTCK mean to you?",
+        "a": "저는 이러한 외관 개발을 통해 회사의 미래 경쟁력과 고객이 경험하게 될 새로운 가치를 연결하는 엔지니어로 성장하고자 합니다. 이를 위해 외장설계 분야에서 요구되는 전문 역량을 지속적으로 강화하고, 빠르게 변화하는 기술과 시장 요구에 능동적으로 대응하는 설계자가 되기 위해 꾸준히 도전하고 있습니다. 앞으로도 고객에게 더 높은 품질과 완성도 있는 디자인을 제공하고, 회사의 경쟁력을 높이는 데 실질적으로 기여하는 엔지니어가 되는 것이 제 목표입니다. 또한 엔지니어라는 직업이 가진 보람과 가치를 주변에 긍정적으로 전달하며, 함께 일하는 동료는 물론 제 아이에게도 좋은 본보기가 될 수 있는 엔지니어가 되고자 합니다. 전문성과 더불어 따뜻한 인간적인 태도를 갖춘 엔지니어로서, 주변 사람들에게 긍정적인 영감을 전할 수 있기를 기대합니다.",
+        "aKr": "저는 이러한 외관 개발을 통해 회사의 미래 경쟁력과 고객이 경험하게 될 새로운 가치를 연결하는 엔지니어로 성장하고자 합니다. 이를 위해 외장설계 분야에서 요구되는 전문 역량을 지속적으로 강화하고, 빠르게 변화하는 기술과 시장 요구에 능동적으로 대응하는 설계자가 되기 위해 꾸준히 도전하고 있습니다. 앞으로도 고객에게 더 높은 품질과 완성도 있는 디자인을 제공하고, 회사의 경쟁력을 높이는 데 실질적으로 기여하는 엔지니어가 되는 것이 제 목표입니다. 또한 엔지니어라는 직업이 가진 보람과 가치를 주변에 긍정적으로 전달하며, 함께 일하는 동료는 물론 제 아이에게도 좋은 본보기가 될 수 있는 엔지니어가 되고자 합니다. 전문성과 더불어 따뜻한 인간적인 태도를 갖춘 엔지니어로서, 주변 사람들에게 긍정적인 영감을 전할 수 있기를 기대합니다.",
+        "aEn": "GMTCK is where I contribute to the first impression when customers see the vehicle. Even a small gap ties to brand experience—that keeps me accountable."
+      }
+    ]
+  },
+  "beca-chassis": {
+    "questions": [
+      {
+        "q": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qKr": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qEn": "Please introduce your department and tell us about your current responsibilities in detail.",
+        "a": "샤시(Chassis) 담당은 차량의 조향, 제동, 승차감, 전체적인 주행 거동과 직접 연결된 부품들을 개발하는 조직입니다. 운전자가 원하는 대로 잘 움직이면서도, 안정적이고 편안한 차를 만드는 역할을 합니다. 그 중 저는 엔진과 모터, 변속기와 같은 파워트레인을 차체에 연결하는 마운트 부품 설계를 담당하고 있습니다. 이 마운트는 주행 중 발생하는 소음과 진동, 힘의 전달을 조절하는 핵심 부품입니다. 제가 맡은 역할은 이 부품을 설계·검증하면서, 차량의 정숙성, 주행 감각, 내구성이 목표 수준을 만족하도록 책임지는 것입니다.",
+        "aKr": "샤시(Chassis) 담당은 차량의 조향, 제동, 승차감, 전체적인 주행 거동과 직접 연결된 부품들을 개발하는 조직입니다. 운전자가 원하는 대로 잘 움직이면서도, 안정적이고 편안한 차를 만드는 역할을 합니다. 그 중 저는 엔진과 모터, 변속기와 같은 파워트레인을 차체에 연결하는 마운트 부품 설계를 담당하고 있습니다. 이 마운트는 주행 중 발생하는 소음과 진동, 힘의 전달을 조절하는 핵심 부품입니다. 제가 맡은 역할은 이 부품을 설계·검증하면서, 차량의 정숙성, 주행 감각, 내구성이 목표 수준을 만족하도록 책임지는 것입니다.",
+        "aEn": "The Chassis team develops parts that are directly tied to steering, braking, ride, and overall vehicle behavior. We help the vehicle move the way the driver wants while keeping it stable and comfortable. I am responsible for designing powertrain mounts that connect the engine, motor, and transmission to the body. These mounts are key parts that control noise, vibration, and how forces are transferred while driving. My role is to design and validate them so refinement, driving feel, and durability meet our targets."
+      },
+      {
+        "q": "담당 업무를 위해 필요한 역량은 무엇이라고 생각 하시나요?",
+        "qKr": "담당 업무를 위해 필요한 역량은 무엇이라고 생각 하시나요?",
+        "qEn": "What competencies do you think are necessary for your work?",
+        "a": "파워트레인 마운트는 모양이나 크기만 보면 작고 가벼운 부품이지만, 실제로는 엔진·모터·변속기의 거동을 지지하고 제어하는 역할을 하기 때문에, 단순히 부품 단품만 잘 만드는 것에 그치지 않고, 파워트레인 전체 또는 차량 전체와의 균형을 고려하는 시스템 관점의 사고가 필요합니다. 또한, 운전자나 승객이 느끼는 진동과 소음, 흔들림 같은 감각적인 문제를 “왜 이런 느낌이 나는지” 진동공학과 기구학적인 관점에서 해석할 수 있어야 합니다. 예를 들어 진폭, 주파수, 진동 모드, 전달 경로와 같은 특성을 파악하고, 이를 마운트의 강성, 방향, 재질, 배치와 같은 설계 인자와 연결해서 이해하고 튜닝하는 능력이 중요합니다.더불어 이 마운트는 차량 운행 중에 파워트레인이 얼마나 움직이고 (롤 거동), 어떤 외력을 받는지 설계적으로 제어하는 부품이다 보니, 문제가 생기면 구동계 (드라이브트레인) 손상이나 안전과 직결되는 문제로 이어질 수 있습니다. 따라서 어떤 방식으로 고장 문제가 일어날 수 있는지에 대한 이해, 충분한 수명을 확보하기 위한 내구 설계 역량, 이를 바탕으로 차량 전체 차원에서의 위험을 판단하고 관리하는 능력이 특히 중요하다고 생각합니다.",
+        "aKr": "파워트레인 마운트는 모양이나 크기만 보면 작고 가벼운 부품이지만, 실제로는 엔진·모터·변속기의 거동을 지지하고 제어하는 역할을 하기 때문에, 단순히 부품 단품만 잘 만드는 것에 그치지 않고, 파워트레인 전체 또는 차량 전체와의 균형을 고려하는 시스템 관점의 사고가 필요합니다. 또한, 운전자나 승객이 느끼는 진동과 소음, 흔들림 같은 감각적인 문제를 “왜 이런 느낌이 나는지” 진동공학과 기구학적인 관점에서 해석할 수 있어야 합니다. 예를 들어 진폭, 주파수, 진동 모드, 전달 경로와 같은 특성을 파악하고, 이를 마운트의 강성, 방향, 재질, 배치와 같은 설계 인자와 연결해서 이해하고 튜닝하는 능력이 중요합니다.더불어 이 마운트는 차량 운행 중에 파워트레인이 얼마나 움직이고 (롤 거동), 어떤 외력을 받는지 설계적으로 제어하는 부품이다 보니, 문제가 생기면 구동계 (드라이브트레인) 손상이나 안전과 직결되는 문제로 이어질 수 있습니다. 따라서 어떤 방식으로 고장 문제가 일어날 수 있는지에 대한 이해, 충분한 수명을 확보하기 위한 내구 설계 역량, 이를 바탕으로 차량 전체 차원에서의 위험을 판단하고 관리하는 능력이 특히 중요하다고 생각합니다.",
+        "aEn": "Powertrain mounts may look small and light when you only consider their shape and size, but in reality they support and control the motion of the engine, motor, and transmission—so it is not enough to optimize the part alone; you need system-level thinking that balances the whole powertrain or the whole vehicle. You must also be able to interpret subjective sensations such as vibration, noise, and shake—“why does it feel this way?”—from vibration engineering and kinematics. For example, you need to understand characteristics such as amplitude, frequency, vibration modes, and transfer paths, and connect them to design factors such as mount stiffness, direction, material, and placement to interpret and tune the design. In addition, because these mounts control how much the powertrain moves in roll and what external loads it sees while the vehicle is running, if something goes wrong it can lead to drivetrain damage or safety-critical issues. So understanding how failures can occur, durability design to secure sufficient life, and the ability to judge and manage risk at the full-vehicle level are especially important, in my view."
+      },
+      {
+        "q": "진행 하셨던 Project 중 인상 깊었던 프로젝트를 소개해 주세요.",
+        "qKr": "진행 하셨던 Project 중 인상 깊었던 프로젝트를 소개해 주세요.",
+        "qEn": "Was there a memorable project you worked on?",
+        "a": "입사 초기, 캡티바 차량 프로그램에 신규 엔진을 적용하기 위해 파워트레인 마운트 시스템을 개발했던 프로젝트가 가장 기억에 남습니다. 저는 이 프로젝트를 통해 처음으로 부품 개발 회의를 직접 주도해 보면서, 성능·해석·시험·생산 등 사내 여러 부서, 그리고 국내/외 협력업체 엔지니어들과 소통하고 조율하는 역할을 맡아 볼 수 있었습니다. 특히 진행 과정에서 차량 공회전 상태에서의 진동 문제를 해결하기 위해, 성능 담당자분과 함께 부품 사양과 시험 데이터를 하나하나 확인하며 마운트 특성을 튜닝을 진행하기도 하고, 팀장님과 함께 공장에 가서 실제 차량 조립 과정을 직접 눈으로 확인하기도 했습니다. 그 결과, 단순히 부품 튜닝으로 해소될 수 없는, 조립 과정에서  마운트 내의 부시가 과도하게 눌리며 의도하지 않은 힘이 발생하고 있다는 원인을 찾아낼 수 있었습니다. 이 경험을 통해 저는 부품 데이터와 차량 평가 결과, 생산 공정까지 포함해 부품개발에 관여하는 영역 전체를 보는 시야를 크게 넓힐 수 있었습니다. 지금 돌아보면 당시 신입 사원이었던 저는 미숙한 점도 많고 실수도 많았지만, 늘 주변 선배님들과 동료분들이 이해해 주시고 도와주신 덕분에 그 과정을 잘 통과할 수 있었고 다양한 업무 경험도 쌓을 수 있었습니다. 그래서 이 프로젝트는 저에게 가장 의미 있는 경험 중 하나로 남아 있습니다.",
+        "aKr": "입사 초기, 캡티바 차량 프로그램에 신규 엔진을 적용하기 위해 파워트레인 마운트 시스템을 개발했던 프로젝트가 가장 기억에 남습니다. 저는 이 프로젝트를 통해 처음으로 부품 개발 회의를 직접 주도해 보면서, 성능·해석·시험·생산 등 사내 여러 부서, 그리고 국내/외 협력업체 엔지니어들과 소통하고 조율하는 역할을 맡아 볼 수 있었습니다. 특히 진행 과정에서 차량 공회전 상태에서의 진동 문제를 해결하기 위해, 성능 담당자분과 함께 부품 사양과 시험 데이터를 하나하나 확인하며 마운트 특성을 튜닝을 진행하기도 하고, 팀장님과 함께 공장에 가서 실제 차량 조립 과정을 직접 눈으로 확인하기도 했습니다. 그 결과, 단순히 부품 튜닝으로 해소될 수 없는, 조립 과정에서  마운트 내의 부시가 과도하게 눌리며 의도하지 않은 힘이 발생하고 있다는 원인을 찾아낼 수 있었습니다. 이 경험을 통해 저는 부품 데이터와 차량 평가 결과, 생산 공정까지 포함해 부품개발에 관여하는 영역 전체를 보는 시야를 크게 넓힐 수 있었습니다. 지금 돌아보면 당시 신입 사원이었던 저는 미숙한 점도 많고 실수도 많았지만, 늘 주변 선배님들과 동료분들이 이해해 주시고 도와주신 덕분에 그 과정을 잘 통과할 수 있었고 다양한 업무 경험도 쌓을 수 있었습니다. 그래서 이 프로젝트는 저에게 가장 의미 있는 경험 중 하나로 남아 있습니다.",
+        "aEn": "Early in my career, the project that stands out most is developing the powertrain mount system to apply a new engine on the Captiva program. Through that project, for the first time I led component development meetings myself, coordinating performance, CAE, test, production, and domestic and overseas supplier engineers. While working through idle vibration, I tuned mount characteristics with the performance owner by checking part specs and test data one by one, and I went to the plant with my manager to see the actual assembly process. In the end we found a cause that could not be solved by part tuning alone: during assembly, a bushing inside the mount was being over-compressed, creating unintended forces. That experience greatly broadened how I see the whole scope of part development—part data, vehicle evaluation, and the production process. Looking back, I was a new hire and immature and made many mistakes, but thanks to seniors and peers who understood and helped me, I got through it and built diverse experience. That project remains one of the most meaningful experiences for me."
+      },
+      {
+        "q": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qKr": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qEn": "What is the team culture and what are your team members like?",
+        "a": "우리 팀은 동료분들 대부분이 매우 높은 전문성을 지니신 동시에, 수평적인 분위기가 잘 자리 잡혀 있습니다. 모르는 것이 있을 때 혼자 고민하기보다, 서로 질문하고 함께 해결해 나가는 문화가 있어 업무를 하면서도 심리적인 안정감이 큰 편입니다. 또 평소 해외에 있는 직원들과 협업하는 일이 많다 보니, 서로의 배경과 문화 차이를 존중하면서 일하려는 태도가 자연스럽게 형성되어 있습니다. 덕분에 혼자였다면 부담이 컸을 문제들도, 팀과 함께 논의하고 풀어나가면서 제 스스로도 성장할 수 있었다고 느끼고 있습니다.",
+        "aKr": "우리 팀은 동료분들 대부분이 매우 높은 전문성을 지니신 동시에, 수평적인 분위기가 잘 자리 잡혀 있습니다. 모르는 것이 있을 때 혼자 고민하기보다, 서로 질문하고 함께 해결해 나가는 문화가 있어 업무를 하면서도 심리적인 안정감이 큰 편입니다. 또 평소 해외에 있는 직원들과 협업하는 일이 많다 보니, 서로의 배경과 문화 차이를 존중하면서 일하려는 태도가 자연스럽게 형성되어 있습니다. 덕분에 혼자였다면 부담이 컸을 문제들도, 팀과 함께 논의하고 풀어나가면서 제 스스로도 성장할 수 있었다고 느끼고 있습니다.",
+        "aEn": "Most of my colleagues are highly capable, and we also have a culture that feels quite flat. When we don’t know something, we ask each other and solve it together rather than struggling alone, so I feel a strong sense of psychological safety at work. Because we often collaborate with people overseas, we naturally try to respect different backgrounds and cultures. Issues that would have been a heavy burden alone, we discuss and resolve as a team—and I feel I have grown in the process."
+      },
+      {
+        "q": "내게 GMTCK 란?",
+        "qKr": "내게 GMTCK 란?",
+        "qEn": "What does GMTCK mean to you?",
+        "a": "저에게 GMTCK는  단순히 일만 하는 곳이 아니라, 제가 엔지니어로서도 사람으로서도 많이 성장하게 해주는 곳이라고 생각합니다. 부품 설계 엔지니어로서 일하면서 사내 여러 부서 담당자분들과 지속적으로 소통 하는데, 그 과정에서 전문성이 뛰어나고 배울 점 많은 분들이 정말 많이 계시다는 것을 매일 체감합니다. 입사 초기에는 업무가 어렵고 매일이 버겁게 느껴졌지만, 지금 돌이켜보면 회사 생활을 통해 제 성격과 사고도 크게 바뀌었고, 시야도 넓어졌다는걸 실감합니다. 훌륭한 동료들과 서로 도우며 즐겁게 일하고 성장해 갈 수 있어 감사한 마음입니다.",
+        "aKr": "저에게 GMTCK는  단순히 일만 하는 곳이 아니라, 제가 엔지니어로서도 사람으로서도 많이 성장하게 해주는 곳이라고 생각합니다. 부품 설계 엔지니어로서 일하면서 사내 여러 부서 담당자분들과 지속적으로 소통 하는데, 그 과정에서 전문성이 뛰어나고 배울 점 많은 분들이 정말 많이 계시다는 것을 매일 체감합니다. 입사 초기에는 업무가 어렵고 매일이 버겁게 느껴졌지만, 지금 돌이켜보면 회사 생활을 통해 제 성격과 사고도 크게 바뀌었고, 시야도 넓어졌다는걸 실감합니다. 훌륭한 동료들과 서로 도우며 즐겁게 일하고 성장해 갈 수 있어 감사한 마음입니다.",
+        "aEn": "To me, GMTCK isn’t just a place to work—it’s where I’ve grown as an engineer and as a person. As a part design engineer I work with many departments, and every day I feel how many people are exceptionally capable and worth learning from. Early on the work was difficult and every day felt heavy, but looking back, my personality and thinking have changed a lot through life at the company, and I truly feel my horizons have widened. I’m grateful to work with excellent colleagues, help each other, and grow together in a positive way."
+      }
+    ]
+  },
+  "beca-aftersales": {
+    "questions": [
+      {
+        "q": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qKr": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qEn": "Please introduce your department and tell us about your current responsibilities in detail.",
+        "a": "우리 담당은 차량의 설계 단계부터 단종 이후까지, 차량의 전 생애주기에 걸쳐 고객의 서비스 환경 전체를 설계·관리합니다. 차량 개발 초기 부터 참여하여 신규 부품의 정비 편의성을 검토하고, 효율적인 교체 와  서비스 기술자료의 기준을 수립함으로써 설계와 서비스 현장을 잇는 가교 역할을 수행하고 있습니다. 이 과정에서 부품 하나하나가 고객에게 전달된 이후에도 최상의 컨디션을 유지할 수 있도록, 정비사업소에서 사용하는 정비 지침서, 고객이 차량을 처음 접할 때 보는 취급설명서, 고장을 찾기 위한 고장진단 로직, 정비 시간이 기준이 되는 작업시간 개발까지 함께 고려해 ‘서비스 프로세스를 최적화’하는 것이 우리의 핵심 임무입니다. 이 안에서 저는 Service Release Engineer(SRE)로서 AS 부품의 서비스 기준을 수립합니다. 서비스 부품의 릴리즈부터 최적의 서비스 단위 구성까지 엔지니어링 관점에서 명확한 기준을 결정하고, 이 기준을 바탕으로 서비스 부품이 필드에 문제없이 공급되고 서비스될 수 있도록 지원하는 역할도 수행하고 있습니다.",
+        "aKr": "우리 담당은 차량의 설계 단계부터 단종 이후까지, 차량의 전 생애주기에 걸쳐 고객의 서비스 환경 전체를 설계·관리합니다. 차량 개발 초기 부터 참여하여 신규 부품의 정비 편의성을 검토하고, 효율적인 교체 와  서비스 기술자료의 기준을 수립함으로써 설계와 서비스 현장을 잇는 가교 역할을 수행하고 있습니다. 이 과정에서 부품 하나하나가 고객에게 전달된 이후에도 최상의 컨디션을 유지할 수 있도록, 정비사업소에서 사용하는 정비 지침서, 고객이 차량을 처음 접할 때 보는 취급설명서, 고장을 찾기 위한 고장진단 로직, 정비 시간이 기준이 되는 작업시간 개발까지 함께 고려해 ‘서비스 프로세스를 최적화’하는 것이 우리의 핵심 임무입니다. 이 안에서 저는 Service Release Engineer(SRE)로서 AS 부품의 서비스 기준을 수립합니다. 서비스 부품의 릴리즈부터 최적의 서비스 단위 구성까지 엔지니어링 관점에서 명확한 기준을 결정하고, 이 기준을 바탕으로 서비스 부품이 필드에 문제없이 공급되고 서비스될 수 있도록 지원하는 역할도 수행하고 있습니다.",
+        "aEn": "Our team designs and manages the entire customer service environment across the full vehicle lifecycle—from design through end of production. From early vehicle development we review serviceability of new parts and set standards for efficient replacement and service technical information, acting as a bridge between engineering and the service field. In that process, so that each part stays in the best condition after it reaches the customer, we optimize the “service process” together: service manuals used at dealers, owner’s manuals customers see first, diagnostic logic for finding faults, and labor-time standards. Within that, I am a Service Release Engineer (SRE) and set service criteria for aftermarket parts—from release to the optimal service unit—and I support engineering decisions so service parts can be supplied and serviced in the field without issues."
+      },
+      {
+        "q": "업무에 대해 소개해주세요.",
+        "qKr": "업무에 대해 소개해주세요.",
+        "qEn": "Please walk us through a typical workday or how you structure your work.",
+        "a": "저는 유연근무제도를 활용해 남들보다 조금 이른 아침을 여는 편입니다. 아이를 돌보면서도 업무에 온전히 몰입할 수 있는 환경 덕분에, 동료들이 본격적으로 출근하기 전 미리 하루 업무의 우선순위를 정리하며 일과를 시작합니다.오전에는 밤사이 발생한 서비스 이슈와 설계 변경 사항 등을 확인합니다. 설계 변경된 내용이 실제 서비스에 어떤 영향을 주는지 검토하면서, 정비 지침서에 추가·수정이 필요한지, 고장진단 로직이나 경고 메시지가 바뀌어야 하는지, 작업시간 기준이 달라져야 하는지를 엔지니어링 관점에서 심도 있게 살펴봅니다. 그리고 이로 인해 서비스 과정에 문제가 없는지, 추가적인 조치가 필요한지까지 함께 검토합니다. 오후에는 주로 현장에서 발생하는 실시간 이슈들에 대응하며 시간을 보냅니다. AS 관련 업무는 현장 상황과 직결되는 만큼, 설계나 조달 등 유관 부서와 긴밀하게 소통하며 즉각적인 해결책을 찾아야 합니다. 특히 빠른 의사결정이 필요한 사안은 가능한 한 그날 안에 명확한 가이드를 전달하려 노력하며, 이러한 현장 지원이 곧 고객 만족으로 이어진다는 책임감을 가지고 일하고 있습니다.",
+        "aKr": "저는 유연근무제도를 활용해 남들보다 조금 이른 아침을 여는 편입니다. 아이를 돌보면서도 업무에 온전히 몰입할 수 있는 환경 덕분에, 동료들이 본격적으로 출근하기 전 미리 하루 업무의 우선순위를 정리하며 일과를 시작합니다.오전에는 밤사이 발생한 서비스 이슈와 설계 변경 사항 등을 확인합니다. 설계 변경된 내용이 실제 서비스에 어떤 영향을 주는지 검토하면서, 정비 지침서에 추가·수정이 필요한지, 고장진단 로직이나 경고 메시지가 바뀌어야 하는지, 작업시간 기준이 달라져야 하는지를 엔지니어링 관점에서 심도 있게 살펴봅니다. 그리고 이로 인해 서비스 과정에 문제가 없는지, 추가적인 조치가 필요한지까지 함께 검토합니다. 오후에는 주로 현장에서 발생하는 실시간 이슈들에 대응하며 시간을 보냅니다. AS 관련 업무는 현장 상황과 직결되는 만큼, 설계나 조달 등 유관 부서와 긴밀하게 소통하며 즉각적인 해결책을 찾아야 합니다. 특히 빠른 의사결정이 필요한 사안은 가능한 한 그날 안에 명확한 가이드를 전달하려 노력하며, 이러한 현장 지원이 곧 고객 만족으로 이어진다는 책임감을 가지고 일하고 있습니다.",
+        "aEn": "I use flexible work and tend to start a bit earlier. Thanks to an environment where I can focus on work while caring for my child, I set priorities for the day before colleagues arrive in full force. In the morning I check overnight service issues and design changes. I review how design changes affect service—whether service manuals need additions or edits, whether diagnostic logic or warning messages must change, whether labor-time standards should change—and I review in depth from an engineering perspective. I also check whether the service process is still sound and whether any further action is needed. In the afternoon I mainly respond to real-time field issues. Aftersales is tied directly to what happens on the ground, so I communicate closely with engineering, sourcing, and other departments to find immediate solutions. When fast decisions are needed, I try to deliver clear guidance the same day, and I work with the mindset that this field support leads directly to customer satisfaction."
+      },
+      {
+        "q": "담당업무를 위해 필요한 역량은 무엇이라고 생각하시나요?",
+        "qKr": "담당업무를 위해 필요한 역량은 무엇이라고 생각하시나요?",
+        "qEn": "What competencies do you think are necessary for your work?",
+        "a": "우선 외국계 회사라는 특성상 글로벌 조직과 긴밀하게 협업해야 하기 때문에, 능동적인 영어 소통 태도가 중요합니다. 기술 자료의 명확한 이해를 바탕으로 내 의견을 글로벌 동료들에게 적극적으로 전달하고 개선시키는 데 필요하기 때문입니다. 하지만 소통 능력만큼이나 중요한 것은 ‘고객의 눈’으로 바라보는 유연한 시각과 공감입니다. 우리는 설계와 AS 현장 사이에서 균형을 잡는 역할을 하는 만큼, 단순히 정해진 기준만 검토하는 데 그치지 않고 “실제 현장에서 고객이 어떤 불편을 느낄 수 있을까?”를 먼저 고민하는 태도가 필요합니다. 마지막으로, 자동차 시스템 전반의 흐름을 읽는 넓은 시야가 필요합니다. 특정 부품에 매몰되지 않고, 차량 전체의 구조와 기능이 맞물리는 맥락을 이해해야 합니다. 이러한 시야가 있어야 복잡한 이슈 속에서도 문제의 본질을 빠르게 파악하고, 최적의 서비스 방안을 찾아낼 수 있습니다. 자동차에 대한 꾸준한 관심은 이 업무를 즐겁게 수행할 수 있는 가장 큰 원동력입니다.",
+        "aKr": "우선 외국계 회사라는 특성상 글로벌 조직과 긴밀하게 협업해야 하기 때문에, 능동적인 영어 소통 태도가 중요합니다. 기술 자료의 명확한 이해를 바탕으로 내 의견을 글로벌 동료들에게 적극적으로 전달하고 개선시키는 데 필요하기 때문입니다. 하지만 소통 능력만큼이나 중요한 것은 ‘고객의 눈’으로 바라보는 유연한 시각과 공감입니다. 우리는 설계와 AS 현장 사이에서 균형을 잡는 역할을 하는 만큼, 단순히 정해진 기준만 검토하는 데 그치지 않고 “실제 현장에서 고객이 어떤 불편을 느낄 수 있을까?”를 먼저 고민하는 태도가 필요합니다. 마지막으로, 자동차 시스템 전반의 흐름을 읽는 넓은 시야가 필요합니다. 특정 부품에 매몰되지 않고, 차량 전체의 구조와 기능이 맞물리는 맥락을 이해해야 합니다. 이러한 시야가 있어야 복잡한 이슈 속에서도 문제의 본질을 빠르게 파악하고, 최적의 서비스 방안을 찾아낼 수 있습니다. 자동차에 대한 꾸준한 관심은 이 업무를 즐겁게 수행할 수 있는 가장 큰 원동력입니다.",
+        "aEn": "Because we work in a multinational environment, we collaborate closely with global organizations, so a proactive attitude toward English communication is important—you need to understand technical material clearly and communicate your views to global peers to drive improvements. But communication alone is not enough: you also need a flexible perspective and empathy through the “customer’s eyes.” We balance engineering and the service field, so rather than only checking fixed criteria, you need to ask first what inconvenience customers might feel in the real field. Finally, you need a broad view of how the whole vehicle system fits together—without getting stuck on one part—and understand how structure and function connect. With that view you can find the essence of complex issues quickly and the best service approach. Ongoing interest in cars is the biggest driver that makes this work enjoyable."
+      },
+      {
+        "q": "진행하셨던 프로젝트 중 인상 깊었던 프로젝트가 있나요?",
+        "qKr": "진행하셨던 프로젝트 중 인상 깊었던 프로젝트가 있나요?",
+        "qEn": "Was there a memorable project you worked on?",
+        "a": "GM 수입 차량의 AS 부품을 검토할 때마다 저는 늘 ‘내 차라면 이 가격이 적정할까?’라는 질문을 스스로에게 던집니다. 특히 수입 부품의 물류비 등을 감안하면서도 가격 경쟁력을 확보하기 위해, 수입 소모품을 국내에서 이미 사용 중인 공용 품번으로 대체 적용했던 업무가 가장 인상 깊었습니다. 예를 들어 와이퍼나 에어컨 필터 등은 사이즈가 동일하고 기술적으로 호환에 문제가 없는 경우가 많습니다.저는 정비기술 자료, 고장진단 등 담당자분들과 함께 기술적으로 검토하여 문제가 없음을 확인했고, 현장에서 대체 서비스가 가능하도록 조치했습니다. 그 결과 고객에게는 합리적인 가격의 부품을 제공하고, 회사 측면에서도 재고 관리 효율화와 보증 비용 절감이라는 성과를 거둘 수 있었습니다. 이 경험을 통해 실무에서의 사소한 판단이 고객 만족과 브랜드 운영 효율에 큰 영향을 미친다는 점을 다시 한 번 실감했습니다.",
+        "aKr": "GM 수입 차량의 AS 부품을 검토할 때마다 저는 늘 ‘내 차라면 이 가격이 적정할까?’라는 질문을 스스로에게 던집니다. 특히 수입 부품의 물류비 등을 감안하면서도 가격 경쟁력을 확보하기 위해, 수입 소모품을 국내에서 이미 사용 중인 공용 품번으로 대체 적용했던 업무가 가장 인상 깊었습니다. 예를 들어 와이퍼나 에어컨 필터 등은 사이즈가 동일하고 기술적으로 호환에 문제가 없는 경우가 많습니다.저는 정비기술 자료, 고장진단 등 담당자분들과 함께 기술적으로 검토하여 문제가 없음을 확인했고, 현장에서 대체 서비스가 가능하도록 조치했습니다. 그 결과 고객에게는 합리적인 가격의 부품을 제공하고, 회사 측면에서도 재고 관리 효율화와 보증 비용 절감이라는 성과를 거둘 수 있었습니다. 이 경험을 통해 실무에서의 사소한 판단이 고객 만족과 브랜드 운영 효율에 큰 영향을 미친다는 점을 다시 한 번 실감했습니다.",
+        "aEn": "Whenever I review aftermarket parts for GM import vehicles, I always ask myself, “If this were my car, would this price feel fair?” A project that stood out most was substituting import consumables with common part numbers already used domestically to stay competitive on price even after logistics costs for imports. For example, wipers and cabin filters often share the same size and are technically compatible. I reviewed the technical details with owners of service documentation and diagnostics, confirmed there was no issue, and enabled alternate service in the field. That gave customers more reasonable part prices and helped the company with inventory efficiency and warranty cost. The experience reminded me again how small practical judgments in the field affect customer satisfaction and how efficiently the brand runs."
+      },
+      {
+        "q": "내게 GMTCK 란?",
+        "qKr": "내게 GMTCK 란?",
+        "qEn": "What does GMTCK mean to you?",
+        "a": "저에게 GMTCK는 엔지니어로서의 자부심과 삶의 균형을 동시에 실현해 주는 ‘든든한 베이스캠프’입니다. 글로벌 GM의 핵심 기술 거점으로서, 세계 표준을 선도하며 폭넓은 기술적 경험을 주도적으로 쌓을 수 있는 곳입니다. GM의 다양한 프로젝트에 참여하며, 서비스 부품, 정비 지침서, 취급설명서, 고장진단, 작업시간까지 연결된 ‘풀 패키지 서비스 엔지니어링’ 경험을 쌓을 수 있는 곳입니다. 이곳에서 글로벌 엔지니어들과 협력하며 한국 엔지니어링의 경쟁력을 증명하고, 그 과정에서 실질적인 전문성을 쌓아가는 즐거움을 느끼고 있습니다. 또한 이곳은 제 인생의 소중한 순간들을 함께해 온 동반자이기도 합니다. 커리어를 쌓아가는 동안 가정을 꾸리고 아이가 태어나는 등 삶의 큰 변화들이 있었지만, 회사의 유연하고 배려 깊은 문화 덕분에 일과 가정의 균형을 지키며 안정적으로 성장할 수 있었습니다. 앞으로 마주할 수많은 도전 속에서도 우리 회사가 저와 제 가족의 든든한 울타리가 되길 기대하며, 저는 이곳에서 서비스 부품뿐 아니라 정비 지침서, 취급설명서, 고장진단, 작업시간까지 포괄하는 Aftersales Engineering의 전문성을 계속 키워 가는 엔지니어로 성장하고 싶습니다.",
+        "aKr": "저에게 GMTCK는 엔지니어로서의 자부심과 삶의 균형을 동시에 실현해 주는 ‘든든한 베이스캠프’입니다. 글로벌 GM의 핵심 기술 거점으로서, 세계 표준을 선도하며 폭넓은 기술적 경험을 주도적으로 쌓을 수 있는 곳입니다. GM의 다양한 프로젝트에 참여하며, 서비스 부품, 정비 지침서, 취급설명서, 고장진단, 작업시간까지 연결된 ‘풀 패키지 서비스 엔지니어링’ 경험을 쌓을 수 있는 곳입니다. 이곳에서 글로벌 엔지니어들과 협력하며 한국 엔지니어링의 경쟁력을 증명하고, 그 과정에서 실질적인 전문성을 쌓아가는 즐거움을 느끼고 있습니다. 또한 이곳은 제 인생의 소중한 순간들을 함께해 온 동반자이기도 합니다. 커리어를 쌓아가는 동안 가정을 꾸리고 아이가 태어나는 등 삶의 큰 변화들이 있었지만, 회사의 유연하고 배려 깊은 문화 덕분에 일과 가정의 균형을 지키며 안정적으로 성장할 수 있었습니다. 앞으로 마주할 수많은 도전 속에서도 우리 회사가 저와 제 가족의 든든한 울타리가 되길 기대하며, 저는 이곳에서 서비스 부품뿐 아니라 정비 지침서, 취급설명서, 고장진단, 작업시간까지 포괄하는 Aftersales Engineering의 전문성을 계속 키워 가는 엔지니어로 성장하고 싶습니다.",
+        "aEn": "To me, GMTCK is a solid base camp—somewhere I can feel pride as an engineer and balance in life at the same time. As a core GM technical site, it is a place where I can lead broad, world-class technical experience. I can join diverse programs and build “full-package service engineering” experience that connects service parts, service manuals, owner’s manuals, diagnostics, and labor time. Here I collaborate with global engineers, help demonstrate Korean engineering competitiveness, and enjoy building real expertise. This place has also been a companion through important moments in my life: while building my career I started a family and had a child, and thanks to the company’s flexible, considerate culture I could balance work and home and grow steadily. I hope that through many challenges ahead the company remains a strong support for me and my family, and I want to keep growing as an engineer who deepens expertise in aftersales engineering—service parts, manuals, owner’s information, diagnostics, and labor time together."
+      }
+    ]
+  },
+  "itpe-interior-trim": {
+    "questions": []
+  },
+  "itpe-seat-safety": {
+    "questions": []
+  },
+  "itpe-thermal-propulsion": {
+    "questions": []
+  },
+  "itpe-ecs": {
+    "questions": []
+  },
+  "ss-cch-ppmo": {
+    "questions": [
+      {
+        "q": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qKr": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qEn": "Please introduce your department and describe your current responsibilities in detail.",
+        "a": "Product and Program Office / App Dev Division은 GM이 in-house 소프트웨어 개발이 진행되면서 SW 관련 조직이 커졌고, 이 조직에서 나오는 콘텐츠는 다양한 개발 일정을 가지고 있습니다. 이 일정을 차량 요구에 맞게 타이밍을 관리함으로써, 차량 안에 SW가 제때 안착할 수 있도록 가교 역할을 합니다.\n\n또한 국내 마켓에서 필요한 앱을 개발하며, T-map, Super Cruise 등이 국내에 적용될 수 있도록 노력했고, 다양한 콘텐츠 적용을 위해 노력하고 있습니다.\n\nC121 Compute PM 역할로 TCP, ACP3.1과 VCU SW 적용 계획, 긴급 SW 이슈 해결 방안 등을 DRE, SW 개발자, 프로그램과 논의하며 차량 양산을 성공적으로 이끌기 위해 노력했습니다. VCU에 들어가는 Video Recorder, Plug and Charge 기능이 양산 이후 어느 시점에 들어가야 하는지 SW 일정을 논의하고, 차량 테스트 일정 및 적용 일정에 대해 논의했습니다.\n\nMY30 C1Yx VPM 역할을 하고 있습니다. S&S 조직에서 개발하는 제품 로드맵에 맞게 SW 콘텐츠가 적용되도록, 차량 개발 초기에 적용 콘텐츠를 프로그램 팀과 협업해 정하는 업무를 합니다. SW 개발을 위한 이니셔티브·역량을 파악하고 진행을 협의하면서, 차량 SW 콘텐츠에 대한 비용과 리소스를 확인하고 차량에 맞는 콘텐츠 반영을 조율합니다.",
+        "aKr": "Product and Program Office / App Dev Division은 GM이 in-house 소프트웨어 개발이 진행되면서 SW 관련 조직이 커졌고, 이 조직에서 나오는 콘텐츠는 다양한 개발 일정을 가지고 있습니다. 이 일정을 차량 요구에 맞게 타이밍을 관리함으로써, 차량 안에 SW가 제때 안착할 수 있도록 가교 역할을 합니다.\n\n또한 국내 마켓에서 필요한 앱을 개발하며, T-map, Super Cruise 등이 국내에 적용될 수 있도록 노력했고, 다양한 콘텐츠 적용을 위해 노력하고 있습니다.\n\nC121 Compute PM 역할로 TCP, ACP3.1과 VCU SW 적용 계획, 긴급 SW 이슈 해결 방안 등을 DRE, SW 개발자, 프로그램과 논의하며 차량 양산을 성공적으로 이끌기 위해 노력했습니다. VCU에 들어가는 Video Recorder, Plug and Charge 기능이 양산 이후 어느 시점에 들어가야 하는지 SW 일정을 논의하고, 차량 테스트 일정 및 적용 일정에 대해 논의했습니다.\n\nMY30 C1Yx VPM 역할을 하고 있습니다. S&S 조직에서 개발하는 제품 로드맵에 맞게 SW 콘텐츠가 적용되도록, 차량 개발 초기에 적용 콘텐츠를 프로그램 팀과 협업해 정하는 업무를 합니다. SW 개발을 위한 이니셔티브·역량을 파악하고 진행을 협의하면서, 차량 SW 콘텐츠에 대한 비용과 리소스를 확인하고 차량에 맞는 콘텐츠 반영을 조율합니다.",
+        "aEn": "The Product and Program Office / App Dev Division bridges vehicle needs and software schedules so in-house SW lands on time as GM’s software organization has grown. We develop apps for Korea—working to bring T-map, Super Cruise, and more—and I have served as C121 Compute PM and now MY30 C1Yx VPM, aligning roadmaps, costs, and resources with program teams."
+      },
+      {
+        "q": "하루 업무에 대해 소개해주세요.",
+        "qKr": "하루 업무에 대해 소개해주세요.",
+        "qEn": "Please describe a typical workday.",
+        "a": "프로그램에서 진행하는 다양한 회의에 참석하며 SW 개발 사항에 대한 보고를 주로 하다 보니, 대부분의 업무는 자료를 찾고 업데이트하며, 진행 상황 및 에스컬레이션 사항을 어떻게 보고할지 고민하는 데 시간을 씁니다.\n\n개발 중인 사항을 미리 파악하기 위해 SW 팀의 기술 자료를 찾다 보면 새로운 기능을 배우는 즐거움에 빠지기도 하고, 신기술을 생각하다 보면 더 나은 개발은 없을까 혼자 많은 생각을 해 보기도 합니다.",
+        "aKr": "프로그램에서 진행하는 다양한 회의에 참석하며 SW 개발 사항에 대한 보고를 주로 하다 보니, 대부분의 업무는 자료를 찾고 업데이트하며, 진행 상황 및 에스컬레이션 사항을 어떻게 보고할지 고민하는 데 시간을 씁니다.\n\n개발 중인 사항을 미리 파악하기 위해 SW 팀의 기술 자료를 찾다 보면 새로운 기능을 배우는 즐거움에 빠지기도 하고, 신기술을 생각하다 보면 더 나은 개발은 없을까 혼자 많은 생각을 해 보기도 합니다.",
+        "aEn": "I attend many program meetings and report on SW progress—so a lot of my day is gathering and updating materials and thinking through how to report status and escalations. Digging into SW teams’ technical docs to stay ahead often turns into learning new features; I also reflect on how we could develop better."
+      },
+      {
+        "q": "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        "qKr": "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        "qEn": "What competencies do you think are necessary for your work?",
+        "a": "새로운 것을 찾아보는 것을 좋아하고, 이를 남에게 말해 주기를 좋아하는 분이라면 역량은 충분한 것 같습니다. 얼리어답터 성향이 있으시면 더 좋을 것 같습니다.",
+        "aKr": "새로운 것을 찾아보는 것을 좋아하고, 이를 남에게 말해 주기를 좋아하는 분이라면 역량은 충분한 것 같습니다. 얼리어답터 성향이 있으시면 더 좋을 것 같습니다.",
+        "aEn": "If you enjoy discovering new things and sharing them with others, you already have a lot of what it takes. An early-adopter mindset helps."
+      },
+      {
+        "q": "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+        "qKr": "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+        "qEn": "Was there a memorable project you worked on?",
+        "a": "A2LL이 가장 인상 깊었습니다. Cadillac 퍼포먼스 차량 중 하나인 A2LL을 하면서, 시끄럽기만 하다고 생각했던 퍼포먼스 차량에 대한 오해도 떨쳐 내고, 차량 개발에 필요한 다양한 요소를 배울 수 있는 기회였습니다.\n\n물론 새로운 VIP 아키텍처 초반 차량이라 SW 개발 지연도 많고, 퍼포먼스 차량이라 까다로운 조건이 많았지만, 배울 수 있었고 해결하는 성취감도 커서 그만큼 기억에 많이 남는 프로젝트였습니다.",
+        "aKr": "A2LL이 가장 인상 깊었습니다. Cadillac 퍼포먼스 차량 중 하나인 A2LL을 하면서, 시끄럽기만 하다고 생각했던 퍼포먼스 차량에 대한 오해도 떨쳐 내고, 차량 개발에 필요한 다양한 요소를 배울 수 있는 기회였습니다.\n\n물론 새로운 VIP 아키텍처 초반 차량이라 SW 개발 지연도 많고, 퍼포먼스 차량이라 까다로운 조건이 많았지만, 배울 수 있었고 해결하는 성취감도 커서 그만큼 기억에 많이 남는 프로젝트였습니다.",
+        "aEn": "A2LL stands out—a Cadillac performance vehicle that changed my assumptions about performance cars and taught me many facets of development. Early VIP architecture meant delays and tough targets, but the learning and sense of resolution made it unforgettable."
+      },
+      {
+        "q": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qKr": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qEn": "What is the team culture and what are your colleagues like?",
+        "a": "다들 다른 프로그램을 맡아 업무를 하다 보니 친해지기 어렵지 않나 싶지만, 다들 오픈 마인드이신 분들이라 하고 싶은 말도 잘하고 다른 분들의 말도 잘 듣는 동료들과 일하고 있어 도움이 많이 되고 있습니다.",
+        "aKr": "다들 다른 프로그램을 맡아 업무를 하다 보니 친해지기 어렵지 않나 싶지만, 다들 오픈 마인드이신 분들이라 하고 싶은 말도 잘하고 다른 분들의 말도 잘 듣는 동료들과 일하고 있어 도움이 많이 되고 있습니다.",
+        "aEn": "We work different programs so it can feel hard to get close, but everyone is open-minded—we speak up and listen well, which really helps."
+      },
+      {
+        "q": "내게 GMTCK란?",
+        "qKr": "내게 GMTCK란?",
+        "qEn": "What does GMTCK mean to you?",
+        "a": "도전의 장인 것 같습니다. 지속적인 업무 변경을 통해, 고삐가 느슨해진다 싶으면 새로운 곳으로 도전하게 만들어 주고 있습니다.",
+        "aKr": "도전의 장인 것 같습니다. 지속적인 업무 변경을 통해, 고삐가 느슨해진다 싶으면 새로운 곳으로 도전하게 만들어 주고 있습니다.",
+        "aEn": "A place of challenge—when things feel too comfortable, changing assignments push me toward the next challenge."
+      },
+      {
+        "q": "앞으로의 목표 또는 커리어 방향",
+        "qKr": "앞으로의 목표 또는 커리어 방향",
+        "qEn": "Future goals or career direction",
+        "a": "항상 북미에서 전달하는 정보로만 업무를 하다 보니 놓치는 부분이 없지는 않습니다. 북미가 개발하고 있는 사항에 대한 협업을 보다 효율적으로 업데이트하고 싶다는 가까운 목표가 있습니다.\n\n새로운 것들을 많이 보다 보니, 개인적으로 새로운 콘텐츠에 제 생각을 반영할 수 있는 업무를 해 보고 싶기도 합니다.",
+        "aKr": "항상 북미에서 전달하는 정보로만 업무를 하다 보니 놓치는 부분이 없지는 않습니다. 북미가 개발하고 있는 사항에 대한 협업을 보다 효율적으로 업데이트하고 싶다는 가까운 목표가 있습니다.\n\n새로운 것들을 많이 보다 보니, 개인적으로 새로운 콘텐츠에 제 생각을 반영할 수 있는 업무를 해 보고 싶기도 합니다.",
+        "aEn": "I want to collaborate more efficiently with North America so nothing slips through. Personally I’d like to shape new content with my own ideas someday."
+      }
+    ]
+  },
+  "ss-maec": {
+    "questions": [
+      {
+        "q": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qKr": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qEn": "Please introduce your department and describe your current responsibilities in detail.",
+        "a": "MAEC 담당은 Mechatronic & Sensing Hardware / ADAS & Embedded Controls 조직으로, GM 차량의 전기·전자(E/E) 아키텍처와 바디·편의 전장 시스템을 개발하고, 소프트웨어 정의 차량(SDV) 기능을 인하우스로 설계·검증하는 역할을 합니다.\n\n그중 저는 램프, 와이퍼, 도어 잠금, 편의 기능 등을 제어하는 Body Control Module(BCM)을 담당하며, SDV2.0 기반 바디 컨트롤 영역의 소프트웨어와 캘리브레이션 개발을 맡고 있습니다. BCM은 차량 곳곳의 전기 장치를 하나로 묶어 운전자와 탑승자의 사용 경험(UX)을 책임지는 전자 제어 장치라고 보시면 됩니다.\n\n주요 업무는 글로벌에서 정의한 E/E 아키텍처와 소프트웨어 요구사항을 개발 차량에 맞게 적용하고, BCM SW·캘리브레이션 개발 방향을 정리하며, 시험 벤치와 실차에서 발생하는 이슈를 PRTS/Jira로 추적·분석·해결하는 것입니다. 시험, 생산, 품질 조직과 긴밀히 협업하며 최종 제품 완성도와 고객 경험을 책임집니다.",
+        "aKr": "MAEC 담당은 Mechatronic & Sensing Hardware / ADAS & Embedded Controls 조직으로, GM 차량의 전기·전자(E/E) 아키텍처와 바디·편의 전장 시스템을 개발하고, 소프트웨어 정의 차량(SDV) 기능을 인하우스로 설계·검증하는 역할을 합니다.\n\n그중 저는 램프, 와이퍼, 도어 잠금, 편의 기능 등을 제어하는 Body Control Module(BCM)을 담당하며, SDV2.0 기반 바디 컨트롤 영역의 소프트웨어와 캘리브레이션 개발을 맡고 있습니다. BCM은 차량 곳곳의 전기 장치를 하나로 묶어 운전자와 탑승자의 사용 경험(UX)을 책임지는 전자 제어 장치라고 보시면 됩니다.\n\n주요 업무는 글로벌에서 정의한 E/E 아키텍처와 소프트웨어 요구사항을 개발 차량에 맞게 적용하고, BCM SW·캘리브레이션 개발 방향을 정리하며, 시험 벤치와 실차에서 발생하는 이슈를 PRTS/Jira로 추적·분석·해결하는 것입니다. 시험, 생산, 품질 조직과 긴밀히 협업하며 최종 제품 완성도와 고객 경험을 책임집니다.",
+        "aEn": "MAEC covers E/E architecture and body/convenience electronics, designing and verifying SDV capabilities in-house. I own BCM—lamps, wipers, locks, and more—developing SDV2.0 body-control software and calibration, tracking issues in PRTS/Jira with test and manufacturing partners."
+      },
+      {
+        "q": "하루 업무에 대해 소개해주세요.",
+        "qKr": "하루 업무에 대해 소개해주세요.",
+        "qEn": "Please describe a typical workday.",
+        "a": "하루는 보통 전날 시험 결과와 PRTS/Jira 현황을 확인하는 것으로 시작합니다. 이후 그날 처리할 업무의 우선순위를 정리하고, 관련 팀과 원인 분석 및 대책 방향을 논의합니다.\n\n일과 중에는 BCM 관련 새로운 요구사항·스펙 검토, 팀 미팅을 통한 이슈 공유 및 유사 차종·프로그램으로의 전파(read across) 논의, HW/SW/캘리브레이션 데이터 리뷰 및 릴리즈 결정, 부평 테크센터·청라 프로빙그라운드 시험 지원, 글로벌 팀과의 온라인 미팅으로 이슈 정리 및 다음 액션 결정 등을 합니다. 로그와 테스트 결과 검토 시 AI 기반 분석 도구도 활용해 개발 효율을 높이려 합니다.\n\n마지막에 해결·미해결 이슈를 다시 점검하고, 향후 SW 릴리즈 일정과 리스크를 보며 다음 날 할 일을 정리합니다. 프로그램 일정 안에서 안정적인 품질을 확보하는 것이 하루의 핵심 목표입니다.",
+        "aKr": "하루는 보통 전날 시험 결과와 PRTS/Jira 현황을 확인하는 것으로 시작합니다. 이후 그날 처리할 업무의 우선순위를 정리하고, 관련 팀과 원인 분석 및 대책 방향을 논의합니다.\n\n일과 중에는 BCM 관련 새로운 요구사항·스펙 검토, 팀 미팅을 통한 이슈 공유 및 유사 차종·프로그램으로의 전파(read across) 논의, HW/SW/캘리브레이션 데이터 리뷰 및 릴리즈 결정, 부평 테크센터·청라 프로빙그라운드 시험 지원, 글로벌 팀과의 온라인 미팅으로 이슈 정리 및 다음 액션 결정 등을 합니다. 로그와 테스트 결과 검토 시 AI 기반 분석 도구도 활용해 개발 효율을 높이려 합니다.\n\n마지막에 해결·미해결 이슈를 다시 점검하고, 향후 SW 릴리즈 일정과 리스크를 보며 다음 날 할 일을 정리합니다. 프로그램 일정 안에서 안정적인 품질을 확보하는 것이 하루의 핵심 목표입니다.",
+        "aEn": "I start from overnight test results and Jira, set priorities, and align on root cause. The day includes spec reviews, read-across, data releases, bench and vehicle support at Bupyeong and Cheongna, and global calls. I use AI-assisted analysis where helpful and close the day by checking issues and risks against release plans."
+      },
+      {
+        "q": "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        "qKr": "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        "qEn": "What competencies do you think are necessary for your work?",
+        "a": "시스템·제품 이해력과 UX 관점: 하드웨어, 소프트웨어, 네트워크, 차량 기능이 어떻게 연결되는지 이해하고, 최종적으로 운전자·탑승자 UX에 어떤 영향을 주는지까지 보는 능력이 필요합니다.\n\n데이터·AI 기반 문제 해결: 로그·계측·테스트 결과로 가설을 세우고 검증하며 근본 원인에 접근하는 능력, 여기에 AI 도구로 분석 효율을 높이는 능력이 점점 중요해집니다.\n\n인하우스 개발 역량: SDV2.0에서는 외주가 아닌 내부에서 SW와 캘리브레이션을 설계·개선할 수 있는 역량이 필요합니다.\n\n글로벌 커뮤니케이션: 북미·글로벌 팀과 일이 많아 영문 기술 커뮤니케이션과 네트워크로 문제를 함께 푸는 역량이 중요합니다.\n\n이런 역량을 바탕으로 차량이 더 소프트웨어 중심으로 진화하는 흐름 속에서 함께 성장할 수 있는 직무라고 생각합니다.",
+        "aKr": "시스템·제품 이해력과 UX 관점: 하드웨어, 소프트웨어, 네트워크, 차량 기능이 어떻게 연결되는지 이해하고, 최종적으로 운전자·탑승자 UX에 어떤 영향을 주는지까지 보는 능력이 필요합니다.\n\n데이터·AI 기반 문제 해결: 로그·계측·테스트 결과로 가설을 세우고 검증하며 근본 원인에 접근하는 능력, 여기에 AI 도구로 분석 효율을 높이는 능력이 점점 중요해집니다.\n\n인하우스 개발 역량: SDV2.0에서는 외주가 아닌 내부에서 SW와 캘리브레이션을 설계·개선할 수 있는 역량이 필요합니다.\n\n글로벌 커뮤니케이션: 북미·글로벌 팀과 일이 많아 영문 기술 커뮤니케이션과 네트워크로 문제를 함께 푸는 역량이 중요합니다.\n\n이런 역량을 바탕으로 차량이 더 소프트웨어 중심으로 진화하는 흐름 속에서 함께 성장할 수 있는 직무라고 생각합니다.",
+        "aEn": "System and UX thinking, data/AI-assisted debugging, in-house SW and calibration capability, and strong English collaboration with global teams—together they define how we grow in an SDV world."
+      },
+      {
+        "q": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qKr": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qEn": "What is the team culture and what are your colleagues like?",
+        "a": "서로의 전문성을 존중하면서도 편하게 질문할 수 있는 분위기가 가장 큰 장점입니다. 경험 많은 선배님들이 실제 사례 중심으로 노하우를 공유해 주시고, AI 기반 분석·자동화를 제안하면 한번 해보자며 같이 검토하는 개방적인 문화가 있습니다. 설계·시험·품질·생산, 글로벌 팀과도 문제를 같이 푼다는 관점으로 협업합니다. 실제 차량이 완성되기까지의 과정과 고객 관점의 제품 경험을 가까이 느낄 수 있어, 미래 자동차·SDV에 관심 있는 분께 매우 흥미로운 팀이라고 소개하고 싶습니다.",
+        "aKr": "서로의 전문성을 존중하면서도 편하게 질문할 수 있는 분위기가 가장 큰 장점입니다. 경험 많은 선배님들이 실제 사례 중심으로 노하우를 공유해 주시고, AI 기반 분석·자동화를 제안하면 한번 해보자며 같이 검토하는 개방적인 문화가 있습니다. 설계·시험·품질·생산, 글로벌 팀과도 문제를 같이 푼다는 관점으로 협업합니다. 실제 차량이 완성되기까지의 과정과 고객 관점의 제품 경험을 가까이 느낄 수 있어, 미래 자동차·SDV에 관심 있는 분께 매우 흥미로운 팀이라고 소개하고 싶습니다.",
+        "aEn": "We respect expertise but ask questions freely; seniors share real examples and we try new tools together. We solve problems with design, test, quality, production, and global partners as one program."
+      },
+      {
+        "q": "내게 GMTCK란?",
+        "qKr": "내게 GMTCK란?",
+        "qEn": "What does GMTCK mean to you?",
+        "a": "저에게 GMTCK는 새로운 기술을 실제 차량에 가장 먼저 녹여볼 수 있는 실험실이자, 다양한 동료들과 함께 성장하는 학교 같은 곳입니다. 글로벌에서 들어오는 아키텍처와 SW 개념을 먼저 접하고, 부평 테크센터·청라에서 실차와 벤치로 이론이 현실이 되는 과정을 매일 경험합니다. 기술뿐 아니라 협업 방식, 문제를 바라보는 시각, UX를 함께 고민하는 법을 배웁니다. 단순한 직장이 아니라 함께 성장하며 미래 자동차를 만들어 가는 공간입니다.",
+        "aKr": "저에게 GMTCK는 새로운 기술을 실제 차량에 가장 먼저 녹여볼 수 있는 실험실이자, 다양한 동료들과 함께 성장하는 학교 같은 곳입니다. 글로벌에서 들어오는 아키텍처와 SW 개념을 먼저 접하고, 부평 테크센터·청라에서 실차와 벤치로 이론이 현실이 되는 과정을 매일 경험합니다. 기술뿐 아니라 협업 방식, 문제를 바라보는 시각, UX를 함께 고민하는 법을 배웁니다. 단순한 직장이 아니라 함께 성장하며 미래 자동차를 만들어 가는 공간입니다.",
+        "aEn": "GMTCK is a lab where new tech hits real vehicles first, and a school where diverse colleagues grow together toward future mobility."
+      }
+    ]
+  },
+  "ss-swqnd": {
+    "questions": [
+      {
+        "q": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qKr": "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qEn": "Please introduce your department and describe your current responsibilities in detail.",
+        "a": "Software & Services 본부는 차량 개발에서 점점 더 중요해지는 영역으로, 차량 기능을 디지털화하고 제어하는 내부 소프트웨어와 그 위에서 고객에게 제공되는 디지털 서비스를 포괄합니다. 그중 SW QnD는 각 차량에 적용되는 소프트웨어와 캘리브레이션(SW/Cal.)의 품질을 확보하고, 실제 차량에 안전하게 적용·배포(Deployment)할 수 있도록 관리합니다. SW VSE는 차량 개발 전 과정에서 SW/Cal.의 품질·기능에 대한 개발 단계 적합성을 최종 점검하고, 실차 적용·배포 전체 흐름을 책임집니다.",
+        "aKr": "Software & Services 본부는 차량 개발에서 점점 더 중요해지는 영역으로, 차량 기능을 디지털화하고 제어하는 내부 소프트웨어와 그 위에서 고객에게 제공되는 디지털 서비스를 포괄합니다. 그중 SW QnD는 각 차량에 적용되는 소프트웨어와 캘리브레이션(SW/Cal.)의 품질을 확보하고, 실제 차량에 안전하게 적용·배포(Deployment)할 수 있도록 관리합니다. SW VSE는 차량 개발 전 과정에서 SW/Cal.의 품질·기능에 대한 개발 단계 적합성을 최종 점검하고, 실차 적용·배포 전체 흐름을 책임집니다.",
+        "aEn": "S&S spans in-vehicle and digital services. SW QnD secures SW/calibration quality and safe deployment; as SW VSE we validate stage fit and own the full release-to-vehicle flow."
+      },
+      {
+        "q": "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        "qKr": "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        "qEn": "What competencies do you think are necessary for your work?",
+        "a": "크게 세 가지가 필요하다고 생각합니다. 탄탄한 기술적 배경, 유연한 커뮤니케이션, 그리고 차량 개발 전 과정에서 필요한 단계와 품질 확보 기준에 대한 이해입니다. SW/Cal. 릴리즈 플랜을 세우고 이슈를 다루려면 차량 기능, 각 모듈의 역할, 통신과 상호작용에 대한 이해가 필요합니다. 프로그램·공장·타 부서와의 연관성을 이해하고 조율해야 합니다.",
+        "aKr": "크게 세 가지가 필요하다고 생각합니다. 탄탄한 기술적 배경, 유연한 커뮤니케이션, 그리고 차량 개발 전 과정에서 필요한 단계와 품질 확보 기준에 대한 이해입니다. SW/Cal. 릴리즈 플랜을 세우고 이슈를 다루려면 차량 기능, 각 모듈의 역할, 통신과 상호작용에 대한 이해가 필요합니다. 프로그램·공장·타 부서와의 연관성을 이해하고 조율해야 합니다.",
+        "aEn": "Strong technical depth, flexible communication, and understanding vehicle development gates and quality criteria—plus how modules interact—to set release plans and align program, plant, and partners."
+      },
+      {
+        "q": "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+        "qKr": "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
+        "qEn": "Was there a memorable project you worked on?",
+        "a": "최근 진행 중인 Bolt 프로그램이 기억에 많이 남습니다. 기존 개발 기간을 획기적으로 줄이면서도 품질에는 타협이 없어야 하는 도전적 프로젝트였습니다. 기존 틀을 그대로 따르기보다 기본은 지키면서 개발 방법과 프로세스를 재설계했습니다. 줄어든 일정을 차량 실물 확인이 아닌 가상 개발(virtual development)로 보완했고 검증도 추가되었습니다. 자동화 개발 방법이 더해지며 시간을 단축할 수 있었고, 실물 차량과 시험만에 의존하지 않고도 기간을 줄이면서 필요한 품질과 성능을 확보할 수 있음을 보여 주었습니다. SW QnD와 VeSCoM의 역할과 잠재력을 다시 생각하게 해 준 경험이었습니다.",
+        "aKr": "최근 진행 중인 Bolt 프로그램이 기억에 많이 남습니다. 기존 개발 기간을 획기적으로 줄이면서도 품질에는 타협이 없어야 하는 도전적 프로젝트였습니다. 기존 틀을 그대로 따르기보다 기본은 지키면서 개발 방법과 프로세스를 재설계했습니다. 줄어든 일정을 차량 실물 확인이 아닌 가상 개발(virtual development)로 보완했고 검증도 추가되었습니다. 자동화 개발 방법이 더해지며 시간을 단축할 수 있었고, 실물 차량과 시험만에 의존하지 않고도 기간을 줄이면서 필요한 품질과 성능을 확보할 수 있음을 보여 주었습니다. SW QnD와 VeSCoM의 역할과 잠재력을 다시 생각하게 해 준 경험이었습니다.",
+        "aEn": "The Bolt program: aggressively shorter timelines without quality compromise. We redesigned process, added virtual development and automation, and proved we could shorten schedules without relying only on physical vehicles."
+      },
+      {
+        "q": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qKr": "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        "qEn": "What is the team culture and what are your colleagues like?",
+        "a": "가장 큰 강점은 경험과 전문성을 갖춘 베테랑들이 모여 있다는 점입니다. 각 팀원이 하나 이상의 프로그램을 책임지며 오랜 경험으로 높은 기술 역량과 책임감으로 일합니다. 서로의 전문성을 신뢰하고 존중하는 분위기입니다. 차량 개발 환경이 빠르게 변하면서 더 스마트한 방법을 찾기 위해 끊임없이 고민합니다. SW/Cal.을 차량에서 확인하며 나오는 이슈를 더 빨리 찾아 반영하기 위해 어떤 프로세스가 도움이 될지 브레인스토밍하기도 합니다. SW common으로 한 프로그램만의 문제가 아니라 다른 프로그램에 영향을 줄 수 있어 크로스 체크와 정보 공유가 중요해지고 있습니다. 각 프로그램에서 얻은 경험과 교훈을 적극 공유하며 실질적으로 도움을 주고받는 문화를 만들어 가고 있습니다.",
+        "aKr": "가장 큰 강점은 경험과 전문성을 갖춘 베테랑들이 모여 있다는 점입니다. 각 팀원이 하나 이상의 프로그램을 책임지며 오랜 경험으로 높은 기술 역량과 책임감으로 일합니다. 서로의 전문성을 신뢰하고 존중하는 분위기입니다. 차량 개발 환경이 빠르게 변하면서 더 스마트한 방법을 찾기 위해 끊임없이 고민합니다. SW/Cal.을 차량에서 확인하며 나오는 이슈를 더 빨리 찾아 반영하기 위해 어떤 프로세스가 도움이 될지 브레인스토밍하기도 합니다. SW common으로 한 프로그램만의 문제가 아니라 다른 프로그램에 영향을 줄 수 있어 크로스 체크와 정보 공유가 중요해지고 있습니다. 각 프로그램에서 얻은 경험과 교훈을 적극 공유하며 실질적으로 도움을 주고받는 문화를 만들어 가고 있습니다.",
+        "aEn": "Veterans own programs with deep skill and trust. We brainstorm smarter processes, emphasize cross-program checks, and share lessons openly."
+      },
+      {
+        "q": "앞으로의 목표 및 커리어 방향?",
+        "qKr": "앞으로의 목표 및 커리어 방향?",
+        "qEn": "Future goals and career direction?",
+        "a": "단기적으로는 맡은 프로그램에서 SW/Cal. 품질과 일정 안정성을 더 높이고, VeSCoM 기반 SW 릴리즈·배포 프로세스를 한 단계 고도화해 차량 통합 관점에서 높은 품질을 만드는 베스트 프랙티스를 만드는 것이 목표입니다. 중장기적으로는 전동화와 SDV 시대에 맞는 SW QnD 전략과 프로세스를 설계·리드하는 전문가로 성장하고자 합니다. 그 과정에서 쌓은 경험으로 후배를 양성하고 팀 역량을 끌어올리며, 조직 내 다양성과 포용 문화 확산에 기여하는 리더로 성장하는 것이 커리어 방향입니다.",
+        "aKr": "단기적으로는 맡은 프로그램에서 SW/Cal. 품질과 일정 안정성을 더 높이고, VeSCoM 기반 SW 릴리즈·배포 프로세스를 한 단계 고도화해 차량 통합 관점에서 높은 품질을 만드는 베스트 프랙티스를 만드는 것이 목표입니다. 중장기적으로는 전동화와 SDV 시대에 맞는 SW QnD 전략과 프로세스를 설계·리드하는 전문가로 성장하고자 합니다. 그 과정에서 쌓은 경험으로 후배를 양성하고 팀 역량을 끌어올리며, 조직 내 다양성과 포용 문화 확산에 기여하는 리더로 성장하는 것이 커리어 방향입니다.",
+        "aEn": "Near term: raise quality and schedule stability and mature VeSCoM release practice. Longer term: lead SDV-era SW QnD strategy, develop juniors, and grow as an inclusive leader."
+      }
+    ]
+  }
+}
