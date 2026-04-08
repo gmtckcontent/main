@@ -6,6 +6,7 @@
  *   - interviewContent[interviewId] = 그 인터뷰 1건; questions[] = 그 인터뷰 안의 질문·답변 목록(5문항 등)
  *   - 예외: VE 본부는 같은 담당(role)에 여러 명(ve1.png, ve2.png …)이 있을 수 있고,
  *     interviewId는 ve-{roleId}-1, ve-{roleId}-2 … 형태로 여러 섹션(캐러셀)이 된다.
+ *   - 예외: EE의 System & Product Investigation은 EE1a.png, EE1b.png … / interviewId ee-system-investigation-1, -2 … (team-tck-interviews.html 캐러셀).
  *
  * Edit here only:
  *   - interviewData: 프로필 이미지·인사말·interviewId(섹션 id). 담당 1개당 보통 행 1개(VE는 여러 행 가능)
@@ -364,19 +365,56 @@ const interviewData = {
     greetingEn: "Hello\nSWQnD, Software & Services HQ\nName",
     interviewId: "ss-swqnd",
   },
-  "EE1.png": {
+  "EE1a.png": {
     profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "Engineering Excellence",
     role: "Systems & Product Investigation Division",
     roleKr: "System & Product Investigation",
     roleEn: "Systems & Product Investigation Division",
+    name: "윤애진 차장",
+    nameKr: "윤애진 차장",
+    nameEn: "Ae-Jin Yun",
+    greeting:
+      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n윤애진 차장입니다",
+    greetingKr:
+      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n윤애진 차장입니다",
+    greetingEn:
+      "Hello\nSystems & Product Investigation, Engineering Excellence HQ\nAe-Jin Yun",
+    interviewId: "ee-system-investigation-1",
+  },
+  "EE1b.png": {
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    hq: "Engineering Excellence",
+    role: "Systems & Product Investigation Division",
+    roleKr: "System & Product Investigation",
+    roleEn: "Systems & Product Investigation Division",
+    name: "권민들 차장",
+    nameKr: "권민들 차장",
+    nameEn: "Min-deul Kwon",
+    greeting:
+      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n권민들 차장입니다",
+    greetingKr:
+      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n권민들 차장입니다",
+    greetingEn:
+      "Hello\nSystems & Product Investigation, Engineering Excellence HQ\nMin-deul Kwon",
+    interviewId: "ee-system-investigation-2",
+  },
+  "EE0.png": {
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    hq: "Engineering Excellence",
+    role: "Certification, Environmental Strategy & EI Division",
+    roleKr: "Certification, Environmental Strategy & EI",
+    roleEn: "Certification, Environmental Strategy & EI Division",
     name: "이름",
     nameKr: "이름",
     nameEn: "Name",
-    greeting: "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n이름입니다",
-    greetingKr: "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n이름입니다",
-    greetingEn: "Hello\nSystems & Product Investigation, Engineering Excellence HQ\nName",
-    interviewId: "ee-system-investigation",
+    greeting:
+      "안녕하세요\nEngineering Excellence의 Certification, Environmental Strategy & EI담당\n이름입니다",
+    greetingKr:
+      "안녕하세요\nEngineering Excellence의 Certification, Environmental Strategy & EI담당\n이름입니다",
+    greetingEn:
+      "Hello\nCertification, Environmental Strategy & EI Division, Engineering Excellence HQ\nName",
+    interviewId: "ee-certification",
   },
   "EE2.png": {
     profileFallback: PROFILE_PLACEHOLDER_IMAGE,
@@ -399,7 +437,7 @@ const interviewData = {
 // EE 일부 본문은 data/interview-content-ee.json
 // JSON 수정 후 배포 시 ?v= 숫자 올려 캐시 무력화 (CDN·프록시 대비)
 const INTERVIEW_CONTENT_BECA_ITPE_SS_URL = "./data/interview-content-beca-itpe-ss.json?v=5";
-const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=1";
+const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=3";
 const INTERVIEW_CONTENT_VE_URL = "./data/interview-content-ve.json?v=2";
 
 async function loadInterviewContentBecaItpeSs() {
@@ -858,7 +896,11 @@ function createInterviewSection(interviewId, imageName, data) {
 
   // VE 인터뷰인지 확인
   const isVeInterview = interviewId.startsWith("ve-");
-  
+  /** EE System & Product Investigation 다인 캐러셀 슬라이스(VE와 동일 마크업 클래스) */
+  const isEeSpiCarouselItem = /^ee-system-investigation-\d+$/.test(
+    interviewId,
+  );
+
   // 인터뷰 내용 가져오기 (기존 인터뷰 내용이 있으면 사용, 없으면 빈 템플릿)
   // VE 인터뷰의 경우 roleId로도 찾아봄
   let content = interviewContent[interviewId] || { questions: [] };
@@ -884,7 +926,7 @@ function createInterviewSection(interviewId, imageName, data) {
   }
   
   const section = document.createElement("div");
-  if (isVeInterview) {
+  if (isVeInterview || isEeSpiCarouselItem) {
     section.className = "ve-interview-item";
   } else {
     section.className = "hq-content-section";
@@ -911,124 +953,30 @@ function createInterviewSection(interviewId, imageName, data) {
       }).join("")
     : "";
 
+  const hqKr = data.hqKr || data.hq || "";
+  const hqEn = data.hqEn || data.hq || "";
+  const roleKr = data.roleKr || data.role || "";
+  const roleEn = data.roleEn || data.role || "";
+  const nameKr = data.nameKr || data.name || "";
+  const nameEn = data.nameEn || data.name || "";
+  const hqShown = currentLang === "kr" ? hqKr : hqEn;
+  const roleShown = currentLang === "kr" ? roleKr : roleEn;
+  const nameShown = currentLang === "kr" ? nameKr : nameEn;
+
   section.innerHTML = `
     <div class="hq-content-body">
       <!-- 프로필 소개 -->
-      <div class="interview-profile-header">
+      <div class="interview-profile-header interview-profile-header--hero">
         <div class="interview-profile-bg" style="background-image: url('${bgUrl}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <div class="interview-profile-image">
             <img src="${profileImagePath}" alt="Profile" class="profile-img"${imgOnError} />
           </div>
         </div>
         <div class="interview-profile-content">
-          <div class="profile-quote-top">
-            <span class="quote-mark quote-open">"</span>
-            <div class="quote-text">
-              ${(() => {
-                const greetingKr = (data.greetingKr || data.greeting || '').split('\n');
-                const greetingEn = (data.greetingEn || data.greeting || '').split('\n');
-                const line1Kr = greetingKr[0] || '';
-                const line2Kr = greetingKr[1] || '';
-                const line3Kr = greetingKr[2] || '';
-                const line1En = greetingEn[0] || '';
-                const line2En = greetingEn[1] || '';
-                const line3En = greetingEn[2] || '';
-                
-                // 본부명, 담당명, 이름 추출
-                const hqKr = data.hqKr || data.hq || '';
-                const nameKr = data.nameKr || data.name || '';
-                const hqEn = data.hqEn || data.hq || '';
-                const nameEn = data.nameEn || data.name || '';
-                
-                // 2번째 줄에서 본부명과 담당명 추출 (한국어)
-                // 형식: "PIPG본부의 Propulsion System Calibration담당"
-                let line2KrHtml = line2Kr;
-                if (line2Kr) {
-                  // 본부명 강조 (예: PIPG)
-                  if (hqKr) {
-                    line2KrHtml = line2KrHtml.replace(new RegExp(`(${hqKr})`, 'g'), '<span class="quote-highlight">$1</span>');
-                  }
-                  // 담당명 추출: "본부의"와 "담당" 사이의 텍스트
-                  const roleMatch = line2Kr.match(/본부의\s*([^담당]+)\s*담당/);
-                  if (roleMatch && roleMatch[1]) {
-                    const roleName = roleMatch[1].trim();
-                    line2KrHtml = line2KrHtml.replace(new RegExp(`(${roleName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'g'), '<span class="quote-highlight">$1</span>');
-                  }
-                  // 나머지 부분을 연한 색으로
-                  line2KrHtml = line2KrHtml.split(/(<span class="quote-highlight">.*?<\/span>)/g).map(part => {
-                    if (part.startsWith('<span class="quote-highlight">')) {
-                      return part;
-                    }
-                    return part ? '<span class="quote-light">' + part + '</span>' : '';
-                  }).join('');
-                } else {
-                  line2KrHtml = '<span class="quote-light">' + line2KrHtml + '</span>';
-                }
-                
-                // 3번째 줄 처리: 이름 강조
-                let line3KrHtml = line3Kr;
-                if (nameKr && line3Kr) {
-                  line3KrHtml = line3KrHtml.replace(new RegExp(`(${nameKr})`, 'g'), '<span class="quote-highlight">$1</span>');
-                  // 나머지 부분을 연한 색으로
-                  line3KrHtml = line3KrHtml.split(/(<span class="quote-highlight">.*?<\/span>)/g).map(part => {
-                    if (part.startsWith('<span class="quote-highlight">')) {
-                      return part;
-                    }
-                    return part ? '<span class="quote-light">' + part + '</span>' : '';
-                  }).join('');
-                } else {
-                  line3KrHtml = '<span class="quote-light">' + line3KrHtml + '</span>';
-                }
-                
-                // 영어 버전 처리
-                let line2EnHtml = line2En;
-                if (line2En) {
-                  if (hqEn) {
-                    line2EnHtml = line2EnHtml.replace(new RegExp(`(${hqEn})`, 'gi'), '<span class="quote-highlight">$1</span>');
-                  }
-                  // 영어 형식: "Propulsion System Calibration, PIPG HQ" 또는 다른 형식
-                  const roleMatchEn = line2En.match(/([^,]+)(?:,|$)/);
-                  if (roleMatchEn && roleMatchEn[1]) {
-                    const roleNameEn = roleMatchEn[1].trim();
-                    if (roleNameEn && roleNameEn !== hqEn) {
-                      line2EnHtml = line2EnHtml.replace(new RegExp(`(${roleNameEn.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'), '<span class="quote-highlight">$1</span>');
-                    }
-                  }
-                  line2EnHtml = line2EnHtml.split(/(<span class="quote-highlight">.*?<\/span>)/g).map(part => {
-                    if (part.startsWith('<span class="quote-highlight">')) {
-                      return part;
-                    }
-                    return part ? '<span class="quote-light">' + part + '</span>' : '';
-                  }).join('');
-                } else {
-                  line2EnHtml = '<span class="quote-light">' + line2EnHtml + '</span>';
-                }
-                
-                let line3EnHtml = line3En;
-                if (nameEn && line3En) {
-                  line3EnHtml = line3EnHtml.replace(new RegExp(`(${nameEn})`, 'g'), '<span class="quote-highlight">$1</span>');
-                  line3EnHtml = line3EnHtml.split(/(<span class="quote-highlight">.*?<\/span>)/g).map(part => {
-                    if (part.startsWith('<span class="quote-highlight">')) {
-                      return part;
-                    }
-                    return part ? '<span class="quote-light">' + part + '</span>' : '';
-                  }).join('');
-                } else {
-                  line3EnHtml = '<span class="quote-light">' + line3EnHtml + '</span>';
-                }
-                
-                const currentLine1 = currentLang === "kr" ? '<span class="quote-light">' + line1Kr + '</span>' : '<span class="quote-light">' + line1En + '</span>';
-                const currentLine2 = currentLang === "kr" ? line2KrHtml : line2EnHtml;
-                const currentLine3 = currentLang === "kr" ? line3KrHtml : line3EnHtml;
-                
-                return `
-                  <p class="quote-line" data-kr="${escapeHtmlAttr(line1Kr)}" data-en="${escapeHtmlAttr(line1En)}">${currentLine1}</p>
-                  <p class="quote-line" data-kr="${escapeHtmlAttr(line2Kr)}" data-en="${escapeHtmlAttr(line2En)}">${currentLine2}</p>
-                  <p class="quote-line" data-kr="${escapeHtmlAttr(line3Kr)}" data-en="${escapeHtmlAttr(line3En)}">${currentLine3}</p>
-                `;
-              })()}
-            </div>
-            <span class="quote-mark quote-close">"</span>
+          <div class="profile-meta profile-meta--right">
+            <p class="profile-meta__line profile-meta__hq" data-kr="${escapeHtmlAttr(hqKr)}" data-en="${escapeHtmlAttr(hqEn)}">${escapeHtmlText(hqShown)}</p>
+            <p class="profile-meta__line profile-meta__role" data-kr="${escapeHtmlAttr(roleKr)}" data-en="${escapeHtmlAttr(roleEn)}">${escapeHtmlText(roleShown)}</p>
+            <p class="profile-meta__line profile-meta__name" data-kr="${escapeHtmlAttr(nameKr)}" data-en="${escapeHtmlAttr(nameEn)}">${escapeHtmlText(nameShown)}</p>
           </div>
         </div>
         <div class="profile-divider"></div>

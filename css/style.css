@@ -5591,40 +5591,43 @@ html.core-values-page #cv-st-heading {
   margin-left: -2px;
 }
 
-/* HQ Main Title */
+/* HQ Main Title — 인터뷰에서만 사용 시 사이드바 열 상단에 붙임 */
 .hq-title-wrapper {
   position: relative;
   margin-bottom: 60px;
-  max-width: 1400px;
+  max-width: min(96vw, 1640px);
   margin-left: auto;
   margin-right: auto;
   padding: 0 40px;
   overflow: visible;
 }
 
-.hq-interviews-shell .hq-title-wrapper {
+.interviews-page .hq-interviews-shell .hq-sidebar {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-bottom: 44px;
-  /* 뒤로가기는 nav 밖 고정 — 제목만 살짝 더 안쪽 */
-  padding: 0 calc(40px + 28px);
+  flex-direction: column;
+  align-items: stretch;
 }
 
-/* 스크롤 리빌 적용 후: 본문 시작선을 조금 더 오른쪽으로 */
-.interviews-page .hq-interviews-shell .hq-title-wrapper.hq-reveal.is-visible {
-  padding-left: calc(40px + 28px + 36px);
-  padding-right: calc(40px + 28px);
+.interviews-page .hq-interviews-shell .hq-sidebar > .hq-title-wrapper {
+  display: block;
+  max-width: none;
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 0;
 }
 
-.hq-interviews-shell .hq-main-title {
+.interviews-page .hq-interviews-shell .hq-sidebar > .hq-title-wrapper.hq-reveal.is-visible {
+  padding: 0;
+}
+
+.hq-interviews-shell .hq-sidebar .hq-main-title {
   padding-left: 0;
-  flex: 1;
-  min-width: 0;
-  margin-bottom: 0;
-  margin-left: 4px;
-  margin-right: 4px;
+  margin: 0 0 6px;
+  max-width: 100%;
+  font-size: clamp(17px, 2.1vw, 21px);
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+  word-break: keep-all;
 }
 
 .hq-main-title {
@@ -5754,21 +5757,15 @@ html.core-values-page #cv-st-heading {
 .hq-layout {
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr) auto;
-  gap: 0 20px;
+  gap: 0 24px;
   align-items: start;
-  max-width: 1400px;
+  max-width: min(96vw, 1640px);
   margin: 0 auto;
-  padding: 0 40px 0 16px;
-}
-
-/* 담당 인터뷰: 사이드바·본문·레일을 한 번에 안쪽으로 */
-.interviews-page .hq-interviews-shell .hq-layout {
-  padding-left: calc(16px + 36px);
-  padding-right: calc(40px + 32px);
+  padding: 0;
 }
 
 .interviews-page .hq-sidebar.hq-reveal.is-visible {
-  padding-left: 40px;
+  padding-left: 8px;
 }
 
 /* Left Sidebar */
@@ -5793,11 +5790,12 @@ html.core-values-page #cv-st-heading {
   position: relative;
 }
 
+/* 왼쪽 세로 라인만 (상단 가로 꺾임 없음) */
 .hq-sidebar-list::before {
   content: "";
   position: absolute;
   left: -30px;
-  top: -100px;
+  top: 0;
   bottom: 0;
   width: 1px;
   background: linear-gradient(
@@ -5809,17 +5807,7 @@ html.core-values-page #cv-st-heading {
 }
 
 .hq-sidebar-list::after {
-  content: "";
-  position: absolute;
-  left: -30px;
-  top: -100px;
-  width: 20px;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
+  display: none;
 }
 
 .hq-sidebar-list li {
@@ -6532,6 +6520,145 @@ html.core-values-page #cv-st-heading {
   display: none;
 }
 
+/* Team TCK 인터뷰 히어로: 하단 우측에 본부명 · 담당명 · 이름 (3줄) */
+.interviews-page .hq-main-content .interview-profile-header--hero {
+  display: block;
+  position: relative;
+  min-height: clamp(220px, 28vw, 300px);
+  aspect-ratio: 2.15 / 1;
+  max-height: 360px;
+  margin-bottom: 48px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 40, 100, 0.18);
+}
+
+.interviews-page
+  .hq-main-content
+  .interview-profile-header--hero.hq-reveal.is-visible {
+  min-height: clamp(220px, 28vw, 300px);
+  margin-bottom: 48px;
+}
+
+.interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-bg {
+  position: absolute;
+  inset: 0;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100%;
+  clip-path: none !important;
+  border-radius: 20px;
+  background-color: #0056b3;
+  z-index: 0;
+  box-shadow: inset 0 -80px 120px rgba(0, 30, 80, 0.35);
+  background-size: auto min(92%, 320px) !important;
+  background-position: center bottom !important;
+  background-repeat: no-repeat !important;
+}
+
+.interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 55, 120, 0.45) 0%,
+    rgba(0, 86, 179, 0.72) 45%,
+    rgba(0, 40, 90, 0.88) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-image {
+  display: none !important;
+}
+
+.interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 0 !important;
+  padding: 1rem 1.35rem 1.15rem !important;
+  z-index: 4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.12) 50%,
+    transparent 100%
+  );
+}
+
+.interviews-page
+  .hq-main-content
+  .interview-profile-header--hero.hq-reveal.is-visible
+  .interview-profile-content {
+  margin-left: 0 !important;
+  padding-right: 1.35rem !important;
+}
+
+.interviews-page .hq-main-content .interview-profile-header--hero .profile-meta--right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 0.2rem;
+  max-width: 85%;
+}
+
+.interviews-page .hq-main-content .interview-profile-header--hero .profile-meta__line {
+  margin: 0;
+  color: #fff !important;
+  line-height: 1.35;
+}
+
+.interviews-page .hq-main-content .interview-profile-header--hero .profile-meta__hq {
+  font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+  font-weight: 500;
+  opacity: 0.92;
+  letter-spacing: 0.02em;
+}
+
+.interviews-page .hq-main-content .interview-profile-header--hero .profile-meta__role {
+  font-size: clamp(0.88rem, 1.25vw, 1rem);
+  font-weight: 600;
+}
+
+.interviews-page .hq-main-content .interview-profile-header--hero .profile-meta__name {
+  font-size: clamp(1rem, 1.45vw, 1.15rem);
+  font-weight: 700;
+  margin-top: 0.15rem;
+}
+
+.interviews-page
+  .hq-main-content
+  .interview-profile-header--hero.hq-reveal.is-visible
+  .interview-profile-bg {
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .interviews-page .hq-main-content .interview-profile-header--hero {
+    aspect-ratio: unset;
+    min-height: 260px;
+    max-height: none;
+  }
+
+  .interviews-page .hq-main-content .interview-profile-header--hero .profile-meta--right {
+    max-width: 100%;
+  }
+
+  .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-bg {
+    background-size: auto min(78%, 240px) !important;
+  }
+}
+
 /* Responsive Interview Profile Header */
 @media (max-width: 1024px) {
   .interview-profile-header {
@@ -6835,6 +6962,13 @@ html.core-values-page #cv-st-heading {
     font-size: 12px;
   }
 
+  .interviews-page .hq-interviews-shell .hq-sidebar .hq-main-title {
+    font-size: clamp(16px, 1.85vw, 19px);
+    line-height: 1.3;
+    margin-bottom: 8px;
+    padding-left: 0;
+  }
+
   .hq-nav-list {
     gap: 20px;
   }
@@ -6846,12 +6980,6 @@ html.core-values-page #cv-st-heading {
   .hq-layout {
     grid-template-columns: 200px minmax(0, 1fr) auto;
     gap: 0 16px;
-    padding: 0 30px 0 12px;
-  }
-
-  .interviews-page .hq-interviews-shell .hq-layout {
-    padding-left: calc(12px + 28px);
-    padding-right: calc(30px + 24px);
   }
 
   .interviews-page .hq-division-rail {
@@ -6934,6 +7062,12 @@ html.core-values-page #cv-st-heading {
     letter-spacing: -0.5px;
   }
 
+  .interviews-page .hq-interviews-shell .hq-sidebar .hq-main-title {
+    margin-bottom: 12px;
+    padding-left: 0;
+    letter-spacing: -0.04em;
+  }
+
   .hq-main-title::after {
     font-size: 11px;
     margin-top: 6px;
@@ -6992,27 +7126,17 @@ html.core-values-page #cv-st-heading {
     );
   }
 
-  .interviews-page .hq-interviews-shell .hq-title-wrapper {
-    padding: 0 calc(24px + 20px);
-  }
-
-  .interviews-page .hq-interviews-shell .hq-title-wrapper.hq-reveal.is-visible {
-    padding-left: calc(24px + 20px + 28px);
-    padding-right: calc(24px + 20px);
+  .interviews-page .hq-interviews-shell .hq-sidebar > .hq-title-wrapper {
+    margin-bottom: 12px;
   }
 
   .interviews-page .hq-sidebar.hq-reveal.is-visible {
-    padding-left: 32px;
+    padding-left: 4px;
   }
 
   .hq-layout {
     grid-template-columns: 1fr;
     gap: 0;
-  }
-
-  .interviews-page .hq-interviews-shell .hq-layout {
-    padding-left: calc(16px + 20px);
-    padding-right: calc(16px + 20px);
   }
 
   .hq-sidebar {

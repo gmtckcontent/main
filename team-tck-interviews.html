@@ -6,7 +6,7 @@
     <base href="./" />
     <title>Team TCK | Our Story</title>
     <!-- 인터뷰/스타일 수정 후 브라우저 캐시 회피: ?v= 숫자 올리기 -->
-    <link rel="stylesheet" href="./css/style.css?v=77" />
+    <link rel="stylesheet" href="./css/style.css?v=82" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -470,22 +470,20 @@
         </div>
 
         <div class="hq-interviews-shell" id="hqInterviewsShell" hidden>
-          <!-- Interview Title - 본부명 표시 -->
-          <div class="hq-title-wrapper">
-            <h1
-              class="hq-main-title"
-              id="hqMainTitle"
-              data-kr="All"
-              data-en="All"
-              style="display: none"
-            >
-              All
-            </h1>
-          </div>
-
           <div class="hq-layout" id="hqLayout">
-            <!-- Left Sidebar Navigation -->
+            <!-- Left: 본부명 + 담당 네비 -->
             <aside class="hq-sidebar" id="hqSidebar">
+              <div class="hq-title-wrapper">
+                <h1
+                  class="hq-main-title"
+                  id="hqMainTitle"
+                  data-kr="All"
+                  data-en="All"
+                  style="display: none"
+                >
+                  All
+                </h1>
+              </div>
               <nav class="hq-sidebar-nav">
                 <ul class="hq-sidebar-list" id="hqSidebarList">
                   <!-- 전체보기일 때는 사이드바 숨김 -->
@@ -502,33 +500,19 @@
                 </div>
               </div>
 
-              <!-- EE: 인증, 환경전략, 이머징 이슈 -->
+              <!-- EE: Certification, Environmental Strategy & EI — data/interview-content-ee.json -->
               <div class="hq-content-section" id="ee-certification">
-                <h2
-                  class="hq-content-title"
-                  data-kr="인증, 환경전략, 이머징 이슈"
-                  data-en="Certification, Environmental Strategy, Emerging Issues"
-                >
-                  인증, 환경전략, 이머징 이슈
-                </h2>
-                <div class="hq-content-body">
-                  <p
-                    class="hq-content-description"
-                    data-kr="인증, 환경전략, 이머징 이슈 인터뷰 내용을 여기에 추가하세요."
-                    data-en="Add Certification, Environmental Strategy, Emerging Issues interview content here."
-                  >
-                    Add Certification, Environmental Strategy, Emerging Issues
-                    interview content here.
-                  </p>
-                </div>
-              </div>
-
-              <!-- EE: Systems & Product Investigation — 본문 js + data/interview-content-ee.json -->
-              <div class="hq-content-section" id="ee-system-investigation">
                 <div
                   class="hq-content-body"
-                  data-role-interview-mount="ee-system-investigation"
+                  data-role-interview-mount="ee-certification"
                 ></div>
+              </div>
+
+              <!-- EE: Systems & Product Investigation — 다인 인터뷰 캐러셀 (js, data/interview-content-ee.json) -->
+              <div class="hq-content-section" id="ee-system-investigation">
+                <div class="hq-content-body">
+                  <!-- 인터뷰는 JavaScript로 추가 (EE1a/EE1b → ee-system-investigation-1, -2) -->
+                </div>
               </div>
 
               <!-- EE: Validation -->
@@ -940,7 +924,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/role-interviews.js?v=12"></script>
+    <script src="./js/role-interviews.js?v=16"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=50"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=3"></script>
@@ -1253,6 +1237,18 @@
               return { kind: "role", hq, roleId: hash };
             }
           }
+          if (/^ee-system-investigation-\d+$/.test(hash)) {
+            const n = parseInt(hash.split("-").pop(), 10);
+            if (!Number.isFinite(n) || n < 1) {
+              return null;
+            }
+            return {
+              kind: "role",
+              hq: "engineering-excellence",
+              roleId: "ee-system-investigation",
+              carouselIndex: n - 1,
+            };
+          }
           return null;
         }
 
@@ -1492,6 +1488,7 @@
           roleId,
           scrollToTop = false,
           scrollToSection = false,
+          carouselIndexOpt,
         ) {
           // Remove active class from all sidebar links
           const sidebarLinks = document.querySelectorAll(".hq-sidebar-link");
@@ -1656,6 +1653,139 @@
                 }, 100);
               }
             }
+
+            // EE: System & Product Investigation — VE와 동일 다인 인터뷰 캐러셀
+            if (roleId === "ee-system-investigation") {
+              const roleData = hqRoles["engineering-excellence"].find(
+                (r) => r.id === roleId,
+              );
+              if (roleData) {
+                const roleName = roleData.en;
+                const contentBody =
+                  targetSection.querySelector(".hq-content-body");
+                if (contentBody && !contentBody.hasAttribute("data-loaded")) {
+                  const filteredImages = Object.keys(interviewData)
+                    .filter((imageName) => {
+                      const data = interviewData[imageName];
+                      return (
+                        data.hq === "Engineering Excellence" &&
+                        data.role === roleName
+                      );
+                    })
+                    .sort();
+
+                  const navContainer = document.createElement("div");
+                  navContainer.className = "ve-interview-nav";
+                  navContainer.innerHTML = `
+                    <button class="ve-nav-btn ve-nav-prev" aria-label="Previous interview">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                      </svg>
+                    </button>
+                    <button class="ve-nav-btn ve-nav-next" aria-label="Next interview">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                      </svg>
+                    </button>
+                  `;
+                  contentBody.appendChild(navContainer);
+
+                  const interviewContainer = document.createElement("div");
+                  interviewContainer.className = "ve-interview-container";
+                  contentBody.appendChild(interviewContainer);
+
+                  filteredImages.forEach((imageName, index) => {
+                    const data = interviewData[imageName];
+                    const spiInterviewId = `${roleId}-${index + 1}`;
+                    const interviewSection = createInterviewSection(
+                      spiInterviewId,
+                      imageName,
+                      data,
+                    );
+                    interviewSection.style.display =
+                      index === 0 ? "block" : "none";
+                    interviewSection.setAttribute("data-index", index);
+                    interviewContainer.appendChild(interviewSection);
+                  });
+
+                  const prevBtn = navContainer.querySelector(".ve-nav-prev");
+                  const nextBtn = navContainer.querySelector(".ve-nav-next");
+
+                  let currentIndex = 0;
+
+                  const updateDisplay = () => {
+                    const interviews =
+                      interviewContainer.querySelectorAll(".ve-interview-item");
+                    interviews.forEach((interview, index) => {
+                      interview.style.display =
+                        index === currentIndex ? "block" : "none";
+                    });
+                    prevBtn.disabled = currentIndex === 0;
+                    nextBtn.disabled =
+                      currentIndex === filteredImages.length - 1;
+                    if (targetSection) {
+                      const navContainerTop = navContainer.offsetTop;
+                      window.scrollTo({
+                        top: navContainerTop - 100,
+                        behavior: "smooth",
+                      });
+                    }
+                  };
+
+                  prevBtn.addEventListener("click", () => {
+                    if (currentIndex > 0) {
+                      currentIndex--;
+                      updateDisplay();
+                    }
+                  });
+
+                  nextBtn.addEventListener("click", () => {
+                    if (currentIndex < filteredImages.length - 1) {
+                      currentIndex++;
+                      updateDisplay();
+                    }
+                  });
+
+                  updateDisplay();
+
+                  targetSection._setInterviewCarouselIndex = (i) => {
+                    currentIndex = Math.max(
+                      0,
+                      Math.min(i, filteredImages.length - 1),
+                    );
+                    updateDisplay();
+                  };
+
+                  contentBody.setAttribute("data-loaded", "true");
+                }
+
+                if (
+                  typeof carouselIndexOpt === "number" &&
+                  !Number.isNaN(carouselIndexOpt)
+                ) {
+                  setTimeout(() => {
+                    if (
+                      typeof targetSection._setInterviewCarouselIndex ===
+                      "function"
+                    ) {
+                      targetSection._setInterviewCarouselIndex(
+                        carouselIndexOpt,
+                      );
+                    }
+                  }, 0);
+                }
+
+                if (scrollToSection) {
+                  setTimeout(() => {
+                    const offsetTop = targetSection.offsetTop - 100;
+                    window.scrollTo({
+                      top: offsetTop,
+                      behavior: "smooth",
+                    });
+                  }, 100);
+                }
+              }
+            }
           }
 
           // Update main title - 본부명으로 업데이트
@@ -1765,6 +1895,22 @@
             "interviewId:",
             interviewId,
           );
+
+          // EE System & Product Investigation 다인 인터뷰 — 정적 섹션 ee-system-investigation + 캐러셀
+          if (/^ee-system-investigation-\d+$/.test(interviewId)) {
+            let hqId = data.hq.toLowerCase().replace(/\s+/g, "-");
+            if (hqId === "avd-&-svi") {
+              hqId = "avd-svi";
+            }
+            if (hqId === "s&s") {
+              hqId = "ss";
+            }
+            const idx = parseInt(interviewId.split("-").pop(), 10) - 1;
+            showSection(hqId, false, false);
+            showRole("ee-system-investigation", false, true, idx);
+            window.history.pushState(null, null, `#${interviewId}`);
+            return;
+          }
 
           // 해당 본부로 이동
           let hqId = data.hq.toLowerCase().replace(/\s+/g, "-");
@@ -1907,7 +2053,12 @@
           } else if (resolved && resolved.kind === "role") {
             ensureInterviewsShellVisible();
             updateSidebar(resolved.hq);
-            showRole(resolved.roleId, false, true);
+            showRole(
+              resolved.roleId,
+              false,
+              true,
+              resolved.carouselIndex,
+            );
           } else if (resolved && resolved.kind === "hq") {
             showSection(resolved.hq, false, true);
           } else {
@@ -1930,7 +2081,12 @@
           } else if (resolved && resolved.kind === "role") {
             ensureInterviewsShellVisible();
             updateSidebar(resolved.hq);
-            showRole(resolved.roleId, false, true);
+            showRole(
+              resolved.roleId,
+              false,
+              true,
+              resolved.carouselIndex,
+            );
           } else if (resolved && resolved.kind === "hq") {
             showSection(resolved.hq, false, true);
           } else {

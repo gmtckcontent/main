@@ -169,8 +169,9 @@ We’re also proud of our informal groups—camping, tennis, gaming—and the fu
   ],
 };
 
+/** ee-system-investigation-1(윤애진)·-2(권민들)·ee-certification 등은 data/interview-content-ee.json에서 직접 유지할 수 있음 */
 const payload = {
-  "ee-system-investigation": eeSystemInvestigation,
+  "ee-system-investigation-2": eeSystemInvestigation,
   "ee-verification": eeVerification,
 };
 
