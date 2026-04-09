@@ -43,10 +43,21 @@ function getFormulaPicBackgroundUrl(seed) {
   return `./images/formula_pic/${files[idx]}`;
 }
 
+/** `images/profilepic` 하위 경로 — 폴더/파일명의 공백·& 등은 URL 인코딩 */
+function profilePicRel(parts) {
+  return (
+    "./images/profilepic/" +
+    parts.map((p) => encodeURIComponent(String(p))).join("/")
+  );
+}
+
 const interviewData = {
   // VE 본부
   "ve1.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel([
+      "ve",
+      "safety performance integration1.png",
+    ]),
     hq: "VE", 
     role: "Safety Performance Integration", 
     roleKr: "Safety Performance Integration", 
@@ -59,7 +70,10 @@ const interviewData = {
     greetingEn: "Hello\nSafety Performance Integration, VE HQ\nYoungjin Cho"
   },
   "ve2.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel([
+      "ve",
+      "safety performance integration2.png",
+    ]),
     hq: "VE", 
     role: "Safety Performance Integration", 
     roleKr: "Safety Performance Integration", 
@@ -72,7 +86,10 @@ const interviewData = {
     greetingEn: "Hello\nSafety Performance Integration, VE HQ\nName2"
   },
   "ve3.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel([
+      "ve",
+      "vIrtual integration center adas 1.png",
+    ]),
     hq: "VE", 
     role: "Virtual Integration Center & ADAS", 
     roleKr: "Virtual Integration Center & ADAS", 
@@ -85,7 +102,10 @@ const interviewData = {
     greetingEn: "Hello.<br>I'm from Virtual Integration Center & ADAS."
   },
   "ve4.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel([
+      "ve",
+      "virtual integration center adas 2.png",
+    ]),
     hq: "VE",
     role: "Virtual Integration Center & ADAS",
     roleKr: "Virtual Integration Center & ADAS",
@@ -98,7 +118,10 @@ const interviewData = {
     greetingEn: "Hello\nVirtual Integration Center & ADAS, VE HQ\nName4"
   },
   "ve5.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel([
+      "ve",
+      "virtual integration center adas 3.png",
+    ]),
     hq: "VE",
     role: "Virtual Integration Center & ADAS",
     roleKr: "Virtual Integration Center & ADAS",
@@ -111,7 +134,7 @@ const interviewData = {
     greetingEn: "Hello\nVirtual Integration Center & ADAS, VE HQ\nName5"
   },
   "ve6.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel(["ve", "virtual engineering solution1.png"]),
     hq: "VE",
     role: "Virtual Engineering Solution",
     roleKr: "Virtual Engineering Solution",
@@ -124,7 +147,7 @@ const interviewData = {
     greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nName6"
   },
   "ve7.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel(["ve", "virtual engineering solution2.png"]),
     hq: "VE",
     role: "Virtual Engineering Solution",
     roleKr: "Virtual Engineering Solution",
@@ -137,7 +160,7 @@ const interviewData = {
     greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nName7"
   },
   "ve8.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel(["ve", "virtual engineering solution3.png"]),
     hq: "VE",
     role: "Virtual Engineering Solution",
     roleKr: "Virtual Engineering Solution",
@@ -151,7 +174,7 @@ const interviewData = {
   },
   // AVD & SVI 본부
   "avd1.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel(["avd&svi", "avd.png"]),
     hq: "AVD & SVI", 
     role: "Advanced Vehicle Development", 
     roleKr: "Advanced Vehicle Development", 
@@ -165,7 +188,7 @@ const interviewData = {
     interviewId: "avd-advanced-vehicle" // 기존 인터뷰 섹션 ID
   },
   "svi1.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel(["avd&svi", "svi.png"]),
     hq: "AVD & SVI", 
     role: "Studio & Surface Integration", 
     roleKr: "Studio & Surface Integration", 
@@ -393,7 +416,7 @@ const interviewData = {
     interviewId: "ss-swqnd",
   },
   "EE1a.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel(["EE", "system&product(1).png"]),
     hq: "Engineering Excellence",
     role: "Systems & Product Investigation Division",
     roleKr: "System & Product Investigation",
@@ -410,7 +433,7 @@ const interviewData = {
     interviewId: "ee-system-investigation-1",
   },
   "EE1b.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel(["EE", "system&product(2).png"]),
     hq: "Engineering Excellence",
     role: "Systems & Product Investigation Division",
     roleKr: "System & Product Investigation",
@@ -427,7 +450,7 @@ const interviewData = {
     interviewId: "ee-system-investigation-2",
   },
   "EE0.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel(["EE", "certification, envrionment(1).png"]),
     hq: "Engineering Excellence",
     role: "Certification, Environmental Strategy & EI Division",
     roleKr: "Certification, Environmental Strategy & EI",
@@ -444,7 +467,7 @@ const interviewData = {
     interviewId: "ee-certification",
   },
   "EE2.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel(["EE", "validation.png"]),
     hq: "Engineering Excellence",
     role: "Validation Division",
     roleKr: "Validation",
