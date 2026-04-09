@@ -46,7 +46,7 @@ function getFormulaPicBackgroundUrl(seed) {
 const interviewData = {
   // VE 본부
   "ve1.png": {
-    useTpThumbnail: true,
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "VE", 
     role: "Safety Performance Integration", 
     roleKr: "Safety Performance Integration", 
@@ -59,7 +59,7 @@ const interviewData = {
     greetingEn: "Hello\nSafety Performance Integration, VE HQ\nYoungjin Cho"
   },
   "ve2.png": {
-    useTpThumbnail: true,
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "VE", 
     role: "Safety Performance Integration", 
     roleKr: "Safety Performance Integration", 
@@ -71,7 +71,8 @@ const interviewData = {
     greetingKr: "안녕하세요\nVE본부의 Safety Performance Integration담당\n이름2입니다",
     greetingEn: "Hello\nSafety Performance Integration, VE HQ\nName2"
   },
-  "ve3.png": { 
+  "ve3.png": {
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "VE", 
     role: "Virtual Integration Center & ADAS", 
     roleKr: "Virtual Integration Center & ADAS", 
@@ -84,6 +85,7 @@ const interviewData = {
     greetingEn: "Hello.<br>I'm from Virtual Integration Center & ADAS."
   },
   "ve4.png": {
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "VE",
     role: "Virtual Integration Center & ADAS",
     roleKr: "Virtual Integration Center & ADAS",
@@ -96,6 +98,7 @@ const interviewData = {
     greetingEn: "Hello\nVirtual Integration Center & ADAS, VE HQ\nName4"
   },
   "ve5.png": {
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "VE",
     role: "Virtual Integration Center & ADAS",
     roleKr: "Virtual Integration Center & ADAS",
@@ -108,6 +111,7 @@ const interviewData = {
     greetingEn: "Hello\nVirtual Integration Center & ADAS, VE HQ\nName5"
   },
   "ve6.png": {
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "VE",
     role: "Virtual Engineering Solution",
     roleKr: "Virtual Engineering Solution",
@@ -120,6 +124,7 @@ const interviewData = {
     greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nName6"
   },
   "ve7.png": {
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "VE",
     role: "Virtual Engineering Solution",
     roleKr: "Virtual Engineering Solution",
@@ -132,6 +137,7 @@ const interviewData = {
     greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nName7"
   },
   "ve8.png": {
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "VE",
     role: "Virtual Engineering Solution",
     roleKr: "Virtual Engineering Solution",
