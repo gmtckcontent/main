@@ -24,6 +24,24 @@
 // 새로운 이미지 추가 시 여기에만 추가하면 자동으로 표시됨
 // 프로필 사진 미업로드 시 로고로 대체 (404 방지). 실제 사진 추가 후 profileFallback 제거
 const PROFILE_PLACEHOLDER_IMAGE = "./images/logo/gm-symbol-color-light-bg-web.png";
+
+/** 인터뷰 히어로 배경 — `images/formula_pic/` 파일명만 나열 (추가 시 배열에만 넣으면 됨) */
+const FORMULA_PIC_BACKGROUNDS = [
+  "26CDF1CD070048_MP0_2856_n4FJ6BVv_20260327083912.JPG",
+];
+
+function getFormulaPicBackgroundUrl(seed) {
+  const files = FORMULA_PIC_BACKGROUNDS;
+  if (!files.length) return "";
+  let h = 0;
+  const s = String(seed || "default");
+  for (let i = 0; i < s.length; i++) {
+    h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
+  }
+  const idx = Math.abs(h) % files.length;
+  return `./images/formula_pic/${files[idx]}`;
+}
+
 const interviewData = {
   // VE 본부
   "ve1.png": {
@@ -878,16 +896,12 @@ function createInterviewSection(interviewId, imageName, data) {
   const tpImageName = useTp ? imageNameWithoutExt + "_tp.png" : imageName;
   const profileFallback = data.profileFallback || null;
   let profileImagePath;
-  let bgUrl;
   if (data.profileImage) {
     profileImagePath = data.profileImage;
-    bgUrl = data.profileImage;
   } else if (profileFallback) {
     profileImagePath = profileFallback;
-    bgUrl = profileFallback;
   } else {
     profileImagePath = `./images/profilepic/${tpImageName}`;
-    bgUrl = profileImagePath;
   }
   const imgOnError =
     data.profileImage || profileFallback || !useTp
@@ -963,11 +977,18 @@ function createInterviewSection(interviewId, imageName, data) {
   const roleShown = currentLang === "kr" ? roleKr : roleEn;
   const nameShown = currentLang === "kr" ? nameKr : nameEn;
 
+  const formulaBgUrl = getFormulaPicBackgroundUrl(`${interviewId}:${imageName}`);
+  const formulaBgLayer =
+    formulaBgUrl !== ""
+      ? `<div class="interview-profile-bg-formula" style="background-image: url('${escapeHtmlAttr(formulaBgUrl)}');" aria-hidden="true"></div>`
+      : "";
+
   section.innerHTML = `
     <div class="hq-content-body">
       <!-- 프로필 소개 -->
       <div class="interview-profile-header interview-profile-header--hero">
-        <div class="interview-profile-bg" style="background-image: url('${bgUrl}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="interview-profile-bg">
+          ${formulaBgLayer}
           <div class="interview-profile-image">
             <img src="${profileImagePath}" alt="Profile" class="profile-img"${imgOnError} />
           </div>

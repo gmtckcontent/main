@@ -6551,10 +6551,20 @@ html.core-values-page #cv-st-heading {
   border-radius: 20px;
   background-color: #0056b3;
   z-index: 0;
-  box-shadow: inset 0 -80px 120px rgba(0, 30, 80, 0.35);
-  background-size: auto min(92%, 320px) !important;
-  background-position: center bottom !important;
-  background-repeat: no-repeat !important;
+  box-shadow: inset 0 -50px 90px rgba(0, 30, 80, 0.22);
+}
+
+/* formula_pic 배경 — 그라데이션과 맞물려도 식별되도록 충분히 노출 */
+.interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-bg-formula {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-bg::after {
@@ -6564,16 +6574,43 @@ html.core-values-page #cv-st-heading {
   border-radius: 20px;
   background: linear-gradient(
     180deg,
-    rgba(0, 55, 120, 0.45) 0%,
-    rgba(0, 86, 179, 0.72) 45%,
-    rgba(0, 40, 90, 0.88) 100%
+    rgba(0, 55, 120, 0.22) 0%,
+    rgba(0, 86, 179, 0.42) 50%,
+    rgba(0, 40, 90, 0.55) 100%
   );
   pointer-events: none;
   z-index: 1;
 }
 
+/* 인물 사진: 히어로 하단 라인에 맞춤(가로 중앙), 불투명 · 둥근 모서리 없음 */
 .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-image {
-  display: none !important;
+  display: flex !important;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  top: auto;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: auto;
+  max-width: min(40%, 220px);
+  max-height: min(62%, 220px);
+  height: auto;
+  margin: 0 !important;
+  pointer-events: none;
+}
+
+.interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-image .profile-img {
+  width: auto !important;
+  height: auto !important;
+  max-height: min(200px, 100%);
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  border-radius: 0 !important;
+  opacity: 1;
+  filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.3));
 }
 
 .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-content {
@@ -6589,8 +6626,8 @@ html.core-values-page #cv-st-heading {
   align-items: flex-end;
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.55) 0%,
-    rgba(0, 0, 0, 0.12) 50%,
+    rgba(0, 0, 0, 0.38) 0%,
+    rgba(0, 0, 0, 0.08) 55%,
     transparent 100%
   );
 }
@@ -6654,8 +6691,13 @@ html.core-values-page #cv-st-heading {
     max-width: 100%;
   }
 
-  .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-bg {
-    background-size: auto min(78%, 240px) !important;
+  .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-image {
+    max-width: min(52%, 200px);
+    max-height: min(58%, 200px);
+  }
+
+  .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-image .profile-img {
+    max-height: min(180px, 88%);
   }
 }
 
