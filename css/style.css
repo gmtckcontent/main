@@ -6233,18 +6233,17 @@ html.core-values-page #cv-st-heading {
   z-index: 1;
 }
 
-/* AVD Advanced Vehicle Development 배경 이미지 */
+/* AVD Advanced Vehicle Development — 프로필 PNG 제거 시 그라데이션만 (인물은 .profile-img 플레이스홀더) */
 #avd-advanced-vehicle .interview-profile-bg {
-  background-image: url("../images/profilepic/avd1.png");
+  background-image: linear-gradient(135deg, #003d82 0%, #0056b3 50%, #004a9e 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 30%;
 }
 
-/* AVD Advanced Vehicle Development 프로필 이미지 숨기기 */
 #avd-advanced-vehicle .interview-profile-image {
-  display: none;
+  display: flex;
 }
 
 /* AVD Advanced Vehicle Development 프로필 콘텐츠 마진 조정 */
@@ -6252,18 +6251,17 @@ html.core-values-page #cv-st-heading {
   margin-top: 40px;
 }
 
-/* SVI Studio & Surface Integration 배경 이미지 */
+/* SVI Studio & Surface Integration — 프로필 PNG 제거 시 그라데이션만 */
 #avd-studio-surface .interview-profile-bg {
-  background-image: url("../images/profilepic/svi1.png");
+  background-image: linear-gradient(135deg, #003d82 0%, #0056b3 50%, #004a9e 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 30%;
 }
 
-/* SVI Studio & Surface Integration 프로필 이미지 숨기기 */
 #avd-studio-surface .interview-profile-image {
-  display: none;
+  display: flex;
 }
 
 /* SVI Studio & Surface Integration 프로필 콘텐츠 마진 조정 */
@@ -6340,7 +6338,7 @@ html.core-values-page #cv-st-heading {
 
 /* PIPG PSC 배경 이미지 */
 #pipg-psc .interview-profile-bg {
-  background-image: url("../images/profilepic/PIPG1.png");
+  background-image: url("../images/profilepic/pipg/PIPG1.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -6348,7 +6346,7 @@ html.core-values-page #cv-st-heading {
 
 /* PIPG VPD/PID 배경 이미지 */
 #pipg-vpd-pid .interview-profile-bg {
-  background-image: url("../images/profilepic/PIPG2.png");
+  background-image: url("../images/profilepic/pipg/vpdpid.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -6550,6 +6548,8 @@ html.core-values-page #cv-st-heading {
   clip-path: none !important;
   border-radius: 20px;
   background-color: #0056b3;
+  /* #pipg-psc 등 구 CSS의 큰 초상 background-image — 히어로에서는 formula만 쓰고 인물 이중 노출 방지 */
+  background-image: none !important;
   z-index: 0;
   box-shadow: inset 0 -50px 90px rgba(0, 30, 80, 0.22);
 }
@@ -6583,34 +6583,38 @@ html.core-values-page #cv-st-heading {
 }
 
 /* 인물 사진: 히어로 하단 라인에 맞춤(가로 중앙), 불투명 · 둥근 모서리 없음 */
+/* #pipg-vpd-pid 등 ID 규칙보다 구체적으로 잡아 top:55%·overflow:hidden 무력화 */
 .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-image {
   display: flex !important;
   align-items: flex-end;
   justify-content: center;
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  top: auto;
-  transform: translateX(-50%);
+  left: 50% !important;
+  bottom: 0 !important;
+  top: auto !important;
+  transform: translateX(-50%) !important;
   z-index: 3;
   width: auto;
-  max-width: min(40%, 220px);
-  max-height: min(62%, 220px);
+  max-width: min(54%, 320px);
+  max-height: min(82%, 340px);
   height: auto;
   margin: 0 !important;
+  overflow: visible !important;
   pointer-events: none;
 }
 
 .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-image .profile-img {
   width: auto !important;
   height: auto !important;
-  max-height: min(200px, 100%);
+  max-height: min(280px, 100%);
   max-width: 100%;
   object-fit: contain;
   object-position: center bottom;
   border-radius: 0 !important;
   opacity: 1;
-  filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.3));
+  filter: none;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-content {
@@ -6692,12 +6696,12 @@ html.core-values-page #cv-st-heading {
   }
 
   .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-image {
-    max-width: min(52%, 200px);
-    max-height: min(58%, 200px);
+    max-width: min(68%, 280px);
+    max-height: min(72%, 300px);
   }
 
   .interviews-page .hq-main-content .interview-profile-header--hero .interview-profile-image .profile-img {
-    max-height: min(180px, 88%);
+    max-height: min(240px, 88%);
   }
 }
 

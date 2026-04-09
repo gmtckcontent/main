@@ -28,6 +28,7 @@ const PROFILE_PLACEHOLDER_IMAGE = "./images/logo/gm-symbol-color-light-bg-web.pn
 /** 인터뷰 히어로 배경 — `images/formula_pic/` 파일명만 나열 (추가 시 배열에만 넣으면 됨) */
 const FORMULA_PIC_BACKGROUNDS = [
   "26CDF1CD070048_MP0_2856_n4FJ6BVv_20260327083912.JPG",
+  "26CDF1CD070060_MP9_4663_WG72VVZX_20260328082833.png",
 ];
 
 function getFormulaPicBackgroundUrl(seed) {
@@ -144,6 +145,7 @@ const interviewData = {
   },
   // AVD & SVI 본부
   "avd1.png": {
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "AVD & SVI", 
     role: "Advanced Vehicle Development", 
     roleKr: "Advanced Vehicle Development", 
@@ -157,6 +159,7 @@ const interviewData = {
     interviewId: "avd-advanced-vehicle" // 기존 인터뷰 섹션 ID
   },
   "svi1.png": {
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "AVD & SVI", 
     role: "Studio & Surface Integration", 
     roleKr: "Studio & Surface Integration", 
@@ -185,7 +188,7 @@ const interviewData = {
     interviewId: "pipg-psc" // 기존 인터뷰 섹션 ID
   },
   "PIPG2.png": {
-    profileImage: "./images/profilepic/pipg/vpdpid.jpg",
+    profileImage: "./images/profilepic/pipg/vpdpid.png",
     hq: "PIPG", 
     role: "VPD/PID", 
     roleKr: "VPD/PID", 
@@ -213,7 +216,7 @@ const interviewData = {
     interviewId: "pipg-thermal",
   },
   "PIPG4.png": {
-    profileImage: "./images/profilepic/pipg/PGTLO.jpg",
+    profileImage: "./images/profilepic/pipg/pgtlo.png",
     hq: "PIPG",
     role: "PGTLO",
     roleKr: "PGTLO",
@@ -256,7 +259,7 @@ const interviewData = {
     interviewId: "beca-exterior",
   },
   "BECA3.png": {
-    profileImage: "./images/profilepic/beca/Chassis.jpg",
+    profileImage: "./images/profilepic/beca/Chassis.png",
     hq: "BECA",
     role: "Chassis",
     roleKr: "Chassis",
@@ -270,7 +273,7 @@ const interviewData = {
     interviewId: "beca-chassis",
   },
   "BECA4.png": {
-    profileImage: "./images/profilepic/beca/Aftersales.jpg",
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
     hq: "BECA",
     role: "Aftersales",
     roleKr: "Aftersales",
