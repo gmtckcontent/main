@@ -25,22 +25,25 @@
 // 프로필 사진 미업로드 시 로고로 대체 (404 방지). 실제 사진 추가 후 profileFallback 제거
 const PROFILE_PLACEHOLDER_IMAGE = "./images/logo/gm-symbol-color-light-bg-web.png";
 
-/** 인터뷰 히어로 배경 — `images/formula_pic/` 파일명만 나열 (추가 시 배열에만 넣으면 됨) */
+/** 인터뷰 히어로 배경 — `images/formula_pic/` 전체 에셋 (추가 시 파일명만 이 배열에 넣으면 랜덤 풀에 포함) */
 const FORMULA_PIC_BACKGROUNDS = [
+  "26CDF1CD070035_CadillacF1Team_6206_HiRes.jpg",
+  "26CDF1CD070037_CadillacF1Team_6230_HiRes.jpg",
+  "26CDF1CD070038_CadillacF1Team_6237_HiRes.jpg",
+  "26CDF1CD070044_CadillacF1Team_6480_HiRes.jpg",
+  "26CDF1CD070046_MP0_0673_sRbdNnvl_20260327061117.JPG",
   "26CDF1CD070048_MP0_2856_n4FJ6BVv_20260327083912.JPG",
   "26CDF1CD070060_MP9_4663_WG72VVZX_20260328082833.png",
+  "26CDF1CD7153 - CadillacF1Team_2715_HiRes.jpg",
 ];
 
-function getFormulaPicBackgroundUrl(seed) {
+/** 히어로마다 위 목록 중 하나를 무작위로 선택 (파일명 공백 등은 URL 인코딩) */
+function getFormulaPicBackgroundUrl() {
   const files = FORMULA_PIC_BACKGROUNDS;
   if (!files.length) return "";
-  let h = 0;
-  const s = String(seed || "default");
-  for (let i = 0; i < s.length; i++) {
-    h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
-  }
-  const idx = Math.abs(h) % files.length;
-  return `./images/formula_pic/${files[idx]}`;
+  const idx = Math.floor(Math.random() * files.length);
+  const file = files[idx];
+  return `./images/formula_pic/${encodeURIComponent(file)}`;
 }
 
 /** `images/profilepic` 하위 경로 — 폴더/파일명의 공백·& 등은 URL 인코딩 */
@@ -78,12 +81,12 @@ const interviewData = {
     role: "Safety Performance Integration", 
     roleKr: "Safety Performance Integration", 
     roleEn: "Safety Performance Integration",
-    name: "이름2",
-    nameKr: "이름2",
-    nameEn: "Name2",
-    greeting: "안녕하세요\nVE본부의 Safety Performance Integration담당\n이름2입니다",
-    greetingKr: "안녕하세요\nVE본부의 Safety Performance Integration담당\n이름2입니다",
-    greetingEn: "Hello\nSafety Performance Integration, VE HQ\nName2"
+    name: "한재영",
+    nameKr: "한재영",
+    nameEn: "Jaenyung Han",
+    greeting: "안녕하세요\nVE본부의 Safety Performance Integration담당\n한재영입니다",
+    greetingKr: "안녕하세요\nVE본부의 Safety Performance Integration담당\n한재영입니다",
+    greetingEn: "Hello\nSafety Performance Integration, VE HQ\nJaenyung Han"
   },
   "ve3.png": {
     profileImage: profilePicRel([
@@ -94,12 +97,12 @@ const interviewData = {
     role: "Virtual Integration Center & ADAS", 
     roleKr: "Virtual Integration Center & ADAS", 
     roleEn: "Virtual Integration Center & ADAS",
-    name: "이름3",
-    nameKr: "이름3",
-    nameEn: "Name3",
-    greeting: "안녕하세요.<br>Virtual Integration Center & ADAS 담당<br>입니다.",
-    greetingKr: "안녕하세요.<br>Virtual Integration Center & ADAS 담당<br>입니다.",
-    greetingEn: "Hello.<br>I'm from Virtual Integration Center & ADAS."
+    name: "김남준",
+    nameKr: "김남준",
+    nameEn: "Namjun (NJ) Kim",
+    greeting: "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n김남준입니다",
+    greetingKr: "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n김남준입니다",
+    greetingEn: "Hello\nVirtual Integration Center & ADAS, VE HQ\nNamjun (NJ) Kim"
   },
   "ve4.png": {
     profileImage: profilePicRel([
@@ -110,12 +113,12 @@ const interviewData = {
     role: "Virtual Integration Center & ADAS",
     roleKr: "Virtual Integration Center & ADAS",
     roleEn: "Virtual Integration Center & ADAS",
-    name: "이름4",
-    nameKr: "이름4",
-    nameEn: "Name4",
-    greeting: "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n이름4입니다",
-    greetingKr: "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n이름4입니다",
-    greetingEn: "Hello\nVirtual Integration Center & ADAS, VE HQ\nName4"
+    name: "천재희",
+    nameKr: "천재희",
+    nameEn: "Jaehee Cheon",
+    greeting: "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n천재희입니다",
+    greetingKr: "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n천재희입니다",
+    greetingEn: "Hello\nVirtual Integration Center & ADAS, VE HQ\nJaehee Cheon"
   },
   "ve5.png": {
     profileImage: profilePicRel([
@@ -126,12 +129,12 @@ const interviewData = {
     role: "Virtual Integration Center & ADAS",
     roleKr: "Virtual Integration Center & ADAS",
     roleEn: "Virtual Integration Center & ADAS",
-    name: "이름5",
-    nameKr: "이름5",
-    nameEn: "Name5",
-    greeting: "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n이름5입니다",
-    greetingKr: "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n이름5입니다",
-    greetingEn: "Hello\nVirtual Integration Center & ADAS, VE HQ\nName5"
+    name: "정상효",
+    nameKr: "정상효",
+    nameEn: "Sanghyo Jung",
+    greeting: "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n정상효입니다",
+    greetingKr: "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n정상효입니다",
+    greetingEn: "Hello\nVirtual Integration Center & ADAS, VE HQ\nSanghyo Jung"
   },
   "ve6.png": {
     profileImage: profilePicRel(["ve", "virtual engineering solution1.png"]),
@@ -139,12 +142,12 @@ const interviewData = {
     role: "Virtual Engineering Solution",
     roleKr: "Virtual Engineering Solution",
     roleEn: "Virtual Engineering Solution",
-    name: "이름6",
-    nameKr: "이름6",
-    nameEn: "Name6",
-    greeting: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n이름6입니다",
-    greetingKr: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n이름6입니다",
-    greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nName6"
+    name: "정행만",
+    nameKr: "정행만",
+    nameEn: "Haengmaan Jeong",
+    greeting: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n정행만입니다",
+    greetingKr: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n정행만입니다",
+    greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nHaengmaan Jeong"
   },
   "ve7.png": {
     profileImage: profilePicRel(["ve", "virtual engineering solution2.png"]),
@@ -152,12 +155,12 @@ const interviewData = {
     role: "Virtual Engineering Solution",
     roleKr: "Virtual Engineering Solution",
     roleEn: "Virtual Engineering Solution",
-    name: "이름7",
-    nameKr: "이름7",
-    nameEn: "Name7",
-    greeting: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n이름7입니다",
-    greetingKr: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n이름7입니다",
-    greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nName7"
+    name: "황순재",
+    nameKr: "황순재",
+    nameEn: "Soonjae Hwang",
+    greeting: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n황순재입니다",
+    greetingKr: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n황순재입니다",
+    greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nSoonjae Hwang"
   },
   "ve8.png": {
     profileImage: profilePicRel(["ve", "virtual engineering solution3.png"]),
@@ -165,12 +168,12 @@ const interviewData = {
     role: "Virtual Engineering Solution",
     roleKr: "Virtual Engineering Solution",
     roleEn: "Virtual Engineering Solution",
-    name: "이름8",
-    nameKr: "이름8",
-    nameEn: "Name8",
-    greeting: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n이름8입니다",
-    greetingKr: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n이름8입니다",
-    greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nName8"
+    name: "김민정",
+    nameKr: "김민정",
+    nameEn: "Minjung Kim",
+    greeting: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n김민정입니다",
+    greetingKr: "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n김민정입니다",
+    greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nMinjung Kim"
   },
   // AVD & SVI 본부
   "avd1.png": {
@@ -193,11 +196,11 @@ const interviewData = {
     role: "Studio & Surface Integration", 
     roleKr: "Studio & Surface Integration", 
     roleEn: "Studio & Surface Integration",
-    name: "이정원차장",
-    nameKr: "이정원차장",
+    name: "이정원",
+    nameKr: "이정원",
     nameEn: "Jeongwon Lee",
-    greeting: "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n이정원차장입니다",
-    greetingKr: "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n이정원차장입니다",
+    greeting: "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n이정원입니다",
+    greetingKr: "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n이정원입니다",
     greetingEn: "Hello\nStudio & Surface Integration, AVD & SVI HQ\nJeongwon Lee",
     interviewId: "avd-studio-surface" // 기존 인터뷰 섹션 ID
   },
@@ -210,10 +213,10 @@ const interviewData = {
     roleEn: "PSC",
     name: "이재혁",
     nameKr: "이재혁",
-    nameEn: "Jaehyuk Lee",
+    nameEn: "Jaehyeok Lee",
     greeting: "안녕하세요\nPIPG본부의 Propulsion System Calibration담당\n이재혁입니다",
     greetingKr: "안녕하세요\nPIPG본부의 Propulsion System Calibration담당\n이재혁입니다",
-    greetingEn: "Hello\nPropulsion System Calibration, PIPG HQ\nJaehyuk Lee",
+    greetingEn: "Hello\nPropulsion System Calibration, PIPG HQ\nJaehyeok Lee",
     interviewId: "pipg-psc" // 기존 인터뷰 섹션 ID
   },
   "PIPG2.png": {
@@ -222,40 +225,40 @@ const interviewData = {
     role: "VPD/PID", 
     roleKr: "VPD/PID", 
     roleEn: "VPD/PID",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
-    greeting: "안녕하세요.<br>VPD/PID 담당<br>입니다.",
-    greetingKr: "안녕하세요.<br>VPD/PID 담당<br>입니다.",
-    greetingEn: "Hello.<br>I'm from VPD/PID.",
+    name: "이원익",
+    nameKr: "이원익",
+    nameEn: "Wonik Lee",
+    greeting: "안녕하세요\nPIPG본부의 VPD/PID담당\n이원익입니다",
+    greetingKr: "안녕하세요\nPIPG본부의 VPD/PID담당\n이원익입니다",
+    greetingEn: "Hello\nVPD/PID, PIPG HQ\nWonik Lee",
     interviewId: "pipg-vpd-pid" // 기존 인터뷰 섹션 ID
   },
   "PIPG3.png": {
-    profileImage: "./images/profilepic/pipg/Thermal.jpg",
+    profileImage: "./images/profilepic/pipg/thermal_new.png",
     hq: "PIPG",
     role: "Thermal",
     roleKr: "Thermal",
     roleEn: "Thermal",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
-    greeting: "안녕하세요\nPIPG본부의 Thermal담당\n이름입니다",
-    greetingKr: "안녕하세요\nPIPG본부의 Thermal담당\n이름입니다",
-    greetingEn: "Hello\nThermal, PIPG HQ\nName",
+    name: "우성근",
+    nameKr: "우성근",
+    nameEn: "Sunggeun Woo",
+    greeting: "안녕하세요\nPIPG본부의 Thermal담당\n우성근입니다",
+    greetingKr: "안녕하세요\nPIPG본부의 Thermal담당\n우성근입니다",
+    greetingEn: "Hello\nThermal, PIPG HQ\nSunggeun Woo",
     interviewId: "pipg-thermal",
   },
   "PIPG4.png": {
-    profileImage: "./images/profilepic/pipg/pgtlo.png",
+    profileImage: "./images/profilepic/pipg/pgtlo_new.png",
     hq: "PIPG",
     role: "PGTLO",
     roleKr: "PGTLO",
     roleEn: "PGTLO",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
-    greeting: "안녕하세요\nPIPG본부의 PGTLO담당\n이름입니다",
-    greetingKr: "안녕하세요\nPIPG본부의 PGTLO담당\n이름입니다",
-    greetingEn: "Hello\nPGTLO, PIPG HQ\nName",
+    name: "장형규",
+    nameKr: "장형규",
+    nameEn: "Hyunggyu Chang",
+    greeting: "안녕하세요\nPIPG본부의 PGTLO담당\n장형규입니다",
+    greetingKr: "안녕하세요\nPIPG본부의 PGTLO담당\n장형규입니다",
+    greetingEn: "Hello\nPGTLO, PIPG HQ\nHyunggyu Chang",
     interviewId: "pipg-pgtlo",
   },
   // BECA — images/BECA1.png … 프로필 사진 추가 시 전체보기 그리드에 자동 표시
@@ -265,12 +268,12 @@ const interviewData = {
     role: "Body",
     roleKr: "Body",
     roleEn: "Body",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
-    greeting: "안녕하세요\nBECA본부의 Body담당\n이름입니다",
-    greetingKr: "안녕하세요\nBECA본부의 Body담당\n이름입니다",
-    greetingEn: "Hello\nBody, BECA HQ\nName",
+    name: "안영현",
+    nameKr: "안영현",
+    nameEn: "Younghyun Ahn",
+    greeting: "안녕하세요\nBECA본부의 Body담당\n안영현입니다",
+    greetingKr: "안녕하세요\nBECA본부의 Body담당\n안영현입니다",
+    greetingEn: "Hello\nBody, BECA HQ\nYounghyun Ahn",
     interviewId: "beca-body",
   },
   "BECA2.png": {
@@ -279,12 +282,12 @@ const interviewData = {
     role: "Exterior",
     roleKr: "Exterior",
     roleEn: "Exterior",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
-    greeting: "안녕하세요\nBECA본부의 Exterior담당\n이름입니다",
-    greetingKr: "안녕하세요\nBECA본부의 Exterior담당\n이름입니다",
-    greetingEn: "Hello\nExterior, BECA HQ\nName",
+    name: "임정란",
+    nameKr: "임정란",
+    nameEn: "Jungran Lim",
+    greeting: "안녕하세요\nBECA본부의 Exterior담당\n임정란입니다",
+    greetingKr: "안녕하세요\nBECA본부의 Exterior담당\n임정란입니다",
+    greetingEn: "Hello\nExterior, BECA HQ\nJungran Lim",
     interviewId: "beca-exterior",
   },
   "BECA3.png": {
@@ -293,26 +296,26 @@ const interviewData = {
     role: "Chassis",
     roleKr: "Chassis",
     roleEn: "Chassis",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
-    greeting: "안녕하세요\nBECA본부의 Chassis담당\n이름입니다",
-    greetingKr: "안녕하세요\nBECA본부의 Chassis담당\n이름입니다",
-    greetingEn: "Hello\nChassis, BECA HQ\nName",
+    name: "신숙형",
+    nameKr: "신숙형",
+    nameEn: "Sookhyoung Shin",
+    greeting: "안녕하세요\nBECA본부의 Chassis담당\n신숙형입니다",
+    greetingKr: "안녕하세요\nBECA본부의 Chassis담당\n신숙형입니다",
+    greetingEn: "Hello\nChassis, BECA HQ\nSookhyoung Shin",
     interviewId: "beca-chassis",
   },
   "BECA4.png": {
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: "./images/profilepic/beca/Aftersales.png",
     hq: "BECA",
     role: "Aftersales",
     roleKr: "Aftersales",
     roleEn: "Aftersales",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
-    greeting: "안녕하세요\nBECA본부의 Aftersales담당\n이름입니다",
-    greetingKr: "안녕하세요\nBECA본부의 Aftersales담당\n이름입니다",
-    greetingEn: "Hello\nAftersales, BECA HQ\nName",
+    name: "이진영",
+    nameKr: "이진영",
+    nameEn: "Jinyoung Lee",
+    greeting: "안녕하세요\nBECA본부의 Aftersales담당\n이진영입니다",
+    greetingKr: "안녕하세요\nBECA본부의 Aftersales담당\n이진영입니다",
+    greetingEn: "Hello\nAftersales, BECA HQ\nJinyoung Lee",
     interviewId: "beca-aftersales",
   },
   // ITPE
@@ -379,12 +382,12 @@ const interviewData = {
     role: "CCH/PPMO",
     roleKr: "CCH/PPMO",
     roleEn: "CCH/PPMO",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
-    greeting: "안녕하세요\nS&S본부의 CCH/PPMO담당\n이름입니다",
-    greetingKr: "안녕하세요\nS&S본부의 CCH/PPMO담당\n이름입니다",
-    greetingEn: "Hello\nCCH/PPMO, Software & Services HQ\nName",
+    name: "김경찬",
+    nameKr: "김경찬",
+    nameEn: "Kyungchan Kim",
+    greeting: "안녕하세요\nS&S본부의 CCH/PPMO담당\n김경찬입니다",
+    greetingKr: "안녕하세요\nS&S본부의 CCH/PPMO담당\n김경찬입니다",
+    greetingEn: "Hello\nCCH/PPMO, Software & Services HQ\nKyungchan Kim",
     interviewId: "ss-cch-ppmo",
   },
   "SS2.png": {
@@ -393,12 +396,12 @@ const interviewData = {
     role: "MAEC",
     roleKr: "MAEC",
     roleEn: "MAEC",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
-    greeting: "안녕하세요\nS&S본부의 MAEC담당\n이름입니다",
-    greetingKr: "안녕하세요\nS&S본부의 MAEC담당\n이름입니다",
-    greetingEn: "Hello\nMAEC, Software & Services HQ\nName",
+    name: "정묘신",
+    nameKr: "정묘신",
+    nameEn: "Myosin Jung",
+    greeting: "안녕하세요\nS&S본부의 MAEC담당\n정묘신입니다",
+    greetingKr: "안녕하세요\nS&S본부의 MAEC담당\n정묘신입니다",
+    greetingEn: "Hello\nMAEC, Software & Services HQ\nMyosin Jung",
     interviewId: "ss-maec",
   },
   "SS3.png": {
@@ -407,12 +410,12 @@ const interviewData = {
     role: "SWQnD",
     roleKr: "SWQnD",
     roleEn: "SWQnD",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
-    greeting: "안녕하세요\nS&S본부의 SWQnD담당\n이름입니다",
-    greetingKr: "안녕하세요\nS&S본부의 SWQnD담당\n이름입니다",
-    greetingEn: "Hello\nSWQnD, Software & Services HQ\nName",
+    name: "양혜영",
+    nameKr: "양혜영",
+    nameEn: "Hyeyoung Yang",
+    greeting: "안녕하세요\nS&S본부의 SWQnD담당\n양혜영입니다",
+    greetingKr: "안녕하세요\nS&S본부의 SWQnD담당\n양혜영입니다",
+    greetingEn: "Hello\nSWQnD, Software & Services HQ\nHyeyoung Yang",
     interviewId: "ss-swqnd",
   },
   "EE1a.png": {
@@ -421,15 +424,15 @@ const interviewData = {
     role: "Systems & Product Investigation Division",
     roleKr: "System & Product Investigation",
     roleEn: "Systems & Product Investigation Division",
-    name: "윤애진 차장",
-    nameKr: "윤애진 차장",
-    nameEn: "Ae-Jin Yun",
+    name: "윤애진",
+    nameKr: "윤애진",
+    nameEn: "Aejin Yun",
     greeting:
-      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n윤애진 차장입니다",
+      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n윤애진입니다",
     greetingKr:
-      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n윤애진 차장입니다",
+      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n윤애진입니다",
     greetingEn:
-      "Hello\nSystems & Product Investigation, Engineering Excellence HQ\nAe-Jin Yun",
+      "Hello\nSystems & Product Investigation, Engineering Excellence HQ\nAejin Yun",
     interviewId: "ee-system-investigation-1",
   },
   "EE1b.png": {
@@ -438,15 +441,15 @@ const interviewData = {
     role: "Systems & Product Investigation Division",
     roleKr: "System & Product Investigation",
     roleEn: "Systems & Product Investigation Division",
-    name: "권민들 차장",
-    nameKr: "권민들 차장",
-    nameEn: "Min-deul Kwon",
+    name: "권민들",
+    nameKr: "권민들",
+    nameEn: "Mindeul Kwon",
     greeting:
-      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n권민들 차장입니다",
+      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n권민들입니다",
     greetingKr:
-      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n권민들 차장입니다",
+      "안녕하세요\nEngineering Excellence의 System & Product Investigation담당\n권민들입니다",
     greetingEn:
-      "Hello\nSystems & Product Investigation, Engineering Excellence HQ\nMin-deul Kwon",
+      "Hello\nSystems & Product Investigation, Engineering Excellence HQ\nMindeul Kwon",
     interviewId: "ee-system-investigation-2",
   },
   "EE0.png": {
@@ -455,15 +458,15 @@ const interviewData = {
     role: "Certification, Environmental Strategy & EI Division",
     roleKr: "Certification, Environmental Strategy & EI",
     roleEn: "Certification, Environmental Strategy & EI Division",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
+    name: "정건모",
+    nameKr: "정건모",
+    nameEn: "Gunmo Jeong",
     greeting:
-      "안녕하세요\nEngineering Excellence의 Certification, Environmental Strategy & EI담당\n이름입니다",
+      "안녕하세요\nEngineering Excellence의 Certification, Environmental Strategy & EI담당\n정건모입니다",
     greetingKr:
-      "안녕하세요\nEngineering Excellence의 Certification, Environmental Strategy & EI담당\n이름입니다",
+      "안녕하세요\nEngineering Excellence의 Certification, Environmental Strategy & EI담당\n정건모입니다",
     greetingEn:
-      "Hello\nCertification, Environmental Strategy & EI Division, Engineering Excellence HQ\nName",
+      "Hello\nCertification, Environmental Strategy & EI Division, Engineering Excellence HQ\nGunmo Jeong",
     interviewId: "ee-certification",
   },
   "EE2.png": {
@@ -472,13 +475,64 @@ const interviewData = {
     role: "Validation Division",
     roleKr: "Validation",
     roleEn: "Validation Division",
-    name: "이름",
-    nameKr: "이름",
-    nameEn: "Name",
-    greeting: "안녕하세요\nEngineering Excellence의 Validation담당\n이름입니다",
-    greetingKr: "안녕하세요\nEngineering Excellence의 Validation담당\n이름입니다",
-    greetingEn: "Hello\nValidation Division, Engineering Excellence HQ\nName",
+    name: "김경태",
+    nameKr: "김경태",
+    nameEn: "Kyungtae Kim",
+    greeting: "안녕하세요\nEngineering Excellence의 Validation담당\n김경태입니다",
+    greetingKr: "안녕하세요\nEngineering Excellence의 Validation담당\n김경태입니다",
+    greetingEn: "Hello\nValidation Division, Engineering Excellence HQ\nKyungtae Kim",
     interviewId: "ee-verification",
+  },
+  "EE3.png": {
+    profileImage: profilePicRel(["EE", "product excellence.png"]),
+    hq: "Engineering Excellence",
+    role: "Product Excellence",
+    roleKr: "Product Excellence",
+    roleEn: "Product Excellence",
+    name: "강수연",
+    nameKr: "강수연",
+    nameEn: "Sooyeon Kang",
+    greeting:
+      "안녕하세요\nEngineering Excellence의 Product Excellence담당\n강수연입니다",
+    greetingKr:
+      "안녕하세요\nEngineering Excellence의 Product Excellence담당\n강수연입니다",
+    greetingEn:
+      "Hello\nProduct Excellence, Engineering Excellence HQ\nSooyeon Kang",
+    interviewId: "ee-product-excellence",
+  },
+  "EE4.png": {
+    profileImage: profilePicRel(["EE", "PQDQ.png"]),
+    hq: "Engineering Excellence",
+    role: "PQDQ Engineering Excellence",
+    roleKr: "PQDQ Engineering Excellence",
+    roleEn: "PQDQ Engineering Excellence",
+    name: "조성현",
+    nameKr: "조성현",
+    nameEn: "Sunghyun Cho",
+    greeting:
+      "안녕하세요\nEngineering Excellence의 PQDQ Engineering Excellence담당\n조성현입니다",
+    greetingKr:
+      "안녕하세요\nEngineering Excellence의 PQDQ Engineering Excellence담당\n조성현입니다",
+    greetingEn:
+      "Hello\nPQDQ Engineering Excellence, Engineering Excellence HQ\nSunghyun Cho",
+    interviewId: "ee-quality",
+  },
+  "EE5.png": {
+    profileImage: profilePicRel(["EE", "ai chief_new.png"]),
+    hq: "Engineering Excellence",
+    role: "Chief AI & New Tech. Strategy",
+    roleKr: "Chief AI & New Tech. Strategy",
+    roleEn: "Chief AI & New Tech. Strategy",
+    name: "신호재",
+    nameKr: "신호재",
+    nameEn: "Hojae Shin",
+    greeting:
+      "안녕하세요\nEngineering Excellence의 Chief AI & New Tech. Strategy담당\n신호재입니다",
+    greetingKr:
+      "안녕하세요\nEngineering Excellence의 Chief AI & New Tech. Strategy담당\n신호재입니다",
+    greetingEn:
+      "Hello\nChief AI & New Tech. Strategy, Engineering Excellence HQ\nHojae Shin",
+    interviewId: "ee-ai-chief",
   },
 };
 
@@ -487,7 +541,7 @@ const interviewData = {
 // EE 일부 본문은 data/interview-content-ee.json
 // JSON 수정 후 배포 시 ?v= 숫자 올려 캐시 무력화 (CDN·프록시 대비)
 const INTERVIEW_CONTENT_BECA_ITPE_SS_URL = "./data/interview-content-beca-itpe-ss.json?v=5";
-const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=3";
+const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=5";
 const INTERVIEW_CONTENT_VE_URL = "./data/interview-content-ve.json?v=2";
 
 async function loadInterviewContentBecaItpeSs() {
@@ -1009,7 +1063,7 @@ function createInterviewSection(interviewId, imageName, data) {
   const roleShown = currentLang === "kr" ? roleKr : roleEn;
   const nameShown = currentLang === "kr" ? nameKr : nameEn;
 
-  const formulaBgUrl = getFormulaPicBackgroundUrl(`${interviewId}:${imageName}`);
+  const formulaBgUrl = getFormulaPicBackgroundUrl();
   const formulaBgLayer =
     formulaBgUrl !== ""
       ? `<div class="interview-profile-bg-formula" style="background-image: url('${escapeHtmlAttr(formulaBgUrl)}');" aria-hidden="true"></div>`

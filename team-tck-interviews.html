@@ -6,7 +6,7 @@
     <base href="./" />
     <title>Team TCK | Our Story</title>
     <!-- 인터뷰/스타일 수정 후 브라우저 캐시 회피: ?v= 숫자 올리기 -->
-    <link rel="stylesheet" href="./css/style.css?v=91" />
+    <link rel="stylesheet" href="./css/style.css?v=93" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,7 +38,7 @@
                 >About</a
               >
             </li>
-            <li>
+            <li class="nav-hide-production">
               <a
                 href="core-values.html"
                 data-kr="핵심 가치"
@@ -66,7 +66,7 @@
                 >News</a
               >
             </li>
-            <li class="nav-dropdown">
+            <li class="nav-dropdown nav-hide-production">
               <a
                 href="team-tck.html"
                 class="nav-dropdown-trigger"
@@ -523,65 +523,28 @@
                 ></div>
               </div>
 
-              <!-- EE: 제품 우수성 -->
+              <!-- EE: Product Excellence — data/interview-content-ee.json -->
               <div class="hq-content-section" id="ee-product-excellence">
-                <h2
-                  class="hq-content-title"
-                  data-kr="제품 우수성"
-                  data-en="Product Excellence"
-                >
-                  제품 우수성
-                </h2>
-                <div class="hq-content-body">
-                  <p
-                    class="hq-content-description"
-                    data-kr="제품 우수성 인터뷰 내용을 여기에 추가하세요."
-                    data-en="Add Product Excellence interview content here."
-                  >
-                    Add Product Excellence interview content here.
-                  </p>
-                </div>
+                <div
+                  class="hq-content-body"
+                  data-role-interview-mount="ee-product-excellence"
+                ></div>
               </div>
 
-              <!-- EE: 감성 품질, 설계 품질 엔지니어링 엑설런스 -->
+              <!-- EE: PQDQ — data/interview-content-ee.json -->
               <div class="hq-content-section" id="ee-quality">
-                <h2
-                  class="hq-content-title"
-                  data-kr="감성 품질, 설계 품질 엔지니어링 엑설런스"
-                  data-en="Emotional Quality, Design Quality Engineering Excellence"
-                >
-                  감성 품질, 설계 품질 엔지니어링 엑설런스
-                </h2>
-                <div class="hq-content-body">
-                  <p
-                    class="hq-content-description"
-                    data-kr="감성 품질, 설계 품질 엔지니어링 엑설런스 인터뷰 내용을 여기에 추가하세요."
-                    data-en="Add Emotional Quality, Design Quality Engineering Excellence interview content here."
-                  >
-                    Add Emotional Quality, Design Quality Engineering Excellence
-                    interview content here.
-                  </p>
-                </div>
+                <div
+                  class="hq-content-body"
+                  data-role-interview-mount="ee-quality"
+                ></div>
               </div>
 
-              <!-- EE: AI Chief -->
+              <!-- EE: Chief AI & New Tech. Strategy — data/interview-content-ee.json -->
               <div class="hq-content-section" id="ee-ai-chief">
-                <h2
-                  class="hq-content-title"
-                  data-kr="AI Chief"
-                  data-en="AI Chief"
-                >
-                  AI Chief
-                </h2>
-                <div class="hq-content-body">
-                  <p
-                    class="hq-content-description"
-                    data-kr="AI Chief 인터뷰 내용을 여기에 추가하세요."
-                    data-en="Add AI Chief interview content here."
-                  >
-                    Add AI Chief interview content here.
-                  </p>
-                </div>
+                <div
+                  class="hq-content-body"
+                  data-role-interview-mount="ee-ai-chief"
+                ></div>
               </div>
 
               <!-- VE: Safety Performance Integration - 인터뷰 목록 -->
@@ -924,7 +887,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/role-interviews.js?v=22"></script>
+    <script src="./js/role-interviews.js?v=31"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=50"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=3"></script>
@@ -1396,6 +1359,69 @@
           });
         }
 
+        /**
+         * VE / EE 다인 인터뷰: 스택 레이아웃 + 페이드 전환, 활성 패널만 스크롤 리빌 재스캔
+         */
+        function setupStackInterviewCarousel(
+          interviewContainer,
+          navContainer,
+          count,
+        ) {
+          interviewContainer.classList.add("ve-interview-container--stack");
+          let currentIndex = 0;
+
+          function updateCarousel() {
+            const list = interviewContainer.querySelectorAll(
+              ".ve-interview-item",
+            );
+            list.forEach((el, index) => {
+              el.classList.toggle("is-carousel-active", index === currentIndex);
+            });
+            const prevBtn = navContainer.querySelector(".ve-nav-prev");
+            const nextBtn = navContainer.querySelector(".ve-nav-next");
+            if (prevBtn) prevBtn.disabled = currentIndex === 0;
+            if (nextBtn) nextBtn.disabled = currentIndex >= count - 1;
+
+            const active = list[currentIndex];
+            if (
+              active &&
+              typeof window.gmtckScanInterviewReveal === "function"
+            ) {
+              requestAnimationFrame(() => {
+                window.gmtckScanInterviewReveal(active, { force: true });
+              });
+            }
+          }
+
+          const prevBtn = navContainer.querySelector(".ve-nav-prev");
+          const nextBtn = navContainer.querySelector(".ve-nav-next");
+          if (prevBtn) {
+            prevBtn.addEventListener("click", () => {
+              if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+              }
+            });
+          }
+          if (nextBtn) {
+            nextBtn.addEventListener("click", () => {
+              if (currentIndex < count - 1) {
+                currentIndex++;
+                updateCarousel();
+              }
+            });
+          }
+
+          function setIndex(i) {
+            currentIndex = Math.max(0, Math.min(i, count - 1));
+            updateCarousel();
+          }
+
+          updateCarousel();
+
+          return { setIndex };
+        }
+
         function showSection(
           targetId,
           scrollToTop = false,
@@ -1584,58 +1610,16 @@
                       imageName,
                       data,
                     );
-                    interviewSection.style.display =
-                      index === 0 ? "block" : "none";
                     interviewSection.setAttribute("data-index", index);
 
                     interviewContainer.appendChild(interviewSection);
                   });
 
-                  // 네비게이션 이벤트 리스너 추가
-                  const prevBtn = navContainer.querySelector(".ve-nav-prev");
-                  const nextBtn = navContainer.querySelector(".ve-nav-next");
-
-                  let currentIndex = 0;
-
-                  const updateDisplay = () => {
-                    const interviews =
-                      interviewContainer.querySelectorAll(".ve-interview-item");
-                    interviews.forEach((interview, index) => {
-                      interview.style.display =
-                        index === currentIndex ? "block" : "none";
-                    });
-
-                    // 버튼 활성화/비활성화
-                    prevBtn.disabled = currentIndex === 0;
-                    nextBtn.disabled =
-                      currentIndex === filteredImages.length - 1;
-
-                    // 스크롤을 상단으로
-                    if (targetSection) {
-                      const navContainerTop = navContainer.offsetTop;
-                      window.scrollTo({
-                        top: navContainerTop - 100,
-                        behavior: "smooth",
-                      });
-                    }
-                  };
-
-                  prevBtn.addEventListener("click", () => {
-                    if (currentIndex > 0) {
-                      currentIndex--;
-                      updateDisplay();
-                    }
-                  });
-
-                  nextBtn.addEventListener("click", () => {
-                    if (currentIndex < filteredImages.length - 1) {
-                      currentIndex++;
-                      updateDisplay();
-                    }
-                  });
-
-                  // 초기 상태 설정
-                  updateDisplay();
+                  setupStackInterviewCarousel(
+                    interviewContainer,
+                    navContainer,
+                    filteredImages.length,
+                  );
 
                   // 로드 완료 표시
                   contentBody.setAttribute("data-loaded", "true");
@@ -1702,58 +1686,18 @@
                       imageName,
                       data,
                     );
-                    interviewSection.style.display =
-                      index === 0 ? "block" : "none";
                     interviewSection.setAttribute("data-index", index);
                     interviewContainer.appendChild(interviewSection);
                   });
 
-                  const prevBtn = navContainer.querySelector(".ve-nav-prev");
-                  const nextBtn = navContainer.querySelector(".ve-nav-next");
-
-                  let currentIndex = 0;
-
-                  const updateDisplay = () => {
-                    const interviews =
-                      interviewContainer.querySelectorAll(".ve-interview-item");
-                    interviews.forEach((interview, index) => {
-                      interview.style.display =
-                        index === currentIndex ? "block" : "none";
-                    });
-                    prevBtn.disabled = currentIndex === 0;
-                    nextBtn.disabled =
-                      currentIndex === filteredImages.length - 1;
-                    if (targetSection) {
-                      const navContainerTop = navContainer.offsetTop;
-                      window.scrollTo({
-                        top: navContainerTop - 100,
-                        behavior: "smooth",
-                      });
-                    }
-                  };
-
-                  prevBtn.addEventListener("click", () => {
-                    if (currentIndex > 0) {
-                      currentIndex--;
-                      updateDisplay();
-                    }
-                  });
-
-                  nextBtn.addEventListener("click", () => {
-                    if (currentIndex < filteredImages.length - 1) {
-                      currentIndex++;
-                      updateDisplay();
-                    }
-                  });
-
-                  updateDisplay();
+                  const carouselApi = setupStackInterviewCarousel(
+                    interviewContainer,
+                    navContainer,
+                    filteredImages.length,
+                  );
 
                   targetSection._setInterviewCarouselIndex = (i) => {
-                    currentIndex = Math.max(
-                      0,
-                      Math.min(i, filteredImages.length - 1),
-                    );
-                    updateDisplay();
+                    carouselApi.setIndex(i);
                   };
 
                   contentBody.setAttribute("data-loaded", "true");

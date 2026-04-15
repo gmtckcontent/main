@@ -1,0 +1,740 @@
+/* 연혁 스크롤 섹션 — core-values.html + React island 공용 */
+
+/* ---- core-values: section#cv-history 정적 래퍼 + 패널 마운트 (Next 와 동일 구조) ---- */
+.cv-history-page {
+  position: relative;
+  background: #e8ecf2;
+  padding: 1.5rem 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .cv-history-page {
+    padding: 2rem 0 3rem;
+  }
+}
+
+.cv-history-page-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .cv-history-page-inner {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cv-history-page-inner {
+    padding: 0 2rem;
+  }
+}
+
+.cv-history-page-head {
+  text-align: center;
+  margin-bottom: 0.75rem;
+  position: sticky;
+  top: 14svh;
+  z-index: 20;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .cv-history-page-head {
+    margin-bottom: 1rem;
+    top: 15svh;
+  }
+}
+
+.cv-history-page-desc {
+  margin: 0.5rem auto 0;
+  max-width: min(52rem, 100%);
+  font-size: clamp(0.75rem, 1.4vw, 0.875rem);
+  line-height: 1.6;
+  color: #4b5563;
+  text-align: center;
+}
+
+.cv-history-page-desc--pre {
+  white-space: pre-line;
+}
+
+/* 큰 제목 — .cv-dd-label-en 과 병용 시에는 style.css 의 레이블 타이포가 우선 */
+.cv-history-page-head h2:not(.cv-dd-label-en) {
+  margin: 0;
+  font-family: "Overpass", "Noto Sans KR", sans-serif;
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #171717;
+}
+
+.cv-history-sticky-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .cv-history-sticky-stack {
+    gap: 5rem;
+  }
+}
+
+/* Mobiem 패널 (mjs / React 공용 클래스명) */
+
+/* shell: sticky 고정 창 — section이 충분히 길어야 sticky가 유지됨 */
+.cv-history-m-shell {
+  position: sticky;
+  top: 21svh;
+  overflow: clip;
+  border-radius: 28px;
+  height: 58svh;
+  box-shadow: 0 28px 90px -24px rgba(15, 23, 42, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 768px) {
+  .cv-history-m-shell {
+    border-radius: 40px;
+  }
+}
+
+/* 셸 전체를 덮는 배경(왼쪽+오른쪽 레일까지 한 장으로 연결) */
+.cv-history-m-bg.cv-history-m-bg--fill-shell {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* grid: shell 높이 100% 채움 — 좌우 1/2 */
+.cv-history-m-grid {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+
+/* sticky-col: shell이 이미 sticky이므로 별도 sticky 불필요 */
+.cv-history-m-sticky-col {
+  position: relative;
+  height: 100%;
+}
+
+.cv-history-m-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 레거시: 왼쪽 열만 쓰던 배경 — fill-shell 사용 시 비사용 */
+.cv-history-m-left > .cv-history-m-bg {
+  position: absolute;
+  inset: 0;
+  background: #171717;
+}
+
+.cv-history-m-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.cv-history-m-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.cv-history-m-year-rail {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 1.25rem;
+}
+
+/* 가로: 부모 너비 100% 고정 → 활성/비활성 폰트 크기가 바뀌어도 블록 중심이 흔들리지 않음 */
+.cv-history-m-year-motion {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .cv-history-m-year-motion {
+    gap: 0.625rem;
+  }
+}
+
+.cv-history-m-year-row {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.cv-history-m-rail-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem clamp(1rem, 3vw, 1.75rem);
+  background: none;
+  background-color: transparent;
+}
+
+@media (min-width: 640px) {
+  .cv-history-m-rail-col {
+    padding: 1.5rem clamp(1.25rem, 3.5vw, 2rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cv-history-m-rail-col {
+    padding: 2rem clamp(1.5rem, 4vw, 2.25rem);
+  }
+}
+
+.cv-history-m-block {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  padding: 3.5rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .cv-history-m-block {
+    padding: 3.5rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cv-history-m-block {
+    /* 예전 110vh 대비 pane 과 동일 비율(×1.1) 유지 */
+    min-height: calc(var(--cv-history-pane-h, 100svh) * 1.1);
+    padding: 5rem 2.5rem 5rem 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cv-history-m-block {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+.cv-history-m-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  border-radius: 40px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  padding: 3.25rem 2.25rem;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .cv-history-m-card {
+    padding: 3.75rem 2.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .cv-history-m-card {
+    padding: 4.25rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cv-history-m-card {
+    padding: 4.75rem 3.5rem;
+    min-height: min(42svh, 420px);
+    max-width: none;
+  }
+}
+
+.cv-history-m-card-list {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: min(100%, 48ch);
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #ffffff;
+}
+
+@media (min-width: 640px) {
+  .cv-history-m-card-list {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
+.cv-history-m-card-list li {
+  margin-bottom: 0.875rem;
+}
+
+.cv-history-m-card-list .cv-history-line--bold {
+  color: #ffffff;
+}
+
+.cv-history-m-card-list li:last-child {
+  margin-bottom: 0;
+}
+
+.cv-history-section {
+  position: relative;
+  padding: clamp(48px, 8vw, 96px) 0 clamp(64px, 10vw, 120px);
+  background: #f6f8fb;
+}
+
+#cv-history-panels .cv-history-err {
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+  color: #5c6570;
+  font-size: 0.9375rem;
+}
+
+.cv-history-header {
+  max-width: 720px;
+  margin: 0 auto clamp(32px, 5vw, 48px);
+  padding: 0 clamp(16px, 4vw, 24px);
+  text-align: center;
+}
+
+.cv-history-kicker {
+  margin: 0;
+  font-family: "Overpass", sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #e31837;
+}
+
+.cv-history-title {
+  margin: 12px 0 0;
+  font-family: "Overpass", sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #1a2332;
+}
+
+.cv-history-sub {
+  margin: 12px 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: #5c6570;
+}
+
+.cv-history-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
+  align-items: start;
+}
+
+/* 왼쪽: sticky 패널 높이 = 뷰포트 — 오른쪽 카드 열이 스크롤을 만든다 */
+.cv-history-sticky-wrap {
+  position: relative;
+  min-height: 100vh;
+}
+
+.cv-history-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+.cv-history-sticky-inner {
+  position: relative;
+  flex: 1;
+  border-radius: clamp(20px, 3vw, 36px);
+  overflow: hidden;
+  min-height: min(88vh, 720px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.cv-history-bg {
+  position: absolute;
+  inset: 0;
+  background: #0f172a;
+}
+
+.cv-history-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.cv-history-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.1) 0%,
+    rgba(15, 23, 42, 0.55) 100%
+  );
+}
+
+.cv-history-year-stack {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cv-history-year {
+  margin: 0;
+  font-family: "Overpass", "Noto Sans KR", sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+/* ============================================================
+   Scroll Stack — Mobiem식 전체화면 배경 고정 스크롤
+   ============================================================
+   원리: 각 챕터 section(min-height:200svh) 안에
+     · 배경(sticky top:0, height:100svh)이 부모 끝까지 뷰포트에 고정
+     · 콘텐츠(margin-top:-100svh)가 배경 위를 덮으며 위로 스크롤
+     · z-index 를 챕터 순서대로 높여 다음 챕터가 이전 챕터 위에 덮임
+   ============================================================ */
+
+.cv-scroll-stack {
+  position: relative;
+  background: #0a0a0a;
+}
+
+.cv-scroll-chapter {
+  position: relative;
+  width: 100%;
+  min-height: 200svh; /* sticky 가 풀리기 전 스크롤 여유 */
+}
+
+/* 1) 배경: sticky — 부모(200svh) 범위 안에서 뷰포트 상단에 고정 */
+.cv-scroll-chapter-bg {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 100svh;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.cv-scroll-chapter-bg-inner {
+  position: relative;
+  height: 100svh;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cv-scroll-chapter-bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cv-scroll-chapter-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* 2) 콘텐츠: 배경과 같은 시작점(-100svh)에서 위로만 스크롤 */
+.cv-scroll-chapter-content {
+  position: relative;
+  z-index: 2;
+  margin-top: -100svh;
+}
+
+.cv-scroll-chapter-card-wrap {
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .cv-scroll-chapter-card-wrap {
+    padding: 4rem 2.5rem;
+  }
+}
+
+/* 카드 */
+.cv-scroll-card {
+  width: 100%;
+  max-width: 540px;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+@media (min-width: 640px) {
+  .cv-scroll-card {
+    border-radius: 2.5rem;
+    padding: 2.75rem 3rem;
+  }
+}
+
+.cv-scroll-card-heading {
+  margin: 0 0 0.5rem;
+  font-family: "Overpass", "Noto Sans KR", sans-serif;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: #1a2332;
+}
+
+.cv-scroll-card-heading + .cv-scroll-card-period {
+  margin-top: 0.35rem;
+}
+
+.cv-scroll-card-period {
+  margin: 0 0 1.25rem;
+  font-family: "Overpass", "Noto Sans KR", sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #003478;
+}
+
+.cv-scroll-card-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #1a2332;
+}
+
+.cv-scroll-card-list li {
+  margin-bottom: 0.875rem;
+}
+
+.cv-scroll-card-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* 스크롤 여유 공간 (배경이 완전히 사라질 때까지) */
+.cv-scroll-chapter-spacer {
+  min-height: 50svh;
+}
+
+/* 연혁 섹션 헤더 (어두운 배경 위) */
+.cv-history-scroll-head {
+  background: #0a0a0a;
+  text-align: center;
+  padding: 3.5rem 1.25rem 2.5rem;
+}
+
+.cv-history-scroll-head .cv-history-kicker {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.cv-history-scroll-head h2 {
+  margin: 0.75rem 0 0;
+  font-family: "Overpass", "Noto Sans KR", sans-serif;
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-scroll-chapter-bg-img {
+    transition: none;
+  }
+}
+
+/* ============================================================ */
+
+/* 이후 cv-dd-diagram-wrap 삽입용 */
+.cv-history-diagram-slot {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(12px, 3vw, 24px);
+  transform: translateX(-50%);
+  width: min(92%, 360px);
+  min-height: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.cv-history-rail {
+  padding: clamp(8px, 2vw, 16px) 0 clamp(8px, 2vw, 16px)
+    clamp(24px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vw, 48px);
+}
+
+.cv-history-card {
+  margin: 0;
+  padding: clamp(22px, 3vw, 32px) clamp(22px, 3vw, 36px);
+  background: #ffffff;
+  border-radius: clamp(24px, 4vw, 40px);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.cv-history-card--active {
+  border-color: rgba(0, 56, 120, 0.2);
+  box-shadow: 0 16px 48px rgba(0, 45, 92, 0.12);
+  transform: translateY(-2px);
+}
+
+.cv-history-card-period {
+  margin: 0 0 14px;
+  font-family: "Overpass", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #003478;
+}
+
+.cv-history-card-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #1a2332;
+}
+
+.cv-history-card-list li {
+  margin-bottom: 0.55em;
+}
+
+.cv-history-line--bold {
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+.cv-history-card-list li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1023px) {
+  .cv-history-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-history-sticky-wrap {
+    min-height: 0;
+  }
+
+  .cv-history-sticky {
+    position: relative;
+    height: auto;
+    min-height: 0;
+  }
+
+  .cv-history-sticky-inner {
+    min-height: clamp(320px, 52vh, 480px);
+    height: auto;
+  }
+
+  .cv-history-rail {
+    padding: clamp(20px, 4vw, 28px) 0 0;
+    gap: clamp(20px, 4vw, 32px);
+  }
+
+  .cv-history-card--active {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-history-card {
+    transition: none;
+  }
+
+  .cv-history-card--active {
+    transform: none;
+  }
+}
+
+/* Mobiem 패널 — 모바일: 세로 스택 */
+@media (max-width: 1023px) {
+  .cv-history-m-sticky-col {
+    position: relative;
+    height: auto !important;
+    min-height: 0;
+  }
+
+  .cv-history-m-left {
+    min-height: 52vh;
+  }
+
+  .cv-history-m-rail-col {
+    min-height: 0;
+  }
+
+  .cv-history-m-block {
+    min-height: auto;
+  }
+}

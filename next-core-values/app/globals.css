@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Align with main site html.core-values-page .cv-dd-label-en (TCK VISION line) */
+:root {
+  --cv-dd-red: #e31837;
+}
+
+.cv-dd-label-en {
+  margin: 0 auto 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cv-dd-red);
+  font-family: "Overpass", "Noto Sans KR", sans-serif;
+}

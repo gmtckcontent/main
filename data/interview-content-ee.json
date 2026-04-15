@@ -246,5 +246,137 @@
         "aEn": "GM offers technical career paths such as Specialist or technical lead roles. My goal is to build on long experience and deep expertise in my current work and grow into a recognized Specialist in this field."
       }
     ]
+  },
+  "ee-product-excellence": {
+    "questions": [
+      {
+        "q": "현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qKr": "현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qEn": "Please describe your current responsibilities in detail.",
+        "a": "저는 Product Excellence Team에서 Program Launch Support를 담당하고 있습니다.\n\n차량 개발이 정해진 런칭 일정에 맞춰 차질 없이 진행될 수 있도록, 전체 일정과 주요 마일스톤을 관리하고 일정 및 품질 리스크를 사전에 파악해 대응하는 역할입니다.\n\n구체적으로는 PRTS(Problem Resolution and Tracking System)를 통해 이슈를 체계적으로 관리하고, Deep Dive Meeting을 운영하며 주요 쟁점을 정리하고 후속 조치를 추적합니다. 또한 설계, 생산, 품질 등 다양한 조직 간의 소통 창구로서 이슈를 조율하고 필요한 경우 적시에 에스컬레이션을 진행합니다.\n\n결과적으로 프로그램 전반을 통합적으로 관리하면서, 여러 조직이 같은 방향으로 움직일 수 있도록 연결하고 지원하는 역할을 하고 있습니다.",
+        "aKr": "저는 Product Excellence Team에서 Program Launch Support를 담당하고 있습니다.\n\n차량 개발이 정해진 런칭 일정에 맞춰 차질 없이 진행될 수 있도록, 전체 일정과 주요 마일스톤을 관리하고 일정 및 품질 리스크를 사전에 파악해 대응하는 역할입니다.\n\n구체적으로는 PRTS(Problem Resolution and Tracking System)를 통해 이슈를 체계적으로 관리하고, Deep Dive Meeting을 운영하며 주요 쟁점을 정리하고 후속 조치를 추적합니다. 또한 설계, 생산, 품질 등 다양한 조직 간의 소통 창구로서 이슈를 조율하고 필요한 경우 적시에 에스컬레이션을 진행합니다.\n\n결과적으로 프로그램 전반을 통합적으로 관리하면서, 여러 조직이 같은 방향으로 움직일 수 있도록 연결하고 지원하는 역할을 하고 있습니다.",
+        "aEn": "I work on the Product Excellence Team in Program Launch Support.\n\nMy role is to keep vehicle development on track for the committed launch schedule—managing the overall timeline and major milestones, and spotting schedule and quality risks early so we can respond.\n\nSpecifically, I manage issues systematically through PRTS (Problem Resolution and Tracking System), run Deep Dive Meetings to align on key topics and track follow-up, and act as a communication hub across design, manufacturing, quality, and other functions—escalating when needed.\n\nIn short, I help integrate the program so multiple organizations can move in the same direction."
+      },
+      {
+        "q": "팀 소개를 부탁드립니다.",
+        "qKr": "팀 소개를 부탁드립니다.",
+        "qEn": "Please introduce your team.",
+        "a": "차량 개발 전 단계에 걸쳐 고객이 만족할 수 있는 설계 품질을 확보하기 위해 다양한 전문 기법을 활용하여 문제를 예방하고, 발생한 이슈를 빠르게 해결하는 역할을 합니다.\n\nProduct Excellence Team은 GM Technical Center Korea에서 신차 개발과 런치 전 과정을 관통하는 “품질·프로세스 허브” 역할을 수행합니다. 쉽게 말해, 각 기능 조직이 원활하게 개발을 진행할 수 있도록 프로그램 전체를 위에서 내려다보며 리스크를 조기에 발견하고, 데이터와 프로세스를 기반으로 해결을 이끄는 팀입니다.\n\n이 과정에서 OPEX, DFSS, Red-X와 같은 문제 해결 및 프로세스 개선 방법론을 활용해 근본 원인을 해결하고, 개발 초기부터 양산 이후 품질 개선까지 전 단계에 걸쳐 품질과 생산성을 높이는 역할도 함께 수행하고 있습니다.",
+        "aKr": "차량 개발 전 단계에 걸쳐 고객이 만족할 수 있는 설계 품질을 확보하기 위해 다양한 전문 기법을 활용하여 문제를 예방하고, 발생한 이슈를 빠르게 해결하는 역할을 합니다.\n\nProduct Excellence Team은 GM Technical Center Korea에서 신차 개발과 런치 전 과정을 관통하는 “품질·프로세스 허브” 역할을 수행합니다. 쉽게 말해, 각 기능 조직이 원활하게 개발을 진행할 수 있도록 프로그램 전체를 위에서 내려다보며 리스크를 조기에 발견하고, 데이터와 프로세스를 기반으로 해결을 이끄는 팀입니다.\n\n이 과정에서 OPEX, DFSS, Red-X와 같은 문제 해결 및 프로세스 개선 방법론을 활용해 근본 원인을 해결하고, 개발 초기부터 양산 이후 품질 개선까지 전 단계에 걸쳐 품질과 생산성을 높이는 역할도 함께 수행하고 있습니다.",
+        "aEn": "Across vehicle development, we use specialized methods to prevent issues and resolve them quickly so customers get design quality they can trust.\n\nThe Product Excellence Team is a quality-and-process hub for new-vehicle development and launch at GM Technical Center Korea—seeing the whole program from above so functional teams can execute smoothly, finding risk early, and driving resolution with data and process.\n\nWe also use methodologies such as OPEX, DFSS, and Red-X to fix root causes and raise quality and productivity from early development through post-launch improvement."
+      },
+      {
+        "q": "업무 수행에 필요한 역량은 무엇이라고 생각하시나요?",
+        "qKr": "업무 수행에 필요한 역량은 무엇이라고 생각하시나요?",
+        "qEn": "What competencies do you think are essential for this work?",
+        "a": "공학 계열 전공자라면 기본적인 기술 이해를 바탕으로 업무에 충분히 도전할 수 있다고 생각합니다. 여기에 더해 품질과 프로세스 개선에 대한 기본 개념을 이해하고 있다면 업무 수행에 큰 도움이 됩니다.\n\n또한 복잡한 정보를 구조화해 핵심을 정리하는 분석력과, “왜 이런 이슈가 발생했고 무엇부터 개선해야 하는지”를 고민하는 문제 해결력이 중요합니다. 특히 OPEX나 DFSS, Red-X 활동에서는 데이터를 기반으로 원인을 분석하고 개선 방향을 도출하는 역량이 필수적입니다.\n\n여러 조직과 협업하는 업무인 만큼 자신의 생각을 명확하게 설명하고 상대의 의견을 듣는 커뮤니케이션과 협업 능력 역시 중요한 역량이라고 생각합니다.",
+        "aKr": "공학 계열 전공자라면 기본적인 기술 이해를 바탕으로 업무에 충분히 도전할 수 있다고 생각합니다. 여기에 더해 품질과 프로세스 개선에 대한 기본 개념을 이해하고 있다면 업무 수행에 큰 도움이 됩니다.\n\n또한 복잡한 정보를 구조화해 핵심을 정리하는 분석력과, “왜 이런 이슈가 발생했고 무엇부터 개선해야 하는지”를 고민하는 문제 해결력이 중요합니다. 특히 OPEX나 DFSS, Red-X 활동에서는 데이터를 기반으로 원인을 분석하고 개선 방향을 도출하는 역량이 필수적입니다.\n\n여러 조직과 협업하는 업무인 만큼 자신의 생각을 명확하게 설명하고 상대의 의견을 듣는 커뮤니케이션과 협업 능력 역시 중요한 역량이라고 생각합니다.",
+        "aEn": "If you have an engineering background, a solid technical foundation is enough to take on the work. A basic grasp of quality and process improvement also helps a lot.\n\nYou need analytical skill to structure complex information and problem-solving discipline to ask why an issue happened and what to fix first. In OPEX, DFSS, and Red-X, data-driven root-cause analysis and improvement direction are essential.\n\nBecause we collaborate across organizations, clear communication and real listening matter just as much."
+      },
+      {
+        "q": "팀 문화나 함께 일하는 동료들은 어떤가요?",
+        "qKr": "팀 문화나 함께 일하는 동료들은 어떤가요?",
+        "qEn": "What is the team culture like, and what are your colleagues like?",
+        "a": "데이터와 프로세스를 중시하는 팀이지만 분위기는 생각보다 따뜻하고 서로 도와주는 편입니다. 다양한 경력과 배경을 가진 동료들이 함께 일하고 있어, 업무 중 궁금한 점이 생기면 단순히 답만 알려주는 것이 아니라 실제 경험과 사례를 함께 공유해 주는 경우가 많습니다.\n\n또 직급이나 경력에 크게 구애받지 않고 누구든 의견을 낼 수 있는 수평적이고 자유로운 분위기라, 새로운 아이디어나 개선 제안에도 비교적 열린 편입니다. 신입이거나 경험이 많지 않더라도 의견을 내고 직접 시도해 볼 기회가 많아 배우면서 동시에 기여할 수 있는 환경이라고 느끼고 있습니다.\n\n특히 글로벌 회사인 만큼 다양한 국적과 문화적 배경을 가진 동료들과 함께 일할 수 있어 서로 다른 관점을 배우며 일할 수 있다는 점도 팀의 큰 장점이라고 생각합니다.",
+        "aKr": "데이터와 프로세스를 중시하는 팀이지만 분위기는 생각보다 따뜻하고 서로 도와주는 편입니다. 다양한 경력과 배경을 가진 동료들이 함께 일하고 있어, 업무 중 궁금한 점이 생기면 단순히 답만 알려주는 것이 아니라 실제 경험과 사례를 함께 공유해 주는 경우가 많습니다.\n\n또 직급이나 경력에 크게 구애받지 않고 누구든 의견을 낼 수 있는 수평적이고 자유로운 분위기라, 새로운 아이디어나 개선 제안에도 비교적 열린 편입니다. 신입이거나 경험이 많지 않더라도 의견을 내고 직접 시도해 볼 기회가 많아 배우면서 동시에 기여할 수 있는 환경이라고 느끼고 있습니다.\n\n특히 글로벌 회사인 만큼 다양한 국적과 문화적 배경을 가진 동료들과 함께 일할 수 있어 서로 다른 관점을 배우며 일할 수 있다는 점도 팀의 큰 장점이라고 생각합니다.",
+        "aEn": "We care about data and process, but the mood is warmer and more supportive than you might expect. With diverse experience and backgrounds, people often share real stories—not just answers—when you ask questions.\n\nIt’s fairly flat: rank doesn’t block ideas, and the team is open to new suggestions. Even early-career colleagues get chances to speak up and try things, so you can learn and contribute at the same time.\n\nAs a global company, working with colleagues from many nationalities and cultures is another big strength—you keep learning different perspectives."
+      },
+      {
+        "q": "내게 GMTCK란?",
+        "qKr": "내게 GMTCK란?",
+        "qEn": "What does GMTCK mean to you?",
+        "a": "글로벌 완성차 개발과 품질에 직접 연결된 일을 하면서도, 스스로 성장할 수 있는 과제가 끊이지 않는 곳이라고 생각합니다. 단순히 부품이나 한 영역이 아니라 한 대의 차량과 고객 경험까지 함께 고민하며 일할 수 있고, 내가 만든 작은 개선 하나가 실제 양산 차량과 고객에게 전달되는 경험을 할 수 있다는 점에서 의미가 큽니다.\n\n그래서 GMTCK는 엔지니어로서 성장하면서 실제 고객 가치에 기여하고 있다는 것을 느낄 수 있는 곳이라고 생각합니다.",
+        "aKr": "글로벌 완성차 개발과 품질에 직접 연결된 일을 하면서도, 스스로 성장할 수 있는 과제가 끊이지 않는 곳이라고 생각합니다. 단순히 부품이나 한 영역이 아니라 한 대의 차량과 고객 경험까지 함께 고민하며 일할 수 있고, 내가 만든 작은 개선 하나가 실제 양산 차량과 고객에게 전달되는 경험을 할 수 있다는 점에서 의미가 큽니다.\n\n그래서 GMTCK는 엔지니어로서 성장하면서 실제 고객 가치에 기여하고 있다는 것을 느낄 수 있는 곳이라고 생각합니다.",
+        "aEn": "To me, GMTCK is where work ties directly to global vehicle development and quality, yet there’s always another challenge to grow on. It’s not just one part or component—you think about the whole vehicle and the customer experience, and even a small improvement can reach production vehicles and real customers.\n\nSo GMTCK is a place where I can grow as an engineer and still feel I’m contributing to customer value."
+      }
+    ]
+  },
+  "ee-quality": {
+    "questions": [
+      {
+        "q": "PQDQ 담당 소개와 현재 담당 업무를 구체적으로 알려주세요.",
+        "qKr": "PQDQ 담당 소개와 현재 담당 업무를 구체적으로 알려주세요.",
+        "qEn": "Please introduce the PQDQ role and describe your current responsibilities in detail.",
+        "a": "네, 저는 Perceptual Quality & Design Quality, 보통 PQDQ라고 부르는 업무를 담당하고 있습니다. 한마디로 말하면, 고객이 차를 봤을 때와 타봤을 때 느끼는 보이는 품질과 디자인 완성도를 끝까지 챙기는 일이라고 보시면 됩니다.\n\n조금 더 풀어서 말씀드리면, 외장과 내장의 갭·플러시나 표면 형상, 광택, 재질 같은 것들이 다 PQDQ의 범위 안에 들어가요. 디지털 설계 단계에서부터 양산 직전까지 계속 데이터를 보면서 \"이 부분은 고객 눈에 어떻게 보일까?\", \"이 정도 갭과 형상이면 고급스럽게 느껴질까?\" 같은 질문을 스스로에게 계속 던지면서 이슈를 찾고, 그걸 어떻게 개선하면 좋을지 각 팀과 함께 논의합니다.\n\n또 제가 하는 일 중에 중요한 축이 Virtual Vehicle, 즉 디지털 차량을 만드는 일입니다. Autodesk VRED와 Unreal Engine을 활용해 실제 차량과 높은 일치도를 갖는 고정밀 Virtual Vehicle을 구축하고, 이 디지털 자산을 기반으로 PQDQ 관점의 정량·정성 평가를 수행합니다. 재질과 색, 조명, 주변 환경까지 설정해서 설계 단계에서부터 마치 완성차를 눈앞에 두고 보는 것처럼 만들어 놓고, 그 상태에서 품질을 미리 보는 거죠.\n\n이렇게 가상 평가를 하면서 동시에 경쟁 차종과의 벤치마킹도 하고, PQDQ 가이드라인과 체크리스트를 정리합니다. 평가 결과는 Excel VBA나 Python 스크립트, 그리고 생성형 AI 도구를 활용해서 자동으로 정리되도록 만들어 두고 있고요. 이런 것들을 묶어서 설계·디자인·제조 부문이 더 좋은 결정을 할 수 있도록 지원하는 역할을 하고 있습니다.",
+        "aKr": "네, 저는 Perceptual Quality & Design Quality, 보통 PQDQ라고 부르는 업무를 담당하고 있습니다. 한마디로 말하면, 고객이 차를 봤을 때와 타봤을 때 느끼는 보이는 품질과 디자인 완성도를 끝까지 챙기는 일이라고 보시면 됩니다.\n\n조금 더 풀어서 말씀드리면, 외장과 내장의 갭·플러시나 표면 형상, 광택, 재질 같은 것들이 다 PQDQ의 범위 안에 들어가요. 디지털 설계 단계에서부터 양산 직전까지 계속 데이터를 보면서 \"이 부분은 고객 눈에 어떻게 보일까?\", \"이 정도 갭과 형상이면 고급스럽게 느껴질까?\" 같은 질문을 스스로에게 계속 던지면서 이슈를 찾고, 그걸 어떻게 개선하면 좋을지 각 팀과 함께 논의합니다.\n\n또 제가 하는 일 중에 중요한 축이 Virtual Vehicle, 즉 디지털 차량을 만드는 일입니다. Autodesk VRED와 Unreal Engine을 활용해 실제 차량과 높은 일치도를 갖는 고정밀 Virtual Vehicle을 구축하고, 이 디지털 자산을 기반으로 PQDQ 관점의 정량·정성 평가를 수행합니다. 재질과 색, 조명, 주변 환경까지 설정해서 설계 단계에서부터 마치 완성차를 눈앞에 두고 보는 것처럼 만들어 놓고, 그 상태에서 품질을 미리 보는 거죠.\n\n이렇게 가상 평가를 하면서 동시에 경쟁 차종과의 벤치마킹도 하고, PQDQ 가이드라인과 체크리스트를 정리합니다. 평가 결과는 Excel VBA나 Python 스크립트, 그리고 생성형 AI 도구를 활용해서 자동으로 정리되도록 만들어 두고 있고요. 이런 것들을 묶어서 설계·디자인·제조 부문이 더 좋은 결정을 할 수 있도록 지원하는 역할을 하고 있습니다.",
+        "aEn": "I work on Perceptual Quality & Design Quality—PQDQ for short. In one line, we take ownership of the visible quality and design finish customers see and feel when they look at and sit in the vehicle.\n\nMore specifically, exterior/interior gaps and flush, surface form, gloss, materials, and more fall in scope. From digital design through pre-production we keep asking how a gap or surface will read to the customer, find issues, and work with each team on how to improve.\n\nA major pillar is Virtual Vehicle—building a high-fidelity digital twin with Autodesk VRED and Unreal Engine, then running quantitative and qualitative PQDQ assessments on that asset—materials, color, lighting, environment—so we can “see” a near-production vehicle early.\n\nAlongside virtual reviews we benchmark competitors, maintain PQDQ guidelines and checklists, and automate reporting with Excel VBA, Python, and generative AI tools—supporting design, design engineering, and manufacturing to make better decisions."
+      },
+      {
+        "q": "팀 소개를 부탁드립니다.",
+        "qKr": "팀 소개를 부탁드립니다.",
+        "qEn": "Please introduce your team.",
+        "a": "제가 속한 팀은 PQDQ Engineering Excellence / Quality & Reliability Engineering 조직입니다. 이름이 좀 긴데, 쉽게 말씀드리면 \"보이는 품질과 설계 품질의 기준을 만들고, 그 기준이 실제 차량에 잘 구현되도록 처음부터 끝까지 따라가는 팀\"이라고 생각하시면 됩니다.\n\n신차 한 대가 태어나는 전 과정을 쭉 따라가면서, PQDQ 관점에서 가이드라인을 만들고, 가상 평가와 실차 평가를 하고, 경쟁사와 자사 차량을 비교해서 벤치마킹도 하고, 그 과정에서 나오는 품질 이슈들을 정리하고 교육까지 연결하는 역할을 합니다. 디자인, 설계, 제조, 품질, 심지어 마케팅과도 이야기를 나눌 때가 있어서, 여러 조직 사이의 허브에 가까운 팀이라고 보시면 될 것 같아요.\n\n요즘은 여기에 디지털 쪽 역할이 더해져서, Autodesk VRED와 Unreal Engine으로 Virtual Vehicle을 구축하고 유지·관리하는 일도 팀의 중요한 업무입니다. 가상 환경에서 고객 시점으로 미리 차를 들여다보면서 양산 전에 꼭 손봐야 하는 부분들을 먼저 찾아내고, 그 내용을 각 팀과 공유해서 GMTCK 차량의 외관·내관 품질 수준을 끌어올리는 역할을 하고 있습니다.",
+        "aKr": "제가 속한 팀은 PQDQ Engineering Excellence / Quality & Reliability Engineering 조직입니다. 이름이 좀 긴데, 쉽게 말씀드리면 \"보이는 품질과 설계 품질의 기준을 만들고, 그 기준이 실제 차량에 잘 구현되도록 처음부터 끝까지 따라가는 팀\"이라고 생각하시면 됩니다.\n\n신차 한 대가 태어나는 전 과정을 쭉 따라가면서, PQDQ 관점에서 가이드라인을 만들고, 가상 평가와 실차 평가를 하고, 경쟁사와 자사 차량을 비교해서 벤치마킹도 하고, 그 과정에서 나오는 품질 이슈들을 정리하고 교육까지 연결하는 역할을 합니다. 디자인, 설계, 제조, 품질, 심지어 마케팅과도 이야기를 나눌 때가 있어서, 여러 조직 사이의 허브에 가까운 팀이라고 보시면 될 것 같아요.\n\n요즘은 여기에 디지털 쪽 역할이 더해져서, Autodesk VRED와 Unreal Engine으로 Virtual Vehicle을 구축하고 유지·관리하는 일도 팀의 중요한 업무입니다. 가상 환경에서 고객 시점으로 미리 차를 들여다보면서 양산 전에 꼭 손봐야 하는 부분들을 먼저 찾아내고, 그 내용을 각 팀과 공유해서 GMTCK 차량의 외관·내관 품질 수준을 끌어올리는 역할을 하고 있습니다.",
+        "aEn": "I’m in PQDQ Engineering Excellence / Quality & Reliability Engineering. In plain terms, we set standards for visible and design quality and follow them end-to-end so they show up on the real vehicle.\n\nAcross the full vehicle birth process we build PQDQ guidelines, run virtual and physical evaluations, benchmark competitors and in-house vehicles, consolidate quality issues, and connect to training. We talk with design, engineering, manufacturing, quality—even marketing sometimes—so we operate like a hub between organizations.\n\nDigitally, we also build and maintain Virtual Vehicles in Autodesk VRED and Unreal—finding what must be fixed before production from a customer viewpoint and sharing that broadly to lift exterior and interior quality at GMTCK."
+      },
+      {
+        "q": "업무 수행에 필요한 역량은 무엇이라고 생각하시나요?",
+        "qKr": "업무 수행에 필요한 역량은 무엇이라고 생각하시나요?",
+        "qEn": "What competencies do you think are essential for this work?",
+        "a": "저는 이 일을 하면서 \"이 세 가지는 정말 중요하다\"라고 느끼는 게 있습니다.\n\n첫 번째는 관찰력과 디자인 감각입니다. 같은 2~3mm 차이라도 어떤 부위냐에 따라서 고객이 느끼는 정도가 완전히 달라지기 때문에, 단순히 수치만 보는 게 아니라 그 수치가 고객 눈에 어떻게 비칠지 상상해 보는 능력이 필요합니다. \"이 위치에서 이 정도 갭이면 고객은 이렇게 느끼겠구나\"라는 그림이 머릿속에 그려져야 합니다.\n\n두 번째는 커뮤니케이션과 조율 능력이에요. PQDQ 이슈는 항상 디자인, 설계, 제조, 원가가 다 얽혀 있습니다. 어느 한쪽 입장만 이야기하면 해결이 잘 안 되거든요. 그래서 각 부서의 제약과 입장을 이해하면서도, PQDQ 관점에서 필요한 수준을 데이터와 기준을 바탕으로 설명하고, 현실적인 접점을 찾는 과정이 꼭 필요합니다. \"감이 그렇다\"가 아니라, 벤치마킹 사례나 가이드라인, 고객 관점에서의 이유를 같이 설명해 드리는 식으로요.\n\n세 번째는 디지털과 데이터 도구를 다루는 능력입니다. Excel이나 VBA, 간단한 Python·스크립트, VRED와 Unreal 같은 3D/VR 툴, 그리고 생성형 AI 도구들을 어느 정도 편하게 다루실 수 있으면 업무 효율이 굉장히 좋아집니다. 사람이 하지 않아도 되는 반복 작업은 도구가 대신하고, 사람은 정말 중요한 판단과 커뮤니케이션에 집중하는 구조를 만드는 게 요즘 업무 흐름이라고 보시면 될 것 같습니다.",
+        "aKr": "저는 이 일을 하면서 \"이 세 가지는 정말 중요하다\"라고 느끼는 게 있습니다.\n\n첫 번째는 관찰력과 디자인 감각입니다. 같은 2~3mm 차이라도 어떤 부위냐에 따라서 고객이 느끼는 정도가 완전히 달라지기 때문에, 단순히 수치만 보는 게 아니라 그 수치가 고객 눈에 어떻게 비칠지 상상해 보는 능력이 필요합니다. \"이 위치에서 이 정도 갭이면 고객은 이렇게 느끼겠구나\"라는 그림이 머릿속에 그려져야 합니다.\n\n두 번째는 커뮤니케이션과 조율 능력이에요. PQDQ 이슈는 항상 디자인, 설계, 제조, 원가가 다 얽혀 있습니다. 어느 한쪽 입장만 이야기하면 해결이 잘 안 되거든요. 그래서 각 부서의 제약과 입장을 이해하면서도, PQDQ 관점에서 필요한 수준을 데이터와 기준을 바탕으로 설명하고, 현실적인 접점을 찾는 과정이 꼭 필요합니다. \"감이 그렇다\"가 아니라, 벤치마킹 사례나 가이드라인, 고객 관점에서의 이유를 같이 설명해 드리는 식으로요.\n\n세 번째는 디지털과 데이터 도구를 다루는 능력입니다. Excel이나 VBA, 간단한 Python·스크립트, VRED와 Unreal 같은 3D/VR 툴, 그리고 생성형 AI 도구들을 어느 정도 편하게 다루실 수 있으면 업무 효율이 굉장히 좋아집니다. 사람이 하지 않아도 되는 반복 작업은 도구가 대신하고, 사람은 정말 중요한 판단과 커뮤니케이션에 집중하는 구조를 만드는 게 요즘 업무 흐름이라고 보시면 될 것 같습니다.",
+        "aEn": "Three things stand out to me.\n\nFirst, observation and design sensibility—even a 2–3 mm difference reads differently by location, so you must imagine how numbers look to the customer, not just read the number.\n\nSecond, communication and alignment. PQDQ sits across design, engineering, manufacturing, and cost—one-sided views rarely fix issues. You need to explain PQDQ needs with data and benchmarks and find workable trade-offs—not “because it feels off.”\n\nThird, digital and data fluency—Excel/VBA, light Python, VRED/Unreal, generative AI. Automate repetition; focus people on judgment and dialogue—that’s how the work flows today."
+      },
+      {
+        "q": "팀 문화나 함께 일하는 동료들은 어떤가요?",
+        "qKr": "팀 문화나 함께 일하는 동료들은 어떤가요?",
+        "qEn": "What is the team culture like, and what are your colleagues like?",
+        "a": "우리 팀 분위기를 한 문장으로 표현하자면, \"차를 좋아하고 디테일을 좋아하는 사람들이 모여 있는 팀\"이라고 말씀드리고 싶어요. 아주 작은 갭 차이나 미세한 표면 변화도 그냥 지나치지 않고 \"이건 왜 이렇게 보이지?\" 하고 끝까지 파고드는 성향을 가진 분들이 많습니다. 그렇다고 서로만의 세계에 갇혀 있는 건 아니고, 오히려 지식과 도구를 아끼지 않고 공유하는 문화가 잘 자리 잡혀 있습니다.\n\n팀원들의 배경도 꽤 다양합니다. Unreal Engine이나 Unity 같은 실시간 엔진 경험이 있는 분도 있고, Python이나 C++ 쪽으로 깊은 경험을 가진 분들도 함께 일하고 있어서, 각자의 전문성을 바탕으로 PQDQ와 디지털 개발 과제를 같이 풀어가는 구조입니다. 이런 배경 덕분에 매주 Knowledge Sharing 시간을 따로 정해서, 본인이 하고 있는 일이나 새로 배운 툴, 업무에 적용해 본 사례들을 서로 공유하는 시간을 갖고 있습니다. 저도 그 시간을 통해 다른 분들이 쓰는 방식이나 생각을 많이 배우고 있어요.\n\n전반적인 분위기는 직급이나 연차보다는 의견과 데이터를 중심으로 대화하는 편이고, 아이디어가 있으면 누구나 편하게 꺼낼 수 있습니다. \"이거 한번 시도해 보면 어떨까요?\"라고 이야기하면, 다 같이 장단점을 검토해 보고 작게라도 실험해 보는 식이에요. 바쁜 일정 속에서도 서로의 강점과 스타일을 잘 알고 도와주는 문화가 있어서, 실제로 일하다 보면 혼자서 버티는 느낌보다는 같이 문제를 풀어가는 느낌이 훨씬 강합니다.",
+        "aKr": "우리 팀 분위기를 한 문장으로 표현하자면, \"차를 좋아하고 디테일을 좋아하는 사람들이 모여 있는 팀\"이라고 말씀드리고 싶어요. 아주 작은 갭 차이나 미세한 표면 변화도 그냥 지나치지 않고 \"이건 왜 이렇게 보이지?\" 하고 끝까지 파고드는 성향을 가진 분들이 많습니다. 그렇다고 서로만의 세계에 갇혀 있는 건 아니고, 오히려 지식과 도구를 아끼지 않고 공유하는 문화가 잘 자리 잡혀 있습니다.\n\n팀원들의 배경도 꽤 다양합니다. Unreal Engine이나 Unity 같은 실시간 엔진 경험이 있는 분도 있고, Python이나 C++ 쪽으로 깊은 경험을 가진 분들도 함께 일하고 있어서, 각자의 전문성을 바탕으로 PQDQ와 디지털 과제를 같이 풀어가는 구조입니다. 이런 배경 덕분에 매주 Knowledge Sharing 시간을 따로 정해서, 본인이 하고 있는 일이나 새로 배운 툴, 업무에 적용해 본 사례들을 서로 공유하는 시간을 갖고 있습니다. 저도 그 시간을 통해 다른 분들이 쓰는 방식이나 생각을 많이 배우고 있어요.\n\n전반적인 분위기는 직급이나 연차보다는 의견과 데이터를 중심으로 대화하는 편이고, 아이디어가 있으면 누구나 편하게 꺼낼 수 있습니다. \"이거 한번 시도해 보면 어떨까요?\"라고 이야기하면, 다 같이 장단점을 검토해 보고 작게라도 실험해 보는 식이에요. 바쁜 일정 속에서도 서로의 강점과 스타일을 잘 알고 도와주는 문화가 있어서, 실제로 일하다 보면 혼자서 버티는 느낌보다는 같이 문제를 풀어가는 느낌이 훨씬 강합니다.",
+        "aEn": "One line: people who love cars and love details. Small gap differences or subtle surface changes rarely get waved off—people dig in and ask why it looks that way, yet knowledge and tools are shared generously.\n\nBackgrounds vary—real-time engine experience (Unreal/Unity), deep Python/C++, and we tackle PQDQ and digital work together. Weekly knowledge-sharing covers tools, cases, and how people work—I learn a lot there.\n\nConversation centers on ideas and data more than title or tenure; anyone can propose something. “Let’s try this” turns into a quick pros/cons review and a small experiment. Even when busy, we know each other’s strengths—it feels like solving problems together, not alone."
+      },
+      {
+        "q": "내게 GMTCK란?",
+        "qKr": "내게 GMTCK란?",
+        "qEn": "What does GMTCK mean to you?",
+        "a": "저한테 GMTCK는 \"고객이 느끼는 품질을 실제 차량으로 구현해 보는 실험실이자, 계속 성장할 수 있는 무대\"에 가깝습니다.\n\nVirtual Vehicle에서 시작한 작은 아이디어가 실제 양산차에 반영되는 과정을 볼 수 있고, 그 결과에 대한 고객 반응까지 점점 연결돼 가는 걸 체감할 수 있기 때문에, 매일이 도전이면서 동시에 공부하는 시간이라고 느끼고 있습니다. 전 세계 어디에 내놓아도 경쟁력 있는 품질을 만들기 위해, 오늘도 작은 디테일 하나를 두고 여러 팀과 같이 고민하게 해 주는 그런 곳이 바로 GMTCK라고 생각합니다.",
+        "aKr": "저한테 GMTCK는 \"고객이 느끼는 품질을 실제 차량으로 구현해 보는 실험실이자, 계속 성장할 수 있는 무대\"에 가깝습니다.\n\nVirtual Vehicle에서 시작한 작은 아이디어가 실제 양산차에 반영되는 과정을 볼 수 있고, 그 결과에 대한 고객 반응까지 점점 연결돼 가는 걸 체감할 수 있기 때문에, 매일이 도전이면서 동시에 공부하는 시간이라고 느끼고 있습니다. 전 세계 어디에 내놓아도 경쟁력 있는 품질을 만들기 위해, 오늘도 작은 디테일 하나를 두고 여러 팀과 같이 고민하게 해 주는 그런 곳이 바로 GMTCK라고 생각합니다.",
+        "aEn": "GMTCK is a lab where perceived quality becomes real metal—and a stage where I can keep growing.\n\nIdeas that start in Virtual Vehicle show up on production cars; you can feel the line to customer response. Every day is challenge and learning—working small details with many teams to build globally competitive quality—that’s GMTCK to me."
+      }
+    ]
+  },
+  "ee-ai-chief": {
+    "questions": [
+      {
+        "q": "현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qKr": "현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        "qEn": "Please describe your current responsibilities in detail.",
+        "a": "새롭게 신설된 Chief, AI & New Technology로서, 전사적인 관점에서 AI 도입과 실행 체계를 체계적으로 구축·운영하며, AI를 활용해 차량 개발 전 과정의 업무 프레임을 혁신하고 효율성을 극대화할 수 있도록 교육, 조직 문화 조성, 핵심 과제 도출 및 실행 전략 수립, 그리고 거버넌스 역할을 담당하고 있습니다.",
+        "aKr": "새롭게 신설된 Chief, AI & New Technology로서, 전사적인 관점에서 AI 도입과 실행 체계를 체계적으로 구축·운영하며, AI를 활용해 차량 개발 전 과정의 업무 프레임을 혁신하고 효율성을 극대화할 수 있도록 교육, 조직 문화 조성, 핵심 과제 도출 및 실행 전략 수립, 그리고 거버넌스 역할을 담당하고 있습니다.",
+        "aEn": "As the newly established Chief, AI & New Technology, I build and operate company-wide AI adoption and execution—education, culture, prioritization and strategy, and governance—so AI can transform how we work across vehicle development and maximize efficiency."
+      },
+      {
+        "q": "팀 소개를 부탁드립니다.",
+        "qKr": "팀 소개를 부탁드립니다.",
+        "qEn": "Please introduce your team.",
+        "a": "Chief AI는 Innovation, Virtual Engineering, IT, Immersive Technology 분야의 전문가들로 구성된 AI Core Team을 이끌며, GMTCK 전반의 AI 전략 수립과 실행을 담당하고 있습니다. 팀의 미션은 \"더 빠르고 스마트한 차량 개발을 가능하게 하는 AI 및 신기술 전략을 추진하는 것\"입니다. 단순히 새로운 기술을 도입하는 데 그치지 않고, AI를 통해 엔지니어링 업무 방식 자체를 혁신하는 것을 목표로 하고 있습니다. 이를 위해 GMTCK 임직원이 AI를 일상 업무 속에서 자연스럽게 활용할 수 있도록 전방위적인 지원을 이어가고 있습니다.",
+        "aKr": "Chief AI는 Innovation, Virtual Engineering, IT, Immersive Technology 분야의 전문가들로 구성된 AI Core Team을 이끌며, GMTCK 전반의 AI 전략 수립과 실행을 담당하고 있습니다. 팀의 미션은 \"더 빠르고 스마트한 차량 개발을 가능하게 하는 AI 및 신기술 전략을 추진하는 것\"입니다. 단순히 새로운 기술을 도입하는 데 그치지 않고, AI를 통해 엔지니어링 업무 방식 자체를 혁신하는 것을 목표로 하고 있습니다. 이를 위해 GMTCK 임직원이 AI를 일상 업무 속에서 자연스럽게 활용할 수 있도록 전방위적인 지원을 이어가고 있습니다.",
+        "aEn": "Chief AI leads an AI Core Team spanning Innovation, Virtual Engineering, IT, and Immersive Technology—setting and executing AI strategy across GMTCK. Our mission is to advance AI and new-technology strategies that enable faster, smarter vehicle development—not just adopting tools, but changing how engineering works—with broad support so GMTCK employees use AI naturally in daily work."
+      },
+      {
+        "q": "업무 수행에 필요한 역량은 무엇이라고 생각하시나요?",
+        "qKr": "업무 수행에 필요한 역량은 무엇이라고 생각하시나요?",
+        "qEn": "What competencies do you think are essential for this work?",
+        "a": "가장 중요한 역량은 \"호기심과 기술의 융합 능력\"이라고 생각합니다. AI 기술은 매우 빠르게 진화하기 때문에, 새로운 기술에 대한 지속적인 호기심이 필수적입니다. 동시에 \"이 기술이 실제 엔지니어링 현장에서 어떤 가치를 만들 수 있을까?\"를 끊임없이 고민해야 합니다.\n\n또한 AI Core Team은 기술 자체만을 다루는 조직이 아닙니다. AI 기술과 현업의 과제를 연결하고, 사람과 사람, 데이터와 의사결정을 연결하는 역할을 합니다. 이를 위해 기술 이해력과 함께 각 조직의 업무를 이해하고 소통하는 역량이 중요하며, 이러한 연결을 통해 도메인 지식과 AI의 융합을 추구하고 있습니다.",
+        "aKr": "가장 중요한 역량은 \"호기심과 기술의 융합 능력\"이라고 생각합니다. AI 기술은 매우 빠르게 진화하기 때문에, 새로운 기술에 대한 지속적인 호기심이 필수적입니다. 동시에 \"이 기술이 실제 엔지니어링 현장에서 어떤 가치를 만들 수 있을까?\"를 끊임없이 고민해야 합니다.\n\n또한 AI Core Team은 기술 자체만을 다루는 조직이 아닙니다. AI 기술과 현업의 과제를 연결하고, 사람과 사람, 데이터와 의사결정을 연결하는 역할을 합니다. 이를 위해 기술 이해력과 함께 각 조직의 업무를 이해하고 소통하는 역량이 중요하며, 이러한 연결을 통해 도메인 지식과 AI의 융합을 추구하고 있습니다.",
+        "aEn": "Curiosity and the ability to fuse technologies matter most—AI moves fast, so you must stay curious and constantly ask what value a technology creates in real engineering work.\n\nWe’re not a tech-only team—we connect AI to business problems, people to people, data to decisions. Technical literacy plus understanding how each organization works, and communicating across them, is how we blend domain knowledge with AI."
+      },
+      {
+        "q": "팀 문화나 함께 일하시는 동료들은 어떤가요?",
+        "qKr": "팀 문화나 함께 일하시는 동료들은 어떤가요?",
+        "qEn": "What is the team culture like, and what are your colleagues like?",
+        "a": "AI Core Team의 가장 큰 특징은 서로 다른 조직과 전문 영역에 속한 구성원들이 하나의 목표 아래 긴밀하게 협업한다는 점입니다. CAE, AI/ML, Data Science, IT, Innovation 분야의 전문가들이 모여 각자의 시각과 경험을 공유하며, \"AI로 GMTCK를 혁신한다\"는 공통의 목표를 향해 함께 일하고 있습니다. 다양한 배경에서 나오는 아이디어들이 자연스럽게 결합되면서, 기술적 깊이와 현업 감각, 그리고 미래를 바라보는 시야가 균형 있게 어우러지는 것이 팀의 가장 큰 강점입니다.",
+        "aKr": "AI Core Team의 가장 큰 특징은 서로 다른 조직과 전문 영역에 속한 구성원들이 하나의 목표 아래 긴밀하게 협업한다는 점입니다. CAE, AI/ML, Data Science, IT, Innovation 분야의 전문가들이 모여 각자의 시각과 경험을 공유하며, \"AI로 GMTCK를 혁신한다\"는 공통의 목표를 향해 함께 일하고 있습니다. 다양한 배경에서 나오는 아이디어들이 자연스럽게 결합되면서, 기술적 깊이와 현업 감각, 그리고 미래를 바라보는 시야가 균형 있게 어우러지는 것이 팀의 가장 큰 강점입니다.",
+        "aEn": "We bring people from different organizations and disciplines under one goal—CAE, AI/ML, data science, IT, innovation—sharing views and experience toward “AI that transforms GMTCK.” Ideas combine naturally; depth, field sense, and forward vision balance out—that’s our strength."
+      },
+      {
+        "q": "내게 GMTCK란?",
+        "qKr": "내게 GMTCK란?",
+        "qEn": "What does GMTCK mean to you?",
+        "a": "저에게 GMTCK는 \"열정의 가능성을 보여주는 플랫폼\"입니다. GMTCK는 글로벌 GM의 핵심 테크니컬 센터이면서도, 새로운 시도와 변화를 적극적으로 받아들이는 조직입니다. AI 전략을 본격적으로 추진하는 과정에서, 엔지니어들이 자발적으로 AI 기술을 학습하고 프로젝트에 적용하는 모습을 보며 GMTCK가 가진 잠재력을 다시 한 번 느꼈습니다. 뛰어난 엔지니어링 도메인 전문성에 AI가 결합될 때, 단순한 업무 효율화를 넘어 차량 개발의 패러다임 자체를 바꿀 수 있다고 확신합니다.",
+        "aKr": "저에게 GMTCK는 \"열정의 가능성을 보여주는 플랫폼\"입니다. GMTCK는 글로벌 GM의 핵심 테크니컬 센터이면서도, 새로운 시도와 변화를 적극적으로 받아들이는 조직입니다. AI 전략을 본격적으로 추진하는 과정에서, 엔지니어들이 자발적으로 AI 기술을 학습하고 프로젝트에 적용하는 모습을 보며 GMTCK가 가진 잠재력을 다시 한 번 느꼈습니다. 뛰어난 엔지니어링 도메인 전문성에 AI가 결합될 때, 단순한 업무 효율화를 넘어 차량 개발의 패러다임 자체를 바꿀 수 있다고 확신합니다.",
+        "aEn": "GMTCK is a platform that shows what passion can become—a core GM technical center that embraces new ideas. Pushing AI strategy, I’ve watched engineers learn and apply AI on their own—that potential is real. When deep engineering domain meets AI, we can move past efficiency to change how vehicles are developed."
+      }
+    ]
   }
 }

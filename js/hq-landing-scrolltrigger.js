@@ -796,7 +796,7 @@
         if (qf > lastQuantumFloor) {
           applyQuantumFlips(lastQuantumFloor, qf);
           lastQuantumFloor = qf;
-        } else {
+      } else {
           lastQuantumFloor = Math.floor(accumulated / WHEEL_QUANTUM);
         }
         e.preventDefault();
@@ -932,7 +932,7 @@
         if (qfT > lastQuantumFloor) {
           applyQuantumFlips(lastQuantumFloor, qfT);
           lastQuantumFloor = qfT;
-        } else {
+      } else {
           lastQuantumFloor = Math.floor(accumulated / WHEEL_QUANTUM);
         }
         e.preventDefault();
@@ -1061,7 +1061,7 @@
 
     if (!preserve) {
       sectionComplete = false;
-      resetAccumulation();
+    resetAccumulation();
     } else {
       initIsColorArray();
     }

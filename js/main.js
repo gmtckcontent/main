@@ -349,13 +349,26 @@ function initInterviewsScrollReveal() {
       });
     },
     {
-      threshold: 0.08,
-      rootMargin: "0px 0px -20px 0px",
+      threshold: [0, 0.06, 0.14],
+      /* 뷰포트보다 약간 일찍 등장(스크롤 닿을 때 자연스럽게) */
+      rootMargin: "0px 0px 12% 0px",
     }
   );
 
+  /** 다인 캐러셀에서 비활성 슬라이드는 겹쳐 있어도 리빌 대상에서 제외 */
+  function isRevealTarget(el) {
+    const item = el.closest(".ve-interview-item");
+    if (!item) return true;
+    const stack = item.closest(".ve-interview-container--stack");
+    if (!stack) return true;
+    return item.classList.contains("is-carousel-active");
+  }
+
   function register(el) {
     if (!el || el.hasAttribute("data-reveal")) {
+      return;
+    }
+    if (!isRevealTarget(el)) {
       return;
     }
     el.setAttribute("data-reveal", "");
@@ -372,20 +385,23 @@ function initInterviewsScrollReveal() {
     el.classList.add("hq-reveal", "is-visible");
   }
 
-  function scan(root) {
+  const revealSelector =
+    ".interview-item, .interview-profile-header, .hq-content-title, .hq-division-card, .hq-content-description, .interview-question";
+
+  function scan(root, force) {
     if (!root) {
       return;
     }
-    root
-      .querySelectorAll(
-        ".interview-item, .interview-profile-header, .hq-content-title, .hq-division-card, .hq-content-description, .interview-question"
-      )
-      .forEach((el, i) => {
-        if (!el.hasAttribute("data-reveal")) {
-          el.style.setProperty("--reveal-delay", `${Math.min(i * 0.04, 0.35)}s`);
-        }
-        register(el);
-      });
+    root.querySelectorAll(revealSelector).forEach((el, i) => {
+      if (force) {
+        el.removeAttribute("data-reveal");
+        el.classList.remove("hq-reveal", "is-visible");
+      }
+      if (!el.hasAttribute("data-reveal")) {
+        el.style.setProperty("--reveal-delay", `${Math.min(i * 0.04, 0.35)}s`);
+      }
+      register(el);
+    });
   }
 
   registerChrome(document.querySelector(".hq-division-rail"));
@@ -394,6 +410,10 @@ function initInterviewsScrollReveal() {
 
   const main = document.querySelector(".hq-main-content");
   scan(main);
+
+  window.gmtckScanInterviewReveal = function (rootEl, opts) {
+    scan(rootEl, opts && opts.force === true);
+  };
 
   const mo = new MutationObserver(() => {
     scan(main);

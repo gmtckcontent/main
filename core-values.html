@@ -1,7 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko" class="core-values-page">
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5C6D295T8N"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5C6D295T8N"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -13,12 +16,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="./" />
-    <title>Core Values - GMTCK</title>
+    <title>TCK Vision - GMTCK</title>
     <meta
       name="description"
-      content="GMTCK Core Values — 5 Elements & 4 Strengths: Prepare for the future, Engineer with Simplicity, Innovation, and more."
+      content="GMTCK 2030 TCK Vision — Four pillars: Agility &amp; Excellence, Road to Virtual, Collaborative Ecosystem, People &amp; Culture."
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.css?v=120" />
+    <link rel="stylesheet" href="./css/history-timeline.css?v=18" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,9 +43,11 @@
           </a>
           <ul class="nav-menu" id="navMenu">
             <li>
-              <a href="index.html#about" data-kr="회사소개" data-en="About">About</a>
+              <a href="index.html#about" data-kr="회사소개" data-en="About"
+                >About</a
+              >
             </li>
-            <li>
+            <li class="nav-hide-production">
               <a
                 href="core-values.html"
                 class="active"
@@ -70,7 +76,7 @@
                 >News</a
               >
             </li>
-            <li class="nav-dropdown">
+            <li class="nav-dropdown nav-hide-production">
               <a
                 href="team-tck.html"
                 class="nav-dropdown-trigger"
@@ -137,37 +143,50 @@
       </div>
     </nav>
 
-    <section
-      class="cv-hero"
-      aria-label="Core Values hero"
-    >
+    <section class="cv-hero" aria-label="TCK Vision hero">
       <div
         class="cv-hero-media"
         style="
-          background-image: url('./images/func%20img/5b969b73-13ba-4eba-b794-b34000fc6eb5_996bdbfe-4f29-4317-b8e8-56ea00086699_Prev.png');
+          background-image: url(&quot;./images/func%20img/d927af7e-ee72-43ac-92a2-b34000fc59bf_e02c6628-294d-4df6-94dc-a5f791f1b320_Prev.png&quot;);
         "
         aria-hidden="true"
       ></div>
       <div class="cv-hero-scrim" aria-hidden="true"></div>
       <div class="container cv-hero-inner">
         <div class="cv-hero-text">
+          <p class="cv-hero-kicker" data-kr="TCK VISION" data-en="TCK VISION">
+            TCK VISION
+          </p>
           <h1
             class="cv-hero-title"
-            data-kr="한국에서 가장 가치 있는 기술 센터가 되기"
-            data-en="Be The Most Valued Technical Center in Korea"
+            data-kr="Be the Most Valued Technical Center in Korea"
+            data-en="Be the Most Valued Technical Center in Korea"
           >
-            Be The Most Valued Technical Center in Korea
+            한국에서 가장 가치 있는 테크니컬 센터로
           </h1>
-          <p
-            class="cv-hero-sub"
-            data-kr="GM Technical Center Korea가 지향하는 방향입니다."
-            data-en="The direction GM Technical Center Korea strives toward."
-          >
-            The direction GM Technical Center Korea strives toward.
-          </p>
         </div>
         <div class="cv-hero-pills">
-          <a href="#cv-el-heading" class="cv-hero-pill cv-hero-pill--solid">
+          <a href="#cv-dd-core-values" class="cv-hero-pill cv-hero-pill--solid">
+            <span data-kr="TCK 비전" data-en="TCK Vision">TCK Vision</span>
+            <svg
+              class="cv-hero-pill-chevron"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M6 9l6 6 6-6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <a href="#cv-el-heading" class="cv-hero-pill cv-hero-pill--glass">
             <span data-kr="5대 요소" data-en="5 Elements">5 Elements</span>
             <svg
               class="cv-hero-pill-chevron"
@@ -211,11 +230,264 @@
       </div>
     </section>
 
+    <!-- TCK Vision: 2030 vision intro + four pillars (lucide-style icons) -->
+    <section
+      class="cv-dd-cv"
+      id="cv-dd-core-values"
+      aria-labelledby="cv-dd-cv-title"
+    >
+      <div class="container cv-dd-cv-inner">
+        <header class="cv-dd-cv-head cv-dd-reveal" data-cv-dd-reveal>
+          <p
+            class="cv-dd-label-en"
+            id="cv-dd-cv-title"
+            data-kr="TCK 비전"
+            data-en="TCK VISION"
+          >
+            TCK VISION
+          </p>
+        </header>
+
+        <div class="cv-dd-cv-grid">
+          <article class="cv-dd-cv-card cv-dd-reveal" data-cv-dd-reveal>
+            <div class="cv-dd-cv-card-icon" aria-hidden="true">
+              <!-- lucide: gauge — black arc, red needle -->
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  class="cv-dd-cv-icon-stroke"
+                  stroke="currentColor"
+                  d="M3.34 17a10 11 0 0 1 17.32 0"
+                />
+                <path
+                  class="cv-dd-cv-icon-accent"
+                  stroke="currentColor"
+                  d="m12 14 4-4"
+                />
+              </svg>
+            </div>
+            <h3
+              class="cv-dd-cv-card-en"
+              data-kr="민첩성과 우수성"
+              data-en="Agility &amp; Excellence"
+            >
+              Agility &amp; Excellence
+            </h3>
+            <p
+              class="cv-dd-cv-card-desc"
+              data-kr="고객이 원하는 제품을 신뢰할 수 있는 속도로 전달하고, 사용자 경험과 품질을 끊임없이 개선합니다."
+              data-en="We reliably deliver products our customers crave at speed while improving user experience and quality."
+            >
+              We reliably deliver products our customers crave at speed while
+              improving user experience and quality.
+            </p>
+          </article>
+
+          <article class="cv-dd-cv-card cv-dd-reveal" data-cv-dd-reveal>
+            <div class="cv-dd-cv-card-icon" aria-hidden="true">
+              <!-- lucide: cpu — black die, red core -->
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect
+                  class="cv-dd-cv-icon-stroke"
+                  stroke="currentColor"
+                  x="4"
+                  y="4"
+                  width="16"
+                  height="16"
+                  rx="2"
+                />
+                <rect
+                  class="cv-dd-cv-icon-accent"
+                  stroke="currentColor"
+                  x="9"
+                  y="9"
+                  width="6"
+                  height="6"
+                />
+                <path
+                  class="cv-dd-cv-icon-stroke"
+                  stroke="currentColor"
+                  d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"
+                />
+              </svg>
+            </div>
+            <h3
+              class="cv-dd-cv-card-en"
+              data-kr="가상으로의 로드맵"
+              data-en="Road to Virtual"
+            >
+              Road to Virtual
+            </h3>
+            <p
+              class="cv-dd-cv-card-desc"
+              data-kr="소프트웨어 통합을 확장하고, AI와 차세대 기술로 가상 우선 엔지니어링으로 전환합니다."
+              data-en="Scaling software integration and shifting to virtual-first engineering with AI and next-gen technologies."
+            >
+              Scaling software integration and shifting to virtual-first
+              engineering with AI and next-gen technologies.
+            </p>
+          </article>
+
+          <article class="cv-dd-cv-card cv-dd-reveal" data-cv-dd-reveal>
+            <div class="cv-dd-cv-card-icon" aria-hidden="true">
+              <!-- lucide: network — red hub -->
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect
+                  class="cv-dd-cv-icon-stroke"
+                  stroke="currentColor"
+                  x="16"
+                  y="16"
+                  width="6"
+                  height="6"
+                  rx="1"
+                />
+                <rect
+                  class="cv-dd-cv-icon-stroke"
+                  stroke="currentColor"
+                  x="2"
+                  y="16"
+                  width="6"
+                  height="6"
+                  rx="1"
+                />
+                <rect
+                  class="cv-dd-cv-icon-accent"
+                  stroke="currentColor"
+                  x="9"
+                  y="2"
+                  width="6"
+                  height="6"
+                  rx="1"
+                />
+                <path
+                  class="cv-dd-cv-icon-stroke"
+                  stroke="currentColor"
+                  d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"
+                />
+              </svg>
+            </div>
+            <h3
+              class="cv-dd-cv-card-en"
+              data-kr="협력 생태계"
+              data-en="Collaborative Ecosystem"
+            >
+              Collaborative Ecosystem
+            </h3>
+            <p
+              class="cv-dd-cv-card-desc"
+              data-kr="지역 협력사·대학과 긴밀한 네트워크를 키워 글로벌 제품 혁신을 강화합니다."
+              data-en="Growing a tight-knit network with regional suppliers and universities to enhance global product innovation."
+            >
+              Growing a tight-knit network with regional suppliers and
+              universities to enhance global product innovation.
+            </p>
+          </article>
+
+          <article class="cv-dd-cv-card cv-dd-reveal" data-cv-dd-reveal>
+            <div class="cv-dd-cv-card-icon" aria-hidden="true">
+              <!-- lucide: sprout — black soil, red leaves -->
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  class="cv-dd-cv-icon-stroke"
+                  stroke="currentColor"
+                  d="M7 20h10"
+                />
+                <path
+                  class="cv-dd-cv-icon-stroke"
+                  stroke="currentColor"
+                  d="M10 20c5.5-2.5.8-6.4 3-10"
+                />
+                <path
+                  class="cv-dd-cv-icon-accent"
+                  stroke="currentColor"
+                  d="M9.5 9.4c1.1.8 1.7 2.1 1.4 3.4-.2 1.4-1.3 2.5-2.7 2.7-1.3.3-2.6-.3-3.4-1.4C2 12.4 4 8 4 8s4.4-2 6.5.4Z"
+                />
+                <path
+                  class="cv-dd-cv-icon-accent"
+                  stroke="currentColor"
+                  d="M14.1 6.3c1.1.8 1.7 2.1 1.4 3.4-.2 1.4-1.3 2.5-2.7 2.7-1.3.3-2.6-.3-3.4-1.4C8.6 6.4 10.6 2 10.6 2s4.4-2 6.5.4Z"
+                />
+              </svg>
+            </div>
+            <h3
+              class="cv-dd-cv-card-en"
+              data-kr="피플 &amp; 컬처"
+              data-en="People &amp; Culture"
+            >
+              People &amp; Culture
+            </h3>
+            <p
+              class="cv-dd-cv-card-desc"
+              data-kr="차량 개발 과정에서 방향을 전환하며 즐거움을 찾는 규율 있고 다기능 팀을 육성합니다."
+              data-en="Cultivating a disciplined, multifunctional team that finds enjoyment in pivoting through vehicle development."
+            >
+              Cultivating a disciplined, multifunctional team that finds
+              enjoyment in pivoting through vehicle development.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategy Pillars: 헤더는 정적 마크업, 패널은 history-timeline.mjs 가 #cv-history-panels 에 마운트 -->
+    <section
+      id="cv-history"
+      class="cv-history-page"
+      aria-labelledby="cv-history-heading"
+    >
+      <div class="cv-history-page-inner">
+        <header class="cv-history-page-head">
+          <h2 id="cv-history-heading" class="cv-dd-label-en">
+            Fundamental Value of GMTCK Strategy Pillars
+          </h2>
+          <p class="cv-history-page-desc">
+            Safety &amp; The Five Elements<br />
+            TCK's vision is anchored in our "Five Elements". These frameworks
+            shape what we do and how we do it.<br />
+            Safety is non-negotiable — every
+            initiative shall be built on this foundation
+          </p>
+        </header>
+        <div id="cv-history-panels" class="cv-history-sticky-stack"></div>
+      </div>
+    </section>
+    <noscript>
+      <div
+        class="container"
+        style="padding: 2rem; text-align: center; color: #5c6570"
+      >
+        이 섹션 인터랙션을 보려면 JavaScript를 켜 주세요.
+      </div>
+    </noscript>
+
     <main class="cv-shell" id="cv-main">
       <div class="container cv-shell-inner">
         <aside class="cv-sidebar" aria-labelledby="cv-sidebar-title">
-          <p class="cv-sidebar-kicker" data-kr="핵심 가치" data-en="Core Values">
-            Core Values
+          <p class="cv-sidebar-kicker" data-kr="TCK 비전" data-en="TCK Vision">
+            TCK Vision
           </p>
           <h1 id="cv-sidebar-title" class="cv-sidebar-title">
             GM Technical Center Korea
@@ -246,22 +518,49 @@
             <details class="cv-acc">
               <summary class="cv-acc-summary">
                 <span class="cv-acc-graphic" aria-hidden="true">
-                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M16 8v6l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <svg
+                    class="cv-acc-svg"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="14"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M16 8v6l4 4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
                   </svg>
                 </span>
                 <div class="cv-acc-main">
                   <span class="cv-acc-num">01</span>
                   <div class="cv-acc-headlines">
-                    <span class="cv-acc-title" data-kr="미래를 준비한다" data-en="Prepare for the future">Prepare for the future</span>
+                    <span
+                      class="cv-acc-title"
+                      data-kr="미래를 준비한다"
+                      data-en="Prepare for the future"
+                      >Prepare for the future</span
+                    >
                   </div>
                 </div>
                 <span class="cv-acc-plus" aria-hidden="true">+</span>
               </summary>
               <div class="cv-acc-body">
-                <p data-kr="기술·시장·규제의 변화를 앞서 읽고, 다음 세대 차량과 조직 역량을 미리 설계합니다." data-en="We read technology, market, and regulatory shifts early—and design the next generation of vehicles and capabilities before they arrive.">
-                  We read technology, market, and regulatory shifts early—and design the next generation of vehicles and capabilities before they arrive.
+                <p
+                  data-kr="기술·시장·규제의 변화를 앞서 읽고, 다음 세대 차량과 조직 역량을 미리 설계합니다."
+                  data-en="We read technology, market, and regulatory shifts early—and design the next generation of vehicles and capabilities before they arrive."
+                >
+                  We read technology, market, and regulatory shifts early—and
+                  design the next generation of vehicles and capabilities before
+                  they arrive.
                 </p>
               </div>
             </details>
@@ -269,21 +568,40 @@
             <details class="cv-acc">
               <summary class="cv-acc-summary">
                 <span class="cv-acc-graphic" aria-hidden="true">
-                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 12h16M8 16h16M8 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <svg
+                    class="cv-acc-svg"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 12h16M8 16h16M8 20h10"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
                   </svg>
                 </span>
                 <div class="cv-acc-main">
                   <span class="cv-acc-num">02</span>
                   <div class="cv-acc-headlines">
-                    <span class="cv-acc-title" data-kr="단순함으로 엔지니어링한다" data-en="Engineer with Simplicity">Engineer with Simplicity</span>
+                    <span
+                      class="cv-acc-title"
+                      data-kr="단순함으로 엔지니어링한다"
+                      data-en="Engineer with Simplicity"
+                      >Engineer with Simplicity</span
+                    >
                   </div>
                 </div>
                 <span class="cv-acc-plus" aria-hidden="true">+</span>
               </summary>
               <div class="cv-acc-body">
-                <p data-kr="불필요한 복잡함을 줄이고, 명확한 구조와 기준으로 문제를 해결합니다." data-en="We reduce unnecessary complexity and solve problems with clear structure and crisp criteria.">
-                  We reduce unnecessary complexity and solve problems with clear structure and crisp criteria.
+                <p
+                  data-kr="불필요한 복잡함을 줄이고, 명확한 구조와 기준으로 문제를 해결합니다."
+                  data-en="We reduce unnecessary complexity and solve problems with clear structure and crisp criteria."
+                >
+                  We reduce unnecessary complexity and solve problems with clear
+                  structure and crisp criteria.
                 </p>
               </div>
             </details>
@@ -291,21 +609,41 @@
             <details class="cv-acc">
               <summary class="cv-acc-summary">
                 <span class="cv-acc-graphic" aria-hidden="true">
-                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 6l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6l2-6z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" fill="none"/>
+                  <svg
+                    class="cv-acc-svg"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 6l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6l2-6z"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                      stroke-linejoin="round"
+                      fill="none"
+                    />
                   </svg>
                 </span>
                 <div class="cv-acc-main">
                   <span class="cv-acc-num">03</span>
                   <div class="cv-acc-headlines">
-                    <span class="cv-acc-title" data-kr="혁신" data-en="Innovation">Innovation</span>
+                    <span
+                      class="cv-acc-title"
+                      data-kr="혁신"
+                      data-en="Innovation"
+                      >Innovation</span
+                    >
                   </div>
                 </div>
                 <span class="cv-acc-plus" aria-hidden="true">+</span>
               </summary>
               <div class="cv-acc-body">
-                <p data-kr="새로운 아이디어를 시험하고, 학습 속도를 경쟁력으로 만듭니다." data-en="We experiment with new ideas and turn learning velocity into advantage.">
-                  We experiment with new ideas and turn learning velocity into advantage.
+                <p
+                  data-kr="새로운 아이디어를 시험하고, 학습 속도를 경쟁력으로 만듭니다."
+                  data-en="We experiment with new ideas and turn learning velocity into advantage."
+                >
+                  We experiment with new ideas and turn learning velocity into
+                  advantage.
                 </p>
               </div>
             </details>
@@ -313,23 +651,54 @@
             <details class="cv-acc">
               <summary class="cv-acc-summary">
                 <span class="cv-acc-graphic" aria-hidden="true">
-                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="11" cy="13" r="3" stroke="currentColor" stroke-width="1.5"/>
-                    <circle cx="21" cy="13" r="3" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M8 23c1.5-3 4.5-5 8-5s6.5 2 8 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <svg
+                    class="cv-acc-svg"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="11"
+                      cy="13"
+                      r="3"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <circle
+                      cx="21"
+                      cy="13"
+                      r="3"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M8 23c1.5-3 4.5-5 8-5s6.5 2 8 5"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
                   </svg>
                 </span>
                 <div class="cv-acc-main">
                   <span class="cv-acc-num">04</span>
                   <div class="cv-acc-headlines">
-                    <span class="cv-acc-title" data-kr="리더십의 일관성" data-en="Consistency across our leaders">Consistency across our leaders</span>
+                    <span
+                      class="cv-acc-title"
+                      data-kr="리더십의 일관성"
+                      data-en="Consistency across our leaders"
+                      >Consistency across our leaders</span
+                    >
                   </div>
                 </div>
                 <span class="cv-acc-plus" aria-hidden="true">+</span>
               </summary>
               <div class="cv-acc-body">
-                <p data-kr="리더들이 같은 기준과 메시지로 조직을 연결해, 방향성과 실행이 끊기지 않게 합니다." data-en="Leaders align on the same standards and narrative so direction and execution stay connected.">
-                  Leaders align on the same standards and narrative so direction and execution stay connected.
+                <p
+                  data-kr="리더들이 같은 기준과 메시지로 조직을 연결해, 방향성과 실행이 끊기지 않게 합니다."
+                  data-en="Leaders align on the same standards and narrative so direction and execution stay connected."
+                >
+                  Leaders align on the same standards and narrative so direction
+                  and execution stay connected.
                 </p>
               </div>
             </details>
@@ -337,22 +706,46 @@
             <details class="cv-acc">
               <summary class="cv-acc-summary">
                 <span class="cv-acc-graphic" aria-hidden="true">
-                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 22l8-14 8 14H8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                    <path d="M16 14v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <svg
+                    class="cv-acc-svg"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 22l8-14 8 14H8z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16 14v6"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
                   </svg>
                 </span>
                 <div class="cv-acc-main">
                   <span class="cv-acc-num">05</span>
                   <div class="cv-acc-headlines">
-                    <span class="cv-acc-title" data-kr="런칭 우수성을 전달한다" data-en="Deliver Launch Excellence">Deliver Launch Excellence</span>
+                    <span
+                      class="cv-acc-title"
+                      data-kr="런칭 우수성을 전달한다"
+                      data-en="Deliver Launch Excellence"
+                      >Deliver Launch Excellence</span
+                    >
                   </div>
                 </div>
                 <span class="cv-acc-plus" aria-hidden="true">+</span>
               </summary>
               <div class="cv-acc-body">
-                <p data-kr="출시 품질·일정·고객 경험을 끝까지 책임지며, 성공적인 런칭을 반복 가능한 역량으로 만듭니다." data-en="We own quality, timing, and customer experience through launch—making excellence repeatable.">
-                  We own quality, timing, and customer experience through launch—making excellence repeatable.
+                <p
+                  data-kr="출시 품질·일정·고객 경험을 끝까지 책임지며, 성공적인 런칭을 반복 가능한 역량으로 만듭니다."
+                  data-en="We own quality, timing, and customer experience through launch—making excellence repeatable."
+                >
+                  We own quality, timing, and customer experience through
+                  launch—making excellence repeatable.
                 </p>
               </div>
             </details>
@@ -373,80 +766,168 @@
 
             <details class="cv-acc">
               <summary class="cv-acc-summary">
-                <span class="cv-acc-graphic cv-acc-graphic--muted" aria-hidden="true">
-                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none"><path d="M16 8v16M10 14l6-6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <span
+                  class="cv-acc-graphic cv-acc-graphic--muted"
+                  aria-hidden="true"
+                >
+                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none">
+                    <path
+                      d="M16 8v16M10 14l6-6 6 6"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
                 </span>
                 <div class="cv-acc-main">
                   <span class="cv-acc-num">01</span>
                   <div class="cv-acc-headlines">
-                    <span class="cv-acc-title cv-acc-title--strength" data-kr="규율" data-en="discipline">discipline</span>
+                    <span
+                      class="cv-acc-title cv-acc-title--strength"
+                      data-kr="규율"
+                      data-en="discipline"
+                      >discipline</span
+                    >
                   </div>
                 </div>
                 <span class="cv-acc-plus" aria-hidden="true">+</span>
               </summary>
               <div class="cv-acc-body">
-                <p data-kr="표준과 약속을 지키며, 흔들리지 않는 실행을 유지합니다." data-en="We keep standards and commitments—and execution that doesn’t waver.">
-                  We keep standards and commitments—and execution that doesn’t waver.
+                <p
+                  data-kr="표준과 약속을 지키며, 흔들리지 않는 실행을 유지합니다."
+                  data-en="We keep standards and commitments—and execution that doesn’t waver."
+                >
+                  We keep standards and commitments—and execution that doesn’t
+                  waver.
                 </p>
               </div>
             </details>
 
             <details class="cv-acc">
               <summary class="cv-acc-summary">
-                <span class="cv-acc-graphic cv-acc-graphic--muted" aria-hidden="true">
-                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none"><path d="M8 16h16M16 8v16" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="2" fill="currentColor"/></svg>
+                <span
+                  class="cv-acc-graphic cv-acc-graphic--muted"
+                  aria-hidden="true"
+                >
+                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none">
+                    <path
+                      d="M8 16h16M16 8v16"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <circle cx="16" cy="16" r="2" fill="currentColor" />
+                  </svg>
                 </span>
                 <div class="cv-acc-main">
                   <span class="cv-acc-num">02</span>
                   <div class="cv-acc-headlines">
-                    <span class="cv-acc-title cv-acc-title--strength" data-kr="속도" data-en="speed">speed</span>
+                    <span
+                      class="cv-acc-title cv-acc-title--strength"
+                      data-kr="속도"
+                      data-en="speed"
+                      >speed</span
+                    >
                   </div>
                 </div>
                 <span class="cv-acc-plus" aria-hidden="true">+</span>
               </summary>
               <div class="cv-acc-body">
-                <p data-kr="학습과 결정, 피드백 루프를 빠르게 돌려 변화에 맞춥니다." data-en="We tighten learning loops, decisions, and feedback to match the pace of change.">
-                  We tighten learning loops, decisions, and feedback to match the pace of change.
+                <p
+                  data-kr="학습과 결정, 피드백 루프를 빠르게 돌려 변화에 맞춥니다."
+                  data-en="We tighten learning loops, decisions, and feedback to match the pace of change."
+                >
+                  We tighten learning loops, decisions, and feedback to match
+                  the pace of change.
                 </p>
               </div>
             </details>
 
             <details class="cv-acc">
               <summary class="cv-acc-summary">
-                <span class="cv-acc-graphic cv-acc-graphic--muted" aria-hidden="true">
-                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none"><path d="M16 22c-4 0-7-2.5-7-6 0-3 3-5 7-8 4 3 7 5 7 8 0 3.5-3 6-7 6z" stroke="currentColor" stroke-width="1.5"/></svg>
+                <span
+                  class="cv-acc-graphic cv-acc-graphic--muted"
+                  aria-hidden="true"
+                >
+                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none">
+                    <path
+                      d="M16 22c-4 0-7-2.5-7-6 0-3 3-5 7-8 4 3 7 5 7 8 0 3.5-3 6-7 6z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                  </svg>
                 </span>
                 <div class="cv-acc-main">
                   <span class="cv-acc-num">03</span>
                   <div class="cv-acc-headlines">
-                    <span class="cv-acc-title cv-acc-title--strength" data-kr="신뢰" data-en="trust">trust</span>
+                    <span
+                      class="cv-acc-title cv-acc-title--strength"
+                      data-kr="신뢰"
+                      data-en="trust"
+                      >trust</span
+                    >
                   </div>
                 </div>
                 <span class="cv-acc-plus" aria-hidden="true">+</span>
               </summary>
               <div class="cv-acc-body">
-                <p data-kr="투명한 소통과 결과로 동료·고객·파트너의 신뢰를 쌓습니다." data-en="We earn trust with transparency—among teammates, customers, and partners.">
-                  We earn trust with transparency—among teammates, customers, and partners.
+                <p
+                  data-kr="투명한 소통과 결과로 동료·고객·파트너의 신뢰를 쌓습니다."
+                  data-en="We earn trust with transparency—among teammates, customers, and partners."
+                >
+                  We earn trust with transparency—among teammates, customers,
+                  and partners.
                 </p>
               </div>
             </details>
 
             <details class="cv-acc">
               <summary class="cv-acc-summary">
-                <span class="cv-acc-graphic cv-acc-graphic--muted" aria-hidden="true">
-                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none"><circle cx="10" cy="14" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="22" cy="14" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M6 24c2-3 5-5 10-5s8 2 10 5" stroke="currentColor" stroke-width="1.5"/></svg>
+                <span
+                  class="cv-acc-graphic cv-acc-graphic--muted"
+                  aria-hidden="true"
+                >
+                  <svg class="cv-acc-svg" viewBox="0 0 32 32" fill="none">
+                    <circle
+                      cx="10"
+                      cy="14"
+                      r="3"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <circle
+                      cx="22"
+                      cy="14"
+                      r="3"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M6 24c2-3 5-5 10-5s8 2 10 5"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                  </svg>
                 </span>
                 <div class="cv-acc-main">
                   <span class="cv-acc-num">04</span>
                   <div class="cv-acc-headlines">
-                    <span class="cv-acc-title cv-acc-title--strength" data-kr="협업" data-en="collaborative">collaborative</span>
+                    <span
+                      class="cv-acc-title cv-acc-title--strength"
+                      data-kr="협업"
+                      data-en="collaborative"
+                      >collaborative</span
+                    >
                   </div>
                 </div>
                 <span class="cv-acc-plus" aria-hidden="true">+</span>
               </summary>
               <div class="cv-acc-body">
-                <p data-kr="경계를 넘는 협업으로 최선의 해법을 함께 만듭니다." data-en="We work across boundaries to build the best solutions together.">
-                  We work across boundaries to build the best solutions together.
+                <p
+                  data-kr="경계를 넘는 협업으로 최선의 해법을 함께 만듭니다."
+                  data-en="We work across boundaries to build the best solutions together."
+                >
+                  We work across boundaries to build the best solutions
+                  together.
                 </p>
               </div>
             </details>
@@ -529,5 +1010,15 @@
 
     <script src="./js/language.js"></script>
     <script src="./js/main.js"></script>
+    <script type="module" src="./js/history-timeline.mjs?v=4"></script>
+    <script src="./js/core-values-dd-reveal.js?v=1"></script>
+    <noscript>
+      <style>
+        html.core-values-page .cv-dd-reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
   </body>
 </html>
