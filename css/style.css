@@ -33,7 +33,7 @@
   --nav-bar-height-sm: 72px;
   /* 고정 네비(.nav-content 96px)보다 큰 로고(130px)가 겹쳐 보일 때 콘텐츠 상단이 가려지지 않도록 */
   --nav-content-safe-space: 136px;
-  /* team-tck-interviews: 고정 네비·사이드바를 살짝 아래로 (기본 0) */
+  /* team-tck-interviews: 고정 네비,사이드바를 살짝 아래로 (기본 0) */
   --interviews-below-nav-offset: 0px;
   --nav-logo-gm-height: 42px;
   --nav-logo-gm-max-w: 84px;
@@ -47,7 +47,7 @@ html {
   scroll-snap-type: y mandatory;
 }
 
-/* Disable scroll snap on Team TCK / Our Story — ScrollTrigger pin·얼굴 타일 필터 웨이브와 충돌 */
+/* Disable scroll snap on Team TCK / Our Story — ScrollTrigger pin,얼굴 타일 필터 웨이브와 충돌 */
 html.team-tck-page,
 html.interviews-page {
   scroll-snap-type: none;
@@ -56,6 +56,8 @@ html.interviews-page {
 
 html.interviews-page {
   --interviews-below-nav-offset: 12px;
+  /* 100vw 풀블리드와 스크롤바 폭 차이로 생기는 좌우 비대칭 완화 */
+  scrollbar-gutter: stable;
 }
 
 /* Core Values — 전역 scroll-snap 비활성 (섹션에 붙는 스크롤 방지) */
@@ -3858,7 +3860,8 @@ html.core-values-page .cv-hero-kicker {
     transform 0.55s cubic-bezier(0.34, 1.3, 0.64, 1) 0.34s;
 }
 
-.cv-strategy.cv-strategy--js-loaded:not(.cv-strategy--visible) .cv-arch-hub-blue {
+.cv-strategy.cv-strategy--js-loaded:not(.cv-strategy--visible)
+  .cv-arch-hub-blue {
   opacity: 0;
   transform: scale(0.94);
 }
@@ -3892,7 +3895,8 @@ html.core-values-page .cv-hero-kicker {
   transition: opacity 0.5s ease 0.48s;
 }
 
-.cv-strategy.cv-strategy--js-loaded:not(.cv-strategy--visible) .cv-hub-curved-text {
+.cv-strategy.cv-strategy--js-loaded:not(.cv-strategy--visible)
+  .cv-hub-curved-text {
   opacity: 0;
 }
 
@@ -3908,7 +3912,8 @@ html.core-values-page .cv-hero-kicker {
     transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.56s;
 }
 
-.cv-strategy.cv-strategy--js-loaded:not(.cv-strategy--visible) .cv-arch-culture-strip {
+.cv-strategy.cv-strategy--js-loaded:not(.cv-strategy--visible)
+  .cv-arch-culture-strip {
   opacity: 0;
   transform: translateY(8px);
 }
@@ -4526,7 +4531,7 @@ html.core-values-page .cv-dd-diagram-line2 {
 
 /*
  * Five pillars: φ clockwise from 12 o’clock — 0°, 72°, 144°, 216°, 288°.
- * Anchor (0×0) at wheel center on ring: left = 50% + r·sin(φ), top = 50% − r·cos(φ).
+ * Anchor (0×0) at wheel center on ring: left = 50% + r,sin(φ), top = 50% − r,cos(φ).
  * Bubble: top/left 50% + translate(-50%,-50%) so trig point = wheel center (masks ring at z-index 22).
  */
 html.core-values-page .cv-dd-node {
@@ -5134,9 +5139,22 @@ html.core-values-page #cv-st-heading {
   background: #000;
 }
 
+/*
+ * 인터뷰 진입 랜딩: 예전 100vw + negative margin 풀블리드는 스크롤바 포함 폭과 맞지 않아
+ * 블록 전체가 오른쪽으로 밀려 보이는 경우가 있음. #hqLanding을 두는 섹션만 .container를
+ * 가로 풀너비로 두고 랜딩은 100%로 맞춘다(team-tck-hq 등 다른 hq-intro-section은 기존 유지).
+ */
+.hq-intro-section:has(#hqLanding.hq-landing) > .container {
+  max-width: none;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
 /* 담당 인터뷰 — 진입 랜딩 (라이트 + GM 블루, 2열 메이슨리, 카드별 직원 얼굴) */
 #hqLanding.hq-landing {
-  /* 상단 모자이크 배너 높이 — 인트로 시트 max/min·sticky top과 동일 */
+  /* 상단 모자이크 배너 높이 — 인트로 시트 max/min,sticky top과 동일 */
   --hq-landing-banner-height: 250px;
   --hq-landing-intro-sheet-height: calc(
     100svh - var(--hq-landing-banner-height)
@@ -5152,11 +5170,10 @@ html.core-values-page #cv-st-heading {
   /* 본부 흰 레이어가 올라올 때 타이포와 동일 픽셀만큼 밀기 — js가 px 문자열로 갱신 */
   --hq-stack-lift: 0px;
   --hq-stack-progress: 0;
-  /* 풀블리드: 컨테이너 패딩 밖으로 그리드가 화면 좌우 끝까지 */
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
   box-sizing: border-box;
   overflow: visible;
 }
@@ -5210,7 +5227,7 @@ html.core-values-page #cv-st-heading {
 
 /*
  * 니프코 Career 히어로: 상단 스크림(슬레이트 톤) — 풀히어로에서만 두드러짐.
- * 압축 헤더(--hq-compress↑) 시 투명도로 제거해 회색 띠·얼굴 가림 완화.
+ * 압축 헤더(--hq-compress↑) 시 투명도로 제거해 회색 띠,얼굴 가림 완화.
  */
 #hqLanding .hq-landing-bg-scrim {
   background: linear-gradient(
@@ -5236,7 +5253,7 @@ html.core-values-page #cv-st-heading {
   );
 }
 
-/* 모자이크·스크림: 슬랩 내에서 고정 — 스크롤 시 위로 밀리지 않음(깜빡임 로직만 유지) */
+/* 모자이크,스크림: 슬랩 내에서 고정 — 스크롤 시 위로 밀리지 않음(깜빡임 로직만 유지) */
 #hqLanding .hq-landing-bg {
   position: absolute;
   inset: 0;
@@ -5543,7 +5560,7 @@ html.core-values-page #cv-st-heading {
   max-width: none;
 }
 
-/* 히어로 시네마틱: 비네트·타이포 — 흰 fill(z1)보다 위 */
+/* 히어로 시네마틱: 비네트,타이포 — 흰 fill(z1)보다 위 */
 #hqLanding .hq-landing-hero-cinematic {
   position: relative;
   z-index: 2;
@@ -5793,11 +5810,12 @@ html.core-values-page #cv-st-heading {
   margin-top: 0;
   display: flex;
   flex-direction: column;
-  /* 내부 스크롤 없음 — 문서 스크롤만. 아코디언은 시트 안에서 세로 가운데 */
-  justify-content: center;
+  /* 카드만큼만 높이(뷰포트 전체 강제,세로 중앙 정렬 제거 → DevTools 보라 빈 영역 최소화) */
+  justify-content: flex-start;
   align-items: stretch;
-  min-height: var(--hq-landing-intro-sheet-height);
-  max-height: var(--hq-landing-intro-sheet-height);
+  min-height: 0;
+  max-height: none;
+  height: auto;
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -5807,6 +5825,9 @@ html.core-values-page #cv-st-heading {
   background-color: #ffffff;
   box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.1);
   transform: none;
+  /* .hq-division-intro 기본 padding(48px/40px) 덮어씀 — 상단만 아주 조금 */
+  padding: 14px 0 0;
+  background: #ffffff;
 }
 
 /*
@@ -5824,12 +5845,12 @@ html.core-values-page #cv-st-heading {
   flex: none;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 100%;
   max-width: none;
   min-height: 0;
   margin: 0;
-  padding: 0 24px max(40px, env(safe-area-inset-bottom, 0));
+  padding: 12px 24px max(16px, env(safe-area-inset-bottom, 0px));
   box-sizing: border-box;
   background-color: transparent;
   transition: none !important;
@@ -5838,7 +5859,7 @@ html.core-values-page #cv-st-heading {
   will-change: auto;
 }
 
-/* 랜딩 전용: 본부 카드 윤곽·타이틀 대비(고체 흰 배경 위) */
+/* 랜딩 전용: 본부 카드 윤곽,타이틀 대비(고체 흰 배경 위) */
 #hqLanding .hq-division-intro__card {
   border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow: 0 14px 42px rgba(15, 23, 42, 0.16);
@@ -5882,7 +5903,7 @@ html.core-values-page #cv-st-heading {
   #hqLanding
     #hqDivisionIntro.hq-division-intro--stack
     .hq-division-intro__container {
-    padding: 0 16px max(28px, env(safe-area-inset-bottom, 0));
+    padding: 8px 16px max(14px, env(safe-area-inset-bottom, 0px));
   }
 }
 
@@ -5898,9 +5919,12 @@ html.core-values-page #cv-st-heading {
 
   #hqLanding #hqDivisionIntro.hq-division-intro--stack {
     position: relative;
-    min-height: 100svh;
+    min-height: 0;
+    max-height: none;
+    height: auto;
     overflow: visible;
     justify-content: flex-start;
+    padding: 0;
     box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.08);
   }
 
@@ -5976,7 +6000,7 @@ html.core-values-page #cv-st-heading {
   will-change: transform, opacity;
 }
 
-/* 랜딩 JS 미적용 시·t=1 ease-out 포화에 가까운 끝값 (hq-landing-scrolltrigger.js saturateProgress) */
+/* 랜딩 JS 미적용 시,t=1 ease-out 포화에 가까운 끝값 (hq-landing-scrolltrigger.js saturateProgress) */
 .hq-division-intro--in-view .hq-division-intro__reveal {
   transform: scale(1.0368) translate3d(0, 12.88px, 0);
   opacity: 1;
@@ -6194,7 +6218,7 @@ html.core-values-page #cv-st-heading {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  /* 접힘 카드의 설명만 숨김 (transform 없이 opacity·max-height) */
+  /* 접힘 카드의 설명만 숨김 (transform 없이 opacity,max-height) */
   .hq-division-intro__accordion--js
     .hq-division-intro__card:not(.hq-division-intro__card--expanded)
     .hq-division-intro__desc,
@@ -6656,66 +6680,6 @@ html.core-values-page #cv-st-heading {
   box-sizing: border-box;
 }
 
-.hq-back-to-landing {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  color: #0078d4;
-  background: #fff;
-  border: 1px solid rgba(0, 120, 212, 0.35);
-  border-radius: 50%;
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
-}
-
-/*
- * 담당 인터뷰: 뒤로가기 — DOM은 <nav> 다음(body 직계), 고정 네비 밑·콘텐츠 줄과 맞춤
- * (hq-interviews-shell 밖이므로 셸 hidden과 무관하게 표시만 js에서 hidden 토글)
- */
-.interviews-page .hq-back-to-landing {
-  position: fixed;
-  /* 네비(z-index 1000) 아래 층 — top으로 네비와 겹치지 않음 */
-  z-index: 500;
-  left: calc(env(safe-area-inset-left, 0px) + 20px);
-  top: calc(
-    env(safe-area-inset-top, 0px) + var(--nav-content-safe-space, 136px) + 6px +
-      var(--interviews-below-nav-offset, 0px)
-  );
-}
-
-.interviews-page .hq-back-to-landing[hidden] {
-  display: none !important;
-}
-
-.hq-back-to-landing:hover {
-  background: rgba(0, 120, 212, 0.1);
-  box-shadow: 0 4px 14px rgba(0, 120, 212, 0.12);
-}
-
-.hq-back-to-landing:focus-visible {
-  outline: 2px solid rgba(0, 120, 212, 0.45);
-  outline-offset: 2px;
-}
-
-.hq-back-to-landing:active {
-  transform: scale(0.96);
-}
-
-.hq-back-to-landing__icon {
-  display: block;
-  margin-left: -2px;
-}
-
 /* HQ Main Title — 인터뷰에서만 사용 시 사이드바 열 상단에 붙임 */
 .hq-title-wrapper {
   position: relative;
@@ -6891,6 +6855,18 @@ html.core-values-page #cv-st-heading {
   max-width: min(96vw, 1640px);
   margin: 0 auto;
   padding: 0;
+}
+
+/* hq-layout: 메인 컬럼이 좌측 사이드바에 붙어 보이는 느낌 완화(레이아웃 균형 — 텍스트 가운데 정렬 아님) */
+html.interviews-page .hq-layout,
+html.team-tck-page .hq-layout {
+  column-gap: clamp(28px, 3.5vw, 44px);
+}
+
+html.interviews-page .hq-main-content,
+html.team-tck-page .hq-main-content {
+  padding-left: clamp(32px, 4.5vw, 56px);
+  padding-right: clamp(16px, 2.5vw, 32px);
 }
 
 .interviews-page .hq-sidebar.hq-reveal.is-visible {
@@ -7089,6 +7065,17 @@ html.core-values-page #cv-st-heading {
   transform: translateY(-2px);
 }
 
+/* team-tck-hq: EE 등 인터뷰 페이지로 바로 가는 카드 링크 */
+a.hq-division-card--interview-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+a.hq-division-card--interview-link:hover {
+  color: inherit;
+}
+
 .hq-division-card-title {
   font-size: 18px;
   font-weight: 600;
@@ -7138,14 +7125,29 @@ html.core-values-page #cv-st-heading {
   opacity: 0;
   transform: translateY(28px);
   transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.48s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--reveal-delay, 0s);
   will-change: opacity, transform;
 }
 
 .interviews-page .hq-reveal.is-visible {
   opacity: 1;
+  transform: translateY(0);
+}
+
+/* 담당 인터뷰 Q&A: 질문,답을 각각 리빌(짧은 이동 거리로 가독성 유지) */
+.interviews-page .interview-q-title.hq-reveal {
+  transform: translateY(18px);
+}
+
+.interviews-page .interview-answer.hq-reveal {
+  transform: translateY(14px);
+  transition-duration: 0.5s, 0.5s;
+}
+
+.interviews-page .interview-q-title.hq-reveal.is-visible,
+.interviews-page .interview-answer.hq-reveal.is-visible {
   transform: translateY(0);
 }
 
@@ -7186,7 +7188,7 @@ html.core-values-page #cv-st-heading {
 
 /* 활성 인터뷰 본문: 양옆 숨 쉴 공간 */
 .interviews-page .hq-main-content .hq-content-section.active {
-  padding-left: clamp(16px, 3vw, 36px);
+  padding-left: clamp(12px, 2vw, 28px);
   padding-right: clamp(16px, 3vw, 36px);
   box-sizing: border-box;
 }
@@ -7427,6 +7429,27 @@ html.core-values-page #cv-st-heading {
   position: relative;
 }
 
+/* 다인 인터뷰: 화살표 행과 본문 스택을 같은 열 폭으로 중앙 정렬(본문 text-align 유지) */
+.interviews-page .ve-interview-nav {
+  max-width: 900px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* ve-interview-nav가 붙는 다인 캐러셀에만: 네비 세로 패딩 제거, 본문 상단 여백 제거(프로필·화살표 직후) */
+.interviews-page .ve-interview-container--stack .ve-interview-nav {
+  padding: 0;
+}
+
+.interviews-page
+  .ve-interview-container--stack
+  .hq-content-body:has(.ve-interview-nav)
+  .interview-content {
+  margin-top: 0;
+}
+
 .ve-nav-btn {
   background: transparent;
   border: none;
@@ -7454,10 +7477,14 @@ html.core-values-page #cv-st-heading {
   position: relative;
 }
 
-/* 다인 인터뷰(VE / EE SPI): 이전·다음 전환 시 본문이 페이드·슬라이드로 바뀜 */
+/* 다인 인터뷰(VE / EE SPI): 이전,다음 전환 시 본문이 페이드,슬라이드로 바뀜 */
 .interviews-page .ve-interview-container--stack {
   position: relative;
   width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
 .interviews-page .ve-interview-container--stack .ve-interview-item {
@@ -7704,7 +7731,7 @@ html.core-values-page #cv-st-heading {
   display: none;
 }
 
-/* Team TCK 인터뷰 히어로: 하단 우측에 본부명 · 담당명 · 이름 (3줄) */
+/* Team TCK 인터뷰 히어로: 하단 우측에 본부명 , 담당명 , 이름 (3줄) */
 .interviews-page .hq-main-content .interview-profile-header--hero {
   display: block;
   position: relative;
@@ -7777,8 +7804,8 @@ html.core-values-page #cv-st-heading {
   z-index: 1;
 }
 
-/* 인물 사진: 히어로 하단 라인에 맞춤(가로 중앙), 불투명 · 둥근 모서리 없음 */
-/* #pipg-vpd-pid 등 ID 규칙보다 구체적으로 잡아 top:55%·overflow:hidden 무력화 */
+/* 인물 사진: 히어로 하단 라인에 맞춤(가로 중앙), 불투명 , 둥근 모서리 없음 */
+/* #pipg-vpd-pid 등 ID 규칙보다 구체적으로 잡아 top:55%,overflow:hidden 무력화 */
 .interviews-page
   .hq-main-content
   .interview-profile-header--hero
@@ -8122,6 +8149,28 @@ html.core-values-page #cv-st-heading {
 .interview-content {
   margin-top: 60px;
   max-width: 900px;
+  text-align: left;
+}
+
+/*
+ * 자동 줄바꿈: 띄어쓰기,단어 경계 우선(한글 음절 중간 끊김 완화, 영단어 임의 분절 최소화).
+ * hyphens: none — 하이픈으로 단어 가름 방지.
+ */
+.interview-content,
+.interview-q-title,
+.interview-answer,
+.quote-line,
+.quote-division,
+.quote-name,
+html.interviews-page .hq-main-content,
+.team-tck-page .hq-main-content,
+.hq-content-description,
+.subpage-paragraph {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 .interview-question {
@@ -8136,13 +8185,16 @@ html.core-values-page #cv-st-heading {
   padding-bottom: 0;
 }
 
+/* 질문·답변 타이포: talent.hyundai.com Team 인터뷰(.editor 1.6rem/1.6, 본문 h2 1.7rem/500)에 맞춤 — Hyundai Sans 미탑재 시 동일 폴백 스택 */
 .interview-q-title {
-  font-size: 20px;
-  font-weight: 600;
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 돋움, Dotum,
+    sans-serif;
+  font-size: 17px;
+  font-weight: 500;
   color: #000;
   margin-bottom: 28px;
   line-height: 1.6;
-  letter-spacing: -0.2px;
+  letter-spacing: 0;
   position: relative;
   padding-bottom: 8px;
   display: inline-block;
@@ -8159,12 +8211,15 @@ html.core-values-page #cv-st-heading {
 }
 
 .interview-answer {
-  font-size: 17px;
-  line-height: 1.8;
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 돋움, Dotum,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   color: #333;
   margin: 0;
   letter-spacing: 0;
-  word-spacing: 0.5px;
+  word-spacing: 0;
+  /* JSON 본문 \n 표시 — normal이면 줄바꿈 문자는 공백으로 합쳐짐; pre-line은 \n 유지 + 자동 줄바꿈 */
   white-space: pre-line;
 }
 
@@ -8174,13 +8229,20 @@ html.core-values-page #cv-st-heading {
     margin-top: 40px;
   }
 
+  .interviews-page
+    .ve-interview-container--stack
+    .hq-content-body:has(.ve-interview-nav)
+    .interview-content {
+    margin-top: 0;
+  }
+
   .interview-question {
     margin-bottom: 50px;
     padding-bottom: 40px;
   }
 
   .interview-q-title {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 24px;
     line-height: 1.6;
     padding-bottom: 6px;
@@ -8192,8 +8254,8 @@ html.core-values-page #cv-st-heading {
   }
 
   .interview-answer {
-    font-size: 16px;
-    line-height: 1.75;
+    font-size: 14px;
+    line-height: 1.5;
     letter-spacing: 0;
   }
 }
@@ -8203,13 +8265,20 @@ html.core-values-page #cv-st-heading {
     margin-top: 30px;
   }
 
+  .interviews-page
+    .ve-interview-container--stack
+    .hq-content-body:has(.ve-interview-nav)
+    .interview-content {
+    margin-top: 0;
+  }
+
   .interview-question {
     margin-bottom: 40px;
     padding-bottom: 35px;
   }
 
   .interview-q-title {
-    font-size: 17px;
+    font-size: 16px;
     margin-bottom: 20px;
     line-height: 1.6;
     padding-bottom: 5px;
@@ -8221,8 +8290,8 @@ html.core-values-page #cv-st-heading {
   }
 
   .interview-answer {
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.5;
     letter-spacing: 0;
   }
 }
@@ -8256,6 +8325,17 @@ html.core-values-page #cv-st-heading {
   .hq-layout {
     grid-template-columns: 200px minmax(0, 1fr) auto;
     gap: 0 16px;
+  }
+
+  html.interviews-page .hq-layout,
+  html.team-tck-page .hq-layout {
+    column-gap: clamp(20px, 3vw, 32px);
+  }
+
+  html.interviews-page .hq-main-content,
+  html.team-tck-page .hq-main-content {
+    padding-left: clamp(24px, 3.5vw, 44px);
+    padding-right: clamp(12px, 2vw, 24px);
   }
 
   .interviews-page .hq-division-rail {
@@ -8395,14 +8475,6 @@ html.core-values-page #cv-st-heading {
     font-size: 12px;
     padding: 8px 12px;
     white-space: nowrap;
-  }
-
-  .interviews-page .hq-back-to-landing {
-    left: calc(env(safe-area-inset-left, 0px) + 16px);
-    top: calc(
-      env(safe-area-inset-top, 0px) + var(--nav-content-safe-space, 112px) +
-        6px + var(--interviews-below-nav-offset, 0px)
-    );
   }
 
   .interviews-page .hq-interviews-shell .hq-sidebar > .hq-title-wrapper {

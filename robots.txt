@@ -1,15 +1,10 @@
-# ============================================
-# MAINTENANCE MODE - Search Engine Blocked
-# ============================================
-# 사이트 접근 차단 시 아래 주석을 해제하세요
-
+# GMTCK — allow indexing (remove maintenance Disallow when going live)
 User-agent: *
-Disallow: /
+Allow: /
 
-# Sitemap (차단 모드에서는 비활성화)
-# Sitemap: https://www.gmtck.com/sitemap.xml
-
-# Disallow admin pages from search engines
+# Admin (do not index)
 Disallow: /admin-login.html
 Disallow: /admin-dashboard.html
 Disallow: /admin-analytics.html
+
+Sitemap: https://www.gmtck.com/sitemap.xml

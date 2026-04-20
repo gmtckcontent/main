@@ -23,9 +23,9 @@ VES = {
             Q(
                 "현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
                 "Please describe your current work in detail.",
-                """현재 저는 Virtual Integration Solution 1팀의 팀장으로서, 차량의 가장 기본이 되는 Body & Closure 구조를 담당하는 Design engineer와 CAE engineer가 함께 협업하는 팀을 이끌고 있습니다. 우리 팀은 Body Structure와 Hood, Side Door, Liftgate 등 Closure structure를 설계하고, 각종 구조 관련 해석을 수행하여 Virtual 단계에서 성능을 확보하는 역할을 맡고 있습니다. 이때 Structure에는 다양한 Exterior part, Interior part, Electrical module, Chassis part들이 조립되기 때문에, 이들이 제 성능을 발휘할 수 있도록 그 기반이 되는 뼈대를 설계·해석하는 것이 핵심입니다.
+                """현재 저는 Virtual Integration Solution 1팀의 팀장으로서, 차량의 가장 기본이 되는 Body & Closure 구조를 담당하는 Design engineer와 CAE engineer가 함께 협업하는 팀을 이끌고 있습니다. 우리 팀은 Body Structure와 Hood, Side Door, Liftgate 등 Closure structure를 설계하고, 각종 구조 관련 해석을 수행하여 Virtual 단계에서 성능을 확보하는 역할을 맡고 있습니다. 이때 Structure에는 다양한 Exterior part, Interior part, Electrical module, Chassis part들이 조립되기 때문에, 이들이 제 성능을 발휘할 수 있도록 그 기반이 되는 뼈대를 설계,해석하는 것이 핵심입니다.
 
-개인적으로는 Team leader로서 각 Program의 이슈와 일정을 조율하고, Design engineer와 CAE engineer들이 함께 성장할 수 있도록 역할 설계, 교육 및 Upskill, 정기·비정기 1 on 1 미팅 등을 통해 지원하고 있습니다. 궁극적으로는 Body & Closure 구조 분야에서 설계와 해석이 하나의 팀으로 움직이는 조직 문화를 만들고, All-in-one engineer가 성장할 수 있는 환경을 조성하는 것이 제가 맡고 있는 가장 중요한 업무입니다.""",
+개인적으로는 Team leader로서 각 Program의 이슈와 일정을 조율하고, Design engineer와 CAE engineer들이 함께 성장할 수 있도록 역할 설계, 교육 및 Upskill, 정기,비정기 1 on 1 미팅 등을 통해 지원하고 있습니다. 궁극적으로는 Body & Closure 구조 분야에서 설계와 해석이 하나의 팀으로 움직이는 조직 문화를 만들고, All-in-one engineer가 성장할 수 있는 환경을 조성하는 것이 제가 맡고 있는 가장 중요한 업무입니다.""",
                 "I lead VIS1 where design and CAE engineers collaborate on body and closure structures—hood, doors, liftgate—and virtual performance. My focus is coaching, staffing, and building a culture where design and analysis move as one team.",
             ),
             Q(
@@ -37,7 +37,7 @@ VES = {
 
 이후에는 저희 팀원들의 근태와 휴가 사용 현황을 확인합니다. 특히 조금 긴 휴가를 사용하는 경우에는, 해당 팀원의 서브 담당자들과 업무 조율이 잘 되어 있는지까지 함께 살펴봅니다. 그런 다음에는 유관 부서와 회의를 하거나, 각 프로젝트별로 중요한 메일을 읽으면서 팀원들에게 내용을 공유하고, 각 담당자에게 필요한 피드백을 보내는 식으로 오전 시간을 보냅니다.
 
-점심시간에는 사내 GYM에 들러 가벼운 유산소 운동을 하고, 그 후에 식사를 합니다. 오후에는 여러 미팅에 참석하거나, 현재 진행 중인 프로젝트별 주요 이슈를 점검하고, 제 직속 상사로부터 내려오는 요청 사항에 대응합니다. 또한 제가 맡고 있는 팀원이 19명이라, 오전과 오후 일정 중간중간에 정기적·비정기적인 1 on 1 미팅을 통해 팀원들과 함께 고민을 나누거나, 한 가지 주제를 두고 깊이 토론하는 시간도 갖습니다.
+점심시간에는 사내 GYM에 들러 가벼운 유산소 운동을 하고, 그 후에 식사를 합니다. 오후에는 여러 미팅에 참석하거나, 현재 진행 중인 프로젝트별 주요 이슈를 점검하고, 제 직속 상사로부터 내려오는 요청 사항에 대응합니다. 또한 제가 맡고 있는 팀원이 19명이라, 오전과 오후 일정 중간중간에 정기적,비정기적인 1 on 1 미팅을 통해 팀원들과 함께 고민을 나누거나, 한 가지 주제를 두고 깊이 토론하는 시간도 갖습니다.
 
 이렇게 지내다 보면 어느덧 퇴근 시간이 가까워집니다. 종종 글로벌 팀과의 conference call이 잡혀 있어서 회사에서 야근을 하기도 하고, 시간이 너무 늦게 잡힌 회의는 퇴근 후 집에서 접속해 참석하기도 합니다. 이렇게 적어놓고 보니, 나름 꽤 바쁘게 하루를 보내고 있는 것 같네요.""",
                 "Early start, triage mail and risks, support attendance and coverage, meetings and program issues, many 1:1s with a 19-person team, gym at lunch, global calls late—busy but structured days.",
@@ -59,7 +59,7 @@ VES = {
                 "Was there a memorable project?",
                 """Virtual Integration Solution 1 team의 팀장으로 부임하기 전에, 실무자였던 충돌해석 엔지니어 관점에서는 VISTIQ(Project명: L234) 프로젝트가 가장 기억에 남습니다. VISTIQ는 같은 BEV3 project 안에서 가장 크고 무거운 차량이라, 충돌 해석 관점에서 보면 말 그대로 worst case 차량이었습니다. Simulation Lead Engineer로서 낮에는 서브 팀 엔지니어들과 유관 부서 엔지니어들과 함께 이슈를 풀고, 밤에는 글로벌 카운터파트와 거의 매일 회의를 하며 그날 진행된 내용들을 정리하고 방향을 결정해야 했습니다. “어떻게 버텼나” 싶을 정도로 강행군이었지만, 결국 성공적으로 런치를 마무리했고, 그만큼 고생이 보상받는 느낌이어서 지금도 가장 먼저 떠오르는 프로젝트입니다.
 
-개발 프로젝트는 아니지만, 2025년에 진행했던 DIFA 행사 진행도 저에게는 큰 의미가 있었습니다. Core team leader로서 여러 소모임의 의견을 취합 및 정리하고, 부스 운영과 예산, 외부 업체와의 협업을 리드하면서, “우리 GMTCK의 과거·현재·미래를 어떻게 하나의 스토리로 보여줄 것인가”를 처음부터 끝까지 고민해 볼 수 있었기 때문입니다. 현장에서 직접 고객들을 만나 설명하고 피드백을 듣는 경험은, 책상 앞에서 해석만 할 때와는 또 다른 보람을 주는 시간이었습니다.""",
+개발 프로젝트는 아니지만, 2025년에 진행했던 DIFA 행사 진행도 저에게는 큰 의미가 있었습니다. Core team leader로서 여러 소모임의 의견을 취합 및 정리하고, 부스 운영과 예산, 외부 업체와의 협업을 리드하면서, “우리 GMTCK의 과거,현재,미래를 어떻게 하나의 스토리로 보여줄 것인가”를 처음부터 끝까지 고민해 볼 수 있었기 때문입니다. 현장에서 직접 고객들을 만나 설명하고 피드백을 듣는 경험은, 책상 앞에서 해석만 할 때와는 또 다른 보람을 주는 시간이었습니다.""",
                 "VISTIQ/L234 as simulation lead—the heaviest BEV3 variant—and leading DIFA 2025 as a core team leader to tell GMTCK’s story to customers.",
             ),
             Q(

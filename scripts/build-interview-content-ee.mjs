@@ -114,10 +114,10 @@ The ISB Lab evaluates performance and verifies software for ISP, VCU, and Telema
       q: "담당 업무를 수행하기 위해 필요한 역량은 무엇이라고 생각하시나요?",
       qKr: "담당 업무를 수행하기 위해 필요한 역량은 무엇이라고 생각하시나요?",
       qEn: "What competencies do you think are necessary for your work?",
-      a: `Infotainment System Bench 및 Antenna Reception SVE 업무를 수행하기 위해서는 다양한 역량이 요구됩니다. 우선 전기·전자공학에 대한 기초 지식과 함께 자동차 시스템 및 통신에 대한 전반적인 이해가 필요합니다.
+      a: `Infotainment System Bench 및 Antenna Reception SVE 업무를 수행하기 위해서는 다양한 역량이 요구됩니다. 우선 전기,전자공학에 대한 기초 지식과 함께 자동차 시스템 및 통신에 대한 전반적인 이해가 필요합니다.
 
 그러나 무엇보다 중요한 역량은 소비자 관점에서 문제를 바라보고 질문할 수 있는 적극성, 그리고 발견한 문제를 다양한 관점에서 끝까지 해결하려는 책임감이라고 생각합니다.`,
-      aKr: `Infotainment System Bench 및 Antenna Reception SVE 업무를 수행하기 위해서는 다양한 역량이 요구됩니다. 우선 전기·전자공학에 대한 기초 지식과 함께 자동차 시스템 및 통신에 대한 전반적인 이해가 필요합니다.
+      aKr: `Infotainment System Bench 및 Antenna Reception SVE 업무를 수행하기 위해서는 다양한 역량이 요구됩니다. 우선 전기,전자공학에 대한 기초 지식과 함께 자동차 시스템 및 통신에 대한 전반적인 이해가 필요합니다.
 
 그러나 무엇보다 중요한 역량은 소비자 관점에서 문제를 바라보고 질문할 수 있는 적극성, 그리고 발견한 문제를 다양한 관점에서 끝까지 해결하려는 책임감이라고 생각합니다.`,
       aEn: `Working on the Infotainment System Bench and Antenna Reception SVE requires a range of skills. You need fundamentals in electrical and electronic engineering and a broad understanding of automotive systems and communications.
@@ -169,10 +169,10 @@ We’re also proud of our informal groups—camping, tennis, gaming—and the fu
   ],
 };
 
-/** ee-system-investigation-1(윤애진)·-2(권민들)·ee-certification 등은 data/interview-content-ee.json에서 직접 유지할 수 있음 */
+/** ee-system-investigation-1(윤애진),-2(권민들),ee-certification 등은 data/interview-content-ee.json에서 직접 유지할 수 있음 */
 const payload = {
   "ee-system-investigation-2": eeSystemInvestigation,
-  "ee-verification": eeVerification,
+  "ee-verification-1": eeVerification,
 };
 
 fs.writeFileSync(out, JSON.stringify(payload, null, 2), "utf8");

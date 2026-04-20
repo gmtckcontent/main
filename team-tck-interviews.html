@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="./" />
     <title>Team TCK | Our Story</title>
+    <meta
+      name="description"
+      content="GMTCK Our Story — 직무별 인터뷰와 스토리로 GM Technical Center Korea 팀을 만나보세요."
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://www.gmtck.com/team-tck-interviews.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Team TCK | Our Story | GMTCK" />
+    <meta
+      property="og:description"
+      content="GMTCK Our Story — 직무별 인터뷰와 스토리로 팀을 만나보세요."
+    />
+    <meta
+      property="og:url"
+      content="https://www.gmtck.com/team-tck-interviews.html"
+    />
+    <meta property="og:site_name" content="GMTCK" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta
+      property="og:image"
+      content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
+    />
     <!-- 인터뷰/스타일 수정 후 브라우저 캐시 회피: ?v= 숫자 올리기 -->
     <link rel="stylesheet" href="./css/style.css?v=93" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +45,7 @@
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
-      // team-tck / interviews — scroll-snap 비활성(style.css)로 GSAP ScrollTrigger·히어로 흑백 웨이브 유지
+      // team-tck / interviews — scroll-snap 비활성(style.css)로 GSAP ScrollTrigger,히어로 흑백 웨이브 유지
       document.documentElement.classList.add("team-tck-page");
       document.documentElement.classList.add("interviews-page");
       // Force scroll to top immediately
@@ -125,35 +150,6 @@
       </div>
     </nav>
 
-    <!-- 랜딩/네비 DOM 밖: 인터뷰 셸 표시 시에만 보임 (js에서 hidden 토글) -->
-    <button
-      type="button"
-      class="hq-back-to-landing"
-      id="hqBackToLanding"
-      data-aria-kr="이전 화면으로 돌아가기"
-      data-aria-en="Go back"
-      aria-label="이전 화면으로 돌아가기"
-      hidden
-    >
-      <svg
-        class="hq-back-to-landing__icon"
-        width="22"
-        height="22"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M15 18l-6-6 6-6"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-
     <section class="subpage-section hq-intro-section">
       <div class="container">
         <!-- 진입: 본부 선택 랜딩 (해시 없을 때 표시) -->
@@ -166,77 +162,78 @@
             >
               <div class="hq-landing-hero-slab">
                 <div class="hq-landing-bg" aria-hidden="true">
+                  <!-- 인터뷰 프로필 모자이크: interviewData → getInterviewPortraitUrl (아래 hero-cinematic은 텍스트만) -->
                   <div class="hq-landing-bg-faces" id="hqLandingBgFaces"></div>
                   <div class="hq-landing-bg-scrim"></div>
                   <div class="hq-landing-bg-shine"></div>
                 </div>
                 <div class="hq-landing-hero-cinematic">
-                <div
-                  class="hq-landing-hero-cinematic-vignette"
-                  aria-hidden="true"
-                ></div>
-                <div
-                  class="hq-landing-hero-cinematic-inner"
-                  id="hqLandingOurStory"
-                >
-                  <div class="hq-landing-hero-text">
-                    <p
-                      class="hq-landing-kicker"
-                      data-kr="Team TCK"
-                      data-en="Team TCK"
-                    >
-                      Team TCK
-                    </p>
-                    <h1
-                      class="hq-landing-title"
-                      data-kr="Our Story"
-                      data-en="Our Story"
-                    >
-                      Our Story
-                    </h1>
-                    <p
-                      class="hq-landing-lead"
-                      data-kr="최고의 기술로 세상을 움직이는 혁신을 만들어가는 GMTCK의 담당자들을 만나 보세요."
-                      data-en="Meet the people driving innovation at GM Technical Center Korea."
-                    >
-                      최고의 기술로 세상을 움직이는 혁신을 만들어가는 GMTCK의
-                      담당자들을 만나 보세요.
-                    </p>
-                  </div>
                   <div
-                    class="hq-landing-hero-pills"
-                    role="group"
-                    aria-label="빠른 이동"
+                    class="hq-landing-hero-cinematic-vignette"
+                    aria-hidden="true"
+                  ></div>
+                  <div
+                    class="hq-landing-hero-cinematic-inner"
+                    id="hqLandingOurStory"
                   >
-                    <a
-                      href="team-tck.html"
-                      class="hq-landing-pill hq-landing-pill--primary"
-                    >
-                      <span data-kr="Team TCK" data-en="Team TCK"
-                        >Team TCK</span
+                    <div class="hq-landing-hero-text">
+                      <p
+                        class="hq-landing-kicker"
+                        data-kr="Team TCK"
+                        data-en="Team TCK"
                       >
-                      <span
-                        class="hq-landing-pill-chevron"
-                        aria-hidden="true"
-                      ></span>
-                    </a>
-                    <button
-                      type="button"
-                      class="hq-landing-pill hq-landing-pill--secondary"
-                      id="hqLandingScrollToDivisions"
-                    >
-                      <span data-kr="본부별 인터뷰" data-en="By division"
-                        >본부별 인터뷰</span
+                        Team TCK
+                      </p>
+                      <h1
+                        class="hq-landing-title"
+                        data-kr="Our Story"
+                        data-en="Our Story"
                       >
-                      <span
-                        class="hq-landing-pill-chevron"
-                        aria-hidden="true"
-                      ></span>
-                    </button>
+                        Our Story
+                      </h1>
+                      <p
+                        class="hq-landing-lead"
+                        data-kr="최고의 기술로 세상을 움직이는 혁신을 만들어가는 GMTCK의 담당자들을 만나 보세요."
+                        data-en="Meet the people driving innovation at GM Technical Center Korea."
+                      >
+                        최고의 기술로 세상을 움직이는 혁신을 만들어가는 GMTCK의
+                        담당자들을 만나 보세요.
+                      </p>
+                    </div>
+                    <div
+                      class="hq-landing-hero-pills"
+                      role="group"
+                      aria-label="빠른 이동"
+                    >
+                      <a
+                        href="team-tck.html"
+                        class="hq-landing-pill hq-landing-pill--primary"
+                      >
+                        <span data-kr="Team TCK" data-en="Team TCK"
+                          >Team TCK</span
+                        >
+                        <span
+                          class="hq-landing-pill-chevron"
+                          aria-hidden="true"
+                        ></span>
+                      </a>
+                      <button
+                        type="button"
+                        class="hq-landing-pill hq-landing-pill--secondary"
+                        id="hqLandingScrollToDivisions"
+                      >
+                        <span data-kr="본부별 인터뷰" data-en="By division"
+                          >본부별 인터뷰</span
+                        >
+                        <span
+                          class="hq-landing-pill-chevron"
+                          aria-hidden="true"
+                        ></span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             </div>
 
             <section
@@ -271,9 +268,9 @@
                         >
                         <span
                           class="hq-division-intro__desc"
-                          data-kr="차량 개발 전 과정과 스튜디오·서피스 통합을 아우르는 본부입니다."
+                          data-kr="차량 개발 전 과정과 스튜디오,서피스 통합을 아우르는 본부입니다."
                           data-en="Advanced Vehicle Development &amp; Studio &amp; Surface Integration."
-                          >차량 개발 전 과정과 스튜디오·서피스 통합을 아우르는
+                          >차량 개발 전 과정과 스튜디오,서피스 통합을 아우르는
                           본부입니다.</span
                         >
                       </span>
@@ -302,9 +299,9 @@
                         >
                         <span
                           class="hq-division-intro__desc"
-                          data-kr="차체·외장·샤시·애프터세일즈까지 차량의 근본 성능을 설계합니다."
+                          data-kr="차체,외장,샤시,애프터세일즈까지 차량의 근본 성능을 설계합니다."
                           data-en="Body, Exterior, Chassis and After sales Engineering."
-                          >차체·외장·샤시·애프터세일즈까지 차량의 근본 성능을
+                          >차체,외장,샤시,애프터세일즈까지 차량의 근본 성능을
                           설계합니다.</span
                         >
                       </span>
@@ -333,9 +330,9 @@
                         >
                         <span
                           class="hq-division-intro__desc"
-                          data-kr="품질·검증·엔지니어링 우수성을 한데 모은 본부입니다."
+                          data-kr="품질,검증,엔지니어링 우수성을 한데 모은 본부입니다."
                           data-en="Engineering Excellence across certification, validation, and quality."
-                          >품질·검증·엔지니어링 우수성을 한데 모은
+                          >품질,검증,엔지니어링 우수성을 한데 모은
                           본부입니다.</span
                         >
                       </span>
@@ -364,9 +361,9 @@
                         >
                         <span
                           class="hq-division-intro__desc"
-                          data-kr="실내·열·추진·에너지 시스템을 통합 개발합니다."
+                          data-kr="실내,열,추진,에너지 시스템을 통합 개발합니다."
                           data-en="Interior, Thermal Propulsion Integration &amp; Energy Conversion System Engineering."
-                          >실내·열·추진·에너지 시스템을 통합 개발합니다.</span
+                          >실내,열,추진,에너지 시스템을 통합 개발합니다.</span
                         >
                       </span>
                     </a>
@@ -394,9 +391,9 @@
                         >
                         <span
                           class="hq-division-intro__desc"
-                          data-kr="주행·시험·프루빙 그라운드에서 성능을 통합 검증합니다."
+                          data-kr="주행,시험,프루빙 그라운드에서 성능을 통합 검증합니다."
                           data-en="Performance Integration &amp; Proving Ground."
-                          >주행·시험·프루빙 그라운드에서 성능을 통합
+                          >주행,시험,프루빙 그라운드에서 성능을 통합
                           검증합니다.</span
                         >
                       </span>
@@ -517,10 +514,9 @@
 
               <!-- EE: Validation -->
               <div class="hq-content-section" id="ee-verification">
-                <div
-                  class="hq-content-body"
-                  data-role-interview-mount="ee-verification"
-                ></div>
+                <div class="hq-content-body">
+                  <!-- 인터뷰는 JavaScript로 추가 (EE2/EE2b → ee-verification-1, -2) -->
+                </div>
               </div>
 
               <!-- EE: Product Excellence — data/interview-content-ee.json -->
@@ -701,6 +697,7 @@
               <div class="hq-division-rail-card">
                 <ul class="hq-division-rail-list">
                   <li>
+                    <!-- 본부 레일 All → showSection('all') + #all 스크롤 (사이드바 제목 All과 별개) -->
                     <a
                       href="#all"
                       class="hq-nav-link"
@@ -887,7 +884,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/role-interviews.js?v=31"></script>
+    <script src="./js/role-interviews.js?v=47"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=50"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=3"></script>
@@ -908,38 +905,22 @@
       function runInterviewMount() {
         mountStaticRoleInterviews();
         refreshLanguageAfterInterviewMount();
-        // 해시로 먼저 showRole이 돈 뒤 마운트가 끝나면, 리빌이 빈 DOM에 붙어 질문이 안 보일 수 있음
+        // 마운트 직후 활성 섹션만 IO 리빌 재등록(display:none 해제 후 교차 관측)
         requestAnimationFrame(() => {
-          document
-            .querySelectorAll(
-              ".hq-content-section.active .hq-reveal:not(.is-visible)",
-            )
-            .forEach((el) => {
-              el.classList.add("is-visible");
-            });
+          const active = document.querySelector(".hq-content-section.active");
+          if (active && typeof window.gmtckScanInterviewReveal === "function") {
+            window.gmtckScanInterviewReveal(active, { force: true });
+          }
         });
       }
 
-      loadInterviewContentExtras()
-        .then(() => {
-          if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", runInterviewMount);
-          } else {
-            runInterviewMount();
-          }
-        })
-        .catch((e) => {
-          console.error("[interviews] JSON 로드 오류:", e);
-          if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", runInterviewMount);
-          } else {
-            runInterviewMount();
-          }
-        });
+      // 인터뷰 JSON 병합 후 runInterviewMount + 초기 해시는 DOMContentLoaded 안에서 처리(레이스 방지)
 
       // HQ Sidebar Navigation
       document.addEventListener("DOMContentLoaded", function () {
-        /** 랜딩이 보일 때만: pinSpacing 반영 후 스크롤을 0으로 고정 (새로고침·ST refresh 시 튐 방지) */
+        const HQ_RAIL_NAV = "#hqDivisionRail .hq-nav-link";
+
+        /** 랜딩이 보일 때만: pinSpacing 반영 후 스크롤을 0으로 고정 (새로고침,ST refresh 시 튐 방지) */
         function queueTeamTckLandingScrollTop() {
           const landing = document.getElementById("hqLanding");
           if (!landing || landing.hidden) {
@@ -989,11 +970,6 @@
               keys = Object.keys(interviewData);
             }
             keys.sort();
-            const shuffled = [...keys];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-              const j = Math.floor(Math.random() * (i + 1));
-              [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
             const w = slab.clientWidth;
             const h = slab.clientHeight;
             const cols = window.matchMedia("(max-width: 768px)").matches
@@ -1005,10 +981,42 @@
             let rows = Math.max(4, Math.ceil(h / Math.max(1, cellW)));
             rows = Math.min(rows, maxRows);
             const targetCount = cols * rows;
-            const urls = [];
-            for (let i = 0; i < targetCount; i++) {
-              urls.push(getInterviewPortraitUrl(shuffled[i % shuffled.length]));
+
+            /** 한 사이클 안에서만 중복 없이 키를 이어 붙임(사이클 경계는 이전 타일과 겹치지 않게 조정). 1명뿐이면 반복 불가피. */
+            function shuffleKeyCycle(keyList) {
+              const a = [...keyList];
+              for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+              }
+              return a;
             }
+            function expandKeysForTiles(keyList, count) {
+              if (keyList.length === 0) return [];
+              if (keyList.length === 1) {
+                return Array.from({ length: count }, () => keyList[0]);
+              }
+              const out = [];
+              while (out.length < count) {
+                let cycle = shuffleKeyCycle(keyList);
+                if (out.length > 0) {
+                  const prev = out[out.length - 1];
+                  if (cycle[0] === prev) {
+                    const sw = cycle.findIndex((k) => k !== prev);
+                    if (sw > 0) {
+                      [cycle[0], cycle[sw]] = [cycle[sw], cycle[0]];
+                    }
+                  }
+                }
+                for (let k = 0; k < cycle.length && out.length < count; k++) {
+                  out.push(cycle[k]);
+                }
+              }
+              return out.slice(0, count);
+            }
+
+            const tileKeys = expandKeysForTiles(keys, targetCount);
+            const urls = tileKeys.map((k) => getInterviewPortraitUrl(k));
             container.innerHTML = "";
             urls.forEach((url, i) => {
               const cell = document.createElement("div");
@@ -1035,7 +1043,7 @@
             }
             buildTimer = setTimeout(function () {
               buildHqLandingFaces();
-              /* 창 크기 변경 시에만: 타일 재생성 후 ST 재바인딩 — 휠 누적·압축 진행 유지 */
+              /* 창 크기 변경 시에만: 타일 재생성 후 ST 재바인딩 — 휠 누적,압축 진행 유지 */
               if (typeof window.initHqLandingScrollTrigger === "function") {
                 window.initHqLandingScrollTrigger({
                   preserveInteractionState: true,
@@ -1060,18 +1068,46 @@
             requestAnimationFrame(fullRebuildFacesAndSt);
           });
 
-          /* 슬랩만 observe 금지: --hq-compress로 높이가 바뀔 때마다 init→resetAccumulation 되어 스크롤·휠이 원점으로 돌아감 */
+          /* 슬랩만 observe 금지: --hq-compress로 높이가 바뀔 때마다 init→resetAccumulation 되어 스크롤,휠이 원점으로 돌아감 */
           window.addEventListener("resize", scheduleRebuildFaces);
         })();
 
         queueTeamTckLandingScrollTop();
 
+        /** #navbar 높이 + extra만큼 타깃을 더 위로(스크롤 Y 감소) — 본부별 인터뷰 pill / All 공통 */
+        function scrollPageToElementBelowNav(el, extraOffsetPx) {
+          if (!el) return;
+          const navbar = document.getElementById("navbar");
+          const headerH = navbar ? navbar.offsetHeight : 72;
+          const extra = extraOffsetPx != null ? extraOffsetPx : 48;
+          const y =
+            el.getBoundingClientRect().top + window.scrollY - headerH - extra;
+          window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+        }
+
+        /** 본부 시트 컨테이너 하단이 뷰포트 하단에 오도록 스크롤 (본부별 인터뷰 pill) */
+        function scrollToDivisionIntroContainerBottomAligned() {
+          const container = document.querySelector(
+            "#hqDivisionIntro .hq-division-intro__container",
+          );
+          if (!container) return;
+          const rect = container.getBoundingClientRect();
+          const sy = window.scrollY || document.documentElement.scrollTop;
+          const bottomDoc = sy + rect.bottom;
+          const vh = window.innerHeight;
+          const gap = 0;
+          const y = bottomDoc - vh + gap;
+          window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+        }
+
         document
           .getElementById("hqLandingScrollToDivisions")
           ?.addEventListener("click", function () {
-            document
-              .getElementById("hqDivisionIntro")
-              ?.scrollIntoView({ behavior: "smooth", block: "start" });
+            requestAnimationFrame(function () {
+              requestAnimationFrame(
+                scrollToDivisionIntroContainerBottomAligned,
+              );
+            });
           });
 
         const fromNavigation = sessionStorage.getItem("fromNavigation");
@@ -1212,31 +1248,39 @@
               carouselIndex: n - 1,
             };
           }
+          if (/^ee-verification-\d+$/.test(hash)) {
+            const n = parseInt(hash.split("-").pop(), 10);
+            if (!Number.isFinite(n) || n < 1) {
+              return null;
+            }
+            return {
+              kind: "role",
+              hq: "engineering-excellence",
+              roleId: "ee-verification",
+              carouselIndex: n - 1,
+            };
+          }
           return null;
         }
 
         function ensureInterviewsShellVisible() {
           const landing = document.getElementById("hqLanding");
           const shell = document.getElementById("hqInterviewsShell");
-          const backBtn = document.getElementById("hqBackToLanding");
           if (landing) landing.hidden = true;
           if (shell) shell.hidden = false;
-          if (backBtn) backBtn.hidden = false;
         }
 
         function showLandingView() {
           const landing = document.getElementById("hqLanding");
           const shell = document.getElementById("hqInterviewsShell");
-          const backBtn = document.getElementById("hqBackToLanding");
           if (landing) landing.hidden = false;
           if (shell) shell.hidden = true;
-          if (backBtn) backBtn.hidden = true;
           document.querySelectorAll(".hq-content-section").forEach((s) => {
             s.classList.remove("active");
             s.style.display = "none";
           });
           document
-            .querySelectorAll(".hq-nav-link")
+            .querySelectorAll(HQ_RAIL_NAV)
             .forEach((l) => l.classList.remove("active"));
           if (typeof window.resetHqLandingInteractionState === "function") {
             window.resetHqLandingInteractionState();
@@ -1276,50 +1320,67 @@
             );
           }
 
-          // 이미지 존재 여부 확인 후 추가 (profileFallback 있으면 그 URL만 요청 — 미업로드 시 404 반복 방지)
+          // 이미지 존재 여부 확인 후 추가 (주 프로필 404 시 profileFallback·기본 경로 순 시도)
           filteredImages.forEach((imageName) => {
             const data = interviewData[imageName];
-            const displaySrc =
-              data.profileImage ||
-              data.profileFallback ||
-              `./images/profilepic/${imageName}`;
-            const img = new Image();
-            img.onload = function () {
-              // 이미지가 로드되면 DOM에 추가
-              const item = document.createElement("div");
-              item.className = "interview-item";
-              item.style.cursor = "pointer";
-              item.setAttribute("data-image", imageName);
-              item.innerHTML = `
+            const bust = (url) =>
+              typeof withProfileImageCacheBust === "function"
+                ? withProfileImageCacheBust(url)
+                : url;
+            const tryUrls = [];
+            if (data.profileImage) tryUrls.push(bust(data.profileImage));
+            if (
+              data.profileFallback &&
+              data.profileFallback !== data.profileImage
+            ) {
+              tryUrls.push(bust(data.profileFallback));
+            }
+            tryUrls.push(bust(`./images/profilepic/${imageName}`));
+
+            let urlIndex = 0;
+            function tryNextSrc() {
+              if (urlIndex >= tryUrls.length) {
+                console.log(`Image not found: ${imageName}`);
+                return;
+              }
+              const displaySrc = tryUrls[urlIndex];
+              const img = new Image();
+              img.onload = function () {
+                const item = document.createElement("div");
+                item.className = "interview-item";
+                item.style.cursor = "pointer";
+                item.setAttribute("data-image", imageName);
+                item.innerHTML = `
                 <img src="${displaySrc}" alt="Interview" class="interview-image" />
                 <p class="interview-hq" data-kr="${data.hq}" data-en="${data.hq}">${data.hq}</p>
                 <p class="interview-role" data-kr="${data.roleKr}" data-en="${data.roleEn}">${currentLang === "kr" ? data.roleKr : data.roleEn}</p>
               `;
-              container.appendChild(item);
+                container.appendChild(item);
 
-              // 클릭 이벤트 추가
-              item.addEventListener("click", function () {
-                showPersonInterview(imageName);
-              });
+                item.addEventListener("click", function () {
+                  showPersonInterview(imageName);
+                });
 
-              // 언어 변경 이벤트 리스너 추가
-              document.addEventListener("languageChange", function (e) {
-                const lang = e.detail.language;
-                const hqElement = item.querySelector(".interview-hq");
-                const roleElement = item.querySelector(".interview-role");
-                if (hqElement) {
-                  hqElement.textContent = data.hq;
-                }
-                if (roleElement) {
-                  roleElement.textContent =
-                    lang === "kr" ? data.roleKr : data.roleEn;
-                }
-              });
-            };
-            img.onerror = function () {
-              console.log(`Image not found: ${imageName} (${displaySrc})`);
-            };
-            img.src = displaySrc;
+                document.addEventListener("languageChange", function (e) {
+                  const lang = e.detail.language;
+                  const hqElement = item.querySelector(".interview-hq");
+                  const roleElement = item.querySelector(".interview-role");
+                  if (hqElement) {
+                    hqElement.textContent = data.hq;
+                  }
+                  if (roleElement) {
+                    roleElement.textContent =
+                      lang === "kr" ? data.roleKr : data.roleEn;
+                  }
+                });
+              };
+              img.onerror = function () {
+                urlIndex += 1;
+                tryNextSrc();
+              };
+              img.src = displaySrc;
+            }
+            tryNextSrc();
           });
         }
 
@@ -1371,9 +1432,8 @@
           let currentIndex = 0;
 
           function updateCarousel() {
-            const list = interviewContainer.querySelectorAll(
-              ".ve-interview-item",
-            );
+            const list =
+              interviewContainer.querySelectorAll(".ve-interview-item");
             list.forEach((el, index) => {
               el.classList.toggle("is-carousel-active", index === currentIndex);
             });
@@ -1383,6 +1443,14 @@
             if (nextBtn) nextBtn.disabled = currentIndex >= count - 1;
 
             const active = list[currentIndex];
+            if (active) {
+              const profile = active.querySelector(
+                ".interview-profile-header",
+              );
+              if (profile) {
+                profile.insertAdjacentElement("afterend", navContainer);
+              }
+            }
             if (
               active &&
               typeof window.gmtckScanInterviewReveal === "function"
@@ -1434,13 +1502,13 @@
             s.style.display = "none";
           });
 
-          // Update navigation bar links
-          const navLinks = document.querySelectorAll(".hq-nav-link");
+          // Update division rail links (#hqDivisionRail)
+          const navLinks = document.querySelectorAll(HQ_RAIL_NAV);
           navLinks.forEach((l) => l.classList.remove("active"));
 
-          // Add active class to clicked nav link
+          // Add active class to clicked rail link
           const navLink = document.querySelector(
-            `.hq-nav-link[data-hq="${targetId}"]`,
+            `#hqDivisionRail .hq-nav-link[data-hq="${targetId}"]`,
           );
           if (navLink) {
             navLink.classList.add("active");
@@ -1481,6 +1549,11 @@
             if (layout) {
               layout.style.gridTemplateColumns = "minmax(0, 1fr) auto";
             }
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                scrollPageToElementBelowNav(allSection, 48);
+              });
+            });
             return;
           }
 
@@ -1510,7 +1583,7 @@
           }
         }
 
-        function showRole(
+        function showRoleImpl(
           roleId,
           scrollToTop = false,
           scrollToSection = false,
@@ -1548,13 +1621,13 @@
             targetSection.classList.add("active");
             targetSection.style.display = "block";
 
-            // display:none이었다가 열리면 IntersectionObserver가 리빌을 못 잡아 질문이 안 보일 수 있음
+            // 섹션 표시 후 스크롤 리빌 재등록(문항별 애니메이션 유지 — 일괄 is-visible 금지)
             requestAnimationFrame(() => {
-              targetSection
-                .querySelectorAll(".hq-reveal:not(.is-visible)")
-                .forEach((el) => {
-                  el.classList.add("is-visible");
+              if (typeof window.gmtckScanInterviewReveal === "function") {
+                window.gmtckScanInterviewReveal(targetSection, {
+                  force: true,
                 });
+              }
             });
 
             // VE 담당 섹션인 경우 해당 담당의 모든 인터뷰를 동적으로 생성
@@ -1592,12 +1665,11 @@
                       </svg>
                     </button>
                   `;
-                  contentBody.appendChild(navContainer);
-
-                  // 인터뷰 컨테이너 생성
+                  // 인터뷰 컨테이너 생성 (네비는 setupStackInterviewCarousel에서 활성 슬라이드 프로필 바로 아래로 이동)
                   const interviewContainer = document.createElement("div");
                   interviewContainer.className = "ve-interview-container";
                   contentBody.appendChild(interviewContainer);
+                  contentBody.appendChild(navContainer);
 
                   // 각 인터뷰 섹션 생성
                   filteredImages.forEach((imageName, index) => {
@@ -1625,16 +1697,87 @@
                   contentBody.setAttribute("data-loaded", "true");
                 }
               }
+            }
 
-              // VE 담당 섹션인 경우 스크롤 처리
-              if (scrollToSection) {
-                setTimeout(() => {
-                  const offsetTop = targetSection.offsetTop - 100;
-                  window.scrollTo({
-                    top: offsetTop,
-                    behavior: "smooth",
+            // EE: Validation Division — SPI와 동일 다인 인터뷰 캐러셀
+            if (roleId === "ee-verification") {
+              const roleData = hqRoles["engineering-excellence"].find(
+                (r) => r.id === roleId,
+              );
+              if (roleData) {
+                const roleName = roleData.en;
+                const contentBody =
+                  targetSection.querySelector(".hq-content-body");
+                if (contentBody && !contentBody.hasAttribute("data-loaded")) {
+                  const filteredImages = Object.keys(interviewData)
+                    .filter((imageName) => {
+                      const data = interviewData[imageName];
+                      return (
+                        data.hq === "Engineering Excellence" &&
+                        data.role === roleName
+                      );
+                    })
+                    .sort();
+
+                  const navContainer = document.createElement("div");
+                  navContainer.className = "ve-interview-nav";
+                  navContainer.innerHTML = `
+                    <button class="ve-nav-btn ve-nav-prev" aria-label="Previous interview">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                      </svg>
+                    </button>
+                    <button class="ve-nav-btn ve-nav-next" aria-label="Next interview">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                      </svg>
+                    </button>
+                  `;
+                  const interviewContainer = document.createElement("div");
+                  interviewContainer.className = "ve-interview-container";
+                  contentBody.appendChild(interviewContainer);
+                  contentBody.appendChild(navContainer);
+
+                  filteredImages.forEach((imageName, index) => {
+                    const data = interviewData[imageName];
+                    const verInterviewId = `${roleId}-${index + 1}`;
+                    const interviewSection = createInterviewSection(
+                      verInterviewId,
+                      imageName,
+                      data,
+                    );
+                    interviewSection.setAttribute("data-index", index);
+                    interviewContainer.appendChild(interviewSection);
                   });
-                }, 100);
+
+                  const carouselApi = setupStackInterviewCarousel(
+                    interviewContainer,
+                    navContainer,
+                    filteredImages.length,
+                  );
+
+                  targetSection._setInterviewCarouselIndex = (i) => {
+                    carouselApi.setIndex(i);
+                  };
+
+                  contentBody.setAttribute("data-loaded", "true");
+                }
+
+                if (
+                  typeof carouselIndexOpt === "number" &&
+                  !Number.isNaN(carouselIndexOpt)
+                ) {
+                  setTimeout(() => {
+                    if (
+                      typeof targetSection._setInterviewCarouselIndex ===
+                      "function"
+                    ) {
+                      targetSection._setInterviewCarouselIndex(
+                        carouselIndexOpt,
+                      );
+                    }
+                  }, 0);
+                }
               }
             }
 
@@ -1672,11 +1815,10 @@
                       </svg>
                     </button>
                   `;
-                  contentBody.appendChild(navContainer);
-
                   const interviewContainer = document.createElement("div");
                   interviewContainer.className = "ve-interview-container";
                   contentBody.appendChild(interviewContainer);
+                  contentBody.appendChild(navContainer);
 
                   filteredImages.forEach((imageName, index) => {
                     const data = interviewData[imageName];
@@ -1718,16 +1860,6 @@
                     }
                   }, 0);
                 }
-
-                if (scrollToSection) {
-                  setTimeout(() => {
-                    const offsetTop = targetSection.offsetTop - 100;
-                    window.scrollTo({
-                      top: offsetTop,
-                      behavior: "smooth",
-                    });
-                  }, 100);
-                }
               }
             }
           }
@@ -1767,7 +1899,7 @@
             if (hqId) {
               // 본부명 찾기
               const hqNavLink = document.querySelector(
-                `.hq-nav-link[data-hq="${hqId}"]`,
+                `#hqDivisionRail .hq-nav-link[data-hq="${hqId}"]`,
               );
               if (hqNavLink) {
                 hqNameKr = hqNavLink.getAttribute("data-kr");
@@ -1799,22 +1931,49 @@
               const headerHeight = navbar ? navbar.offsetHeight : 100;
               const sectionTitle =
                 targetSection.querySelector(".hq-content-title");
-              if (sectionTitle) {
-                // Calculate scroll position to show title just below header
-                const titleRect = sectionTitle.getBoundingClientRect();
-                const currentScroll =
-                  window.pageYOffset || document.documentElement.scrollTop;
-                // Position title right below header with minimal padding (20px)
-                const scrollPosition =
-                  currentScroll + titleRect.top - headerHeight - 20;
-
-                window.scrollTo({
-                  top: Math.max(0, scrollPosition),
-                  behavior: "smooth",
-                });
-              }
+              /* EE SPI·VE 다인 인터뷰 등 본문에 섹션 타이틀이 없으면 프로필/본문 기준으로 스크롤 */
+              const scrollAnchor =
+                sectionTitle ||
+                targetSection.querySelector(".interview-profile-header") ||
+                targetSection.querySelector(".hq-content-body") ||
+                targetSection;
+              const anchorRect = scrollAnchor.getBoundingClientRect();
+              const currentScroll =
+                window.pageYOffset || document.documentElement.scrollTop;
+              const scrollPosition =
+                currentScroll + anchorRect.top - headerHeight - 72;
+              window.scrollTo({
+                top: Math.max(0, scrollPosition),
+                behavior: "smooth",
+              });
             }, 100);
           }
+        }
+
+        function showRole(
+          roleId,
+          scrollToTop = false,
+          scrollToSection = false,
+          carouselIndexOpt,
+        ) {
+          loadInterviewContentExtras()
+            .then(() =>
+              showRoleImpl(
+                roleId,
+                scrollToTop,
+                scrollToSection,
+                carouselIndexOpt,
+              ),
+            )
+            .catch((e) => {
+              console.error("[interviews] JSON 로드 오류:", e);
+              showRoleImpl(
+                roleId,
+                scrollToTop,
+                scrollToSection,
+                carouselIndexOpt,
+              );
+            });
         }
 
         // 개인 인터뷰 섹션 생성 및 표시 함수
@@ -1852,6 +2011,22 @@
             const idx = parseInt(interviewId.split("-").pop(), 10) - 1;
             showSection(hqId, false, false);
             showRole("ee-system-investigation", false, true, idx);
+            window.history.pushState(null, null, `#${interviewId}`);
+            return;
+          }
+
+          // EE Validation Division 다인 인터뷰 — ee-verification + 캐러셀
+          if (/^ee-verification-\d+$/.test(interviewId)) {
+            let hqId = data.hq.toLowerCase().replace(/\s+/g, "-");
+            if (hqId === "avd-&-svi") {
+              hqId = "avd-svi";
+            }
+            if (hqId === "s&s") {
+              hqId = "ss";
+            }
+            const idx = parseInt(interviewId.split("-").pop(), 10) - 1;
+            showSection(hqId, false, false);
+            showRole("ee-verification", false, true, idx);
             window.history.pushState(null, null, `#${interviewId}`);
             return;
           }
@@ -1956,8 +2131,8 @@
           }
         }
 
-        // Navigation bar links (본부 선택)
-        const navLinks = document.querySelectorAll(".hq-nav-link");
+        // 본부 레일(#hqDivisionRail-card) — All 포함
+        const navLinks = document.querySelectorAll(HQ_RAIL_NAV);
         navLinks.forEach((link) => {
           link.addEventListener("click", function (e) {
             e.preventDefault();
@@ -1976,41 +2151,31 @@
           });
         });
 
-        const hqBackToLanding = document.getElementById("hqBackToLanding");
-        if (hqBackToLanding) {
-          hqBackToLanding.addEventListener("click", function () {
-            showLandingView();
-            window.history.pushState(
-              null,
-              "",
-              window.location.pathname + window.location.search,
-            );
+        // 초기 해시: EE SPI·VE 다인 인터뷰는 interview-content JSON 병합 후에만 캐러셀 생성
+        loadInterviewContentExtras()
+          .catch((e) => {
+            console.error("[interviews] JSON 로드 오류:", e);
+          })
+          .finally(() => {
+            runInterviewMount();
+            if (window.location.hash) {
+              const hash = window.location.hash.substring(1);
+              const resolved = resolveInterviewHash(hash);
+              if (resolved && resolved.kind === "all") {
+                showSection("all", false);
+              } else if (resolved && resolved.kind === "role") {
+                ensureInterviewsShellVisible();
+                updateSidebar(resolved.hq);
+                showRole(resolved.roleId, false, true, resolved.carouselIndex);
+              } else if (resolved && resolved.kind === "hq") {
+                showSection(resolved.hq, false, true);
+              } else {
+                showLandingView();
+              }
+            } else {
+              showLandingView();
+            }
           });
-        }
-
-        // Handle initial hash - scroll to section title on page load
-        if (window.location.hash) {
-          const hash = window.location.hash.substring(1);
-          const resolved = resolveInterviewHash(hash);
-          if (resolved && resolved.kind === "all") {
-            showSection("all", false);
-          } else if (resolved && resolved.kind === "role") {
-            ensureInterviewsShellVisible();
-            updateSidebar(resolved.hq);
-            showRole(
-              resolved.roleId,
-              false,
-              true,
-              resolved.carouselIndex,
-            );
-          } else if (resolved && resolved.kind === "hq") {
-            showSection(resolved.hq, false, true);
-          } else {
-            showLandingView();
-          }
-        } else {
-          showLandingView();
-        }
 
         // Handle browser back/forward buttons
         window.addEventListener("popstate", function () {
@@ -2025,12 +2190,7 @@
           } else if (resolved && resolved.kind === "role") {
             ensureInterviewsShellVisible();
             updateSidebar(resolved.hq);
-            showRole(
-              resolved.roleId,
-              false,
-              true,
-              resolved.carouselIndex,
-            );
+            showRole(resolved.roleId, false, true, resolved.carouselIndex);
           } else if (resolved && resolved.kind === "hq") {
             showSection(resolved.hq, false, true);
           } else {
@@ -2039,7 +2199,7 @@
         });
       });
 
-      // 이미지·폰트·레이아웃 확정 후 pinSpacing 재계산 → 스크롤 최상단 (랜딩만; 해시로 셸 연 시에는 landing.hidden)
+      // 이미지,폰트,레이아웃 확정 후 pinSpacing 재계산 → 스크롤 최상단 (랜딩만; 해시로 셸 연 시에는 landing.hidden)
       window.addEventListener("load", function () {
         if (typeof ScrollTrigger !== "undefined") {
           ScrollTrigger.refresh();

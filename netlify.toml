@@ -1,21 +1,3 @@
-# Netlify Configuration
-# Force all requests to show 404 page
-
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/index.html"
-  to = "/404.html"
-  status = 404
-  force = true
-
+# Netlify — do NOT use catch-all redirects to /404.html:
+# that returns 404 for every URL and blocks Google (and users).
+# Add only specific redirects here if needed (legacy paths, etc.).

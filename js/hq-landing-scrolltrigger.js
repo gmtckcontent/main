@@ -15,7 +15,7 @@
 
   /** 휠 누적 목표(px) — 높을수록 다음 섹션까지 더 많이 굴려야 함 (예: ~5000) */
   var THRESHOLD = 5000;
-  /** 휠 1회당 누적량 스케일 — 상향 시 잠금 해제·반응이 가벼워짐 */
+  /** 휠 1회당 누적량 스케일 — 상향 시 잠금 해제,반응이 가벼워짐 */
   var WHEEL_ACCUM_SCALE = 0.92;
   /** 이 누적(px)마다 한 번 양자 플립(탁) */
   var WHEEL_QUANTUM = 175;
@@ -51,7 +51,7 @@
 
   var sparkleTimerId = null;
   /** 타이머 보조 깜빡임 간격(ms) — 길게 잡아 슬로모션 느낌 완화 */
-  /** 스크롤·휠이 있을 때만 타이머 플립 사용 — 간격을 넓혀 과한 깜빡임 완화 */
+  /** 스크롤,휠이 있을 때만 타이머 플립 사용 — 간격을 넓혀 과한 깜빡임 완화 */
   var SPARKLE_INTERVAL_MIN = 260;
   var SPARKLE_INTERVAL_MAX = 520;
   /** 초반 0~30% 구간 빈도 배율 */
@@ -61,7 +61,7 @@
   var SCROLL_ACTIVE_MS = 520;
 
   var wheelHandler = null;
-  /** 리사이즈 후 ScrollTrigger·오버랩 재동기화(디바운스) */
+  /** 리사이즈 후 ScrollTrigger,오버랩 재동기화(디바운스) */
   var hqLandingResizeTimer = null;
   var hqLandingResizeHandler = null;
   var touchStartY = null;
@@ -179,7 +179,7 @@
 
   /**
    * Section stacking: #hqDivisionIntro 상단이 뷰포트 아래에서 위로 올라오는 진행도(0~1).
-   * (구 GSAP pin progress 대신 문서 스크롤·getBoundingClientRect 기반)
+   * (구 GSAP pin progress 대신 문서 스크롤,getBoundingClientRect 기반)
    */
   function getPinProgress() {
     var intro = document.getElementById("hqDivisionIntro");
@@ -305,7 +305,7 @@
   }
 
   /**
-   * 일부 타일만 골라 갱신. 스크롤 중에는 플립·재샘플로 정적 느낌 완화.
+   * 일부 타일만 골라 갱신. 스크롤 중에는 플립,재샘플로 정적 느낌 완화.
    */
   function batchSparkleTick() {
     if (!faceCells.length || sectionComplete) {
@@ -427,7 +427,7 @@
   }
 
   /**
-   * 덮개·Our Story 공통 진행(0~1)에 쓰는 휠 누적 구간(px) — THRESHOLD의 2배로 느리게 상승.
+   * 덮개,Our Story 공통 진행(0~1)에 쓰는 휠 누적 구간(px) — THRESHOLD의 2배로 느리게 상승.
    */
   var LIFT_FULL_ACCUM_PX = 10000;
   /**
@@ -438,13 +438,13 @@
   var TITLE_FADE_TOP_START = 100;
   var TITLE_FADE_TOP_END = -32;
   /**
-   * THRESHOLD 초과분(0 ~ POST_THRESHOLD_PX) → 0~1. 본부 패널·Our Story 동시 구동에만 사용.
+   * THRESHOLD 초과분(0 ~ POST_THRESHOLD_PX) → 0~1. 본부 패널,Our Story 동시 구동에만 사용.
    */
-  /** THRESHOLD 이후 이 px만큼 휠하면 --hq-compress 0→1 (그리드 압축·인트로 상승 1:1) */
+  /** THRESHOLD 이후 이 px만큼 휠하면 --hq-compress 0→1 (그리드 압축,인트로 상승 1:1) */
   var POST_THRESHOLD_PX = 420;
 
   /**
-   * 덮개·Our Story 동일 progress — overlap * 100vh == 타이틀 translateY(-overlap*100vh) (픽셀 동일 이동).
+   * 덮개,Our Story 동일 progress — overlap * 100vh == 타이틀 translateY(-overlap*100vh) (픽셀 동일 이동).
    */
   function getLiftProgress01() {
     var wLift = clamp01(accumulated / LIFT_FULL_ACCUM_PX);
@@ -491,7 +491,9 @@
     if (top <= TITLE_FADE_TOP_END) {
       return 0;
     }
-    return clamp01((top - TITLE_FADE_TOP_END) / (TITLE_FADE_TOP_START - TITLE_FADE_TOP_END));
+    return clamp01(
+      (top - TITLE_FADE_TOP_END) / (TITLE_FADE_TOP_START - TITLE_FADE_TOP_END),
+    );
   }
   function getOurStoryInnerEl() {
     return (
@@ -558,13 +560,15 @@
       introContainer.style.removeProperty("transition");
       introContainer.style.removeProperty("padding-top");
     }
-    intro.querySelectorAll(".hq-division-intro__media--entered").forEach(function (el) {
-      el.classList.remove("hq-division-intro__media--entered");
-    });
+    intro
+      .querySelectorAll(".hq-division-intro__media--entered")
+      .forEach(function (el) {
+        el.classList.remove("hq-division-intro__media--entered");
+      });
   }
 
   /**
-   * Our Story: overlap·compress는 CSS. 큰 타이틀만 압축 구간에서 투명도 동기화.
+   * Our Story: overlap,compress는 CSS. 큰 타이틀만 압축 구간에서 투명도 동기화.
    */
   function syncOurStoryToPin() {
     var el = getOurStoryInnerEl();
@@ -597,7 +601,7 @@
   }
 
   /**
-   * #hqDivisionIntro: 문서 흐름 + z-index 스택(레이아웃은 CSS). 스크롤 진행도에 따라 in-view·미디어.
+   * #hqDivisionIntro: 문서 흐름 + z-index 스택(레이아웃은 CSS). 스크롤 진행도에 따라 in-view,미디어.
    */
   function syncDivisionIntroFromMotion() {
     var intro = document.getElementById("hqDivisionIntro");
@@ -617,9 +621,11 @@
       if (introContainer) {
         introContainer.style.opacity = "0";
       }
-      intro.querySelectorAll(".hq-division-intro__media--entered").forEach(function (el) {
-        el.classList.remove("hq-division-intro__media--entered");
-      });
+      intro
+        .querySelectorAll(".hq-division-intro__media--entered")
+        .forEach(function (el) {
+          el.classList.remove("hq-division-intro__media--entered");
+        });
       return;
     }
     intro.style.removeProperty("display");
@@ -635,13 +641,17 @@
       introContainer.style.transform = "none";
     }
     if (p2c > 0.06) {
-      intro.querySelectorAll(".hq-division-intro__media").forEach(function (med) {
-        med.classList.add("hq-division-intro__media--entered");
-      });
+      intro
+        .querySelectorAll(".hq-division-intro__media")
+        .forEach(function (med) {
+          med.classList.add("hq-division-intro__media--entered");
+        });
     } else {
-      intro.querySelectorAll(".hq-division-intro__media--entered").forEach(function (med) {
-        med.classList.remove("hq-division-intro__media--entered");
-      });
+      intro
+        .querySelectorAll(".hq-division-intro__media--entered")
+        .forEach(function (med) {
+          med.classList.remove("hq-division-intro__media--entered");
+        });
     }
   }
 
@@ -688,7 +698,7 @@
   }
 
   /**
-   * 본부 인트로 스택(#hqDivisionIntro)이 화면에 보일 때는 휠로 흑백/컬러 누적·preventDefault 하지 않음.
+   * 본부 인트로 스택(#hqDivisionIntro)이 화면에 보일 때는 휠로 흑백/컬러 누적,preventDefault 하지 않음.
    */
   function isHqDivisionIntroStackWheelPassthrough() {
     var intro = document.getElementById("hqDivisionIntro");
@@ -739,7 +749,10 @@
       if (dy > 0) {
         var absPost = Math.abs(dy);
         var addPost = absPost * speedMultiplier(absPost) * WHEEL_ACCUM_SCALE;
-        accumulated = Math.min(THRESHOLD + POST_THRESHOLD_PX, accumulated + addPost);
+        accumulated = Math.min(
+          THRESHOLD + POST_THRESHOLD_PX,
+          accumulated + addPost,
+        );
         if (!sectionComplete) {
           burstFlipFromInput();
         }
@@ -796,7 +809,7 @@
         if (qf > lastQuantumFloor) {
           applyQuantumFlips(lastQuantumFloor, qf);
           lastQuantumFloor = qf;
-      } else {
+        } else {
           lastQuantumFloor = Math.floor(accumulated / WHEEL_QUANTUM);
         }
         e.preventDefault();
@@ -880,7 +893,10 @@
         return;
       }
       if (dy > 0) {
-        accumulated = Math.min(THRESHOLD + POST_THRESHOLD_PX, accumulated + add);
+        accumulated = Math.min(
+          THRESHOLD + POST_THRESHOLD_PX,
+          accumulated + add,
+        );
         if (!sectionComplete) {
           burstFlipFromInput();
         }
@@ -932,7 +948,7 @@
         if (qfT > lastQuantumFloor) {
           applyQuantumFlips(lastQuantumFloor, qfT);
           lastQuantumFloor = qfT;
-      } else {
+        } else {
           lastQuantumFloor = Math.floor(accumulated / WHEEL_QUANTUM);
         }
         e.preventDefault();
@@ -1029,7 +1045,7 @@
   }
 
   /**
-   * @param {{ preserveInteractionState?: boolean }} [opts] — true면 휠 누적·잠금·압축 진행 유지(그리드 리사이즈 재바인딩용)
+   * @param {{ preserveInteractionState?: boolean }} [opts] — true면 휠 누적,잠금,압축 진행 유지(그리드 리사이즈 재바인딩용)
    */
   function init(opts) {
     opts = opts || {};
@@ -1061,7 +1077,7 @@
 
     if (!preserve) {
       sectionComplete = false;
-    resetAccumulation();
+      resetAccumulation();
     } else {
       initIsColorArray();
     }
@@ -1089,7 +1105,9 @@
         window.removeEventListener("resize", hqLandingResizeHandler);
       }
       hqLandingResizeHandler = scheduleHqLandingLayoutRefresh;
-      window.addEventListener("resize", hqLandingResizeHandler, { passive: true });
+      window.addEventListener("resize", hqLandingResizeHandler, {
+        passive: true,
+      });
       requestAnimationFrame(function () {
         ScrollTrigger.refresh();
         updateOverlap();
@@ -1149,7 +1167,9 @@
       window.removeEventListener("resize", hqLandingResizeHandler);
     }
     hqLandingResizeHandler = scheduleHqLandingLayoutRefresh;
-    window.addEventListener("resize", hqLandingResizeHandler, { passive: true });
+    window.addEventListener("resize", hqLandingResizeHandler, {
+      passive: true,
+    });
 
     window.__hqLandingScrollTrigger = stInstance;
     window.__hqLandingThresholdPx = THRESHOLD;
@@ -1174,7 +1194,7 @@
   };
 
   /**
-   * 인터뷰 셸에서 랜딩으로 돌아올 때: 휠 누적·덮개·압축·리프트 CSS를 초기화.
+   * 인터뷰 셸에서 랜딩으로 돌아올 때: 휠 누적,덮개,압축,리프트 CSS를 초기화.
    * landing이 hidden일 때는 updateOverlap이 스킵되어 변수가 남아 모자이크가 1/3만 보이는 등 깨짐이 난다.
    */
   window.resetHqLandingInteractionState = function () {

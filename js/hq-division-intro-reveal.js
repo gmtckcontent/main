@@ -33,7 +33,11 @@
 
   function updateParallax() {
     parallaxRaf = null;
-    if (!section || !section.classList.contains("hq-division-intro--in-view") || prefersReducedMotion()) {
+    if (
+      !section ||
+      !section.classList.contains("hq-division-intro--in-view") ||
+      prefersReducedMotion()
+    ) {
       return;
     }
     var medias = section.querySelectorAll(".hq-division-intro__media");
@@ -63,7 +67,11 @@
 
   function onMediaTransitionEnd(e) {
     var t = e.target;
-    if (!t || !t.classList || !t.classList.contains("hq-division-intro__media")) {
+    if (
+      !t ||
+      !t.classList ||
+      !t.classList.contains("hq-division-intro__media")
+    ) {
       return;
     }
     if (e.propertyName !== "opacity") {
@@ -83,7 +91,7 @@
       return;
     }
 
-    /* 직무 랜딩(#hqLanding): 핀 progress로 등장·패럴랙스는 hq-landing-scrolltrigger.js가 전담 */
+    /* 직무 랜딩(#hqLanding): 핀 progress로 등장,패럴랙스는 hq-landing-scrolltrigger.js가 전담 */
     if (document.getElementById("hqLanding") && !prefersReducedMotion()) {
       return;
     }
@@ -92,13 +100,18 @@
 
     if (prefersReducedMotion()) {
       section.classList.add("hq-division-intro--in-view");
-      section.querySelectorAll(".hq-division-intro__media").forEach(function (el) {
-        el.classList.add("hq-division-intro__media--entered");
-      });
+      section
+        .querySelectorAll(".hq-division-intro__media")
+        .forEach(function (el) {
+          el.classList.add("hq-division-intro__media--entered");
+        });
       return;
     }
 
-    window.addEventListener("scroll", onScrollOrResize, { passive: true, capture: true });
+    window.addEventListener("scroll", onScrollOrResize, {
+      passive: true,
+      capture: true,
+    });
     window.addEventListener("resize", onScrollOrResize, { passive: true });
     onScrollOrResize();
   }

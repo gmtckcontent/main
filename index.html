@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
+  <head>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -24,12 +24,9 @@
           if (!h || h.length < 2) return;
           var id = decodeURIComponent(h.slice(1));
           // 직무소개 페이지 앵커는 team-tck-interviews.html에만 있음 (예: #avd-advanced-vehicle)
-          if (
-            /^(ee|avd|beca|itpe|pipg|ss|ve)-/.test(id) ||
-            id === "all"
-          ) {
+          if (/^(ee|avd|beca|itpe|pipg|ss|ve)-/.test(id) || id === "all") {
             window.location.replace(
-              "team-tck-interviews.html" + window.location.hash
+              "team-tck-interviews.html" + window.location.hash,
             );
           }
         } catch (e) {}
@@ -90,6 +87,37 @@
       name="twitter:image"
       content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GMTCK",
+        "alternateName": "General Motors Technical Center Korea",
+        "url": "https://www.gmtck.com/",
+        "logo": "https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png",
+        "description": "GMTCK (지엠테크니컬센터코리아)는 General Motors의 한국 기술 센터입니다. 전동화, 자율주행, 커넥티드 카 기술을 연구개발합니다.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "인천 송도",
+          "addressRegion": "인천광역시",
+          "addressCountry": "KR"
+        },
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "General Motors"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "GMTCK",
+        "url": "https://www.gmtck.com/",
+        "inLanguage": ["ko-KR", "en-US"],
+        "publisher": { "@type": "Organization", "name": "GMTCK" }
+      }
+    </script>
     <!-- Favicon for all platforms -->
     <!-- Google Search favicon - must be in homepage header -->
     <link rel="icon" href="/favicon.ico" />
@@ -180,8 +208,8 @@
         "sameAs": ["https://www.gm.com"]
       }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -194,8 +222,8 @@
     <!-- End Google Tag Manager (noscript) -->
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-content">
+      <div class="container">
+        <div class="nav-content">
           <a href="#" class="logo">
             <img
               src="./images/logo/gm-symbol-white-dark-bg-web%20(1).png"
@@ -203,12 +231,15 @@
               class="logo-img logo-img--gm-symbol"
             />
           </a>
-                <ul class="nav-menu" id="navMenu">
+          <ul class="nav-menu" id="navMenu">
             <li>
               <a href="#about" data-kr="회사소개" data-en="About">About</a>
             </li>
             <li class="nav-hide-production">
-              <a href="core-values.html" data-kr="핵심 가치" data-en="Core Values"
+              <a
+                href="core-values.html"
+                data-kr="핵심 가치"
+                data-en="Core Values"
                 >Core Values</a
               >
             </li>
@@ -259,7 +290,7 @@
                 </li>
               </ul>
             </li>
-                </ul>
+          </ul>
           <div class="nav-buttons">
             <button
               class="language-toggle"
@@ -277,22 +308,22 @@
                   d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.79 4.21 10.21L9 15V16C9 17.1 9.9 18 11 18V19.93ZM17.9 17.39C17.64 16.58 16.9 16 16 16H15V13C15 12.45 14.55 12 14 12H8V10H10C10.55 10 11 9.55 11 9V7H13C14.1 7 15 6.1 15 5V4.59C17.93 5.78 20 8.65 20 12C20 14.08 19.2 15.97 17.9 17.39Z"
                   fill="currentColor"
                 />
-                    </svg>
-                    <span class="language-label" id="languageLabel">EN</span>
-                </button>
+              </svg>
+              <span class="language-label" id="languageLabel">EN</span>
+            </button>
           </div>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <!-- Background Video -->
+      <!-- Background Video -->
       <video
         class="hero-video"
         autoplay
@@ -306,33 +337,33 @@
         disablePictureInPicture
       >
         <source src="./images/video/main-video_1.mp4" type="video/mp4" />
-        </video>
+      </video>
       <!-- Fallback Background Image -->
       <div class="hero-fallback-bg"></div>
-        
-        <!-- Dark Overlay -->
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <div class="hero-title-main hero-title-main--gmtck">
-                <img
-                    src="./images/logo/gmtck-logo.svg"
-                    alt="GMTCK"
-                    class="hero-gmtck-lockup"
-                />
-                <!-- 브랜드 풀네임: 영문 고정 (언어 전환 대상 아님) -->
-                <h1 class="hero-lockup-heading">GM Technical Center Korea</h1>
-            </div>
+
+      <!-- Dark Overlay -->
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="hero-title-main hero-title-main--gmtck">
+          <img
+            src="./images/logo/gmtck-logo.svg"
+            alt="GMTCK"
+            class="hero-gmtck-lockup"
+          />
+          <!-- 브랜드 풀네임: 영문 고정 (언어 전환 대상 아님) -->
+          <h1 class="hero-lockup-heading">GM Technical Center Korea</h1>
         </div>
-        <div class="hero-scroll">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
+      </div>
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="container">
+      <div class="container">
         <div class="about-content">
           <div class="about-text">
             <span class="about-label">About GMTCK</span>
@@ -373,7 +404,7 @@
                 전동화, 자율주행, 디지털 혁신 기술 개발
               </li>
             </ul>
-            </div>
+          </div>
           <div class="about-image">
             <img
               src="./images/vehicle-corvette.png"
@@ -381,16 +412,16 @@
               class="about-image-img"
               id="corvetteImage"
             />
-                    </div>
-                </div>
-                    </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Innovation Section -->
     <section class="technology" id="innovation">
-        <div class="container">
-            <div class="technology-content">
-                <div class="technology-text">
+      <div class="container">
+        <div class="technology-content">
+          <div class="technology-text">
             <h2 class="section-title">
               <div class="title-line">
                 <span
@@ -399,7 +430,7 @@
                   >Zero</span
                 >
                 Crashes
-                </div>
+              </div>
               <div class="title-line">
                 <span
                   class="zero-text"
@@ -407,7 +438,7 @@
                   >Zero</span
                 >
                 Emissions
-                    </div>
+              </div>
               <div class="title-line">
                 <span
                   class="zero-text"
@@ -415,28 +446,28 @@
                   >Zero</span
                 >
                 Congestion
-                        </div>
+              </div>
             </h2>
-                    </div>
+          </div>
           <div class="technology-visual-wrapper">
-                <div class="technology-visual">
-                    <div class="tech-circle circle-1"></div>
-                    <div class="tech-circle circle-2"></div>
-                    <div class="tech-circle circle-3"></div>
-                </div>
+            <div class="technology-visual">
+              <div class="tech-circle circle-1"></div>
+              <div class="tech-circle circle-2"></div>
+              <div class="tech-circle circle-3"></div>
+            </div>
 
             <!-- Stats Overlay on Visual -->
             <div class="technology-stats-overlay">
-            <div class="stats-grid">
+              <div class="stats-grid">
                 <div class="stat-item">
-                    <h3 class="stat-number" data-target="110">0</h3>
+                  <h3 class="stat-number" data-target="110">0</h3>
                   <p
                     class="stat-label"
                     data-kr="년+ GM 역사"
                     data-en="Years+ GM History"
                   >
                     년+ GM 역사
-                    </p>
+                  </p>
                 </div>
                 <div class="stat-item">
                   <h3 class="stat-number" data-target="155000">0</h3>
@@ -447,7 +478,7 @@
                   >
                     명+ 글로벌 엔지니어
                   </p>
-                    </div>
+                </div>
                 <div class="stat-item">
                   <h3 class="stat-number" data-target="3100">0</h3>
                   <p
@@ -456,13 +487,13 @@
                     data-en="GMTCK Engineers+"
                   >
                     명+ GMTCK 엔지니어
-                    </p>
+                  </p>
                 </div>
               </div>
             </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- YouTube Video Carousel Section -->
@@ -478,7 +509,7 @@
       - data-youtube-id="VIDEO_ID"
     -->
     <section class="thumbnail-carousel" id="thumbnailCarousel">
-        <div class="container">
+      <div class="container">
         <div class="thumbnail-carousel-header">
           <div class="thumbnail-carousel-header-content">
             <h2
@@ -499,346 +530,397 @@
         </div>
         <div class="thumbnail-carousel-wrapper">
           <div class="thumbnail-carousel-viewport">
-          <div class="thumbnail-carousel-track">
-          <div class="thumbnail-carousel-slides" id="thumbnailCarouselSlides">
-            <!-- Slide 1 - YouTube Video -->
-            <div class="thumbnail-slide active">
-              <a
-                href="https://www.youtube.com/watch?v=16GX2FHKn18"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="thumbnail-item youtube-item"
-                data-youtube-id="16GX2FHKn18"
+            <div class="thumbnail-carousel-track">
+              <div
+                class="thumbnail-carousel-slides"
+                id="thumbnailCarouselSlides"
               >
-                <div class="thumbnail-image">
-                  <img
-                    src="https://img.youtube.com/vi/16GX2FHKn18/maxresdefault.jpg"
-                    alt="YouTube Video Thumbnail"
-                    class="thumbnail-img"
-                  />
-                  <div class="youtube-play-button">
-                    <svg
-                      width="68"
-                      height="48"
-                      viewBox="0 0 68 48"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
-                        fill="red"
+                <!-- Slide 1 - YouTube Video -->
+                <div class="thumbnail-slide active">
+                  <a
+                    href="https://www.youtube.com/watch?v=16GX2FHKn18"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="thumbnail-item youtube-item"
+                    data-youtube-id="16GX2FHKn18"
+                  >
+                    <div class="thumbnail-image">
+                      <img
+                        src="https://img.youtube.com/vi/16GX2FHKn18/maxresdefault.jpg"
+                        alt="YouTube Video Thumbnail"
+                        class="thumbnail-img"
                       />
-                      <path d="M 45,24 27,14 27,34" fill="white" />
-                    </svg>
-                </div>
-                </div>
-                <div class="thumbnail-overlay">
-                  <h4 class="thumbnail-title">YouTube 영상 제목 1</h4>
-                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
-                </div>
-                <span class="thumbnail-card-cta">
-                  <span class="thumbnail-card-cta-inner" data-kr="영상 보기" data-en="Watch Video">Watch Video</span>
-                </span>
-              </a>
-            </div>
-            <!-- Slide 2 - YouTube Video -->
-            <div class="thumbnail-slide">
-              <a
-                href="https://www.youtube.com/watch?v=4z4GDjOYnPE"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="thumbnail-item youtube-item"
-                data-youtube-id="4z4GDjOYnPE"
-              >
-                <div class="thumbnail-image">
-                  <img
-                    src="https://img.youtube.com/vi/4z4GDjOYnPE/maxresdefault.jpg"
-                    alt="YouTube Video Thumbnail"
-                    class="thumbnail-img"
-                  />
-                  <div class="youtube-play-button">
-                    <svg
-                      width="68"
-                      height="48"
-                      viewBox="0 0 68 48"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
-                        fill="red"
-                      />
-                      <path d="M 45,24 27,14 27,34" fill="white" />
+                      <div class="youtube-play-button">
+                        <svg
+                          width="68"
+                          height="48"
+                          viewBox="0 0 68 48"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                            fill="red"
+                          />
+                          <path d="M 45,24 27,14 27,34" fill="white" />
                         </svg>
+                      </div>
                     </div>
+                    <div class="thumbnail-overlay">
+                      <h4 class="thumbnail-title">YouTube 영상 제목 1</h4>
+                      <p class="thumbnail-description">
+                        영상 설명을 입력하세요
+                      </p>
+                    </div>
+                    <span class="thumbnail-card-cta">
+                      <span
+                        class="thumbnail-card-cta-inner"
+                        data-kr="영상 보기"
+                        data-en="Watch Video"
+                        >Watch Video</span
+                      >
+                    </span>
+                  </a>
                 </div>
-                <div class="thumbnail-overlay">
-                  <h4 class="thumbnail-title">YouTube 영상 제목 2</h4>
-                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
-                </div>
-                <span class="thumbnail-card-cta">
-                  <span class="thumbnail-card-cta-inner" data-kr="영상 보기" data-en="Watch Video">Watch Video</span>
-                </span>
-              </a>
-            </div>
-            <!-- Slide 3 - YouTube Video -->
-            <div class="thumbnail-slide">
-              <a
-                href="https://www.youtube.com/watch?v=Cyto0nEA5XE"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="thumbnail-item youtube-item"
-                data-youtube-id="Cyto0nEA5XE"
-              >
-                <div class="thumbnail-image">
-                  <img
-                    src="https://img.youtube.com/vi/Cyto0nEA5XE/maxresdefault.jpg"
-                    alt="YouTube Video Thumbnail"
-                    class="thumbnail-img"
-                  />
-                  <div class="youtube-play-button">
-                    <svg
-                      width="68"
-                      height="48"
-                      viewBox="0 0 68 48"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
-                        fill="red"
+                <!-- Slide 2 - YouTube Video -->
+                <div class="thumbnail-slide">
+                  <a
+                    href="https://www.youtube.com/watch?v=4z4GDjOYnPE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="thumbnail-item youtube-item"
+                    data-youtube-id="4z4GDjOYnPE"
+                  >
+                    <div class="thumbnail-image">
+                      <img
+                        src="https://img.youtube.com/vi/4z4GDjOYnPE/maxresdefault.jpg"
+                        alt="YouTube Video Thumbnail"
+                        class="thumbnail-img"
                       />
-                      <path d="M 45,24 27,14 27,34" fill="white" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="thumbnail-overlay">
-                  <h4 class="thumbnail-title">YouTube 영상 제목 3</h4>
-                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
-                </div>
-                <span class="thumbnail-card-cta">
-                  <span class="thumbnail-card-cta-inner" data-kr="영상 보기" data-en="Watch Video">Watch Video</span>
-                </span>
-              </a>
-            </div>
-            <!-- Slide 3-1 - YouTube Video (기존 3번) -->
-            <div class="thumbnail-slide">
-              <a
-                href="https://www.youtube.com/watch?v=fqHVSQ79PVU"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="thumbnail-item youtube-item"
-                data-youtube-id="fqHVSQ79PVU"
-              >
-                <div class="thumbnail-image">
-                  <img
-                    src="https://img.youtube.com/vi/fqHVSQ79PVU/maxresdefault.jpg"
-                    alt="YouTube Video Thumbnail"
-                    class="thumbnail-img"
-                  />
-                  <div class="youtube-play-button">
-                    <svg
-                      width="68"
-                      height="48"
-                      viewBox="0 0 68 48"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
-                        fill="red"
-                      />
-                      <path d="M 45,24 27,14 27,34" fill="white" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="thumbnail-overlay">
-                  <h4 class="thumbnail-title">YouTube 영상 제목 4</h4>
-                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
-                </div>
-                <span class="thumbnail-card-cta">
-                  <span class="thumbnail-card-cta-inner" data-kr="영상 보기" data-en="Watch Video">Watch Video</span>
-                </span>
-              </a>
-            </div>
-            <!-- Slide 5 - YouTube Video -->
-            <div class="thumbnail-slide">
-              <a
-                href="https://youtu.be/__wJYMGoDjY?si=W1jtXNG_5jczzUzW"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="thumbnail-item youtube-item"
-                data-youtube-id="__wJYMGoDjY"
-              >
-                <div class="thumbnail-image">
-                  <img
-                    src="https://img.youtube.com/vi/__wJYMGoDjY/maxresdefault.jpg"
-                    alt="YouTube Video Thumbnail"
-                    class="thumbnail-img"
-                  />
-                  <div class="youtube-play-button">
-                    <svg
-                      width="68"
-                      height="48"
-                      viewBox="0 0 68 48"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
-                        fill="red"
-                      />
-                      <path d="M 45,24 27,14 27,34" fill="white" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="thumbnail-overlay">
-                  <h4 class="thumbnail-title">YouTube 영상 제목 5</h4>
-                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
-                </div>
-                <span class="thumbnail-card-cta">
-                  <span class="thumbnail-card-cta-inner" data-kr="영상 보기" data-en="Watch Video">Watch Video</span>
-                </span>
-              </a>
-            </div>
-            <!-- Slide 6 - YouTube Video -->
-            <div class="thumbnail-slide">
-              <a
-                href="https://youtu.be/YX8lyR9q0vY?si=Qq-jYQkqXxmS819k"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="thumbnail-item youtube-item"
-                data-youtube-id="YX8lyR9q0vY"
-              >
-                <div class="thumbnail-image">
-                  <img
-                    src="https://img.youtube.com/vi/YX8lyR9q0vY/maxresdefault.jpg"
-                    alt="YouTube Video Thumbnail"
-                    class="thumbnail-img"
-                  />
-                  <div class="youtube-play-button">
-                    <svg
-                      width="68"
-                      height="48"
-                      viewBox="0 0 68 48"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
-                        fill="red"
-                      />
-                      <path d="M 45,24 27,14 27,34" fill="white" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="thumbnail-overlay">
-                  <h4 class="thumbnail-title">YouTube 영상 제목 6</h4>
-                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
-                </div>
-                <span class="thumbnail-card-cta">
-                  <span class="thumbnail-card-cta-inner" data-kr="영상 보기" data-en="Watch Video">Watch Video</span>
-                </span>
-              </a>
-            </div>
-            <!-- Slide 7 - YouTube Video -->
-            <div class="thumbnail-slide">
-              <a
-                href="https://youtu.be/oOwvM7SkSYk?si=FiYk4apZAu6B204-"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="thumbnail-item youtube-item"
-                data-youtube-id="oOwvM7SkSYk"
-              >
-                <div class="thumbnail-image">
-                  <img
-                    src="https://img.youtube.com/vi/oOwvM7SkSYk/maxresdefault.jpg"
-                    alt="YouTube Video Thumbnail"
-                    class="thumbnail-img"
-                  />
-                  <div class="youtube-play-button">
-                    <svg
-                      width="68"
-                      height="48"
-                      viewBox="0 0 68 48"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
-                        fill="red"
-                      />
-                      <path d="M 45,24 27,14 27,34" fill="white" />
+                      <div class="youtube-play-button">
+                        <svg
+                          width="68"
+                          height="48"
+                          viewBox="0 0 68 48"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                            fill="red"
+                          />
+                          <path d="M 45,24 27,14 27,34" fill="white" />
                         </svg>
+                      </div>
                     </div>
+                    <div class="thumbnail-overlay">
+                      <h4 class="thumbnail-title">YouTube 영상 제목 2</h4>
+                      <p class="thumbnail-description">
+                        영상 설명을 입력하세요
+                      </p>
+                    </div>
+                    <span class="thumbnail-card-cta">
+                      <span
+                        class="thumbnail-card-cta-inner"
+                        data-kr="영상 보기"
+                        data-en="Watch Video"
+                        >Watch Video</span
+                      >
+                    </span>
+                  </a>
                 </div>
-                <div class="thumbnail-overlay">
-                  <h4 class="thumbnail-title">YouTube 영상 제목 7</h4>
-                  <p class="thumbnail-description">영상 설명을 입력하세요</p>
+                <!-- Slide 3 - YouTube Video -->
+                <div class="thumbnail-slide">
+                  <a
+                    href="https://www.youtube.com/watch?v=Cyto0nEA5XE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="thumbnail-item youtube-item"
+                    data-youtube-id="Cyto0nEA5XE"
+                  >
+                    <div class="thumbnail-image">
+                      <img
+                        src="https://img.youtube.com/vi/Cyto0nEA5XE/maxresdefault.jpg"
+                        alt="YouTube Video Thumbnail"
+                        class="thumbnail-img"
+                      />
+                      <div class="youtube-play-button">
+                        <svg
+                          width="68"
+                          height="48"
+                          viewBox="0 0 68 48"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                            fill="red"
+                          />
+                          <path d="M 45,24 27,14 27,34" fill="white" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="thumbnail-overlay">
+                      <h4 class="thumbnail-title">YouTube 영상 제목 3</h4>
+                      <p class="thumbnail-description">
+                        영상 설명을 입력하세요
+                      </p>
+                    </div>
+                    <span class="thumbnail-card-cta">
+                      <span
+                        class="thumbnail-card-cta-inner"
+                        data-kr="영상 보기"
+                        data-en="Watch Video"
+                        >Watch Video</span
+                      >
+                    </span>
+                  </a>
                 </div>
-                <span class="thumbnail-card-cta">
-                  <span class="thumbnail-card-cta-inner" data-kr="영상 보기" data-en="Watch Video">Watch Video</span>
-                </span>
-              </a>
+                <!-- Slide 3-1 - YouTube Video (기존 3번) -->
+                <div class="thumbnail-slide">
+                  <a
+                    href="https://www.youtube.com/watch?v=fqHVSQ79PVU"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="thumbnail-item youtube-item"
+                    data-youtube-id="fqHVSQ79PVU"
+                  >
+                    <div class="thumbnail-image">
+                      <img
+                        src="https://img.youtube.com/vi/fqHVSQ79PVU/maxresdefault.jpg"
+                        alt="YouTube Video Thumbnail"
+                        class="thumbnail-img"
+                      />
+                      <div class="youtube-play-button">
+                        <svg
+                          width="68"
+                          height="48"
+                          viewBox="0 0 68 48"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                            fill="red"
+                          />
+                          <path d="M 45,24 27,14 27,34" fill="white" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="thumbnail-overlay">
+                      <h4 class="thumbnail-title">YouTube 영상 제목 4</h4>
+                      <p class="thumbnail-description">
+                        영상 설명을 입력하세요
+                      </p>
+                    </div>
+                    <span class="thumbnail-card-cta">
+                      <span
+                        class="thumbnail-card-cta-inner"
+                        data-kr="영상 보기"
+                        data-en="Watch Video"
+                        >Watch Video</span
+                      >
+                    </span>
+                  </a>
+                </div>
+                <!-- Slide 5 - YouTube Video -->
+                <div class="thumbnail-slide">
+                  <a
+                    href="https://youtu.be/__wJYMGoDjY?si=W1jtXNG_5jczzUzW"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="thumbnail-item youtube-item"
+                    data-youtube-id="__wJYMGoDjY"
+                  >
+                    <div class="thumbnail-image">
+                      <img
+                        src="https://img.youtube.com/vi/__wJYMGoDjY/maxresdefault.jpg"
+                        alt="YouTube Video Thumbnail"
+                        class="thumbnail-img"
+                      />
+                      <div class="youtube-play-button">
+                        <svg
+                          width="68"
+                          height="48"
+                          viewBox="0 0 68 48"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                            fill="red"
+                          />
+                          <path d="M 45,24 27,14 27,34" fill="white" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="thumbnail-overlay">
+                      <h4 class="thumbnail-title">YouTube 영상 제목 5</h4>
+                      <p class="thumbnail-description">
+                        영상 설명을 입력하세요
+                      </p>
+                    </div>
+                    <span class="thumbnail-card-cta">
+                      <span
+                        class="thumbnail-card-cta-inner"
+                        data-kr="영상 보기"
+                        data-en="Watch Video"
+                        >Watch Video</span
+                      >
+                    </span>
+                  </a>
+                </div>
+                <!-- Slide 6 - YouTube Video -->
+                <div class="thumbnail-slide">
+                  <a
+                    href="https://youtu.be/YX8lyR9q0vY?si=Qq-jYQkqXxmS819k"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="thumbnail-item youtube-item"
+                    data-youtube-id="YX8lyR9q0vY"
+                  >
+                    <div class="thumbnail-image">
+                      <img
+                        src="https://img.youtube.com/vi/YX8lyR9q0vY/maxresdefault.jpg"
+                        alt="YouTube Video Thumbnail"
+                        class="thumbnail-img"
+                      />
+                      <div class="youtube-play-button">
+                        <svg
+                          width="68"
+                          height="48"
+                          viewBox="0 0 68 48"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                            fill="red"
+                          />
+                          <path d="M 45,24 27,14 27,34" fill="white" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="thumbnail-overlay">
+                      <h4 class="thumbnail-title">YouTube 영상 제목 6</h4>
+                      <p class="thumbnail-description">
+                        영상 설명을 입력하세요
+                      </p>
+                    </div>
+                    <span class="thumbnail-card-cta">
+                      <span
+                        class="thumbnail-card-cta-inner"
+                        data-kr="영상 보기"
+                        data-en="Watch Video"
+                        >Watch Video</span
+                      >
+                    </span>
+                  </a>
+                </div>
+                <!-- Slide 7 - YouTube Video -->
+                <div class="thumbnail-slide">
+                  <a
+                    href="https://youtu.be/oOwvM7SkSYk?si=FiYk4apZAu6B204-"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="thumbnail-item youtube-item"
+                    data-youtube-id="oOwvM7SkSYk"
+                  >
+                    <div class="thumbnail-image">
+                      <img
+                        src="https://img.youtube.com/vi/oOwvM7SkSYk/maxresdefault.jpg"
+                        alt="YouTube Video Thumbnail"
+                        class="thumbnail-img"
+                      />
+                      <div class="youtube-play-button">
+                        <svg
+                          width="68"
+                          height="48"
+                          viewBox="0 0 68 48"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                            fill="red"
+                          />
+                          <path d="M 45,24 27,14 27,34" fill="white" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="thumbnail-overlay">
+                      <h4 class="thumbnail-title">YouTube 영상 제목 7</h4>
+                      <p class="thumbnail-description">
+                        영상 설명을 입력하세요
+                      </p>
+                    </div>
+                    <span class="thumbnail-card-cta">
+                      <span
+                        class="thumbnail-card-cta-inner"
+                        data-kr="영상 보기"
+                        data-en="Watch Video"
+                        >Watch Video</span
+                      >
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="thumbnail-carousel-nav" aria-label="Carousel controls">
+              <button
+                class="thumbnail-nav-btn thumbnail-nav-prev"
+                id="thumbnailCarouselPrev"
+                type="button"
+                aria-label="Previous"
+                hidden
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 18L9 12L15 6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button
+                class="thumbnail-nav-btn thumbnail-nav-next"
+                id="thumbnailCarouselNext"
+                type="button"
+                aria-label="Next"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 18L15 12L9 6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
-          </div>
-          <div class="thumbnail-carousel-nav" aria-label="Carousel controls">
-            <button
-              class="thumbnail-nav-btn thumbnail-nav-prev"
-              id="thumbnailCarouselPrev"
-              type="button"
-              aria-label="Previous"
-              hidden
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15 18L9 12L15 6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <button
-              class="thumbnail-nav-btn thumbnail-nav-next"
-              id="thumbnailCarouselNext"
-              type="button"
-              aria-label="Next"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9 18L15 12L9 6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
-        </div>
-        </div>
+      </div>
     </section>
-
 
     <!-- Capabilities Section -->
     <section class="services" id="capabilities">
-        <div class="container">
+      <div class="container">
         <div class="section-header"></div>
 
         <!-- Story 1: Text Left, Image Right -->
@@ -885,17 +967,17 @@
                   />
                 </svg>
               </a>
-                </div>
+            </div>
             <div class="story-image">
               <img
                 src="./images/electrification.jpg"
                 alt="Electrification"
                 class="story-img"
               />
-                </div>
             </div>
-            </div>
-            
+          </div>
+        </div>
+
         <!-- Story 2: Image Left, Text Right -->
         <div class="story-section story-image-left">
           <div class="story-content">
@@ -905,7 +987,7 @@
                 alt="Vehicle Safety"
                 class="story-img"
               />
-                </div>
+            </div>
             <div class="story-text">
               <h3
                 class="story-title"
@@ -947,10 +1029,10 @@
                   />
                 </svg>
               </a>
-                </div>
-          </div>
             </div>
-            
+          </div>
+        </div>
+
         <!-- Story 3: Text Left, Image Right -->
         <div class="story-section story-text-left">
           <div class="story-content">
@@ -995,17 +1077,17 @@
                   />
                 </svg>
               </a>
-                        </div>
+            </div>
             <div class="story-image">
               <img
                 src="./images/autonomous.jpg"
                 alt="Path to Autonomous"
                 class="story-img"
               />
-                        </div>
-                        </div>
             </div>
-            
+          </div>
+        </div>
+
         <!-- Story 4: Image Left, Text Right -->
         <div class="story-section story-image-left">
           <div class="story-content">
@@ -1015,7 +1097,7 @@
                 alt="Social Impact"
                 class="story-img"
               />
-                </div>
+            </div>
             <div class="story-text">
               <h3
                 class="story-title"
@@ -1058,9 +1140,9 @@
                 </svg>
               </a>
             </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Values Carousel Section -->
@@ -1097,29 +1179,29 @@
                   alt="GMTCK Manufacturing Engineering"
                   class="carousel-image"
                 />
-                </div>
+              </div>
               <div class="carousel-text-section">
                 <h3 class="carousel-text-en">
                   GMTCK Manufacturing Engineering
                 </h3>
                 <p
                   class="carousel-description"
-                  data-kr="GMTCK 생산기술연구소는 General Motors의 아시아·태평양 지역을 대표하는 생산기술 연구 허브로써,
-                  신차 및 신공정의 선행 검증부터 양산 안정화, 디지털·친환경 제조 솔루션 개발에 이르기까지 경쟁력 있고 통합적인 엔지니어링 서비스를 제공하고 있습니다.
+                  data-kr="GMTCK 생산기술연구소는 General Motors의 아시아,태평양 지역을 대표하는 생산기술 연구 허브로써,
+                  신차 및 신공정의 선행 검증부터 양산 안정화, 디지털,친환경 제조 솔루션 개발에 이르기까지 경쟁력 있고 통합적인 엔지니어링 서비스를 제공하고 있습니다.
                   고객에게 신뢰받는 차량 품질과 원가 경쟁력을 확보하기 위해, 글로벌 파트너들과 협업하며 지속 가능한 제조 생태계를 구축해 나가고 있습니다."
                   data-en="GMTCK Manufacturing Engineering Research Center serves as General Motors’ representative manufacturing engineering hub for the Asia-Pacific region. It provides competitive and fully integrated engineering services, covering the early validation of new vehicles and manufacturing processes, stabilization of mass production, and the development of digital and eco-friendly manufacturing solutions. To ensure trusted vehicle quality and cost competitiveness, GMTCK collaborates closely with global partners to build a sustainable manufacturing ecosystem."
                 >
-                  GMTCK 생산기술연구소는 General Motors의 아시아·태평양 지역을
+                  GMTCK 생산기술연구소는 General Motors의 아시아,태평양 지역을
                   대표하는 생산기술 연구 허브로써, 신차 및 신공정의 선행
-                  검증부터 양산 안정화, 디지털·친환경 제조 솔루션 개발에
+                  검증부터 양산 안정화, 디지털,친환경 제조 솔루션 개발에
                   이르기까지 경쟁력 있고 통합적인 엔지니어링 서비스를 제공하고
                   있습니다. 고객에게 신뢰받는 차량 품질과 원가 경쟁력을 확보하기
                   위해, 글로벌 파트너들과 협업하며 지속 가능한 제조 생태계를
                   구축해 나가고 있습니다.
                 </p>
-                        </div>
-                        </div>
-                        </div>
+              </div>
+            </div>
+          </div>
           <!-- Slide 2: GMTCK Product Engineering -->
           <div class="carousel-slide">
             <div class="carousel-content">
@@ -1129,28 +1211,28 @@
                   alt="GMTCK Product Engineering"
                   class="carousel-image"
                 />
-                    </div>
+              </div>
               <div class="carousel-text-section">
                 <h3 class="carousel-text-en">GMTCK Product Engineering</h3>
                 <p
                   class="carousel-description"
-                  data-kr="한국의 제품 엔지니어링 팀은 GM 글로벌 엔지니어링 센터의 핵심 거점으로서, 모든 브랜드를 아우르는 글로벌 시장용 차량을 개발 및 엔지니어링합니다. 부품 개발부터 조립 차량의 성능까지 차량 개발 전 과정을 감독하고 지원합니다. 내연기관 차량과 전기차 모두에 집중하며, 디자인·제조 엔지니어링 등 다양한 기능 조직과 협력하고 글로벌 프로젝트를 통해 각 지역 엔지니어링 팀을 기술적으로 지원합니다. 또한 버추얼 엔지니어링(Virtual Engineering)과 AI 등 최신 디지털 기술을 제품 개발 전반에 접목하여, 더 빠르고 정교한 차세대 제품 개발(Product Development)을 구현하고 있습니다."
+                  data-kr="한국의 제품 엔지니어링 팀은 GM 글로벌 엔지니어링 센터의 핵심 거점으로서, 모든 브랜드를 아우르는 글로벌 시장용 차량을 개발 및 엔지니어링합니다. 부품 개발부터 조립 차량의 성능까지 차량 개발 전 과정을 감독하고 지원합니다. 내연기관 차량과 전기차 모두에 집중하며, 디자인,제조 엔지니어링 등 다양한 기능 조직과 협력하고 글로벌 프로젝트를 통해 각 지역 엔지니어링 팀을 기술적으로 지원합니다. 또한 버추얼 엔지니어링(Virtual Engineering)과 AI 등 최신 디지털 기술을 제품 개발 전반에 접목하여, 더 빠르고 정교한 차세대 제품 개발(Product Development)을 구현하고 있습니다."
                   data-en="The Korea Product Engineering team is a core part of GM’s global engineering network, developing vehicles for global markets across all GM brands. We oversee and support the overall process of vehicle development – from as early as part development to the performance of assembled vehicles. Focusing on both internal combustion engine vehicles and electric vehicles, the team collaborates with cross-functional organizations such as design and manufacturing engineering, supports regional engineering teams through global programs, and drives next-generation product development by integrating Virtual Engineering, AI, and advanced digital technologies."
                 >
                   한국의 제품 엔지니어링 팀은 GM 글로벌 엔지니어링 센터의 핵심
                   거점으로서, 모든 브랜드를 아우르는 글로벌 시장용 차량을 개발
                   및 엔지니어링합니다. 부품 개발부터 조립 차량의 성능까지 차량
                   개발 전 과정을 감독하고 지원합니다. 내연기관 차량과 전기차
-                  모두에 집중하며, 디자인·제조 엔지니어링 등 다양한 기능 조직과
+                  모두에 집중하며, 디자인,제조 엔지니어링 등 다양한 기능 조직과
                   협력하고 글로벌 프로젝트를 통해 각 지역 엔지니어링 팀을
                   기술적으로 지원합니다. 또한 버추얼 엔지니어링(Virtual
                   Engineering)과 AI 등 최신 디지털 기술을 제품 개발 전반에
                   접목하여, 더 빠르고 정교한 차세대 제품 개발(Product
                   Development)을 구현하고 있습니다.
                 </p>
-                </div>
-                </div>
+              </div>
             </div>
+          </div>
           <!-- Slide 3: GMTCK Design Center -->
           <div class="carousel-slide">
             <div class="carousel-content">
@@ -1174,9 +1256,9 @@
                   운영자로 구성된 완전한 팀을 보유하고 있으며, 일부 최고의
                   글로벌 제품 디자인에 참여했습니다.
                 </p>
-                </div>
-                </div>
+              </div>
             </div>
+          </div>
           <!-- Slide 4: The Cheongna Proving Ground -->
           <div class="carousel-slide">
             <div class="carousel-content">
@@ -1186,7 +1268,7 @@
                   alt="The Cheongna Proving Ground"
                   class="carousel-image"
                 />
-                </div>
+              </div>
               <div class="carousel-text-section">
                 <h3 class="carousel-text-en">The Cheongna Proving Ground</h3>
                 <p
@@ -1201,7 +1283,7 @@
                   거점으로서, 물리 시험에서 가상 시험으로 확장되는
                   Physical-to-Virtual 전환을 선도하고 있습니다.
                 </p>
-                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1271,78 +1353,78 @@
             />
           </svg>
         </button>
-        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
             <p>GM Technical Center Korea</p>
-                </div>
+          </div>
           <div class="footer-right">
             <div class="footer-social">
-            <a
-              href="https://www.youtube.com/@GMTCK"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="footer-social-link"
-              aria-label="YouTube"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <a
+                href="https://www.youtube.com/@GMTCK"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-link"
+                aria-label="YouTube"
               >
-                <path
-                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                  fill="currentColor"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://www.linkedin.com/company/gmtck"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="footer-social-link"
-              aria-label="LinkedIn"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/gmtck"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-link"
+                aria-label="LinkedIn"
               >
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                  fill="currentColor"
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.gm.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-link"
+                aria-label="GM Global"
+              >
+                <img
+                  src="./images/global.png"
+                  alt="GM Global Website"
+                  class="footer-global-icon"
                 />
-              </svg>
-            </a>
-            <a
-              href="https://www.gm.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="footer-social-link"
-              aria-label="GM Global"
-            >
-              <img
-                src="./images/global.png"
-                alt="GM Global Website"
-                class="footer-global-icon"
-              />
-            </a>
-                    </div>
-                </div>
+              </a>
             </div>
-            <div class="footer-bottom">
-          <p>&copy; 2025 GM Technical Center Korea. All rights reserved.</p>
-            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 GM Technical Center Korea. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- YouTube Video Modal -->
@@ -1397,11 +1479,18 @@
             id="youtubeModalIframe"
             class="youtube-modal-iframe"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
             allowfullscreen
           ></iframe>
         </div>
-        </div>
+      </div>
     </div>
 
     <script src="./js/language.js"></script>
@@ -1416,5 +1505,5 @@
     <script src="./js/youtube-fetch-info.js"></script>
     <script src="./js/youtube-carousel.js"></script>
     <script src="./js/main.js"></script>
-</body>
+  </body>
 </html>

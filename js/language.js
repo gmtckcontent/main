@@ -108,8 +108,8 @@ class LanguageToggle {
   }
 
   updateHQPage(lang) {
-    // Update HQ navigation links (use abbreviation for nav links)
-    const navLinks = document.querySelectorAll(".hq-nav-link");
+    // team-tck-interviews: 본부 레일(#hqDivisionRail) 링크 — 약어 사용
+    const navLinks = document.querySelectorAll("#hqDivisionRail .hq-nav-link");
     navLinks.forEach((link) => {
       if (link.dataset.abbrKr && link.dataset.abbrEn) {
         link.textContent = lang === "kr" ? link.dataset.abbrKr : link.dataset.abbrEn;
@@ -130,14 +130,6 @@ class LanguageToggle {
     const mainTitle = document.getElementById("hqMainTitle");
     if (mainTitle && mainTitle.dataset.kr && mainTitle.dataset.en) {
       mainTitle.textContent = lang === "kr" ? mainTitle.dataset.kr : mainTitle.dataset.en;
-    }
-
-    const backToLanding = document.getElementById("hqBackToLanding");
-    if (backToLanding && backToLanding.dataset.ariaKr && backToLanding.dataset.ariaEn) {
-      backToLanding.setAttribute(
-        "aria-label",
-        lang === "kr" ? backToLanding.dataset.ariaKr : backToLanding.dataset.ariaEn
-      );
     }
 
     // Update sidebar links

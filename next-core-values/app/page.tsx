@@ -7,7 +7,7 @@ export default function Home() {
       <HistoryScrollSection />
       <CoreValuesSection />
       <footer className="border-t border-neutral-100 bg-white px-6 py-12 text-center text-sm text-neutral-400">
-        GM Technical Center Korea · TCK Vision
+        GM Technical Center Korea , TCK Vision
       </footer>
     </main>
   );

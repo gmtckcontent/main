@@ -87,7 +87,7 @@
 /* shell: sticky 고정 창 — section이 충분히 길어야 sticky가 유지됨 */
 .cv-history-m-shell {
   position: sticky;
-  top: 21svh;
+  top: 26svh;
   overflow: clip;
   border-radius: 28px;
   height: 58svh;
@@ -442,9 +442,9 @@
    Scroll Stack — Mobiem식 전체화면 배경 고정 스크롤
    ============================================================
    원리: 각 챕터 section(min-height:200svh) 안에
-     · 배경(sticky top:0, height:100svh)이 부모 끝까지 뷰포트에 고정
-     · 콘텐츠(margin-top:-100svh)가 배경 위를 덮으며 위로 스크롤
-     · z-index 를 챕터 순서대로 높여 다음 챕터가 이전 챕터 위에 덮임
+     , 배경(sticky top:0, height:100svh)이 부모 끝까지 뷰포트에 고정
+     , 콘텐츠(margin-top:-100svh)가 배경 위를 덮으며 위로 스크롤
+     , z-index 를 챕터 순서대로 높여 다음 챕터가 이전 챕터 위에 덮임
    ============================================================ */
 
 .cv-scroll-stack {
@@ -620,8 +620,7 @@
 }
 
 .cv-history-rail {
-  padding: clamp(8px, 2vw, 16px) 0 clamp(8px, 2vw, 16px)
-    clamp(24px, 4vw, 40px);
+  padding: clamp(8px, 2vw, 16px) 0 clamp(8px, 2vw, 16px) clamp(24px, 4vw, 40px);
   display: flex;
   flex-direction: column;
   gap: clamp(28px, 5vw, 48px);

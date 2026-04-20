@@ -34,7 +34,7 @@ EXTRA = {
                 "As VPIM, I align simulation perspectives for program management, bridge market and architecture early work through verification, manage simulation issues and execution plans, and engage in cost and hardware optimization workshops.",
             ),
             Q(
-                "담당 역할·업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+                "담당 역할,업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
                 "What competencies does this integration role require?",
                 """Integration을 효과적으로 수행하기 위해서는 각 컴퓨터 시뮬레이션 영역에 대한 기술적 이해를 바탕으로, 결과의 의미와 한계를 스스로 해석할 수 있는 엔지니어링 판단력이 중요합니다. 단일 해석 결과에 머무르기보다, 다양한 시뮬레이션과 개발 단계의 정보를 종합해 하나의 방향으로 연결하는 시각이 자연스럽게 요구되고, 서로 다른 관점과 우선순위를 가진 조직과 협업하며, 각자의 의견을 이해하고 조율해 나가는 과정에서 소통 역량이 중요한 역할을 합니다. 개발 초기부터 양산 단계까지 개발 흐름을 경험하며, 변경 사항이 성능과 일정에 미치는 영향을 함께 고려하는 균형 잡힌 판단이 이 역할의 깊이를 더하게 되고, 개인의 해답보다 프로그램 전체에 최적의 선택을 고민하며 그 결과를 끝까지 연결해 책임지는 태도는 Integration 역할을 완성해 나간다고 볼 수 있습니다.""",
                 "Technical depth across simulation domains, synthesis across stages, stakeholder communication, balanced trade-offs on performance and schedule, and program-level ownership.",
@@ -54,7 +54,7 @@ EXTRA = {
             Q(
                 "앞으로의 목표 또는 커리어 방향",
                 "Future goals or career direction",
-                """Integration 관점의 개입 범위를 점진적으로 넓혀, 해석 기반 가상 엔지니어링이 개발 전반에서 보다 선제적으로 활용될 수 있도록 가속화를 이끌고자 합니다. 이를 통해 컴퓨터 시뮬레이션 결과가 의사결정의 핵심 입력으로 작동하고, 미래 예측이 점점 어려워지는 환경 속에서도 의사결정권자가 더 빠르고 명확하며 균형 잡힌 판단을 내릴 수 있도록 기반을 다지는 것이 목표입니다. 이와 함께 차량 개발 전반의 의사결정 흐름을 보다 넓은 시야에서 바라보며, 성능 목표와 일정·비용 요소가 유기적으로 연결된 상태에서 예상하지 못한 변화에도 빠르고 효과적으로 대응할 수 있도록 스크럼 기반 협업 방식을 차량 개발 프로세스에 더욱 실질적으로 녹여냄으로서 장기적으로는 기술과 프로세스 그리고 조직을 더욱 단단하게 연결하고, 차량 개발의 주요 의사결정과 실행 과정에 보다 깊이 관여하며 실질적인 가치를 만들어 가도록 커리어를 만들고자 합니다.""",
+                """Integration 관점의 개입 범위를 점진적으로 넓혀, 해석 기반 가상 엔지니어링이 개발 전반에서 보다 선제적으로 활용될 수 있도록 가속화를 이끌고자 합니다. 이를 통해 컴퓨터 시뮬레이션 결과가 의사결정의 핵심 입력으로 작동하고, 미래 예측이 점점 어려워지는 환경 속에서도 의사결정권자가 더 빠르고 명확하며 균형 잡힌 판단을 내릴 수 있도록 기반을 다지는 것이 목표입니다. 이와 함께 차량 개발 전반의 의사결정 흐름을 보다 넓은 시야에서 바라보며, 성능 목표와 일정,비용 요소가 유기적으로 연결된 상태에서 예상하지 못한 변화에도 빠르고 효과적으로 대응할 수 있도록 스크럼 기반 협업 방식을 차량 개발 프로세스에 더욱 실질적으로 녹여냄으로서 장기적으로는 기술과 프로세스 그리고 조직을 더욱 단단하게 연결하고, 차량 개발의 주요 의사결정과 실행 과정에 보다 깊이 관여하며 실질적인 가치를 만들어 가도록 커리어를 만들고자 합니다.""",
                 "Expand integration influence so virtual engineering is proactive in decisions; embed scrum-like collaboration more deeply; tie technology, process, and organization for faster, clearer decisions.",
             ),
             Q(
@@ -70,7 +70,7 @@ EXTRA = {
             Q(
                 "팀 소개 및 현재 팀에서 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
                 "Please introduce your team and your current work.",
-                """저는 GMTCK Virtual Method & Optimization Team에서 AI/ML Engineer로 근무하고 있습니다. 저희 팀은 Simulation · Data Analysis · AI/ML 기술을 활용해 개발 과정을 빠르고 효율적으로 만드는 일을 하고 있습니다.
+                """저는 GMTCK Virtual Method & Optimization Team에서 AI/ML Engineer로 근무하고 있습니다. 저희 팀은 Simulation , Data Analysis , AI/ML 기술을 활용해 개발 과정을 빠르고 효율적으로 만드는 일을 하고 있습니다.
 
 그 안에서 저는 엔지니어링 현장에서 실제로 쓰이는 “AI tool을 개발하는 엔지니어”라고 소개할 수 있을 것 같습니다. 다른 엔지니어분들이 어려움을 겪는 일을 AI/ML 혹은 Automation tool로 개발하여, 더 고부가가치 업무에 집중하실 수 있게 돕고 있습니다.""",
                 "On Virtual Method & Optimization, I build AI/ML and automation tools engineers actually use to remove friction and focus on higher-value work.",
@@ -78,7 +78,7 @@ EXTRA = {
             Q(
                 "팀 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
                 "What competencies does this team need?",
-                """먼저 가장 기본이 되는 것은 데이터와 알고리즘에 대한 이해입니다. 머신러닝/딥러닝의 원리를 이해하고, Python 기반으로 데이터를 다루고 모델을 설계·개선할 수 있는 능력이 필요합니다. 특히, 현실적인 제약(데이터 품질, 컴퓨팅 리소스, 일정 등) 안에서 어떻게 구현하고 최적화할지를 고민하는 시각이 매우 중요합니다.
+                """먼저 가장 기본이 되는 것은 데이터와 알고리즘에 대한 이해입니다. 머신러닝/딥러닝의 원리를 이해하고, Python 기반으로 데이터를 다루고 모델을 설계,개선할 수 있는 능력이 필요합니다. 특히, 현실적인 제약(데이터 품질, 컴퓨팅 리소스, 일정 등) 안에서 어떻게 구현하고 최적화할지를 고민하는 시각이 매우 중요합니다.
 
 동시에, 이 팀에서 특히 중요하다고 느끼는 역량은 문제 정의 능력과 커뮤니케이션 능력입니다. AI 모델을 만드는 것보다 더 어려운 일이 “어떤 문제를 AI로 풀어야 하는지, 또 풀 수 있는지”를 정의하는 일입니다. 이를 위해서는 현업 엔지니어, 다양한 부서와 소통하며, 그분들의 언어를 데이터와 알고리즘의 언어로 번역할 수 있어야 합니다.""",
                 "Data and algorithms, pragmatic ML under constraints, problem framing, and translating domain language into data/ML solutions.",
@@ -102,7 +102,7 @@ EXTRA = {
                 "What does GMTCK mean to you?",
                 """저에게 GMTCK는 “끊임없는 성장의 무대”입니다. 입사 초에는 Powertrain DRE업무를 하면서 Hardware개발에 대한 업무를 하다가, 지금 팀에서 AI/ML 영역으로 확장해 오면서, 회사와 함께 저 스스로의 역할도 계속 진화해 왔습니다. 그 과정에서 성장에 대한 기회를 주고, 실패하더라도 다시 시도할 수 있게 지지해 준 곳이 바로 GMTCK였습니다.
 
-또한 GMTCK는 “혼자서는 절대 만들 수 없는 결과를, 함께 만들어가는 곳”이기도 합니다. AI/ML이라는 기술만으로는 아무것도 할 수 없고, 차량 구조를 이해하는 엔지니어, 현장을 잘 아시는 생산·품질 담당자 분들, 그리고 다양한 지원 조직이 함께할 때 비로소 고객에게 의미 있는 가치를 전달할 수 있습니다. 그 협업의 한 가운데에서, 데이터와 AI/ML로 연결고리를 만드는 역할을 맡고 있다는 점이 저에게는 큰 자부심입니다.""",
+또한 GMTCK는 “혼자서는 절대 만들 수 없는 결과를, 함께 만들어가는 곳”이기도 합니다. AI/ML이라는 기술만으로는 아무것도 할 수 없고, 차량 구조를 이해하는 엔지니어, 현장을 잘 아시는 생산,품질 담당자 분들, 그리고 다양한 지원 조직이 함께할 때 비로소 고객에게 의미 있는 가치를 전달할 수 있습니다. 그 협업의 한 가운데에서, 데이터와 AI/ML로 연결고리를 만드는 역할을 맡고 있다는 점이 저에게는 큰 자부심입니다.""",
                 "GMTCK is a stage for growth—from Powertrain DRE to AI/ML—and a place where collaboration turns technology into customer value.",
             ),
         ]
@@ -112,31 +112,31 @@ EXTRA = {
             Q(
                 "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
                 "Please introduce your role and responsibilities.",
-                """제가 소속된 ADAS 조직은 Super Cruise를 포함한 주행 보조·자동주행 기능 전반을 대상으로, 기능 정의부터 시스템 아키텍처, 캘리브레이션, 필드 이슈 대응까지 차량의 실제 주행 거동을 End‑to‑End로 책임지는 핵심 엔지니어링 조직입니다. 또한 HIL/SIL 및 시뮬레이션 기반의 Virtual 검증 체계 전환을 주도하며, 실차 의존도를 낮추고 개발 효율과 품질을 동시에 향상시키는 역할을 수행하고 있습니다. 저는 ADAS 개발 관련 프로그램 전반을 리드하며, SW 적용 일정과 캘리브레이션 통합을 포함한 ADAS 개발 계획을 수립·운영하고 있습니다. 아울러 이슈 조율과 부서 간 협업을 통해 개발 리드타임을 단축하고, 각 프로그램에서 ADAS 개발이 효율적이고 일관되게 진행되도록 총괄 관리하고 있습니다.""",
+                """제가 소속된 ADAS 조직은 Super Cruise를 포함한 주행 보조,자동주행 기능 전반을 대상으로, 기능 정의부터 시스템 아키텍처, 캘리브레이션, 필드 이슈 대응까지 차량의 실제 주행 거동을 End‑to‑End로 책임지는 핵심 엔지니어링 조직입니다. 또한 HIL/SIL 및 시뮬레이션 기반의 Virtual 검증 체계 전환을 주도하며, 실차 의존도를 낮추고 개발 효율과 품질을 동시에 향상시키는 역할을 수행하고 있습니다. 저는 ADAS 개발 관련 프로그램 전반을 리드하며, SW 적용 일정과 캘리브레이션 통합을 포함한 ADAS 개발 계획을 수립,운영하고 있습니다. 아울러 이슈 조율과 부서 간 협업을 통해 개발 리드타임을 단축하고, 각 프로그램에서 ADAS 개발이 효율적이고 일관되게 진행되도록 총괄 관리하고 있습니다.""",
                 "ADAS leads end-to-end driving assistance and automated driving—including Super Cruise—from definition through architecture, calibration, and field issues, and drives virtual validation (HIL/SIL). I lead programs across ADAS plans, software deployment, calibration integration, and cross-functional coordination.",
             ),
             Q(
                 "하루 업무에 대해 소개해주세요.",
                 "Please describe your daily work.",
-                """하루 업무는 프로그램 단위 개발 계획 점검, 데이터 기반 ADAS 이슈 리뷰, 캘리브레이션·프로그램 팀과의 협업으로 구성됩니다. 프로그램의 SW 적용 일정, 캘리브레이션 통합 계획, 검증 게이트 로드맵을 점검하고, 주요 리스크와 우선순위를 정리해 공유합니다. 이후 로그 분석 리뷰를 통해 SW 변경과 캘리브레이션 조정 중 최적의 기술적 해결 방향을 도출하고 실제 계획으로 연결합니다. 마지막으로 주요 ADAS 이슈와 리스크를 정리·공유하고 우선순위와 책임을 명확히 하여, 각 프로그램의 ADAS 개발이 효율적이고 안정적으로 진행되도록 리딩 합니다.""",
+                """하루 업무는 프로그램 단위 개발 계획 점검, 데이터 기반 ADAS 이슈 리뷰, 캘리브레이션,프로그램 팀과의 협업으로 구성됩니다. 프로그램의 SW 적용 일정, 캘리브레이션 통합 계획, 검증 게이트 로드맵을 점검하고, 주요 리스크와 우선순위를 정리해 공유합니다. 이후 로그 분석 리뷰를 통해 SW 변경과 캘리브레이션 조정 중 최적의 기술적 해결 방향을 도출하고 실제 계획으로 연결합니다. 마지막으로 주요 ADAS 이슈와 리스크를 정리,공유하고 우선순위와 책임을 명확히 하여, 각 프로그램의 ADAS 개발이 효율적이고 안정적으로 진행되도록 리딩 합니다.""",
                 "Daily work spans program plan reviews, data-driven ADAS issue reviews, and collaboration with calibration and program teams—aligning schedules, integration plans, validation gates, log triage, and clear ownership.",
             ),
             Q(
                 "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
                 "What competencies are essential?",
-                """ADAS 개발에는 아키텍처를 전체적으로 이해하고, 이슈 발생 시 영향 범위를 구조적으로 파악할 수 있는 시스템적 사고가 필요합니다. 이에 더해 로그와 데이터 기반의 분석 역량, 캘리브레이션을 통해 실제 주행 거동을 설계하는 감각, 그리고 실도로 주행 경험을 통해 축적된 도메인 이해가 함께 요구됩니다. 또한 ADAS는 여러 조직과 긴밀히 협업해야 하는 영역인 만큼, 서로 다른 관점을 조율하고 합의를 이끌어내는 커뮤니케이션 역량이 중요합니다. 여기에 SW·캘리브레이션·검증을 아우르는 End‑to‑End 계획 및 실행력, 그리고 정의된 과제를 끝까지 책임지고 완결시키는 오너십이 핵심 역량이라고 생각합니다.""",
+                """ADAS 개발에는 아키텍처를 전체적으로 이해하고, 이슈 발생 시 영향 범위를 구조적으로 파악할 수 있는 시스템적 사고가 필요합니다. 이에 더해 로그와 데이터 기반의 분석 역량, 캘리브레이션을 통해 실제 주행 거동을 설계하는 감각, 그리고 실도로 주행 경험을 통해 축적된 도메인 이해가 함께 요구됩니다. 또한 ADAS는 여러 조직과 긴밀히 협업해야 하는 영역인 만큼, 서로 다른 관점을 조율하고 합의를 이끌어내는 커뮤니케이션 역량이 중요합니다. 여기에 SW,캘리브레이션,검증을 아우르는 End‑to‑End 계획 및 실행력, 그리고 정의된 과제를 끝까지 책임지고 완결시키는 오너십이 핵심 역량이라고 생각합니다.""",
                 "Systems thinking, log/data analysis, calibration intuition, on-road domain knowledge, strong communication, end-to-end execution, and ownership.",
             ),
             Q(
                 "진행하셨던 프로젝트 중 인상 깊었던 프로젝트가 있나요?",
                 "Was there a memorable project?",
-                """제가 가장 인상 깊게 기억하는 프로젝트는 MY27 Bolt ADAS 개발입니다. 해당 프로그램은 짧은 개발 일정과 ADAS 센서·하드웨어의 낮은 성숙도로 인해 개발 지연이나 양산 일정에 영향을 줄 수 있는 높은 리스크를 안고 시작되었습니다. 이러한 제약 속에서 저는 관련 조직 간 긴밀한 협업을 이끌고, 담당 영역에서는 캘리브레이션과 검증 계획을 우선순위 중심으로 재정렬하여 핵심 기능과 주요 리스크를 중심으로 개발 흐름을 안정화했습니다. 그 결과, 캘리브레이션·검증팀의 높은 실행력과 빠른 피드백을 바탕으로 여러 제약에도 불구하고 개발 지연 없이 계획된 일정 내에 프로젝트를 성공적으로 마무리할 수 있었으며, 선제적 리스크 관리와 협업의 중요성을 다시 한번 확인한 경험이었습니다.""",
+                """제가 가장 인상 깊게 기억하는 프로젝트는 MY27 Bolt ADAS 개발입니다. 해당 프로그램은 짧은 개발 일정과 ADAS 센서,하드웨어의 낮은 성숙도로 인해 개발 지연이나 양산 일정에 영향을 줄 수 있는 높은 리스크를 안고 시작되었습니다. 이러한 제약 속에서 저는 관련 조직 간 긴밀한 협업을 이끌고, 담당 영역에서는 캘리브레이션과 검증 계획을 우선순위 중심으로 재정렬하여 핵심 기능과 주요 리스크를 중심으로 개발 흐름을 안정화했습니다. 그 결과, 캘리브레이션,검증팀의 높은 실행력과 빠른 피드백을 바탕으로 여러 제약에도 불구하고 개발 지연 없이 계획된 일정 내에 프로젝트를 성공적으로 마무리할 수 있었으며, 선제적 리스크 관리와 협업의 중요성을 다시 한번 확인한 경험이었습니다.""",
                 "MY27 Bolt ADAS: aggressive schedule and immature sensors/hardware; re-prioritized calibration and validation, stabilized flow, and delivered on time through collaboration.",
             ),
             Q(
                 "앞으로의 목표 또는 커리어 방향",
                 "Future goals or career direction",
-                """앞으로는 Virtual 기반 ADAS 개발을 표준화하고 조직 전반으로 확산시키는 것을 목표로 하고 있습니다. HIL/SIL 및 시뮬레이션 중심의 개발 체계로 전환하여 실차 의존도를 낮추고, 개발 리드타임 단축을 주도하고자 합니다. 또한 Cross‑functional 리더십을 확장해, SW·캘리브레이션·검증을 넘어 시스템, HMI, DMS, 맵/클라우드까지 아우르는 ADAS End‑to‑End Technical Leader로 성장하는 것이 목표입니다. 이를 통해 개별 기능이 아닌 고객이 체감하는 전체 주행 경험을 기준으로 의사결정을 이끄는 리더가 되고자 합니다.""",
+                """앞으로는 Virtual 기반 ADAS 개발을 표준화하고 조직 전반으로 확산시키는 것을 목표로 하고 있습니다. HIL/SIL 및 시뮬레이션 중심의 개발 체계로 전환하여 실차 의존도를 낮추고, 개발 리드타임 단축을 주도하고자 합니다. 또한 Cross‑functional 리더십을 확장해, SW,캘리브레이션,검증을 넘어 시스템, HMI, DMS, 맵/클라우드까지 아우르는 ADAS End‑to‑End Technical Leader로 성장하는 것이 목표입니다. 이를 통해 개별 기능이 아닌 고객이 체감하는 전체 주행 경험을 기준으로 의사결정을 이끄는 리더가 되고자 합니다.""",
                 "Standardize virtual ADAS development, reduce vehicle reliance, shorten lead time, and grow into an end-to-end ADAS technical leader across SW, calibration, validation, systems, HMI, DMS, and map/cloud.",
             ),
         ]

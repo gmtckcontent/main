@@ -12,11 +12,12 @@ const activeHeroSection = heroSection || subpageHeroSection || hqIntroSection;
 
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
-  
+
   // Check if we're on interviews page - always show background
-  const isInterviewsPage = window.location.pathname.includes('team-tck-interviews.html') || 
-                           window.location.href.includes('team-tck-interviews.html');
-  
+  const isInterviewsPage =
+    window.location.pathname.includes("team-tck-interviews.html") ||
+    window.location.href.includes("team-tck-interviews.html");
+
   // If on interviews page, always show scrolled state (with background)
   if (isInterviewsPage) {
     navbar.classList.remove("over-hero");
@@ -24,7 +25,7 @@ window.addEventListener("scroll", () => {
     lastScroll = currentScroll;
     return;
   }
-  
+
   // If at top of page (scroll position 0), always show over-hero state (no background)
   if (currentScroll === 0) {
     navbar.classList.add("over-hero");
@@ -32,7 +33,7 @@ window.addEventListener("scroll", () => {
     lastScroll = currentScroll;
     return;
   }
-  
+
   // For subpage, always show scrolled state after initial hero section
   if (subpageHeroSection && !heroSection) {
     const heroHeight = subpageHeroSection.offsetHeight;
@@ -77,25 +78,26 @@ window.addEventListener("scroll", () => {
 // Check initial state on load and DOMContentLoaded
 function setInitialNavbarState() {
   const currentScroll = window.pageYOffset;
-  
+
   // Check if we're on interviews page - always show background
-  const isInterviewsPage = window.location.pathname.includes('team-tck-interviews.html') || 
-                           window.location.href.includes('team-tck-interviews.html');
-  
+  const isInterviewsPage =
+    window.location.pathname.includes("team-tck-interviews.html") ||
+    window.location.href.includes("team-tck-interviews.html");
+
   // If on interviews page, always show scrolled state (with background)
   if (isInterviewsPage) {
     navbar.classList.remove("over-hero");
     navbar.classList.add("scrolled");
     return;
   }
-  
+
   // If at top of page (scroll position 0), always show over-hero state (no background)
   if (currentScroll === 0) {
     navbar.classList.add("over-hero");
     navbar.classList.remove("scrolled");
     return;
   }
-  
+
   // For subpage, check subpage-hero
   if (subpageHeroSection && !heroSection) {
     const heroHeight = subpageHeroSection.offsetHeight;
@@ -150,7 +152,9 @@ window.addEventListener("load", () => {
     if (bannerImage.complete) {
       setInitialNavbarState();
     } else {
-      bannerImage.addEventListener("load", setInitialNavbarState, { once: true });
+      bannerImage.addEventListener("load", setInitialNavbarState, {
+        once: true,
+      });
     }
   }
 });
@@ -193,13 +197,17 @@ navMenu.querySelectorAll("a").forEach((link) => {
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-    // team-tck-interviews.html: 해시·ScrollTrigger·랜딩 카드는 페이지 스크립트가 처리
+    // team-tck-interviews.html: 해시,ScrollTrigger,랜딩 카드는 페이지 스크립트가 처리
     if (document.body.classList.contains("interviews-page")) {
       return;
     }
     // Don't prevent default for hash links on subpages (handled by subpage scripts)
     const href = this.getAttribute("href");
-    if (href && href.startsWith("#") && document.querySelector(".hq-sidebar-link")) {
+    if (
+      href &&
+      href.startsWith("#") &&
+      document.querySelector(".hq-sidebar-link")
+    ) {
       // This is a subpage with sidebar navigation, let subpage handle it
       return;
     }
@@ -282,7 +290,7 @@ if (statsSection) {
 // Fade In Animation on Scroll
 // ===========================
 const observeElements = document.querySelectorAll(
-  ".service-card, .tech-feature, .stat-item"
+  ".service-card, .tech-feature, .stat-item",
 );
 
 const fadeInObserver = new IntersectionObserver(
@@ -298,7 +306,7 @@ const fadeInObserver = new IntersectionObserver(
   },
   {
     threshold: 0.1,
-  }
+  },
 );
 
 observeElements.forEach((element) => {
@@ -324,7 +332,7 @@ const storyObserver = new IntersectionObserver(
   {
     threshold: 0.2,
     rootMargin: "0px 0px -50px 0px",
-  }
+  },
 );
 
 storySections.forEach((section) => {
@@ -349,10 +357,10 @@ function initInterviewsScrollReveal() {
       });
     },
     {
-      threshold: [0, 0.06, 0.14],
-      /* 뷰포트보다 약간 일찍 등장(스크롤 닿을 때 자연스럽게) */
-      rootMargin: "0px 0px 12% 0px",
-    }
+      threshold: 0,
+      /* 아래로 조금 여유 두고 교차 판정 → 스크롤 시 덜 늦게 느껴짐 */
+      rootMargin: "0px 0px 22% 0px",
+    },
   );
 
   /** 다인 캐러셀에서 비활성 슬라이드는 겹쳐 있어도 리빌 대상에서 제외 */
@@ -376,7 +384,7 @@ function initInterviewsScrollReveal() {
     io.observe(el);
   }
 
-  /** 상단 크롬(네비·타이틀·사이드바): 셸이 hidden일 때 IO가 안 돌거나 네비에 가려 교차가 안 잡혀 opacity 0으로 남는 문제 방지 */
+  /** 상단 크롬(네비,타이틀,사이드바): 셸이 hidden일 때 IO가 안 돌거나 네비에 가려 교차가 안 잡혀 opacity 0으로 남는 문제 방지 */
   function registerChrome(el) {
     if (!el || el.hasAttribute("data-reveal")) {
       return;
@@ -386,7 +394,29 @@ function initInterviewsScrollReveal() {
   }
 
   const revealSelector =
-    ".interview-item, .interview-profile-header, .hq-content-title, .hq-division-card, .hq-content-description, .interview-question";
+    ".interview-item, .interview-profile-header, .hq-content-title, .hq-division-card, .hq-content-description, .interview-q-title, .interview-answer";
+
+  /**
+   * 질문,답만 같은 문항 안에서 아주 짧게 어긋뜀.
+   * (문항 인덱스로 누적 지연을 주면 스크롤 리빌이 늦게 시작하는 것처럼 느껴짐)
+   */
+  function applyInterviewQuestionStagger(root) {
+    if (!root || !root.querySelectorAll) {
+      return;
+    }
+    root
+      .querySelectorAll(".interview-content .interview-question")
+      .forEach((block) => {
+        const title = block.querySelector(".interview-q-title");
+        const answer = block.querySelector(".interview-answer");
+        if (title) {
+          title.style.setProperty("--reveal-delay", "0s");
+        }
+        if (answer) {
+          answer.style.setProperty("--reveal-delay", "0.04s");
+        }
+      });
+  }
 
   function scan(root, force) {
     if (!root) {
@@ -398,10 +428,11 @@ function initInterviewsScrollReveal() {
         el.classList.remove("hq-reveal", "is-visible");
       }
       if (!el.hasAttribute("data-reveal")) {
-        el.style.setProperty("--reveal-delay", `${Math.min(i * 0.04, 0.35)}s`);
+        el.style.setProperty("--reveal-delay", `${Math.min(i * 0.02, 0.16)}s`);
       }
       register(el);
     });
+    applyInterviewQuestionStagger(root);
   }
 
   registerChrome(document.querySelector(".hq-division-rail"));
@@ -415,11 +446,16 @@ function initInterviewsScrollReveal() {
     scan(rootEl, opts && opts.force === true);
   };
 
+  /**
+   * childList만 관찰: attributes까지 켜면 applyInterviewQuestionStagger의 style 갱신이
+   * 옵저버를 다시 돌려 scan→style→scan 루프(긴 인터뷰에서 UI 프리즈)를 일으킬 수 있음.
+   * 캐러셀 전환 등은 gmtckScanInterviewReveal로 이미 재스캔함.
+   */
   const mo = new MutationObserver(() => {
     scan(main);
   });
   if (main) {
-    mo.observe(main, { subtree: true, childList: true, attributes: true });
+    mo.observe(main, { subtree: true, childList: true });
   }
 
   document.querySelectorAll(".hq-content-section").forEach((sec) => {
@@ -524,7 +560,7 @@ window.addEventListener("scroll", () => {
 // Loading Animation
 // ===========================
 window.addEventListener("load", () => {
-  // 직무소개 페이지: body opacity 토글 시 레이아웃·스크롤 위치가 흔들릴 수 있어 페이드 생략
+  // 직무소개 페이지: body opacity 토글 시 레이아웃,스크롤 위치가 흔들릴 수 있어 페이드 생략
   if (
     document.body.classList.contains("interviews-page") ||
     window.location.pathname.includes("team-tck-interviews.html") ||
@@ -651,7 +687,7 @@ if (heroVideo) {
         () => {
           playVideo();
         },
-        isSafari ? 500 : 100
+        isSafari ? 500 : 100,
       );
     }
   };
@@ -670,7 +706,7 @@ if (heroVideo) {
       () => {
         attemptPlayAfterLoad();
       },
-      { once: true }
+      { once: true },
     );
   });
 
@@ -896,5 +932,5 @@ window.addEventListener(
       // Scroll-based animations here
     });
   },
-  { passive: true }
+  { passive: true },
 );

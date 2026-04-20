@@ -196,7 +196,7 @@ function HistoryStickyScrollPanel({
                    shadow-[0_28px_90px_-24px_rgba(15,23,42,0.18)] ring-1 ring-black/5"
         style={{ top: "22svh", height: "56svh" }}
       >
-        {/* 배경 이미지 — shell 전체 커버 (왼쪽·오른쪽 동일 배경) */}
+        {/* 배경 이미지 — shell 전체 커버 (왼쪽,오른쪽 동일 배경) */}
         <div className="absolute inset-0 bg-neutral-900">
           <AnimatePresence initial={false} mode="sync">
             <motion.div
