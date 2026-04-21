@@ -13,10 +13,10 @@
   /** @type {boolean[]} */
   var isColor = [];
 
-  /** 휠 누적 목표(px) — 높을수록 다음 섹션까지 더 많이 굴려야 함 (예: ~5000) */
-  var THRESHOLD = 5000;
-  /** 휠 1회당 누적량 스케일 — 상향 시 잠금 해제,반응이 가벼워짐 */
-  var WHEEL_ACCUM_SCALE = 0.92;
+  /** 휠 누적 목표(px) — 높을수록 다음 섹션까지 더 많이 굴려야 함 */
+  var THRESHOLD = 4000;
+  /** 휠 1회당 누적량 스케일 — 상향 시 잠금 해제·전환이 빨라짐 */
+  var WHEEL_ACCUM_SCALE = 1.02;
   /** 이 누적(px)마다 한 번 양자 플립(탁) */
   var WHEEL_QUANTUM = 175;
   var accumulated = 0;
@@ -430,7 +430,7 @@
   /**
    * 덮개,Our Story 공통 진행(0~1)에 쓰는 휠 누적 구간(px) — THRESHOLD의 2배로 느리게 상승.
    */
-  var LIFT_FULL_ACCUM_PX = 10000;
+  var LIFT_FULL_ACCUM_PX = 8000;
   /**
    * 휠 진행 → 리프트 진행. 1=선형, >1이면 초반 더 천천히.
    */
@@ -442,7 +442,7 @@
    * THRESHOLD 초과분(0 ~ POST_THRESHOLD_PX) → 0~1. 본부 패널,Our Story 동시 구동에만 사용.
    */
   /** THRESHOLD 이후 이 px만큼 휠하면 --hq-compress 0→1 (그리드 압축,인트로 상승 1:1) */
-  var POST_THRESHOLD_PX = 420;
+  var POST_THRESHOLD_PX = 320;
 
   /**
    * 덮개,Our Story 동일 progress — overlap * 100vh == 타이틀 translateY(-overlap*100vh) (픽셀 동일 이동).

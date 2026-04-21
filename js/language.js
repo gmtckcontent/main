@@ -33,6 +33,14 @@ class LanguageToggle {
     // 모든 다국어 요소 업데이트
     const elements = document.querySelectorAll("[data-kr][data-en]");
     elements.forEach((element) => {
+      // 글로벌 헤더 .nav-content 안 링크·트리거는 언어와 무관하게 항상 영문(data-en)
+      if (element.closest(".nav-content")) {
+        if (element.dataset.en != null && element.dataset.en !== "") {
+          element.textContent = element.dataset.en;
+        }
+        return;
+      }
+
       // hq-nav-link는 약어 사용
       if (element.classList.contains("hq-nav-link") && element.dataset.abbrKr) {
         const text = lang === "kr" ? element.dataset.abbrKr : element.dataset.abbrEn;
@@ -108,7 +116,7 @@ class LanguageToggle {
   }
 
   updateHQPage(lang) {
-    // team-tck-interviews: 본부 레일(#hqDivisionRail) 링크 — 약어 사용
+    // our-story: 본부 레일(#hqDivisionRail) 링크 — 약어 사용
     const navLinks = document.querySelectorAll("#hqDivisionRail .hq-nav-link");
     navLinks.forEach((link) => {
       if (link.dataset.abbrKr && link.dataset.abbrEn) {

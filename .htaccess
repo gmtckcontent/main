@@ -46,7 +46,7 @@
 #   RewriteCond %{REQUEST_FILENAME} !-f
 #   RewriteCond %{REQUEST_FILENAME} !-d
 #   RewriteRule ^team-tck-hq$ index.html#team-tck-hq [R=301,L]
-#   RewriteRule ^team-tck-interviews$ index.html#team-tck-interviews [R=301,L]
+#   RewriteRule ^team-tck-interviews$ our-story.html [R=301,L]
 # </IfModule>
 
 

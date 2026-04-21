@@ -15,8 +15,8 @@ window.addEventListener("scroll", () => {
 
   // Check if we're on interviews page - always show background
   const isInterviewsPage =
-    window.location.pathname.includes("team-tck-interviews.html") ||
-    window.location.href.includes("team-tck-interviews.html");
+    window.location.pathname.includes("our-story.html") ||
+    window.location.href.includes("our-story.html");
 
   // If on interviews page, always show scrolled state (with background)
   if (isInterviewsPage) {
@@ -81,8 +81,8 @@ function setInitialNavbarState() {
 
   // Check if we're on interviews page - always show background
   const isInterviewsPage =
-    window.location.pathname.includes("team-tck-interviews.html") ||
-    window.location.href.includes("team-tck-interviews.html");
+    window.location.pathname.includes("our-story.html") ||
+    window.location.href.includes("our-story.html");
 
   // If on interviews page, always show scrolled state (with background)
   if (isInterviewsPage) {
@@ -197,7 +197,7 @@ navMenu.querySelectorAll("a").forEach((link) => {
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-    // team-tck-interviews.html: 해시,ScrollTrigger,랜딩 카드는 페이지 스크립트가 처리
+    // our-story.html: 해시,ScrollTrigger,랜딩 카드는 페이지 스크립트가 처리
     if (document.body.classList.contains("interviews-page")) {
       return;
     }
@@ -416,14 +416,14 @@ function initInterviewsScrollReveal() {
           answer.style.setProperty("--reveal-delay", "0.07s");
         }
       });
-    root.querySelectorAll(".interview-content > .interview-answer").forEach(
-      (ans) => {
+    root
+      .querySelectorAll(".interview-content > .interview-answer")
+      .forEach((ans) => {
         if (ans.closest(".interview-question")) {
           return;
         }
         ans.style.setProperty("--reveal-delay", "0s");
-      },
-    );
+      });
   }
 
   function scan(root, force) {
@@ -571,8 +571,8 @@ window.addEventListener("load", () => {
   // 직무소개 페이지: body opacity 토글 시 레이아웃,스크롤 위치가 흔들릴 수 있어 페이드 생략
   if (
     document.body.classList.contains("interviews-page") ||
-    window.location.pathname.includes("team-tck-interviews.html") ||
-    window.location.href.includes("team-tck-interviews.html")
+    window.location.pathname.includes("our-story.html") ||
+    window.location.href.includes("our-story.html")
   ) {
     return;
   }

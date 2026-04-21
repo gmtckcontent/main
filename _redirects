@@ -15,7 +15,7 @@
 
 # # SPA routing - redirect clean URLs to index.html with hash
 # /team-tck-hq /index.html#team-tck-hq 200
-# /team-tck-interviews /index.html#team-tck-interviews 200
+# /team-tck-interviews /our-story.html 301
 # 
 # # Remove .html extension
 # /*.html /:splat 301

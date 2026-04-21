@@ -6,7 +6,7 @@
  *   - interviewContent[interviewId] = 그 인터뷰 1건; questions[] = 그 인터뷰 안의 질문·답변 목록(5문항 등)
  *   - 예외: VE 본부는 같은 담당(role)에 여러 명(ve1.png, ve2.png …)이 있을 수 있고,
  *     interviewId는 ve-{roleId}-1, ve-{roleId}-2 … 형태로 여러 섹션(캐러셀)이 된다.
- *   - 예외: EE의 System & Product Investigation은 EE1a.png, EE1b.png … / interviewId ee-system-investigation-1, -2 … (team-tck-interviews.html 캐러셀).
+ *   - 예외: EE의 System & Product Investigation은 EE1a.png, EE1b.png … / interviewId ee-system-investigation-1, -2 … (our-story.html 캐러셀).
  *   - 예외: EE Validation Division은 EE2.png, EE2b.png … / interviewId ee-verification-1, -2 … (동일 캐러셀).
  *
  * Edit here only:
@@ -942,6 +942,26 @@ const PROFILE_MOSAIC_REL_PATHS = [
   "beca/Chassis.png",
   "beca/Exterior.png",
   "beca/body.png",
+  "etc pic/E078AUGKMDE-U08GX58UMT3-1657cb915a2f-512.jpg",
+  "etc pic/E078AUGKMDE-U08SJ2X4BPU-b3d5f5ad5e0f-512.jpg",
+  "etc pic/제목 없음 (1080 x 1080 px) (8).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (9).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (10).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (11).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (12).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (13).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (14).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (15).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (16).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (17).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (18).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (19).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (20).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (21).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (22).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (23).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (24).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (25).png",
   "itpe/ecs-itpe.png",
   "itpe/interior-trim.png",
   "itpe/seat-safety-restraints.png",

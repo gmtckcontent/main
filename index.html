@@ -23,14 +23,14 @@
           var h = window.location.hash;
           if (!h || h.length < 2) return;
           var id = decodeURIComponent(h.slice(1));
-          // 직무소개 페이지 앵커는 team-tck-interviews.html에만 있음 (예: #avd-advanced-vehicle)
+          // 직무소개 페이지 앵커는 our-story.html에만 있음 (예: #avd-advanced-vehicle)
           if (
             /^(ee|avd|beca|itpe|pipg|ss|ve)-/.test(id) ||
             id === "all" ||
             id === "divisions"
           ) {
             window.location.replace(
-              "team-tck-interviews.html" + window.location.hash,
+              "our-story.html" + window.location.hash,
             );
           }
         } catch (e) {}
@@ -148,7 +148,7 @@
       sizes="180x180"
       href="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.css?v=112" />
     <link rel="stylesheet" href="./css/scroll-layers.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -239,7 +239,7 @@
             <li>
               <a href="#about" data-kr="회사소개" data-en="About">About</a>
             </li>
-            <li class="nav-hide-production">
+            <li>
               <a
                 href="core-values.html"
                 data-kr="핵심 가치"
@@ -267,32 +267,13 @@
                 >News</a
               >
             </li>
-            <li class="nav-dropdown nav-hide-production">
+            <li>
               <a
-                href="team-tck.html"
-                class="nav-dropdown-trigger"
-                data-kr="Team TCK"
-                data-en="Team TCK"
-                >Team TCK</a
+                href="our-story.html"
+                data-kr="Inside TCK"
+                data-en="Inside TCK"
+                >Inside TCK</a
               >
-              <ul class="nav-dropdown-menu" aria-label="Team TCK submenu">
-                <li>
-                  <a
-                    href="team-tck-hq.html"
-                    data-kr="본부소개"
-                    data-en="HQ Introduction"
-                    >HQ Introduction</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="team-tck-interviews.html"
-                    data-kr="Our Story"
-                    data-en="Our Story"
-                    >Our Story</a
-                  >
-                </li>
-              </ul>
             </li>
           </ul>
           <div class="nav-buttons">
@@ -340,7 +321,7 @@
         controlslist="nodownload nofullscreen noremoteplayback"
         disablePictureInPicture
       >
-        <source src="./images/video/main-video_1.mp4" type="video/mp4" />
+        <source src="./images/video/main-video_2.mp4" type="video/mp4" />
       </video>
       <!-- Fallback Background Image -->
       <div class="hero-fallback-bg"></div>
@@ -572,9 +553,6 @@
                     </div>
                     <div class="thumbnail-overlay">
                       <h4 class="thumbnail-title">YouTube 영상 제목 1</h4>
-                      <p class="thumbnail-description">
-                        영상 설명을 입력하세요
-                      </p>
                     </div>
                     <span class="thumbnail-card-cta">
                       <span
@@ -619,9 +597,6 @@
                     </div>
                     <div class="thumbnail-overlay">
                       <h4 class="thumbnail-title">YouTube 영상 제목 2</h4>
-                      <p class="thumbnail-description">
-                        영상 설명을 입력하세요
-                      </p>
                     </div>
                     <span class="thumbnail-card-cta">
                       <span
@@ -666,9 +641,6 @@
                     </div>
                     <div class="thumbnail-overlay">
                       <h4 class="thumbnail-title">YouTube 영상 제목 3</h4>
-                      <p class="thumbnail-description">
-                        영상 설명을 입력하세요
-                      </p>
                     </div>
                     <span class="thumbnail-card-cta">
                       <span
@@ -713,9 +685,6 @@
                     </div>
                     <div class="thumbnail-overlay">
                       <h4 class="thumbnail-title">YouTube 영상 제목 4</h4>
-                      <p class="thumbnail-description">
-                        영상 설명을 입력하세요
-                      </p>
                     </div>
                     <span class="thumbnail-card-cta">
                       <span
@@ -760,9 +729,6 @@
                     </div>
                     <div class="thumbnail-overlay">
                       <h4 class="thumbnail-title">YouTube 영상 제목 5</h4>
-                      <p class="thumbnail-description">
-                        영상 설명을 입력하세요
-                      </p>
                     </div>
                     <span class="thumbnail-card-cta">
                       <span
@@ -807,9 +773,6 @@
                     </div>
                     <div class="thumbnail-overlay">
                       <h4 class="thumbnail-title">YouTube 영상 제목 6</h4>
-                      <p class="thumbnail-description">
-                        영상 설명을 입력하세요
-                      </p>
                     </div>
                     <span class="thumbnail-card-cta">
                       <span
@@ -854,9 +817,6 @@
                     </div>
                     <div class="thumbnail-overlay">
                       <h4 class="thumbnail-title">YouTube 영상 제목 7</h4>
-                      <p class="thumbnail-description">
-                        영상 설명을 입력하세요
-                      </p>
                     </div>
                     <span class="thumbnail-card-cta">
                       <span
@@ -1497,17 +1457,17 @@
       </div>
     </div>
 
-    <script src="./js/language.js"></script>
+    <script src="./js/language.js?v=2"></script>
     <script src="./js/content-loader.js"></script>
     <script src="./js/carousel.js"></script>
-    <script src="./js/thumbnail-carousel.js"></script>
+    <script src="./js/thumbnail-carousel.js?v=2"></script>
     <script src="./js/corvette-rotate.js"></script>
     <script src="./js/youtube-modal.js"></script>
     <!-- YouTube API (선택사항 - 자동 로드용) -->
     <script src="./js/youtube-config.js"></script>
     <script src="./js/youtube-api.js"></script>
     <script src="./js/youtube-fetch-info.js"></script>
-    <script src="./js/youtube-carousel.js"></script>
+    <script src="./js/youtube-carousel.js?v=2"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

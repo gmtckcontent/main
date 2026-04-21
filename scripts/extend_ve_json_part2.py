@@ -79,7 +79,7 @@ VES = {
             Q(
                 "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
                 "Please introduce your role and responsibilities.",
-                """저는 Design Engineer입니다.
+                """
 
 차량을 실제로 만들기 전에 가상(Virtual) 환경에서 먼저 설계하고 검증하며, Body, Interior, Exterior, Electric 등 다양한 부품을 직접 3D 모델링하고 설계 아이디어를 구체화합니다. 개발 과정에서 발생할 수 있는 문제를 초기에 발견하고 해결하는 것이 주요 역할입니다.
 

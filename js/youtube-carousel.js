@@ -165,10 +165,6 @@ class YouTubeCarouselHelper {
                 video.title,
                 50
               )}</h4>
-              <p class="thumbnail-description">${this.truncateText(
-                video.description,
-                100
-              )}</p>
             </div>
           </a>
         `;

@@ -1,4 +1,4 @@
-// Thumbnail Carousel — 2-up desktop / 1-up mobile, reference layout
+// Thumbnail Carousel — 2-up desktop / 모바일: 카드 폭 축소 + 옆 카드 피크, 스와이프·드래그 스냅
 class ThumbnailCarousel {
   constructor() {
     this.container = document.getElementById("thumbnailCarouselSlides");
@@ -13,6 +13,15 @@ class ThumbnailCarousel {
     this.totalSlides = this.slides.length;
     this.isTransitioning = false;
     this.gapDesktop = 16;
+    /** 모바일: 슬라이드 사이 간격(JS translate와 CSS gap 동기화) */
+    this.gapMobile = 10;
+    /** 뷰포트 대비 카드 폭 비율 — 나머지로 다음 썸네일 피크 */
+    this.mobileCardWidthRatio = 0.82;
+    /** 피크 최소(px): 좁은 화면에서도 옆 카드가 보이도록 상한 */
+    this.mobileMinPeekPx = 44;
+    this._currentTranslate = 0;
+    this._stepPx = 0;
+    this.mobileMaxWidth = 768;
 
     if (!this.container || this.slides.length === 0) {
       return;
@@ -99,9 +108,12 @@ class ThumbnailCarousel {
     this.goToSlide(this.currentIndex - 1);
   }
 
+  isMobileLayout() {
+    return window.innerWidth <= this.mobileMaxWidth;
+  }
+
   maxIndex() {
-    const isMobile = window.innerWidth <= 768;
-    if (isMobile) {
+    if (this.isMobileLayout()) {
       return Math.max(0, this.totalSlides - 1);
     }
     return Math.max(0, this.totalSlides - 2);
@@ -118,7 +130,7 @@ class ThumbnailCarousel {
       this.slides[this.currentIndex].classList.add("active");
     }
 
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = this.isMobileLayout();
     const wrap = this.wrapper;
     if (!wrap || !this.container) {
       this.isTransitioning = false;
@@ -127,10 +139,12 @@ class ThumbnailCarousel {
     }
 
     const w = wrap.offsetWidth;
-    const gap = isMobile ? 0 : this.gapDesktop;
+    const gap = isMobile ? this.gapMobile : this.gapDesktop;
     let slideWidth;
     if (isMobile) {
-      slideWidth = w;
+      const byRatio = Math.round(w * this.mobileCardWidthRatio);
+      const byPeek = Math.max(0, w - this.mobileMinPeekPx);
+      slideWidth = Math.max(220, Math.min(byRatio, byPeek));
     } else {
       slideWidth = (w - gap) / 2;
     }
@@ -147,7 +161,9 @@ class ThumbnailCarousel {
     }
 
     const step = slideWidth + gap;
+    this._stepPx = step;
     const translatePx = -this.currentIndex * step;
+    this._currentTranslate = translatePx;
     this.container.style.transform = `translateX(${translatePx}px)`;
 
     this.updateNavButtons();
@@ -173,34 +189,77 @@ class ThumbnailCarousel {
   }
 
   initTouchEvents() {
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const minSwipeDistance = 50;
+    const minSwipeDistance = 44;
+    let dragActive = false;
+    let dragStartX = 0;
+    let dragStartTranslate = 0;
+    let lastTranslate = 0;
+    const container = this.container;
 
-    this.container.addEventListener(
+    const endDrag = (e) => {
+      if (!dragActive) {
+        return;
+      }
+      dragActive = false;
+      container.style.transition = "";
+      if (!this.isMobileLayout() || !this._stepPx) {
+        this.updateSlides();
+        return;
+      }
+      const t = e.changedTouches && e.changedTouches[0];
+      if (!t) {
+        this.isTransitioning = false;
+        this.updateSlides();
+        return;
+      }
+      this.isTransitioning = false;
+      const dx = dragStartX - t.clientX;
+      if (dx > minSwipeDistance) {
+        this.goToNext();
+      } else if (dx < -minSwipeDistance) {
+        this.goToPrevious();
+      } else {
+        const nearest = Math.round(-lastTranslate / this._stepPx);
+        const i = Math.max(0, Math.min(this.maxIndex(), nearest));
+        this.goToSlide(i);
+      }
+    };
+
+    container.addEventListener(
       "touchstart",
       (e) => {
-        touchStartX = e.touches[0].clientX;
-      },
-      { passive: true }
-    );
-
-    this.container.addEventListener(
-      "touchend",
-      (e) => {
-        touchEndX = e.changedTouches[0].clientX;
-        const swipeDistance = touchStartX - touchEndX;
-
-        if (Math.abs(swipeDistance) > minSwipeDistance) {
-          if (swipeDistance > 0) {
-            this.goToNext();
-          } else {
-            this.goToPrevious();
-          }
+        if (!this.isMobileLayout()) {
+          return;
         }
+        dragActive = true;
+        dragStartX = e.touches[0].clientX;
+        dragStartTranslate = this._currentTranslate;
+        lastTranslate = dragStartTranslate;
+        container.style.transition = "none";
       },
-      { passive: true }
+      { passive: true },
     );
+
+    container.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!dragActive || !this.isMobileLayout() || !this._stepPx) {
+          return;
+        }
+        const x = e.touches[0].clientX;
+        const dx = x - dragStartX;
+        const minT = -this.maxIndex() * this._stepPx;
+        const maxT = 0;
+        let next = dragStartTranslate + dx;
+        next = Math.max(minT, Math.min(maxT, next));
+        lastTranslate = next;
+        container.style.transform = `translateX(${next}px)`;
+      },
+      { passive: true },
+    );
+
+    container.addEventListener("touchend", endDrag, { passive: true });
+    container.addEventListener("touchcancel", endDrag, { passive: true });
   }
 }
 
