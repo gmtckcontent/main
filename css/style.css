@@ -5576,7 +5576,8 @@ html.core-values-page #cv-st-heading {
   max-width: 100%;
   box-sizing: border-box;
   flex: 1;
-  min-height: 0;
+  /* flex:1 + min-height:0은 부모 계산이 0일 때 히어로가 수축해 사라질 수 있음(랜딩 hidden·뒤로가기 등) */
+  min-height: min(100svh, max(40svh, 100%));
   opacity: 1;
 }
 

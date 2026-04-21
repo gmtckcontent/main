@@ -1087,6 +1087,8 @@
             }
           }
 
+          window.__rebuildHqLandingFacesAndSt = fullRebuildFacesAndSt;
+
           fullRebuildFacesAndSt();
           requestAnimationFrame(function () {
             requestAnimationFrame(fullRebuildFacesAndSt);
@@ -1110,7 +1112,9 @@
         }
 
         /** 본부 시트 컨테이너 하단이 뷰포트 하단에 오도록 스크롤 (본부별 인터뷰 pill) */
-        function scrollToDivisionIntroContainerBottomAligned() {
+        function scrollToDivisionIntroContainerBottomAligned(opts) {
+          opts = opts || {};
+          const behavior = opts.behavior === "auto" ? "auto" : "smooth";
           const container = document.querySelector(
             "#hqDivisionIntro .hq-division-intro__container",
           );
@@ -1121,7 +1125,7 @@
           const vh = window.innerHeight;
           const gap = 0;
           const y = bottomDoc - vh + gap;
-          window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+          window.scrollTo({ top: Math.max(0, y), behavior: behavior });
         }
 
         document
@@ -1297,7 +1301,9 @@
           if (shell) shell.hidden = false;
         }
 
-        function showLandingView() {
+        function showLandingView(opts) {
+          opts = opts || {};
+          const scrollDivisionsIntro = opts.scrollDivisionsIntro === true;
           const landing = document.getElementById("hqLanding");
           const shell = document.getElementById("hqInterviewsShell");
           if (landing) landing.hidden = false;
@@ -1309,14 +1315,36 @@
           document
             .querySelectorAll(HQ_RAIL_NAV)
             .forEach((l) => l.classList.remove("active"));
-          if (typeof window.resetHqLandingInteractionState === "function") {
-            window.resetHqLandingInteractionState();
-          } else if (typeof ScrollTrigger !== "undefined") {
-            ScrollTrigger.refresh();
-          }
-          if (typeof queueTeamTckLandingScrollTop === "function") {
-            queueTeamTckLandingScrollTop();
-          }
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              if (typeof window.__rebuildHqLandingFacesAndSt === "function") {
+                window.__rebuildHqLandingFacesAndSt();
+              } else if (
+                typeof window.resetHqLandingInteractionState === "function"
+              ) {
+                window.resetHqLandingInteractionState();
+              } else if (typeof ScrollTrigger !== "undefined") {
+                ScrollTrigger.refresh();
+              }
+              if (
+                !scrollDivisionsIntro &&
+                typeof queueTeamTckLandingScrollTop === "function"
+              ) {
+                queueTeamTckLandingScrollTop();
+              }
+              if (scrollDivisionsIntro) {
+                requestAnimationFrame(function () {
+                  requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                      scrollToDivisionIntroContainerBottomAligned({
+                        behavior: "smooth",
+                      });
+                    });
+                  });
+                });
+              }
+            });
+          });
         }
 
         // 이미지 자동 로드 함수
@@ -2156,10 +2184,7 @@
         }
 
         function goToLandingDivisionsScroll() {
-          showLandingView();
-          requestAnimationFrame(function () {
-            requestAnimationFrame(scrollToDivisionIntroContainerBottomAligned);
-          });
+          showLandingView({ scrollDivisionsIntro: true });
           window.history.pushState(null, null, "#divisions");
         }
 
@@ -2197,41 +2222,7 @@
           });
         });
 
-        // 초기 해시: EE SPI·VE 다인 인터뷰는 interview-content JSON 병합 후에만 캐러셀 생성
-        loadInterviewContentExtras()
-          .catch((e) => {
-            console.error("[interviews] JSON 로드 오류:", e);
-          })
-          .finally(() => {
-            runInterviewMount();
-            if (window.location.hash) {
-              const hash = window.location.hash.substring(1);
-              const resolved = resolveInterviewHash(hash);
-              if (resolved && resolved.kind === "landing-divisions") {
-                showLandingView();
-                requestAnimationFrame(function () {
-                  requestAnimationFrame(
-                    scrollToDivisionIntroContainerBottomAligned,
-                  );
-                });
-              } else if (resolved && resolved.kind === "all") {
-                showSection("all", false);
-              } else if (resolved && resolved.kind === "role") {
-                ensureInterviewsShellVisible();
-                updateSidebar(resolved.hq);
-                showRole(resolved.roleId, false, true, resolved.carouselIndex);
-              } else if (resolved && resolved.kind === "hq") {
-                showSection(resolved.hq, false, true);
-              } else {
-                showLandingView();
-              }
-            } else {
-              showLandingView();
-            }
-          });
-
-        // Handle browser back/forward buttons
-        window.addEventListener("popstate", function () {
+        function applyInterviewRouteFromHash() {
           const hash = window.location.hash.substring(1);
           if (!hash) {
             showLandingView();
@@ -2239,12 +2230,7 @@
           }
           const resolved = resolveInterviewHash(hash);
           if (resolved && resolved.kind === "landing-divisions") {
-            showLandingView();
-            requestAnimationFrame(function () {
-              requestAnimationFrame(
-                scrollToDivisionIntroContainerBottomAligned,
-              );
-            });
+            showLandingView({ scrollDivisionsIntro: true });
           } else if (resolved && resolved.kind === "all") {
             showSection("all", false);
           } else if (resolved && resolved.kind === "role") {
@@ -2256,6 +2242,27 @@
           } else {
             showLandingView();
           }
+        }
+
+        // 초기 해시: EE SPI·VE 다인 인터뷰는 interview-content JSON 병합 후에만 캐러셀 생성
+        loadInterviewContentExtras()
+          .catch((e) => {
+            console.error("[interviews] JSON 로드 오류:", e);
+          })
+          .finally(() => {
+            runInterviewMount();
+            applyInterviewRouteFromHash();
+          });
+
+        window.addEventListener("popstate", function () {
+          applyInterviewRouteFromHash();
+        });
+
+        window.addEventListener("pageshow", function (ev) {
+          if (!ev.persisted) {
+            return;
+          }
+          applyInterviewRouteFromHash();
         });
       });
 
