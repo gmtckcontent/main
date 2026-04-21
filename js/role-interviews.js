@@ -923,6 +923,130 @@ const interviewContent = {
   },
 };
 
+/**
+ * Our Story 모자이크: `images/profilepic` 이하 모든 인물 컷(인터뷰 데이터와 무관).
+ * 새 이미지 추가 시 여기에 `폴더/파일명` 상대 경로를 한 줄 추가하면 그리드에 포함됩니다.
+ */
+const PROFILE_MOSAIC_REL_PATHS = [
+  "EE/PQDQ.png",
+  "EE/ai chief_new.png",
+  "EE/certification, envrionment(1).png",
+  "EE/product excellence.png",
+  "EE/system&product(1).png",
+  "EE/system&product(2).png",
+  "EE/validation(2).png",
+  "EE/validation.png",
+  "avd&svi/avd.png",
+  "avd&svi/svi.png",
+  "beca/Aftersales.png",
+  "beca/Chassis.png",
+  "beca/Exterior.png",
+  "beca/body.png",
+  "itpe/ecs-itpe.png",
+  "itpe/interior-trim.png",
+  "itpe/seat-safety-restraints.png",
+  "itpe/thermal-propulsion-integration.png",
+  "pipg/pgtlo_new.png",
+  "pipg/psc.png",
+  "pipg/thermal_new.png",
+  "pipg/vpdpid.png",
+  "s&s/cchppmo.png",
+  "s&s/maec.png",
+  "s&s/swqnd.png",
+  "ve/safety performance integration1.png",
+  "ve/safety performance integration2.png",
+  "ve/vIrtual integration center adas 1.png",
+  "ve/virtual engineering solution1.png",
+  "ve/virtual engineering solution2.png",
+  "ve/virtual engineering solution3.png",
+  "ve/virtual integration center adas 2.png",
+  "ve/virtual integration center adas 3.png",
+];
+
+function getProfileMosaicPortraitPoolUrls() {
+  var bust =
+    typeof withProfileImageCacheBust === "function"
+      ? withProfileImageCacheBust
+      : function (u) {
+          return u;
+        };
+
+  function isPlaceholderPortraitUrl(u) {
+    if (!u) {
+      return true;
+    }
+    return u.indexOf("gm-symbol-color-light-bg") !== -1;
+  }
+
+  /** profilepic 이하 상대 경로로 정규화해 중복 제거(인코딩 차이 등) */
+  function canonicalRelFromProfileUrl(u) {
+    try {
+      var base = String(u).replace(/\?.*$/, "");
+      var needle = "/images/profilepic/";
+      var i = base.indexOf(needle);
+      if (i === -1) {
+        return "";
+      }
+      var rest = base.slice(i + needle.length);
+      return rest
+        .split("/")
+        .map(function (seg) {
+          return decodeURIComponent(seg);
+        })
+        .join("/");
+    } catch (e) {
+      return "";
+    }
+  }
+
+  var seen = Object.create(null);
+  var out = [];
+
+  function addUrl(u) {
+    if (isPlaceholderPortraitUrl(u)) {
+      return;
+    }
+    var c = canonicalRelFromProfileUrl(u);
+    if (!c) {
+      return;
+    }
+    if (seen[c]) {
+      return;
+    }
+    seen[c] = true;
+    out.push(u);
+  }
+
+  PROFILE_MOSAIC_REL_PATHS.forEach(function (rel) {
+    var parts = rel.split("/").filter(Boolean);
+    addUrl(bust(profilePicRel(parts)));
+  });
+
+  if (typeof interviewData !== "undefined" && typeof getInterviewPortraitUrl === "function") {
+    Object.keys(interviewData).forEach(function (k) {
+      var d = interviewData[k];
+      if (!d) {
+        return;
+      }
+      var isAssetKey = /\.(png|jpg|jpeg|webp)$/i.test(k);
+      if (
+        Object.prototype.hasOwnProperty.call(d, "questions") &&
+        Array.isArray(d.questions) &&
+        !isAssetKey &&
+        !d.profileImage &&
+        !d.profileFallback
+      ) {
+        return;
+      }
+      addUrl(getInterviewPortraitUrl(k));
+    });
+  }
+
+  return out;
+}
+
+window.getProfileMosaicPortraitPoolUrls = getProfileMosaicPortraitPoolUrls;
+
 function mountStaticRoleInterviews() {
   document.querySelectorAll("[data-role-interview-mount]").forEach((bodyEl) => {
     const interviewId = bodyEl.getAttribute("data-role-interview-mount");

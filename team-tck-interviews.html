@@ -908,7 +908,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js"></script>
     <script src="./js/main.js?v=1"></script>
-    <script src="./js/role-interviews.js?v=47"></script>
+    <script src="./js/role-interviews.js?v=51"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=50"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=5"></script>
@@ -987,13 +987,36 @@
             ) {
               return;
             }
-            let keys = Object.keys(interviewData).filter(
-              (k) => !interviewData[k].profileFallback,
-            );
-            if (keys.length === 0) {
-              keys = Object.keys(interviewData);
+            let pool = [];
+            if (typeof window.getProfileMosaicPortraitPoolUrls === "function") {
+              pool = window.getProfileMosaicPortraitPoolUrls();
             }
-            keys.sort();
+            if (!pool.length) {
+              let keys = Object.keys(interviewData).filter((k) => {
+                const d = interviewData[k];
+                if (!d) {
+                  return false;
+                }
+                if (d.profileFallback && !d.profileImage) {
+                  return false;
+                }
+                const isAssetKey = /\.(png|jpg|jpeg|webp)$/i.test(k);
+                if (
+                  Object.prototype.hasOwnProperty.call(d, "questions") &&
+                  Array.isArray(d.questions) &&
+                  !isAssetKey &&
+                  !d.profileImage
+                ) {
+                  return false;
+                }
+                return true;
+              });
+              if (keys.length === 0) {
+                keys = Object.keys(interviewData);
+              }
+              keys.sort();
+              pool = keys.map((k) => getInterviewPortraitUrl(k));
+            }
             const w = slab.clientWidth;
             const h = slab.clientHeight;
             const cols = window.matchMedia("(max-width: 768px)").matches
@@ -1039,10 +1062,9 @@
               return out.slice(0, count);
             }
 
-            const tileKeys = expandKeysForTiles(keys, targetCount);
-            const urls = tileKeys.map((k) => getInterviewPortraitUrl(k));
+            const tileUrls = expandKeysForTiles(pool, targetCount);
             container.innerHTML = "";
-            urls.forEach((url, i) => {
+            tileUrls.forEach((url, i) => {
               const cell = document.createElement("div");
               cell.className = "hq-landing-face-cell";
               const photo = document.createElement("div");
@@ -1359,8 +1381,10 @@
           const currentLang = localStorage.getItem("language") || "kr";
           container.innerHTML = "";
 
-          // 이미지 파일명 패턴으로 자동 감지
-          const imagePatterns = Object.keys(interviewData);
+          // 이미지 파일명 패턴으로 자동 감지(Our Story 모자이크 전용 항목 제외)
+          const imagePatterns = Object.keys(interviewData).filter(
+            (k) => !interviewData[k].landingMosaicOnly,
+          );
 
           // 필터링된 이미지 목록
           let filteredImages = imagePatterns;

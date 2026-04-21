@@ -5681,7 +5681,8 @@ html.core-values-page #cv-st-heading {
 
 .hq-landing-hero-cinematic .hq-landing-lead {
   color: rgba(255, 255, 255, 0.9);
-  max-width: 52ch;
+  max-width: none;
+  white-space: nowrap;
   font-size: clamp(14px, 1.35vw, 17px);
   line-height: 1.65;
   text-shadow: 0 1px 20px rgba(0, 0, 0, 0.35);
@@ -5794,6 +5795,11 @@ html.core-values-page #cv-st-heading {
 
   .hq-landing-hero-pills {
     justify-content: stretch;
+  }
+
+  .hq-landing-hero-cinematic .hq-landing-lead {
+    white-space: normal;
+    max-width: min(52ch, 100%);
   }
 
   .hq-landing-pill {
