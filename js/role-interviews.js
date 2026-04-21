@@ -28,7 +28,7 @@ const PROFILE_PLACEHOLDER_IMAGE =
   "./images/logo/gm-symbol-color-light-bg-web.png";
 
 /** 프로필 PNG 교체 후에도 캐시된 옛 이미지가 보이지 않도록 URL에 버전을 붙임 (교체 배포 시 숫자만 올리면 됨) */
-const PROFILE_IMAGE_CACHE_VERSION = "7";
+const PROFILE_IMAGE_CACHE_VERSION = "8";
 function withProfileImageCacheBust(url) {
   if (!url || url.startsWith("data:")) return url;
   if (/\bpv=\d+\b/.test(url)) return url;
@@ -523,7 +523,7 @@ const interviewData = {
     interviewId: "ee-verification-1",
   },
   "EE2b.png": {
-    profileImage: profilePicRel(["EE", "validation-pve.png"]),
+    profileImage: profilePicRel(["EE", "validation(2).png"]),
     profileFallback: profilePicRel(["EE", "validation.png"]),
     hq: "Engineering Excellence",
     role: "Validation Division",

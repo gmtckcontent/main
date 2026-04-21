@@ -1,5 +1,6 @@
 /**
  * #hqDivisionIntro — 상단이 뷰포트 ~80%에 도달하면 .hq-division-intro--in-view + 배경 미세 패럴랙스
+ * 본부 카드(.hq-division-intro__card)는 스크롤로 뷰포트에 들어올 때마다 스르륵 등장(IO).
  */
 (function () {
   "use strict";
@@ -12,6 +13,50 @@
 
   function prefersReducedMotion() {
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function isNarrowForCardReveal() {
+    return window.matchMedia("(max-width: 768px)").matches;
+  }
+
+  function initCardScrollReveal(sec) {
+    var accordion = sec.querySelector(".hq-division-intro__accordion");
+    if (!accordion) {
+      return;
+    }
+    var cards = accordion.querySelectorAll(".hq-division-intro__card");
+    if (!cards.length) {
+      return;
+    }
+    if (isNarrowForCardReveal()) {
+      return;
+    }
+    if (prefersReducedMotion()) {
+      return;
+    }
+    if (!("IntersectionObserver" in window)) {
+      return;
+    }
+    accordion.classList.add("hq-division-intro__accordion--card-reveal");
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) {
+            return;
+          }
+          entry.target.classList.add("hq-division-intro__card--scroll-in");
+          io.unobserve(entry.target);
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -7% 0px",
+        threshold: [0, 0.1],
+      },
+    );
+    for (var i = 0; i < cards.length; i++) {
+      io.observe(cards[i]);
+    }
   }
 
   function shouldReveal() {
@@ -90,6 +135,8 @@
     if (!section) {
       return;
     }
+
+    initCardScrollReveal(section);
 
     /* 직무 랜딩(#hqLanding): 핀 progress로 등장,패럴랙스는 hq-landing-scrolltrigger.js가 전담 */
     if (document.getElementById("hqLanding") && !prefersReducedMotion()) {

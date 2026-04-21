@@ -4,7 +4,7 @@
 .cv-history-page {
   position: relative;
   background: #e8ecf2;
-  padding: 1.5rem 0 2rem;
+  padding: 1.5rem 0 max(2rem, env(safe-area-inset-bottom, 0px));
 }
 
 @media (min-width: 768px) {
@@ -16,7 +16,8 @@
 .cv-history-page-inner {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 max(1rem, env(safe-area-inset-right, 0px)) 0
+    max(1rem, env(safe-area-inset-left, 0px));
 }
 
 @media (min-width: 640px) {

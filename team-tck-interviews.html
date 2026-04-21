@@ -31,7 +31,7 @@
       content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
     />
     <!-- 인터뷰/스타일 수정 후 브라우저 캐시 회피: ?v= 숫자 올리기 -->
-    <link rel="stylesheet" href="./css/style.css?v=93" />
+    <link rel="stylesheet" href="./css/style.css?v=103" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -697,9 +697,9 @@
               <div class="hq-division-rail-card">
                 <ul class="hq-division-rail-list">
                   <li>
-                    <!-- 본부 레일 All → showSection('all') + #all 스크롤 (사이드바 제목 All과 별개) -->
+                    <!-- All → 랜딩 복귀 + 본부별 인터뷰 pill과 동일 스크롤 (#all 전체보기와 별개) -->
                     <a
-                      href="#all"
+                      href="team-tck-interviews.html#divisions"
                       class="hq-nav-link"
                       data-hq="all"
                       data-kr="All"
@@ -880,14 +880,38 @@
       </div>
     </footer>
 
+    <a
+      href="index.html#divisions"
+      class="hq-interviews-mobile-back-fab"
+      aria-label="본부 소개로 돌아가기"
+    >
+      <span class="hq-interviews-mobile-back-fab__icon" aria-hidden="true">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 18L9 12L15 6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+    </a>
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js?v=1"></script>
     <script src="./js/role-interviews.js?v=47"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=50"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
-    <script src="./js/hq-division-intro-reveal.js?v=3"></script>
+    <script src="./js/hq-division-intro-reveal.js?v=5"></script>
     <script>
       // Disable browser scroll restoration (redundant but safe)
       if ("scrollRestoration" in history) {
@@ -1074,7 +1098,7 @@
 
         queueTeamTckLandingScrollTop();
 
-        /** #navbar 높이 + extra만큼 타깃을 더 위로(스크롤 Y 감소) — 본부별 인터뷰 pill / All 공통 */
+        /** #navbar 높이 + extra만큼 타깃을 더 위로(스크롤 Y 감소) — 레일 본부 선택 등 */
         function scrollPageToElementBelowNav(el, extraOffsetPx) {
           if (!el) return;
           const navbar = document.getElementById("navbar");
@@ -1223,6 +1247,9 @@
         function resolveInterviewHash(hash) {
           if (!hash) {
             return null;
+          }
+          if (hash === "divisions") {
+            return { kind: "landing-divisions" };
           }
           if (hash === "all") {
             return { kind: "all" };
@@ -1490,6 +1517,23 @@
           return { setIndex };
         }
 
+        function syncHqLayoutGridColumns(targetId) {
+          const layout = document.getElementById("hqLayout");
+          if (!layout) {
+            return;
+          }
+          if (window.matchMedia("(max-width: 768px)").matches) {
+            layout.style.removeProperty("grid-template-columns");
+            return;
+          }
+          if (targetId === "all") {
+            layout.style.gridTemplateColumns = "minmax(0, 1fr) auto";
+          } else {
+            layout.style.gridTemplateColumns =
+              "240px minmax(0, 1fr) auto";
+          }
+        }
+
         function showSection(
           targetId,
           scrollToTop = false,
@@ -1542,13 +1586,10 @@
             }
             // 사이드바 숨김
             const sidebar = document.getElementById("hqSidebar");
-            const layout = document.getElementById("hqLayout");
             if (sidebar) {
               sidebar.style.display = "none";
             }
-            if (layout) {
-              layout.style.gridTemplateColumns = "minmax(0, 1fr) auto";
-            }
+            syncHqLayoutGridColumns("all");
             requestAnimationFrame(function () {
               requestAnimationFrame(function () {
                 scrollPageToElementBelowNav(allSection, 48);
@@ -1565,13 +1606,10 @@
 
           // 본부 선택 시 사이드바 표시
           const sidebar = document.getElementById("hqSidebar");
-          const layout = document.getElementById("hqLayout");
           if (sidebar) {
             sidebar.style.display = "block";
           }
-          if (layout) {
-            layout.style.gridTemplateColumns = "240px minmax(0, 1fr) auto";
-          }
+          syncHqLayoutGridColumns(targetId);
 
           // 본부 선택 시 사이드바 업데이트
           updateSidebar(targetId);
@@ -2117,17 +2155,25 @@
           }, 100);
         }
 
+        function goToLandingDivisionsScroll() {
+          showLandingView();
+          requestAnimationFrame(function () {
+            requestAnimationFrame(scrollToDivisionIntroContainerBottomAligned);
+          });
+          window.history.pushState(null, null, "#divisions");
+        }
+
         function applyHqSelectionFromUi(targetId) {
-          showSection(targetId, false, true);
           if (targetId === "all") {
-            window.history.pushState(null, null, "#all");
+            goToLandingDivisionsScroll();
+            return;
+          }
+          showSection(targetId, false, true);
+          const roles = hqRoles[targetId] || [];
+          if (roles.length > 0) {
+            window.history.pushState(null, null, `#${roles[0].id}`);
           } else {
-            const roles = hqRoles[targetId] || [];
-            if (roles.length > 0) {
-              window.history.pushState(null, null, `#${roles[0].id}`);
-            } else {
-              window.history.pushState(null, null, `#${targetId}`);
-            }
+            window.history.pushState(null, null, `#${targetId}`);
           }
         }
 
@@ -2161,7 +2207,14 @@
             if (window.location.hash) {
               const hash = window.location.hash.substring(1);
               const resolved = resolveInterviewHash(hash);
-              if (resolved && resolved.kind === "all") {
+              if (resolved && resolved.kind === "landing-divisions") {
+                showLandingView();
+                requestAnimationFrame(function () {
+                  requestAnimationFrame(
+                    scrollToDivisionIntroContainerBottomAligned,
+                  );
+                });
+              } else if (resolved && resolved.kind === "all") {
                 showSection("all", false);
               } else if (resolved && resolved.kind === "role") {
                 ensureInterviewsShellVisible();
@@ -2185,7 +2238,14 @@
             return;
           }
           const resolved = resolveInterviewHash(hash);
-          if (resolved && resolved.kind === "all") {
+          if (resolved && resolved.kind === "landing-divisions") {
+            showLandingView();
+            requestAnimationFrame(function () {
+              requestAnimationFrame(
+                scrollToDivisionIntroContainerBottomAligned,
+              );
+            });
+          } else if (resolved && resolved.kind === "all") {
             showSection("all", false);
           } else if (resolved && resolved.kind === "role") {
             ensureInterviewsShellVisible();

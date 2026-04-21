@@ -357,9 +357,9 @@ function initInterviewsScrollReveal() {
       });
     },
     {
-      threshold: 0,
-      /* 아래로 조금 여유 두고 교차 판정 → 스크롤 시 덜 늦게 느껴짐 */
-      rootMargin: "0px 0px 22% 0px",
+      /* 블록이 실제로 뷰포트에 들어올 때쯤 판정 — 과한 rootMargin은 한꺼번에 등장 유발 */
+      threshold: [0, 0.06, 0.12],
+      rootMargin: "0px 0px -7% 0px",
     },
   );
 
@@ -397,8 +397,8 @@ function initInterviewsScrollReveal() {
     ".interview-item, .interview-profile-header, .hq-content-title, .hq-division-card, .hq-content-description, .interview-q-title, .interview-answer";
 
   /**
-   * 질문,답만 같은 문항 안에서 아주 짧게 어긋뜀.
-   * (문항 인덱스로 누적 지연을 주면 스크롤 리빌이 늦게 시작하는 것처럼 느껴짐)
+   * 같은 문항 안에서만 질문 → 답 순으로 아주 짧게 지연 (스크롤 도착 후 스르륵).
+   * 문항 간 누적 지연은 두지 않음(아래로 스크롤할수록 늦게 뜨는 느낌 방지).
    */
   function applyInterviewQuestionStagger(root) {
     if (!root || !root.querySelectorAll) {
@@ -413,9 +413,17 @@ function initInterviewsScrollReveal() {
           title.style.setProperty("--reveal-delay", "0s");
         }
         if (answer) {
-          answer.style.setProperty("--reveal-delay", "0.04s");
+          answer.style.setProperty("--reveal-delay", "0.07s");
         }
       });
+    root.querySelectorAll(".interview-content > .interview-answer").forEach(
+      (ans) => {
+        if (ans.closest(".interview-question")) {
+          return;
+        }
+        ans.style.setProperty("--reveal-delay", "0s");
+      },
+    );
   }
 
   function scan(root, force) {

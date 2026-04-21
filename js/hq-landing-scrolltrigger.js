@@ -391,6 +391,7 @@
   }
 
   function setAllGrayscaleDarkSmooth() {
+    sectionComplete = false;
     for (var i = 0; i < faceCells.length; i++) {
       isColor[i] = false;
       faceCells[i].classList.remove("is-active");
@@ -681,6 +682,8 @@
     );
     syncDivisionIntroFromMotion();
     syncOurStoryToPin();
+    maybeFinalizeFacesWhenDivisionIntroStackOnScreen();
+    enforceFullColorMosaicWhenLocked();
   }
 
   /**
@@ -714,6 +717,33 @@
     var r = intro.getBoundingClientRect();
     var vh = window.innerHeight || 1;
     return r.bottom > 8 && r.top < vh - 8;
+  }
+
+  /** 전체 컬러 전환 후, 인트로 스택이 화면에 있는 동안 흑백으로 되돌리지 않음 */
+  function shouldLockFullColorMosaicWhileIntroVisible() {
+    return sectionComplete && isHqDivisionIntroStackWheelPassthrough();
+  }
+
+  function maybeFinalizeFacesWhenDivisionIntroStackOnScreen() {
+    var landing = getLanding();
+    if (!landing || landing.hidden || !faceCells.length || sectionComplete) {
+      return;
+    }
+    if (!isHqDivisionIntroStackWheelPassthrough()) {
+      return;
+    }
+    finalizeSection();
+  }
+
+  function enforceFullColorMosaicWhenLocked() {
+    if (!shouldLockFullColorMosaicWhileIntroVisible()) {
+      return;
+    }
+    var i;
+    for (i = 0; i < faceCells.length; i++) {
+      isColor[i] = true;
+      faceCells[i].classList.add("is-active");
+    }
   }
 
   function onWheel(e) {
@@ -772,8 +802,7 @@
       var absPostUp = Math.abs(dy);
       var subPost =
         absPostUp * speedMultiplier(absPostUp) * WHEEL_ACCUM_SCALE * 0.85;
-      if (sectionComplete) {
-        sectionComplete = false;
+      if (sectionComplete && !shouldLockFullColorMosaicWhileIntroVisible()) {
         setAllGrayscaleDarkSmooth();
         syncAllDom();
         startSparkleTimer();
@@ -913,8 +942,7 @@
         updateOverlap();
         return;
       }
-      if (sectionComplete) {
-        sectionComplete = false;
+      if (sectionComplete && !shouldLockFullColorMosaicWhileIntroVisible()) {
         setAllGrayscaleDarkSmooth();
         syncAllDom();
         startSparkleTimer();
@@ -1153,9 +1181,15 @@
         updateOverlap();
       },
       onLeave: function () {
+        if (shouldLockFullColorMosaicWhileIntroVisible()) {
+          return;
+        }
         setAllGrayscaleDarkSmooth();
       },
       onLeaveBack: function () {
+        if (shouldLockFullColorMosaicWhileIntroVisible()) {
+          return;
+        }
         setAllGrayscaleDarkSmooth();
       },
     });

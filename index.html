@@ -24,7 +24,11 @@
           if (!h || h.length < 2) return;
           var id = decodeURIComponent(h.slice(1));
           // 직무소개 페이지 앵커는 team-tck-interviews.html에만 있음 (예: #avd-advanced-vehicle)
-          if (/^(ee|avd|beca|itpe|pipg|ss|ve)-/.test(id) || id === "all") {
+          if (
+            /^(ee|avd|beca|itpe|pipg|ss|ve)-/.test(id) ||
+            id === "all" ||
+            id === "divisions"
+          ) {
             window.location.replace(
               "team-tck-interviews.html" + window.location.hash,
             );

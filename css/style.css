@@ -3541,7 +3541,10 @@ section#innovation .section-title .zero-text {
   flex-direction: column;
   justify-content: flex-end;
   padding: var(--nav-content-safe-space) clamp(24px, 5vw, 72px)
-    clamp(40px, 6vw, 72px);
+    max(
+      clamp(40px, 6vw, 72px),
+      env(safe-area-inset-bottom, 0px)
+    );
   overflow: hidden;
 }
 
@@ -4370,7 +4373,7 @@ html.core-values-page .cv-dd-cv-card.cv-dd-reveal.is-visible:hover {
 }
 
 html.core-values-page .cv-dd-st {
-  padding: 72px 0 96px;
+  padding: clamp(40px, 10vw, 72px) 0 clamp(48px, 12vw, 96px);
   background: #fff;
 }
 
@@ -4378,6 +4381,9 @@ html.core-values-page .cv-dd-st-inner {
   max-width: 1100px;
   margin: 0 auto;
   overflow-x: visible;
+  padding-left: max(12px, env(safe-area-inset-left, 0px));
+  padding-right: max(12px, env(safe-area-inset-right, 0px));
+  box-sizing: border-box;
 }
 
 html.core-values-page .cv-dd-st-head {
@@ -4774,7 +4780,7 @@ html.core-values-page .cv-dd-note {
   position: relative;
   z-index: 1;
   background: #ffffff;
-  padding: 72px 0 100px;
+  padding: clamp(48px, 12vw, 72px) 0 clamp(56px, 14vw, 100px);
   min-height: 60vh;
 }
 
@@ -6102,6 +6108,37 @@ html.core-values-page #cv-st-heading {
     box-shadow 0.55s var(--hq-di-ease);
 }
 
+/* 스크롤 등장: hq-division-intro-reveal.js → .accordion--card-reveal + 카드별 --scroll-in */
+.hq-division-intro__accordion--card-reveal .hq-division-intro__card {
+  --card-reveal-stagger: 0s;
+  transition:
+    opacity 0.64s cubic-bezier(0.22, 1, 0.36, 1) var(--card-reveal-stagger),
+    transform 0.68s cubic-bezier(0.33, 1, 0.68, 1) var(--card-reveal-stagger),
+    flex var(--hq-di-dur) var(--hq-di-ease),
+    min-width var(--hq-di-dur) var(--hq-di-ease),
+    box-shadow 0.55s var(--hq-di-ease);
+}
+
+@media (min-width: 769px) {
+  .hq-division-intro__accordion--card-reveal .hq-division-intro__card {
+    --card-reveal-stagger: calc(var(--card-delay, 0s) * 0.4);
+  }
+}
+
+.hq-division-intro__accordion--card-reveal
+  .hq-division-intro__card:not(.hq-division-intro__card--scroll-in) {
+  opacity: 0;
+  transform: translate3d(0, 1.35rem, 0);
+  pointer-events: none;
+}
+
+.hq-division-intro__accordion--card-reveal
+  .hq-division-intro__card--scroll-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  pointer-events: auto;
+}
+
 /* JS 모드: 지연 후 .hq-division-intro__card--expanded 만 넓게 */
 @media (hover: hover) and (pointer: fine) {
   .hq-division-intro__accordion--js.hq-division-intro__accordion--is-expanded
@@ -6254,32 +6291,57 @@ html.core-values-page #cv-st-heading {
 }
 
 @media (max-width: 768px) {
+  /*
+   * 모바일: 카드 스크롤 등장(IO)은 sticky/뷰포트 이슈로 비어 보일 수 있어 항상 표시.
+   */
+  .hq-division-intro__accordion--card-reveal
+    .hq-division-intro__card:not(.hq-division-intro__card--scroll-in),
+  .hq-division-intro__accordion--card-reveal
+    .hq-division-intro__card--scroll-in {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
   .hq-division-intro {
     padding: 32px 0 28px;
   }
 
   .hq-division-intro__accordion {
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
-    gap: 12px;
+    align-items: stretch;
+    gap: 14px;
     min-height: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 24px;
-    -webkit-overflow-scrolling: touch;
-    padding: 4px 0 16px;
-    margin: 0 -24px;
-    padding-left: 24px;
-    padding-right: 24px;
+    overflow-x: visible;
+    overflow-y: visible;
+    scroll-snap-type: none;
+    scroll-padding-inline: 0;
+    padding: 4px 0 12px;
+    margin: 0;
   }
 
   .hq-division-intro__card {
-    flex: 0 0 min(82vw, 340px);
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
-    min-height: 360px;
-    scroll-snap-align: start;
+    min-height: clamp(220px, 48vw, 300px);
+    scroll-snap-align: none;
     box-shadow: 0 10px 28px rgba(15, 23, 42, 0.14);
+  }
+
+  /* 터치/모바일에서도 JS·호버 확장 flex가 가로 비율을 유지하지 않도록 */
+  .hq-division-intro__accordion--js.hq-division-intro__accordion--is-expanded
+    .hq-division-intro__card:not(.hq-division-intro__card--expanded),
+  .hq-division-intro__accordion--js .hq-division-intro__card--expanded,
+  .hq-division-intro__accordion:not(.hq-division-intro__accordion--js):hover
+    .hq-division-intro__card,
+  .hq-division-intro__accordion:not(.hq-division-intro__accordion--js)
+    .hq-division-intro__card:hover {
+    flex: 0 0 auto;
+    min-width: 0;
+    width: 100%;
   }
 
   .hq-division-intro__desc {
@@ -6309,10 +6371,11 @@ html.core-values-page #cv-st-heading {
 
 @media (max-width: 480px) {
   .hq-division-intro__accordion {
-    margin: 0 -16px;
-    padding-left: 16px;
-    padding-right: 16px;
-    scroll-padding-inline: 16px;
+    gap: 12px;
+  }
+
+  .hq-division-intro__card {
+    min-height: clamp(200px, 52vw, 280px);
   }
 }
 
@@ -6353,15 +6416,17 @@ html.core-values-page #cv-st-heading {
     transform: none !important;
   }
 
-  .hq-division-intro__accordion--js.hq-division-intro__accordion--is-expanded
-    .hq-division-intro__card:not(.hq-division-intro__card--expanded),
-  .hq-division-intro__accordion--js .hq-division-intro__card--expanded,
-  .hq-division-intro__accordion:not(.hq-division-intro__accordion--js):hover
-    .hq-division-intro__card,
-  .hq-division-intro__accordion:not(.hq-division-intro__accordion--js)
-    .hq-division-intro__card:hover {
-    flex: 1 1 0 !important;
-    min-width: var(--hq-di-min-collapsed) !important;
+  @media (min-width: 769px) {
+    .hq-division-intro__accordion--js.hq-division-intro__accordion--is-expanded
+      .hq-division-intro__card:not(.hq-division-intro__card--expanded),
+    .hq-division-intro__accordion--js .hq-division-intro__card--expanded,
+    .hq-division-intro__accordion:not(.hq-division-intro__accordion--js):hover
+      .hq-division-intro__card,
+    .hq-division-intro__accordion:not(.hq-division-intro__accordion--js)
+      .hq-division-intro__card:hover {
+      flex: 1 1 0 !important;
+      min-width: var(--hq-di-min-collapsed) !important;
+    }
   }
 
   .hq-division-intro__accordion--js
@@ -6427,7 +6492,7 @@ html.core-values-page #cv-st-heading {
       rgba(194, 65, 12, 0.2) 48%,
       rgba(234, 88, 12, 0.26) 100%
     ),
-    url("../images/func img/5b969b73-13ba-4eba-b794-b34000fc6eb5_996bdbfe-4f29-4317-b8e8-56ea00086699_Prev.png");
+    url("../images/func img/e1716e24-dbd1-4063-a287-b31b010d5be6_7201dff7-63b3-45af-a2d2-3e6ed02568af_Prev.png");
 }
 
 .hq-division-intro__card--ss .hq-division-intro__media {
@@ -6677,6 +6742,7 @@ html.core-values-page #cv-st-heading {
     var(--nav-content-safe-space, 136px) +
       var(--interviews-below-nav-offset, 0px)
   );
+  padding-bottom: max(0px, env(safe-area-inset-bottom, 0px));
   box-sizing: border-box;
 }
 
@@ -6847,6 +6913,11 @@ html.core-values-page #cv-st-heading {
   display: none;
 }
 
+/* 모바일 전용 플로팅 뒤로가기 — 표시는 max-width:768px에서만 */
+.interviews-page .hq-interviews-mobile-back-fab {
+  display: none;
+}
+
 .hq-layout {
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr) auto;
@@ -6855,6 +6926,9 @@ html.core-values-page #cv-st-heading {
   max-width: min(96vw, 1640px);
   margin: 0 auto;
   padding: 0;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* hq-layout: 메인 컬럼이 좌측 사이드바에 붙어 보이는 느낌 완화(레이아웃 균형 — 텍스트 가운데 정렬 아님) */
@@ -6882,6 +6956,7 @@ html.team-tck-page .hq-main-content {
   );
   align-self: start;
   height: fit-content;
+  min-width: 0;
   padding-right: 44px;
   padding-left: 0;
   margin-left: 0;
@@ -6972,6 +7047,7 @@ html.team-tck-page .hq-main-content {
 /* Main Content */
 .hq-main-content {
   min-height: 500px;
+  min-width: 0;
   padding-left: 20px;
   padding-top: 0;
   margin-top: 0;
@@ -7015,6 +7091,13 @@ html.team-tck-page .hq-main-content {
 
 .hq-content-body {
   margin-top: 0;
+}
+
+/* 인터뷰 히어로: 프로필 배경(.interview-profile-bg) 블록을 본문 열 안에서 가로 중앙 */
+.interviews-page .hq-main-content .hq-content-body:has(.interview-profile-header--hero) {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .hq-subtitle-wrapper {
@@ -7123,10 +7206,10 @@ a.hq-division-card--interview-link:hover {
 /* Role interviews — scroll reveal (team-tck-interviews.html) */
 .interviews-page .hq-reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(32px);
   transition:
-    opacity 0.48s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0s);
   will-change: opacity, transform;
 }
@@ -7138,12 +7221,14 @@ a.hq-division-card--interview-link:hover {
 
 /* 담당 인터뷰 Q&A: 질문,답을 각각 리빌(짧은 이동 거리로 가독성 유지) */
 .interviews-page .interview-q-title.hq-reveal {
-  transform: translateY(18px);
+  transform: translateY(22px);
 }
 
 .interviews-page .interview-answer.hq-reveal {
-  transform: translateY(14px);
-  transition-duration: 0.5s, 0.5s;
+  transform: translateY(18px);
+  transition-duration: 0.78s, 0.78s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1),
+    cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .interviews-page .interview-q-title.hq-reveal.is-visible,
@@ -7735,6 +7820,8 @@ a.hq-division-card--interview-link:hover {
 .interviews-page .hq-main-content .interview-profile-header--hero {
   display: block;
   position: relative;
+  align-self: center;
+  width: min(1100px, 100%);
   min-height: clamp(220px, 28vw, 300px);
   aspect-ratio: 2.15 / 1;
   max-height: 360px;
@@ -8148,7 +8235,8 @@ a.hq-division-card--interview-link:hover {
 /* Interview Content Styles */
 .interview-content {
   margin-top: 60px;
-  max-width: 900px;
+  width: 100%;
+  max-width: min(900px, 100%);
   text-align: left;
 }
 
@@ -8195,19 +8283,13 @@ html.interviews-page .hq-main-content,
   margin-bottom: 28px;
   line-height: 1.6;
   letter-spacing: 0;
-  position: relative;
   padding-bottom: 8px;
-  display: inline-block;
-}
-
-.interview-q-title::after {
-  content: "";
-  position: absolute;
-  bottom: 12px;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background-color: rgba(173, 216, 230, 0.3);
+  display: block;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(173, 216, 230, 0.3);
+  text-decoration-thickness: 8px;
+  text-underline-offset: -4px;
+  text-decoration-skip-ink: none;
 }
 
 .interview-answer {
@@ -8246,11 +8328,8 @@ html.interviews-page .hq-main-content,
     margin-bottom: 24px;
     line-height: 1.6;
     padding-bottom: 6px;
-  }
-
-  .interview-q-title::after {
-    bottom: 12px;
-    height: 6px;
+    text-decoration-thickness: 6px;
+    text-underline-offset: -3px;
   }
 
   .interview-answer {
@@ -8282,11 +8361,8 @@ html.interviews-page .hq-main-content,
     margin-bottom: 20px;
     line-height: 1.6;
     padding-bottom: 5px;
-  }
-
-  .interview-q-title::after {
-    bottom: 12px;
-    height: 5px;
+    text-decoration-thickness: 5px;
+    text-underline-offset: -2.5px;
   }
 
   .interview-answer {
@@ -8448,33 +8524,48 @@ html.interviews-page .hq-main-content,
   }
 
   .interviews-page .hq-division-rail {
-    position: sticky;
-    top: calc(
-      env(safe-area-inset-top, 0px) + var(--nav-content-safe-space, 112px) +
-        6px + var(--interviews-below-nav-offset, 0px)
+    display: none !important;
+  }
+
+  .interviews-page .hq-interviews-shell {
+    padding-bottom: calc(
+      max(0px, env(safe-area-inset-bottom, 0px)) + 72px
     );
-    min-width: 0;
-    max-width: none;
-    width: 100%;
-    order: -1;
-    margin-bottom: 16px;
   }
 
-  .interviews-page .hq-division-rail-card {
-    padding: 10px;
+  .interviews-page .hq-interviews-mobile-back-fab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 60;
+    left: max(14px, calc(env(safe-area-inset-left, 0px) + 8px));
+    bottom: max(14px, calc(env(safe-area-inset-bottom, 0px) + 8px));
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 999px;
+    color: #0f172a;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    box-shadow:
+      0 4px 14px rgba(15, 23, 42, 0.12),
+      0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      background 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.15s ease;
   }
 
-  .interviews-page .hq-division-rail-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 6px;
-    justify-content: flex-start;
+  .interviews-page .hq-interviews-mobile-back-fab:active {
+    transform: scale(0.97);
   }
 
-  .interviews-page .hq-division-rail .hq-nav-link {
-    font-size: 12px;
-    padding: 8px 12px;
-    white-space: nowrap;
+  .interviews-page .hq-interviews-mobile-back-fab__icon {
+    display: flex;
+    color: #0078d4;
   }
 
   .interviews-page .hq-interviews-shell .hq-sidebar > .hq-title-wrapper {
@@ -8485,9 +8576,37 @@ html.interviews-page .hq-main-content,
     padding-left: 4px;
   }
 
+  /* 인라인 grid( showSection 데스크톱용 )보다 우선 — 모바일 단일 열 강제 */
   .hq-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-left: max(12px, env(safe-area-inset-left, 0px));
+    padding-right: max(12px, env(safe-area-inset-right, 0px));
+    box-sizing: border-box;
+  }
+
+  /* 500px min-height + align-self:center + 좌패딩 누적이 모바일에서 레이아웃 깨짐 유발 */
+  .hq-main-content {
+    min-height: 0;
+    justify-content: flex-start;
+    align-self: stretch;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+
+  html.interviews-page .hq-main-content,
+  html.team-tck-page .hq-main-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .interviews-page .hq-main-content .hq-content-section.active {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .hq-sidebar {
@@ -8507,8 +8626,19 @@ html.interviews-page .hq-main-content,
     -webkit-overflow-scrolling: touch;
   }
 
+  /* 데스크톱용 세로 라인(::before) — 가로 pill에서는 겹쳐 보이므로 제거 */
+  .hq-sidebar-list::before {
+    content: none;
+    display: none;
+  }
+
   .hq-sidebar-list li {
     flex-shrink: 0;
+  }
+
+  .hq-sidebar-link::before {
+    content: none;
+    display: none;
   }
 
   .hq-sidebar-link {
@@ -8525,6 +8655,29 @@ html.interviews-page .hq-main-content,
 
   .hq-sidebar-link.active::after {
     display: none;
+  }
+
+  /* 인터뷰 페이지: 모바일 담당 네비 pill 축소 */
+  .interviews-page .hq-sidebar {
+    padding-bottom: 12px;
+    margin-bottom: 28px;
+  }
+
+  .interviews-page .hq-sidebar-list {
+    gap: 5px;
+  }
+
+  .interviews-page .hq-sidebar-link {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.25;
+    border-radius: 14px;
+    letter-spacing: -0.02em;
+  }
+
+  .interviews-page .hq-interviews-shell .hq-sidebar .hq-main-title {
+    font-size: clamp(14px, 3.8vw, 16px);
+    margin-bottom: 8px;
   }
 
   .hq-content-title {
