@@ -255,12 +255,12 @@ const interviewData = {
     role: "VPD/PID",
     roleKr: "VPD/PID",
     roleEn: "VPD/PID",
-    name: "이원익",
-    nameKr: "이원익",
-    nameEn: "Wonik Lee",
-    greeting: "안녕하세요\nPIPG본부의 VPD/PID담당\n이원익입니다",
-    greetingKr: "안녕하세요\nPIPG본부의 VPD/PID담당\n이원익입니다",
-    greetingEn: "Hello\nVPD/PID, PIPG HQ\nWonik Lee",
+    name: "우성근",
+    nameKr: "우성근",
+    nameEn: "Sunggeun Woo",
+    greeting: "안녕하세요\nPIPG본부의 VPD/PID담당\n우성근입니다",
+    greetingKr: "안녕하세요\nPIPG본부의 VPD/PID담당\n우성근입니다",
+    greetingEn: "Hello\nVPD/PID, PIPG HQ\nSunggeun Woo",
     interviewId: "pipg-vpd-pid", // 기존 인터뷰 섹션 ID
   },
   "PIPG3.png": {
@@ -269,12 +269,12 @@ const interviewData = {
     role: "Thermal",
     roleKr: "Thermal",
     roleEn: "Thermal",
-    name: "우성근",
-    nameKr: "우성근",
-    nameEn: "Sunggeun Woo",
-    greeting: "안녕하세요\nPIPG본부의 Thermal담당\n우성근입니다",
-    greetingKr: "안녕하세요\nPIPG본부의 Thermal담당\n우성근입니다",
-    greetingEn: "Hello\nThermal, PIPG HQ\nSunggeun Woo",
+    name: "이원익",
+    nameKr: "이원익",
+    nameEn: "Wonik Lee",
+    greeting: "안녕하세요\nPIPG본부의 Thermal담당\n이원익입니다",
+    greetingKr: "안녕하세요\nPIPG본부의 Thermal담당\n이원익입니다",
+    greetingEn: "Hello\nThermal, PIPG HQ\nWonik Lee",
     interviewId: "pipg-thermal",
   },
   "PIPG4.png": {
@@ -942,8 +942,6 @@ const PROFILE_MOSAIC_REL_PATHS = [
   "beca/Chassis.png",
   "beca/Exterior.png",
   "beca/body.png",
-  "etc pic/E078AUGKMDE-U08GX58UMT3-1657cb915a2f-512.jpg",
-  "etc pic/E078AUGKMDE-U08SJ2X4BPU-b3d5f5ad5e0f-512.jpg",
   "etc pic/제목 없음 (1080 x 1080 px) (8).png",
   "etc pic/제목 없음 (1080 x 1080 px) (9).png",
   "etc pic/제목 없음 (1080 x 1080 px) (10).png",
@@ -962,6 +960,8 @@ const PROFILE_MOSAIC_REL_PATHS = [
   "etc pic/제목 없음 (1080 x 1080 px) (23).png",
   "etc pic/제목 없음 (1080 x 1080 px) (24).png",
   "etc pic/제목 없음 (1080 x 1080 px) (25).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (26).png",
+  "etc pic/제목 없음 (1080 x 1080 px) (27).png",
   "itpe/ecs-itpe.png",
   "itpe/interior-trim.png",
   "itpe/seat-safety-restraints.png",
@@ -983,6 +983,73 @@ const PROFILE_MOSAIC_REL_PATHS = [
   "ve/virtual integration center adas 3.png",
 ];
 
+function isPlaceholderPortraitUrl(u) {
+  if (!u) {
+    return true;
+  }
+  return String(u).indexOf("gm-symbol-color-light-bg") !== -1;
+}
+
+/** profilepic 이하 상대 경로로 정규화해 중복 제거(쿼리·인코딩 차이 등) */
+function canonicalProfilePortraitRelPath(u) {
+  try {
+    var base = String(u).replace(/\?.*$/, "");
+    var needle = "/images/profilepic/";
+    var i = base.indexOf(needle);
+    if (i === -1) {
+      return "";
+    }
+    var rest = base.slice(i + needle.length);
+    return rest
+      .split("/")
+      .map(function (seg) {
+        return decodeURIComponent(seg);
+      })
+      .join("/");
+  } catch (e) {
+    return "";
+  }
+}
+
+/** 동일 프로필 컷이면 true (`pv=` 등 쿼리만 다른 경우 포함) */
+function portraitUrlsRepresentSameImage(a, b) {
+  if (!a || !b) {
+    return false;
+  }
+  var ca = canonicalProfilePortraitRelPath(a);
+  var cb = canonicalProfilePortraitRelPath(b);
+  if (ca && cb) {
+    return ca === cb;
+  }
+  return String(a).replace(/\?.*$/, "") === String(b).replace(/\?.*$/, "");
+}
+
+/** 모자이크/폴백 풀: 같은 파일은 한 번만 유지(먼저 나온 URL 보존) */
+function dedupePortraitUrlsPreservingOrder(urls) {
+  if (!urls || !urls.length) {
+    return [];
+  }
+  var seen = Object.create(null);
+  var out = [];
+  for (var i = 0; i < urls.length; i++) {
+    var u = urls[i];
+    if (isPlaceholderPortraitUrl(u)) {
+      continue;
+    }
+    var c = canonicalProfilePortraitRelPath(u);
+    var key = c || String(u).replace(/\?.*$/, "");
+    if (!key) {
+      continue;
+    }
+    if (seen[key]) {
+      continue;
+    }
+    seen[key] = true;
+    out.push(u);
+  }
+  return out;
+}
+
 function getProfileMosaicPortraitPoolUrls() {
   var bust =
     typeof withProfileImageCacheBust === "function"
@@ -991,55 +1058,21 @@ function getProfileMosaicPortraitPoolUrls() {
           return u;
         };
 
-  function isPlaceholderPortraitUrl(u) {
-    if (!u) {
-      return true;
-    }
-    return u.indexOf("gm-symbol-color-light-bg") !== -1;
-  }
+  var raw = [];
 
-  /** profilepic 이하 상대 경로로 정규화해 중복 제거(인코딩 차이 등) */
-  function canonicalRelFromProfileUrl(u) {
-    try {
-      var base = String(u).replace(/\?.*$/, "");
-      var needle = "/images/profilepic/";
-      var i = base.indexOf(needle);
-      if (i === -1) {
-        return "";
-      }
-      var rest = base.slice(i + needle.length);
-      return rest
-        .split("/")
-        .map(function (seg) {
-          return decodeURIComponent(seg);
-        })
-        .join("/");
-    } catch (e) {
-      return "";
-    }
-  }
-
-  var seen = Object.create(null);
-  var out = [];
-
-  function addUrl(u) {
+  function pushCandidate(u) {
     if (isPlaceholderPortraitUrl(u)) {
       return;
     }
-    var c = canonicalRelFromProfileUrl(u);
-    if (!c) {
+    if (!canonicalProfilePortraitRelPath(u)) {
       return;
     }
-    if (seen[c]) {
-      return;
-    }
-    seen[c] = true;
-    out.push(u);
+    raw.push(u);
   }
 
   PROFILE_MOSAIC_REL_PATHS.forEach(function (rel) {
     var parts = rel.split("/").filter(Boolean);
-    addUrl(bust(profilePicRel(parts)));
+    pushCandidate(bust(profilePicRel(parts)));
   });
 
   if (typeof interviewData !== "undefined" && typeof getInterviewPortraitUrl === "function") {
@@ -1058,14 +1091,17 @@ function getProfileMosaicPortraitPoolUrls() {
       ) {
         return;
       }
-      addUrl(getInterviewPortraitUrl(k));
+      pushCandidate(getInterviewPortraitUrl(k));
     });
   }
 
-  return out;
+  return dedupePortraitUrlsPreservingOrder(raw);
 }
 
 window.getProfileMosaicPortraitPoolUrls = getProfileMosaicPortraitPoolUrls;
+window.canonicalProfilePortraitRelPath = canonicalProfilePortraitRelPath;
+window.dedupePortraitUrlsPreservingOrder = dedupePortraitUrlsPreservingOrder;
+window.portraitUrlsRepresentSameImage = portraitUrlsRepresentSameImage;
 
 function mountStaticRoleInterviews() {
   document.querySelectorAll("[data-role-interview-mount]").forEach((bodyEl) => {
@@ -1119,7 +1155,12 @@ function escapeHtmlText(s) {
 
 // 인터뷰 섹션 생성 함수
 function createInterviewSection(interviewId, imageName, data) {
-  const currentLang = localStorage.getItem("language") || "kr";
+  const currentLang =
+    typeof document !== "undefined" &&
+    document.body &&
+    document.body.classList.contains("interviews-page")
+      ? "kr"
+      : localStorage.getItem("language") || "kr";
   const imageNameWithoutExt = imageName.replace(".png", "");
   const useTp = data.useTpThumbnail === true;
   const tpImageName = useTp ? imageNameWithoutExt + "_tp.png" : imageName;

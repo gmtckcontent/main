@@ -413,7 +413,7 @@ function initInterviewsScrollReveal() {
           title.style.setProperty("--reveal-delay", "0s");
         }
         if (answer) {
-          answer.style.setProperty("--reveal-delay", "0.07s");
+          answer.style.setProperty("--reveal-delay", "0.12s");
         }
       });
     root
@@ -436,7 +436,11 @@ function initInterviewsScrollReveal() {
         el.classList.remove("hq-reveal", "is-visible");
       }
       if (!el.hasAttribute("data-reveal")) {
-        el.style.setProperty("--reveal-delay", `${Math.min(i * 0.02, 0.16)}s`);
+        /* 본부 인터뷰 진입 시 위→아래로 서서히(캡으로 과도한 대기 방지) */
+        el.style.setProperty(
+          "--reveal-delay",
+          `${Math.min(i * 0.052, 1.12)}s`,
+        );
       }
       register(el);
     });

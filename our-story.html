@@ -31,7 +31,7 @@
       content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
     />
     <!-- 인터뷰/스타일 수정 후 브라우저 캐시 회피: ?v= 숫자 올리기 -->
-    <link rel="stylesheet" href="./css/style.css?v=117" />
+    <link rel="stylesheet" href="./css/style.css?v=121" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -889,9 +889,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="./js/language.js?v=2"></script>
-    <script src="./js/main.js?v=2"></script>
-    <script src="./js/role-interviews.js?v=52"></script>
+    <script src="./js/language.js?v=4"></script>
+    <script src="./js/main.js?v=3"></script>
+    <script src="./js/role-interviews.js?v=55"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=52"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=5"></script>
@@ -903,9 +903,7 @@
 
       function refreshLanguageAfterInterviewMount() {
         if (window.gmtckLanguageToggle) {
-          window.gmtckLanguageToggle.setLanguage(
-            localStorage.getItem("language") || "kr",
-          );
+          window.gmtckLanguageToggle.setLanguage("kr");
         }
       }
 
@@ -1000,6 +998,9 @@
               keys.sort();
               pool = keys.map((k) => getInterviewPortraitUrl(k));
             }
+            if (typeof window.dedupePortraitUrlsPreservingOrder === "function") {
+              pool = window.dedupePortraitUrlsPreservingOrder(pool);
+            }
             const w = slab.clientWidth;
             const h = slab.clientHeight;
             const cols = window.matchMedia("(max-width: 768px)").matches
@@ -1012,6 +1013,10 @@
             rows = Math.min(rows, maxRows);
             const targetCount = cols * rows;
 
+            const samePortrait =
+              typeof window.portraitUrlsRepresentSameImage === "function"
+                ? window.portraitUrlsRepresentSameImage
+                : (a, b) => a === b;
             /** 한 사이클 안에서만 중복 없이 키를 이어 붙임(사이클 경계는 이전 타일과 겹치지 않게 조정). 1명뿐이면 반복 불가피. */
             function shuffleKeyCycle(keyList) {
               const a = [...keyList];
@@ -1031,8 +1036,8 @@
                 let cycle = shuffleKeyCycle(keyList);
                 if (out.length > 0) {
                   const prev = out[out.length - 1];
-                  if (cycle[0] === prev) {
-                    const sw = cycle.findIndex((k) => k !== prev);
+                  if (samePortrait(cycle[0], prev)) {
+                    const sw = cycle.findIndex((k) => !samePortrait(k, prev));
                     if (sw > 0) {
                       [cycle[0], cycle[sw]] = [cycle[sw], cycle[0]];
                     }
@@ -1299,11 +1304,60 @@
           return null;
         }
 
+        function triggerHqContentSectionEnter(sectionEl) {
+          if (!sectionEl) {
+            return;
+          }
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            return;
+          }
+          sectionEl.classList.remove("hq-content-section--enter");
+          void sectionEl.offsetWidth;
+          sectionEl.classList.add("hq-content-section--enter");
+          const onEnd = (e) => {
+            if (e.target !== sectionEl) {
+              return;
+            }
+            if (e.animationName !== "hqContentSectionEnter") {
+              return;
+            }
+            sectionEl.classList.remove("hq-content-section--enter");
+            sectionEl.removeEventListener("animationend", onEnd);
+          };
+          sectionEl.addEventListener("animationend", onEnd);
+        }
+
         function ensureInterviewsShellVisible() {
           const landing = document.getElementById("hqLanding");
           const shell = document.getElementById("hqInterviewsShell");
-          if (landing) landing.hidden = true;
-          if (shell) shell.hidden = false;
+          const wasShellHidden = !!(shell && shell.hidden);
+          if (landing) {
+            landing.hidden = true;
+          }
+          if (shell) {
+            shell.hidden = false;
+            if (
+              wasShellHidden &&
+              !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ) {
+              shell.classList.remove("hq-interviews-shell--enter");
+              requestAnimationFrame(function () {
+                void shell.offsetWidth;
+                shell.classList.add("hq-interviews-shell--enter");
+                const onShellEnd = (e) => {
+                  if (e.target !== shell) {
+                    return;
+                  }
+                  if (e.animationName !== "hqShellEnter") {
+                    return;
+                  }
+                  shell.classList.remove("hq-interviews-shell--enter");
+                  shell.removeEventListener("animationend", onShellEnd);
+                };
+                shell.addEventListener("animationend", onShellEnd);
+              });
+            }
+          }
         }
 
         /** 모바일 플로팅 뒤로가기: 본부/담당 인터뷰 셸만(랜딩·#all 전체보기 제외) */
@@ -1380,9 +1434,13 @@
           const landing = document.getElementById("hqLanding");
           const shell = document.getElementById("hqInterviewsShell");
           if (landing) landing.hidden = false;
-          if (shell) shell.hidden = true;
+          if (shell) {
+            shell.hidden = true;
+            shell.classList.remove("hq-interviews-shell--enter");
+          }
           document.querySelectorAll(".hq-content-section").forEach((s) => {
             s.classList.remove("active");
+            s.classList.remove("hq-content-section--enter");
             s.style.display = "none";
           });
           document
@@ -1430,7 +1488,7 @@
           const container = document.getElementById(containerId);
           if (!container) return;
 
-          const currentLang = localStorage.getItem("language") || "kr";
+          const currentLang = "kr";
           container.innerHTML = "";
 
           // 이미지 파일명 패턴으로 자동 감지(Our Story 모자이크 전용 항목 제외)
@@ -1492,16 +1550,14 @@
                   showPersonInterview(imageName);
                 });
 
-                document.addEventListener("languageChange", function (e) {
-                  const lang = e.detail.language;
+                document.addEventListener("languageChange", function () {
                   const hqElement = item.querySelector(".interview-hq");
                   const roleElement = item.querySelector(".interview-role");
                   if (hqElement) {
                     hqElement.textContent = data.hq;
                   }
                   if (roleElement) {
-                    roleElement.textContent =
-                      lang === "kr" ? data.roleKr : data.roleEn;
+                    roleElement.textContent = data.roleKr;
                   }
                 });
               };
@@ -1521,7 +1577,7 @@
           if (!sidebarList) return;
 
           const roles = hqRoles[hqId] || [];
-          const currentLang = localStorage.getItem("language") || "kr";
+          const currentLang = "kr";
 
           sidebarList.innerHTML = roles
             .map(
@@ -1644,6 +1700,7 @@
           // Remove active class from all content sections
           contentSections.forEach((s) => {
             s.classList.remove("active");
+            s.classList.remove("hq-content-section--enter");
             s.style.display = "none";
           });
 
@@ -1664,7 +1721,7 @@
           if (mainTitle && navLink) {
             const titleKr = navLink.getAttribute("data-kr");
             const titleEn = navLink.getAttribute("data-en");
-            const currentLang = localStorage.getItem("language") || "kr";
+            const currentLang = "kr";
             mainTitle.setAttribute("data-kr", titleKr);
             mainTitle.setAttribute("data-en", titleEn);
             mainTitle.textContent = currentLang === "kr" ? titleKr : titleEn;
@@ -1677,6 +1734,9 @@
             if (allSection) {
               allSection.classList.add("active");
               allSection.style.display = "block";
+              requestAnimationFrame(function () {
+                triggerHqContentSectionEnter(allSection);
+              });
             }
             // 전체보기 이미지 로드
             loadInterviewImages("allInterviewGrid");
@@ -1736,6 +1796,7 @@
           // Remove active class from all content sections (기존 + 동적으로 생성된 섹션 포함)
           contentSections.forEach((s) => {
             s.classList.remove("active");
+            s.classList.remove("hq-content-section--enter");
             s.style.display = "none";
           });
 
@@ -1745,6 +1806,7 @@
           allSections.forEach((s) => {
             if (!contentSectionsArray.includes(s)) {
               s.classList.remove("active");
+              s.classList.remove("hq-content-section--enter");
               s.style.display = "none";
             }
           });
@@ -1761,8 +1823,8 @@
             targetSection.classList.add("active");
             targetSection.style.display = "block";
 
-            // 섹션 표시 후 스크롤 리빌 재등록(문항별 애니메이션 유지 — 일괄 is-visible 금지)
-            requestAnimationFrame(() => {
+            requestAnimationFrame(function () {
+              triggerHqContentSectionEnter(targetSection);
               if (typeof window.gmtckScanInterviewReveal === "function") {
                 window.gmtckScanInterviewReveal(targetSection, {
                   force: true,
@@ -2044,7 +2106,7 @@
               if (hqNavLink) {
                 hqNameKr = hqNavLink.getAttribute("data-kr");
                 hqNameEn = hqNavLink.getAttribute("data-en");
-                const currentLang = localStorage.getItem("language") || "kr";
+                const currentLang = "kr";
                 hqName = currentLang === "kr" ? hqNameKr : hqNameEn;
               }
             }
@@ -2208,7 +2270,7 @@
                 `[data-role="${interviewId}"]`,
               );
               if (!existingLink) {
-                const currentLang = localStorage.getItem("language") || "kr";
+                const currentLang = "kr";
                 const roleKr = data.roleKr || data.role;
                 const roleEn = data.roleEn || data.role;
                 const nameKr = data.nameKr || data.name || "";

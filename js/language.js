@@ -1,7 +1,14 @@
 // 다국어 지원 (한국어/영어)
 class LanguageToggle {
   constructor() {
-    this.currentLanguage = localStorage.getItem("language") || "kr";
+    /** our-story.html 등: 다른 탭에서 EN이어도 이 페이지는 항상 한국어 */
+    this.krOnlyInterviewsPage =
+      typeof document !== "undefined" &&
+      document.body &&
+      document.body.classList.contains("interviews-page");
+    this.currentLanguage = this.krOnlyInterviewsPage
+      ? "kr"
+      : localStorage.getItem("language") || "kr";
     this.toggleButton = document.getElementById("languageToggle");
     this.languageLabel = document.getElementById("languageLabel");
 
@@ -9,74 +16,69 @@ class LanguageToggle {
   }
 
   init() {
-    // 초기 언어 설정
     this.setLanguage(this.currentLanguage);
 
-    // 토글 버튼 이벤트
-    if (this.toggleButton) {
+    if (this.toggleButton && !this.krOnlyInterviewsPage) {
       this.toggleButton.addEventListener("click", (e) => {
         this.currentLanguage = this.currentLanguage === "kr" ? "en" : "kr";
         this.setLanguage(this.currentLanguage);
         localStorage.setItem("language", this.currentLanguage);
-        // 모바일에서 포커스 제거하여 배경색이 남지 않도록
         this.toggleButton.blur();
       });
     }
   }
 
   setLanguage(lang) {
-    // 언어 레이블 업데이트
+    const L = this.krOnlyInterviewsPage ? "kr" : lang;
+
     if (this.languageLabel) {
-      this.languageLabel.textContent = lang === "kr" ? "EN" : "KR";
+      this.languageLabel.textContent = L === "kr" ? "EN" : "KR";
     }
 
-    // 모든 다국어 요소 업데이트
     const elements = document.querySelectorAll("[data-kr][data-en]");
     elements.forEach((element) => {
-      // 글로벌 헤더 .nav-content 안 링크·트리거는 언어와 무관하게 항상 영문(data-en)
       if (element.closest(".nav-content")) {
+        if (this.krOnlyInterviewsPage) {
+          if (
+            element.classList.contains("hq-nav-link") &&
+            element.dataset.abbrKr
+          ) {
+            element.textContent = element.dataset.abbrKr;
+          } else if (element.dataset.kr && element.dataset.en) {
+            element.textContent = element.dataset.kr;
+          } else if (element.dataset.en != null && element.dataset.en !== "") {
+            element.textContent = element.dataset.en;
+          }
+          return;
+        }
         if (element.dataset.en != null && element.dataset.en !== "") {
           element.textContent = element.dataset.en;
         }
         return;
       }
 
-      // hq-nav-link는 약어 사용
       if (element.classList.contains("hq-nav-link") && element.dataset.abbrKr) {
-        const text = lang === "kr" ? element.dataset.abbrKr : element.dataset.abbrEn;
+        const text =
+          L === "kr" ? element.dataset.abbrKr : element.dataset.abbrEn;
         element.textContent = text;
       } else {
-        const text = lang === "kr" ? element.dataset.kr : element.dataset.en;
+        const text = L === "kr" ? element.dataset.kr : element.dataset.en;
         element.textContent = text;
       }
     });
 
-    // 섹션 타이틀 업데이트
-    this.updateSectionTitles(lang);
+    this.updateSectionTitles(L);
+    this.updateDescriptions(L);
+    this.updateServiceCards(L);
+    this.updateAboutSection(L);
+    this.updateCarousel(L);
+    this.updateStories(L);
+    this.updateHQPage(L);
 
-    // 섹션 설명 업데이트
-    this.updateDescriptions(lang);
-
-    // 서비스 카드 업데이트
-    this.updateServiceCards(lang);
-
-    // About 섹션 업데이트
-    this.updateAboutSection(lang);
-
-    // 카루셀 업데이트
-    this.updateCarousel(lang);
-
-    // 스토리 섹션 업데이트
-    this.updateStories(lang);
-
-    // HQ 페이지 업데이트
-    this.updateHQPage(lang);
-
-    // 언어 변경 이벤트 발송
     document.dispatchEvent(
       new CustomEvent("languageChange", {
-        detail: { language: lang },
-      })
+        detail: { language: L },
+      }),
     );
   }
 
@@ -85,7 +87,7 @@ class LanguageToggle {
     const headerSubtitle = document.querySelector(".carousel-header-subtitle");
     const carouselTexts = document.querySelectorAll(".carousel-text-kr");
     const carouselDescriptions = document.querySelectorAll(
-      ".carousel-description"
+      ".carousel-description",
     );
 
     if (headerTitle && headerTitle.dataset.kr && headerTitle.dataset.en) {
@@ -120,7 +122,8 @@ class LanguageToggle {
     const navLinks = document.querySelectorAll("#hqDivisionRail .hq-nav-link");
     navLinks.forEach((link) => {
       if (link.dataset.abbrKr && link.dataset.abbrEn) {
-        link.textContent = lang === "kr" ? link.dataset.abbrKr : link.dataset.abbrEn;
+        link.textContent =
+          lang === "kr" ? link.dataset.abbrKr : link.dataset.abbrEn;
       } else if (link.dataset.kr && link.dataset.en) {
         link.textContent = lang === "kr" ? link.dataset.kr : link.dataset.en;
       }
@@ -137,14 +140,16 @@ class LanguageToggle {
     // Update HQ main title
     const mainTitle = document.getElementById("hqMainTitle");
     if (mainTitle && mainTitle.dataset.kr && mainTitle.dataset.en) {
-      mainTitle.textContent = lang === "kr" ? mainTitle.dataset.kr : mainTitle.dataset.en;
+      mainTitle.textContent =
+        lang === "kr" ? mainTitle.dataset.kr : mainTitle.dataset.en;
     }
 
     // Update sidebar links
     const sidebarLinks = document.querySelectorAll(".hq-sidebar-link");
     sidebarLinks.forEach((link) => {
       if (link.dataset.abbrKr && link.dataset.abbrEn) {
-        link.textContent = lang === "kr" ? link.dataset.abbrKr : link.dataset.abbrEn;
+        link.textContent =
+          lang === "kr" ? link.dataset.abbrKr : link.dataset.abbrEn;
       } else if (link.dataset.kr && link.dataset.en) {
         link.textContent = lang === "kr" ? link.dataset.kr : link.dataset.en;
       }
@@ -158,7 +163,9 @@ class LanguageToggle {
       }
     });
 
-    const contentDescriptions = document.querySelectorAll(".hq-content-description");
+    const contentDescriptions = document.querySelectorAll(
+      ".hq-content-description",
+    );
     contentDescriptions.forEach((desc) => {
       if (desc.dataset.kr && desc.dataset.en) {
         desc.textContent = lang === "kr" ? desc.dataset.kr : desc.dataset.en;
