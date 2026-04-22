@@ -603,9 +603,9 @@ const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=13";
 const INTERVIEW_CONTENT_VE_URL = "./data/interview-content-ve.json?v=6";
 
 async function loadInterviewContentBecaItpeSs() {
-  // no-store: JSON 수정 후에도 브라우저가 오래된 캐시를 쓰지 않도록 함
+  /* URL ?v= 으로 배포 시 무력화; default 캐시로 재방문·이미지와 경합 완화 */
   const res = await fetch(INTERVIEW_CONTENT_BECA_ITPE_SS_URL, {
-    cache: "no-store",
+    cache: "default",
   });
   if (!res.ok) {
     console.warn("[role-interviews] BECA/ITPE/S&S JSON 로드 실패:", res.status);
@@ -616,7 +616,7 @@ async function loadInterviewContentBecaItpeSs() {
 }
 
 async function loadInterviewContentEe() {
-  const res = await fetch(INTERVIEW_CONTENT_EE_URL, { cache: "no-store" });
+  const res = await fetch(INTERVIEW_CONTENT_EE_URL, { cache: "default" });
   if (!res.ok) {
     console.warn("[role-interviews] EE JSON 로드 실패:", res.status);
     return;
@@ -625,7 +625,7 @@ async function loadInterviewContentEe() {
 }
 
 async function loadInterviewContentVe() {
-  const res = await fetch(INTERVIEW_CONTENT_VE_URL, { cache: "no-store" });
+  const res = await fetch(INTERVIEW_CONTENT_VE_URL, { cache: "default" });
   if (!res.ok) {
     console.warn("[role-interviews] VE JSON 로드 실패:", res.status);
     return;
@@ -1267,7 +1267,7 @@ function createInterviewSection(interviewId, imageName, data) {
         <div class="interview-profile-bg">
           ${formulaBgLayer}
           <div class="interview-profile-image">
-            <img src="${profileImagePath}" alt="Profile" class="profile-img"${imgOnError} />
+            <img src="${profileImagePath}" alt="Profile" class="profile-img" decoding="async" fetchpriority="high"${imgOnError} />
           </div>
         </div>
         <div class="interview-profile-content">

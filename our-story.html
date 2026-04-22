@@ -25,7 +25,7 @@
       content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
     />
     <!-- 인터뷰/스타일 수정 후 브라우저 캐시 회피: ?v= 숫자 올리기 -->
-    <link rel="stylesheet" href="./css/style.css?v=121" />
+    <link rel="stylesheet" href="./css/style.css?v=123" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,7 +34,73 @@
     />
   </head>
   <body style="overflow-x: hidden" class="team-tck-page interviews-page">
+    <div
+      id="ourStoryPageLoader"
+      class="page-loading-overlay"
+      aria-busy="true"
+      aria-live="polite"
+      aria-label="Loading"
+    >
+      <img
+        src="./images/logo/GMTCK.png"
+        alt=""
+        class="page-loading-overlay__logo"
+        width="160"
+        height="48"
+        decoding="async"
+      />
+      <div class="page-loading-overlay__spinner" aria-hidden="true"></div>
+      <p class="page-loading-overlay__text">Loading</p>
+    </div>
     <script>
+      window.__ourStoryLoaderT0 = Date.now();
+      document.documentElement.classList.add("our-story-page-loading");
+      document.body.classList.add("our-story-page-loading");
+      (function () {
+        var dismissed = false;
+        var fallbackId = null;
+        function clearFallback() {
+          if (fallbackId != null) {
+            clearTimeout(fallbackId);
+            fallbackId = null;
+          }
+        }
+        window.dismissOurStoryPageLoader = function () {
+          if (dismissed) {
+            return;
+          }
+          dismissed = true;
+          clearFallback();
+          var reduce =
+            window.matchMedia &&
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          var minMs = reduce ? 0 : 400;
+          var t0 = window.__ourStoryLoaderT0 || Date.now();
+          var wait = Math.max(0, minMs - (Date.now() - t0));
+          function doDismiss() {
+            document.documentElement.classList.remove("our-story-page-loading");
+            document.body.classList.remove("our-story-page-loading");
+            var el = document.getElementById("ourStoryPageLoader");
+            if (el) {
+              el.classList.add("page-loading-overlay--hide");
+              el.setAttribute("aria-hidden", "true");
+              el.removeAttribute("aria-busy");
+              var delay = reduce ? 0 : 520;
+              setTimeout(function () {
+                if (el && el.parentNode) {
+                  el.parentNode.removeChild(el);
+                }
+              }, delay);
+            }
+          }
+          setTimeout(doDismiss, wait);
+        };
+        fallbackId = setTimeout(function () {
+          if (typeof window.dismissOurStoryPageLoader === "function") {
+            window.dismissOurStoryPageLoader();
+          }
+        }, 12000);
+      })();
       // Disable browser scroll restoration
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
@@ -885,7 +951,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js?v=4"></script>
     <script src="./js/main.js?v=3"></script>
-    <script src="./js/role-interviews.js?v=55"></script>
+    <script src="./js/role-interviews.js?v=56"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=53"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=5"></script>
@@ -1003,11 +1069,14 @@
               ? 10
               : 18;
             const cellW = w / cols;
-            const maxTiles = 280;
+            /* 타일 수↓ = 동시 이미지 요청↓ (히어로 밀도는 유지, 극단적 행만 제한) */
+            const maxTiles = 220;
             const maxRows = Math.max(4, Math.floor(maxTiles / cols));
             let rows = Math.max(4, Math.ceil(h / Math.max(1, cellW)));
             rows = Math.min(rows, maxRows);
             const targetCount = cols * rows;
+            const mosaicPriorityTiles = cols * 3;
+            const mosaicStaggerPerFrame = 10;
 
             const samePortrait =
               typeof window.portraitUrlsRepresentSameImage === "function"
@@ -1048,13 +1117,26 @@
 
             const tileUrls = expandKeysForTiles(pool, targetCount);
             container.innerHTML = "";
+            const deferredMosaicSrc = [];
             tileUrls.forEach((url, i) => {
               const cell = document.createElement("div");
               cell.className = "hq-landing-face-cell";
               const photo = document.createElement("div");
               photo.className = "hq-landing-face-cell-photo";
-              const safeUrl = url.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
-              photo.style.backgroundImage = `url("${safeUrl}")`;
+              const img = document.createElement("img");
+              img.alt = "";
+              img.decoding = "async";
+              img.className = "hq-landing-face-cell-img";
+              if (i < mosaicPriorityTiles) {
+                img.src = url;
+                if ("fetchPriority" in img) {
+                  img.fetchPriority = "high";
+                }
+              } else {
+                img.loading = "lazy";
+                deferredMosaicSrc.push({ img, url });
+              }
+              photo.appendChild(img);
               cell.appendChild(photo);
               const dur = 14 + (i % 5) * 2.2;
               cell.style.setProperty("--float-dur", `${dur}s`);
@@ -1065,6 +1147,23 @@
               cell.style.setProperty("--dy", `${dy}px`);
               container.appendChild(cell);
             });
+            let mosaicStaggerIdx = 0;
+            function pumpMosaicDeferred() {
+              const end = Math.min(
+                mosaicStaggerIdx + mosaicStaggerPerFrame,
+                deferredMosaicSrc.length,
+              );
+              for (; mosaicStaggerIdx < end; mosaicStaggerIdx++) {
+                const item = deferredMosaicSrc[mosaicStaggerIdx];
+                item.img.src = item.url;
+              }
+              if (mosaicStaggerIdx < deferredMosaicSrc.length) {
+                requestAnimationFrame(pumpMosaicDeferred);
+              }
+            }
+            if (deferredMosaicSrc.length) {
+              requestAnimationFrame(pumpMosaicDeferred);
+            }
           }
 
           function scheduleRebuildFaces() {
@@ -2392,6 +2491,19 @@
             runInterviewMount();
             applyInterviewRouteFromHash();
             scheduleInterviewMobileDockFooterSync();
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                if (typeof ScrollTrigger !== "undefined") {
+                  ScrollTrigger.refresh();
+                }
+                if (typeof window.queueTeamTckLandingScrollTop === "function") {
+                  window.queueTeamTckLandingScrollTop();
+                }
+                if (typeof window.dismissOurStoryPageLoader === "function") {
+                  window.dismissOurStoryPageLoader();
+                }
+              });
+            });
           });
 
         window.addEventListener(
