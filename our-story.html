@@ -951,7 +951,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js?v=4"></script>
     <script src="./js/main.js?v=3"></script>
-    <script src="./js/role-interviews.js?v=56"></script>
+    <script src="./js/role-interviews.js?v=58"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=53"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=5"></script>
@@ -1127,14 +1127,30 @@
               img.alt = "";
               img.decoding = "async";
               img.className = "hq-landing-face-cell-img";
+              const thumbUrl =
+                typeof window.toHqLandingMosaicThumbUrl === "function"
+                  ? window.toHqLandingMosaicThumbUrl(url)
+                  : url;
+              const srcToSet = thumbUrl !== url ? thumbUrl : url;
+              img.addEventListener(
+                "error",
+                function onMosaicImgErr() {
+                  if (img.dataset.mosaicFb === "1") {
+                    return;
+                  }
+                  img.dataset.mosaicFb = "1";
+                  img.src = url;
+                },
+                { once: true },
+              );
               if (i < mosaicPriorityTiles) {
-                img.src = url;
+                img.src = srcToSet;
                 if ("fetchPriority" in img) {
                   img.fetchPriority = "high";
                 }
               } else {
                 img.loading = "lazy";
-                deferredMosaicSrc.push({ img, url });
+                deferredMosaicSrc.push({ img, url: srcToSet });
               }
               photo.appendChild(img);
               cell.appendChild(photo);

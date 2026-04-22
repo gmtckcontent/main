@@ -36,6 +36,32 @@ function withProfileImageCacheBust(url) {
   return `${url}${sep}pv=${PROFILE_IMAGE_CACHE_VERSION}`;
 }
 
+/** Our Story 히어로 모자이크: `images/profilepic-mosaic/*.jpg` (256px, scripts/build-profilepic-mosaic.sh) */
+const MOSAIC_THUMB_VERSION = "1";
+function toHqLandingMosaicThumbUrl(url) {
+  if (!url || typeof url !== "string") {
+    return url;
+  }
+  if (url.indexOf("gm-symbol") !== -1) {
+    return url;
+  }
+  const q = url.indexOf("?");
+  const base = q >= 0 ? url.slice(0, q) : url;
+  const needle = "/images/profilepic/";
+  const idx = base.indexOf(needle);
+  if (idx === -1) {
+    return url;
+  }
+  const head = base.slice(0, idx);
+  const tail = base.slice(idx + needle.length);
+  const stem = tail.replace(/\.(png|jpe?g|webp)$/i, "");
+  if (!tail || stem === tail) {
+    return url;
+  }
+  return `${head}/images/profilepic-mosaic/${stem}.jpg?mv=${MOSAIC_THUMB_VERSION}`;
+}
+window.toHqLandingMosaicThumbUrl = toHqLandingMosaicThumbUrl;
+
 /** 인터뷰 히어로 배경 — `images/formula_pic/` 전체 에셋 (추가 시 파일명만 이 배열에 넣으면 랜덤 풀에 포함) */
 const FORMULA_PIC_BACKGROUNDS = [
   "26CDF1CD070035_CadillacF1Team_6206_HiRes.jpg",
@@ -48,13 +74,18 @@ const FORMULA_PIC_BACKGROUNDS = [
   "26CDF1CD7153 - CadillacF1Team_2715_HiRes.jpg",
 ];
 
+/** 웹용 배경 — `images/formula_pic-web/` (1920px JPEG, scripts/build-formula-pic-web.sh) */
+const FORMULA_PIC_WEB_VERSION = "1";
+
 /** 히어로마다 위 목록 중 하나를 무작위로 선택 (파일명 공백 등은 URL 인코딩) */
 function getFormulaPicBackgroundUrl() {
   const files = FORMULA_PIC_BACKGROUNDS;
   if (!files.length) return "";
   const idx = Math.floor(Math.random() * files.length);
   const file = files[idx];
-  return `./images/formula_pic/${encodeURIComponent(file)}`;
+  const base = file.replace(/\.(png|jpe?g|webp|JPG|PNG|JPEG)$/i, "");
+  const webFile = `${base}.jpg`;
+  return `./images/formula_pic-web/${encodeURIComponent(webFile)}?fv=${FORMULA_PIC_WEB_VERSION}`;
 }
 
 /** `images/profilepic` 하위 경로 — 폴더/파일명의 공백,& 등은 URL 인코딩 */
