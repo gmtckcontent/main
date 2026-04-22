@@ -5674,13 +5674,13 @@ html.core-values-page #cv-st-heading {
   opacity: 1;
 }
 
-/* Our Story: 덮는 레이어(z10)보다 위 — 스크롤로 인트로가 올라올 때와 동일 픽셀만큼 밀림 */
+/* Our Story: 덮는 레이어(z10)보다 위 — 히어로 카피는 리프트하지 않음(slab overflow:hidden 클립 방지) */
 #hqLanding #hqLandingOurStory {
   position: relative;
   z-index: 20;
-  transform: translateY(calc(-1 * var(--hq-stack-lift, 0px)));
+  transform: none;
   transition: none !important;
-  will-change: transform;
+  will-change: auto;
 }
 
 /* 고정(stick) 시 밝은 덮개 위: 타이포 검정 (js가 --on-light 토글) */

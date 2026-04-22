@@ -192,17 +192,14 @@
     return Math.min(1, Math.max(0, p));
   }
 
-  /** 본부 흰 레이어와 동일 픽셀만큼 Our Story 레이어를 위로 밀기 */
+  /** 스택 진행도만 갱신(히어로 카피는 리프트하지 않음 — slab overflow로 잘리던 문제 방지) */
   function updateStackSync() {
     var landing = getLanding();
     var intro = document.getElementById("hqDivisionIntro");
     if (!landing || !intro || landing.hidden) {
       return;
     }
-    var vh = window.innerHeight || 1;
-    var top = intro.getBoundingClientRect().top;
-    var lift = Math.max(0, Math.min(vh, vh - top));
-    landing.style.setProperty("--hq-stack-lift", lift + "px");
+    landing.style.setProperty("--hq-stack-lift", "0px");
     landing.style.setProperty("--hq-stack-progress", String(getPinProgress()));
   }
 
@@ -399,6 +396,7 @@
   }
 
   function resetAccumulation() {
+    resetMagneticSnapState();
     if (accumulated === 0 && !unlocked) {
       return;
     }
@@ -425,6 +423,90 @@
 
   function getLanding() {
     return document.getElementById("hqLanding");
+  }
+
+  /**
+   * 본부 인트로 컨테이너 하단 = 뷰포트 하단에 오도록 하는 scrollY
+   * (our-story.html `scrollToDivisionIntroContainerBottomAligned` 와 동일)
+   */
+  function getHqDivisionIntroSnapScrollTop() {
+    var container = document.querySelector(
+      "#hqDivisionIntro .hq-division-intro__container",
+    );
+    if (!container) {
+      return null;
+    }
+    var rect = container.getBoundingClientRect();
+    var sy = window.scrollY || document.documentElement.scrollTop;
+    var vh = window.innerHeight;
+    return Math.max(0, sy + rect.bottom - vh);
+  }
+
+  var magneticSnapToIntroActive = false;
+  var magneticSnapTimerId = null;
+
+  function resetMagneticSnapState() {
+    magneticSnapToIntroActive = false;
+    if (magneticSnapTimerId != null) {
+      window.clearTimeout(magneticSnapTimerId);
+      magneticSnapTimerId = null;
+    }
+  }
+
+  function scheduleMagneticSnapFallbackRelease() {
+    if (magneticSnapTimerId != null) {
+      window.clearTimeout(magneticSnapTimerId);
+    }
+    magneticSnapTimerId = window.setTimeout(function () {
+      magneticSnapTimerId = null;
+      magneticSnapToIntroActive = false;
+    }, 900);
+  }
+
+  /**
+   * 히어로 휠 누적 완료 직후: preventDefault 없이 넘어가면 브라우저가 한 번에 크게 스크롤함.
+   * 첫 아래 입력은 본부별 인터뷰 버튼과 같은 Y로 smooth 스크롤(자석 붙기).
+   */
+  function tryMagneticSnapPastHero(e) {
+    var landing = getLanding();
+    if (!landing || landing.hidden) {
+      return false;
+    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return false;
+    }
+    if (magneticSnapToIntroActive) {
+      e.preventDefault();
+      return true;
+    }
+    var snapY = getHqDivisionIntroSnapScrollTop();
+    if (snapY == null) {
+      return false;
+    }
+    var scrollY = window.scrollY || document.documentElement.scrollTop;
+    if (scrollY >= snapY - 2) {
+      return false;
+    }
+    if (scrollY > 40) {
+      return false;
+    }
+    e.preventDefault();
+    magneticSnapToIntroActive = true;
+    window.scrollTo({ top: snapY, behavior: "smooth" });
+    scheduleMagneticSnapFallbackRelease();
+    window.addEventListener(
+      "scrollend",
+      function onMagneticScrollEnd() {
+        window.removeEventListener("scrollend", onMagneticScrollEnd);
+        magneticSnapToIntroActive = false;
+        if (magneticSnapTimerId != null) {
+          window.clearTimeout(magneticSnapTimerId);
+          magneticSnapTimerId = null;
+        }
+      },
+      { once: true, passive: true },
+    );
+    return true;
   }
 
   /**
@@ -583,21 +665,18 @@
     }
 
     clearOurStoryRevealTopPad();
-    /* transform은 CSS var(--hq-stack-lift)로만 제어 — 인라인 제거하지 않음 */
 
     var fadeOp = getOurStoryTitleFadeOpacity();
-    var stackP = getPinProgress();
     var titleEl = el.querySelector(".hq-landing-title");
     el.style.transition = "none";
     el.style.setProperty("opacity", "1", "important");
-    el.style.willChange = "transform";
+    el.style.removeProperty("will-change");
     el.style.removeProperty("visibility");
     el.style.removeProperty("pointer-events");
     if (titleEl) {
       titleEl.style.transition = "none";
-      titleEl.style.opacity = String(
-        Math.min(1, Math.max(0, fadeOp * (1 - stackP))),
-      );
+      /* 핀 진행도로 곱하면 스크롤 초반부터 타이틀이 사라짐 — 위치 기반 fade만 사용 */
+      titleEl.style.opacity = String(Math.min(1, Math.max(0, fadeOp)));
     }
   }
 
@@ -774,6 +853,9 @@
       accumulated <= THRESHOLD + POST_THRESHOLD_PX
     ) {
       if (dy > 0 && accumulated >= THRESHOLD + POST_THRESHOLD_PX - 1e-6) {
+        if (tryMagneticSnapPastHero(e)) {
+          return;
+        }
         return;
       }
       if (dy > 0) {
@@ -919,6 +1001,9 @@
       accumulated <= THRESHOLD + POST_THRESHOLD_PX
     ) {
       if (dy > 0 && accumulated >= THRESHOLD + POST_THRESHOLD_PX - 1e-6) {
+        if (tryMagneticSnapPastHero(e)) {
+          return;
+        }
         return;
       }
       if (dy > 0) {
@@ -1219,6 +1304,8 @@
   }
 
   window.initHqLandingScrollTrigger = init;
+
+  window.getHqDivisionIntroSnapScrollTop = getHqDivisionIntroSnapScrollTop;
 
   window.refreshHqLandingScrollTrigger = function () {
     if (typeof ScrollTrigger === "undefined") {

@@ -10,20 +10,14 @@
       content="GMTCK Our Story — 직무별 인터뷰와 스토리로 GM Technical Center Korea 팀을 만나보세요."
     />
     <meta name="robots" content="index, follow" />
-    <link
-      rel="canonical"
-      href="https://www.gmtck.com/our-story.html"
-    />
+    <link rel="canonical" href="https://www.gmtck.com/our-story.html" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Inside TCK | Our Story | GMTCK" />
     <meta
       property="og:description"
       content="GMTCK Our Story — 직무별 인터뷰와 스토리로 팀을 만나보세요."
     />
-    <meta
-      property="og:url"
-      content="https://www.gmtck.com/our-story.html"
-    />
+    <meta property="og:url" content="https://www.gmtck.com/our-story.html" />
     <meta property="og:site_name" content="GMTCK" />
     <meta property="og:locale" content="ko_KR" />
     <meta
@@ -892,7 +886,7 @@
     <script src="./js/language.js?v=4"></script>
     <script src="./js/main.js?v=3"></script>
     <script src="./js/role-interviews.js?v=55"></script>
-    <script src="./js/hq-landing-scrolltrigger.js?v=52"></script>
+    <script src="./js/hq-landing-scrolltrigger.js?v=53"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=5"></script>
     <script>
@@ -998,7 +992,9 @@
               keys.sort();
               pool = keys.map((k) => getInterviewPortraitUrl(k));
             }
-            if (typeof window.dedupePortraitUrlsPreservingOrder === "function") {
+            if (
+              typeof window.dedupePortraitUrlsPreservingOrder === "function"
+            ) {
               pool = window.dedupePortraitUrlsPreservingOrder(pool);
             }
             const w = slab.clientWidth;
@@ -1121,21 +1117,27 @@
           window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
         }
 
-        /** 본부 시트 컨테이너 하단이 뷰포트 하단에 오도록 스크롤 (본부별 인터뷰 pill) */
+        /** 본부 시트 컨테이너 하단이 뷰포트 하단에 오도록 스크롤 (본부별 인터뷰 pill, 휠 자석 스냅과 동일 Y) */
         function scrollToDivisionIntroContainerBottomAligned(opts) {
           opts = opts || {};
           const behavior = opts.behavior === "auto" ? "auto" : "smooth";
+          const y =
+            typeof window.getHqDivisionIntroSnapScrollTop === "function"
+              ? window.getHqDivisionIntroSnapScrollTop()
+              : null;
+          if (y != null) {
+            window.scrollTo({ top: y, behavior });
+            return;
+          }
           const container = document.querySelector(
             "#hqDivisionIntro .hq-division-intro__container",
           );
           if (!container) return;
           const rect = container.getBoundingClientRect();
           const sy = window.scrollY || document.documentElement.scrollTop;
-          const bottomDoc = sy + rect.bottom;
           const vh = window.innerHeight;
-          const gap = 0;
-          const y = bottomDoc - vh + gap;
-          window.scrollTo({ top: Math.max(0, y), behavior: behavior });
+          const yFallback = Math.max(0, sy + rect.bottom - vh);
+          window.scrollTo({ top: yFallback, behavior });
         }
 
         document
@@ -2397,7 +2399,10 @@
           scheduleInterviewMobileDockFooterSync,
           { passive: true },
         );
-        window.addEventListener("resize", scheduleInterviewMobileDockFooterSync);
+        window.addEventListener(
+          "resize",
+          scheduleInterviewMobileDockFooterSync,
+        );
         if (window.visualViewport) {
           window.visualViewport.addEventListener(
             "resize",
