@@ -5,7 +5,12 @@
   "scripts": {
     "dev": "python3 -m http.server 8000",
     "start": "python3 -m http.server 8000",
-    "serve": "python3 -m http.server 8000"
+    "serve": "python3 -m http.server 8000",
+    "build:pages": "node scripts/build-github-pages.mjs"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "terser": "^5.36.0"
   },
   "keywords": [
     "gmtck",

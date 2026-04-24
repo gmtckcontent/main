@@ -63,6 +63,30 @@ html.interviews-page {
   scrollbar-gutter: auto;
 }
 
+/*
+ * body에 overflow-x: hidden만 주면 overflow-y가 auto로 계산되어 body가 스크롤포트가 됨 →
+ * position:sticky(사이드바·본부 레일)가 뷰포트가 아닌 body 기준으로 붙어 “스크롤해도 안 따라오는” 현상.
+ * 가로 클립은 html overflow-x: clip 에 맡기고 body는 visible 유지.
+ */
+html.interviews-page body {
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+/* 조상에 hidden/auto가 있으면 sticky 실패 — 인터뷰 셸 경로는 명시적으로 visible */
+.interviews-page .hq-intro-section,
+.interviews-page .hq-intro-section > .container,
+.interviews-page .hq-interviews-shell,
+.interviews-page .hq-layout {
+  overflow: visible;
+}
+
+/* 그리드에서 main만 세로 가운데(align-self:center)일 때 드물게 sticky 형제와 열 높이 해석이 어긋날 수 있어 start로 통일 */
+html.interviews-page .hq-layout > .hq-main-content {
+  align-self: start;
+  justify-content: flex-start;
+}
+
 /* Our Story: 한국어만 — 언어 토글 숨김 */
 html.interviews-page .navbar .language-toggle {
   display: none !important;
@@ -1482,8 +1506,8 @@ section#innovation .section-title .zero-text {
 
 /* 인터뷰 본문(.interview-answer)과 동일 타이포 — Apple SD Gothic Neo 스택, 16/1.6/#333 (줄바꿈은 .about-text 공유 블록) */
 .about-text {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 돋움, Dotum,
-    sans-serif;
+  font-family:
+    "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 돋움, Dotum, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #333;
@@ -3711,10 +3735,7 @@ section#innovation .section-title .zero-text {
   flex-direction: column;
   justify-content: flex-end;
   padding: var(--nav-content-safe-space) clamp(24px, 5vw, 72px)
-    max(
-      clamp(40px, 6vw, 72px),
-      env(safe-area-inset-bottom, 0px)
-    );
+    max(clamp(40px, 6vw, 72px), env(safe-area-inset-bottom, 0px));
   overflow: hidden;
 }
 
@@ -6330,8 +6351,7 @@ html.core-values-page #cv-st-heading {
   pointer-events: none;
 }
 
-.hq-division-intro__accordion--card-reveal
-  .hq-division-intro__card--scroll-in {
+.hq-division-intro__accordion--card-reveal .hq-division-intro__card--scroll-in {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   pointer-events: auto;
@@ -7293,7 +7313,9 @@ html.team-tck-page .hq-main-content {
 }
 
 /* 인터뷰 히어로: 프로필 배경(.interview-profile-bg) 블록을 본문 열 안에서 가로 중앙 */
-.interviews-page .hq-main-content .hq-content-body:has(.interview-profile-header--hero) {
+.interviews-page
+  .hq-main-content
+  .hq-content-body:has(.interview-profile-header--hero) {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -7426,8 +7448,8 @@ a.hq-division-card--interview-link:hover {
 .interviews-page .interview-answer.hq-reveal {
   transform: translateY(18px);
   transition-duration: 1.02s, 1.02s;
-  transition-timing-function: cubic-bezier(0.18, 1, 0.32, 1),
-    cubic-bezier(0.18, 1, 0.32, 1);
+  transition-timing-function:
+    cubic-bezier(0.18, 1, 0.32, 1), cubic-bezier(0.18, 1, 0.32, 1);
 }
 
 .interviews-page .interview-q-title.hq-reveal.is-visible,
@@ -7435,12 +7457,13 @@ a.hq-division-card--interview-link:hover {
   transform: translateY(0);
 }
 
-/* 셸 상단 크롬: hq-reveal 기본 opacity 0에 묶이지 않도록 항상 표시 */
+/* 셸 상단 크롬: hq-reveal 기본 opacity 0에 묶이지 않도록 항상 표시; transform/will-change 없음(sticky 안정) */
 .interviews-page .hq-interviews-shell .hq-division-rail.hq-reveal,
 .interviews-page .hq-interviews-shell .hq-title-wrapper.hq-reveal,
 .interviews-page .hq-interviews-shell .hq-sidebar.hq-reveal {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+  will-change: auto;
 }
 
 .interviews-page .interview-item.hq-reveal:not(.is-visible) {
@@ -7485,15 +7508,13 @@ a.hq-division-card--interview-link:hover {
   transform-origin: 50% 0;
 }
 
-/* 랜딩 → 인터뷰 셸 첫 진입 */
+/* 랜딩 → 인터뷰 셸 첫 진입 — transform 미사용: 조상 transform은 sticky(사이드바·레일)를 깨뜨림 */
 @keyframes hqShellEnter {
   from {
     opacity: 0;
-    transform: translateY(16px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -8513,8 +8534,8 @@ html.interviews-page .hq-main-content,
 
 /* 질문·답변 타이포: talent.hyundai.com Team 인터뷰(.editor 1.6rem/1.6, 본문 h2 1.7rem/500)에 맞춤 — Hyundai Sans 미탑재 시 동일 폴백 스택 */
 .interview-q-title {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 돋움, Dotum,
-    sans-serif;
+  font-family:
+    "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 돋움, Dotum, sans-serif;
   font-size: 17px;
   font-weight: 500;
   color: #000;
@@ -8531,8 +8552,8 @@ html.interviews-page .hq-main-content,
 }
 
 .interview-answer {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 돋움, Dotum,
-    sans-serif;
+  font-family:
+    "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 돋움, Dotum, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #333;

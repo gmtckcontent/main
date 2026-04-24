@@ -25,7 +25,49 @@
       content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
     />
     <!-- 인터뷰/스타일 수정 후 브라우저 캐시 회피: ?v= 숫자 올리기 -->
-    <link rel="stylesheet" href="./css/style.css?v=123" />
+    <link rel="stylesheet" href="./css/style.css?v=126" />
+    <!-- 초기 LCP·인터뷰 데이터: 병렬 다운로드 (JSON은 loadInterviewContentExtras와 캐시 공유) -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      href="./data/interview-content-beca-itpe-ss.json?v=14"
+      as="fetch"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./data/interview-content-ee.json?v=13"
+      as="fetch"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./data/interview-content-ve.json?v=6"
+      as="fetch"
+      crossorigin="anonymous"
+    />
+    <link rel="preload" href="./images/logo/GMTCK.png" as="image" />
+    <link
+      rel="preload"
+      href="./images/profilepic-mosaic/beca/body.jpg?mv=1"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="./images/profilepic-mosaic/avd%26svi/avd.jpg?mv=1"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="./images/profilepic-mosaic/EE/PQDQ.jpg?mv=1"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="./images/profilepic-mosaic/ve/safety%20performance%20integration1.jpg?mv=1"
+      as="image"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,7 +75,7 @@
       rel="stylesheet"
     />
   </head>
-  <body style="overflow-x: hidden" class="team-tck-page interviews-page">
+  <body class="team-tck-page interviews-page">
     <div
       id="ourStoryPageLoader"
       class="page-loading-overlay"
@@ -48,6 +90,7 @@
         width="160"
         height="48"
         decoding="async"
+        fetchpriority="high"
       />
       <div class="page-loading-overlay__spinner" aria-hidden="true"></div>
       <p class="page-loading-overlay__text">Loading</p>
@@ -74,7 +117,7 @@
           var reduce =
             window.matchMedia &&
             window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-          var minMs = reduce ? 0 : 400;
+          var minMs = reduce ? 0 : 220;
           var t0 = window.__ourStoryLoaderT0 || Date.now();
           var wait = Math.max(0, minMs - (Date.now() - t0));
           function doDismiss() {
@@ -951,7 +994,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js?v=4"></script>
     <script src="./js/main.js?v=3"></script>
-    <script src="./js/role-interviews.js?v=58"></script>
+    <script src="./js/role-interviews.js?v=59"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=53"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=5"></script>
@@ -984,6 +1027,12 @@
       // HQ Sidebar Navigation
       document.addEventListener("DOMContentLoaded", function () {
         const HQ_RAIL_NAV = "#hqDivisionRail .hq-nav-link";
+
+        /* 인터뷰 JSON fetch를 히어로 타일·ST보다 먼저 시작(동일 Promise는 한 번만 실행) */
+        var interviewExtrasPromise =
+          typeof window.loadInterviewContentExtras === "function"
+            ? window.loadInterviewContentExtras()
+            : Promise.resolve();
 
         /** 랜딩이 보일 때만: pinSpacing 반영 후 스크롤을 0으로 고정 (새로고침,ST refresh 시 튐 방지) */
         function queueTeamTckLandingScrollTop() {
@@ -1461,17 +1510,31 @@
               requestAnimationFrame(function () {
                 void shell.offsetWidth;
                 shell.classList.add("hq-interviews-shell--enter");
-                const onShellEnd = (e) => {
+                var shellEnterFallbackId = null;
+                function clearShellEnter() {
+                  shell.classList.remove("hq-interviews-shell--enter");
+                  shell.removeEventListener("animationend", onShellEnd);
+                  if (shellEnterFallbackId != null) {
+                    clearTimeout(shellEnterFallbackId);
+                    shellEnterFallbackId = null;
+                  }
+                }
+                function onShellEnd(e) {
                   if (e.target !== shell) {
                     return;
                   }
                   if (e.animationName !== "hqShellEnter") {
                     return;
                   }
-                  shell.classList.remove("hq-interviews-shell--enter");
-                  shell.removeEventListener("animationend", onShellEnd);
-                };
+                  clearShellEnter();
+                }
                 shell.addEventListener("animationend", onShellEnd);
+                /* animationend 누락(백그라운드 탭 등) 시에도 조상 transform 잔류로 sticky 깨짐 방지 */
+                shellEnterFallbackId = setTimeout(function () {
+                  if (shell.classList.contains("hq-interviews-shell--enter")) {
+                    clearShellEnter();
+                  }
+                }, 600);
               });
             }
           }
@@ -2499,7 +2562,7 @@
         }
 
         // 초기 해시: EE SPI·VE 다인 인터뷰는 interview-content JSON 병합 후에만 캐러셀 생성
-        loadInterviewContentExtras()
+        interviewExtrasPromise
           .catch((e) => {
             console.error("[interviews] JSON 로드 오류:", e);
           })

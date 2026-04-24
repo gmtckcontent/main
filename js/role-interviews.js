@@ -119,13 +119,13 @@ const interviewData = {
     role: "Safety Performance Integration",
     roleKr: "Safety Performance Integration",
     roleEn: "Safety Performance Integration",
-    name: "한재영",
-    nameKr: "한재영",
+    name: "한재녕",
+    nameKr: "한재녕",
     nameEn: "Jaenyung Han",
     greeting:
-      "안녕하세요\nVE본부의 Safety Performance Integration담당\n한재영입니다",
+      "안녕하세요\nVE본부의 Safety Performance Integration담당\n한재녕입니다",
     greetingKr:
-      "안녕하세요\nVE본부의 Safety Performance Integration담당\n한재영입니다",
+      "안녕하세요\nVE본부의 Safety Performance Integration담당\n한재녕입니다",
     greetingEn: "Hello\nSafety Performance Integration, VE HQ\nJaenyung Han",
   },
   "ve3.png": {
@@ -629,7 +629,7 @@ const interviewData = {
 // EE 일부 본문은 data/interview-content-ee.json
 // JSON 수정 후 배포 시 ?v= 숫자 올려 캐시 무력화 (CDN,프록시 대비)
 const INTERVIEW_CONTENT_BECA_ITPE_SS_URL =
-  "./data/interview-content-beca-itpe-ss.json?v=13";
+  "./data/interview-content-beca-itpe-ss.json?v=14";
 const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=13";
 const INTERVIEW_CONTENT_VE_URL = "./data/interview-content-ve.json?v=6";
 
@@ -678,6 +678,7 @@ function loadInterviewContentExtras() {
   }
   return interviewContentExtrasPromise;
 }
+window.loadInterviewContentExtras = loadInterviewContentExtras;
 
 const interviewContent = {
   "avd-advanced-vehicle": {
@@ -1106,7 +1107,10 @@ function getProfileMosaicPortraitPoolUrls() {
     pushCandidate(bust(profilePicRel(parts)));
   });
 
-  if (typeof interviewData !== "undefined" && typeof getInterviewPortraitUrl === "function") {
+  if (
+    typeof interviewData !== "undefined" &&
+    typeof getInterviewPortraitUrl === "function"
+  ) {
     Object.keys(interviewData).forEach(function (k) {
       var d = interviewData[k];
       if (!d) {
@@ -1259,8 +1263,12 @@ function createInterviewSection(interviewId, imageName, data) {
           .map((q, index) => {
             const qKr = glueAlphanumericHyphenCompounds(q.qKr || q.q || "");
             const qEn = glueAlphanumericHyphenCompounds(q.qEn || q.q || "");
-            const answerKr = glueAlphanumericHyphenCompounds(q.aKr || q.a || "");
-            const answerEn = glueAlphanumericHyphenCompounds(q.aEn || q.a || "");
+            const answerKr = glueAlphanumericHyphenCompounds(
+              q.aKr || q.a || "",
+            );
+            const answerEn = glueAlphanumericHyphenCompounds(
+              q.aEn || q.a || "",
+            );
             const titleShown = currentLang === "kr" ? qKr : qEn;
             const answerShown = currentLang === "kr" ? answerKr : answerEn;
             return `

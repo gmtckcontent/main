@@ -1,1 +1,3 @@
 .venv-img/
+node_modules/
+dist/
