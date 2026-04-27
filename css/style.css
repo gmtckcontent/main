@@ -5349,9 +5349,9 @@ html.core-values-page #cv-st-heading {
   box-sizing: border-box;
 }
 
-/* 담당 인터뷰 — 진입 랜딩 (라이트 + GM 블루, 2열 메이슨리, 카드별 직원 얼굴) */
+/* 담당 인터뷰 — 진입 랜딩 (모자이크 + 시네마틱 히어로, 본부 카드는 아래에서 라이트 톤) */
 #hqLanding.hq-landing {
-  background: #ffffff;
+  background: linear-gradient(165deg, #f8fafc 0%, #eef2f7 45%, #f1f5f9 100%);
   /* 상단 모자이크 배너 높이 — 인트로 시트 max/min,sticky top과 동일 */
   --hq-landing-banner-height: 250px;
   --hq-landing-intro-sheet-height: calc(
@@ -5423,17 +5423,30 @@ html.core-values-page #cv-st-heading {
   }
 }
 
-/* Our Story 히어로: 배경·스크림·샤인 흰색 통일 */
+/* 히어로 스크림: 반투명만 — 불투명 단색이면 모자이크 전체가 가려짐 */
 #hqLanding .hq-landing-bg-scrim {
-  background: #ffffff;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 41, 59, 0.42) 0%,
+    rgba(51, 65, 85, 0.28) 28%,
+    rgba(241, 245, 249, 0.5) 58%,
+    rgba(248, 250, 252, 0.88) 78%,
+    rgba(248, 250, 252, 0.95) 100%
+  );
   opacity: 1;
+  pointer-events: none;
 }
 
 #hqLanding .hq-landing-bg-shine {
-  mix-blend-mode: normal;
-  opacity: 0;
-  background: transparent;
-  animation: none;
+  mix-blend-mode: soft-light;
+  opacity: 0.4;
+  background: linear-gradient(
+    125deg,
+    transparent 0%,
+    rgba(0, 120, 212, 0.1) 45%,
+    rgba(255, 255, 255, 0.16) 52%,
+    transparent 70%
+  );
 }
 
 /* 모자이크,스크림: 슬랩 내에서 고정 — 스크롤 시 위로 밀리지 않음(깜빡임 로직만 유지) */
@@ -5819,38 +5832,9 @@ html.core-values-page #cv-st-heading {
   transform: none;
 }
 
-#hqLanding .hq-landing-hero-cinematic .hq-landing-hero-cinematic-vignette {
-  opacity: 0;
-  background: transparent;
-}
-
-/* 흰 배경 위 가독성: 히어로 타이포·보조 pill 어두운 톤 */
-#hqLanding .hq-landing-hero-cinematic .hq-landing-kicker {
-  color: rgba(15, 23, 42, 0.72);
-  text-shadow: none;
-}
-
-#hqLanding .hq-landing-hero-cinematic .hq-landing-title {
-  color: #0f172a;
-  text-shadow: none;
-}
-
+/* 긴 한글 부제: 기본 nowrap 대신 줄바꿈 허용 */
 #hqLanding .hq-landing-hero-cinematic .hq-landing-lead {
-  color: rgba(15, 23, 42, 0.88);
-  text-shadow: none;
   white-space: normal;
-}
-
-#hqLanding .hq-landing-hero-cinematic .hq-landing-pill--secondary {
-  background: transparent;
-  color: #0f172a;
-  border: 1px solid rgba(15, 23, 42, 0.14);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-#hqLanding .hq-landing-hero-cinematic .hq-landing-pill--secondary:hover {
-  background: rgba(15, 23, 42, 0.06);
 }
 
 .hq-landing-hero-cinematic-vignette {
@@ -6221,7 +6205,7 @@ html.core-values-page #cv-st-heading {
   position: relative;
   z-index: 2;
   padding: 48px 0 40px;
-  background: #ffffff;
+  background: linear-gradient(180deg, #eef2f7 0%, #f8fafc 55%, #ffffff 100%);
 }
 
 .hq-division-intro__container {
@@ -8209,6 +8193,25 @@ a.hq-division-card--interview-link:hover {
   margin-right: 0 !important;
 }
 
+/* BECA Body — 히어로 프로필 컷만 소폭 축소 */
+.interviews-page
+  .hq-main-content
+  #beca-body
+  .interview-profile-header--hero
+  .interview-profile-image {
+  max-width: min(44%, 260px);
+  max-height: min(72%, 300px);
+}
+
+.interviews-page
+  .hq-main-content
+  #beca-body
+  .interview-profile-header--hero
+  .interview-profile-image
+  .profile-img {
+  max-height: min(230px, 100%);
+}
+
 .interviews-page
   .hq-main-content
   .interview-profile-header--hero
@@ -8322,6 +8325,24 @@ a.hq-division-card--interview-link:hover {
     .interview-profile-image
     .profile-img {
     max-height: min(240px, 88%);
+  }
+
+  .interviews-page
+    .hq-main-content
+    #beca-body
+    .interview-profile-header--hero
+    .interview-profile-image {
+    max-width: min(58%, 230px);
+    max-height: min(64%, 255px);
+  }
+
+  .interviews-page
+    .hq-main-content
+    #beca-body
+    .interview-profile-header--hero
+    .interview-profile-image
+    .profile-img {
+    max-height: min(205px, 88%);
   }
 }
 
