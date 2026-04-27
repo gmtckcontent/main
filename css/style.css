@@ -8193,25 +8193,6 @@ a.hq-division-card--interview-link:hover {
   margin-right: 0 !important;
 }
 
-/* BECA Body — 히어로 프로필 컷만 소폭 축소 */
-.interviews-page
-  .hq-main-content
-  #beca-body
-  .interview-profile-header--hero
-  .interview-profile-image {
-  max-width: min(44%, 260px);
-  max-height: min(72%, 300px);
-}
-
-.interviews-page
-  .hq-main-content
-  #beca-body
-  .interview-profile-header--hero
-  .interview-profile-image
-  .profile-img {
-  max-height: min(230px, 100%);
-}
-
 .interviews-page
   .hq-main-content
   .interview-profile-header--hero
@@ -8325,24 +8306,6 @@ a.hq-division-card--interview-link:hover {
     .interview-profile-image
     .profile-img {
     max-height: min(240px, 88%);
-  }
-
-  .interviews-page
-    .hq-main-content
-    #beca-body
-    .interview-profile-header--hero
-    .interview-profile-image {
-    max-width: min(58%, 230px);
-    max-height: min(64%, 255px);
-  }
-
-  .interviews-page
-    .hq-main-content
-    #beca-body
-    .interview-profile-header--hero
-    .interview-profile-image
-    .profile-img {
-    max-height: min(205px, 88%);
   }
 }
 
