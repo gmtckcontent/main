@@ -36,8 +36,8 @@ function withProfileImageCacheBust(url) {
   return `${url}${sep}pv=${PROFILE_IMAGE_CACHE_VERSION}`;
 }
 
-/** Our Story 히어로 모자이크: `images/profilepic-mosaic/*.jpg` (256px, scripts/build-profilepic-mosaic.sh) */
-const MOSAIC_THUMB_VERSION = "1";
+/** Our Story 히어로 모자이크: `images/profilepic-mosaic/*.png` (256px, 알파 유지, scripts/build-profilepic-mosaic.sh) */
+const MOSAIC_THUMB_VERSION = "2";
 function toHqLandingMosaicThumbUrl(url) {
   if (!url || typeof url !== "string") {
     return url;
@@ -58,7 +58,7 @@ function toHqLandingMosaicThumbUrl(url) {
   if (!tail || stem === tail) {
     return url;
   }
-  return `${head}/images/profilepic-mosaic/${stem}.jpg?mv=${MOSAIC_THUMB_VERSION}`;
+  return `${head}/images/profilepic-mosaic/${stem}.png?mv=${MOSAIC_THUMB_VERSION}`;
 }
 window.toHqLandingMosaicThumbUrl = toHqLandingMosaicThumbUrl;
 
@@ -629,7 +629,7 @@ const interviewData = {
 // EE 일부 본문은 data/interview-content-ee.json
 // JSON 수정 후 배포 시 ?v= 숫자 올려 캐시 무력화 (CDN,프록시 대비)
 const INTERVIEW_CONTENT_BECA_ITPE_SS_URL =
-  "./data/interview-content-beca-itpe-ss.json?v=14";
+  "./data/interview-content-beca-itpe-ss.json?v=15";
 const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=13";
 const INTERVIEW_CONTENT_VE_URL = "./data/interview-content-ve.json?v=6";
 
