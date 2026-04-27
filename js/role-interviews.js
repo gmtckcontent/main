@@ -28,7 +28,7 @@ const PROFILE_PLACEHOLDER_IMAGE =
   "./images/logo/gm-symbol-color-light-bg-web.png";
 
 /** 프로필 PNG 교체 후에도 캐시된 옛 이미지가 보이지 않도록 URL에 버전을 붙임 (교체 배포 시 숫자만 올리면 됨) */
-const PROFILE_IMAGE_CACHE_VERSION = "9";
+const PROFILE_IMAGE_CACHE_VERSION = "10";
 function withProfileImageCacheBust(url) {
   if (!url || url.startsWith("data:")) return url;
   if (/\bpv=\d+\b/.test(url)) return url;
@@ -37,7 +37,7 @@ function withProfileImageCacheBust(url) {
 }
 
 /** Our Story 히어로 모자이크: `images/profilepic-mosaic/*.png` (256px, 알파 유지, scripts/build-profilepic-mosaic.sh) */
-const MOSAIC_THUMB_VERSION = "3";
+const MOSAIC_THUMB_VERSION = "4";
 function toHqLandingMosaicThumbUrl(url) {
   if (!url || typeof url !== "string") {
     return url;
