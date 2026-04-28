@@ -38,21 +38,11 @@ class LanguageToggle {
     const elements = document.querySelectorAll("[data-kr][data-en]");
     elements.forEach((element) => {
       if (element.closest(".nav-content")) {
-        if (this.krOnlyInterviewsPage) {
-          if (
-            element.classList.contains("hq-nav-link") &&
-            element.dataset.abbrKr
-          ) {
-            element.textContent = element.dataset.abbrKr;
-          } else if (element.dataset.kr && element.dataset.en) {
-            element.textContent = element.dataset.kr;
-          } else if (element.dataset.en != null && element.dataset.en !== "") {
-            element.textContent = element.dataset.en;
-          }
-          return;
-        }
+        /* 상단 네비: 페이지·언어 토글과 무관하게 항상 영문(data-en) */
         if (element.dataset.en != null && element.dataset.en !== "") {
           element.textContent = element.dataset.en;
+        } else if (element.dataset.kr) {
+          element.textContent = element.dataset.kr;
         }
         return;
       }

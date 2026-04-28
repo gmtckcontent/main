@@ -353,9 +353,8 @@ h1 {
   display: none !important;
 }
 
-/* 임시: Core Values, Inside TCK — 상단 메뉴 비표시 (재노출 시 아래 블록 삭제) */
-.navbar .nav-menu > li:has(> a[href="core-values.html"]),
-.navbar .nav-menu > li:has(> a[href="our-story.html"]) {
+/* 임시: Core Values — 상단 메뉴 비표시 (재노출 시 아래 블록 삭제) */
+.navbar .nav-menu > li:has(> a[href="core-values.html"]) {
   display: none !important;
 }
 
@@ -3725,7 +3724,7 @@ section#innovation .section-title .zero-text {
 
 /* ========== Core Values — Hyundai-style split + accordion (html.core-values-page) ========== */
 
-/* Full-viewport hero (reference: full-bleed image + left headline + pill CTAs) */
+/* Full-viewport hero (full-bleed image + left headline + pill CTAs) */
 .cv-hero {
   position: relative;
   z-index: 1;
@@ -3745,20 +3744,22 @@ section#innovation .section-title .zero-text {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transform: scale(1.02);
+  /* 예시: 오피스 사진 + 은은한 블러(파란 스크림 없이 톤만 살림) */
+  transform: scale(1.05);
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
 }
 
+/* 중성 어두운 오버레이만 — GM 블루 그라데이션 제거 */
 .cv-hero-scrim {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      105deg,
-      rgba(0, 21, 47, 0.78) 0%,
-      rgba(0, 45, 92, 0.45) 42%,
-      rgba(0, 30, 60, 0.25) 100%
-    ),
-    rgba(0, 26, 53, 0.35);
+  background: linear-gradient(
+    100deg,
+    rgba(0, 0, 0, 0.52) 0%,
+    rgba(0, 0, 0, 0.4) 45%,
+    rgba(0, 0, 0, 0.32) 100%
+  );
   pointer-events: none;
 }
 
@@ -3871,6 +3872,14 @@ html.core-values-page .cv-hero-kicker {
 
   .cv-hero-title {
     max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-hero-media {
+    transform: scale(1.02);
+    filter: none;
+    -webkit-filter: none;
   }
 }
 
@@ -5405,7 +5414,7 @@ html.core-values-page #cv-st-heading {
   position: relative;
   height: 100%;
   min-height: 100%;
-  max-height: 100dvh;
+  /* 100dvh는 모바일 주소창과 100svh 스티키 트랙과 어긋나 슬랩·모자이크 높이가 짧아지는 경우가 있음 */
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
@@ -5480,17 +5489,18 @@ html.core-values-page #cv-st-heading {
   grid-template-columns: repeat(18, minmax(0, 1fr));
   grid-auto-rows: minmax(0, auto);
   background: #ffffff;
-  transform: rotate(-0.35deg);
+  /* 미세 회전 시 부모 overflow:hidden 모서리 클립 완화 */
+  transform: rotate(-0.35deg) scale(1.028);
   transform-origin: center center;
   animation: hq-landing-mosaic-drift-hq 56s ease-in-out infinite alternate;
 }
 
 @keyframes hq-landing-mosaic-drift-hq {
   0% {
-    transform: rotate(-0.35deg) translate(0, 0);
+    transform: rotate(-0.35deg) translate(0, 0) scale(1.028);
   }
   100% {
-    transform: rotate(-0.3deg) translate(-2px, 1px);
+    transform: rotate(-0.3deg) translate(-2px, 1px) scale(1.028);
   }
 }
 

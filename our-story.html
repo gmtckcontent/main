@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="naver-site-verification"
+      content="af568a23e47a0881ffe63f227204c37cfd9ac881"
+    />
     <base href="./" />
-    <title>Inside TCK | Our Story</title>
+    <title>Our Story | GMTCK</title>
     <meta
       name="description"
       content="GMTCK Our Story — 직무별 인터뷰와 스토리로 GM Technical Center Korea 팀을 만나보세요."
@@ -12,7 +16,7 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.gmtck.com/our-story.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Inside TCK | Our Story | GMTCK" />
+    <meta property="og:title" content="Our Story | GMTCK" />
     <meta
       property="og:description"
       content="GMTCK Our Story — 직무별 인터뷰와 스토리로 팀을 만나보세요."
@@ -25,7 +29,7 @@
       content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
     />
     <!-- 인터뷰/스타일 수정 후 브라우저 캐시 회피: ?v= 숫자 올리기 -->
-    <link rel="stylesheet" href="./css/style.css?v=132" />
+    <link rel="stylesheet" href="./css/style.css?v=134" />
     <!-- 초기 LCP·인터뷰 데이터: 병렬 다운로드 (JSON은 loadInterviewContentExtras와 캐시 공유) -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
@@ -198,9 +202,9 @@
               <a
                 href="our-story.html"
                 class="active"
-                data-kr="Inside TCK"
-                data-en="Inside TCK"
-                >Inside TCK</a
+                data-kr="Our Story"
+                data-en="Our Story"
+                >Our Story</a
               >
             </li>
           </ul>
@@ -263,10 +267,10 @@
                     <div class="hq-landing-hero-text">
                       <p
                         class="hq-landing-kicker"
-                        data-kr="Inside TCK"
-                        data-en="Inside TCK"
+                        data-kr="Our Story"
+                        data-en="Our Story"
                       >
-                        Inside TCK
+                        Our Story
                       </p>
                       <h1
                         class="hq-landing-title"
@@ -992,7 +996,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="./js/language.js?v=4"></script>
+    <script src="./js/language.js?v=5"></script>
     <script src="./js/main.js?v=3"></script>
     <script src="./js/role-interviews.js?v=59"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=53"></script>
@@ -1112,8 +1116,15 @@
             ) {
               pool = window.dedupePortraitUrlsPreservingOrder(pool);
             }
-            const w = slab.clientWidth;
-            const h = slab.clientHeight;
+            const track = document.getElementById("hqLandingStickyTrack");
+            const w = Math.max(
+              slab.clientWidth,
+              track ? track.clientWidth : 0,
+            );
+            const h = Math.max(
+              slab.clientHeight,
+              track ? track.clientHeight : 0,
+            );
             const cols = window.matchMedia("(max-width: 768px)").matches
               ? 10
               : 18;
@@ -1258,6 +1269,7 @@
           }
 
           window.__rebuildHqLandingFacesAndSt = fullRebuildFacesAndSt;
+          window.__scheduleRebuildHqLandingFaces = scheduleRebuildFaces;
 
           fullRebuildFacesAndSt();
           requestAnimationFrame(function () {
@@ -1266,6 +1278,12 @@
 
           /* 슬랩만 observe 금지: --hq-compress로 높이가 바뀔 때마다 init→resetAccumulation 되어 스크롤,휠이 원점으로 돌아감 */
           window.addEventListener("resize", scheduleRebuildFaces);
+          if (window.visualViewport) {
+            window.visualViewport.addEventListener(
+              "resize",
+              scheduleRebuildFaces,
+            );
+          }
         })();
 
         queueTeamTckLandingScrollTop();
@@ -1636,6 +1654,10 @@
                 window.resetHqLandingInteractionState();
               } else if (typeof ScrollTrigger !== "undefined") {
                 ScrollTrigger.refresh();
+              }
+              /* hidden 해제 직후 한 프레임 슬랩 크기가 0/과소일 수 있음 — 짧은 지연으로 모자이크 행 재계산 */
+              if (typeof window.__scheduleRebuildHqLandingFaces === "function") {
+                window.__scheduleRebuildHqLandingFaces();
               }
               if (
                 !scrollDivisionsIntro &&
@@ -2612,6 +2634,16 @@
           }
           applyInterviewRouteFromHash();
           scheduleInterviewMobileDockFooterSync();
+          const landingPs = document.getElementById("hqLanding");
+          if (
+            landingPs &&
+            !landingPs.hidden &&
+            typeof window.__rebuildHqLandingFacesAndSt === "function"
+          ) {
+            requestAnimationFrame(function () {
+              window.__rebuildHqLandingFacesAndSt();
+            });
+          }
         });
       });
 
