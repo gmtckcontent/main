@@ -629,9 +629,9 @@ const interviewData = {
 // EE 일부 본문은 data/interview-content-ee.json
 // JSON 수정 후 배포 시 ?v= 숫자 올려 캐시 무력화 (CDN,프록시 대비)
 const INTERVIEW_CONTENT_BECA_ITPE_SS_URL =
-  "./data/interview-content-beca-itpe-ss.json?v=15";
-const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=13";
-const INTERVIEW_CONTENT_VE_URL = "./data/interview-content-ve.json?v=6";
+  "./data/interview-content-beca-itpe-ss.json?v=16";
+const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=14";
+const INTERVIEW_CONTENT_VE_URL = "./data/interview-content-ve.json?v=7";
 
 async function loadInterviewContentBecaItpeSs() {
   /* URL ?v= 으로 배포 시 무력화; default 캐시로 재방문·이미지와 경합 완화 */
@@ -686,42 +686,46 @@ const interviewContent = {
       {
         q: "AVD 담당은 어떤 일을 하는 곳인가요?",
         qKr: "AVD 담당은 어떤 일을 하는 곳인가요?",
-        qEn: "What does the AVD department do?",
+        qEn:"What does the AVD team do?",
         a: "AVD(Advanced Vehicle Development) 담당은 차량 개발의 가장 초기 단계에서 아키텍처(Architecture)와 패키지(Package)를 기반으로 고객이 체감하는 차량의 기본기를 설계하고 기획하는 조직입니다. 우리는 단순히 차를 설계하는 수준을 넘어 혁신적인 아이디어와 프로젝트를 발굴하고 주도하며, GMTCK 전사의 혁신을 이끄는 'Innovation Hub' 역할을 수행하고 있습니다.",
         aKr: "AVD(Advanced Vehicle Development) 담당은 차량 개발의 가장 초기 단계에서 아키텍처(Architecture)와 패키지(Package)를 기반으로 고객이 체감하는 차량의 기본기를 설계하고 기획하는 조직입니다. 우리는 단순히 차를 설계하는 수준을 넘어 혁신적인 아이디어와 프로젝트를 발굴하고 주도하며, GMTCK 전사의 혁신을 이끄는 'Innovation Hub' 역할을 수행하고 있습니다.",
-        aEn: "The AVD (Advanced Vehicle Development) department plans and designs the fundamental vehicle characteristics customers experience, based on Architecture and Package from the very earliest stage of development. We go beyond merely designing cars—we discover and lead innovative ideas and projects and serve as an “Innovation Hub” that drives innovation across GMTCK.",
+        aEn:"In the early stages of the vehicle development process, our AVD team designs and plans the fundamental aspects of the vehicles that our customers can experience based on Architecture and Package. Beyond designing cars, we foster innovative ideas and projects and serve as an ‘Innovative Hub’, driving innovation across GMTCK.",
       },
       {
         q: "AVD 담당은 고객에게 왜 중요한가요?",
         qKr: "AVD 담당은 고객에게 왜 중요한가요?",
-        qEn: "Why is the AVD department important to customers?",
+        qEn:"Why is the AVD team important for customers?",
         a: `고객이 실제로 경험하는 주행거리, 공간감, 승차감, 그리고 안전과 가격에 대한 신뢰 같은 차량의 기본기와 상품성은 모두 AVD가 설계하는 아키텍처와 패키지에서 출발합니다. 한 번의 충전이나 주유로 얼마나 효율적으로 멀리 갈 수 있는지 결정하는 Propulsion 영역부터, 승객이 느끼는 시팅 포스처(seating posture)와 헤드룸, 레그룸을 포함한 종합적인 실내 경험까지 모두 우리의 손을 거칩니다. 또한 코너링과 주행 안정성, 정숙성 사이의 균형을 잡고 보이지 않는 차체 구조를 통해 충돌 성능과 안전에 대한 신뢰를 만들어내며, 고객이 지불한 가격 대비 최고의 가치를 누릴 수 있도록 합리적인 사양을 구성합니다. 이처럼 AVD는 성능과 안전, 공간과 가격 사이의 밸런스를 정교하게 조율하여 고객 가치와 브랜드 신뢰를 구축해 나가는 팀입니다.`,
         aKr: `고객이 실제로 경험하는 주행거리, 공간감, 승차감, 그리고 안전과 가격에 대한 신뢰 같은 차량의 기본기와 상품성은 모두 AVD가 설계하는 아키텍처와 패키지에서 출발합니다. 한 번의 충전이나 주유로 얼마나 효율적으로 멀리 갈 수 있는지 결정하는 Propulsion 영역부터, 승객이 느끼는 시팅 포스처(seating posture)와 헤드룸, 레그룸을 포함한 종합적인 실내 경험까지 모두 우리의 손을 거칩니다. 또한 코너링과 주행 안정성, 정숙성 사이의 균형을 잡고 보이지 않는 차체 구조를 통해 충돌 성능과 안전에 대한 신뢰를 만들어내며, 고객이 지불한 가격 대비 최고의 가치를 누릴 수 있도록 합리적인 사양을 구성합니다. 이처럼 AVD는 성능과 안전, 공간과 가격 사이의 밸런스를 정교하게 조율하여 고객 가치와 브랜드 신뢰를 구축해 나가는 팀입니다.`,
-        aEn: `The fundamentals and appeal customers actually experience—range, sense of space, ride comfort, and trust in safety and price—all start from the Architecture and Package AVD designs. From Propulsion—how far you can efficiently travel on one charge or fill—to the overall interior experience, including seating posture, headroom, and legroom, everything passes through our hands. We also balance cornering, driving stability, and quietness, and through body structure customers cannot see we build crash performance and trust in safety; we structure rational specifications so customers get the greatest value for what they pay. In this way, AVD finely balances performance and safety, space and price to build customer value and brand trust.`,
+        aEn:`Fundamental vehicle features and marketability — such as driving range, spaciousness, ride comfort, and trust in safety and price — come from the architecture and packaging our team designs. From propulsion, which decides how far and how efficiently the vehicle drives on a single charge, to seating posture and comprehensive interior experiences, including headroom and legroom, our team is deeply engaged throughout the vehicle development process.
+
+In addition, we balance cornering performance, driving stability, and quietness. Through the underlying vehicle structure, we build trust in crash performance and safety, and we also define reasonable specifications that enable customers to enjoy the best value for the price. To put it simply, our team adjusts the balance between performance and safety, and between space and price to realize customer value and build our brand trust.`,
       },
       {
         q: "AVD 담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
         qKr: "AVD 담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
-        qEn: "What competencies do you think are necessary for AVD department work?",
+        qEn:"Which capabilities do we need to conduct the AVD role and responsibility?",
         a: `이러한 업무를 수행하기 위해 AVD는 차량의 전체적인 '큰 그림(Big Picture)'을 설계하며 여러 조직을 하나의 방향으로 연결합니다. 따라서 아키텍처 전반을 아우르는 시야로 최적의 균형점을 찾는 시스템적 사고 능력과 디자인, 파워트레인, 제조, 안전 등 다양한 부서와 효과적으로 소통하는 협업 능력이 무엇보다 중요합니다. 특히 글로벌 벤치마킹과 데이터 분석을 통한 Customer & Market Insight를 바탕으로 고객 가치와 시장의 요구를 정확히 읽어내는 능력은 AVD의 필수적인 역량입니다. 우리는 전동화(Electrification)나 SDV(Software-Defined Vehicle) 같은 새로운 기술을 빠르게 이해하고, 새로운 패키징 아이디어를 스스로 탐색해 시험해 보는 도전적인 태도를 지향하며, 업무 방식을 더 효율적으로 만드는 추진력을 갖추고자 노력하고 있습니다.`,
         aKr: `이러한 업무를 수행하기 위해 AVD는 차량의 전체적인 '큰 그림(Big Picture)'을 설계하며 여러 조직을 하나의 방향으로 연결합니다. 따라서 아키텍처 전반을 아우르는 시야로 최적의 균형점을 찾는 시스템적 사고 능력과 디자인, 파워트레인, 제조, 안전 등 다양한 부서와 효과적으로 소통하는 협업 능력이 무엇보다 중요합니다. 특히 글로벌 벤치마킹과 데이터 분석을 통한 Customer & Market Insight를 바탕으로 고객 가치와 시장의 요구를 정확히 읽어내는 능력은 AVD의 필수적인 역량입니다. 우리는 전동화(Electrification)나 SDV(Software-Defined Vehicle) 같은 새로운 기술을 빠르게 이해하고, 새로운 패키징 아이디어를 스스로 탐색해 시험해 보는 도전적인 태도를 지향하며, 업무 방식을 더 효율적으로 만드는 추진력을 갖추고자 노력하고 있습니다.`,
-        aEn: `To deliver this work, AVD designs the vehicle’s overall “big picture” and aligns many organizations in one direction. Systematic thinking to find the best balance across architecture, and the ability to collaborate effectively with diverse departments—design, powertrain, manufacturing, safety, and more—are therefore essential. In particular, Customer & Market Insight grounded in global benchmarking and data analysis—reading customer value and market needs accurately—is a core AVD capability. We aim to build momentum that makes how we work more efficient: quickly understanding new technologies such as electrification and SDV, and taking on the challenge of exploring and testing new packaging ideas ourselves.`,
+        aEn:`Our team designs the ‘Big Picture’ and connects multiple teams in one direction. Therefore, having systematic thinking power to find the right balance with an insight embracing all architecture and cooperation capabilities to communicate with different functions, such as Design, Powertrain, Manufacturing, and Safety, is paramount.
+
+Especially, after analyzing global benchmarking and data analysis and drawing Customer & Market Insight, the ability to fully understand customer value and market demand is an essential capability. We pursue identifying new technology quickly, such as Electrification and SDV (Software-Defined Vehicle), a challenging mindset to explore new packaging ideas, and having the momentum to work more efficiently.`,
       },
       {
         q: "AVD 담당의 매력은?",
         qKr: "AVD 담당의 매력은?",
-        qEn: "What is the appeal of the AVD department?",
+        qEn:"What is attractive about working in AVD?",
         a: `AVD 담당의 매력은 새로운 차량 개발과 전사 Innovation의 선두에서, 차량 개발의 가장 초기 단계에 제품의 방향성과 고객 경험을 결정짓는 핵심 역할을 수행한다는 점에 있습니다. 이 과정에서 다양한 조직과 협업하며 폭넓은 지식과 시야를 확보할 수 있으며, 특히 Architecture와 Package를 통해 차량의 '뼈대'를 설계하는 독보적인 전문성을 쌓을 수 있다는 것이 큰 장점입니다.`,
         aKr: `AVD 담당의 매력은 새로운 차량 개발과 전사 Innovation의 선두에서, 차량 개발의 가장 초기 단계에 제품의 방향성과 고객 경험을 결정짓는 핵심 역할을 수행한다는 점에 있습니다. 이 과정에서 다양한 조직과 협업하며 폭넓은 지식과 시야를 확보할 수 있으며, 특히 Architecture와 Package를 통해 차량의 '뼈대'를 설계하는 독보적인 전문성을 쌓을 수 있다는 것이 큰 장점입니다.`,
-        aEn: `AVD’s appeal is that it stands at the forefront of new vehicle development and company-wide innovation, playing a pivotal role in setting product direction and customer experience at the earliest stage of development. In that process you collaborate with diverse organizations to gain broad knowledge and perspective, and especially through Architecture and Package you build unique expertise in designing the vehicle’s structural foundation.`,
+        aEn:"The attractive point of working in our team lies in playing a core role at the forefront of the new vehicle development process and company-wide innovation, where we define the product direction and customer experience at the very earliest stage of the process. In doing so, we collaborate with a wide range of organizations and gain broad knowledge and perspective, and in particular, we build distinctive expertise by designing the “frame” of the vehicle through architecture and package.",
       },
       {
         q: "앞으로 AVD 담당이 지향하는 목표는 무엇인가요?",
         qKr: "앞으로 AVD 담당이 지향하는 목표는 무엇인가요?",
-        qEn: "What are the goals that the AVD department aims for in the future?",
+        qEn:"What are AVD’s goals going forward?",
         a: `AVD 담당은 앞으로 세 가지 핵심 목표를 지향합니다. 먼저 Customer-Value-Driven Architecture Leader로서 주행거리, 공간, 승차감, 안전, 가격 경쟁력 등 고객이 체감하는 기본기에 미래 고객 요구를 반영한 차세대 Vehicle Structure를 설계하는 조직이 되고자 합니다. 또한 Insight & Benchmarking-Based Decision Hub로서 지속적인 글로벌 벤치마킹과 신규 아이디어 발굴을 통해 프로그램별 고객 가치를 극대화할 것입니다. 마지막으로 Enterprise Innovation & Front-Loading Hub가 되어 품질, 원가, 개발 리드타임을 동시에 개선하고, 새로운 아이디어와 업무 방식을 확산하는 GMTCK의 혁신 거점 역할을 수행하는 것이 우리의 지향점입니다.`,
         aKr: `AVD 담당은 앞으로 세 가지 핵심 목표를 지향합니다. 먼저 Customer-Value-Driven Architecture Leader로서 주행거리, 공간, 승차감, 안전, 가격 경쟁력 등 고객이 체감하는 기본기에 미래 고객 요구를 반영한 차세대 Vehicle Structure를 설계하는 조직이 되고자 합니다. 또한 Insight & Benchmarking-Based Decision Hub로서 지속적인 글로벌 벤치마킹과 신규 아이디어 발굴을 통해 프로그램별 고객 가치를 극대화할 것입니다. 마지막으로 Enterprise Innovation & Front-Loading Hub가 되어 품질, 원가, 개발 리드타임을 동시에 개선하고, 새로운 아이디어와 업무 방식을 확산하는 GMTCK의 혁신 거점 역할을 수행하는 것이 우리의 지향점입니다.`,
-        aEn: `AVD pursues three core goals. First, as a Customer-Value-Driven Architecture Leader, we aim to be the organization that designs next-generation vehicle structure reflecting future customer needs for the fundamentals customers feel—range, space, ride comfort, safety, and price competitiveness. Second, as an Insight & Benchmarking-Based Decision Hub, we will maximize customer value by program through sustained global benchmarking and new idea discovery. Finally, as an Enterprise Innovation & Front-Loading Hub, we aim to improve quality, cost, and development lead time together and serve as GMTCK’s innovation hub—spreading new ideas and ways of working.`,
+        aEn:"AVD is pursuing three key objectives going forward. First, as a Customer-Value-Driven Architecture Leader, we aim to become an organization that designs next-generation vehicle structures that reflect future customer needs in fundamental areas such as driving range, interior space, ride comfort, safety, and price competitiveness that customers can truly feel. Second, as an Insight & Benchmarking-Based Decision Hub, we will maximize customer value for each program through continuous global benchmarking and discovering new ideas. Finally, by becoming an Enterprise Innovation & Front-Loading Hub, we desire to serve as GMTCK’s innovation hub, improving quality, cost, and development lead time simultaneously while spreading new ideas and ways of working across the organization.",
       },
     ],
   },
@@ -730,34 +734,34 @@ const interviewContent = {
       {
         q: "SSI 담당은 어떤 일을 하는 곳인가요?",
         qKr: "SSI 담당은 어떤 일을 하는 곳인가요?",
-        qEn: "What does the SSI department do?",
+        qEn:"What does the SSI team do?",
         a: "SSI 담당은 자동차 외관 디자인과 실제 차체 구조가 완벽하게 조화를 이루도록 만드는 팀입니다. 디자이너가 만든 멋진 스케치가 현실적인 안전, 구조 기준을 충족하고, 생산 공장에서 문제없이 조립될 수 있도록 디자인과 엔지니어링 사이를 이어주는 조율자 역할을 합니다.",
         aKr: "SSI 담당은 자동차 외관 디자인과 실제 차체 구조가 완벽하게 조화를 이루도록 만드는 팀입니다. 디자이너가 만든 멋진 스케치가 현실적인 안전, 구조 기준을 충족하고, 생산 공장에서 문제없이 조립될 수 있도록 디자인과 엔지니어링 사이를 이어주는 조율자 역할을 합니다.",
-        aEn: "The SSI department is a team that harmonizes automotive exterior design with the actual body structure. We serve as coordinators between design and engineering so that designers’ sketches meet realistic safety and structural requirements and can be assembled smoothly in production.",
+        aEn:"SSI is the team that ensures the vehicle’s exterior design and the actual body structure are perfectly harmonized. It plays a coordinating role between Design and Engineering so that stylish sketches created by designers can meet realistic safety and structural standards and be assembled seamlessly on the production line.",
       },
       {
         q: "SSI 담당은 고객에게 왜 중요한가요?",
         qKr: "SSI 담당은 고객에게 왜 중요한가요?",
-        qEn: "Why is the SSI department important to customers?",
+        qEn:"Why is the SSI team important for customers?",
         a: "차를 처음 보거나 만질 때 느끼는 품질은 대부분 SSI의 업무와 연결되어 있습니다. 멀리서 보았을 때의 아름다운 비율, 가까이서 보이는 정교한 표면과 틈새(단차), 문을 열고 닫을 때의 느낌, 그리고 외관 부품의 조립 정밀도까지 모두 SSI의 영역입니다. 우리는 기획 단계부터 차가 나올 때까지 이 모든 요소가 고객에게 최상의 품질로 전달되도록 설계하고 관리합니다.",
         aKr: "차를 처음 보거나 만질 때 느끼는 품질은 대부분 SSI의 업무와 연결되어 있습니다. 멀리서 보았을 때의 아름다운 비율, 가까이서 보이는 정교한 표면과 틈새(단차), 문을 열고 닫을 때의 느낌, 그리고 외관 부품의 조립 정밀도까지 모두 SSI의 영역입니다. 우리는 기획 단계부터 차가 나올 때까지 이 모든 요소가 고객에게 최상의 품질로 전달되도록 설계하고 관리합니다.",
-        aEn: "The quality you feel when you first see or touch a vehicle is largely tied to SSI’s work. Proportions seen from a distance, refined surfaces and flush-and-gap quality up close, the feel of opening and closing doors, and the assembly precision of exterior parts—all fall within SSI’s scope. From planning until the vehicle is launched, we design and manage these elements so they are delivered to customers at the highest quality.",
+        aEn:"Most of the quality you first experience in a car is directly connected to SSI’s work. Everything, from the beautiful proportions from a far distance to the precise surfaces and gaps, the feel of opening and closing the doors, and even the assembly accuracy of the exterior parts, falls within SSI’s scope. From the planning to launch, we design and manage these elements to deliver the highest perceived quality to our customers.",
       },
       {
         q: "차량 개발 과정의 언제부터 SSI가 참여하나요?",
         qKr: "차량 개발 과정의 언제부터 SSI가 참여하나요?",
-        qEn: "When does SSI participate in the vehicle development process?",
+        qEn:"When does SSI get involved in the vehicle development process?",
         a: '우리는 차의 첫 콘셉트를 잡는 단계부터 참여합니다. 소형 SUV인지 중형 세단인지 방향을 정하고, 휠베이스나 트렁크 공간 등을 나누는 초기 검토를 진행합니다. 이후 개발이 끝날 때까지 "처음 기획한 모습이 실제로 만들어질 수 있는가?"를 끊임없이 확인하며 완성도를 높입니다.',
         aKr: '우리는 차의 첫 콘셉트를 잡는 단계부터 참여합니다. 소형 SUV인지 중형 세단인지 방향을 정하고, 휠베이스나 트렁크 공간 등을 나누는 초기 검토를 진행합니다. 이후 개발이 끝날 때까지 "처음 기획한 모습이 실제로 만들어질 수 있는가?"를 끊임없이 확인하며 완성도를 높입니다.',
-        aEn: "We participate from the stage when the vehicle’s first concept is defined. We set the direction—whether a compact SUV or a mid-size sedan—and run initial reviews that allocate wheelbase, trunk space, and more. Through the end of development, we continually ask whether “the originally planned design can actually be built,” raising completeness.",
+        aEn:"We are involved from the very first concept stage of the vehicle. At this point, we define the direction—whether it will be a small SUV or a midsize sedan—and conduct initial studies on items such as wheelbase and trunk space. Throughout development, we continuously verify whether “the vehicle we originally envisioned can actually be built as intended,” refining the design to improve overall completeness.",
       },
       {
         q: "SSI담당에서 일하시는 분들은 주로 어떤 전공 출신인가요?",
         qKr: "SSI담당에서 일하시는 분들은 주로 어떤 전공 출신인가요?",
-        qEn: "What majors do people working in the SSI department typically come from?",
+        qEn:"What majors do people in SSI typically have?",
         a: '가장 많은 비율은 기계공학, 자동차공학, 항공우주공학 등 공학 계열 전공자들입니다. 여기에 산업공학, 전기·전자, 산업디자인 전공자들도 함께 어울려 일하고 있습니다. 전공이 꼭 자동차 전공일 필요는 없지만, "물건이 어떻게 구조를 이루고, 어떻게 만들어지는지"를 좋아하는 분들이 잘 맞는 편입니다. 무엇보다도, 다양한 전공 배경을 가진 사람들이 각자의 강점을 살려 협업하는 문화라, 배우고 섞이려는 태도를 더 중요하게 보고 있습니다.',
         aKr: '가장 많은 비율은 기계공학, 자동차공학, 항공우주공학 등 공학 계열 전공자들입니다. 여기에 산업공학, 전기·전자, 산업디자인 전공자들도 함께 어울려 일하고 있습니다. 전공이 꼭 자동차 전공일 필요는 없지만, "물건이 어떻게 구조를 이루고, 어떻게 만들어지는지"를 좋아하는 분들이 잘 맞는 편입니다. 무엇보다도, 다양한 전공 배경을 가진 사람들이 각자의 강점을 살려 협업하는 문화라, 배우고 섞이려는 태도를 더 중요하게 보고 있습니다.',
-        aEn: "The largest proportion consists of engineering majors such as mechanical engineering, automotive engineering, and aerospace engineering. Industrial engineering, electrical and electronics, and industrial design majors also work together. While the major doesn't necessarily have to be automotive, people who like \"how things are structured and how they are made\" tend to fit well. Above all, since it's a culture where people with diverse academic backgrounds collaborate by leveraging each other's strengths, we value an attitude of learning and blending more.",
+        aEn:"Most team members have engineering backgrounds, such as mechanical, automotive, and aerospace engineering. We also work alongside people who majored in industrial engineering, electrical/electronic engineering, and industrial design. Your major doesn’t necessarily have to be automotive, but SSI is a good fit for those who enjoy understanding how things are structured and how they are made. Above all, SSI has a collaborative culture where people with diverse academic backgrounds leverage their own strengths, so we place more value on a learning mindset and willingness to blend and grow together than on any specific major.",
       },
       {
         q: "AVD SVI 본부에서 일하고 싶은 사람은 어떤 준비를 하면 좋을까요?",
@@ -770,10 +774,10 @@ const interviewContent = {
       {
         q: "앞으로 SSI 담당이 지향하는 목표는 무엇인가요?",
         qKr: "앞으로 SSI 담당이 지향하는 목표는 무엇인가요?",
-        qEn: "What are the goals that the SSI department aims for in the future?",
+        qEn:"What are SSI’s goals going forward?",
         a: "우리의 목표는 고객이 차를 처음 보는 순간부터 오래 사용하는 내내 믿을 수 있는 외관 품질을 경험하게 하는 것입니다. 이를 위해 글로벌 팀과 함께 협력하고, 가상 개발 시스템과 신기술을 빠르게 도입하고 있습니다. 디자인, 설계, 생산 부서와 긴밀하게 소통하며 더 정교하고 완성도 높은 차량을 만들기 위해 오늘도 노력하고 있습니다.",
         aKr: "우리의 목표는 고객이 차를 처음 보는 순간부터 오래 사용하는 내내 믿을 수 있는 외관 품질을 경험하게 하는 것입니다. 이를 위해 글로벌 팀과 함께 협력하고, 가상 개발 시스템과 신기술을 빠르게 도입하고 있습니다. 디자인, 설계, 생산 부서와 긴밀하게 소통하며 더 정교하고 완성도 높은 차량을 만들기 위해 오늘도 노력하고 있습니다.",
-        aEn: "Our goal is for customers to experience exterior quality they can trust from the first moment they see the vehicle through years of ownership. We collaborate with global teams and rapidly adopt virtual development systems and new technologies. We work closely with design, engineering, and production to build more refined, higher-quality vehicles—and we keep at it every day.",
+        aEn:"Our goal is to enable customers to experience exterior quality they can trust from the moment they first see the car to every day they use it for a long time. To achieve this, we work closely with our global teams and rapidly introduce virtual development systems and new technologies. By communicating closely with Design, Engineering, and Manufacturing, we continue to strive for vehicles with more precise, higher-quality exterior execution.",
       },
     ],
   },
@@ -782,42 +786,42 @@ const interviewContent = {
       {
         q: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
         qKr: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
-        qEn: "Please introduce your department and tell us about your current responsibilities in detail.",
+        qEn:"Please introduce your team and role & responsibilities specifically",
         a: "저희 담당은 엔진/트랜스미션 캘리브레이션 경험을 바탕으로 전기차 캘리브레이션, 소프트웨어, 시뮬레이션까지 업무 영역을 확장하며, AI, 가상 기술을 활용해 차량 제어 전반과 안정적인 차량 출시를 지원하고 있습니다. 저는 전기차 업무를 담당하며, 실차와 가상 환경을 통해 전기차 시스템의 안전, 성능과 품질을 사전에 검증하고 양산 전 리스크를 최소화하고 있습니다.",
         aKr: "저희 담당은 엔진/트랜스미션 캘리브레이션 경험을 바탕으로 전기차 캘리브레이션, 소프트웨어, 시뮬레이션까지 업무 영역을 확장하며, AI, 가상 기술을 활용해 차량 제어 전반과 안정적인 차량 출시를 지원하고 있습니다. 저는 전기차 업무를 담당하며, 실차와 가상 환경을 통해 전기차 시스템의 안전, 성능과 품질을 사전에 검증하고 양산 전 리스크를 최소화하고 있습니다.",
-        aEn: "Our department expands its work scope from engine/transmission calibration experience to EV calibration, software, and simulation, supporting overall vehicle control and stable vehicle launch using AI and virtual technologies. I am responsible for EV work, pre-verifying the safety, performance, and quality of EV systems through real vehicles and virtual environments, minimizing risks before mass production.",
+        aEn:"Our team has expanded its scope from traditional engine and transmission calibration into EV calibration, software, and simulation, leveraging AI and virtual technologies to support overall vehicle control and stable vehicle launches. I am responsible for EV-related work, where I verify the safety, performance, and quality of electric vehicle systems in both physical vehicles and virtual environments to minimize risks before mass production.",
       },
       {
         q: "하루 업무에 대해 소개해주세요.",
         qKr: "하루 업무에 대해 소개해주세요.",
-        qEn: "Please tell us about your daily work.",
+        qEn:"Please tell us your typical workday.",
         a: "보통 전날 밤이나 아침에 북미에서 전달된 업무 메일을 확인하며 하루를 시작합니다. 현재는 시뮬레이션 장비를 활용해 검증 업무를 수행하며, 전기차 시스템이 요구 조건에 맞게 안전하게 동작하는지 검증하고 있습니다.",
         aKr: "보통 전날 밤이나 아침에 북미에서 전달된 업무 메일을 확인하며 하루를 시작합니다. 현재는 시뮬레이션 장비를 활용해 검증 업무를 수행하며, 전기차 시스템이 요구 조건에 맞게 안전하게 동작하는지 검증하고 있습니다.",
-        aEn: "I usually start my day by checking work emails from North America that came in the previous night or morning. Currently, I perform verification work using simulation equipment, verifying that EV systems operate safely according to requirements.",
+        aEn:"I usually start my day by checking emails sent from North America the previous night or early in the morning. Currently, I carry out verification tasks using simulation equipment, checking whether the EV systems operate safely and in line with the required specifications.",
       },
       {
         q: "담당하고 있는 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
         qKr: "담당하고 있는 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
-        qEn: "What competencies do you think are necessary for your work?",
+        qEn:"Which capabilities do we need to have for your role?",
         a: "전기차 검증 업무에는 전기차 시스템에 대한 이해와 함께, 실차와 시뮬레이션을 중심으로 한 가상 검증 환경을 유기적으로 활용하는 역량이 중요하다고 생각합니다. 실차 시험은 여전히 핵심이지만, 사전에 시뮬레이션과 같은 가상 환경에서 조건을 구성해 문제를 줄여가는 접근이 점점 필수적인 요소가 되고 있습니다. 이러한 가상 검증 결과를 바탕으로 추가 시험이 필요한지, 또는 어떤 리스크를 관리해야 하는지를 판단할 수 있는 의사결정 역량 또한 중요한 요소가 되고 있다고 느끼고 있습니다.",
         aKr: "전기차 검증 업무에는 전기차 시스템에 대한 이해와 함께, 실차와 시뮬레이션을 중심으로 한 가상 검증 환경을 유기적으로 활용하는 역량이 중요하다고 생각합니다. 실차 시험은 여전히 핵심이지만, 사전에 시뮬레이션과 같은 가상 환경에서 조건을 구성해 문제를 줄여가는 접근이 점점 필수적인 요소가 되고 있습니다. 이러한 가상 검증 결과를 바탕으로 추가 시험이 필요한지, 또는 어떤 리스크를 관리해야 하는지를 판단할 수 있는 의사결정 역량 또한 중요한 요소가 되고 있다고 느끼고 있습니다.",
-        aEn: "I think understanding EV systems and the ability to organically utilize virtual verification environments centered on real vehicles and simulation is important for EV verification work. Real vehicle testing is still core, but the approach of configuring conditions in virtual environments like simulation beforehand to reduce problems is becoming increasingly essential. I also feel that decision-making capabilities to judge whether additional testing is needed or what risks need to be managed based on these virtual verification results are becoming important factors.",
+        aEn:"For EV verification work, it is essential not only to understand EV systems, but also to be able to use physical vehicles and simulation-based virtual verification environments in an integrated way. Physical vehicle testing is still core, but it is becoming increasingly critical to first set up conditions in virtual environments such as simulations to reduce issues in advance. Based on these virtual verification results, the ability to make decisions—such as whether additional testing is required and what risks need to be managed—is also becoming a key competency.",
       },
       {
         q: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
         qKr: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
-        qEn: "What is the team culture and what are your team members like?",
+        qEn:"How do you think about your team culture and teammates working together?",
         a: "저희 팀은 서로에 대한 배려와 신뢰를 바탕으로 움직이는 팀이라고 생각합니다. 팀 특성상 실차 시험이 많아 차량 이슈를 자주 접하는데, 한 번 도움을 받으면 자연스럽게 서로 돕는 분위기가 형성되어 있고, 누가 시키지 않아도 다 같이 모여 문제를 해결합니다. 덕분에 저도 부담 없이 도움을 요청할 수 있는, 함께 일하기 편한 팀입니다.",
         aKr: "저희 팀은 서로에 대한 배려와 신뢰를 바탕으로 움직이는 팀이라고 생각합니다. 팀 특성상 실차 시험이 많아 차량 이슈를 자주 접하는데, 한 번 도움을 받으면 자연스럽게 서로 돕는 분위기가 형성되어 있고, 누가 시키지 않아도 다 같이 모여 문제를 해결합니다. 덕분에 저도 부담 없이 도움을 요청할 수 있는, 함께 일하기 편한 팀입니다.",
-        aEn: "I think our team operates based on mutual consideration and trust. Due to the nature of our team, we frequently encounter vehicle issues as we conduct many real vehicle tests. Once someone receives help, a natural atmosphere of mutual assistance forms, and everyone gathers to solve problems without being asked. Thanks to this, I can request help without burden, making it a comfortable team to work with.",
+        aEn:"Our team is built on mutual consideration and trust. Because our work involves a lot of physical vehicle testing, we frequently encounter vehicle issues, but once someone receives help, a natural culture of helping one another has formed, and people come together to solve problems without being told to do so. Thanks to this, it’s a very comfortable team to work in, where I can ask for help without feeling burdened.",
       },
       {
         q: "앞으로의 목표 또는 커리어 방향",
         qKr: "앞으로의 목표 또는 커리어 방향",
-        qEn: "Future goals or career direction",
+        qEn:"Please tell us your future goals and career direction.",
         a: "검증 결과에 책임을 지고, 고객 안전을 기준으로 판단할 수 있는 검증 엔지니어가 되는 것이 제 방향입니다. 단순히 통과 여부를 확인하는 데 그치지 않고, 검증 단계에서 문제를 사전에 설명하고 줄일 수 있는 역할을 목표로 하고 있습니다. 제 시험 결과가 곧 고객의 안전과 직결된다는 인식을 바탕으로, 책임감 있게 검증 업무를 수행하고 싶습니다.",
         aKr: "검증 결과에 책임을 지고, 고객 안전을 기준으로 판단할 수 있는 검증 엔지니어가 되는 것이 제 방향입니다. 단순히 통과 여부를 확인하는 데 그치지 않고, 검증 단계에서 문제를 사전에 설명하고 줄일 수 있는 역할을 목표로 하고 있습니다. 제 시험 결과가 곧 고객의 안전과 직결된다는 인식을 바탕으로, 책임감 있게 검증 업무를 수행하고 싶습니다.",
-        aEn: "My direction is to become a verification engineer who takes responsibility for verification results and can make judgments based on customer safety. I aim not just to check pass/fail, but to play a role in explaining and reducing problems in advance during the verification stage. Based on the recognition that my test results are directly connected to customer safety, I want to perform verification work responsibly.",
+        aEn:"My goal is to become a verification engineer who takes full responsibility for test results and makes decisions based on customer safety. Rather than simply checking whether something has passed or failed, I aim to play a role in identifying and reducing potential issues already at the verification stage. With a clear awareness that my test results are directly connected to customer safety, I want to carry out verification work with a strong sense of responsibility.",
       },
     ],
   },
@@ -826,42 +830,54 @@ const interviewContent = {
       {
         q: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
         qKr: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
-        qEn: "Please introduce your department and tell us about your current responsibilities in detail.",
+        qEn:"Please introduce your team and role & responsibilities specifically",
         a: "저희 담당은 차량의 주행성이나 정숙성처럼, 고객이 실제로 체감하는 성능을 통합적으로 관리하는 역할을 하고 있습니다. 차량 동력성능 개발, 소음&진동, 가상 개발팀이 긴밀하게 협업하며 시험과 해석을 하나의 흐름으로 연결하고, 그 안에서 최적의 차량 성능을 만들어가고 있습니다. 저는 그 중에서도 소음&진동 성능 개발 엔지니어로서, 불쾌한 소음과 진동을 줄이는 역할 뿐만 아니라 차량의 모델이나 브랜드 이미지에 어울리는 엔진 사운드와 전기차 모터 사운드를 만들어가는 업무를 맡고 있습니다.",
         aKr: "저희 담당은 차량의 주행성이나 정숙성처럼, 고객이 실제로 체감하는 성능을 통합적으로 관리하는 역할을 하고 있습니다. 차량 동력성능 개발, 소음&진동, 가상 개발팀이 긴밀하게 협업하며 시험과 해석을 하나의 흐름으로 연결하고, 그 안에서 최적의 차량 성능을 만들어가고 있습니다. 저는 그 중에서도 소음&진동 성능 개발 엔지니어로서, 불쾌한 소음과 진동을 줄이는 역할 뿐만 아니라 차량의 모델이나 브랜드 이미지에 어울리는 엔진 사운드와 전기차 모터 사운드를 만들어가는 업무를 맡고 있습니다.",
-        aEn: "Our department plays a role in comprehensively managing performance that customers actually feel, such as vehicle drivability and quietness. Vehicle powertrain performance development, noise & vibration, and virtual development teams closely collaborate to connect testing and analysis into one flow, creating optimal vehicle performance within it. Among these, I work as a noise & vibration performance development engineer, not only reducing unpleasant noise and vibration but also creating engine sounds and electric vehicle motor sounds that match the vehicle model or brand image.",
+        aEn:"Our team is responsible for holistically managing the kinds of performance that customers can directly feel, such as drivability and quietness. The vehicle performance development, noise & vibration, and virtual development teams work closely together, linking testing and simulation into a single flow to create optimal overall vehicle performance. Within this organization, I work as a noise & vibration (NVH) performance development engineer, and my role is not only to reduce unpleasant noise and vibration, but also to create engine sounds and electric motor sounds that fit the character of each vehicle model and brand.",
       },
       {
         q: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
         qKr: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
-        qEn: "What competencies do you think are necessary for your work?",
+        qEn:"Which capabilities do we need to have for your role?",
         a: "이 업무에 필요한 역량은 크게 세 가지라고 생각합니다. 첫 번째는 기본기입니다. 차체, 섀시, 추진 시스템 등 차량 전반에 대한 이해를 바탕으로 소음·진동 현상을 바라볼 수 있어야 합니다. 이런 기본기가 갖춰져 있어야 보다 안정적이면서도 현실적인 해결책을 제시할 수 있다고 생각합니다. 두 번째는 데이터를 읽고 해석하는 능력입니다. 차량 성능 개발은 해석이나 물리 시험, 다양한 가상 툴을 통해 생성되는 데이터를 기반으로 의사결정이 이루어지는 경우가 많기 때문에, 데이터 속에서 의미를 정확히 읽어내는 능력이 중요합니다. 마지막으로는 커뮤니케이션과 끈기입니다. 소음·진동 성능 개발은 설계, 시험, 품질, 생산 등 여러 부서가 유기적으로 연결돼 있어 협업이 필수적인 업무입니다. 또한 소음·진동 문제는 눈에 보이지 않고 한 번에 해결되지 않는 경우가 많아, 끝까지 원인을 파고들며 해결해 나가는 끈기 역시 중요한 역량이라고 생각합니다.",
         aKr: "이 업무에 필요한 역량은 크게 세 가지라고 생각합니다. 첫 번째는 기본기입니다. 차체, 섀시, 추진 시스템 등 차량 전반에 대한 이해를 바탕으로 소음·진동 현상을 바라볼 수 있어야 합니다. 이런 기본기가 갖춰져 있어야 보다 안정적이면서도 현실적인 해결책을 제시할 수 있다고 생각합니다. 두 번째는 데이터를 읽고 해석하는 능력입니다. 차량 성능 개발은 해석이나 물리 시험, 다양한 가상 툴을 통해 생성되는 데이터를 기반으로 의사결정이 이루어지는 경우가 많기 때문에, 데이터 속에서 의미를 정확히 읽어내는 능력이 중요합니다. 마지막으로는 커뮤니케이션과 끈기입니다. 소음·진동 성능 개발은 설계, 시험, 품질, 생산 등 여러 부서가 유기적으로 연결돼 있어 협업이 필수적인 업무입니다. 또한 소음·진동 문제는 눈에 보이지 않고 한 번에 해결되지 않는 경우가 많아, 끝까지 원인을 파고들며 해결해 나가는 끈기 역시 중요한 역량이라고 생각합니다.",
-        aEn: "I think there are three main competencies needed for this work. First is fundamentals. You need to be able to view noise and vibration phenomena based on understanding of the entire vehicle, including body, chassis, and powertrain systems. With these fundamentals in place, you can present more stable and realistic solutions. Second is the ability to read and interpret data. Vehicle performance development often makes decisions based on data generated through analysis, physical testing, and various virtual tools, so the ability to accurately read meaning from data is important. Finally, communication and persistence. Noise and vibration performance development is work that requires collaboration as multiple departments such as design, testing, quality, and production are organically connected. Also, noise and vibration problems are often invisible and not solved at once, so persistence in digging into the root cause until resolution is also an important competency.",
+        aEn:`I believe this role requires three main capabilities.
+
+First is a solid technical foundation. You need to be able to view noise and vibration phenomena based on an understanding of the entire vehicle, including the body, chassis, and propulsion system. With this foundation in place, you can propose solutions that are both robust and realistic.
+
+Second is the ability to read and interpret data. Since many decisions in vehicle performance development are made based on data generated from simulations, physical tests, and various virtual tools, it is crucial to accurately extract meaningful insights from that data.
+
+Lastly, communication and perseverance are essential. NVH performance development is inherently collaborative, involving close interaction with design, testing, quality, manufacturing, and other departments. Noise and vibration issues are often invisible and rarely resolved in a single step, so having the persistence to keep digging into root causes and seeing problems through to resolution is also a key strength.`,
       },
       {
         q: "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
         qKr: "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
-        qEn: "Was there a memorable project you worked on?",
+        qEn:"What is the most impressive project that you have done before?",
         a: "트레일 블레이저와 트랙스 크로스오버 개발 당시, 소음진동 엔지니어로 참여했던 경험이 특히 기억에 많이 남습니다. 당시 국내외 소형 SUV 시장에서는 대부분 4기통 엔진을 사용하고 있었고, 3기통 엔진을 적용한 두 차종은 소음·진동 측면에서 태생적으로 불리한 조건을 안고 출발해야 했습니다. 그럼에도 불구하고 4기통 차량 수준의 소음·진동 성능 목표를 달성하기 위해 많은 시간과 자원, 그리고 노력이 필요했고, 관련 부서들과의 긴밀한 협업이 필수적이었습니다. 개발 초기부터 양산까지 한순간도 긴장을 늦출 수 없었던 프로젝트였습니다. 완성된 차량들이 양산 이후 국내외 시장에서 판매 성과는 물론, 품질과 상품성, 차량 가치 측면에서도 좋은 평가를 받는 모습을 보며 개인적으로 큰 보람과 자부심을 느꼈습니다. 엔지니어로서의 책임감과 성취감을 동시에 느낄 수 있었던 경험입니다.",
         aKr: "트레일 블레이저와 트랙스 크로스오버 개발 당시, 소음진동 엔지니어로 참여했던 경험이 특히 기억에 많이 남습니다. 당시 국내외 소형 SUV 시장에서는 대부분 4기통 엔진을 사용하고 있었고, 3기통 엔진을 적용한 두 차종은 소음·진동 측면에서 태생적으로 불리한 조건을 안고 출발해야 했습니다. 그럼에도 불구하고 4기통 차량 수준의 소음·진동 성능 목표를 달성하기 위해 많은 시간과 자원, 그리고 노력이 필요했고, 관련 부서들과의 긴밀한 협업이 필수적이었습니다. 개발 초기부터 양산까지 한순간도 긴장을 늦출 수 없었던 프로젝트였습니다. 완성된 차량들이 양산 이후 국내외 시장에서 판매 성과는 물론, 품질과 상품성, 차량 가치 측면에서도 좋은 평가를 받는 모습을 보며 개인적으로 큰 보람과 자부심을 느꼈습니다. 엔지니어로서의 책임감과 성취감을 동시에 느낄 수 있었던 경험입니다.",
-        aEn: "The experience of participating as a noise and vibration engineer during the development of Trailblazer and Trax Cross-over particularly stands out in my memory. At that time, most small SUVs in domestic and international markets used 4-cylinder engines, and the two models with 3-cylinder engines had to start with inherently disadvantageous conditions in terms of noise and vibration. Nevertheless, achieving 4-cylinder vehicle-level noise and vibration performance goals required a lot of time, resources, and effort, and close collaboration with related departments was essential. It was a project where we couldn't let our guard down for a moment from early development to mass production. Seeing the completed vehicles receive good evaluations in domestic and international markets after mass production, not only in sales performance but also in quality, product appeal, and vehicle value, I felt great satisfaction and pride personally. It was an experience where I could feel both a sense of responsibility and achievement as an engineer.",
+        aEn:`Working as an NVH engineer on the development of the Trailblazer and Trax crossover. At the time, most vehicles in the domestic and global small SUV market were equipped with four-cylinder engines, so these two models, which used three-cylinder engines, started out at an inherent disadvantage in terms of noise and vibration.
+
+Even so, a great deal of time, resources, and effort—as well as close collaboration with related departments—was required to achieve NVH performance targets comparable to four-cylinder vehicles. It was a project where we could not afford to relax from the early development phase all the way through to mass production.
+
+Seeing the finished vehicles receive strong feedback in both domestic and overseas markets—not only in sales performance but also in quality, product appeal, and perceived value—gave me a deep sense of pride and fulfillment. It was an experience that allowed me to feel both the responsibility and the achievement that come with being an engineer.`,
       },
       {
         q: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
         qKr: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
-        qEn: "What is the team culture and what are your team members like?",
+        qEn:"How do you think about your team culture and teammates working together?",
         a: "저희 팀은 서로 필요한 부분은 잘 챙겨주면서도, 불필요한 간섭은 거의 없는 분위기입니다. 의견을 말하는 데 부담이 없어서 직급이나 연차에 상관없이 편하게 이야기할 수 있고, 각자의 방식을 존중해주는 팀이라고 생각합니다. 점심시간에는 함께 운동을 하기도 하고, 업무 중간중간 여유가 있을 때는 육아나 재테크, 여행처럼 다양한 주제로 수다도 많이 떠는 편입니다. 한마디로, 일할 때는 자연스럽게 몰입하고 평소에는 친구처럼 편안한 팀입니다.",
         aKr: "저희 팀은 서로 필요한 부분은 잘 챙겨주면서도, 불필요한 간섭은 거의 없는 분위기입니다. 의견을 말하는 데 부담이 없어서 직급이나 연차에 상관없이 편하게 이야기할 수 있고, 각자의 방식을 존중해주는 팀이라고 생각합니다. 점심시간에는 함께 운동을 하기도 하고, 업무 중간중간 여유가 있을 때는 육아나 재테크, 여행처럼 다양한 주제로 수다도 많이 떠는 편입니다. 한마디로, 일할 때는 자연스럽게 몰입하고 평소에는 친구처럼 편안한 팀입니다.",
-        aEn: "Our team has an atmosphere where we take good care of each other's needs while rarely interfering unnecessarily. There's no burden in expressing opinions, so we can talk comfortably regardless of rank or years of experience, and I think it's a team that respects each person's way. During lunch, we sometimes exercise together, and when we have free time during work, we often chat about various topics like parenting, investment, or travel. In short, it's a team that naturally immerses itself in work and is comfortable like friends in everyday life.",
+        aEn:"Our team looks for one another where it’s needed, but there’s very little unnecessary interference. People feel comfortable speaking up, so we can talk openly regardless of title or years of experience, and I’d say it’s a team that respects each person’s own working style. At lunchtime we sometimes work out together, and when there’s a bit of downtime during the day, we often chat about all kinds of topics like parenting, personal finance, or travel. In short, we fully immerse ourselves when we work, but the day-to-day atmosphere is as relaxed as being with friends.",
       },
       {
         q: "내게 GMTCK란?",
         qKr: "내게 GMTCK란?",
-        qEn: "What does GMTCK mean to you?",
+        qEn:"What does GMTCK mean to you?",
         a: "제게 GMTCK는 첫 직장이자, 저를 꽤 그럴듯한 직장인으로 만들어준 곳입니다. 시행착오도 많았지만, 그 과정에서 일하는 법과 사람을 대하는 법을 자연스럽게 배웠습니다. MBTI로 치면 I 90% 성향의 저를, 이제는 사람들과 소통하고 의견을 나누는 데 훨씬 편한 사람으로 만들어준 곳이기도 합니다. 또 제가 좋아하는 다양한 차량을 직접 경험하고, 개발해 나가는 과정에서 새로운 도전에 재미를 느낄 수 있는, 제게는 아주 럭셔리한 놀이터 같은 공간이기도 합니다. 그래서 GMTCK는 제 삶에 큰 영향을 준, 고맙고 애정이 가는 회사입니다.",
         aKr: "제게 GMTCK는 첫 직장이자, 저를 꽤 그럴듯한 직장인으로 만들어준 곳입니다. 시행착오도 많았지만, 그 과정에서 일하는 법과 사람을 대하는 법을 자연스럽게 배웠습니다. MBTI로 치면 I 90% 성향의 저를, 이제는 사람들과 소통하고 의견을 나누는 데 훨씬 편한 사람으로 만들어준 곳이기도 합니다. 또 제가 좋아하는 다양한 차량을 직접 경험하고, 개발해 나가는 과정에서 새로운 도전에 재미를 느낄 수 있는, 제게는 아주 럭셔리한 놀이터 같은 공간이기도 합니다. 그래서 GMTCK는 제 삶에 큰 영향을 준, 고맙고 애정이 가는 회사입니다.",
-        aEn: "To me, GMTCK is my first workplace and the place that made me into a fairly decent working professional. There were many trials and errors, but I naturally learned how to work and how to treat people through that process. It's also the place that made me, who would be I 90% in MBTI terms, much more comfortable communicating and sharing opinions with people. It's also a very luxurious playground-like space for me where I can directly experience and develop various vehicles I like, and feel excitement about new challenges in that process. So GMTCK is a company that has greatly influenced my life, one I'm grateful for and have affection for.",
+        aEn:`GMTCK is my first workplace and the place that has shaped me into a decent working professional. I’ve gone through a lot of trial and error, but in the process, I naturally learned how to work and how to deal with people. You could also say it’s where someone like me, who is about 90% “Introvert”, became much more comfortable communicating and sharing opinions with others.
+
+It’s also like a very “luxurious playground” for me, where I can directly experience and help develop the various vehicles I love and find real enjoyment in taking on new challenges. In that sense, GMTCK is a company that has had a huge impact on my life—one that I feel very grateful for and deeply attached to.`,
       },
     ],
   },
@@ -870,42 +886,48 @@ const interviewContent = {
       {
         q: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
         qKr: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
-        qEn: "Please introduce your role and describe your current work in detail.",
+        qEn:"Please introduce your team and role & responsibilities specifically",
         a: "저희 담당은 가상 및 실제 주행 환경에서 차량 열에너지 시스템과 공조 성능을 구현/최적화하고 예측/검증하고 개발하는 업무를 맡고 있어요. 제가 맡고 있는 일은, 전기차 안에서 열이 효율적으로 관리될 수 있도록 조율하고 제어값을 맞추는 일이에요. 예를 들어 아주 더운 여름날, 배터리는 과열되고 실내는 시원하게 해야 할 때, 냉방 에너지를 배터리에 더 써야 할지, 승객에게 더 써야 할지 우선순위를 정해서 Cooling Power를 어떻게 배분할지 조율하는 게 제 역할이에요. 그리고 그렇게 정해진 냉방을 실제로 만들기 위해 콤프레서나 밸브 같은 부품들을 어떻게 작동시킬지도 같이 제어하고 있습니다.",
         aKr: "저희 담당은 가상 및 실제 주행 환경에서 차량 열에너지 시스템과 공조 성능을 구현/최적화하고 예측/검증하고 개발하는 업무를 맡고 있어요. 제가 맡고 있는 일은, 전기차 안에서 열이 효율적으로 관리될 수 있도록 조율하고 제어값을 맞추는 일이에요. 예를 들어 아주 더운 여름날, 배터리는 과열되고 실내는 시원하게 해야 할 때, 냉방 에너지를 배터리에 더 써야 할지, 승객에게 더 써야 할지 우선순위를 정해서 Cooling Power를 어떻게 배분할지 조율하는 게 제 역할이에요. 그리고 그렇게 정해진 냉방을 실제로 만들기 위해 콤프레서나 밸브 같은 부품들을 어떻게 작동시킬지도 같이 제어하고 있습니다.",
-        aEn: "Our team implements, optimizes, predicts, verifies, and develops vehicle thermal energy systems and HVAC performance in virtual and real driving environments. My job is to coordinate and tune control values so heat is managed efficiently in the electric vehicle. For example, on a very hot summer day when the battery must not overheat but the cabin must stay cool, I set priorities—whether to spend more cooling energy on the battery or on occupants—and coordinate how cooling power is split. I also control how components such as compressors and valves operate to deliver that cooling in practice.",
+        aEn:"Our team is responsible for implementing and optimizing the vehicle’s thermal energy system and HVAC performance, and for predicting and validating them in both virtual and real driving environments. My role is to ensure that heat is managed efficiently inside an EV by coordinating and tuning the control targets. For example, on a very hot summer day when the battery is overheating but the cabin also needs to be kept cool, I determine the priorities—how much cooling power should go to the battery versus the passengers—and allocate the cooling capacity accordingly. I also control how components such as the compressor and valves should operate in order to actually deliver the required cooling.",
       },
       {
         q: "담당하고 있는 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
         qKr: "담당하고 있는 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
-        qEn: "What competencies do you think are needed for your work?",
+        qEn:"Which capabilities do we need to have for your role?",
         a: '제가 생각하기에 이 직무에서는 열역학, 열전달, 유체역학 같은 기본 지식, 그리고 로직 해석 능력, 커뮤니케이션 능력 이 세 가지가 특히 중요한 것 같아요. 차량의 HVAC이나 전기차 배터리 열관리는 열 흐름이나 냉매 특성 같은 물리적인 현상을 다루기 때문에, 기초 지식이 있어야 시스템 반응이나 이상 현상을 빠르게 이해할 수 있고요. 또 단순 계산으로 끝나는 게 아니라, 실제 차량에 로직을 적용하고 결과를 분석해야 하기 때문에, "왜 이런 반응이 나왔지?", "이 구간은 왜 튜닝이 필요하지?" 같은 걸 논리적으로 해석할 수 있는 사고력이 중요해요. 그리고 이 일이 혼자 하는 게 아니라 배터리, 모터, 전장, 소프트웨어팀 등과 협업해야 할 일이 많아서, 문제를 잘 설명하고 조율하는 커뮤니케이션 능력도 꼭 필요하다고 생각합니다.',
         aKr: '제가 생각하기에 이 직무에서는 열역학, 열전달, 유체역학 같은 기본 지식, 그리고 로직 해석 능력, 커뮤니케이션 능력 이 세 가지가 특히 중요한 것 같아요. 차량의 HVAC이나 전기차 배터리 열관리는 열 흐름이나 냉매 특성 같은 물리적인 현상을 다루기 때문에, 기초 지식이 있어야 시스템 반응이나 이상 현상을 빠르게 이해할 수 있고요. 또 단순 계산으로 끝나는 게 아니라, 실제 차량에 로직을 적용하고 결과를 분석해야 하기 때문에, "왜 이런 반응이 나왔지?", "이 구간은 왜 튜닝이 필요하지?" 같은 걸 논리적으로 해석할 수 있는 사고력이 중요해요. 그리고 이 일이 혼자 하는 게 아니라 배터리, 모터, 전장, 소프트웨어팀 등과 협업해야 할 일이 많아서, 문제를 잘 설명하고 조율하는 커뮤니케이션 능력도 꼭 필요하다고 생각합니다.',
-        aEn: "For this role, I think three things matter most: fundamentals such as thermodynamics, heat transfer, and fluid mechanics; the ability to interpret control logic; and communication. HVAC and EV battery thermal management deal with physical phenomena like heat flow and refrigerant behavior, so foundational knowledge helps you quickly understand system response and anomalies. Because work doesn’t end with a simple calculation—you apply logic on real vehicles and analyze results—logical thinking to interpret “why did it respond this way?” or “why does this range need tuning?” is essential. And since you collaborate often with battery, motor, electronics, software, and other teams, you also need communication skills to explain issues clearly and align everyone.",
+        aEn:`I believe three capabilities are especially important in this role: a solid foundation in thermodynamics, heat transfer, and fluid mechanics, the ability to analyze control logic, and strong communication skills.
+
+HVAC and EV battery thermal management deal with physical phenomena such as heat flow and refrigerant properties, so you need basic theoretical knowledge to quickly understand system behavior and abnormal conditions. Since the work does not end with simple calculations but involves applying logic to real vehicles and analyzing the results, it is also crucial to think logically about questions like, “Why did the system respond this way?” or “Why does this operating range need tuning?”
+
+Finally, this is not a role you perform alone. You frequently collaborate with battery, motor, electrical, and software teams, so the ability to clearly explain issues and coordinate with others is an essential skill.`,
       },
       {
         q: "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
         qKr: "진행하셨던 프로젝트 중 인상깊었던 프로젝트가 있나요?",
-        qEn: "Was there a project you found especially memorable?",
+        qEn:"What is the most impressive project that you have done before?",
         a: '작년 겨울에, 겨울철 주행거리가 너무 짧게 나와서 그걸 개선하는 프로젝트를 했었는데요. 문제 원인을 보니까 고전압 냉각수 히터가 너무 과하게 작동하면서 배터리를 많이 소모하는 게 주 원인이었어요. 그래서 팀원들과 같이 설정 온도나 내외기 도어 제어 방식을 조정해서, 냉난방 성능은 유지하면서도 주행거리를 늘릴 수 있도록 캘리브레이션을 바꿨던 경험이 있어요. 이런 식으로 제가 한 작업이 실제 차량에 적용되고, 고객이 체감할 수 있는 결과로 이어질 때, "아, 내가 진짜 의미 있는 일을 하고 있구나"라는 걸 느껴요. 단순히 책상 앞에서 끝나는 일이 아니라, 실차 반영까지 연결된다는 점이 이 일의 큰 매력이라고 생각합니다.',
         aKr: '작년 겨울에, 겨울철 주행거리가 너무 짧게 나와서 그걸 개선하는 프로젝트를 했었는데요. 문제 원인을 보니까 고전압 냉각수 히터가 너무 과하게 작동하면서 배터리를 많이 소모하는 게 주 원인이었어요. 그래서 팀원들과 같이 설정 온도나 내외기 도어 제어 방식을 조정해서, 냉난방 성능은 유지하면서도 주행거리를 늘릴 수 있도록 캘리브레이션을 바꿨던 경험이 있어요. 이런 식으로 제가 한 작업이 실제 차량에 적용되고, 고객이 체감할 수 있는 결과로 이어질 때, "아, 내가 진짜 의미 있는 일을 하고 있구나"라는 걸 느껴요. 단순히 책상 앞에서 끝나는 일이 아니라, 실차 반영까지 연결된다는 점이 이 일의 큰 매력이라고 생각합니다.',
-        aEn: "Last winter we ran a project to improve driving range, which had become too short in cold weather. Root-cause analysis showed the high-voltage coolant heater was running excessively and draining the battery. Together with the team, we adjusted set temperatures and fresh/recirc air-door control so we could extend range while keeping HVAC performance. When work like that ships on real cars and customers can feel the benefit, I really feel, “I’m doing something meaningful.” A big appeal of this job is that it doesn’t stop at a desk—it connects all the way to the vehicle on the road.",
+        aEn:`One memorable project I worked on was last winter, when we set out to improve winter driving range, which was coming out much shorter than expected. After identifying the root cause, we found that the high-voltage coolant heater was operating too aggressively and consuming a lot of battery energy. Together with my teammates, we adjusted settings such as target temperatures and the control strategy for the fresh/recirculation doors and recalibrated the system so that we could extend the driving range while maintaining heating and cooling performance.
+
+When work like this is applied to a production vehicle and leads to results that customers can truly feel, I think to myself, “I’m doing something genuinely meaningful.” For me, the real appeal of this job is that it doesn’t end at the desk, but it’s directly connected to real vehicles on the road.`,
       },
       {
         q: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
         qKr: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
-        qEn: "What is the team culture like, and what are your colleagues like?",
+        qEn:"How do you think about your team culture and teammates working together?",
         a: "저희 팀은 자율성과 책임감을 바탕으로 일하는 분위기예요. 일정이나 방식이 딱딱하게 정해진 건 아니고, 각자 자기 업무를 주도적으로 끌고 가는 스타일이 잘 맞는 팀이에요. 무슨 문제가 생겨도 서로 도와주는 분위기라서, 처음 들어오셔도 부담 없이 배우실 수 있을 거예요. 전체적으로 보면 편안하지만, 일은 프로답게 해나가는 그런 팀이라고 생각합니다.",
         aKr: "저희 팀은 자율성과 책임감을 바탕으로 일하는 분위기예요. 일정이나 방식이 딱딱하게 정해진 건 아니고, 각자 자기 업무를 주도적으로 끌고 가는 스타일이 잘 맞는 팀이에요. 무슨 문제가 생겨도 서로 도와주는 분위기라서, 처음 들어오셔도 부담 없이 배우실 수 있을 거예요. 전체적으로 보면 편안하지만, 일은 프로답게 해나가는 그런 팀이라고 생각합니다.",
-        aEn: "Our team works with autonomy and ownership. Schedules and methods aren’t rigid—people who like to drive their own work fit well here. When issues come up, people help each other, so newcomers can learn without too much pressure. Overall it’s a relaxed environment, but we still get the job done professionally.",
+        aEn:"Our team works in an atmosphere built on autonomy and responsibility. Schedules and working methods are not rigidly fixed, so it’s a great fit for people who like to take the lead and drive their own work forward. There’s also a strong culture of helping one another, so even if you’re new to the team, you can learn without feeling pressured. Overall, I’d say it’s a comfortable environment, but one where we still approach our work in a thoroughly professional way.",
       },
       {
         q: "앞으로의 목표 또는 커리어 방향",
         qKr: "앞으로의 목표 또는 커리어 방향",
-        qEn: "Future goals or career direction",
+        qEn:"Please tell us your future goals and career direction.",
         a: "이 직무는 단순히 HVAC만 보는 게 아니라, 차량 전체의 열 흐름과 에너지 효율을 통합적으로 다루는 일이라 시야가 굉장히 넓어져요. 그래서 경력이 쌓이면 배터리나 모터, 전장 쪽과 협업하면서 전체 Thermal 시스템을 리드하는 역할로 성장할 수 있고, 또는 제어 로직 개발이나 캘리브레이션 전략을 총괄하는 시니어 엔지니어로도 자연스럽게 이어질 수 있어요. 나중에는 통합 열관리 플랫폼을 기획하거나, 글로벌 프로젝트를 리드하는 기회도 열려 있고요. 최근에는 소프트웨어 기반 제어 로직의 중요성이 더욱 커지고 있는 만큼, 열에너지 분야는 하드웨어와 소프트웨어를 아우르는 핵심 영역으로 지속적인 성장 가능성이 있다고 생각합니다.",
         aKr: "이 직무는 단순히 HVAC만 보는 게 아니라, 차량 전체의 열 흐름과 에너지 효율을 통합적으로 다루는 일이라 시야가 굉장히 넓어져요. 그래서 경력이 쌓이면 배터리나 모터, 전장 쪽과 협업하면서 전체 Thermal 시스템을 리드하는 역할로 성장할 수 있고, 또는 제어 로직 개발이나 캘리브레이션 전략을 총괄하는 시니어 엔지니어로도 자연스럽게 이어질 수 있어요. 나중에는 통합 열관리 플랫폼을 기획하거나, 글로벌 프로젝트를 리드하는 기회도 열려 있고요. 최근에는 소프트웨어 기반 제어 로직의 중요성이 더욱 커지고 있는 만큼, 열에너지 분야는 하드웨어와 소프트웨어를 아우르는 핵심 영역으로 지속적인 성장 가능성이 있다고 생각합니다.",
-        aEn: "This role isn’t only HVAC—it covers vehicle-wide heat flow and energy efficiency, so your perspective broadens a lot. As you gain experience, you can grow into leading the overall thermal system with battery, motor, and electronics partners, or into senior roles owning control-logic development and calibration strategy. Later there are also opportunities to shape integrated thermal-management platforms or lead global projects. With software-based control logic becoming ever more important, thermal energy sits at the intersection of hardware and software—and I see strong long-term growth there.",
+        aEn:"In this role, you don’t just look at HVAC in isolation, you deal with the vehicle’s overall heat flow and energy efficiency in an integrated way, so your perspective naturally becomes very broad. As you gain experience, you can grow into a role that leads the entire thermal system while collaborating with battery, motor, and electrical teams, or you can naturally progress into a senior engineer position overseeing control logic development and calibration strategies. In the long term, there are also opportunities to plan integrated thermal management platforms or lead global projects. As software-based control logic becomes increasingly important, I believe the thermal energy domain will continue to grow as a core area that spans both hardware and software.",
       },
     ],
   },
@@ -914,18 +936,18 @@ const interviewContent = {
       {
         q: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
         qKr: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
-        qEn: "Please introduce your department and describe your current work in detail.",
+        qEn:"Please introduce your team and role & responsibilities specifically",
         a: "저희 담당은 차량 개발 과정에서 필수적으로 수행되는 성능, 내구성, 배출가스, 소음·진동, 안전 관련 다양한 요구사항을 종합적으로 검증할 수 있는 세계적 수준의 인프라를 보유하고 있습니다. 또한 미래 모빌리티 규제와 기술을 선도하며, 지속적인 시험 환경 고도화를 통해 Virtual과 Physical을 아우를 수 있는 폭넓은 시험 역량을 갖추고 있답니다.\n\n저는 Energy & Emission Lab Ops 팀에 근무하고 있으며 차량의 양산을 위해 필수적으로 수행되어야 하는 배출가스 인증시험, EV Electric Range 시험, 신규 법규 시험들을 수행/지원하고 있어요.",
         aKr: "저희 담당은 차량 개발 과정에서 필수적으로 수행되는 성능, 내구성, 배출가스, 소음·진동, 안전 관련 다양한 요구사항을 종합적으로 검증할 수 있는 세계적 수준의 인프라를 보유하고 있습니다. 또한 미래 모빌리티 규제와 기술을 선도하며, 지속적인 시험 환경 고도화를 통해 Virtual과 Physical을 아우를 수 있는 폭넓은 시험 역량을 갖추고 있답니다.\n\n저는 Energy & Emission Lab Ops 팀에 근무하고 있으며 차량의 양산을 위해 필수적으로 수행되어야 하는 배출가스 인증시험, EV Electric Range 시험, 신규 법규 시험들을 수행/지원하고 있어요.",
-        aEn: "Our organization has world-class infrastructure to comprehensively verify performance, durability, emissions, NVH, safety, and other requirements essential in vehicle development. We also lead future mobility regulations and technology, continuously upgrading test environments to cover both virtual and physical testing at broad scale.\n\nI work on the Energy & Emission Lab Ops team, running and supporting emissions certification tests, EV electric-range tests, and new regulatory tests required for mass production.",
+        aEn:"Our department has world-class infrastructure that allows us to comprehensively validate a wide range of performance, durability, emissions, noise & vibration, and safety requirements that are essential throughout the vehicle development process. We also take the lead in future mobility regulations and technologies, and by continuously advancing our test environment, we have built broad testing capabilities that span both virtual and physical domains. I work on the Energy & Emission Lab Ops team, where I perform and support emissions certification tests, EV electric range tests, and new regulatory tests that are essential for vehicle mass production.",
       },
       {
         q: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
         qKr: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
-        qEn: "What competencies do you think are necessary for your work?",
+        qEn:"Which capabilities do we need to have for your role?",
         a: "부품부터 완성차에 이르기까지 다양한 시험을 수행하는 업무가 많아 안전에 대한 마인드는 기본적으로 갖추어야 합니다. 또한 시험 의뢰 부서들과의 적극적인 의견 조율이 빈번하기에 탐구적이고 긍정적인 의사소통 능력도 중요하다 할 수 있구요. 마지막으로 AI의 발달과 전기차, AV 기술의 대중화가 빠르게 진행되고 있는 만큼 관련된 신기술/법규에 대한 신속한 적응력도 필요하답니다. 이 능력까지 갖춘 분이 계시다면 그분은 이미 One of Us!!",
         aKr: "부품부터 완성차에 이르기까지 다양한 시험을 수행하는 업무가 많아 안전에 대한 마인드는 기본적으로 갖추어야 합니다. 또한 시험 의뢰 부서들과의 적극적인 의견 조율이 빈번하기에 탐구적이고 긍정적인 의사소통 능력도 중요하다 할 수 있구요. 마지막으로 AI의 발달과 전기차, AV 기술의 대중화가 빠르게 진행되고 있는 만큼 관련된 신기술/법규에 대한 신속한 적응력도 필요하답니다. 이 능력까지 갖춘 분이 계시다면 그분은 이미 One of Us!!",
-        aEn: "We run many tests from components to full vehicles, so a safety mindset is fundamental. We also coordinate often with requesting departments, so curious, positive communication matters. Finally, with AI, EV, and AV advancing quickly, fast adaptation to new technology and regulations is essential. If you have all of that—you’re already one of us!",
+        aEn:"For this role, I believe several key capabilities are important. First, because we conduct a wide range of tests from components to complete vehicles, having a strong safety mindset is fundamental. In addition, we frequently need to actively coordinate and align with the departments requesting tests, so inquisitive and positive communication skills are also essential. Lastly, as AI advances and EV/AV technologies rapidly become more widespread, the ability to quickly adapt to new technologies and regulations is increasingly important. If you already have all of these capabilities, you’re one of us!",
       },
       {
         q: "진행하셨던 프로젝트 중 인상 깊었던 프로젝트가 있나요?",

@@ -1,14 +1,7 @@
 // 다국어 지원 (한국어/영어)
 class LanguageToggle {
   constructor() {
-    /** our-story.html 등: 다른 탭에서 EN이어도 이 페이지는 항상 한국어 */
-    this.krOnlyInterviewsPage =
-      typeof document !== "undefined" &&
-      document.body &&
-      document.body.classList.contains("interviews-page");
-    this.currentLanguage = this.krOnlyInterviewsPage
-      ? "kr"
-      : localStorage.getItem("language") || "kr";
+    this.currentLanguage = localStorage.getItem("language") || "kr";
     this.toggleButton = document.getElementById("languageToggle");
     this.languageLabel = document.getElementById("languageLabel");
 
@@ -18,7 +11,7 @@ class LanguageToggle {
   init() {
     this.setLanguage(this.currentLanguage);
 
-    if (this.toggleButton && !this.krOnlyInterviewsPage) {
+    if (this.toggleButton) {
       this.toggleButton.addEventListener("click", (e) => {
         this.currentLanguage = this.currentLanguage === "kr" ? "en" : "kr";
         this.setLanguage(this.currentLanguage);
@@ -29,7 +22,7 @@ class LanguageToggle {
   }
 
   setLanguage(lang) {
-    const L = this.krOnlyInterviewsPage ? "kr" : lang;
+    const L = lang;
 
     if (this.languageLabel) {
       this.languageLabel.textContent = L === "kr" ? "EN" : "KR";

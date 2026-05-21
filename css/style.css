@@ -87,11 +87,6 @@ html.interviews-page .hq-layout > .hq-main-content {
   justify-content: flex-start;
 }
 
-/* Our Story: 한국어만 — 언어 토글 숨김 */
-html.interviews-page .navbar .language-toggle {
-  display: none !important;
-}
-
 /* Our Story — 초기 로딩 오버레이(JSON·히어로 타일·ScrollTrigger 준비까지) */
 html.our-story-page-loading,
 body.our-story-page-loading {
@@ -355,11 +350,6 @@ h1 {
 
 /* 임시: Core Values — 상단 메뉴 비표시 (재노출 시 아래 블록 삭제) */
 .navbar .nav-menu > li:has(> a[href="core-values.html"]) {
-  display: none !important;
-}
-
-/* 임시: Our Story / 본부별 인터뷰(our-story.html) — 영문 전환 미준비로 토글 비표시 */
-html.interviews-page .navbar .language-toggle {
   display: none !important;
 }
 
