@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="ko">
   <head>
+    <!-- Google tag (gtag.js) — GA4 페이지·해시 라우팅 페이지뷰 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5C6D295T8N"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-5C6D295T8N");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -1031,6 +1044,35 @@
       // HQ Sidebar Navigation
       document.addEventListener("DOMContentLoaded", function () {
         const HQ_RAIL_NAV = "#hqDivisionRail .hq-nav-link";
+
+        /** GA4: SPA식 해시 라우팅(pushState/popstate)마다 가상 page_view 전송 */
+        function gmtckOurStoryGa4VirtualPageView() {
+          if (typeof gtag !== "function") {
+            return;
+          }
+          try {
+            var path =
+              window.location.pathname +
+              window.location.search +
+              (window.location.hash || "");
+            gtag("config", "G-5C6D295T8N", {
+              page_path: path,
+              page_location: window.location.href,
+              page_title: document.title || "Our Story | GMTCK",
+            });
+          } catch (err) {
+            /* ignore analytics errors */
+          }
+        }
+        if (!history.__gmtckOurStoryHistoryWrapped) {
+          history.__gmtckOurStoryHistoryWrapped = true;
+          var __gmtckOrigPushState = history.pushState.bind(history);
+          history.pushState = function () {
+            var ret = __gmtckOrigPushState.apply(history, arguments);
+            queueMicrotask(gmtckOurStoryGa4VirtualPageView);
+            return ret;
+          };
+        }
 
         /* 인터뷰 JSON fetch를 히어로 타일·ST보다 먼저 시작(동일 Promise는 한 번만 실행) */
         var interviewExtrasPromise =
@@ -2626,6 +2668,7 @@
         window.addEventListener("popstate", function () {
           applyInterviewRouteFromHash();
           scheduleInterviewMobileDockFooterSync();
+          queueMicrotask(gmtckOurStoryGa4VirtualPageView);
         });
 
         window.addEventListener("pageshow", function (ev) {
