@@ -7,6 +7,18 @@
   box-sizing: border-box;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 :root {
   /* GM Brand Colors */
   --gm-blue: #002d5c;
@@ -783,44 +795,20 @@ h1 {
 
 .hero-title-main--gmtck {
   flex-direction: column;
-  gap: clamp(10px, 2vw, 20px);
+  gap: 0;
   width: 100%;
-  /* 레퍼런스: 중앙 로고가 뷰포트 너비의 약 35–40% */
-  max-width: min(92vw, 780px);
+  /* 풀 로고 락업(실루엣+GMTCK+풀네임) 기준 */
+  max-width: min(92vw, 820px);
   margin: 0 auto;
-}
-
-/* 히어로 부제 h1 — 전역 h1(2.5rem)과 구분, font-weight 800 */
-.hero .hero-lockup-heading {
-  margin: 0;
-  padding: 0;
-  font-family: "Overpass", sans-serif;
-  font-size: clamp(0.875rem, 2.1vw, 1.125rem);
-  font-weight: 800;
-  font-style: normal;
-  font-kerning: normal;
-  color: #ffffff;
-  letter-spacing: 0.04em;
-  line-height: 1.5;
-  text-align: center;
-  text-rendering: optimizeLegibility;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
-}
-
-@media screen and (min-width: 40em) {
-  .hero .hero-lockup-heading {
-    font-size: clamp(1rem, 2.5vw, 1.35rem);
-  }
 }
 
 .hero-gmtck-lockup {
   display: block;
   margin: 0 auto;
-  width: clamp(260px, 38vw, 720px);
+  width: clamp(280px, 42vw, 760px);
   height: auto;
   object-fit: contain;
   object-position: center;
-  /* SVG는 fill #fff — PNG용 invert 제거 */
   filter: drop-shadow(0 4px 36px rgba(0, 0, 0, 0.35));
 }
 
@@ -3375,17 +3363,12 @@ section#innovation .section-title .zero-text {
   }
 
   .hero-title-main--gmtck {
-    max-width: min(94vw, 420px);
+    max-width: min(94vw, 440px);
   }
 
   .hero-gmtck-lockup {
-    width: min(88vw, 380px);
+    width: min(90vw, 400px);
     max-width: none;
-  }
-
-  .hero .hero-lockup-heading {
-    font-size: clamp(0.8125rem, 3.5vw, 1rem);
-    letter-spacing: 0.03em;
   }
 
   .hero-text {
