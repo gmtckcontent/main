@@ -519,9 +519,9 @@
                       <span class="hq-division-intro__body">
                         <span
                           class="hq-division-intro__title"
-                          data-kr="S&amp;S 본부"
+                          data-kr="S&amp;E 본부"
                           data-en="Software &amp; Services"
-                          >S&amp;S 본부</span
+                          >S&amp;E 본부</span
                         >
                         <span
                           class="hq-division-intro__desc"
@@ -630,7 +630,7 @@
                 ></div>
               </div>
 
-              <!-- EE: PQDQ — data/interview-content-ee.json -->
+              <!-- AVD & SVI: PQDQ — data/interview-content-ee.json -->
               <div class="hq-content-section" id="ee-quality">
                 <div
                   class="hq-content-body"
@@ -638,7 +638,7 @@
                 ></div>
               </div>
 
-              <!-- EE: Chief AI & New Tech. Strategy — data/interview-content-ee.json -->
+              <!-- AVD & SVI: Chief AI & New Tech. Strategy — data/interview-content-ee.json -->
               <div class="hq-content-section" id="ee-ai-chief">
                 <div
                   class="hq-content-body"
@@ -771,7 +771,7 @@
                 ></div>
               </div>
 
-              <!-- S&S -->
+              <!-- S&E -->
               <div class="hq-content-section" id="ss-cch-ppmo">
                 <div
                   class="hq-content-body"
@@ -877,9 +877,9 @@
                       data-hq="ss"
                       data-kr="Software & Services"
                       data-en="Software & Services"
-                      data-abbr-kr="S&S"
-                      data-abbr-en="S&S"
-                      >S&amp;S</a
+                      data-abbr-kr="S&E"
+                      data-abbr-en="S&E"
+                      >S&amp;E</a
                     >
                   </li>
                   <li>
@@ -1011,7 +1011,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js?v=6"></script>
     <script src="./js/main.js?v=3"></script>
-    <script src="./js/role-interviews.js?v=59"></script>
+    <script src="./js/role-interviews.js?v=60"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=53"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=5"></script>
@@ -1396,6 +1396,16 @@
               kr: "Studio & Surface Integration",
               en: "Studio & Surface Integration",
             },
+            {
+              id: "ee-quality",
+              kr: "PQDQ Engineering Excellence",
+              en: "PQDQ Engineering Excellence",
+            },
+            {
+              id: "ee-ai-chief",
+              kr: "Chief AI & New Tech. Strategy",
+              en: "Chief AI & New Tech. Strategy",
+            },
           ],
           beca: [
             { id: "beca-body", kr: "Body", en: "Body" },
@@ -1423,16 +1433,6 @@
               id: "ee-product-excellence",
               kr: "Product Excellence team",
               en: "Product Excellence team",
-            },
-            {
-              id: "ee-quality",
-              kr: "PQDQ Engineering Excellence",
-              en: "PQDQ Engineering Excellence",
-            },
-            {
-              id: "ee-ai-chief",
-              kr: "Chief AI & New Tech. Strategy",
-              en: "Chief AI & New Tech. Strategy",
             },
           ],
           itpe: [
@@ -2336,7 +2336,7 @@
                 if (hqId === "avd-&-svi") {
                   hqId = "avd-svi";
                 }
-                if (hqId === "s&s") {
+                if (hqId === "s&e") {
                   hqId = "ss";
                 }
               }
@@ -2452,7 +2452,7 @@
             if (hqId === "avd-&-svi") {
               hqId = "avd-svi";
             }
-            if (hqId === "s&s") {
+            if (hqId === "s&e") {
               hqId = "ss";
             }
             const idx = parseInt(interviewId.split("-").pop(), 10) - 1;
@@ -2468,7 +2468,7 @@
             if (hqId === "avd-&-svi") {
               hqId = "avd-svi";
             }
-            if (hqId === "s&s") {
+            if (hqId === "s&e") {
               hqId = "ss";
             }
             const idx = parseInt(interviewId.split("-").pop(), 10) - 1;
@@ -2483,7 +2483,7 @@
           if (hqId === "avd-&-svi") {
             hqId = "avd-svi";
           }
-          if (hqId === "s&s") {
+          if (hqId === "s&e") {
             hqId = "ss";
           }
 

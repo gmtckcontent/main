@@ -12,7 +12,7 @@
  * Edit here only:
  *   - interviewData: 프로필 이미지·인사말,interviewId(섹션 id). 담당 1개당 보통 행 1개(VE는 여러 행 가능)
  *   - profileImage: 선택. `./images/profilepic/beca/body.png` 처럼 키 파일명과 다른 경로를 쓸 때
- *   - interviewContent: interviewId별 Q&A (BECA/ITPE/S&S는 data/interview-content-beca-itpe-ss.json, VE 다인 인터뷰는 data/interview-content-ve.json)
+ *   - interviewContent: interviewId별 Q&A (BECA/ITPE/S&E는 data/interview-content-beca-itpe-ss.json, VE 다인 인터뷰는 data/interview-content-ve.json)
  *
  * 정적 마운트(data-role-interview-mount) ↔ 소스
  *   - JS interviewContent: avd-*, pipg-psc, pipg-vpd-pid, pipg-thermal, pipg-pgtlo, ve-*
@@ -442,46 +442,46 @@ const interviewData = {
     greetingEn: "Hello\nEnergy Conversion Systems (ECS), ITPE HQ\nMoonchan Seo",
     interviewId: "itpe-ecs",
   },
-  // S&S (Software & Services) — images/profilepic/s&s/ (URL 경로는 & → %26)
+  // S&E (Software & Services) — images/profilepic/s&s/ (URL 경로는 & → %26)
   "SS1.png": {
     profileImage: "./images/profilepic/s%26s/cchppmo.png",
-    hq: "S&S",
+    hq: "S&E",
     role: "CCH/PPMO",
     roleKr: "CCH/PPMO",
     roleEn: "CCH/PPMO",
     name: "김경찬",
     nameKr: "김경찬",
     nameEn: "Kyungchan Kim",
-    greeting: "안녕하세요\nS&S본부의 CCH/PPMO담당\n김경찬입니다",
-    greetingKr: "안녕하세요\nS&S본부의 CCH/PPMO담당\n김경찬입니다",
+    greeting: "안녕하세요\nS&E본부의 CCH/PPMO담당\n김경찬입니다",
+    greetingKr: "안녕하세요\nS&E본부의 CCH/PPMO담당\n김경찬입니다",
     greetingEn: "Hello\nCCH/PPMO, Software & Services HQ\nKyungchan Kim",
     interviewId: "ss-cch-ppmo",
   },
   "SS2.png": {
     profileImage: "./images/profilepic/s%26s/maec.png",
-    hq: "S&S",
+    hq: "S&E",
     role: "MAEC",
     roleKr: "MAEC",
     roleEn: "MAEC",
     name: "정묘신",
     nameKr: "정묘신",
     nameEn: "Myosin Jung",
-    greeting: "안녕하세요\nS&S본부의 MAEC담당\n정묘신입니다",
-    greetingKr: "안녕하세요\nS&S본부의 MAEC담당\n정묘신입니다",
+    greeting: "안녕하세요\nS&E본부의 MAEC담당\n정묘신입니다",
+    greetingKr: "안녕하세요\nS&E본부의 MAEC담당\n정묘신입니다",
     greetingEn: "Hello\nMAEC, Software & Services HQ\nMyosin Jung",
     interviewId: "ss-maec",
   },
   "SS3.png": {
     profileImage: "./images/profilepic/s%26s/swqnd.png",
-    hq: "S&S",
+    hq: "S&E",
     role: "SWQnD",
     roleKr: "SWQnD",
     roleEn: "SWQnD",
     name: "양혜영",
     nameKr: "양혜영",
     nameEn: "Hyeyoung Yang",
-    greeting: "안녕하세요\nS&S본부의 SWQnD담당\n양혜영입니다",
-    greetingKr: "안녕하세요\nS&S본부의 SWQnD담당\n양혜영입니다",
+    greeting: "안녕하세요\nS&E본부의 SWQnD담당\n양혜영입니다",
+    greetingKr: "안녕하세요\nS&E본부의 SWQnD담당\n양혜영입니다",
     greetingEn: "Hello\nSWQnD, Software & Services HQ\nHyeyoung Yang",
     interviewId: "ss-swqnd",
   },
@@ -590,7 +590,7 @@ const interviewData = {
   },
   "EE4.png": {
     profileImage: profilePicRel(["EE", "PQDQ.png"]),
-    hq: "Engineering Excellence",
+    hq: "AVD & SVI",
     role: "PQDQ Engineering Excellence",
     roleKr: "PQDQ Engineering Excellence",
     roleEn: "PQDQ Engineering Excellence",
@@ -598,16 +598,16 @@ const interviewData = {
     nameKr: "조성현",
     nameEn: "Sunghyun Cho",
     greeting:
-      "안녕하세요\nEngineering Excellence의 PQDQ Engineering Excellence담당\n조성현입니다",
+      "안녕하세요\nAVD & SVI본부의 PQDQ Engineering Excellence담당\n조성현입니다",
     greetingKr:
-      "안녕하세요\nEngineering Excellence의 PQDQ Engineering Excellence담당\n조성현입니다",
+      "안녕하세요\nAVD & SVI본부의 PQDQ Engineering Excellence담당\n조성현입니다",
     greetingEn:
-      "Hello\nPQDQ Engineering Excellence, Engineering Excellence HQ\nSunghyun Cho",
+      "Hello\nPQDQ Engineering Excellence, AVD & SVI HQ\nSunghyun Cho",
     interviewId: "ee-quality",
   },
   "EE5.png": {
     profileImage: profilePicRel(["EE", "ai chief_new.png"]),
-    hq: "Engineering Excellence",
+    hq: "AVD & SVI",
     role: "Chief AI & New Tech. Strategy",
     roleKr: "Chief AI & New Tech. Strategy",
     roleEn: "Chief AI & New Tech. Strategy",
@@ -615,17 +615,17 @@ const interviewData = {
     nameKr: "신호재",
     nameEn: "Hojae Shin",
     greeting:
-      "안녕하세요\nEngineering Excellence의 Chief AI & New Tech. Strategy담당\n신호재입니다",
+      "안녕하세요\nAVD & SVI본부의 Chief AI & New Tech. Strategy담당\n신호재입니다",
     greetingKr:
-      "안녕하세요\nEngineering Excellence의 Chief AI & New Tech. Strategy담당\n신호재입니다",
+      "안녕하세요\nAVD & SVI본부의 Chief AI & New Tech. Strategy담당\n신호재입니다",
     greetingEn:
-      "Hello\nChief AI & New Tech. Strategy, Engineering Excellence HQ\nHojae Shin",
+      "Hello\nChief AI & New Tech. Strategy, AVD & SVI HQ\nHojae Shin",
     interviewId: "ee-ai-chief",
   },
 };
 
 // 인터뷰 내용: interviewId(담당)당 객체 1개. questions = 그 인터뷰 1건의 문항들.
-// BECA / ITPE / S&S 본문은 data/interview-content-beca-itpe-ss.json (담당당 인터뷰 1건, VE 제외)
+// BECA / ITPE / S&E 본문은 data/interview-content-beca-itpe-ss.json (담당당 인터뷰 1건, VE 제외)
 // EE 일부 본문은 data/interview-content-ee.json
 // JSON 수정 후 배포 시 ?v= 숫자 올려 캐시 무력화 (CDN,프록시 대비)
 const INTERVIEW_CONTENT_BECA_ITPE_SS_URL =
@@ -639,7 +639,7 @@ async function loadInterviewContentBecaItpeSs() {
     cache: "default",
   });
   if (!res.ok) {
-    console.warn("[role-interviews] BECA/ITPE/S&S JSON 로드 실패:", res.status);
+    console.warn("[role-interviews] BECA/ITPE/S&E JSON 로드 실패:", res.status);
     return;
   }
   const extra = await res.json();

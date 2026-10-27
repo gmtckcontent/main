@@ -1,5 +1,5 @@
 /**
- * BECA / ITPE / S&S 담당 인터뷰 본문 (interviewContent 확장)
+ * BECA / ITPE / S&E 담당 인터뷰 본문 (interviewContent 확장)
  * 수정 시 이 파일만 편집하면 됩니다.
  */
 const INTERVIEW_CONTENT_BECA_ITPE_SS = {
