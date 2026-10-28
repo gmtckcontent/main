@@ -48,7 +48,7 @@
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link
       rel="preload"
-      href="./data/interview-content-beca-itpe-ss.json?v=15"
+      href="./data/interview-content-beca-itpe-ss.json?v=17"
       as="fetch"
       crossorigin="anonymous"
     />
@@ -67,22 +67,22 @@
     <link rel="preload" href="./images/logo/GMTCK.png" as="image" />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/beca/body.png?mv=9"
+      href="./images/profilepic-mosaic/beca/body.png?mv=11"
       as="image"
     />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/avd%26svi/avd.png?mv=9"
+      href="./images/profilepic-mosaic/avd%26svi/avd.png?mv=11"
       as="image"
     />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/EE/PQDQ.png?mv=9"
+      href="./images/profilepic-mosaic/EE/PQDQ.png?mv=11"
       as="image"
     />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/ve/safety%20performance%20integration1.png?mv=9"
+      href="./images/profilepic-mosaic/ve/safety%20performance%20integration1.png?mv=11"
       as="image"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -580,14 +580,14 @@
                         <span
                           class="hq-division-intro__title"
                           data-kr="S&amp;E 본부"
-                          data-en="Software &amp; Services"
+                          data-en="Software &amp; Electronics"
                           >S&amp;E 본부</span
                         >
                         <span
                           class="hq-division-intro__desc"
-                          data-kr="소프트웨어와 서비스로 차량 경험을 확장합니다."
-                          data-en="Software &amp; Services."
-                          >소프트웨어와 서비스로 차량 경험을 확장합니다.</span
+                          data-kr="소프트웨어와 전장 시스템 통합을 통해 SDV를 구현합니다."
+                          data-en="Realizing the SDV through software and electrical system integration."
+                          >소프트웨어와 전장 시스템 통합을 통해 SDV를 구현합니다.</span
                         >
                       </span>
                     </a>
@@ -872,23 +872,39 @@
                 ></div>
               </div>
 
-              <!-- S&E -->
-              <div class="hq-content-section" id="ss-cch-ppmo">
+              <!-- S&E: Program Management — data/interview-content-beca-itpe-ss.json -->
+              <div class="hq-content-section" id="ss-program-management">
                 <div
                   class="hq-content-body"
-                  data-role-interview-mount="ss-cch-ppmo"
+                  data-role-interview-mount="ss-program-management"
                 ></div>
               </div>
-              <div class="hq-content-section" id="ss-maec">
+              <!-- S&E: Compute Platform Hardware — data/interview-content-beca-itpe-ss.json -->
+              <div class="hq-content-section" id="ss-compute-platform-hw">
                 <div
                   class="hq-content-body"
-                  data-role-interview-mount="ss-maec"
+                  data-role-interview-mount="ss-compute-platform-hw"
                 ></div>
               </div>
-              <div class="hq-content-section" id="ss-swqnd">
+              <!-- S&E: Electric Platform Hardware — data/interview-content-beca-itpe-ss.json -->
+              <div class="hq-content-section" id="ss-electric-platform-hw">
                 <div
                   class="hq-content-body"
-                  data-role-interview-mount="ss-swqnd"
+                  data-role-interview-mount="ss-electric-platform-hw"
+                ></div>
+              </div>
+              <!-- S&E: Platform Software — data/interview-content-beca-itpe-ss.json -->
+              <div class="hq-content-section" id="ss-platform-sw">
+                <div
+                  class="hq-content-body"
+                  data-role-interview-mount="ss-platform-sw"
+                ></div>
+              </div>
+              <!-- S&E: Platform Integration & Deployment — data/interview-content-beca-itpe-ss.json -->
+              <div class="hq-content-section" id="ss-platform-id">
+                <div
+                  class="hq-content-body"
+                  data-role-interview-mount="ss-platform-id"
                 ></div>
               </div>
             </main>
@@ -1000,8 +1016,8 @@
                       href="#ss"
                       class="hq-nav-link"
                       data-hq="ss"
-                      data-kr="Software & Services"
-                      data-en="Software & Services"
+                      data-kr="Software & Electronics"
+                      data-en="Software & Electronics"
                       data-abbr-kr="S&E"
                       data-abbr-en="S&E"
                       >S&amp;E</a
@@ -1136,7 +1152,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js?v=6"></script>
     <script src="./js/main.js?v=3"></script>
-    <script src="./js/role-interviews.js?v=68"></script>
+    <script src="./js/role-interviews.js?v=71"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=53"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=5"></script>
@@ -1611,9 +1627,31 @@
             { id: "pipg-pgtlo", kr: "PGTLO", en: "PGTLO" },
           ],
           ss: [
-            { id: "ss-cch-ppmo", kr: "CCH/PPMO", en: "CCH/PPMO" },
-            { id: "ss-maec", kr: "MAEC", en: "MAEC" },
-            { id: "ss-swqnd", kr: "SWQnD", en: "SWQnD" },
+            {
+              id: "ss-program-management",
+              kr: "Program Management",
+              en: "Program Management",
+            },
+            {
+              id: "ss-compute-platform-hw",
+              kr: "Compute Platform Hardware",
+              en: "Compute Platform Hardware",
+            },
+            {
+              id: "ss-electric-platform-hw",
+              kr: "Electric Platform Hardware",
+              en: "Electric Platform Hardware",
+            },
+            {
+              id: "ss-platform-sw",
+              kr: "Platform Software",
+              en: "Platform Software",
+            },
+            {
+              id: "ss-platform-id",
+              kr: "Platform Integration & Deployment",
+              en: "Platform Integration & Deployment",
+            },
           ],
           ve: [
             {

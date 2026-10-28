@@ -28,7 +28,7 @@ const PROFILE_PLACEHOLDER_IMAGE =
   "./images/logo/gm-symbol-color-light-bg-web.png";
 
 /** 프로필 PNG 교체 후에도 캐시된 옛 이미지가 보이지 않도록 URL에 버전을 붙임 (교체 배포 시 숫자만 올리면 됨) */
-const PROFILE_IMAGE_CACHE_VERSION = "15";
+const PROFILE_IMAGE_CACHE_VERSION = "18";
 function withProfileImageCacheBust(url) {
   if (!url || url.startsWith("data:")) return url;
   if (/\bpv=\d+\b/.test(url)) return url;
@@ -37,7 +37,7 @@ function withProfileImageCacheBust(url) {
 }
 
 /** Our Story 히어로 모자이크: `images/profilepic-mosaic/*.png` (256px, 알파 유지, scripts/build-profilepic-mosaic.sh) */
-const MOSAIC_THUMB_VERSION = "9";
+const MOSAIC_THUMB_VERSION = "11";
 function toHqLandingMosaicThumbUrl(url) {
   if (!url || typeof url !== "string") {
     return url;
@@ -495,48 +495,86 @@ const interviewData = {
     greetingEn: "Hello\nEnergy Conversion Systems (ECS), ITPE HQ\nMoonchan Seo",
     interviewId: "itpe-ecs",
   },
-  // S&E (Software & Services) — images/profilepic/s&s/ (URL 경로는 & → %26)
+  // S&E (Software & Electronics) — images/profilepic/s&s/ (URL 경로는 & → %26)
   "SS1.png": {
     profileImage: "./images/profilepic/s%26s/cchppmo.png",
     hq: "S&E",
-    role: "CCH/PPMO",
-    roleKr: "CCH/PPMO",
-    roleEn: "CCH/PPMO",
+    role: "Program Management",
+    roleKr: "Program Management",
+    roleEn: "Program Management",
     name: "김경찬",
     nameKr: "김경찬",
     nameEn: "Kyungchan Kim",
-    greeting: "안녕하세요\nS&E본부의 CCH/PPMO담당\n김경찬입니다",
-    greetingKr: "안녕하세요\nS&E본부의 CCH/PPMO담당\n김경찬입니다",
-    greetingEn: "Hello\nCCH/PPMO, Software & Services HQ\nKyungchan Kim",
-    interviewId: "ss-cch-ppmo",
+    greeting:
+      "안녕하세요\nS&E본부의 Program Management담당\n김경찬입니다",
+    greetingKr:
+      "안녕하세요\nS&E본부의 Program Management담당\n김경찬입니다",
+    greetingEn: "Hello\nProgram Management, S&E HQ\nKyungchan Kim",
+    interviewId: "ss-program-management",
   },
   "SS2.png": {
-    profileImage: "./images/profilepic/s%26s/maec.png",
+    profileImage: "./images/profilepic/s%26s/compute-platform-hw.png",
     hq: "S&E",
-    role: "MAEC",
-    roleKr: "MAEC",
-    roleEn: "MAEC",
-    name: "정묘신",
-    nameKr: "정묘신",
-    nameEn: "Myosin Jung",
-    greeting: "안녕하세요\nS&E본부의 MAEC담당\n정묘신입니다",
-    greetingKr: "안녕하세요\nS&E본부의 MAEC담당\n정묘신입니다",
-    greetingEn: "Hello\nMAEC, Software & Services HQ\nMyosin Jung",
-    interviewId: "ss-maec",
+    role: "Compute Platform Hardware",
+    roleKr: "Compute Platform Hardware",
+    roleEn: "Compute Platform Hardware",
+    name: "임일웅",
+    nameKr: "임일웅",
+    nameEn: "Ilwoong Lim",
+    greeting:
+      "안녕하세요\nS&E본부의 Compute Platform Hardware담당\n임일웅입니다",
+    greetingKr:
+      "안녕하세요\nS&E본부의 Compute Platform Hardware담당\n임일웅입니다",
+    greetingEn: "Hello\nCompute Platform Hardware, S&E HQ\nIlwoong Lim",
+    interviewId: "ss-compute-platform-hw",
   },
   "SS3.png": {
-    profileImage: "./images/profilepic/s%26s/swqnd.png",
+    profileImage: profilePicRel(["ve", "virtual engineering solution3.png"]), // VE 김민정과 동일 인물
     hq: "S&E",
-    role: "SWQnD",
-    roleKr: "SWQnD",
-    roleEn: "SWQnD",
-    name: "양혜영",
-    nameKr: "양혜영",
-    nameEn: "Hyeyoung Yang",
-    greeting: "안녕하세요\nS&E본부의 SWQnD담당\n양혜영입니다",
-    greetingKr: "안녕하세요\nS&E본부의 SWQnD담당\n양혜영입니다",
-    greetingEn: "Hello\nSWQnD, Software & Services HQ\nHyeyoung Yang",
-    interviewId: "ss-swqnd",
+    role: "Electric Platform Hardware",
+    roleKr: "Electric Platform Hardware",
+    roleEn: "Electric Platform Hardware",
+    name: "김민정",
+    nameKr: "김민정",
+    nameEn: "Minjung Kim",
+    greeting:
+      "안녕하세요\nS&E본부의 Electric Platform Hardware담당\n김민정입니다",
+    greetingKr:
+      "안녕하세요\nS&E본부의 Electric Platform Hardware담당\n김민정입니다",
+    greetingEn: "Hello\nElectric Platform Hardware, S&E HQ\nMinjung Kim",
+    interviewId: "ss-electric-platform-hw",
+  },
+  "SS4.png": {
+    profileImage: "./images/profilepic/s%26s/platform-sw.png",
+    hq: "S&E",
+    role: "Platform Software",
+    roleKr: "Platform Software",
+    roleEn: "Platform Software",
+    name: "이한별",
+    nameKr: "이한별",
+    nameEn: "Hanbyul Lee",
+    greeting:
+      "안녕하세요\nS&E본부의 Platform Software담당\n이한별입니다",
+    greetingKr:
+      "안녕하세요\nS&E본부의 Platform Software담당\n이한별입니다",
+    greetingEn: "Hello\nPlatform Software, S&E HQ\nHanbyul Lee",
+    interviewId: "ss-platform-sw",
+  },
+  "SS5.png": {
+    profileImage: "./images/profilepic/s%26s/platform-id.png",
+    hq: "S&E",
+    role: "Platform Integration & Deployment",
+    roleKr: "Platform Integration & Deployment",
+    roleEn: "Platform Integration & Deployment",
+    name: "정태구",
+    nameKr: "정태구",
+    nameEn: "Taegu Jung",
+    greeting:
+      "안녕하세요\nS&E본부의 Platform Integration & Deployment담당\n정태구입니다",
+    greetingKr:
+      "안녕하세요\nS&E본부의 Platform Integration & Deployment담당\n정태구입니다",
+    greetingEn: "Hello\nPlatform Integration & Deployment, S&E HQ\nTaegu Jung",
+    interviewId: "ss-platform-id",
   },
   "EE1a.png": {
     profileImage: profilePicRel(["EE", "system&product(1).png"]),
@@ -718,7 +756,7 @@ const interviewData = {
 // EE 일부 본문은 data/interview-content-ee.json
 // JSON 수정 후 배포 시 ?v= 숫자 올려 캐시 무력화 (CDN,프록시 대비)
 const INTERVIEW_CONTENT_BECA_ITPE_SS_URL =
-  "./data/interview-content-beca-itpe-ss.json?v=16";
+  "./data/interview-content-beca-itpe-ss.json?v=17";
 const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=15";
 const INTERVIEW_CONTENT_VE_URL = "./data/interview-content-ve.json?v=7";
 
@@ -1346,6 +1384,9 @@ const PROFILE_MOSAIC_REL_PATHS = [
   "pipg/thermal_new.png",
   "pipg/vpdpid.png",
   "s&s/cchppmo.png",
+  "s&s/compute-platform-hw.png",
+  "s&s/platform-id.png",
+  "s&s/platform-sw.png",
   "s&s/maec.png",
   "s&s/swqnd.png",
   "ve/safety performance integration1.png",
