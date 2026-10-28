@@ -42,7 +42,7 @@
       content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
     />
     <!-- 인터뷰/스타일 수정 후 브라우저 캐시 회피: ?v= 숫자 올리기 -->
-    <link rel="stylesheet" href="./css/style.css?v=135" />
+    <link rel="stylesheet" href="./css/style.css?v=140" />
     <!-- 초기 LCP·인터뷰 데이터: 병렬 다운로드 (JSON은 loadInterviewContentExtras와 캐시 공유) -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
@@ -54,7 +54,7 @@
     />
     <link
       rel="preload"
-      href="./data/interview-content-ee.json?v=13"
+      href="./data/interview-content-ee.json?v=15"
       as="fetch"
       crossorigin="anonymous"
     />
@@ -67,22 +67,22 @@
     <link rel="preload" href="./images/logo/GMTCK.png" as="image" />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/beca/body.png?mv=5"
+      href="./images/profilepic-mosaic/beca/body.png?mv=9"
       as="image"
     />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/avd%26svi/avd.png?mv=5"
+      href="./images/profilepic-mosaic/avd%26svi/avd.png?mv=9"
       as="image"
     />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/EE/PQDQ.png?mv=5"
+      href="./images/profilepic-mosaic/EE/PQDQ.png?mv=9"
       as="image"
     />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/ve/safety%20performance%20integration1.png?mv=5"
+      href="./images/profilepic-mosaic/ve/safety%20performance%20integration1.png?mv=9"
       as="image"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -471,6 +471,66 @@
                       </span>
                     </a>
                     <a
+                      class="hq-division-intro__card hq-division-intro__card--me"
+                      role="listitem"
+                      href="#me"
+                      data-hq="me"
+                      data-interview-path="/interview/me"
+                    >
+                      <span
+                        class="hq-division-intro__media"
+                        aria-hidden="true"
+                      ></span>
+                      <span
+                        class="hq-division-intro__scrim"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="hq-division-intro__body">
+                        <span
+                          class="hq-division-intro__title"
+                          data-kr="ME 본부"
+                          data-en="Manufacturing Engineering"
+                          >ME 본부</span
+                        >
+                        <span
+                          class="hq-division-intro__desc"
+                          data-kr="신차 양산을 위한 공정과 설비를 개발,검증,실행합니다."
+                          data-en="Developing, validating, and executing processes and equipment for new vehicle production."
+                          >신차 양산을 위한 공정과 설비를 개발,검증,실행합니다.</span
+                        >
+                      </span>
+                    </a>
+                    <a
+                      class="hq-division-intro__card hq-division-intro__card--ops"
+                      role="listitem"
+                      href="#ops"
+                      data-hq="ops"
+                      data-interview-path="/interview/ops"
+                    >
+                      <span
+                        class="hq-division-intro__media"
+                        aria-hidden="true"
+                      ></span>
+                      <span
+                        class="hq-division-intro__scrim"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="hq-division-intro__body">
+                        <span
+                          class="hq-division-intro__title"
+                          data-kr="OPS 본부"
+                          data-en="Engineering Operations"
+                          >OPS 본부</span
+                        >
+                        <span
+                          class="hq-division-intro__desc"
+                          data-kr="협력사 품질과 개발 운영으로 차량 개발을 뒷받침합니다."
+                          data-en="Supporting vehicle development through supplier quality and engineering operations."
+                          >협력사 품질과 개발 운영으로 차량 개발을 뒷받침합니다.</span
+                        >
+                      </span>
+                    </a>
+                    <a
                       class="hq-division-intro__card hq-division-intro__card--pipg"
                       role="listitem"
                       href="#pipg"
@@ -630,7 +690,7 @@
                 ></div>
               </div>
 
-              <!-- AVD & SVI: PQDQ — data/interview-content-ee.json -->
+              <!-- AVD & SVI: Customer Experience & Innovation — data/interview-content-ee.json -->
               <div class="hq-content-section" id="ee-quality">
                 <div
                   class="hq-content-body"
@@ -638,11 +698,28 @@
                 ></div>
               </div>
 
-              <!-- AVD & SVI: Chief AI & New Tech. Strategy — data/interview-content-ee.json -->
+              <!-- [비활성] Chief AI & New Tech. Strategy — 조직 폐지로 숨김
               <div class="hq-content-section" id="ee-ai-chief">
                 <div
                   class="hq-content-body"
                   data-role-interview-mount="ee-ai-chief"
+                ></div>
+              </div>
+              -->
+
+              <!-- AVD & SVI: Enterprise AI Solutions — 본문은 js/role-interviews.js -->
+              <div class="hq-content-section" id="avd-enterprise-ai">
+                <div
+                  class="hq-content-body"
+                  data-role-interview-mount="avd-enterprise-ai"
+                ></div>
+              </div>
+
+              <!-- AVD & SVI: Innovation Strategy and Excellence — 본문은 js/role-interviews.js -->
+              <div class="hq-content-section" id="avd-innovation-strategy">
+                <div
+                  class="hq-content-body"
+                  data-role-interview-mount="avd-innovation-strategy"
                 ></div>
               </div>
 
@@ -669,6 +746,30 @@
                 <div class="hq-content-body">
                   <!-- 인터뷰 내용은 JavaScript로 동적으로 추가됨 -->
                 </div>
+              </div>
+
+              <!-- OPS: Supplier Quality & Development — 본문은 js/role-interviews.js -->
+              <div class="hq-content-section" id="ops-sqd">
+                <div
+                  class="hq-content-body"
+                  data-role-interview-mount="ops-sqd"
+                ></div>
+              </div>
+
+              <!-- OPS: Operations — 본문은 js/role-interviews.js -->
+              <div class="hq-content-section" id="ops-operations">
+                <div
+                  class="hq-content-body"
+                  data-role-interview-mount="ops-operations"
+                ></div>
+              </div>
+
+              <!-- ME: Manufacturing Engineering — 본문은 js/role-interviews.js -->
+              <div class="hq-content-section" id="me-manufacturing-engineering">
+                <div
+                  class="hq-content-body"
+                  data-role-interview-mount="me-manufacturing-engineering"
+                ></div>
               </div>
 
               <!-- PIPG: PSC — 본문은 js/role-interviews.js + data-role-interview-mount -->
@@ -860,6 +961,30 @@
                   </li>
                   <li>
                     <a
+                      href="#me"
+                      class="hq-nav-link"
+                      data-hq="me"
+                      data-kr="Manufacturing Engineering"
+                      data-en="Manufacturing Engineering"
+                      data-abbr-kr="ME"
+                      data-abbr-en="ME"
+                      >ME</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#ops"
+                      class="hq-nav-link"
+                      data-hq="ops"
+                      data-kr="Engineering Operations"
+                      data-en="Engineering Operations"
+                      data-abbr-kr="OPS"
+                      data-abbr-en="OPS"
+                      >OPS</a
+                    >
+                  </li>
+                  <li>
+                    <a
                       href="#pipg"
                       class="hq-nav-link"
                       data-hq="pipg"
@@ -1011,7 +1136,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js?v=6"></script>
     <script src="./js/main.js?v=3"></script>
-    <script src="./js/role-interviews.js?v=60"></script>
+    <script src="./js/role-interviews.js?v=68"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=53"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=5"></script>
@@ -1398,13 +1523,24 @@
             },
             {
               id: "ee-quality",
-              kr: "PQDQ Engineering Excellence",
-              en: "PQDQ Engineering Excellence",
+              kr: "Customer Experience & Innovation",
+              en: "Customer Experience & Innovation",
+            },
+            // [비활성] Chief AI & New Tech. Strategy — 조직 폐지로 숨김
+            // {
+            //   id: "ee-ai-chief",
+            //   kr: "Chief AI & New Tech. Strategy",
+            //   en: "Chief AI & New Tech. Strategy",
+            // },
+            {
+              id: "avd-enterprise-ai",
+              kr: "Enterprise AI Solutions",
+              en: "Enterprise AI Solutions",
             },
             {
-              id: "ee-ai-chief",
-              kr: "Chief AI & New Tech. Strategy",
-              en: "Chief AI & New Tech. Strategy",
+              id: "avd-innovation-strategy",
+              kr: "Innovation Strategy and Excellence",
+              en: "Innovation Strategy and Excellence",
             },
           ],
           beca: [
@@ -1452,6 +1588,21 @@
               en: "Thermal & Propulsion Integration",
             },
             { id: "itpe-ecs", kr: "ECS", en: "ECS" },
+          ],
+          me: [
+            {
+              id: "me-manufacturing-engineering",
+              kr: "Manufacturing Engineering",
+              en: "Manufacturing Engineering",
+            },
+          ],
+          ops: [
+            {
+              id: "ops-sqd",
+              kr: "Supplier Quality & Development",
+              en: "Supplier Quality & Development",
+            },
+            { id: "ops-operations", kr: "Operations", en: "Operations" },
           ],
           pipg: [
             { id: "pipg-psc", kr: "PSC", en: "PSC" },

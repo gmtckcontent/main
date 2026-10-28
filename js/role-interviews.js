@@ -28,7 +28,7 @@ const PROFILE_PLACEHOLDER_IMAGE =
   "./images/logo/gm-symbol-color-light-bg-web.png";
 
 /** 프로필 PNG 교체 후에도 캐시된 옛 이미지가 보이지 않도록 URL에 버전을 붙임 (교체 배포 시 숫자만 올리면 됨) */
-const PROFILE_IMAGE_CACHE_VERSION = "11";
+const PROFILE_IMAGE_CACHE_VERSION = "15";
 function withProfileImageCacheBust(url) {
   if (!url || url.startsWith("data:")) return url;
   if (/\bpv=\d+\b/.test(url)) return url;
@@ -37,7 +37,7 @@ function withProfileImageCacheBust(url) {
 }
 
 /** Our Story 히어로 모자이크: `images/profilepic-mosaic/*.png` (256px, 알파 유지, scripts/build-profilepic-mosaic.sh) */
-const MOSAIC_THUMB_VERSION = "5";
+const MOSAIC_THUMB_VERSION = "9";
 function toHqLandingMosaicThumbUrl(url) {
   if (!url || typeof url !== "string") {
     return url;
@@ -262,6 +262,59 @@ const interviewData = {
     greetingEn:
       "Hello\nStudio & Surface Integration, AVD & SVI HQ\nJeongwon Lee",
     interviewId: "avd-studio-surface", // 기존 인터뷰 섹션 ID
+  },
+  // OPS (Engineering Operations) 본부
+  "OPS1.png": {
+    profileImage: profilePicRel(["ops", "sqd.png"]),
+    hq: "OPS",
+    role: "Supplier Quality & Development",
+    roleKr: "Supplier Quality & Development",
+    roleEn: "Supplier Quality & Development",
+    name: "김명규",
+    nameKr: "김명규",
+    nameEn: "Myoungkyu Kim",
+    greeting:
+      "안녕하세요\nOPS본부의 Supplier Quality & Development담당\n김명규입니다",
+    greetingKr:
+      "안녕하세요\nOPS본부의 Supplier Quality & Development담당\n김명규입니다",
+    greetingEn:
+      "Hello\nSupplier Quality & Development, OPS HQ\nMyoungkyu Kim",
+    interviewId: "ops-sqd",
+  },
+  "OPS2.png": {
+    profileImage: profilePicRel(["ops", "operations.png"]),
+    hq: "OPS",
+    role: "Operations",
+    roleKr: "Operations",
+    roleEn: "Operations",
+    name: "이승협",
+    nameKr: "이승협",
+    nameEn: "SeungHyeop Lee",
+    greeting:
+      "안녕하세요\nOPS본부의 Operations담당\n이승협입니다",
+    greetingKr:
+      "안녕하세요\nOPS본부의 Operations담당\n이승협입니다",
+    greetingEn:
+      "Hello\nOperations, OPS HQ\nSeungHyeop Lee",
+    interviewId: "ops-operations",
+  },
+  // ME 본부
+  "ME1.png": {
+    profileImage: profilePicRel(["me", "me.png"]),
+    hq: "ME",
+    role: "Manufacturing Engineering",
+    roleKr: "Manufacturing Engineering",
+    roleEn: "Manufacturing Engineering",
+    name: "이해우",
+    nameKr: "이해우",
+    nameEn: "Haewoo Lee",
+    greeting:
+      "안녕하세요\nME본부의 Manufacturing Engineering담당\n이해우입니다",
+    greetingKr:
+      "안녕하세요\nME본부의 Manufacturing Engineering담당\n이해우입니다",
+    greetingEn:
+      "Hello\nManufacturing Engineering, ME HQ\nHaewoo Lee",
+    interviewId: "me-manufacturing-engineering",
   },
   // PIPG 본부
   "PIPG1.png": {
@@ -591,36 +644,72 @@ const interviewData = {
   "EE4.png": {
     profileImage: profilePicRel(["EE", "PQDQ.png"]),
     hq: "AVD & SVI",
-    role: "PQDQ Engineering Excellence",
-    roleKr: "PQDQ Engineering Excellence",
-    roleEn: "PQDQ Engineering Excellence",
-    name: "조성현",
-    nameKr: "조성현",
-    nameEn: "Sunghyun Cho",
+    role: "Customer Experience & Innovation",
+    roleKr: "Customer Experience & Innovation",
+    roleEn: "Customer Experience & Innovation",
+    name: "조원주",
+    nameKr: "조원주",
+    nameEn: "Wonju Cho",
     greeting:
-      "안녕하세요\nAVD & SVI본부의 PQDQ Engineering Excellence담당\n조성현입니다",
+      "안녕하세요\nAVD & SVI본부의 Customer Experience & Innovation담당\n조원주입니다",
     greetingKr:
-      "안녕하세요\nAVD & SVI본부의 PQDQ Engineering Excellence담당\n조성현입니다",
+      "안녕하세요\nAVD & SVI본부의 Customer Experience & Innovation담당\n조원주입니다",
     greetingEn:
-      "Hello\nPQDQ Engineering Excellence, AVD & SVI HQ\nSunghyun Cho",
+      "Hello\nCustomer Experience & Innovation, AVD & SVI HQ\nWonju Cho",
     interviewId: "ee-quality",
   },
-  "EE5.png": {
-    profileImage: profilePicRel(["EE", "ai chief_new.png"]),
+  // [비활성] Chief AI & New Tech. Strategy — 조직 폐지로 숨김 (Enterprise AI Solutions로 대체)
+  // "EE5.png": {
+  //   profileImage: profilePicRel(["EE", "ai chief_new.png"]),
+  //   hq: "AVD & SVI",
+  //   role: "Chief AI & New Tech. Strategy",
+  //   roleKr: "Chief AI & New Tech. Strategy",
+  //   roleEn: "Chief AI & New Tech. Strategy",
+  //   name: "신호재",
+  //   nameKr: "신호재",
+  //   nameEn: "Hojae Shin",
+  //   greeting:
+  //     "안녕하세요\nAVD & SVI본부의 Chief AI & New Tech. Strategy담당\n신호재입니다",
+  //   greetingKr:
+  //     "안녕하세요\nAVD & SVI본부의 Chief AI & New Tech. Strategy담당\n신호재입니다",
+  //   greetingEn:
+  //     "Hello\nChief AI & New Tech. Strategy, AVD & SVI HQ\nHojae Shin",
+  //   interviewId: "ee-ai-chief",
+  // },
+  "eais1.png": {
+    profileImage: profilePicRel(["avd&svi", "eais.png"]),
     hq: "AVD & SVI",
-    role: "Chief AI & New Tech. Strategy",
-    roleKr: "Chief AI & New Tech. Strategy",
-    roleEn: "Chief AI & New Tech. Strategy",
-    name: "신호재",
-    nameKr: "신호재",
-    nameEn: "Hojae Shin",
+    role: "Enterprise AI Solutions",
+    roleKr: "Enterprise AI Solutions",
+    roleEn: "Enterprise AI Solutions",
+    name: "예은실",
+    nameKr: "예은실",
+    nameEn: "Eunsil Ye",
     greeting:
-      "안녕하세요\nAVD & SVI본부의 Chief AI & New Tech. Strategy담당\n신호재입니다",
+      "안녕하세요\nAVD & SVI본부의 Enterprise AI Solutions담당\n예은실입니다",
     greetingKr:
-      "안녕하세요\nAVD & SVI본부의 Chief AI & New Tech. Strategy담당\n신호재입니다",
+      "안녕하세요\nAVD & SVI본부의 Enterprise AI Solutions담당\n예은실입니다",
     greetingEn:
-      "Hello\nChief AI & New Tech. Strategy, AVD & SVI HQ\nHojae Shin",
-    interviewId: "ee-ai-chief",
+      "Hello\nEnterprise AI Solutions, AVD & SVI HQ\nEunsil Ye",
+    interviewId: "avd-enterprise-ai",
+  },
+  "ise1.png": {
+    // TODO: 프로필 사진 수령 후 profileImage 추가하고 profileFallback 제거
+    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    hq: "AVD & SVI",
+    role: "Innovation Strategy and Excellence",
+    roleKr: "Innovation Strategy and Excellence",
+    roleEn: "Innovation Strategy and Excellence",
+    name: "박주리",
+    nameKr: "박주리",
+    nameEn: "Juri Park",
+    greeting:
+      "안녕하세요\nAVD & SVI본부의 Innovation Strategy and Excellence담당\n박주리입니다",
+    greetingKr:
+      "안녕하세요\nAVD & SVI본부의 Innovation Strategy and Excellence담당\n박주리입니다",
+    greetingEn:
+      "Hello\nInnovation Strategy and Excellence, AVD & SVI HQ\nJuri Park",
+    interviewId: "avd-innovation-strategy",
   },
 };
 
@@ -630,7 +719,7 @@ const interviewData = {
 // JSON 수정 후 배포 시 ?v= 숫자 올려 캐시 무력화 (CDN,프록시 대비)
 const INTERVIEW_CONTENT_BECA_ITPE_SS_URL =
   "./data/interview-content-beca-itpe-ss.json?v=16";
-const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=14";
+const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=15";
 const INTERVIEW_CONTENT_VE_URL = "./data/interview-content-ve.json?v=7";
 
 async function loadInterviewContentBecaItpeSs() {
@@ -778,6 +867,234 @@ Especially, after analyzing global benchmarking and data analysis and drawing Cu
         a: "우리의 목표는 고객이 차를 처음 보는 순간부터 오래 사용하는 내내 믿을 수 있는 외관 품질을 경험하게 하는 것입니다. 이를 위해 글로벌 팀과 함께 협력하고, 가상 개발 시스템과 신기술을 빠르게 도입하고 있습니다. 디자인, 설계, 생산 부서와 긴밀하게 소통하며 더 정교하고 완성도 높은 차량을 만들기 위해 오늘도 노력하고 있습니다.",
         aKr: "우리의 목표는 고객이 차를 처음 보는 순간부터 오래 사용하는 내내 믿을 수 있는 외관 품질을 경험하게 하는 것입니다. 이를 위해 글로벌 팀과 함께 협력하고, 가상 개발 시스템과 신기술을 빠르게 도입하고 있습니다. 디자인, 설계, 생산 부서와 긴밀하게 소통하며 더 정교하고 완성도 높은 차량을 만들기 위해 오늘도 노력하고 있습니다.",
         aEn:"Our goal is to enable customers to experience exterior quality they can trust from the moment they first see the car to every day they use it for a long time. To achieve this, we work closely with our global teams and rapidly introduce virtual development systems and new technologies. By communicating closely with Design, Engineering, and Manufacturing, we continue to strive for vehicles with more precise, higher-quality exterior execution.",
+      },
+    ],
+  },
+  "avd-enterprise-ai": {
+    questions: [
+      {
+        q: "현재 소속 팀과 하고 계신 업무에 대해 구체적으로 알려주세요.",
+        qKr: "현재 소속 팀과 하고 계신 업무에 대해 구체적으로 알려주세요.",
+        qEn: "Please tell us about your current team and your responsibilities in detail.",
+        a: "Enterprise AI Solutions Team, 줄여서 EAIS Team은 전사적으로 사용할 수 있는 AI Tool을 개발하는 팀입니다. 팀이름 약어 EAIS는 자칭 '에이스 팀'이라고 부르고 있으며, 이름처럼 데이터와 AI, 엔지니어링 각 분야의 에이스들이 모여 있답니다.😁 자동차 한 대를 개발하려면 설계, 해석(CAE), 시험, 품질 관리와 같은 수많은 업무가 이어지고, 그 과정에서 많은 데이터가 만들어 지는데, 이 업무 흐름을 분석하고, 엔지니어가 반복해서 하던 일이나 오래 기다려야 했던 문제를 해결할 수 있는, 그리고 재사용할 수 있는 AI/ML Tool을 개발하는 업무를 진행합니다. 한 팀에서 잘 쓰인 도구를 다른 팀과 글로벌 GM에서도 쓸 수 있게 확장하는 기회를 만들어 내는 업무도 진행합니다.",
+        aKr: "Enterprise AI Solutions Team, 줄여서 EAIS Team은 전사적으로 사용할 수 있는 AI Tool을 개발하는 팀입니다. 팀이름 약어 EAIS는 자칭 '에이스 팀'이라고 부르고 있으며, 이름처럼 데이터와 AI, 엔지니어링 각 분야의 에이스들이 모여 있답니다.😁 자동차 한 대를 개발하려면 설계, 해석(CAE), 시험, 품질 관리와 같은 수많은 업무가 이어지고, 그 과정에서 많은 데이터가 만들어 지는데, 이 업무 흐름을 분석하고, 엔지니어가 반복해서 하던 일이나 오래 기다려야 했던 문제를 해결할 수 있는, 그리고 재사용할 수 있는 AI/ML Tool을 개발하는 업무를 진행합니다. 한 팀에서 잘 쓰인 도구를 다른 팀과 글로벌 GM에서도 쓸 수 있게 확장하는 기회를 만들어 내는 업무도 진행합니다.",
+        aEn: "The Enterprise AI Solutions Team, or EAIS Team for short, develops AI tools that can be used across the entire company. We like to call ourselves the \"ACE team\" after our abbreviation, and true to the name, we bring together aces in data, AI, and engineering. 😁 Developing a single vehicle involves a long chain of work such as design, analysis (CAE), testing, and quality management, and a lot of data is created along the way. We analyze these workflows and develop reusable AI/ML tools that solve tasks engineers used to repeat over and over or problems they used to wait a long time on. We also create opportunities to expand tools that work well for one team so they can be used by other teams and across global GM.",
+      },
+      {
+        q: "EAIS Team의 역할은 무엇인가요?",
+        qKr: "EAIS Team의 역할은 무엇인가요?",
+        qEn: "What is the role of the EAIS Team?",
+        a: "자동차 산업은 전동화와 SDV 전환으로 빠르게 변화하고 있으며, 복잡해지는 차량을 얼마나 빠르고 완성도 높게 개발하느냐가 중요한 경쟁력이 되고 있습니다. 연구소에 축적된 설계, 해석, 시험 데이터와 엔지니어의 경험을 AI와 연결하면 결과를 미리 예측하고, 필요한 지식을 빠르게 찾고, 반복 업무를 자동화하여 차량 개발의 의사 결정을 앞당길 수 있습니다. Enterprise AI Solutions Team은 지엠테크니컬센터 코리아 기술연구소 모든 팀을 대상으로 엔지니어링과 차량 개발 과정에 AI와 머신러닝을 적용한 도구를 개발하여 차량 개발을 가속화하고, 엔지니어가 더 중요한 문제 해결에 집중할 수 있도록 돕습니다.",
+        aKr: "자동차 산업은 전동화와 SDV 전환으로 빠르게 변화하고 있으며, 복잡해지는 차량을 얼마나 빠르고 완성도 높게 개발하느냐가 중요한 경쟁력이 되고 있습니다. 연구소에 축적된 설계, 해석, 시험 데이터와 엔지니어의 경험을 AI와 연결하면 결과를 미리 예측하고, 필요한 지식을 빠르게 찾고, 반복 업무를 자동화하여 차량 개발의 의사 결정을 앞당길 수 있습니다. Enterprise AI Solutions Team은 지엠테크니컬센터 코리아 기술연구소 모든 팀을 대상으로 엔지니어링과 차량 개발 과정에 AI와 머신러닝을 적용한 도구를 개발하여 차량 개발을 가속화하고, 엔지니어가 더 중요한 문제 해결에 집중할 수 있도록 돕습니다.",
+        aEn: "The automotive industry is changing rapidly with electrification and the shift to SDVs, and how quickly and how well we can develop increasingly complex vehicles has become a key competitive advantage. By connecting the design, analysis, and test data accumulated at our technical center, along with our engineers' experience, to AI, we can predict results in advance, find the knowledge we need quickly, and automate repetitive work, bringing vehicle development decisions forward. The Enterprise AI Solutions Team develops tools that apply AI and machine learning to engineering and vehicle development for every team at GM Technical Center Korea, accelerating vehicle development and helping engineers focus on solving more important problems.",
+      },
+      {
+        q: "EAIS Team 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        qKr: "EAIS Team 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        qEn: "What capabilities do you think are needed to work on the EAIS Team?",
+        a: "데이터를 다루는 기본기: 복잡한 데이터를 다루고 가공하는 능력입니다. 통계나 SQL에 대한 기본 개념을 알면 도움이 됩니다. 의미있는 결과는 좋은 데이터에서 시작합니다.\n\n기술스택: 컴퓨터 공학의 기본기와 Python 활용 능력, SQL, LLM, 머신러닝·딥러닝 활용에 대한 이해가 필요하며, FastAPI, Docker, Kubernetes 등 AI 애플리케이션 개발·배포 경험이 있다면 더욱 좋습니다!\n\n호기심: 자동차 업무 분야에 대한 호기심과 지속적으로 변화하는 AI 기술에 대한 호기심이 중요합니다. 새로운 것을 즐겁게 배우는 사람이 가장 빨리 성장합니다.\n\n협업과 소통 능력: 그중에서도 가장 중요한 역량입니다. 현업 엔지니어의 고민을 잘 듣고 이해해야 정말 필요한 도구를 만들 수 있고, 만든 도구를 쉽게 설명할 수 있어야 많은 사람이 쓰게 됩니다.\n\n자동차 지식은 함께 일하면서 관심있게 배우면 자연스럽게 쌓이니 걱정하지 마세요 🙂",
+        aKr: "데이터를 다루는 기본기: 복잡한 데이터를 다루고 가공하는 능력입니다. 통계나 SQL에 대한 기본 개념을 알면 도움이 됩니다. 의미있는 결과는 좋은 데이터에서 시작합니다.\n\n기술스택: 컴퓨터 공학의 기본기와 Python 활용 능력, SQL, LLM, 머신러닝·딥러닝 활용에 대한 이해가 필요하며, FastAPI, Docker, Kubernetes 등 AI 애플리케이션 개발·배포 경험이 있다면 더욱 좋습니다!\n\n호기심: 자동차 업무 분야에 대한 호기심과 지속적으로 변화하는 AI 기술에 대한 호기심이 중요합니다. 새로운 것을 즐겁게 배우는 사람이 가장 빨리 성장합니다.\n\n협업과 소통 능력: 그중에서도 가장 중요한 역량입니다. 현업 엔지니어의 고민을 잘 듣고 이해해야 정말 필요한 도구를 만들 수 있고, 만든 도구를 쉽게 설명할 수 있어야 많은 사람이 쓰게 됩니다.\n\n자동차 지식은 함께 일하면서 관심있게 배우면 자연스럽게 쌓이니 걱정하지 마세요 🙂",
+        aEn: "Data fundamentals: The ability to handle and process complex data. Knowing the basic concepts of statistics and SQL helps. Meaningful results start with good data.\n\nTech stack: You need computer science fundamentals, Python skills, and an understanding of SQL, LLMs, and how to apply machine learning and deep learning. Experience developing and deploying AI applications with tools like FastAPI, Docker, and Kubernetes is even better!\n\nCuriosity: Curiosity about the automotive domain and about ever-changing AI technology is important. People who enjoy learning new things grow the fastest.\n\nCollaboration and communication: This is the most important capability of all. You can only build the tools people truly need by listening to and understanding the concerns of engineers in the field, and a tool only gets widely used if you can explain it simply.\n\nDon't worry about automotive knowledge. If you stay interested and learn as we work together, it will build up naturally 🙂",
+      },
+      {
+        q: "EAIS Team의 매력은?",
+        qKr: "EAIS Team의 매력은?",
+        qEn: "What makes the EAIS Team appealing?",
+        a: "제가 느끼는 우리 팀의 가장 큰 매력은 내가 만든 AI Tool이 실제 자동차 개발에 사용되어 회사의 Business Benefit을 만들어 낸다는 점입니다. 제가 처음 만든 자동화 도구를 동료 엔지니어가 써 보고 \"시간이 크게 줄었다\"며 기뻐하던 순간은 지금도 큰 보람으로 남아 있습니다. 또 설계, 해석, 시험, 품질 등 다양한 분야의 엔지니어와 함께 일하다 보니 자동차 개발 전체를 넓게 이해할 수 있고, 글로벌 GM 동료들과 협업할 기회도 있습니다. 마지막으로 팀 분위기도 자랑하고 싶습니다. 우리 팀은 함께 공부하는 시간을 따로 가지고, 각자 새로 배운 것을 나누면서 성장합니다. 모르는 것은 편하게 묻고, 새로운 시도가 잘 되지 않아도 격려하는 분위기입니다. 사람들이 즐겁게 일하고, 배우고, 성장할 수 있는 시간과 공간을 만드는 것, 그것이 우리 팀이 가장 소중하게 생각하는 문화입니다.",
+        aKr: "제가 느끼는 우리 팀의 가장 큰 매력은 내가 만든 AI Tool이 실제 자동차 개발에 사용되어 회사의 Business Benefit을 만들어 낸다는 점입니다. 제가 처음 만든 자동화 도구를 동료 엔지니어가 써 보고 \"시간이 크게 줄었다\"며 기뻐하던 순간은 지금도 큰 보람으로 남아 있습니다. 또 설계, 해석, 시험, 품질 등 다양한 분야의 엔지니어와 함께 일하다 보니 자동차 개발 전체를 넓게 이해할 수 있고, 글로벌 GM 동료들과 협업할 기회도 있습니다. 마지막으로 팀 분위기도 자랑하고 싶습니다. 우리 팀은 함께 공부하는 시간을 따로 가지고, 각자 새로 배운 것을 나누면서 성장합니다. 모르는 것은 편하게 묻고, 새로운 시도가 잘 되지 않아도 격려하는 분위기입니다. 사람들이 즐겁게 일하고, 배우고, 성장할 수 있는 시간과 공간을 만드는 것, 그것이 우리 팀이 가장 소중하게 생각하는 문화입니다.",
+        aEn: "For me, the biggest appeal of our team is that the AI tools I build are used in real vehicle development and create business benefits for the company. The moment a fellow engineer tried the first automation tool I built and happily told me it had cut their time dramatically still stays with me as a great reward. Working with engineers from many fields, including design, analysis, testing, and quality, also gives me a broad understanding of vehicle development as a whole, and there are opportunities to collaborate with colleagues across global GM. Finally, I want to brag about our team atmosphere. We set aside time to study together and grow by sharing what each of us has newly learned. It is easy to ask about what you don't know, and people encourage you even when a new attempt doesn't work out. Creating the time and space for people to enjoy their work, learn, and grow is the culture our team values most.",
+      },
+      {
+        q: "앞으로 EAIS Team이 지향하는 목표는 무엇인가요?",
+        qKr: "앞으로 EAIS Team이 지향하는 목표는 무엇인가요?",
+        qEn: "What goals is the EAIS Team aiming for going forward?",
+        a: "EAIS Team은 AI로 엔지니어링을 혁신하고, 더 빠른 차량 개발을 돕는 팀이 되고자 합니다. 우리가 그리는 모습은 세 가지입니다.\n\n• 현업 엔지니어와 함께 고민하며 매일 쓰는 실용적인 AI Tool을 만드는 팀\n• 한 번 만든 도구를 여러 팀과 글로벌 GM에서 함께 쓸 수 있도록 넓혀 가는 팀\n• 새로운 AI 기술을 빠르게 익혀 연구소 업무에 먼저 연결해 보는 팀\n\n결국 우리가 바라는 것은 연구소의 모든 엔지니어가 AI를 든든한 동료처럼 쓰는 모습입니다. 그 변화를 함께 만들어 갈 동료를 언제나 기다립니다.",
+        aKr: "EAIS Team은 AI로 엔지니어링을 혁신하고, 더 빠른 차량 개발을 돕는 팀이 되고자 합니다. 우리가 그리는 모습은 세 가지입니다.\n\n• 현업 엔지니어와 함께 고민하며 매일 쓰는 실용적인 AI Tool을 만드는 팀\n• 한 번 만든 도구를 여러 팀과 글로벌 GM에서 함께 쓸 수 있도록 넓혀 가는 팀\n• 새로운 AI 기술을 빠르게 익혀 연구소 업무에 먼저 연결해 보는 팀\n\n결국 우리가 바라는 것은 연구소의 모든 엔지니어가 AI를 든든한 동료처럼 쓰는 모습입니다. 그 변화를 함께 만들어 갈 동료를 언제나 기다립니다.",
+        aEn: "The EAIS Team aims to innovate engineering with AI and help develop vehicles faster. We picture ourselves in three ways:\n\n• A team that works through problems with engineers in the field to build practical AI tools they use every day\n• A team that expands each tool it builds so that many teams and global GM can use it together\n• A team that quickly learns new AI technologies and is the first to connect them to our technical center's work\n\nUltimately, what we hope for is a future where every engineer at our technical center uses AI like a reliable colleague. We are always looking for colleagues to build that change with us.",
+      },
+    ],
+  },
+  "avd-innovation-strategy": {
+    questions: [
+      {
+        q: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        qKr: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        qEn: "Please tell us your current role & responsibilities specifically.",
+        a: "저는 CXAI 담당의 ISE(Innovation Strategy and Excellence) 팀에서 OpEx (Operational Excellence) 코치로 일하고 있습니다. OpEx 는 회사 안에서 생기는 시간 낭비와 비용 낭비를 데이터로 찾아내고 개선하는 문제 해결 방법입니다. 엔지니어들이 \"시험 비용을 줄이고 싶다\", \"검토 과정이 너무 오래 걸린다\" 같은 고민을 가져오면, 문제를 정의하고 원인을 분석해 개선 결과를 확인하기까지 전 과정을 함께합니다. 쉽게 말해 사내 엔지니어들의 '문제 해결 코치'입니다. 최근에는 AI를 활용해 코칭과 성과 관리를 더 쉽게 만드는 도구도 직접 만들고 있습니다.",
+        aKr: "저는 CXAI 담당의 ISE(Innovation Strategy and Excellence) 팀에서 OpEx (Operational Excellence) 코치로 일하고 있습니다. OpEx 는 회사 안에서 생기는 시간 낭비와 비용 낭비를 데이터로 찾아내고 개선하는 문제 해결 방법입니다. 엔지니어들이 \"시험 비용을 줄이고 싶다\", \"검토 과정이 너무 오래 걸린다\" 같은 고민을 가져오면, 문제를 정의하고 원인을 분석해 개선 결과를 확인하기까지 전 과정을 함께합니다. 쉽게 말해 사내 엔지니어들의 '문제 해결 코치'입니다. 최근에는 AI를 활용해 코칭과 성과 관리를 더 쉽게 만드는 도구도 직접 만들고 있습니다.",
+        aEn: "I work as an OpEx (Operational Excellence) coach on the ISE (Innovation Strategy and Excellence) team within the CXAI organization. OpEx is a problem-solving method that uses data to find and eliminate wasted time and cost inside the company. When engineers come to us with concerns like \"I want to reduce test costs\" or \"the review process takes too long,\" I work with them through the entire process, from defining the problem and analyzing the root cause to confirming the results of the improvement. Simply put, I am a \"problem-solving coach\" for our engineers. Recently, I have also been building tools that use AI to make coaching and performance management easier.",
+      },
+      {
+        q: "팀 소개를 부탁드립니다.",
+        qKr: "팀 소개를 부탁드립니다.",
+        qEn: "Please introduce your team.",
+        a: "ISE팀은 \"어떻게 하면 더 좋은 아이디어를 더 빨리 실제 차에 담을 수 있을까?\"를 고민하는 GMTCK의 혁신 팀입니다. 크게 세 가지 일을 합니다.\n\n• 고객 니즈 기반 신기술 발굴: 고객이 무엇을 불편해하고 무엇을 원하는지에서 출발해, 그 니즈를 해결할 새로운 기술을 국내외 전시회와 협력사에서 찾아냅니다. 쓸 만한 아이디어는 3D 프린터로 Mock-up(간단한 시제품)을 만들어 눈으로 보여줍니다.\n• 아이디어를 특허로: 직원들의 아이디어를 다듬어 특허로 출원하고, Forum과 Workshop을 열어 회사 전체에 혁신 문화를 퍼뜨립니다.\n• 문제 해결 코칭: DFSS, OPEX(Operational Excellence), TRIZ 같은 문제 해결 방법을 교육하고, 실제 프로젝트가 성과를 내도록 코치로 함께합니다. 올해는 저희가 코칭한 과제 2건이 GM 글로벌 OpEx Symposium에서 상을 받기도 했습니다.\n\n인턴으로 함께하신다면 고객 니즈 조사와 신기술 탐색, Mock-up 제작, 실제 과제의 데이터 정리, AI를 활용한 업무 자동화 등에 참여하며 회사에서 혁신이 어떻게 만들어지는지 직접 경험하실 수 있습니다.",
+        aKr: "ISE팀은 \"어떻게 하면 더 좋은 아이디어를 더 빨리 실제 차에 담을 수 있을까?\"를 고민하는 GMTCK의 혁신 팀입니다. 크게 세 가지 일을 합니다.\n\n• 고객 니즈 기반 신기술 발굴: 고객이 무엇을 불편해하고 무엇을 원하는지에서 출발해, 그 니즈를 해결할 새로운 기술을 국내외 전시회와 협력사에서 찾아냅니다. 쓸 만한 아이디어는 3D 프린터로 Mock-up(간단한 시제품)을 만들어 눈으로 보여줍니다.\n• 아이디어를 특허로: 직원들의 아이디어를 다듬어 특허로 출원하고, Forum과 Workshop을 열어 회사 전체에 혁신 문화를 퍼뜨립니다.\n• 문제 해결 코칭: DFSS, OPEX(Operational Excellence), TRIZ 같은 문제 해결 방법을 교육하고, 실제 프로젝트가 성과를 내도록 코치로 함께합니다. 올해는 저희가 코칭한 과제 2건이 GM 글로벌 OpEx Symposium에서 상을 받기도 했습니다.\n\n인턴으로 함께하신다면 고객 니즈 조사와 신기술 탐색, Mock-up 제작, 실제 과제의 데이터 정리, AI를 활용한 업무 자동화 등에 참여하며 회사에서 혁신이 어떻게 만들어지는지 직접 경험하실 수 있습니다.",
+        aEn: "The ISE team is GMTCK's innovation team, always asking, \"How can we bring better ideas into real vehicles, faster?\" We do three main things:\n\n• Discovering new technologies based on customer needs: Starting from what customers find inconvenient and what they want, we look for new technologies that address those needs at exhibitions in Korea and abroad and among our suppliers. For promising ideas, we build mock-ups (simple prototypes) with 3D printers so people can see them for themselves.\n• Turning ideas into patents: We refine employees' ideas and file them as patents, and we host forums and workshops to spread a culture of innovation across the company.\n• Problem-solving coaching: We teach problem-solving methods such as DFSS, OpEx (Operational Excellence), and TRIZ, and work alongside real projects as coaches to help them deliver results. This year, two projects we coached won awards at GM's global OpEx Symposium.\n\nIf you join us as an intern, you can take part in customer needs research, new technology scouting, mock-up building, organizing data for real projects, and automating work with AI, and experience firsthand how innovation happens inside a company.",
+      },
+      {
+        q: "업무 수행에 필요한 역량은 무엇이라고 생각하시나요?",
+        qKr: "업무 수행에 필요한 역량은 무엇이라고 생각하시나요?",
+        qEn: "Which capabilities do we need to have for your role?",
+        a: "가장 중요한 것은 호기심입니다. \"이건 왜 이렇게 할까?\", \"더 좋은 방법은 없을까?\"라는 질문을 자주 던지는 분이라면 즐겁게 일할 수 있습니다. 또 처음 보는 분야의 이야기를 빠르게 이해하고 다른 사람이 알아듣기 쉽게 정리하는 능력이 큰 힘이 됩니다. 문제 해결 방법론, 특허, AI 도구는 미리 몰라도 괜찮습니다. 팀에서 함께 배우면 됩니다. Excel로 데이터를 정리해 보거나 AI 도구를 써 본 경험이 있다면 조금 더 빨리 적응할 수 있습니다.",
+        aKr: "가장 중요한 것은 호기심입니다. \"이건 왜 이렇게 할까?\", \"더 좋은 방법은 없을까?\"라는 질문을 자주 던지는 분이라면 즐겁게 일할 수 있습니다. 또 처음 보는 분야의 이야기를 빠르게 이해하고 다른 사람이 알아듣기 쉽게 정리하는 능력이 큰 힘이 됩니다. 문제 해결 방법론, 특허, AI 도구는 미리 몰라도 괜찮습니다. 팀에서 함께 배우면 됩니다. Excel로 데이터를 정리해 보거나 AI 도구를 써 본 경험이 있다면 조금 더 빨리 적응할 수 있습니다.",
+        aEn: "The most important thing is curiosity. If you often ask questions like \"Why do we do it this way?\" or \"Isn't there a better way?\", you will enjoy this work. The ability to quickly understand topics from unfamiliar fields and summarize them so others can easily follow is also a big strength. It's fine if you don't know problem-solving methodologies, patents, or AI tools in advance; you can learn them with the team. If you have experience organizing data in Excel or using AI tools, you'll be able to adapt a bit faster.",
+      },
+      {
+        q: "팀 문화나 함께 일하는 동료들은 어떤가요?",
+        qKr: "팀 문화나 함께 일하는 동료들은 어떤가요?",
+        qEn: "How do you think about your team culture and teammates working together?",
+        a: "우리 팀에는 설계, 품질, 시험 등 다양한 분야에서 오래 일한 코치와 전문가들이 모여 있습니다. 모두 가르치고 배우는 것을 좋아해서, 궁금한 것을 물어보면 누구든 친절하게 알려줍니다. \"일단 해 보고 실패에서 배우자\"는 분위기라 연차와 관계없이 아이디어를 편하게 낼 수 있습니다. 팀 전용 AI 비서를 직접 만들어 업무에 쓰는 등, 새로운 방식을 가장 먼저 시도해 보는 팀이기도 합니다.",
+        aKr: "우리 팀에는 설계, 품질, 시험 등 다양한 분야에서 오래 일한 코치와 전문가들이 모여 있습니다. 모두 가르치고 배우는 것을 좋아해서, 궁금한 것을 물어보면 누구든 친절하게 알려줍니다. \"일단 해 보고 실패에서 배우자\"는 분위기라 연차와 관계없이 아이디어를 편하게 낼 수 있습니다. 팀 전용 AI 비서를 직접 만들어 업무에 쓰는 등, 새로운 방식을 가장 먼저 시도해 보는 팀이기도 합니다.",
+        aEn: "Our team brings together coaches and experts with long careers in fields such as design, quality, and testing. Everyone enjoys teaching and learning, so whoever you ask will kindly help when you have a question. Our attitude is \"try it first and learn from failure,\" so anyone can comfortably share ideas regardless of seniority. We are also a team that is first to try new ways of working, such as building our own team AI assistant and using it in our daily work.",
+      },
+      {
+        q: "내게 GMTCK란?",
+        qKr: "내게 GMTCK란?",
+        qEn: "What does GMTCK mean to you?",
+        a: "저에게 GMTCK는 작은 개선이 큰 변화가 되는 곳입니다. 엔지니어 한 명의 작은 문제의식이 코칭을 거쳐 실제 비용 절감과 시간 단축으로 이어지고, 그 결과가 전 세계 GM 동료들에게 인정받는 순간을 가까이에서 볼 수 있습니다. 매번 다른 분야의 과제를 만나다 보니 차 한 대가 만들어지는 전 과정을 자연스럽게 배울 수 있다는 점도 큰 매력입니다.",
+        aKr: "저에게 GMTCK는 작은 개선이 큰 변화가 되는 곳입니다. 엔지니어 한 명의 작은 문제의식이 코칭을 거쳐 실제 비용 절감과 시간 단축으로 이어지고, 그 결과가 전 세계 GM 동료들에게 인정받는 순간을 가까이에서 볼 수 있습니다. 매번 다른 분야의 과제를 만나다 보니 차 한 대가 만들어지는 전 과정을 자연스럽게 배울 수 있다는 점도 큰 매력입니다.",
+        aEn: "For me, GMTCK is a place where small improvements become big changes. I get to see up close how one engineer's small sense of a problem turns, through coaching, into real cost savings and time reductions, and how those results are recognized by GM colleagues around the world. Since I meet projects from a different field every time, I also naturally learn the entire process of how a vehicle is made, which is a big draw.",
+      },
+    ],
+  },
+  "ops-sqd": {
+    questions: [
+      {
+        q: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        qKr: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        qEn: "Please tell us your current role & responsibilities specifically.",
+        a: "SQD(Supplier Quality & Development)는 차량에 적용되는 부품이 설계 의도와 품질 기준을 만족하면서 안정적으로 양산될 수 있도록 협력사의 품질 수준을 개발하고 관리하는 조직입니다. 신차 개발 초기부터 잠재적인 품질 리스크를 찾아내고, 양산 이후에는 품질이 안정적으로 유지되도록 관리하는 것이 핵심입니다.\n\nSupplier Quality Engineer는 담당 부품의 도면과 기술 사양을 바탕으로 개발·양산·시장 품질·Part Warranty까지 부품 품질의 전 과정을 관리합니다. 개발 단계에서는 도면과 사양을 검토해 잠재 리스크를 확인하고, APQP, PPAP, PFMEA, Control Plan 등 품질 프로세스를 기반으로 협력사의 개발 준비 수준과 공정 리스크를 점검합니다. Run at Rate, 공정 감사, 제품·공정 검증, 시제품 및 양산 초기 부품 확인을 통해 설계 의도와 품질 기준이 실제 생산 현장에서 구현되는지도 확인합니다.\n\n양산 중 품질 이슈가 발생하면 협력업체와 함께 현상 파악, 원인 분석, 임시 조치, 근본 대책 수립과 효과 검증을 진행합니다. 시장에서 발생하는 Part Warranty 및 고객 품질 데이터는 관련 조직과 분석해 재발 방지 활동으로 연결합니다. 또한 신차 Launch 단계에서는 GVDP 일정에 맞춰 Supplier Readiness, PPAP, Run at Rate와 주요 품질 리스크를 종합적으로 관리합니다.",
+        aKr: "SQD(Supplier Quality & Development)는 차량에 적용되는 부품이 설계 의도와 품질 기준을 만족하면서 안정적으로 양산될 수 있도록 협력사의 품질 수준을 개발하고 관리하는 조직입니다. 신차 개발 초기부터 잠재적인 품질 리스크를 찾아내고, 양산 이후에는 품질이 안정적으로 유지되도록 관리하는 것이 핵심입니다.\n\nSupplier Quality Engineer는 담당 부품의 도면과 기술 사양을 바탕으로 개발·양산·시장 품질·Part Warranty까지 부품 품질의 전 과정을 관리합니다. 개발 단계에서는 도면과 사양을 검토해 잠재 리스크를 확인하고, APQP, PPAP, PFMEA, Control Plan 등 품질 프로세스를 기반으로 협력사의 개발 준비 수준과 공정 리스크를 점검합니다. Run at Rate, 공정 감사, 제품·공정 검증, 시제품 및 양산 초기 부품 확인을 통해 설계 의도와 품질 기준이 실제 생산 현장에서 구현되는지도 확인합니다.\n\n양산 중 품질 이슈가 발생하면 협력업체와 함께 현상 파악, 원인 분석, 임시 조치, 근본 대책 수립과 효과 검증을 진행합니다. 시장에서 발생하는 Part Warranty 및 고객 품질 데이터는 관련 조직과 분석해 재발 방지 활동으로 연결합니다. 또한 신차 Launch 단계에서는 GVDP 일정에 맞춰 Supplier Readiness, PPAP, Run at Rate와 주요 품질 리스크를 종합적으로 관리합니다.",
+        aEn: "SQD (Supplier Quality & Development) is the organization that develops and manages our suppliers' quality levels so that the parts used in our vehicles meet design intent and quality standards and can be mass-produced reliably. The core of our work is identifying potential quality risks from the earliest stages of new vehicle development and making sure quality stays stable after production begins.\n\nA Supplier Quality Engineer manages the entire lifecycle of part quality, from development and production to field quality and part warranty, based on the drawings and technical specifications of the parts they are responsible for. In the development phase, we review drawings and specifications to identify potential risks, and we check suppliers' development readiness and process risks based on quality processes such as APQP, PPAP, PFMEA, and Control Plans. Through Run at Rate, process audits, product and process validation, and checks on prototype and early-production parts, we also confirm that design intent and quality standards are actually realized on the production floor.\n\nWhen a quality issue arises during production, we work with the supplier to understand the symptoms, analyze the root cause, implement containment, establish permanent corrective actions, and verify their effectiveness. Part warranty and customer quality data from the field are analyzed with related organizations and turned into actions that prevent recurrence. During new vehicle launches, we comprehensively manage supplier readiness, PPAP, Run at Rate, and key quality risks in line with the GVDP schedule.",
+      },
+      {
+        q: "하루 업무에 대해 소개해주세요.",
+        qKr: "하루 업무에 대해 소개해주세요.",
+        qEn: "Please describe a typical day at work.",
+        a: "SQD의 하루는 담당 프로그램과 협력사의 품질 현황, 전날 발생한 이슈, 당일 회의와 현장 일정을 확인하고 우선순위를 정하는 것으로 시작됩니다. 신차 개발 중인 경우에는 주요 마일스톤과 협력사의 준비 현황을 중심으로 점검합니다.\n\n이후 협력사, 설계, 구매, 제조, 공장 품질 등 관련 조직과 이슈 대응 방향을 조율합니다. 회의에서는 자료 검토에 그치지 않고, 대책이 실제 공정에 적용되었는지, 작업 표준과 검사 방법이 적절한지, 양산 조건에서 재현 가능한지를 확인합니다.\n\n필요한 경우 협력사나 공장을 방문해 공정 흐름, 작업 조건, 자재 관리, 생산 능력과 검사 체계를 직접 확인합니다. 현장 결과는 데이터와 증거를 바탕으로 정리하고, 담당자별 조치·기한·검증 방법을 명확히 한 뒤 진행 상황을 추적합니다.\n\n양산 단계에서는 생산 및 품질 데이터를 모니터링하고, 공정 변경이나 반복 이슈에 대한 후속 조치를 관리합니다. Part Warranty나 시장 품질 이슈가 발생하면 고객 영향 최소화와 신속한 원인 규명을 우선으로 대응하며, 주요 현황은 글로벌 동료와 리더십에 공유합니다.",
+        aKr: "SQD의 하루는 담당 프로그램과 협력사의 품질 현황, 전날 발생한 이슈, 당일 회의와 현장 일정을 확인하고 우선순위를 정하는 것으로 시작됩니다. 신차 개발 중인 경우에는 주요 마일스톤과 협력사의 준비 현황을 중심으로 점검합니다.\n\n이후 협력사, 설계, 구매, 제조, 공장 품질 등 관련 조직과 이슈 대응 방향을 조율합니다. 회의에서는 자료 검토에 그치지 않고, 대책이 실제 공정에 적용되었는지, 작업 표준과 검사 방법이 적절한지, 양산 조건에서 재현 가능한지를 확인합니다.\n\n필요한 경우 협력사나 공장을 방문해 공정 흐름, 작업 조건, 자재 관리, 생산 능력과 검사 체계를 직접 확인합니다. 현장 결과는 데이터와 증거를 바탕으로 정리하고, 담당자별 조치·기한·검증 방법을 명확히 한 뒤 진행 상황을 추적합니다.\n\n양산 단계에서는 생산 및 품질 데이터를 모니터링하고, 공정 변경이나 반복 이슈에 대한 후속 조치를 관리합니다. Part Warranty나 시장 품질 이슈가 발생하면 고객 영향 최소화와 신속한 원인 규명을 우선으로 대응하며, 주요 현황은 글로벌 동료와 리더십에 공유합니다.",
+        aEn: "A day in SQD starts by checking the quality status of our programs and suppliers, any issues from the previous day, and the day's meetings and site visits, and then setting priorities. When a new vehicle is in development, we focus on key milestones and supplier readiness.\n\nWe then align on how to respond to issues with suppliers and related organizations such as engineering, purchasing, manufacturing, and plant quality. In meetings, we don't stop at reviewing documents; we check whether countermeasures have actually been applied to the process, whether work standards and inspection methods are appropriate, and whether results can be reproduced under production conditions.\n\nWhen needed, we visit suppliers or plants to see the process flow, working conditions, material handling, production capacity, and inspection systems firsthand. We organize what we find on site based on data and evidence, clarify the actions, deadlines, and verification methods for each owner, and track progress.\n\nIn the production phase, we monitor production and quality data and manage follow-up on process changes and recurring issues. When a part warranty or field quality issue occurs, we prioritize minimizing customer impact and quickly identifying the cause, and we share key status updates with global colleagues and leadership.",
+      },
+      {
+        q: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        qKr: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        qEn: "What capabilities do you think are needed for this role?",
+        a: "첫째는 도면, 제품 기능과 제조 공정을 이해하는 기술적 역량입니다. 부품의 기능과 생산 방식을 이해해야 공정 변화가 제품 품질에 미치는 영향을 판단할 수 있습니다. APQP, PPAP, PFMEA, Control Plan, MSA, SPC, 8D 등 핵심 품질 도구를 실무에 적용하는 능력도 필요합니다.\n\n둘째는 데이터 기반의 구조적 문제 해결 능력입니다. 품질 문제를 현상이나 책임 소재로만 바라보지 않고, 문제를 명확히 정의한 뒤 데이터를 수집하고 원인을 검증해야 합니다. 임시 조치, 근본 원인 제거, 재발 방지와 효과 확인까지 논리적으로 연결하는 역량이 중요합니다.\n\n셋째는 협업과 커뮤니케이션 역량입니다. SQD는 협력사뿐 아니라 설계, 구매, 제조, 공장 품질, 프로그램, 글로벌 조직과 함께 일합니다. 각 조직의 관점과 제약 조건을 이해하면서도 품질 기준과 고객 관점은 분명하게 전달해야 하며, 글로벌 협업을 위한 영어 소통 능력도 도움이 됩니다.\n\n마지막으로 Ownership, 판단력과 실행력이 필요합니다. 일정과 품질 사이에서 우선순위를 정하고, 필요한 사람을 연결해 이슈를 끝까지 해결해야 합니다. 문제를 조기에 공유하고 선제적으로 대응하는 태도, 협력사의 개선을 이끌어 내는 추진력이 SQD 엔지니어에게 중요한 역량입니다.",
+        aKr: "첫째는 도면, 제품 기능과 제조 공정을 이해하는 기술적 역량입니다. 부품의 기능과 생산 방식을 이해해야 공정 변화가 제품 품질에 미치는 영향을 판단할 수 있습니다. APQP, PPAP, PFMEA, Control Plan, MSA, SPC, 8D 등 핵심 품질 도구를 실무에 적용하는 능력도 필요합니다.\n\n둘째는 데이터 기반의 구조적 문제 해결 능력입니다. 품질 문제를 현상이나 책임 소재로만 바라보지 않고, 문제를 명확히 정의한 뒤 데이터를 수집하고 원인을 검증해야 합니다. 임시 조치, 근본 원인 제거, 재발 방지와 효과 확인까지 논리적으로 연결하는 역량이 중요합니다.\n\n셋째는 협업과 커뮤니케이션 역량입니다. SQD는 협력사뿐 아니라 설계, 구매, 제조, 공장 품질, 프로그램, 글로벌 조직과 함께 일합니다. 각 조직의 관점과 제약 조건을 이해하면서도 품질 기준과 고객 관점은 분명하게 전달해야 하며, 글로벌 협업을 위한 영어 소통 능력도 도움이 됩니다.\n\n마지막으로 Ownership, 판단력과 실행력이 필요합니다. 일정과 품질 사이에서 우선순위를 정하고, 필요한 사람을 연결해 이슈를 끝까지 해결해야 합니다. 문제를 조기에 공유하고 선제적으로 대응하는 태도, 협력사의 개선을 이끌어 내는 추진력이 SQD 엔지니어에게 중요한 역량입니다.",
+        aEn: "First, technical capability to understand drawings, product function, and manufacturing processes. You need to understand how a part works and how it is produced to judge how process changes affect product quality. The ability to apply core quality tools such as APQP, PPAP, PFMEA, Control Plans, MSA, SPC, and 8D in practice is also necessary.\n\nSecond, structured, data-driven problem solving. Rather than looking at quality problems only in terms of symptoms or who is at fault, you need to define the problem clearly, collect data, and verify the cause. The ability to logically connect containment, root cause elimination, recurrence prevention, and effectiveness checks is important.\n\nThird, collaboration and communication. SQD works not only with suppliers but also with engineering, purchasing, manufacturing, plant quality, program teams, and global organizations. You need to understand each organization's perspective and constraints while clearly communicating quality standards and the customer's point of view, and English communication skills for global collaboration are a plus.\n\nFinally, ownership, judgment, and the ability to execute. You have to set priorities between schedule and quality, bring the right people together, and see issues through to resolution. An attitude of sharing problems early and responding proactively, along with the drive to lead suppliers to improve, are key capabilities for an SQD engineer.",
+      },
+      {
+        q: "진행하셨던 프로젝트 중 인상 깊었던 프로젝트가 있나요?",
+        qKr: "진행하셨던 프로젝트 중 인상 깊었던 프로젝트가 있나요?",
+        qEn: "Is there a project that left a strong impression on you?",
+        a: "SQD를 대표하는 프로젝트로는 신차 Launch 과정에서 협력사의 부품 개발과 양산 준비를 안정화한 사례를 들 수 있습니다. 양산을 앞두고 핵심 부품의 공정 리스크나 품질 이슈가 확인되면, 협력사의 공정·제출 자료·검증 결과를 재점검하고 우선순위에 따라 대책을 수립합니다.\n\n이 과정에서 SQD는 협력업체, DRE, MO, MQ와 긴밀하게 커뮤니케이션하며 문제를 함께 해결합니다. DRE는 도면과 설계 의도, MO는 제조 공정과 생산 조건, MQ는 양산 현장의 품질 기준과 검사 체계를 중심으로 리스크를 검토합니다. 각 조직의 관점이 다를 수 있기 때문에 정기적인 이슈 리뷰와 현장 확인을 통해 문제의 현상, 고객 영향, 원인, 대책과 완료 기준을 동일하게 정렬하는 것이 중요합니다.\n\n협력사 현장에서는 공정 흐름과 작업 조건을 확인하고, 관련 조직과 함께 임시 선별 및 검사 강화, 공정 조건 개선, 검사 체계 보완, 작업 표준 개정 등의 조치를 단계적으로 실행합니다. 조치별 담당자와 완료 일정을 명확히 관리하며, 실제 생산 조건에서 동일한 품질이 반복되는지 DRE·MO·MQ와 함께 검증합니다. 이를 통해 품질 리스크를 양산 전에 최소화하고, 가능한 리스크는 사전에 제거해 안정적인 Launch로 연결합니다.\n\n이러한 협업은 PPAP 승인, Run at Rate 완료, Launch risk 해소와 초기 품질 안정화로 이어집니다. 이 프로젝트가 보여주는 SQD의 핵심은 협력업체에 요구사항을 전달하는 데 그치지 않고, DRE·MO·MQ와 공통의 해결 방향을 만든 뒤 협력업체의 공정과 시스템에 실제로 정착시키는 것입니다.",
+        aKr: "SQD를 대표하는 프로젝트로는 신차 Launch 과정에서 협력사의 부품 개발과 양산 준비를 안정화한 사례를 들 수 있습니다. 양산을 앞두고 핵심 부품의 공정 리스크나 품질 이슈가 확인되면, 협력사의 공정·제출 자료·검증 결과를 재점검하고 우선순위에 따라 대책을 수립합니다.\n\n이 과정에서 SQD는 협력업체, DRE, MO, MQ와 긴밀하게 커뮤니케이션하며 문제를 함께 해결합니다. DRE는 도면과 설계 의도, MO는 제조 공정과 생산 조건, MQ는 양산 현장의 품질 기준과 검사 체계를 중심으로 리스크를 검토합니다. 각 조직의 관점이 다를 수 있기 때문에 정기적인 이슈 리뷰와 현장 확인을 통해 문제의 현상, 고객 영향, 원인, 대책과 완료 기준을 동일하게 정렬하는 것이 중요합니다.\n\n협력사 현장에서는 공정 흐름과 작업 조건을 확인하고, 관련 조직과 함께 임시 선별 및 검사 강화, 공정 조건 개선, 검사 체계 보완, 작업 표준 개정 등의 조치를 단계적으로 실행합니다. 조치별 담당자와 완료 일정을 명확히 관리하며, 실제 생산 조건에서 동일한 품질이 반복되는지 DRE·MO·MQ와 함께 검증합니다. 이를 통해 품질 리스크를 양산 전에 최소화하고, 가능한 리스크는 사전에 제거해 안정적인 Launch로 연결합니다.\n\n이러한 협업은 PPAP 승인, Run at Rate 완료, Launch risk 해소와 초기 품질 안정화로 이어집니다. 이 프로젝트가 보여주는 SQD의 핵심은 협력업체에 요구사항을 전달하는 데 그치지 않고, DRE·MO·MQ와 공통의 해결 방향을 만든 뒤 협력업체의 공정과 시스템에 실제로 정착시키는 것입니다.",
+        aEn: "A project that represents SQD well is stabilizing supplier part development and production readiness during a new vehicle launch. When process risks or quality issues are found in key parts ahead of production, we re-examine the supplier's processes, submissions, and validation results, and establish countermeasures by priority.\n\nAlong the way, SQD communicates closely with the supplier, DRE, MO, and MQ to solve problems together. DRE reviews risk from the perspective of drawings and design intent, MO from manufacturing processes and production conditions, and MQ from quality standards and inspection systems on the production floor. Because each organization's perspective can differ, it is important to use regular issue reviews and on-site checks to align everyone on the symptoms, customer impact, cause, countermeasures, and completion criteria.\n\nAt the supplier's site, we check the process flow and working conditions and, together with the related organizations, implement actions step by step, such as temporary sorting and tightened inspection, improved process conditions, strengthened inspection systems, and revised work standards. We clearly manage the owner and completion date for each action, and verify with DRE, MO, and MQ that the same quality is repeated under real production conditions. This minimizes quality risk before production, eliminates risks in advance wherever possible, and leads to a stable launch.\n\nThis collaboration results in PPAP approval, Run at Rate completion, resolved launch risks, and stable early quality. The core of SQD shown by this project is that we don't stop at handing requirements to suppliers; we build a shared direction with DRE, MO, and MQ and then make sure it actually takes hold in the supplier's processes and systems.",
+      },
+      {
+        q: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        qKr: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        qEn: "How do you think about your team culture and teammates working together?",
+        a: "GMTCK SQD는 품질 이슈를 숨기기보다 빠르게 공유하고, 문제를 개인의 책임이 아닌 함께 해결해야 할 과제로 바라보는 문화를 중요하게 생각합니다. 서로의 전문성을 존중하면서도 필요한 경우 적극적으로 도움을 요청하고 의견을 나눕니다.\n\n경험이 많은 구성원은 품질 도구와 현장 대응 노하우를 공유하고, 새로운 구성원은 새로운 시각과 디지털 도구 활용 방법을 더하며 함께 성장합니다. 업무 과정에서 얻은 개선 사례와 협력사 대응 경험을 팀 내에 공유해 개인의 경험이 조직의 역량으로 이어지도록 합니다.\n\n또한 설계, 구매, 제조, 공장 품질, 글로벌 SQD 조직과 적극적으로 협업합니다. 다양한 의견이 있을 때도 고객 품질과 제품 안전이라는 공통의 목표를 기준으로 논의하며, 중요한 시기에는 서로 업무를 나누어 끝까지 마무리하는 것이 GMTCK SQD의 강점입니다.",
+        aKr: "GMTCK SQD는 품질 이슈를 숨기기보다 빠르게 공유하고, 문제를 개인의 책임이 아닌 함께 해결해야 할 과제로 바라보는 문화를 중요하게 생각합니다. 서로의 전문성을 존중하면서도 필요한 경우 적극적으로 도움을 요청하고 의견을 나눕니다.\n\n경험이 많은 구성원은 품질 도구와 현장 대응 노하우를 공유하고, 새로운 구성원은 새로운 시각과 디지털 도구 활용 방법을 더하며 함께 성장합니다. 업무 과정에서 얻은 개선 사례와 협력사 대응 경험을 팀 내에 공유해 개인의 경험이 조직의 역량으로 이어지도록 합니다.\n\n또한 설계, 구매, 제조, 공장 품질, 글로벌 SQD 조직과 적극적으로 협업합니다. 다양한 의견이 있을 때도 고객 품질과 제품 안전이라는 공통의 목표를 기준으로 논의하며, 중요한 시기에는 서로 업무를 나누어 끝까지 마무리하는 것이 GMTCK SQD의 강점입니다.",
+        aEn: "GMTCK SQD values a culture of sharing quality issues quickly rather than hiding them, and of treating problems as challenges to solve together rather than as individual blame. We respect each other's expertise while actively asking for help and sharing opinions when needed.\n\nExperienced members share their know-how on quality tools and on-site response, while newer members add fresh perspectives and ways of using digital tools, and we grow together. We share improvement cases and supplier response experiences within the team so that individual experience becomes organizational capability.\n\nWe also collaborate actively with engineering, purchasing, manufacturing, plant quality, and global SQD organizations. Even when opinions differ, we discuss based on our shared goals of customer quality and product safety, and in critical periods we divide the work and see it through together. That is the strength of GMTCK SQD.",
+      },
+      {
+        q: "앞으로의 목표 또는 커리어 방향",
+        qKr: "앞으로의 목표 또는 커리어 방향",
+        qEn: "Your future goals or career direction",
+        a: "SQD가 지향하는 방향은 협력사의 공정 역량과 품질 시스템을 지속적으로 높이고, 반복되는 문제를 데이터로 분석해 더 이른 단계에서 예방하는 것입니다. 이를 위해 품질 데이터를 효과적으로 활용하고, 디지털 도구와 표준화된 프로세스를 통해 선제적인 Supplier Quality 관리 체계를 강화하고 있습니다.\n\n또한 제품 개발, 공급망, 제조 현장을 연결할 수 있는 전문 인력을 육성하고, 협력사와 GM이 같은 품질 목표를 바라보며 성장할 수 있는 파트너십을 만들어 가고자 합니다. 궁극적으로는 고객이 차량을 구매하고 사용하는 순간까지 품질을 신뢰할 수 있도록, 보이지 않는 곳에서 품질 기준을 만들고 실행하는 조직으로 성장하는 것이 GMK SQD의 목표입니다.\n\n마지막으로, AI가 화두인 지금의 디지털 환경에서 디지털 도구를 업무와 적극적으로 연계해 AI & Digitalization 기반의 선제적 품질 이슈 탐지 체계를 구축하고, 담당 협력사의 Zero Defect Parts 공급을 실현하는 것이 SQE로서의 목표이기도 합니다.",
+        aKr: "SQD가 지향하는 방향은 협력사의 공정 역량과 품질 시스템을 지속적으로 높이고, 반복되는 문제를 데이터로 분석해 더 이른 단계에서 예방하는 것입니다. 이를 위해 품질 데이터를 효과적으로 활용하고, 디지털 도구와 표준화된 프로세스를 통해 선제적인 Supplier Quality 관리 체계를 강화하고 있습니다.\n\n또한 제품 개발, 공급망, 제조 현장을 연결할 수 있는 전문 인력을 육성하고, 협력사와 GM이 같은 품질 목표를 바라보며 성장할 수 있는 파트너십을 만들어 가고자 합니다. 궁극적으로는 고객이 차량을 구매하고 사용하는 순간까지 품질을 신뢰할 수 있도록, 보이지 않는 곳에서 품질 기준을 만들고 실행하는 조직으로 성장하는 것이 GMK SQD의 목표입니다.\n\n마지막으로, AI가 화두인 지금의 디지털 환경에서 디지털 도구를 업무와 적극적으로 연계해 AI & Digitalization 기반의 선제적 품질 이슈 탐지 체계를 구축하고, 담당 협력사의 Zero Defect Parts 공급을 실현하는 것이 SQE로서의 목표이기도 합니다.",
+        aEn: "SQD's direction is to continuously raise our suppliers' process capability and quality systems, and to analyze recurring problems with data so we can prevent them at an earlier stage. To do this, we are making effective use of quality data and strengthening a proactive supplier quality management system through digital tools and standardized processes.\n\nWe also aim to develop experts who can connect product development, the supply chain, and the manufacturing floor, and to build partnerships in which suppliers and GM grow together toward the same quality goals. Ultimately, GMK SQD's goal is to grow into an organization that sets and executes quality standards behind the scenes, so that customers can trust the quality of their vehicle from the moment they buy it and throughout its use.\n\nFinally, in today's digital environment where AI is a key topic, my goal as an SQE is to actively connect digital tools with our work, build a proactive, AI- and digitalization-based system for detecting quality issues, and achieve zero-defect parts supply from the suppliers I am responsible for.",
+      },
+      {
+        q: "내게 GMTCK란?",
+        qKr: "내게 GMTCK란?",
+        qEn: "What does GMTCK mean to you?",
+        a: "GMTCK는 엔지니어의 판단과 노력이 실제 차량의 품질과 고객의 신뢰로 이어지는 곳입니다. SQD 엔지니어는 부품 도면과 품질 기준을 바탕으로 협력업체의 공정을 개발하고, DRE·MO·MQ 및 글로벌 조직과 함께 품질 리스크를 사전에 줄여 나갑니다. 눈에 잘 드러나지 않는 작은 문제까지 집요하게 확인하고 개선한 결과가 양산 차량에 반영되는 순간, 엔지니어로서 큰 보람과 자부심을 느낄 수 있습니다.\n\nGMTCK는 다양한 분야의 전문가가 하나의 차량을 목표로 연결되는 글로벌 기술 조직입니다. SQD 엔지니어의 업무는 단순히 품질 문제를 처리하는 것이 아니라, 고객이 안심하고 차량을 사용할 수 있도록 차량의 시작부터 양산과 시장 품질까지 책임지는 일입니다. 협력업체와 함께 더 나은 공정을 만들고, 여러 조직과 해법을 찾아 실제 차량의 품질로 완성해 가는 과정은 SQD 엔지니어만이 경험할 수 있는 특별한 가치입니다.\n\n한 부품의 품질을 지키는 일이 한 대의 차량을 완성하고 고객의 신뢰를 높이는 일로 이어진다는 점에서, GMTCK SQD 엔지니어라는 직업은 보람되고 자랑스러운 일입니다.",
+        aKr: "GMTCK는 엔지니어의 판단과 노력이 실제 차량의 품질과 고객의 신뢰로 이어지는 곳입니다. SQD 엔지니어는 부품 도면과 품질 기준을 바탕으로 협력업체의 공정을 개발하고, DRE·MO·MQ 및 글로벌 조직과 함께 품질 리스크를 사전에 줄여 나갑니다. 눈에 잘 드러나지 않는 작은 문제까지 집요하게 확인하고 개선한 결과가 양산 차량에 반영되는 순간, 엔지니어로서 큰 보람과 자부심을 느낄 수 있습니다.\n\nGMTCK는 다양한 분야의 전문가가 하나의 차량을 목표로 연결되는 글로벌 기술 조직입니다. SQD 엔지니어의 업무는 단순히 품질 문제를 처리하는 것이 아니라, 고객이 안심하고 차량을 사용할 수 있도록 차량의 시작부터 양산과 시장 품질까지 책임지는 일입니다. 협력업체와 함께 더 나은 공정을 만들고, 여러 조직과 해법을 찾아 실제 차량의 품질로 완성해 가는 과정은 SQD 엔지니어만이 경험할 수 있는 특별한 가치입니다.\n\n한 부품의 품질을 지키는 일이 한 대의 차량을 완성하고 고객의 신뢰를 높이는 일로 이어진다는 점에서, GMTCK SQD 엔지니어라는 직업은 보람되고 자랑스러운 일입니다.",
+        aEn: "GMTCK is a place where an engineer's judgment and effort turn into the quality of real vehicles and the trust of customers. SQD engineers develop supplier processes based on part drawings and quality standards, and reduce quality risks in advance together with DRE, MO, MQ, and global organizations. When the results of persistently checking and improving even small, barely visible problems are reflected in production vehicles, you feel great reward and pride as an engineer.\n\nGMTCK is a global technical organization where experts from many fields come together around a single vehicle. An SQD engineer's work is not just handling quality problems; it is taking responsibility from the start of a vehicle through production and field quality so that customers can use their vehicles with peace of mind. Building better processes with suppliers and finding solutions with many organizations to complete the quality of a real vehicle is a special value that only SQD engineers get to experience.\n\nBecause protecting the quality of a single part leads to completing a vehicle and earning customers' trust, being an SQD engineer at GMTCK is rewarding work I am proud of.",
+      },
+    ],
+  },
+  "ops-operations": {
+    questions: [
+      {
+        q: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        qKr: "담당 소개 및 현재 담당하고 계신 업무에 대해 구체적으로 알려주세요.",
+        qEn: "Please tell us your current role & responsibilities specifically.",
+        a: "저는 GMTCK에서 엔지니어링 개발을 지원하는 운영 업무를 담당하고 있습니다. 저희 Operation은 특정 시스템 하나를 관리하는 업무가 아니라, 제품 개발에 필요한 데이터·사양·프로세스·시스템이 서로 연결되어 원활하게 작동하도록 지원하는 역할입니다.\n\n주요 업무는 제품·부품 사양관리, 변경관리, PLM System 운영, 교육, 연구소 운영 및 예산관리로 구성됩니다.\n\n• 제품·부품 사양관리: 제품과 부품의 사양 및 관련 정보를 체계적으로 관리\n• 변경관리: 제품·부품 사양과 개발 데이터의 변경사항을 검토하고 관련 조직에 정확히 전달하며 후속 조치 관리\n• PLM System 운영: 제품개발 시스템과 데이터 관리 체계의 운영, 시스템 개선 및 사용자 지원\n• 교육: 대내외 교육을 담당하며 업무 시스템과 프로세스에 대한 사용자 교육 및 교육 운영 지원\n• 연구소 운영 및 예산관리: 연구소 운영과 예산 관리에 관련된 지원업무\n\n이러한 업무 영역은 서로 분리된 업무가 아니라, 제품·부품의 사양과 변경사항이 개발 시스템과 데이터에 정확히 반영되고, 다시 개발 현장에서 활용되도록 연결되어 있습니다. 따라서 관련 부서와 협업하면서 업무 절차를 정리하고, 사용자 관점에서 문제를 해결하며, 새로운 시스템과 업무 방식이 현장에 정착되도록 지원합니다.\n\n저희 Operation의 역할은 단순한 관리나 지원을 넘어, 엔지니어링 현장의 요구사항을 시스템·데이터·사양·프로세스에 반영해 개발 업무의 속도와 품질을 높이는 연결자이자 문제 해결자라고 생각합니다. GMTCK가 고객을 위한 혁신적인 제품을 개발할 수 있도록, 보이지 않는 곳에서 전체 개발 인프라와 업무 기반을 안정적으로 만들어 가는 업무입니다.",
+        aKr: "저는 GMTCK에서 엔지니어링 개발을 지원하는 운영 업무를 담당하고 있습니다. 저희 Operation은 특정 시스템 하나를 관리하는 업무가 아니라, 제품 개발에 필요한 데이터·사양·프로세스·시스템이 서로 연결되어 원활하게 작동하도록 지원하는 역할입니다.\n\n주요 업무는 제품·부품 사양관리, 변경관리, PLM System 운영, 교육, 연구소 운영 및 예산관리로 구성됩니다.\n\n• 제품·부품 사양관리: 제품과 부품의 사양 및 관련 정보를 체계적으로 관리\n• 변경관리: 제품·부품 사양과 개발 데이터의 변경사항을 검토하고 관련 조직에 정확히 전달하며 후속 조치 관리\n• PLM System 운영: 제품개발 시스템과 데이터 관리 체계의 운영, 시스템 개선 및 사용자 지원\n• 교육: 대내외 교육을 담당하며 업무 시스템과 프로세스에 대한 사용자 교육 및 교육 운영 지원\n• 연구소 운영 및 예산관리: 연구소 운영과 예산 관리에 관련된 지원업무\n\n이러한 업무 영역은 서로 분리된 업무가 아니라, 제품·부품의 사양과 변경사항이 개발 시스템과 데이터에 정확히 반영되고, 다시 개발 현장에서 활용되도록 연결되어 있습니다. 따라서 관련 부서와 협업하면서 업무 절차를 정리하고, 사용자 관점에서 문제를 해결하며, 새로운 시스템과 업무 방식이 현장에 정착되도록 지원합니다.\n\n저희 Operation의 역할은 단순한 관리나 지원을 넘어, 엔지니어링 현장의 요구사항을 시스템·데이터·사양·프로세스에 반영해 개발 업무의 속도와 품질을 높이는 연결자이자 문제 해결자라고 생각합니다. GMTCK가 고객을 위한 혁신적인 제품을 개발할 수 있도록, 보이지 않는 곳에서 전체 개발 인프라와 업무 기반을 안정적으로 만들어 가는 업무입니다.",
+        aEn: "I am responsible for operations that support engineering development at GMTCK. Our Operations team doesn't manage just one specific system; our role is to make sure the data, specifications, processes, and systems needed for product development connect with each other and work smoothly.\n\nOur main work consists of product and part specification management, change management, PLM system operation, training, and technical center operations and budget management.\n\n• Product and part specification management: Systematically managing the specifications and related information for products and parts\n• Change management: Reviewing changes to product and part specifications and development data, communicating them accurately to related organizations, and managing follow-up actions\n• PLM system operation: Operating the product development system and data management framework, improving the system, and supporting users\n• Training: Handling internal and external training, including user training on business systems and processes and support for training operations\n• Technical center operations and budget management: Support work related to running the technical center and managing its budget\n\nThese areas are not separate from one another. They are connected so that product and part specifications and changes are accurately reflected in development systems and data, and then used again in development. So we work with related departments to organize work procedures, solve problems from the user's point of view, and help new systems and ways of working take hold in the field.\n\nI see our Operations role as going beyond simple management or support: we are connectors and problem solvers who raise the speed and quality of development by reflecting the needs of engineering in systems, data, specifications, and processes. It is work that steadily builds the entire development infrastructure and foundation behind the scenes so that GMTCK can develop innovative products for our customers.",
+      },
+      {
+        q: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        qKr: "담당 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        qEn: "What capabilities do you think are needed for this role?",
+        a: "첫째는 전체 엔지니어링 개발 흐름을 이해하는 능력입니다. Operation 업무는 시스템, 데이터, 사양, 변경관리, 사용자 업무가 서로 연결되어 있기 때문에 한 영역만 보는 것이 아니라 제품 개발의 전체 흐름을 이해해야 합니다.\n\n둘째는 정확성과 데이터·사양 관리 능력입니다. 제품·부품 사양, 개발 데이터와 변경 정보의 작은 오류도 여러 조직과 프로그램에 영향을 줄 수 있습니다. 따라서 변경사항을 정확히 확인하고, 영향 범위를 분석하며, 필요한 내용을 적시에 전달하는 역량이 중요합니다.\n\n셋째는 커뮤니케이션과 조율 능력입니다. Operation 업무는 여러 개발 조직, 사용자, 협력 부서와 함께 진행합니다. 서로 다른 요구사항을 정리하고, 시스템이나 사양의 복잡한 내용을 이해하기 쉬운 언어로 설명하며, 이슈가 끝까지 해결되도록 후속 관리해야 합니다.\n\n마지막으로 문제 해결과 지속적인 개선 역량이 필요합니다. 정해진 절차를 수행하는 것에 그치지 않고, 반복되는 불편을 찾아 프로세스를 단순화하고 새로운 기술과 방법을 적용해야 합니다. 이러한 역량이 모여 개발 조직이 더 빠르고 정확하게 일할 수 있는 Operation을 만든다고 생각합니다.",
+        aKr: "첫째는 전체 엔지니어링 개발 흐름을 이해하는 능력입니다. Operation 업무는 시스템, 데이터, 사양, 변경관리, 사용자 업무가 서로 연결되어 있기 때문에 한 영역만 보는 것이 아니라 제품 개발의 전체 흐름을 이해해야 합니다.\n\n둘째는 정확성과 데이터·사양 관리 능력입니다. 제품·부품 사양, 개발 데이터와 변경 정보의 작은 오류도 여러 조직과 프로그램에 영향을 줄 수 있습니다. 따라서 변경사항을 정확히 확인하고, 영향 범위를 분석하며, 필요한 내용을 적시에 전달하는 역량이 중요합니다.\n\n셋째는 커뮤니케이션과 조율 능력입니다. Operation 업무는 여러 개발 조직, 사용자, 협력 부서와 함께 진행합니다. 서로 다른 요구사항을 정리하고, 시스템이나 사양의 복잡한 내용을 이해하기 쉬운 언어로 설명하며, 이슈가 끝까지 해결되도록 후속 관리해야 합니다.\n\n마지막으로 문제 해결과 지속적인 개선 역량이 필요합니다. 정해진 절차를 수행하는 것에 그치지 않고, 반복되는 불편을 찾아 프로세스를 단순화하고 새로운 기술과 방법을 적용해야 합니다. 이러한 역량이 모여 개발 조직이 더 빠르고 정확하게 일할 수 있는 Operation을 만든다고 생각합니다.",
+        aEn: "First, the ability to understand the overall engineering development flow. Because Operations work connects systems, data, specifications, change management, and user tasks, you need to understand the whole product development flow rather than looking at just one area.\n\nSecond, accuracy and the ability to manage data and specifications. Even a small error in product or part specifications, development data, or change information can affect many organizations and programs. So it is important to check changes accurately, analyze their scope of impact, and communicate what is needed at the right time.\n\nThird, communication and coordination. Operations work is done together with many development organizations, users, and partner departments. You need to organize differing requirements, explain complex system or specification details in easy-to-understand language, and follow up until issues are fully resolved.\n\nFinally, problem solving and continuous improvement. Rather than just following set procedures, you need to find recurring inconveniences, simplify processes, and apply new technologies and methods. I believe these capabilities together create an Operations team that helps development organizations work faster and more accurately.",
+      },
+      {
+        q: "진행하셨던 프로젝트 중 인상 깊었던 프로젝트가 있나요?",
+        qKr: "진행하셨던 프로젝트 중 인상 깊었던 프로젝트가 있나요?",
+        qEn: "Is there a project that left a strong impression on you?",
+        a: "가장 인상 깊었던 프로젝트는 제품개발 시스템 개선 및 업무 정착 프로젝트입니다. 시스템과 업무 방식이 변경되는 과정에서 테스트에 참여하고, 제품·부품 사양과 변경사항을 관련 조직에 안내하며, 진행 중 발견된 이슈를 담당자들과 함께 확인하고 조치했습니다. 또한 변경된 업무가 현장에 잘 적용될 수 있도록 사용자 교육과 후속 지원까지 연결했습니다.\n\n이 프로젝트가 인상 깊었던 이유는 단순한 시스템 변경이 아니라, 변경된 시스템과 업무 방식이 실제 현장에 정착되도록 지원하는 일이었기 때문입니다. 시스템을 배포하는 것만으로는 프로젝트가 끝나지 않습니다. 사용자가 변화를 이해하고, 업무에 적용하고, 불편한 점을 다시 개선하는 과정까지 완료되어야 비로소 성공적인 정착이라고 할 수 있습니다.\n\n또한 새로운 기술을 업무와 교육에 적용하는 경험을 통해, 변화가 실제 현장에 정착하려면 시스템 개선뿐 아니라 사용자 교육과 지속적인 지원이 함께 이루어져야 한다는 점을 배웠습니다. 이를 통해 Engineering Operations 업무는 사양관리, 변경관리, 시스템 운영, 교육과 연구소 운영 및 예산관리가 서로 연결되어야 한다는 점을 다시 확인했습니다.",
+        aKr: "가장 인상 깊었던 프로젝트는 제품개발 시스템 개선 및 업무 정착 프로젝트입니다. 시스템과 업무 방식이 변경되는 과정에서 테스트에 참여하고, 제품·부품 사양과 변경사항을 관련 조직에 안내하며, 진행 중 발견된 이슈를 담당자들과 함께 확인하고 조치했습니다. 또한 변경된 업무가 현장에 잘 적용될 수 있도록 사용자 교육과 후속 지원까지 연결했습니다.\n\n이 프로젝트가 인상 깊었던 이유는 단순한 시스템 변경이 아니라, 변경된 시스템과 업무 방식이 실제 현장에 정착되도록 지원하는 일이었기 때문입니다. 시스템을 배포하는 것만으로는 프로젝트가 끝나지 않습니다. 사용자가 변화를 이해하고, 업무에 적용하고, 불편한 점을 다시 개선하는 과정까지 완료되어야 비로소 성공적인 정착이라고 할 수 있습니다.\n\n또한 새로운 기술을 업무와 교육에 적용하는 경험을 통해, 변화가 실제 현장에 정착하려면 시스템 개선뿐 아니라 사용자 교육과 지속적인 지원이 함께 이루어져야 한다는 점을 배웠습니다. 이를 통해 Engineering Operations 업무는 사양관리, 변경관리, 시스템 운영, 교육과 연구소 운영 및 예산관리가 서로 연결되어야 한다는 점을 다시 확인했습니다.",
+        aEn: "The project that left the strongest impression on me was improving our product development system and helping the new way of working take hold. As the system and work processes changed, I took part in testing, guided related organizations on product and part specifications and changes, and worked with the owners to check and resolve issues found along the way. I also connected the work to user training and follow-up support so the changes would be applied well in the field.\n\nThis project stood out to me because it wasn't just a system change; it was about helping the changed system and ways of working actually take root in the field. A project doesn't end just by deploying a system. It can only be called a successful adoption once users understand the change, apply it to their work, and the pain points are improved again.\n\nThrough the experience of applying new technology to work and training, I also learned that for change to truly take hold, system improvements must go hand in hand with user training and ongoing support. This reconfirmed for me that in Engineering Operations, specification management, change management, system operation, training, and technical center operations and budget management all need to be connected.",
+      },
+      {
+        q: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        qKr: "팀 문화나 함께 일하시는 우리 팀 동료들은 어떤가요?",
+        qEn: "How do you think about your team culture and teammates working together?",
+        a: "Engineering Operations는 제품·부품 사양관리, 변경관리, 개발 시스템 운영, 교육, 연구소 운영 및 예산관리 등 서로 다른 업무가 긴밀하게 연결되어 일하는 조직입니다. 각 담당자는 자신의 업무에 대한 전문성을 가지고 있으면서도, 문제가 생기면 개인의 업무로 한정하지 않고 전체 개발 프로세스의 관점에서 함께 해결하려는 문화가 있습니다.\n\n특히 운영 업무는 여러 관련 부서와 협력 조직을 연결해야 하기 때문에, 서로의 관점을 존중하고 필요한 정보를 투명하게 공유하는 협업이 중요합니다. 동료들은 새로운 업무나 익숙하지 않은 문제에도 적극적으로 배우고 대응하며, 경험과 노하우를 공유해 더 나은 방법을 함께 찾으려 합니다.\n\n또한 업무 성과뿐 아니라 안전, 성장, 상호 인정과 존중을 중요하게 생각합니다. 그래서 저는 우리 조직을 각자의 전문성을 바탕으로 협업하면서, 개인의 성과보다 전체 엔지니어링 조직의 성공을 중요하게 여기는 조직이라고 표현하고 싶습니다.",
+        aKr: "Engineering Operations는 제품·부품 사양관리, 변경관리, 개발 시스템 운영, 교육, 연구소 운영 및 예산관리 등 서로 다른 업무가 긴밀하게 연결되어 일하는 조직입니다. 각 담당자는 자신의 업무에 대한 전문성을 가지고 있으면서도, 문제가 생기면 개인의 업무로 한정하지 않고 전체 개발 프로세스의 관점에서 함께 해결하려는 문화가 있습니다.\n\n특히 운영 업무는 여러 관련 부서와 협력 조직을 연결해야 하기 때문에, 서로의 관점을 존중하고 필요한 정보를 투명하게 공유하는 협업이 중요합니다. 동료들은 새로운 업무나 익숙하지 않은 문제에도 적극적으로 배우고 대응하며, 경험과 노하우를 공유해 더 나은 방법을 함께 찾으려 합니다.\n\n또한 업무 성과뿐 아니라 안전, 성장, 상호 인정과 존중을 중요하게 생각합니다. 그래서 저는 우리 조직을 각자의 전문성을 바탕으로 협업하면서, 개인의 성과보다 전체 엔지니어링 조직의 성공을 중요하게 여기는 조직이라고 표현하고 싶습니다.",
+        aEn: "Engineering Operations is an organization where different kinds of work, such as product and part specification management, change management, development system operation, training, and technical center operations and budget management, are closely connected. Each person has expertise in their own area, yet when a problem arises, we have a culture of solving it together from the perspective of the whole development process rather than limiting it to one person's job.\n\nBecause operations work in particular has to connect many related departments and partner organizations, collaboration that respects each other's perspectives and shares necessary information transparently is important. My colleagues actively learn and respond even to new tasks or unfamiliar problems, and share their experience and know-how to find better ways together.\n\nWe also value safety, growth, and mutual recognition and respect, not just work results. That is why I would describe our organization as one that collaborates based on each person's expertise and values the success of the entire engineering organization over individual achievement.",
+      },
+      {
+        q: "내게 GMTCK란?",
+        qKr: "내게 GMTCK란?",
+        qEn: "What does GMTCK mean to you?",
+        a: "저에게 GMTCK는 사람과 기술을 연결해 고객을 위한 가치를 만들어 내는 곳입니다.\n\nGMTCK의 업무는 차량과 기술을 개발하는 데서 끝나지 않고, 안전을 최우선으로 하면서 새로운 기술과 아이디어를 실제 제품과 업무에 적용하는 과정이라고 생각합니다. 그 안에서 저는 제품·부품 사양관리, 변경관리, 개발 시스템 운영, 교육, 연구소 운영 및 예산관리 업무를 통해 엔지니어들이 필요한 정보를 정확히 활용하고, 변경사항을 빠르게 공유하며, 더 효율적으로 협업할 수 있는 환경을 만드는 역할을 하고 있습니다.\n\n개인적으로 GMTCK는 계속 배우고 성장할 수 있는 곳이자, 작은 업무 개선 하나도 전체 개발 효율과 제품 품질에 연결될 수 있다는 책임감을 느끼게 하는 곳입니다. 앞으로도 업무를 단순하고 효율적으로 개선하고, 혁신과 협업의 가치를 실천하면서 GMTCK가 GM에서 신뢰받는 기술센터로 성장하는 데 기여하고 싶습니다.",
+        aKr: "저에게 GMTCK는 사람과 기술을 연결해 고객을 위한 가치를 만들어 내는 곳입니다.\n\nGMTCK의 업무는 차량과 기술을 개발하는 데서 끝나지 않고, 안전을 최우선으로 하면서 새로운 기술과 아이디어를 실제 제품과 업무에 적용하는 과정이라고 생각합니다. 그 안에서 저는 제품·부품 사양관리, 변경관리, 개발 시스템 운영, 교육, 연구소 운영 및 예산관리 업무를 통해 엔지니어들이 필요한 정보를 정확히 활용하고, 변경사항을 빠르게 공유하며, 더 효율적으로 협업할 수 있는 환경을 만드는 역할을 하고 있습니다.\n\n개인적으로 GMTCK는 계속 배우고 성장할 수 있는 곳이자, 작은 업무 개선 하나도 전체 개발 효율과 제품 품질에 연결될 수 있다는 책임감을 느끼게 하는 곳입니다. 앞으로도 업무를 단순하고 효율적으로 개선하고, 혁신과 협업의 가치를 실천하면서 GMTCK가 GM에서 신뢰받는 기술센터로 성장하는 데 기여하고 싶습니다.",
+        aEn: "For me, GMTCK is a place that connects people and technology to create value for our customers.\n\nI believe GMTCK's work doesn't end with developing vehicles and technology; it is the process of applying new technologies and ideas to real products and work while putting safety first. Within that, through product and part specification management, change management, development system operation, training, and technical center operations and budget management, I help create an environment where engineers can use the information they need accurately, share changes quickly, and collaborate more efficiently.\n\nPersonally, GMTCK is a place where I can keep learning and growing, and a place that makes me feel responsible, knowing that even a small improvement can connect to overall development efficiency and product quality. Going forward, I want to keep making our work simpler and more efficient, practice the values of innovation and collaboration, and contribute to GMTCK growing into a trusted technical center within GM.",
+      },
+    ],
+  },
+  "me-manufacturing-engineering": {
+    questions: [
+      {
+        q: "지엠테크니컬센터 생산기술연구소 소개를 해주세요.",
+        qKr: "지엠테크니컬센터 생산기술연구소 소개를 해주세요.",
+        qEn: "Please introduce the Manufacturing Engineering center at GM Technical Center Korea.",
+        a: "GMTCK 생산기술연구소는 GM의 아시아 지역을 대표하는 생산기술 연구 허브로써, 신차 양산을 위한 공정과 설비를 개발, 검증, 실행하는 역할을 합니다. 생산기술연구소는 차량을 설계하는 기술연구소와 차량을 생산하는 생산공장을 연결하는 Bridge 역할을 하며 프레스, 차체, 도장, 조립, 엔진구동 공장 등 차량 생산 전 과정에서 최적의 생산시스템을 구축하고 하고 있습니다. 더불어, 한국 공장에서 생산되는 차량 개발뿐만 아니라 타지역에서 생산되는 캐딜락, 뷰익, GMC, 쉐보레 차량 개발에도 참여하여 효과적인 생산시스템 구축을 위한 제품 개발을 지원하고 있습니다.",
+        aKr: "GMTCK 생산기술연구소는 GM의 아시아 지역을 대표하는 생산기술 연구 허브로써, 신차 양산을 위한 공정과 설비를 개발, 검증, 실행하는 역할을 합니다. 생산기술연구소는 차량을 설계하는 기술연구소와 차량을 생산하는 생산공장을 연결하는 Bridge 역할을 하며 프레스, 차체, 도장, 조립, 엔진구동 공장 등 차량 생산 전 과정에서 최적의 생산시스템을 구축하고 하고 있습니다. 더불어, 한국 공장에서 생산되는 차량 개발뿐만 아니라 타지역에서 생산되는 캐딜락, 뷰익, GMC, 쉐보레 차량 개발에도 참여하여 효과적인 생산시스템 구축을 위한 제품 개발을 지원하고 있습니다.",
+        aEn: "GMTCK Manufacturing Engineering is GM's leading manufacturing engineering hub in the Asia region, responsible for developing, validating, and executing the processes and equipment for mass production of new vehicles. We act as a bridge between the engineering center that designs vehicles and the plants that build them, establishing optimal production systems across the entire vehicle production process, including press, body, paint, general assembly, and powertrain plants. In addition to vehicles built at our plants in Korea, we also take part in developing Cadillac, Buick, GMC, and Chevrolet vehicles produced in other regions, supporting product development to build effective production systems.",
+      },
+      {
+        q: "생산기술연구소의 업무에 대해 좀더 구체적으로 소개해주세요.",
+        qKr: "생산기술연구소의 업무에 대해 좀더 구체적으로 소개해주세요.",
+        qEn: "Please describe the work of Manufacturing Engineering in more detail.",
+        a: "생산기술연구소의 기본적인 업무는 신차 제조 공정과 설비를 설계/실행하는 것이며, 이를 통해 생산 공장에 필요한 설비, 장비, Tool(금형)을 개발/실행하고 있습니다. 제조 공정/설비 관련 최신 신기술을 검토하고 자동화를 통한 생산시스템의 Optimization 프로젝트를 검토 실행하고 있으며, 주요 신규 설비에 대해서는 Virtual Technology를 통해 검증하여 설치하고 최종 양산 검증 및 보완을 합니다. 기술연구소 및 생산공장과 설계/제조 품질, 생산성, 원가 및 작업자 안전 검토/개선을 통해 효과적인 생산시스템을 구축하고 있습니다. 신차 프로젝트는 글로벌 생산기술연구소와 긴밀한 협업/소통을 통해 최적의 생산 공정 및 설비를 개발하고 있으며, 글로벌 협업을 통해 북미 신차 및 배터리 프로젝트에도 적극 참여하여 최고 수준의 한국 실행력을 바탕으로 글로벌 GM 비즈니스에 기여하고 있습니다.",
+        aKr: "생산기술연구소의 기본적인 업무는 신차 제조 공정과 설비를 설계/실행하는 것이며, 이를 통해 생산 공장에 필요한 설비, 장비, Tool(금형)을 개발/실행하고 있습니다. 제조 공정/설비 관련 최신 신기술을 검토하고 자동화를 통한 생산시스템의 Optimization 프로젝트를 검토 실행하고 있으며, 주요 신규 설비에 대해서는 Virtual Technology를 통해 검증하여 설치하고 최종 양산 검증 및 보완을 합니다. 기술연구소 및 생산공장과 설계/제조 품질, 생산성, 원가 및 작업자 안전 검토/개선을 통해 효과적인 생산시스템을 구축하고 있습니다. 신차 프로젝트는 글로벌 생산기술연구소와 긴밀한 협업/소통을 통해 최적의 생산 공정 및 설비를 개발하고 있으며, 글로벌 협업을 통해 북미 신차 및 배터리 프로젝트에도 적극 참여하여 최고 수준의 한국 실행력을 바탕으로 글로벌 GM 비즈니스에 기여하고 있습니다.",
+        aEn: "Our core work is designing and executing the manufacturing processes and equipment for new vehicles, and through this we develop and deliver the facilities, equipment, and tooling (dies) our plants need. We review the latest technologies in manufacturing processes and equipment and carry out optimization projects that improve production systems through automation. Major new equipment is validated with virtual technology before installation, followed by final production validation and refinement. Together with the engineering center and our plants, we build effective production systems by reviewing and improving design and manufacturing quality, productivity, cost, and worker safety. For new vehicle projects, we develop optimal production processes and equipment through close collaboration and communication with GM's global Manufacturing Engineering teams, and through global collaboration we also actively take part in new vehicle and battery projects in North America, contributing to GM's global business with Korea's top-level execution capability.",
+      },
+      {
+        q: "생산기술연구소 부문 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        qKr: "생산기술연구소 부문 업무를 위해 필요한 역량은 무엇이라고 생각하나요?",
+        qEn: "What capabilities do you think are needed to work in Manufacturing Engineering?",
+        a: "직무에 대한 기술적인 지식이나 경험 등도 중요하겠지만, 무엇보다 책임감과 적극성, 긍정적인 마인드를 꼽고 싶습니다. 본인의 영역에서 책임감을 가지고 업무를 수행하며 적극적으로 문제를 파악하고 개선하려는 마인드가 있다면 업무 수행에 큰 어려움은 없을 것으로 보입니다. 본인의 역량을 넘어서는 문제에 대해서는 팀과 공유하여 함께 논의하며 해결책을 찾아갈 수도 있을 것입니다. 이 과정에서 겪게 될 다양한 문제와 어려움을 이겨내려면 긍정적인 사고도 필요하겠지요. 특히나 최근 들어 급속히 발달하고 있는 AI와 자동화 기술을 습득하고 활용하기 위해서는 더욱 더 필요한 덕목이라고 생각됩니다.",
+        aKr: "직무에 대한 기술적인 지식이나 경험 등도 중요하겠지만, 무엇보다 책임감과 적극성, 긍정적인 마인드를 꼽고 싶습니다. 본인의 영역에서 책임감을 가지고 업무를 수행하며 적극적으로 문제를 파악하고 개선하려는 마인드가 있다면 업무 수행에 큰 어려움은 없을 것으로 보입니다. 본인의 역량을 넘어서는 문제에 대해서는 팀과 공유하여 함께 논의하며 해결책을 찾아갈 수도 있을 것입니다. 이 과정에서 겪게 될 다양한 문제와 어려움을 이겨내려면 긍정적인 사고도 필요하겠지요. 특히나 최근 들어 급속히 발달하고 있는 AI와 자동화 기술을 습득하고 활용하기 위해서는 더욱 더 필요한 덕목이라고 생각됩니다.",
+        aEn: "Technical knowledge and experience in the role matter, but above all I would point to a sense of responsibility, initiative, and a positive mindset. If you take ownership of your area and have the mindset to actively identify and improve problems, you shouldn't have much difficulty doing the job. For problems beyond your own capabilities, you can share them with the team and find solutions together. Overcoming the many problems and challenges you will face along the way also takes positive thinking. I believe these qualities are even more necessary today for learning and applying AI and automation technologies, which are advancing rapidly.",
+      },
+      {
+        q: "문화나 함께 일하는 동료들은 어떤가요?",
+        qKr: "문화나 함께 일하는 동료들은 어떤가요?",
+        qEn: "What are the culture and your colleagues like?",
+        a: "직급보다는 “이름+님” 이라는 칭호를 사용하도록 권장하고 있으며, 누구나 본인의 생각을 거리낌 없이 공유할 수 있는 수평적 문화를 지향하고 있습니다. 많은 업무들이 표준화 되어 있고 전문화되어 있어 각자 맡은 업무에 대해 서로 존중하는 분위기이며, 어느 조직보다 팀웍이 좋은 조직이라고 자부합니다.",
+        aKr: "직급보다는 “이름+님” 이라는 칭호를 사용하도록 권장하고 있으며, 누구나 본인의 생각을 거리낌 없이 공유할 수 있는 수평적 문화를 지향하고 있습니다. 많은 업무들이 표준화 되어 있고 전문화되어 있어 각자 맡은 업무에 대해 서로 존중하는 분위기이며, 어느 조직보다 팀웍이 좋은 조직이라고 자부합니다.",
+        aEn: "Instead of job titles, we encourage people to address each other by name with \"-nim,\" and we aim for a horizontal culture where anyone can share their thoughts freely. Since much of our work is standardized and specialized, there is an atmosphere of mutual respect for each person's responsibilities, and we take pride in having better teamwork than any other organization.",
       },
     ],
   },
@@ -992,6 +1309,7 @@ const PROFILE_MOSAIC_REL_PATHS = [
   "EE/validation.png",
   "avd&svi/avd.png",
   "avd&svi/svi.png",
+  "avd&svi/eais.png",
   "beca/Aftersales.png",
   "beca/chassis.png",
   "beca/Exterior.png",
@@ -1020,6 +1338,9 @@ const PROFILE_MOSAIC_REL_PATHS = [
   "itpe/interior-trim.png",
   "itpe/seat-safety-restraints.png",
   "itpe/thermal-propulsion-integration.png",
+  "me/me.png",
+  "ops/operations.png",
+  "ops/sqd.png",
   "pipg/pgtlo_new.png",
   "pipg/psc.png",
   "pipg/thermal_new.png",
