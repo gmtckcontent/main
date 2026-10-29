@@ -9204,3 +9204,29 @@ html.interviews-page .hq-main-content,
    Chevrolet Car Section - REMOVED
    (Now using console output instead)
    ======================================== */
+
+/* 담당 하위 카테고리 (VE VIBECS/VVIES: VPIM · Design Engineer · CAE Engineer · AI/ML Engineer) */
+.hq-sidebar-link--sub {
+  padding: 5px 0 5px 14px;
+  font-size: 14px;
+  color: #888;
+}
+
+.hq-sidebar-link--sub.active {
+  color: #000;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .hq-sidebar-link--sub,
+  .interviews-page .hq-sidebar-link--sub {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .hq-sidebar-link--sub.active,
+  .interviews-page .hq-sidebar-link--sub.active {
+    background: rgba(0, 45, 92, 0.1);
+    border-color: transparent;
+  }
+}

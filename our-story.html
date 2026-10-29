@@ -42,7 +42,7 @@
       content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
     />
     <!-- 인터뷰/스타일 수정 후 브라우저 캐시 회피: ?v= 숫자 올리기 -->
-    <link rel="stylesheet" href="./css/style.css?v=140" />
+    <link rel="stylesheet" href="./css/style.css?v=141" />
     <!-- 초기 LCP·인터뷰 데이터: 병렬 다운로드 (JSON은 loadInterviewContentExtras와 캐시 공유) -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
@@ -60,29 +60,29 @@
     />
     <link
       rel="preload"
-      href="./data/interview-content-ve.json?v=6"
+      href="./data/interview-content-ve.json?v=14"
       as="fetch"
       crossorigin="anonymous"
     />
     <link rel="preload" href="./images/logo/GMTCK.png" as="image" />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/beca/body.png?mv=11"
+      href="./images/profilepic-mosaic/beca/body.png?mv=13"
       as="image"
     />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/avd%26svi/avd.png?mv=11"
+      href="./images/profilepic-mosaic/avd%26svi/avd.png?mv=13"
       as="image"
     />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/EE/PQDQ.png?mv=11"
+      href="./images/profilepic-mosaic/EE/PQDQ.png?mv=13"
       as="image"
     />
     <link
       rel="preload"
-      href="./images/profilepic-mosaic/ve/safety%20performance%20integration1.png?mv=11"
+      href="./images/profilepic-mosaic/ve/safety%20performance%20integration1.png?mv=13"
       as="image"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -501,36 +501,6 @@
                       </span>
                     </a>
                     <a
-                      class="hq-division-intro__card hq-division-intro__card--ops"
-                      role="listitem"
-                      href="#ops"
-                      data-hq="ops"
-                      data-interview-path="/interview/ops"
-                    >
-                      <span
-                        class="hq-division-intro__media"
-                        aria-hidden="true"
-                      ></span>
-                      <span
-                        class="hq-division-intro__scrim"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="hq-division-intro__body">
-                        <span
-                          class="hq-division-intro__title"
-                          data-kr="OPS 본부"
-                          data-en="Engineering Operations"
-                          >OPS 본부</span
-                        >
-                        <span
-                          class="hq-division-intro__desc"
-                          data-kr="협력사 품질과 개발 운영으로 차량 개발을 뒷받침합니다."
-                          data-en="Supporting vehicle development through supplier quality and engineering operations."
-                          >협력사 품질과 개발 운영으로 차량 개발을 뒷받침합니다.</span
-                        >
-                      </span>
-                    </a>
-                    <a
                       class="hq-division-intro__card hq-division-intro__card--pipg"
                       role="listitem"
                       href="#pipg"
@@ -588,6 +558,36 @@
                           data-kr="소프트웨어와 전장 시스템 통합을 통해 SDV를 구현합니다."
                           data-en="Realizing the SDV through software and electrical system integration."
                           >소프트웨어와 전장 시스템 통합을 통해 SDV를 구현합니다.</span
+                        >
+                      </span>
+                    </a>
+                    <a
+                      class="hq-division-intro__card hq-division-intro__card--ops"
+                      role="listitem"
+                      href="#ops"
+                      data-hq="ops"
+                      data-interview-path="/interview/ops"
+                    >
+                      <span
+                        class="hq-division-intro__media"
+                        aria-hidden="true"
+                      ></span>
+                      <span
+                        class="hq-division-intro__scrim"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="hq-division-intro__body">
+                        <span
+                          class="hq-division-intro__title"
+                          data-kr="SQ&amp;Ops 본부"
+                          data-en="Engineering Operations"
+                          >SQ&amp;Ops 본부</span
+                        >
+                        <span
+                          class="hq-division-intro__desc"
+                          data-kr="협력사 품질과 개발 운영으로 차량 개발을 뒷받침합니다."
+                          data-en="Supporting vehicle development through supplier quality and engineering operations."
+                          >협력사 품질과 개발 운영으로 차량 개발을 뒷받침합니다.</span
                         >
                       </span>
                     </a>
@@ -731,14 +731,14 @@
                 </div>
               </div>
 
-              <!-- VE: Virtual Integration Center & ADAS -->
+              <!-- VE: Advanced Driver Assistance Systems (ADAS) -->
               <div class="hq-content-section" id="ve-virtual-integration">
                 <div class="hq-content-body">
                   <!-- 인터뷰 내용은 JavaScript로 동적으로 추가됨 -->
                 </div>
               </div>
 
-              <!-- VE: Virtual Engineering Solution -->
+              <!-- VE: VIBECS/VVIES (Virtual Integration & Body, Exterior, Chassis Solutions / Virtual Vehicle, Interior & ECS Solutions) -->
               <div
                 class="hq-content-section"
                 id="ve-virtual-engineering-solution"
@@ -748,7 +748,7 @@
                 </div>
               </div>
 
-              <!-- OPS: Supplier Quality & Development — 본문은 js/role-interviews.js -->
+              <!-- SQ&Ops: Supplier Quality & Development — 본문은 js/role-interviews.js -->
               <div class="hq-content-section" id="ops-sqd">
                 <div
                   class="hq-content-body"
@@ -756,7 +756,7 @@
                 ></div>
               </div>
 
-              <!-- OPS: Operations — 본문은 js/role-interviews.js -->
+              <!-- SQ&Ops: Operations — 본문은 js/role-interviews.js -->
               <div class="hq-content-section" id="ops-operations">
                 <div
                   class="hq-content-body"
@@ -989,18 +989,6 @@
                   </li>
                   <li>
                     <a
-                      href="#ops"
-                      class="hq-nav-link"
-                      data-hq="ops"
-                      data-kr="Engineering Operations"
-                      data-en="Engineering Operations"
-                      data-abbr-kr="OPS"
-                      data-abbr-en="OPS"
-                      >OPS</a
-                    >
-                  </li>
-                  <li>
-                    <a
                       href="#pipg"
                       class="hq-nav-link"
                       data-hq="pipg"
@@ -1021,6 +1009,18 @@
                       data-abbr-kr="S&E"
                       data-abbr-en="S&E"
                       >S&amp;E</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#ops"
+                      class="hq-nav-link"
+                      data-hq="ops"
+                      data-kr="Engineering Operations"
+                      data-en="Engineering Operations"
+                      data-abbr-kr="SQ&Ops"
+                      data-abbr-en="SQ&Ops"
+                      >SQ&amp;Ops</a
                     >
                   </li>
                   <li>
@@ -1152,7 +1152,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js?v=6"></script>
     <script src="./js/main.js?v=3"></script>
-    <script src="./js/role-interviews.js?v=71"></script>
+    <script src="./js/role-interviews.js?v=83"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=53"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=5"></script>
@@ -1612,14 +1612,6 @@
               en: "Manufacturing Engineering",
             },
           ],
-          ops: [
-            {
-              id: "ops-sqd",
-              kr: "Supplier Quality & Development",
-              en: "Supplier Quality & Development",
-            },
-            { id: "ops-operations", kr: "Operations", en: "Operations" },
-          ],
           pipg: [
             { id: "pipg-psc", kr: "PSC", en: "PSC" },
             { id: "pipg-thermal", kr: "Thermal", en: "Thermal" },
@@ -1653,6 +1645,14 @@
               en: "Platform Integration & Deployment",
             },
           ],
+          ops: [
+            {
+              id: "ops-sqd",
+              kr: "Supplier Quality & Development",
+              en: "Supplier Quality & Development",
+            },
+            { id: "ops-operations", kr: "Operations", en: "Operations" },
+          ],
           ve: [
             {
               id: "ve-safety-performance",
@@ -1661,13 +1661,20 @@
             },
             {
               id: "ve-virtual-integration",
-              kr: "Virtual Integration Center & ADAS",
-              en: "Virtual Integration Center & ADAS",
+              kr: "Advanced Driver Assistance Systems (ADAS)",
+              en: "Advanced Driver Assistance Systems (ADAS)",
             },
             {
               id: "ve-virtual-engineering-solution",
-              kr: "Virtual Engineering Solution",
-              en: "Virtual Engineering Solution",
+              kr: "Virtual Integration & Body, Exterior, Chassis Solutions / Virtual Vehicle, Interior & ECS Solutions",
+              en: "Virtual Integration & Body, Exterior, Chassis Solutions / Virtual Vehicle, Interior & ECS Solutions",
+              // 사이드바 하위 항목: interviewData[].category 값(en)과 매칭
+              categories: [
+                { id: "vpim", kr: "VPIM", en: "VPIM" },
+                { id: "design-engineer", kr: "Design Engineer", en: "Design Engineer" },
+                { id: "cae-engineer", kr: "CAE Engineer", en: "CAE Engineer" },
+                { id: "ai-ml-engineer", kr: "AI/ML Engineer", en: "AI/ML Engineer" },
+              ],
             },
           ],
         };
@@ -1682,6 +1689,19 @@
           }
           if (hash === "all") {
             return { kind: "all" };
+          }
+          // 담당 하위 카테고리: #ve-virtual-engineering-solution--vpim
+          if (hash.includes("--")) {
+            const [baseRole, categoryId] = hash.split("--");
+            for (const [hq, roles] of Object.entries(hqRoles)) {
+              const roleHit = roles.find((r) => r.id === baseRole);
+              if (
+                roleHit &&
+                (roleHit.categories || []).some((c) => c.id === categoryId)
+              ) {
+                return { kind: "role", hq, roleId: baseRole, categoryId };
+              }
+            }
           }
           for (const [hq, roles] of Object.entries(hqRoles)) {
             if (hq === hash) {
@@ -2023,6 +2043,20 @@
                 ${currentLang === "kr" ? role.kr : role.en}
               </a>
             </li>
+          ${(role.categories || [])
+            .map(
+              (cat) => `
+            <li class="hq-sidebar-item hq-sidebar-item--sub" data-hq="${hqId}">
+              <a href="#${role.id}--${cat.id}" class="hq-sidebar-link hq-sidebar-link--sub"
+                 data-parent-role="${role.id}"
+                 data-category="${cat.id}"
+                 data-kr="${cat.kr}"
+                 data-en="${cat.en}">
+                ${currentLang === "kr" ? cat.kr : cat.en}
+              </a>
+            </li>`,
+            )
+            .join("")}
           `,
             )
             .join("");
@@ -2033,11 +2067,42 @@
           newSidebarLinks.forEach((link) => {
             link.addEventListener("click", function (e) {
               e.preventDefault();
-              const roleId = this.getAttribute("data-role");
+              const category = this.getAttribute("data-category");
+              const roleId =
+                this.getAttribute("data-role") ||
+                this.getAttribute("data-parent-role");
+              pendingRoleCategory = { roleId, category: category || null };
               showRole(roleId, false, true);
-              window.history.pushState(null, null, `#${roleId}`);
+              window.history.pushState(
+                null,
+                null,
+                category ? `#${roleId}--${category}` : `#${roleId}`,
+              );
             });
           });
+        }
+
+        /** 담당 하위 카테고리(예: VE VIBECS/VVIES의 VPIM·Design Engineer…) 선택 상태 */
+        let pendingRoleCategory = null;
+
+        function categoryIdForInterview(roleData, data) {
+          const cat = (roleData.categories || []).find(
+            (c) => c.en === data.category,
+          );
+          return cat ? cat.id : "";
+        }
+
+        function setActiveCategoryLink(roleId, categoryId) {
+          document
+            .querySelectorAll(".hq-sidebar-link--sub")
+            .forEach((l) =>
+              l.classList.toggle(
+                "active",
+                !!categoryId &&
+                  l.getAttribute("data-parent-role") === roleId &&
+                  l.getAttribute("data-category") === categoryId,
+              ),
+            );
         }
 
         /**
@@ -2050,10 +2115,26 @@
         ) {
           interviewContainer.classList.add("ve-interview-container--stack");
           let currentIndex = 0;
+          let filterCategory = null;
+
+          /** 카테고리 필터가 있으면 data-category가 같은 슬라이드만 순회 */
+          function visibleItems() {
+            const all = Array.from(
+              interviewContainer.querySelectorAll(".ve-interview-item"),
+            );
+            return filterCategory
+              ? all.filter(
+                  (el) => el.getAttribute("data-category") === filterCategory,
+                )
+              : all;
+          }
 
           function updateCarousel() {
-            const list =
-              interviewContainer.querySelectorAll(".ve-interview-item");
+            interviewContainer
+              .querySelectorAll(".ve-interview-item")
+              .forEach((el) => el.classList.remove("is-carousel-active"));
+            const list = visibleItems();
+            count = list.length;
             list.forEach((el, index) => {
               el.classList.toggle("is-carousel-active", index === currentIndex);
             });
@@ -2061,6 +2142,7 @@
             const nextBtn = navContainer.querySelector(".ve-nav-next");
             if (prevBtn) prevBtn.disabled = currentIndex === 0;
             if (nextBtn) nextBtn.disabled = currentIndex >= count - 1;
+            navContainer.hidden = count <= 1;
 
             const active = list[currentIndex];
             if (active) {
@@ -2103,9 +2185,15 @@
             updateCarousel();
           }
 
+          function setFilter(categoryId) {
+            filterCategory = categoryId || null;
+            currentIndex = 0;
+            updateCarousel();
+          }
+
           updateCarousel();
 
-          return { setIndex };
+          return { setIndex, setFilter };
         }
 
         function syncHqLayoutGridColumns(targetId) {
@@ -2318,11 +2406,15 @@
                       data,
                     );
                     interviewSection.setAttribute("data-index", index);
+                    interviewSection.setAttribute(
+                      "data-category",
+                      categoryIdForInterview(roleData, data),
+                    );
 
                     interviewContainer.appendChild(interviewSection);
                   });
 
-                  setupStackInterviewCarousel(
+                  targetSection._veCarouselApi = setupStackInterviewCarousel(
                     interviewContainer,
                     navContainer,
                     filteredImages.length,
@@ -2331,6 +2423,17 @@
                   // 로드 완료 표시
                   contentBody.setAttribute("data-loaded", "true");
                 }
+
+                // 하위 카테고리 선택 반영 (담당 자체를 누르면 전체)
+                const categoryId =
+                  pendingRoleCategory && pendingRoleCategory.roleId === roleId
+                    ? pendingRoleCategory.category
+                    : null;
+                pendingRoleCategory = null;
+                if (targetSection._veCarouselApi) {
+                  targetSection._veCarouselApi.setFilter(categoryId);
+                }
+                setActiveCategoryLink(roleId, categoryId);
               }
             }
 
@@ -2528,6 +2631,9 @@
                 if (hqId === "s&e") {
                   hqId = "ss";
                 }
+                if (hqId === "sq&ops") {
+                  hqId = "ops";
+                }
               }
             }
 
@@ -2644,6 +2750,9 @@
             if (hqId === "s&e") {
               hqId = "ss";
             }
+            if (hqId === "sq&ops") {
+              hqId = "ops";
+            }
             const idx = parseInt(interviewId.split("-").pop(), 10) - 1;
             showSection(hqId, false, false);
             showRole("ee-system-investigation", false, true, idx);
@@ -2660,6 +2769,9 @@
             if (hqId === "s&e") {
               hqId = "ss";
             }
+            if (hqId === "sq&ops") {
+              hqId = "ops";
+            }
             const idx = parseInt(interviewId.split("-").pop(), 10) - 1;
             showSection(hqId, false, false);
             showRole("ee-verification", false, true, idx);
@@ -2674,6 +2786,9 @@
           }
           if (hqId === "s&e") {
             hqId = "ss";
+          }
+          if (hqId === "sq&ops") {
+            hqId = "ops";
           }
 
           // 본부 선택 및 사이드바 업데이트
@@ -2806,6 +2921,10 @@
           } else if (resolved && resolved.kind === "role") {
             ensureInterviewsShellVisible();
             updateSidebar(resolved.hq);
+            pendingRoleCategory = {
+              roleId: resolved.roleId,
+              category: resolved.categoryId || null,
+            };
             showRole(resolved.roleId, false, true, resolved.carouselIndex);
           } else if (resolved && resolved.kind === "hq") {
             showSection(resolved.hq, false, true);

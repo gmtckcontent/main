@@ -28,7 +28,7 @@ const PROFILE_PLACEHOLDER_IMAGE =
   "./images/logo/gm-symbol-color-light-bg-web.png";
 
 /** 프로필 PNG 교체 후에도 캐시된 옛 이미지가 보이지 않도록 URL에 버전을 붙임 (교체 배포 시 숫자만 올리면 됨) */
-const PROFILE_IMAGE_CACHE_VERSION = "18";
+const PROFILE_IMAGE_CACHE_VERSION = "20";
 function withProfileImageCacheBust(url) {
   if (!url || url.startsWith("data:")) return url;
   if (/\bpv=\d+\b/.test(url)) return url;
@@ -37,7 +37,7 @@ function withProfileImageCacheBust(url) {
 }
 
 /** Our Story 히어로 모자이크: `images/profilepic-mosaic/*.png` (256px, 알파 유지, scripts/build-profilepic-mosaic.sh) */
-const MOSAIC_THUMB_VERSION = "11";
+const MOSAIC_THUMB_VERSION = "13";
 function toHqLandingMosaicThumbUrl(url) {
   if (!url || typeof url !== "string") {
     return url;
@@ -102,8 +102,8 @@ const interviewData = {
     profileImage: profilePicRel(["ve", "safety performance integration1.png"]),
     hq: "VE",
     role: "Safety Performance Integration",
-    roleKr: "Safety Performance Integration",
-    roleEn: "Safety Performance Integration",
+    roleKr: "Safety Performance & CAE Engineer",
+    roleEn: "Safety Performance & CAE Engineer",
     name: "조영진",
     nameKr: "조영진",
     nameEn: "Youngjin Cho",
@@ -117,8 +117,8 @@ const interviewData = {
     profileImage: profilePicRel(["ve", "safety performance integration2.png"]),
     hq: "VE",
     role: "Safety Performance Integration",
-    roleKr: "Safety Performance Integration",
-    roleEn: "Safety Performance Integration",
+    roleKr: "Safety Performance & CAE Engineer",
+    roleEn: "Safety Performance & CAE Engineer",
     name: "한재녕",
     nameKr: "한재녕",
     nameEn: "Jaenyung Han",
@@ -128,105 +128,128 @@ const interviewData = {
       "안녕하세요\nVE본부의 Safety Performance Integration담당\n한재녕입니다",
     greetingEn: "Hello\nSafety Performance Integration, VE HQ\nJaenyung Han",
   },
-  "ve3.png": {
-    profileImage: profilePicRel([
-      "ve",
-      "vIrtual integration center adas 1.png",
-    ]),
-    hq: "VE",
-    role: "Virtual Integration Center & ADAS",
-    roleKr: "Virtual Integration Center & ADAS",
-    roleEn: "Virtual Integration Center & ADAS",
-    name: "김남준",
-    nameKr: "김남준",
-    nameEn: "Namjun (NJ) Kim",
-    greeting:
-      "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n김남준입니다",
-    greetingKr:
-      "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n김남준입니다",
-    greetingEn:
-      "Hello\nVirtual Integration Center & ADAS, VE HQ\nNamjun (NJ) Kim",
-  },
-  "ve4.png": {
-    profileImage: profilePicRel([
-      "ve",
-      "virtual integration center adas 2.png",
-    ]),
-    hq: "VE",
-    role: "Virtual Integration Center & ADAS",
-    roleKr: "Virtual Integration Center & ADAS",
-    roleEn: "Virtual Integration Center & ADAS",
-    name: "천재희",
-    nameKr: "천재희",
-    nameEn: "Jaehee Cheon",
-    greeting:
-      "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n천재희입니다",
-    greetingKr:
-      "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n천재희입니다",
-    greetingEn: "Hello\nVirtual Integration Center & ADAS, VE HQ\nJaehee Cheon",
-  },
   "ve5.png": {
     profileImage: profilePicRel([
       "ve",
       "virtual integration center adas 3.png",
     ]),
     hq: "VE",
-    role: "Virtual Integration Center & ADAS",
-    roleKr: "Virtual Integration Center & ADAS",
-    roleEn: "Virtual Integration Center & ADAS",
+    role: "Advanced Driver Assistance Systems (ADAS)",
+    roleKr: "ADAS Engineer",
+    roleEn: "ADAS Engineer",
     name: "정상효",
     nameKr: "정상효",
     nameEn: "Sanghyo Jung",
     greeting:
-      "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n정상효입니다",
+      "안녕하세요\nVE본부의 ADAS담당\n정상효입니다",
     greetingKr:
-      "안녕하세요\nVE본부의 Virtual Integration Center & ADAS담당\n정상효입니다",
-    greetingEn: "Hello\nVirtual Integration Center & ADAS, VE HQ\nSanghyo Jung",
+      "안녕하세요\nVE본부의 ADAS담당\n정상효입니다",
+    greetingEn: "Hello\nADAS, VE HQ\nSanghyo Jung",
   },
   "ve6.png": {
     profileImage: profilePicRel(["ve", "virtual engineering solution1.png"]),
     hq: "VE",
-    role: "Virtual Engineering Solution",
-    roleKr: "Virtual Engineering Solution",
-    roleEn: "Virtual Engineering Solution",
+    role: "Virtual Integration & Body, Exterior, Chassis Solutions / Virtual Vehicle, Interior & ECS Solutions",
+    roleKr: "Body Virtual Integration Solution EGM",
+    roleEn: "Body Virtual Integration Solution EGM",
+    category: "CAE Engineer",
     name: "정행만",
     nameKr: "정행만",
     nameEn: "Haengmaan Jeong",
     greeting:
-      "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n정행만입니다",
+      "안녕하세요\nVE본부의 VIBECS/VVIES담당\n정행만입니다",
     greetingKr:
-      "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n정행만입니다",
-    greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nHaengmaan Jeong",
+      "안녕하세요\nVE본부의 VIBECS/VVIES담당\n정행만입니다",
+    greetingEn: "Hello\nVIBECS/VVIES, VE HQ\nHaengmaan Jeong",
   },
   "ve7.png": {
     profileImage: profilePicRel(["ve", "virtual engineering solution2.png"]),
     hq: "VE",
-    role: "Virtual Engineering Solution",
-    roleKr: "Virtual Engineering Solution",
-    roleEn: "Virtual Engineering Solution",
+    role: "Virtual Integration & Body, Exterior, Chassis Solutions / Virtual Vehicle, Interior & ECS Solutions",
+    roleKr: "Body Design Engineer",
+    roleEn: "Body Design Engineer",
+    category: "Design Engineer",
     name: "황순재",
     nameKr: "황순재",
     nameEn: "Soonjae Hwang",
     greeting:
-      "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n황순재입니다",
+      "안녕하세요\nVE본부의 VIBECS/VVIES담당\n황순재입니다",
     greetingKr:
-      "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n황순재입니다",
-    greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nSoonjae Hwang",
+      "안녕하세요\nVE본부의 VIBECS/VVIES담당\n황순재입니다",
+    greetingEn: "Hello\nVIBECS/VVIES, VE HQ\nSoonjae Hwang",
   },
-  "ve8.png": {
-    profileImage: profilePicRel(["ve", "virtual engineering solution3.png"]),
+  // [비활성] 김민정 — 업무·인원이 S&E 본부로 이동하여 VE에서 숨김 (사진은 S&E SS3에서 사용 중)
+  // "ve8.png": {
+  //   profileImage: profilePicRel(["ve", "virtual engineering solution3.png"]),
+  //   hq: "VE",
+  //   role: "Virtual Integration & Body, Exterior, Chassis Solutions / Virtual Vehicle, Interior & ECS Solutions",
+  //   roleKr: "Virtual Integration & Body, Exterior, Chassis Solutions / Virtual Vehicle, Interior & ECS Solutions",
+  //   roleEn: "Virtual Integration & Body, Exterior, Chassis Solutions / Virtual Vehicle, Interior & ECS Solutions",
+  //   name: "김민정",
+  //   nameKr: "김민정",
+  //   nameEn: "Minjung Kim",
+  //   greeting:
+  //     "안녕하세요\nVE본부의 VIBECS/VVIES담당\n김민정입니다",
+  //   greetingKr:
+  //     "안녕하세요\nVE본부의 VIBECS/VVIES담당\n김민정입니다",
+  //   greetingEn: "Hello\nVIBECS/VVIES, VE HQ\nMinjung Kim",
+  // },
+  // 김남준: ADAS → VIBECS/VVIES로 이동 (캐러셀 마지막 순서 유지를 위해 ve8 뒤에 위치)
+  "ve3.png": {
+    profileImage: profilePicRel([
+      "ve",
+      "vIrtual integration center adas 1.png",
+    ]),
     hq: "VE",
-    role: "Virtual Engineering Solution",
-    roleKr: "Virtual Engineering Solution",
-    roleEn: "Virtual Engineering Solution",
-    name: "김민정",
-    nameKr: "김민정",
-    nameEn: "Minjung Kim",
+    role: "Virtual Integration & Body, Exterior, Chassis Solutions / Virtual Vehicle, Interior & ECS Solutions",
+    roleKr: "Virtual Performance Integration Manager",
+    roleEn: "Virtual Performance Integration Manager",
+    category: "VPIM",
+    name: "김남준",
+    nameKr: "김남준",
+    nameEn: "Namjun (NJ) Kim",
     greeting:
-      "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n김민정입니다",
+      "안녕하세요\nVE본부의 VIBECS/VVIES담당\n김남준입니다",
     greetingKr:
-      "안녕하세요\nVE본부의 Virtual Engineering Solution담당\n김민정입니다",
-    greetingEn: "Hello\nVirtual Engineering Solution, VE HQ\nMinjung Kim",
+      "안녕하세요\nVE본부의 VIBECS/VVIES담당\n김남준입니다",
+    greetingEn:
+      "Hello\nVIBECS/VVIES, VE HQ\nNamjun (NJ) Kim",
+  },
+  "ve9.png": {
+    profileImage: profilePicRel(["ve", "virtual engineering solution4.png"]),
+    hq: "VE",
+    role: "Virtual Integration & Body, Exterior, Chassis Solutions / Virtual Vehicle, Interior & ECS Solutions",
+    roleKr: "Interior CAE Engineer",
+    roleEn: "Interior CAE Engineer",
+    category: "CAE Engineer",
+    name: "황찬일",
+    nameKr: "황찬일",
+    nameEn: "Chanil Hwang",
+    greeting:
+      "안녕하세요\nVE본부의 VIBECS/VVIES담당\n황찬일입니다",
+    greetingKr:
+      "안녕하세요\nVE본부의 VIBECS/VVIES담당\n황찬일입니다",
+    greetingEn: "Hello\nVIBECS/VVIES, VE HQ\nChanil Hwang",
+  },
+  // 천재희: ADAS → VIBECS/VVIES (AI/ML Engineer)로 이동
+  "ve4.png": {
+    profileImage: profilePicRel([
+      "ve",
+      "virtual integration center adas 2.png",
+    ]),
+    hq: "VE",
+    role: "Virtual Integration & Body, Exterior, Chassis Solutions / Virtual Vehicle, Interior & ECS Solutions",
+    roleKr: "AI/ML Engineer",
+    roleEn: "AI/ML Engineer",
+    category: "AI/ML Engineer",
+    name: "천재희",
+    nameKr: "천재희",
+    nameEn: "Jaehee Cheon",
+    greeting:
+      "안녕하세요\nVE본부의 VIBECS/VVIES담당\n천재희입니다",
+    greetingKr:
+      "안녕하세요\nVE본부의 VIBECS/VVIES담당\n천재희입니다",
+    greetingEn: "Hello\nVIBECS/VVIES, VE HQ\nJaehee Cheon",
   },
   // AVD & SVI 본부
   "avd1.png": {
@@ -247,26 +270,26 @@ const interviewData = {
     interviewId: "avd-advanced-vehicle", // 기존 인터뷰 섹션 ID
   },
   "svi1.png": {
-    profileImage: profilePicRel(["avd&svi", "svi.png"]),
+    profileImage: profilePicRel(["avd&svi", "svi_new.png"]),
     hq: "AVD & SVI",
     role: "Studio & Surface Integration",
     roleKr: "Studio & Surface Integration",
     roleEn: "Studio & Surface Integration",
-    name: "이정원",
-    nameKr: "이정원",
-    nameEn: "Jeongwon Lee",
+    name: "박충응",
+    nameKr: "박충응",
+    nameEn: "Chungung Park",
     greeting:
-      "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n이정원입니다",
+      "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n박충응입니다",
     greetingKr:
-      "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n이정원입니다",
+      "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n박충응입니다",
     greetingEn:
-      "Hello\nStudio & Surface Integration, AVD & SVI HQ\nJeongwon Lee",
+      "Hello\nStudio & Surface Integration, AVD & SVI HQ\nChungung Park",
     interviewId: "avd-studio-surface", // 기존 인터뷰 섹션 ID
   },
-  // OPS (Engineering Operations) 본부
+  // SQ&Ops (Engineering Operations) 본부 — hq 표시명 "SQ&Ops", 내부 id는 ops
   "OPS1.png": {
     profileImage: profilePicRel(["ops", "sqd.png"]),
-    hq: "OPS",
+    hq: "SQ&Ops",
     role: "Supplier Quality & Development",
     roleKr: "Supplier Quality & Development",
     roleEn: "Supplier Quality & Development",
@@ -274,16 +297,16 @@ const interviewData = {
     nameKr: "김명규",
     nameEn: "Myoungkyu Kim",
     greeting:
-      "안녕하세요\nOPS본부의 Supplier Quality & Development담당\n김명규입니다",
+      "안녕하세요\nSQ&Ops본부의 Supplier Quality & Development담당\n김명규입니다",
     greetingKr:
-      "안녕하세요\nOPS본부의 Supplier Quality & Development담당\n김명규입니다",
+      "안녕하세요\nSQ&Ops본부의 Supplier Quality & Development담당\n김명규입니다",
     greetingEn:
-      "Hello\nSupplier Quality & Development, OPS HQ\nMyoungkyu Kim",
+      "Hello\nSupplier Quality & Development, SQ&Ops HQ\nMyoungkyu Kim",
     interviewId: "ops-sqd",
   },
   "OPS2.png": {
     profileImage: profilePicRel(["ops", "operations.png"]),
-    hq: "OPS",
+    hq: "SQ&Ops",
     role: "Operations",
     roleKr: "Operations",
     roleEn: "Operations",
@@ -291,11 +314,11 @@ const interviewData = {
     nameKr: "이승협",
     nameEn: "SeungHyeop Lee",
     greeting:
-      "안녕하세요\nOPS본부의 Operations담당\n이승협입니다",
+      "안녕하세요\nSQ&Ops본부의 Operations담당\n이승협입니다",
     greetingKr:
-      "안녕하세요\nOPS본부의 Operations담당\n이승협입니다",
+      "안녕하세요\nSQ&Ops본부의 Operations담당\n이승협입니다",
     greetingEn:
-      "Hello\nOperations, OPS HQ\nSeungHyeop Lee",
+      "Hello\nOperations, SQ&Ops HQ\nSeungHyeop Lee",
     interviewId: "ops-operations",
   },
   // ME 본부
@@ -732,8 +755,7 @@ const interviewData = {
     interviewId: "avd-enterprise-ai",
   },
   "ise1.png": {
-    // TODO: 프로필 사진 수령 후 profileImage 추가하고 profileFallback 제거
-    profileFallback: PROFILE_PLACEHOLDER_IMAGE,
+    profileImage: profilePicRel(["avd&svi", "ise.png"]),
     hq: "AVD & SVI",
     role: "Innovation Strategy and Excellence",
     roleKr: "Innovation Strategy and Excellence",
@@ -758,7 +780,7 @@ const interviewData = {
 const INTERVIEW_CONTENT_BECA_ITPE_SS_URL =
   "./data/interview-content-beca-itpe-ss.json?v=17";
 const INTERVIEW_CONTENT_EE_URL = "./data/interview-content-ee.json?v=15";
-const INTERVIEW_CONTENT_VE_URL = "./data/interview-content-ve.json?v=7";
+const INTERVIEW_CONTENT_VE_URL = "./data/interview-content-ve.json?v=14";
 
 async function loadInterviewContentBecaItpeSs() {
   /* URL ?v= 으로 배포 시 무력화; default 캐시로 재방문·이미지와 경합 완화 */
@@ -1348,6 +1370,8 @@ const PROFILE_MOSAIC_REL_PATHS = [
   "avd&svi/avd.png",
   "avd&svi/svi.png",
   "avd&svi/eais.png",
+  "avd&svi/ise.png",
+  "avd&svi/svi_new.png",
   "beca/Aftersales.png",
   "beca/chassis.png",
   "beca/Exterior.png",
@@ -1395,6 +1419,7 @@ const PROFILE_MOSAIC_REL_PATHS = [
   "ve/virtual engineering solution1.png",
   "ve/virtual engineering solution2.png",
   "ve/virtual engineering solution3.png",
+  "ve/virtual engineering solution4.png",
   "ve/virtual integration center adas 2.png",
   "ve/virtual integration center adas 3.png",
 ];
