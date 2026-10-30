@@ -42,7 +42,7 @@
       content="https://www.gmtck.com/images/logo/gm-symbol-color-light-bg-web.png"
     />
     <!-- 인터뷰/스타일 수정 후 브라우저 캐시 회피: ?v= 숫자 올리기 -->
-    <link rel="stylesheet" href="./css/style.css?v=141" />
+    <link rel="stylesheet" href="./css/style.css?v=143" />
     <!-- 초기 LCP·인터뷰 데이터: 병렬 다운로드 (JSON은 loadInterviewContentExtras와 캐시 공유) -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
@@ -365,9 +365,9 @@
                       <span class="hq-division-intro__body">
                         <span
                           class="hq-division-intro__title"
-                          data-kr="AVD &amp; SVI 본부"
-                          data-en="AVD &amp; SVI"
-                          >AVD &amp; SVI 본부</span
+                          data-kr="AVD - SVI - CXAI 본부"
+                          data-en="AVD - SVI - CXAI"
+                          >AVD - SVI - CXAI 본부</span
                         >
                         <span
                           class="hq-division-intro__desc"
@@ -580,7 +580,7 @@
                         <span
                           class="hq-division-intro__title"
                           data-kr="SQ&amp;Ops 본부"
-                          data-en="Engineering Operations"
+                          data-en="SQ&amp;Ops"
                           >SQ&amp;Ops 본부</span
                         >
                         <span
@@ -690,7 +690,7 @@
                 ></div>
               </div>
 
-              <!-- AVD & SVI: Customer Experience & Innovation — data/interview-content-ee.json -->
+              <!-- AVD - SVI - CXAI: Customer Experience, AI and Innovation — data/interview-content-ee.json -->
               <div class="hq-content-section" id="ee-quality">
                 <div
                   class="hq-content-body"
@@ -707,7 +707,7 @@
               </div>
               -->
 
-              <!-- AVD & SVI: Enterprise AI Solutions — 본문은 js/role-interviews.js -->
+              <!-- AVD - SVI - CXAI: Enterprise AI Solutions — 본문은 js/role-interviews.js -->
               <div class="hq-content-section" id="avd-enterprise-ai">
                 <div
                   class="hq-content-body"
@@ -715,7 +715,7 @@
                 ></div>
               </div>
 
-              <!-- AVD & SVI: Innovation Strategy and Excellence — 본문은 js/role-interviews.js -->
+              <!-- AVD - SVI - CXAI: Innovation Strategy and Excellence — 본문은 js/role-interviews.js -->
               <div class="hq-content-section" id="avd-innovation-strategy">
                 <div
                   class="hq-content-body"
@@ -780,7 +780,7 @@
                 ></div>
               </div>
 
-              <!-- AVD & SVI: Advanced Vehicle Development -->
+              <!-- AVD - SVI - CXAI: Advanced Vehicle Development -->
               <div class="hq-content-section" id="avd-advanced-vehicle">
                 <div
                   class="hq-content-body"
@@ -788,7 +788,7 @@
                 ></div>
               </div>
 
-              <!-- AVD & SVI: Studio & Surface Integration -->
+              <!-- AVD - SVI - CXAI: Studio & Surface Integration -->
               <div class="hq-content-section" id="avd-studio-surface">
                 <div
                   class="hq-content-body"
@@ -932,11 +932,11 @@
                       href="#avd-svi"
                       class="hq-nav-link"
                       data-hq="avd-svi"
-                      data-kr="AVD & SVI"
-                      data-en="AVD & SVI"
-                      data-abbr-kr="AVD & SVI"
-                      data-abbr-en="AVD & SVI"
-                      >AVD &amp; SVI</a
+                      data-kr="AVD - SVI - CXAI"
+                      data-en="AVD - SVI - CXAI"
+                      data-abbr-kr="AVD - SVI - CXAI"
+                      data-abbr-en="AVD - SVI - CXAI"
+                      >AVD - SVI - CXAI</a
                     >
                   </li>
                   <li>
@@ -1016,8 +1016,8 @@
                       href="#ops"
                       class="hq-nav-link"
                       data-hq="ops"
-                      data-kr="Engineering Operations"
-                      data-en="Engineering Operations"
+                      data-kr="SQ&amp;Ops"
+                      data-en="SQ&amp;Ops"
                       data-abbr-kr="SQ&Ops"
                       data-abbr-en="SQ&Ops"
                       >SQ&amp;Ops</a
@@ -1152,7 +1152,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/language.js?v=6"></script>
     <script src="./js/main.js?v=3"></script>
-    <script src="./js/role-interviews.js?v=83"></script>
+    <script src="./js/role-interviews.js?v=85"></script>
     <script src="./js/hq-landing-scrolltrigger.js?v=53"></script>
     <script src="./js/hq-division-intro-accordion.js"></script>
     <script src="./js/hq-division-intro-reveal.js?v=5"></script>
@@ -1539,8 +1539,8 @@
             },
             {
               id: "ee-quality",
-              kr: "Customer Experience & Innovation",
-              en: "Customer Experience & Innovation",
+              kr: "Customer Experience, AI and Innovation",
+              en: "Customer Experience, AI and Innovation",
             },
             // [비활성] Chief AI & New Tech. Strategy — 조직 폐지로 숨김
             // {
@@ -2142,7 +2142,8 @@
             const nextBtn = navContainer.querySelector(".ve-nav-next");
             if (prevBtn) prevBtn.disabled = currentIndex === 0;
             if (nextBtn) nextBtn.disabled = currentIndex >= count - 1;
-            navContainer.hidden = count <= 1;
+            // [hidden]은 .ve-interview-nav { display: flex }에 덮여서 style로 숨김
+            navContainer.style.display = count <= 1 ? "none" : "";
 
             const active = list[currentIndex];
             if (active) {
@@ -2628,6 +2629,9 @@
                 if (hqId === "avd-&-svi") {
                   hqId = "avd-svi";
                 }
+                if (hqId === "avd---svi---cxai") {
+                  hqId = "avd-svi";
+                }
                 if (hqId === "s&e") {
                   hqId = "ss";
                 }
@@ -2747,6 +2751,9 @@
             if (hqId === "avd-&-svi") {
               hqId = "avd-svi";
             }
+            if (hqId === "avd---svi---cxai") {
+              hqId = "avd-svi";
+            }
             if (hqId === "s&e") {
               hqId = "ss";
             }
@@ -2766,6 +2773,9 @@
             if (hqId === "avd-&-svi") {
               hqId = "avd-svi";
             }
+            if (hqId === "avd---svi---cxai") {
+              hqId = "avd-svi";
+            }
             if (hqId === "s&e") {
               hqId = "ss";
             }
@@ -2782,6 +2792,9 @@
           // 해당 본부로 이동
           let hqId = data.hq.toLowerCase().replace(/\s+/g, "-");
           if (hqId === "avd-&-svi") {
+            hqId = "avd-svi";
+          }
+          if (hqId === "avd---svi---cxai") {
             hqId = "avd-svi";
           }
           if (hqId === "s&e") {
@@ -3027,6 +3040,49 @@
           });
         });
       });
+    </script>
+    <script>
+      /* 랜딩 본부 카드: 한 줄 제목이 카드 폭을 넘으면 그 제목만 글자 크기를 줄여 맞춤 (아코디언 펼침/접힘·리사이즈 시 재계산) */
+      (function () {
+        var MIN_PX = 10;
+        function fit(title) {
+          title.style.fontSize = "";
+          title.style.whiteSpace = "";
+          title.style.wordBreak = "";
+          var avail = title.clientWidth;
+          var needed = title.scrollWidth;
+          if (!avail || needed <= avail) return;
+          var base = parseFloat(getComputedStyle(title).fontSize);
+          var size = Math.floor(base * (avail / needed) * 10) / 10;
+          title.style.fontSize = Math.max(MIN_PX, size) + "px";
+          // 최소 크기로도 넘치는 아주 좁은 카드: 단어 단위로만 줄바꿈 ("본/부"처럼 글자 중간에서 끊기지 않게)
+          if (size < MIN_PX) {
+            title.style.whiteSpace = "normal";
+            title.style.wordBreak = "keep-all";
+          }
+        }
+        function fitAll() {
+          document.querySelectorAll(".hq-division-intro__title").forEach(fit);
+        }
+        window.fitHqDivisionTitles = fitAll;
+        if ("ResizeObserver" in window) {
+          var ro = new ResizeObserver(function (entries) {
+            entries.forEach(function (e) {
+              var t = e.target.querySelector(".hq-division-intro__title");
+              if (t) fit(t);
+            });
+          });
+          document
+            .querySelectorAll(".hq-division-intro__body")
+            .forEach(function (b) { ro.observe(b); });
+        } else {
+          window.addEventListener("resize", fitAll);
+        }
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(fitAll);
+        }
+        fitAll();
+      })();
     </script>
   </body>
 </html>

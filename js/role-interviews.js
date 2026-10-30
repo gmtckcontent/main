@@ -251,10 +251,10 @@ const interviewData = {
       "안녕하세요\nVE본부의 VIBECS/VVIES담당\n천재희입니다",
     greetingEn: "Hello\nVIBECS/VVIES, VE HQ\nJaehee Cheon",
   },
-  // AVD & SVI 본부
+  // AVD - SVI - CXAI 본부 (구 AVD & SVI)
   "avd1.png": {
     profileImage: profilePicRel(["avd&svi", "avd.png"]),
-    hq: "AVD & SVI",
+    hq: "AVD - SVI - CXAI",
     role: "Advanced Vehicle Development",
     roleKr: "Advanced Vehicle Development",
     roleEn: "Advanced Vehicle Development",
@@ -262,16 +262,16 @@ const interviewData = {
     nameKr: "김성수",
     nameEn: "Seongsu Kim",
     greeting:
-      "안녕하세요\nAVD & SVI본부의 Advanced Vehicle Development담당\n김성수입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Advanced Vehicle Development담당\n김성수입니다",
     greetingKr:
-      "안녕하세요\nAVD & SVI본부의 Advanced Vehicle Development담당\n김성수입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Advanced Vehicle Development담당\n김성수입니다",
     greetingEn:
-      "Hello\nAdvanced Vehicle Development, AVD & SVI HQ\nSeongsu Kim",
+      "Hello\nAdvanced Vehicle Development, AVD - SVI - CXAI HQ\nSeongsu Kim",
     interviewId: "avd-advanced-vehicle", // 기존 인터뷰 섹션 ID
   },
   "svi1.png": {
     profileImage: profilePicRel(["avd&svi", "svi_new.png"]),
-    hq: "AVD & SVI",
+    hq: "AVD - SVI - CXAI",
     role: "Studio & Surface Integration",
     roleKr: "Studio & Surface Integration",
     roleEn: "Studio & Surface Integration",
@@ -279,14 +279,14 @@ const interviewData = {
     nameKr: "박충응",
     nameEn: "Chungung Park",
     greeting:
-      "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n박충응입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Studio & Surface Integration담당\n박충응입니다",
     greetingKr:
-      "안녕하세요\nAVD & SVI본부의 Studio & Surface Integration담당\n박충응입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Studio & Surface Integration담당\n박충응입니다",
     greetingEn:
-      "Hello\nStudio & Surface Integration, AVD & SVI HQ\nChungung Park",
+      "Hello\nStudio & Surface Integration, AVD - SVI - CXAI HQ\nChungung Park",
     interviewId: "avd-studio-surface", // 기존 인터뷰 섹션 ID
   },
-  // SQ&Ops (Engineering Operations) 본부 — hq 표시명 "SQ&Ops", 내부 id는 ops
+  // SQ&Ops 본부 — hq 표시명 "SQ&Ops", 내부 id는 ops
   "OPS1.png": {
     profileImage: profilePicRel(["ops", "sqd.png"]),
     hq: "SQ&Ops",
@@ -704,25 +704,25 @@ const interviewData = {
   },
   "EE4.png": {
     profileImage: profilePicRel(["EE", "PQDQ.png"]),
-    hq: "AVD & SVI",
-    role: "Customer Experience & Innovation",
-    roleKr: "Customer Experience & Innovation",
-    roleEn: "Customer Experience & Innovation",
+    hq: "AVD - SVI - CXAI",
+    role: "Customer Experience, AI and Innovation",
+    roleKr: "Customer Experience, AI and Innovation",
+    roleEn: "Customer Experience, AI and Innovation",
     name: "조원주",
     nameKr: "조원주",
-    nameEn: "Wonju Cho",
+    nameEn: "Wonju Jo",
     greeting:
-      "안녕하세요\nAVD & SVI본부의 Customer Experience & Innovation담당\n조원주입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Customer Experience, AI and Innovation담당\n조원주입니다",
     greetingKr:
-      "안녕하세요\nAVD & SVI본부의 Customer Experience & Innovation담당\n조원주입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Customer Experience, AI and Innovation담당\n조원주입니다",
     greetingEn:
-      "Hello\nCustomer Experience & Innovation, AVD & SVI HQ\nWonju Cho",
+      "Hello\nCustomer Experience, AI and Innovation, AVD - SVI - CXAI HQ\nWonju Jo",
     interviewId: "ee-quality",
   },
   // [비활성] Chief AI & New Tech. Strategy — 조직 폐지로 숨김 (Enterprise AI Solutions로 대체)
   // "EE5.png": {
   //   profileImage: profilePicRel(["EE", "ai chief_new.png"]),
-  //   hq: "AVD & SVI",
+  //   hq: "AVD - SVI - CXAI",
   //   role: "Chief AI & New Tech. Strategy",
   //   roleKr: "Chief AI & New Tech. Strategy",
   //   roleEn: "Chief AI & New Tech. Strategy",
@@ -730,16 +730,16 @@ const interviewData = {
   //   nameKr: "신호재",
   //   nameEn: "Hojae Shin",
   //   greeting:
-  //     "안녕하세요\nAVD & SVI본부의 Chief AI & New Tech. Strategy담당\n신호재입니다",
+  //     "안녕하세요\nAVD - SVI - CXAI본부의 Chief AI & New Tech. Strategy담당\n신호재입니다",
   //   greetingKr:
-  //     "안녕하세요\nAVD & SVI본부의 Chief AI & New Tech. Strategy담당\n신호재입니다",
+  //     "안녕하세요\nAVD - SVI - CXAI본부의 Chief AI & New Tech. Strategy담당\n신호재입니다",
   //   greetingEn:
-  //     "Hello\nChief AI & New Tech. Strategy, AVD & SVI HQ\nHojae Shin",
+  //     "Hello\nChief AI & New Tech. Strategy, AVD - SVI - CXAI HQ\nHojae Shin",
   //   interviewId: "ee-ai-chief",
   // },
   "eais1.png": {
     profileImage: profilePicRel(["avd&svi", "eais.png"]),
-    hq: "AVD & SVI",
+    hq: "AVD - SVI - CXAI",
     role: "Enterprise AI Solutions",
     roleKr: "Enterprise AI Solutions",
     roleEn: "Enterprise AI Solutions",
@@ -747,16 +747,16 @@ const interviewData = {
     nameKr: "예은실",
     nameEn: "Eunsil Ye",
     greeting:
-      "안녕하세요\nAVD & SVI본부의 Enterprise AI Solutions담당\n예은실입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Enterprise AI Solutions담당\n예은실입니다",
     greetingKr:
-      "안녕하세요\nAVD & SVI본부의 Enterprise AI Solutions담당\n예은실입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Enterprise AI Solutions담당\n예은실입니다",
     greetingEn:
-      "Hello\nEnterprise AI Solutions, AVD & SVI HQ\nEunsil Ye",
+      "Hello\nEnterprise AI Solutions, AVD - SVI - CXAI HQ\nEunsil Ye",
     interviewId: "avd-enterprise-ai",
   },
   "ise1.png": {
     profileImage: profilePicRel(["avd&svi", "ise.png"]),
-    hq: "AVD & SVI",
+    hq: "AVD - SVI - CXAI",
     role: "Innovation Strategy and Excellence",
     roleKr: "Innovation Strategy and Excellence",
     roleEn: "Innovation Strategy and Excellence",
@@ -764,11 +764,11 @@ const interviewData = {
     nameKr: "박주리",
     nameEn: "Juri Park",
     greeting:
-      "안녕하세요\nAVD & SVI본부의 Innovation Strategy and Excellence담당\n박주리입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Innovation Strategy and Excellence담당\n박주리입니다",
     greetingKr:
-      "안녕하세요\nAVD & SVI본부의 Innovation Strategy and Excellence담당\n박주리입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Innovation Strategy and Excellence담당\n박주리입니다",
     greetingEn:
-      "Hello\nInnovation Strategy and Excellence, AVD & SVI HQ\nJuri Park",
+      "Hello\nInnovation Strategy and Excellence, AVD - SVI - CXAI HQ\nJuri Park",
     interviewId: "avd-innovation-strategy",
   },
 };

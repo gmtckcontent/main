@@ -6246,6 +6246,8 @@ html.core-values-page #cv-st-heading {
 
 .hq-division-intro__title {
   font-size: clamp(14px, 0.95vw, 19px);
+  /* 본부명은 항상 한 줄 — 넘치는 제목만 our-story.html의 fitHqDivisionTitles()가 카드 폭에 맞춰 축소 */
+  white-space: nowrap;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.02em;
