@@ -705,18 +705,18 @@ const interviewData = {
   "EE4.png": {
     profileImage: profilePicRel(["EE", "PQDQ.png"]),
     hq: "AVD - SVI - CXAI",
-    role: "Customer Experience, AI and Innovation",
-    roleKr: "Customer Experience, AI and Innovation",
-    roleEn: "Customer Experience, AI and Innovation",
+    role: "Customer Experience",
+    roleKr: "Customer Experience",
+    roleEn: "Customer Experience",
     name: "조원주",
     nameKr: "조원주",
     nameEn: "Wonju Jo",
     greeting:
-      "안녕하세요\nAVD - SVI - CXAI본부의 Customer Experience, AI and Innovation담당\n조원주입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Customer Experience담당\n조원주입니다",
     greetingKr:
-      "안녕하세요\nAVD - SVI - CXAI본부의 Customer Experience, AI and Innovation담당\n조원주입니다",
+      "안녕하세요\nAVD - SVI - CXAI본부의 Customer Experience담당\n조원주입니다",
     greetingEn:
-      "Hello\nCustomer Experience, AI and Innovation, AVD - SVI - CXAI HQ\nWonju Jo",
+      "Hello\nCustomer Experience, AVD - SVI - CXAI HQ\nWonju Jo",
     interviewId: "ee-quality",
   },
   // [비활성] Chief AI & New Tech. Strategy — 조직 폐지로 숨김 (Enterprise AI Solutions로 대체)
