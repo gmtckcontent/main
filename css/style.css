@@ -805,7 +805,7 @@ h1 {
 .hero-gmtck-lockup {
   display: block;
   margin: 0 auto;
-  width: clamp(280px, 42vw, 760px);
+  width: clamp(220px, 28vw, 500px);
   height: auto;
   object-fit: contain;
   object-position: center;
@@ -3367,7 +3367,7 @@ section#innovation .section-title .zero-text {
   }
 
   .hero-gmtck-lockup {
-    width: min(90vw, 400px);
+    width: min(70vw, 300px);
     max-width: none;
   }
 
